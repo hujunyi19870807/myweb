@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-size: 14px;
+    color: #333;
+    font-family: "Microsoft Yahei";
+}
+/* 以上内容不用复制 */
+
+
+.clearfix {
+    *zoom: 1;
+}
+
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+.sky-left-nav {
+    width: 208px;
+    background: #676566;
+    float: left;
+    position: fixed;
+}
+
+    .sky-left-nav > .sky-left-logo {
+        width: 208px;
+        height: 70.5px;
+        background: #fff;
+        padding-top: 17.5px;
+    }
+
+        .sky-left-nav > .sky-left-logo > img {
+            width: 208px;
+        }
+
+    .sky-left-nav > .sky-left-box {
+        width: 168px;
+        background: #676566;
+        padding: 0 20px 0;
+        overflow: hidden;
+    }
+
+        .sky-left-nav > .sky-left-box > .sky-left-ul {
+            color: #fff;
+            border-bottom: 1px solid #b8b8b8;
+        }
+
+            .sky-left-nav > .sky-left-box > .sky-left-ul > li {
+                margin: 17px 0;
+                text-align: center;
+            }
+
+                .sky-left-nav > .sky-left-box > .sky-left-ul > li > span {
+                    cursor: pointer;
+                }
+
+                .sky-left-nav > .sky-left-box > .sky-left-ul > li > .active-text {
+                    color: #ef7f13;
+                }
+
+.sky-nav-index {
+    font-size: 16px;
+}
+
+    .sky-nav-index > .sky-nav-tit {
+        color: #ef7f13;
+        display: block;
+        margin: 25px 0 20px;
+    }
+
+    .sky-nav-index > .sky-nav-ul {
+        overflow: hidden;
+        border-bottom: 1px solid #b8b8b8;
+    }
+
+        .sky-nav-index > .sky-nav-ul > li {
+            float: left;
+            margin-bottom: 22px;
+        }
+
+            .sky-nav-index > .sky-nav-ul > li > a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .sky-nav-index > .sky-nav-ul > li:nth-child(2),
+            .sky-nav-index > .sky-nav-ul > li:nth-child(5),
+            .sky-nav-index > .sky-nav-ul > li:nth-child(8),
+            .sky-nav-index > .sky-nav-ul > li:nth-child(11) {
+                margin: 0 30px;
+            }
+
+            .sky-nav-index > .sky-nav-ul > li:hover > a {
+                color: #ef7f13;
+            }
+
+.text-col {
+    color: #dbd9d9;
+}
+
+.sky-share {
+    overflow: hidden;
+    margin-top: 19px;
+}
+
+    .sky-share li {
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+
+        .sky-share li .ky-share-box {
+            overflow: hidden;
+            float: left;
+        }
+
+            .sky-share li .ky-share-box > .sky-share-tit {
+                float: left;
+                padding-top: 5px;
+                margin-right: 2px;
+            }
+
+            .sky-share li .ky-share-box > i {
+                float: left;
+                display: block;
+                width: 31px;
+                height: 27px;
+            }
+
+.sky-share-img-a {
+    background: url(image/tianweiwang_03.png) -5px 0;
+}
+
+.sky-share-img-b {
+    background: url(image/tianweiwang_03.png) -38px 0;
+}
+
+.sky-share-img-c {
+    background: url(image/tianweiwang_03.png) -72px 0;
+}
+
+.sky-share-img-d {
+    background: url(image/tianweiwang_03.png) -106px 0;
+}
+
+
+.sky-phone {
+    overflow: hidden;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+    .sky-phone > .sky-phone-right {
+        float: right;
+    }
+
+        .sky-phone > .sky-phone-right > img {
+            width: 60px;
+        }
+
+.sky-video {
+    overflow: hidden;
+    margin-top: 12px;
+    height: 140px;
+    width: 156px;
+    border: 1px solid #b8b8b8;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+    .sky-video > .sky-video-tit {
+        color: #f07f14;
+        font-size: 16px;
+    }
+
+    .sky-video > .sky-video-box {
+        width: 100%;
+        height: 108px;
+        background: #ccc;
+    }
+
+.maindiv {
+    margin: 0 auto;
+    height: auto;
+    padding-top: 0px;
+    width: 1180px;
+}
+
+.leftdiv {
+    width: 208px;
+    background: #676566;
+}
+
+.rightdiv {
+    margin-left: 25px;
+    float: right;
+    width: 80%;
+}
+/* css注释：为了观察效果设置宽度 边框 高度等样式 */
+
+/* Flash Slider Show CSS */
+#flash {
+    width: 380px;
+    height: 228px;
+    margin-bottom: 9px;
+    border-bottom: solid 1px #AAA;
+    padding-bottom: 9px;
+}
+
+    #flash a {
+        font-family: "黑体","Hei";
+    }
+
+#ad_text_zone li {
+    width: 185px;
+    padding: 0px 5px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    float: left;
+    display: inline;
+    margin: 0px;
+    overflow: hidden;
+}
+
+#s_pic_news {
+    width: 378px;
+    height: 88px;
+    border: solid 1px #AAA;
+    margin: 6px 0 0 0;
+}
+
+    #s_pic_news:hover {
+        border: solid 1px #F60;
+        cursor: pointer;
+    }
+
+    #s_pic_news img {
+        width: 130px;
+        height: 78px;
+        margin: 5px;
+        float: left;
+    }
+
+    #s_pic_news dt {
+        width: 238px;
+        font-size: 14px;
+        height: 18px;
+        line-height: 18px;
+        overflow: hidden;
+        float: left;
+        display: inline;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    #s_pic_news dd {
+        width: 238px;
+        font-size: 12px;
+        height: 56px;
+        line-height: 18px;
+        overflow: hidden;
+        float: left;
+        display: inline;
+        margin-top: 6px;
+        color: #666;
+    }
+
+.bannerlist {
+    height: 150px;
+}
+
+    .bannerlist dl {
+        width: 140px;
+        height: 150px;
+        float: left;
+        margin-top: 0px;
+    }
+
+    .bannerlist dd {
+        font-size: 12px;
+        float: left;
+        margin-left: 0px;
+        margin-top: 6px;
+    }
+
+.topbanner {
+    width: 100%;
+    height: 90px;
+    border: 0px;
+    background-image: url(image/bannernew01_03.jpg);
+}
+
+.topbannermiddle {
+    width: 100%;
+    border: 0px;
+    margin: 20px 0;
+}
+
+.rightdivchid1 {
+    width: 625px;
+    float: left;
+    height:auto;
+}
+
+.rightdivchid2 {
+    width: 300px;
+    float: right;
+    margin-top: 0px;
+}
+
+.bannerlistdl2 {
+    margin-left: 19px;
+}
+
+.rightdivchid2 ul {
+    width: 300px;
+    margin-top: 10px;
+    padding-left: 0px;
+}
+
+.rightdivchid2 li {
+    list-style: none;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.list-group-item {
+   
+    letter-spacing: 1px;
+}
+
+.list-news-item {
+    padding-top: 16px;
+    margin-left: 3px;
+    border-top: 1px solid #ccc;
+    padding-bottom: 14px;
+}
+
+.news-list-mindle ul {
+    width: 100%;
+    margin-top: 15px;
+    font-size:14px;
+}
+
+.news-list-mindle li {
+    
+    float: left;
+    display: block;
+    padding-top:5px;
+    letter-spacing: 1px;
+}
+
+.span1 {
+    font-size: 18px;
+    border-top: 2px solid #ccc;
+    margin-top:10px;
+    width:105px;
+}
+.span2 {
+    font-size: 18px;
+    margin-top: 10px;
+    width: 105px;
+    padding-left:20px;
+}
+
+.caijin-span1 {
+    
+    border-top: 2px solid #ccc;
+    margin-top: 10px;
+    width: 105px;
+}
+.caijin-title-span {
+    font-size: 18px;
+    letter-spacing: 2px;
+    height: 30px;
+    border-bottom: 1px solid #b7b7b7;
+}
