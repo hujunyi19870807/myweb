@@ -5,11 +5,32 @@
     <title></title>
     <link href="style.css" rel="stylesheet" />
     <script src="jquery-1.12.4.min.js"></script>
+    <script src="http://www.skykiwi.com/home2011/js/FocusPic.js"></script>
     <script type="text/javascript">
 
         $(function () {
-            //$(".")
-        })
+            $(".tab-left-double").find("div .caijin-title-span").each(function (e) {
+                $(this).children().first().click();
+            });
+        });
+
+        function initTabClass(obj, colorName, index) {
+            var controlIndex = $(obj).attr("controlindex");
+            $(obj).css("color", colorName);
+            $(obj).siblings().each(function () {
+                $(this).css("color", "#6b6b6b");
+            });
+            $(obj).parent().siblings().each(function () {
+                $(this).children().each(function () {
+                    if ($(this).attr("controlIndex") == controlIndex) {
+                        $(this).show();
+                    }
+                    else {
+                        $(this).hide();
+                    }
+                });
+            });
+        }
     </script>
 </head>
 
@@ -135,8 +156,8 @@
             </div>
             <div>
                 <div class="rightdivchid1">
-                    <script src="http://www.skykiwi.com/home2011/js/FocusPic.js"></script>
                     <div id="flash"></div>
+                    <script src="http://www.skykiwi.com/home2011/js/FocusPic.js"></script>
                     <script type="text/javascript">
                         FocusPic.FocusObj = 'flash';
                         FocusPic.Width = 625;
@@ -151,7 +172,7 @@
                     </div>
                     <div style="height:27px;width:100%; margin-top:20px">
                         <span style="margin-left:15px;font-size:18px"><label style="color:black">天维</label><label style="color:#ef7f13">新闻</label></span>
-                        <span style="float:right;font-size:14px;color:#ef7f13">更多>></span>
+                        <span class="sky-more-style">更多>></span>
                     </div>
 
                     <div class="list-news-item">
@@ -277,8 +298,8 @@
                         <div style="clear:both">
                         </div>
                     </div>
-                    <div class="list-news-item" style="border-top: 0px;">
-                        <img alt="" src="image/bannerroller_03.png" />
+                    <div style="height:80px;">
+                        <img width="625" alt="" src="image/banner4.png">
                     </div>
                     <div class="list-news-item" style="border-top: 0px;">
                         <div style="width:160px;float:left"><img src="image/listitem.png"></div>
@@ -364,7 +385,7 @@
 
                     <div style="height:30px;background-color:black;line-height:28px;margin-top:15px">
                         <span style="width:100px; color:white; padding-left:10px">天维视频</span>
-                        <span style="width:80px;float:right;color:white;text-align:right; padding-right:10px">更多>></span>
+                        <span class="sky-more-style">更多>></span>
                     </div>
                     <div>
                         <iframe width="300" height="193" src="https://www.youtube.com/embed/b4yDRpc4q04" frameborder="0" allowfullscreen=""></iframe>
@@ -378,7 +399,7 @@
                                 <img src="image/vieo_03.png" />
                             </dt>
                             <dd>
-                                【天维现场】华人家庭遭洋人恶邻频繁骚扰...
+                                <a style="text-decoration: none;" href="" target="_blank" title="">【天维现场】华人家庭遭洋人恶邻频繁骚扰... </a>
                             </dd>
                         </dl>
                         <dl class="bannerlistdl2">
@@ -386,7 +407,7 @@
                                 <img src="image/vieo_03.png" />
                             </dt>
                             <dd>
-                                <a href="" target="_blank" title="">【天维现场】华人家庭遭洋人恶邻频繁骚扰... </a>
+                                <a style="text-decoration: none;" href="" target="_blank" title="">【天维现场】华人家庭遭洋人恶邻频繁骚扰... </a>
                             </dd>
                         </dl>
                     </div>
@@ -422,16 +443,16 @@
                             </tr>
                         </table>
                     </div>
-                    <div style="height:34px;line-height:28px;border-top: 2px solid #ef7f13;border-bottom: 1px solid #ccc; margin-top:15px">
+                    <div style="height:30px;line-height:28px;border-top: 2px solid #ef7f13;border-bottom: 1px solid #ccc; margin-top:15px">
                         <span style="font-size:18px;padding-left:10px"><label style="color:gray">HOT</label><label style="color:#ef7f13;">热搜榜</label></span>
-                        <span style="font-size:14px;float:right;text-align:right; padding-right:10px">更多>></span>
+                        <span class="sky-more-style" style="color:#7f7f7f">更多>></span>
                     </div>
                     <div style="border-bottom: 1px solid #ccc;padding-bottom:10px">
                         <ul>
                             <li class="list-group-item" style="background:url(/image/newstag1_07.png) 2px 7px no-repeat;padding-left: 20px;">柳颜惨不忍睹 美女主播卸妆后对比惊人</li>
                             <li class="list-group-item" style="background:url(/image/newstag2_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆比惊人</li>
                             <li class="list-group-item" style="background:url(/image/newstag2_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆后对比</li>
-                            <li>    </li>
+                            <li style="border-bottom:1px dashed #b7b7b7;margin-top:10px;margin-bottom:10px;height:1px"></li>
                             <li class="list-group-item">柳岩素颜惨不忍睹 美女主播卸妆后对比惊人</li>
                             <li class="list-group-item">柳岩素颜惨不忍睹 美女主播卸妆后对比惊人</li>
                             <li class="list-group-item" style="background:url(/image/newstag3_07.png) 2px 7px no-repeat;padding-left: 22px;">柳岩素颜惨女主播卸妆后对比惊人</li>
@@ -449,42 +470,38 @@
             <div style="margin:20px 0">
                 <img src="image/banner0008_03.jpg" />
             </div>
-            <div>
+            <div class="tab-left-double">
                 <div style="float:left;">
                     <div class="caijin-title-span">
-                        <a class="caijin-span">
-                            在售房源
-                        </a>
-                        <a class="caijin-span" style="display:none">
-                            拍卖结果
-                        </a>
+                        <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',1)">在售房源</span>
+                        <span class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',2)">拍卖结果</span>
                     </div>
                     <div style="margin-top:13px">
-                        <div class="spandiv1"><img src="image/fangyuan_07.jpg" /></div>
-                        <div class="spandiv2" style="display:none"></div>
+                        <div controlindex="1"><img src="image/fangyuan_07.jpg" /></div>
+                        <div controlindex="2" style="display:none"></div>
                     </div>
                 </div>
-                <div style="float:left; margin-left:20px">
+                <div style="float:left; margin-left:20px; width:300px; overflow:hidden;">
                     <div class="caijin-title-span">
-                        <a class="caijin-span" href="javascript:void(0)" style="padding-left:12px;">纽澳财经</a>
-                        <a class="caijin-span" href="javascript:void(0)" style="padding-left:12px;">投资热门</a>
+                        <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',1)">纽澳财经</span>
+                        <span controlindex="2" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',2)">投资热门</span>
                     </div>
                     <div style="margin-top:13px;">
-                        <div class="caijin-span">
+                        <div class="caijin-span" controlindex="1">
                             <div>
                                 <div style="float:left"><img src="image/caijing_03.png" /></div>
-                                <div style="float:left; margin-left:10px">
-                                    <span style="font-size:16px">
-                                        罕见梦幻物业上市 分
-                                        割7块！
-                                    </span><br />
-                                    <!--<span>
+                                <div style="float:left; margin-left:10px; width:160px;">
+                                    <span style="font-size:16px; color:#256091;">
+                                        罕见梦幻物业上市分割7块！
+                                    </span>
+                                    <br />
+                                    <span>
                                         【天维网3月6日报道 援引
                                         Stuff消息】 这个豪华物业
                                         位于奥克兰Remuera区的
                                         1920年代的物业在一个
                                         6.4公顷的公园...<a>[详细]</a>
-                                    </span>-->
+                                    </span>
                                 </div>
                             </div>
                             <div style="float:left; padding-top:30px">
@@ -519,21 +536,550 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="caijin-span" style="display:none"></div>
+                        <div class="caijin-span" style="display:none" controlindex="2">
+                            <div>
+                                <div style="float:left"><img src="image/caijing_03.png" /></div>
+                                <div style="float:left; margin-left:10px; width:160px;">
+                                    <span style="font-size:16px; color:#256091;">
+                                        @@@@@@￥￥￥￥￥%%DDDD
+                                    </span>
+                                    <br />
+                                    <span>
+                                        【天维网3月6日报道 援引
+                                        Stuff随风倒十分豪华物业
+                                        位于奥造型出现在era区的
+                                        1920年代的物业在一个
+                                        6.4公顷的公园...<a>[详细]</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="float:left; padding-top:30px">
+                                <ul style="overflow:hidden; line-height:26px">
+                                    <li>
+                                        干货说说4343434343请房屋补贴？
+                                    </li>
+                                    <li>
+                                        新西兰不43434343小镇大搜罗！
+                                    </li>
+                                    <li>
+                                        儿的发表么申请房屋补贴？
+                                    </li>
+                                    <li>
+                                        【干43654 鬼地方高浮雕该怎么申请房屋补贴？
+                                    </li>
+                                    <li>
+                                        【干货】说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                    <li>
+                                        【干货】说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                    <li>
+                                        【干货】说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                    <li>
+                                        【干货】说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                    <li>
+                                        【干货】说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div style="float:left; margin-left:20px">
-                    <div class="caijin-title-span" style="color:#f5842b;font-size:18px;border-top:2px solid #f5842b;">
-                        活动
+                <div style="clear:both;"></div>
+                <div style="height:80px;margin:20px 0">
+                    <img width="625" alt="" src="image/banner4.png">
+                </div>
+                <!--生活 旅游 begin-->
+                <script src="http://www.skykiwi.com/home2011/js/FocusPic.js"></script>
+                <div id="flash1" style="float:left"></div>
+                <script type="text/javascript">
+                    FocusPic.FocusObj = 'flash1';
+                    FocusPic.Width = 300;
+                    FocusPic.Height = 400;
+                    FocusPic.Pics = 'http://www.skykiwi.com/d/file/news/world/gj/sh/2014-07-21/47e7983e7c9eab076763182e9209262a.jpg|http://www.skykiwi.com/d/file/money/realestate/2014-07-16/eadbdcd26934f0887bb79fe0d4977510.jpg|http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/22a6bdee97efd18dbbe7327fb8f84893.jpg|http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/9c4cd2671d1637792ad35096a452a812.jpg|http://www.skykiwi.com/d/file/news/world/gj/kj/2014-07-21/b006f4c15d4167eb630bf6f8c31e81d1.jpg';
+                    FocusPic.Titles = '快来看！萤火虫集体交配 上演震撼灯光秀|Albany梅西旁新高级公寓 乐享3分钟优尚生活圈|大妈争抢免费物品 现场工作台被掀翻|小猫被用开水烫死高空丢下 或是一大学生所为|别再用平板电脑拍照了：看起来二极了？';
+                    FocusPic.Links = 'http://news.skykiwi.com/world/gj/sh/2014-07-21/182921.shtml|http://money.skykiwi.com/realestate/2014-07-16/182695.shtml|http://news.skykiwi.com/world/dl/sh/2014-07-21/182923.shtml|http://news.skykiwi.com/world/dl/sh/2014-07-21/182920.shtml|http://news.skykiwi.com/world/gj/kj/2014-07-21/182918.shtml';
+                    FocusPic.init();
+                </script>
+                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;">
+                    <div class="caijin-title-span">
+                        <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#ff96ac',1)">生活</span>
+                        <span controlindex="2" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#ff96ac',2)">旅游</span>
+                        <span class="sky-more-style">更多>></span>
                     </div>
-                    <div class="caijin-span" style="margin-top:13px;">
-                       <div>
-                           <img src="image/huodong2_03.png" />
-                       </div>
-                       <div><i style="color:#f5842b;">文化中国 四海同春</i></div>
+                    <div style="margin-top:10px">
+                        <div class="caijin-span" controlindex="1">
+                            <div>
+                                <div style="float:left;display:block;">
+                                    <dl class="lvyou-list-ul">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/lvyou_03.png">
+                                        </dt>
+                                        <dd>
+                                            意是否有人贱卖
+                                        </dd>
+                                    </dl>
+                                    <dl class="lvyou-list-ul" style="margin-left:19px">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/lvyou_03.png">
+                                        </dt>
+                                        <dd>
+                                            新西兰的补习班是怎么
+                                        </dd>
+                                    </dl>
+                                    <div style="clear:both;"></div>
+                                    <div style="border-bottom:1px dashed #b7b7b7;margin-top:8px;margin-bottom:8px"></div>
+                                    <dl class="lvyou-list-ul">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/lvyou_03.png">
+                                        </dt>
+                                        <dd>
+                                            意是否有人贱卖
+                                        </dd>
+                                    </dl>
+                                    <dl class="lvyou-list-ul" style="margin-left:19px">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/lvyou_03.png">
+                                        </dt>
+                                        <dd>
+                                            新西兰的补习班是怎么
+                                        </dd>
+                                    </dl>
+                                    <div style="clear:both;"></div>
+                                    <div style="border-bottom:1px dashed #b7b7b7;margin-top:8px;margin-bottom:8px"></div>
+                                </div>
+                            </div>
+                            <div style="float:left; padding-top:10px">
+                                <ul style="overflow:hidden; line-height:26px">
+                                    <li>
+                                        干货说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                    <li>
+                                        新西兰不可错过的美味海鲜小镇大搜罗！
+                                    </li>
+                                    <li>
+                                        【干货】说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="caijin-span" style="display:none" controlindex="2">
+                            <div>
+                                <div style="float:left;display:block;">
+                                    <dl class="lvyou-list-ul">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/shenghuo1_03.png">
+                                        </dt>
+                                        <dd>
+                                            意是否有人贱卖
+                                        </dd>
+                                    </dl>
+                                    <dl class="lvyou-list-ul" style="margin-left:19px">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/shenghuo1_03.png">
+                                        </dt>
+                                        <dd>
+                                            新西兰的补习班是怎么
+                                        </dd>
+                                    </dl>
+                                    <div style="clear:both;"></div>
+                                    <div style="border-bottom:1px dashed #b7b7b7;margin-top:8px;margin-bottom:8px"></div>
+                                    <dl class="lvyou-list-ul">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/shenghuo1_03.png">
+                                        </dt>
+                                        <dd>
+                                            意是否有人贱卖
+                                        </dd>
+                                    </dl>
+                                    <dl class="lvyou-list-ul" style="margin-left:19px">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/shenghuo1_03.png">
+                                        </dt>
+                                        <dd>
+                                            新西兰的补习班是怎么
+                                        </dd>
+                                    </dl>
+                                    <div style="clear:both;"></div>
+                                    <div style="border-bottom:1px dashed #b7b7b7;margin-top:8px;margin-bottom:8px"></div>
+                                </div>
+                            </div>
+                            <div style="float:left; padding-top:10px">
+                                <ul style="overflow:hidden; line-height:26px">
+                                    <li>
+                                        干货说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                    <li>
+                                        新西兰不可错过的美味海鲜小镇大搜罗！
+                                    </li>
+                                    <li>
+                                        【干货】说说在新西兰应该怎么申请房屋补贴？
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-               
+                <!--生活 旅游  end-->
+                <!--特价 时尚 美食 begin-->
+                <div style="float:left;width:300px; overflow:hidden; margin-top:20px">
+                    <div class="caijin-title-span">
+                        <span controlindex="1" class="caijin-span-tit active-tit-a" style="color:#ff96ac">特价</span>
+
+                    </div>
+                    <div style="margin-top:10px">
+                        <div class="caijin-span">
+                            <div>
+                                <ul>
+                                    <li style="background:url(/image/shishang_07.png) no-repeat"></li>
+                                    <li style="background:url(/image/shishang_07.png) no-repeat"></li>
+                                    <li style="background:url(/image/shishang_07.png) no-repeat"></li>
+                                    <li style="background:url(/image/shishang_07.png) no-repeat"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;margin-top:20px">
+                    <div class="caijin-title-span">
+                        <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#ff96ac',1)">时尚</span>
+                        <span controlindex="2" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#ff96ac',2)">美食</span>
+                        <span class="sky-more-style">更多>></span>
+                    </div>
+                    <div style="margin-top:10px">
+                        <div class="caijin-span" controlindex="1">
+                            <div>
+                                <div style="float:left;display:block;">
+                                    <dl class="lvyou-list-ul">
+                                        <dt>
+                                            <img style="width:300px;height:190px" src="image/0001_03.png">
+                                        </dt>
+                                        <dd class="shishang-list-dl">
+                                            奥克兰咖啡盛典，美食咖啡...
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div style="float:left;display:block;">
+                                    <dl class="lvyou-list-ul">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/lvyou_03.png">
+                                        </dt>
+                                        <dd class="shishang-list-dl">
+                                            意是否有人贱卖
+                                        </dd>
+                                    </dl>
+                                    <dl class="lvyou-list-ul" style="margin-left:19px">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/lvyou_03.png">
+                                        </dt>
+                                        <dd class="shishang-list-dl">
+                                            新西兰的补习班是怎么
+                                        </dd>
+                                    </dl>
+                                    <div style="clear:both;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="caijin-span" style="display:none" controlindex="2">
+                            <div>
+                                <div style="float:left;display:block;">
+                                    <dl class="lvyou-list-ul">
+                                        <dt>
+                                            <img style="width:300px;height:190px" src="image/0001_03.png">
+                                        </dt>
+                                        <dd class="shishang-list-dl">
+                                            奥克兰咖啡盛典，美食咖啡...
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div style="float:left;display:block;">
+                                    <dl class="lvyou-list-ul">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/shishang-001_06.png">
+                                        </dt>
+                                        <dd class="shishang-list-dl">
+                                            意是否有人贱卖
+                                        </dd>
+                                    </dl>
+                                    <dl class="lvyou-list-ul" style="margin-left:19px">
+                                        <dt>
+                                            <img style="width:140px;height:80px" src="image/shishang-001_06.png">
+                                        </dt>
+                                        <dd class="shishang-list-dl">
+                                            新西兰的补习班是怎么
+                                        </dd>
+                                    </dl>
+                                    <div style="clear:both;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--特价时尚美食 end-->
+                <!--广告 begin-->
+                <div style="float:left;width:300px; overflow:hidden; margin-top:10px">
+                    <img style="width:300px;height:100px" src="image/tejia.png" />
+                </div>
+                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;margin-top:10px">
+                    <img style="width:300px;height:100px" src="image/00025.png" />
+                </div>
+                <!--广告 end-->
+                <!--天维专题  begin-->
+                <div style="float:left;width:300px; overflow:hidden; margin-top:20px">
+
+                </div>
+                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;margin-top:20px">
+                    <div class="caijin-title-span">
+                        <span class="caijin-span-tit active-tit-a" style="color:#f5842b">天维专题</span>
+                        <span class="sky-more-style" style="color:#7f7f7f">更多>></span>
+                    </div>
+                    <div style="margin-top:9px">
+                        <div class="caijin-span">
+                            <div style="text-align:left">
+                                <div style="font-size:16px;color:#293e73;">投资移民政策也变！土豪有钱？先翻你一番再说！</div>
+                                <div style="font-size:12px; margin-top:10px">
+                                    新西兰移民新政一波未平一波又起，目前看来移民部长
+                                    Michael Woodhouse的组合拳誓要打到底了。部长称，
+                                    对投资移民政策作出修改，将起到鼓励投资的作用，会
+                                    给新西兰经济带来巨...
+                                </div>
+                            </div>
+                            <ul style="margin-top:10px;display:list-item">
+                                <li class="list-group-item" style="background:url(/image/newstag4_07.png) 2px 7px no-repeat;padding-left: 20px;">柳颜惨不忍睹 美女主播卸妆后对比惊人</li>
+                                <li class="list-group-item" style="background:url(/image/newstag4_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆比惊人</li>
+                                <li class="list-group-item" style="background:url(/image/newstag4_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆后对比</li>
+                                <li class="list-group-item" style="background:url(/image/newstag4_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆后对比</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--天维专题 end-->
+                <!--留学移民 专栏 begin-->
+                <div style="float:left;width:300px; overflow:hidden; margin-top:20px">
+                    <div class="caijin-title-span">
+                        <span class="caijin-span-tit active-tit-a" style="color:#458f50">留学移民</span>
+                        <span class="sky-more-style" style="color:#7f7f7f">更多>></span>
+                    </div>
+                    <div style="margin-top:9px">
+                        <div class="caijin-span">
+                            <div style="text-align:left;">
+                                <div style="float:left"><img src="image/liuxueyiming.png" /></div>
+                                <div style="float:left;width:145px;margin-left:10px">
+                                    <dl>
+                                        <dd style="color:#458f50;margin-bottom:10px">中国移民数量创新高</dd>
+                                        <dt>去年,因工作签证到了70600人的新高度。</dt>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div style="float:left">
+                                <ul style="margin-top:10px;display:list-item">
+                                    <li class="list-group-item" style="background:url(/image/newstag4_07.png) 2px 7px no-repeat;padding-left: 20px;">柳颜惨不忍睹 美女主播卸妆后对比惊人</li>
+                                    <li class="list-group-item" style="background:url(/image/newstag4_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆比惊人</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;margin-top:20px">
+                    <div class="caijin-title-span">
+                        <span class="caijin-span-tit active-tit-a" style="color:#663781">专栏</span>
+                    </div>
+                    <div style="margin-top:9px">
+                        <div class="caijin-span">
+                            <div style="text-align:left">
+                                <div style="float:left"><img src="image/zhuanlan.png" /></div>
+                                <div style="float:left;width:187px;margin-left:10px">
+                                    <dl>
+                                        <dd style="color:#636263;margin-bottom:10px">专栏作者：俞敏洪</dd>
+                                        <dt style="color:#663781;margin-bottom:10px">做好这三件事是成为好妈妈 的开始</dt>
+                                        <content style="font-size:12px">一个现代家庭的子后依然能兼顾工作和家庭， 并把孩子带好呢？我觉得最重要的 有如下三个要素……</content>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--留学移民 专栏end-->
+            </div>
+            <div class="activity-right">
+                <div class="caijin-title-span">
+                    <a class="caijin-span-tit active-tit-a" style="color:#f5842b" href="javascript:void(0)">活动</a>
+                </div>
+                <div style="margin-top:20px;height:120px;">
+                    <div style="float:left;">
+                        <img src="image/huodong2_03.png" />
+                    </div>
+                    <div style="float:left;width:137px; margin: -12px 0 0 16px;">
+                        <span class="activity-right-tit" style="color:#f5842b;">文化中国 四海同春</span>
+                        <p>
+                            为庆祝2017年中国鸡年和元宵节的到来，由中华人民共和国国务院侨务办公室， 中国海外交流协会主办...
+                        </p>
+                    </div>
+                </div>
+                <div style="margin-top:13px;height:120px;">
+                    <div style="float:left;">
+                        <img src="image/huodong2_03.png" />
+                    </div>
+                    <div style="float:left;width:137px; margin: -12px 0 0 16px;">
+                        <span class="activity-right-tit" style="color:#f5842b;">文化中国 四海同春</span>
+                        <p>
+                            为庆祝2017年中国鸡年和元宵节的到来，由中华人民共和国国务院侨务办公室， 中国海外交流协会主办...
+                        </p>
+                    </div>
+                </div>
+                <div style="width:300px;height:250px; margin:20px 0">
+                    <img src="image/bannerright1.jpg">
+                </div>
+                <div style="width:300px;height:250px; margin:20px 0">
+                    <img src="image/bannerright1.jpg">
+                </div>
+                <div style="width:300px; margin:20px 0">
+                    <img src="image/bannerright1.jpg">
+                </div>
+                <div style="height:30px;line-height:28px;border-top: 2px solid #ef7f13;border-bottom: 1px solid #ccc;">
+                    <span style="font-size:18px;padding-left:10px">天维福利.团购</span>
+                    <span class="sky-more-style" style="color:#7f7f7f"></span>
+                </div>
+                <div style="padding-top:10px;">
+                    <img style="height:405px;width:285px" src="image/tuangou.png" />
+                </div>
+                <div style="text-align:center"><img style="height:250px;width:300px" src="image/guanggao008.png" /></div>
+                <div style="height:30px;line-height:28px;border-top: 2px solid #ef7f13;border-bottom: 1px solid #ccc; margin-top:15px">
+                    <span style="font-size:18px;padding-left:10px">天维橙页VIP商家</span>
+                    <span class="sky-more-style" style="color:#7f7f7f"></span>
+                </div>
+                <div style="padding-top:10px;">
+                    <ul style="line-height:26px;overflow:hidden">
+                        <li class="list-group-item">Annie Chen 注册会计</li>
+                        <li class="list-group-item">香城烧腊 09-8468388</li>
+                        <li class="list-group-item">友邦保险 Ben 曹振锋</li>
+                        <li class="list-group-item">信诚保险代理公司 周雪凌</li>
+                        <li class="list-group-item">成功雅思专业家教辅导</li>
+                        <li class="list-group-item">Apollo足浴堂 ACC注册</li>
+                        <li class="list-group-item">大肠水疗助你健康排毒美容</li>
+                        <li class="list-group-item">Vintage 文治注册会计师事务所</li>
+                        <li class="list-group-item">美你医疗美容产后修复中心</li>
+                        <li class="list-group-item">五星地毯清洁</li>
+                        <li class="list-group-item">魏氏律师楼 copy</li>
+                        <li class="list-group-item">远大广告服务</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div style="margin:20px 0;height:80px">
+                <img src="image/guangao007.png" />
+            </div>
+            <div style="margin:20px 0;height:105px;display:inline">
+                <div class="sky-left-logo" style="float:left"><img src="image/skykiwi.png"></div>
+                <div style="float:left"><img src="image/skykiwi-contract.png"></div>
+                <div style="float:left">
+                    <ul style="overflow:hidden;display:block">
+                        <li>
+                            广告首页
+                        </li>
+                        <li>
+                            宣传方案
+                        </li>
+                        <li>
+                            广告图示
+                        </li>
+                        <li>
+                            报价下载
+                        </li>
+                        <li>
+                            成功案例
+                        </li>
+                        <li>
+                            常识须知
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="float:left">
+                    <ul>
+                        <li>关于天维</li>
+                        <li>联系我们</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div id="part3">
+                <img src="http://www.skykiwi.com/home2011/images/icon_links.jpg" width="75" height="20" title="新西兰常用网站链接，天维网为您搜集最全的新西兰实用网址导航" class="mg15">
+                <select size="1" name="jumpMenu1" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                    <option selected="selected">------主要政府网站------</option>
+                    <option value="http://www.police.govt.nz/">警察局</option>
+                    <option value="http://www.immigration.govt.nz">移民局</option>
+                    <option value="http://www.ird.govt.nz">政府税务</option>
+                    <option value="http://www.govt.nz">新西兰政府</option>
+                    <option value="http://www.nzpost.co.nz/">邮政局</option>
+                    <option value="http://www.studylink.govt.nz/financing-study/student-allowance/index.html">学生津贴</option>
+                    <option value="http://www.customs.govt.nz/default.htm">新西兰海关</option>
+                    <option value="http://www.studylink.govt.nz/financing-study/student-loan/index.html">学生贷款</option>
+                    <option value="http://www.companies.govt.nz/pls/web/dbssiten.main">公司注册</option>
+                    <option value="http://www.newzealand.com/travel/">旅游局</option>
+                    <option value="http://www.chinaembassy.org.nz/eng/">中国大使馆</option>
+                    <option value="http://www.chinaconsulate.org.nz/chn/default.htm">中驻奥克兰领事馆</option>
+                </select>
+                <select size="1" name="jumpMenu2" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                    <option selected="selected">------文化教育链接------</option>
+                    <option value="http://www.auckland.ac.nz">奥克兰大学</option>
+                    <option value="http://www.aut.ac.nz">奥克兰理工大学</option>
+                    <option value="http://www.massey.ac.nz">梅西大学</option>
+                    <option value="http://www.victoria.ac.nz">维多利亚大学</option>
+                    <option value="http://www.otago.ac.nz">奥塔哥大学</option>
+                    <option value="http://www.canterbury.ac.nz">坎特伯雷大学</option>
+                    <option value="http://www.waikato.ac.nz">怀卡托大学</option>
+                    <option value="http://www.lincoln.ac.nz">林肯大学</option>
+                    <option value="http://www.nzqa.govt.nz">学历认证</option>
+                    <option value="http://www.internationaleducationmedia.com/newzealand/schools.htm">新西兰学校介绍</option>
+                    <option value="http://www.englishnewzealand.co.nz">英语教学机构</option>
+                    <option value="http://www.educationnz.org.nz">新西兰教育网</option>
+                    <option value="http://www.onlynz.net">学在新西兰</option>
+                </select>
+                <select size="1" name="jumpMenu3" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                    <option selected="selected">------医疗健康链接------</option>
+                    <option value="http://www.moh.govt.nz/healthsystem">新西兰医疗制度</option>
+                    <option value="http://www.moh.govt.nz/childhealth">幼儿保健</option>
+                    <option value="http://www.healthinsurance.co.nz/health_International_Students.cfm">留学生医疗保险</option>
+                    <option value="http://www.moh.govt.nz/olderpeople">老年人医疗</option>
+                    <option value="http://www.emigratenz.org/healthcare-migrants-newzealand.html">在新西兰看病</option>
+                </select>
+                <select size="1" name="jumpMenu4" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                    <option selected="selected">------其他实用链接------</option>
+                    <option value="http://www.village.co.nz/vistait/village/Default.aspx?Control=NowShowing">电影院</option>
+                    <option value="http://www.tapeka.com/publicholidays.htm">公定假期</option>
+                    <option value="http://www.timeanddate.com/worldclock/">世界时间</option>
+                    <option value="http://www.railnewzealand.com/">铁路交通</option>
+                    <option value="http://www.police.govt.nz/service/111/index.html">紧急事故</option>
+                    <option value="http://www.yellowpages.co.nz/">电话黄页</option>
+                    <option value="http://www.ltsa.govt.nz">驾照执照</option>
+                    <option value="http://www.aa.co.nz">AA汽车协会</option>
+                    <option value="http://b2b.ratestogo.com">酒店预定</option>
+                    <option value="http://www.carjam.co.nz">汽车信息查询</option>
+                    <option value="http://www.turners.co.nz">汽车拍卖</option>
+                </select>
+            </div>
+
+            <div class="links">
+                <h3>友情链接</h3>
+                <a href="http://www.nzherald.co.nz" target="_blank" title="New Zealand Herald" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-nzherald.jpg"></a>
+                <a href="http://www.tv3.co.nz" target="_blank" title="New Zealand TV3" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-tv3.jpg"></a>
+                <a href="http://huaren.haiwainet.cn" target="_blank" title="海外网" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-haiwainet.jpg"></a>
+                <a href="http://chinese.people.com.cn" target="_blank" title="人民网" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-people.jpg"></a>
+                <a href="http://www.3rdplanet.com.cn" target="_blank" title="第三星球"><img src="http://www.skykiwi.com/home2011/images/link/logo_3rdplanet.png"></a>
+                <a href="http://www.chinaqw.com/" target="_blank" title="中国侨网"><img src="http://www.skykiwi.com/home2011/images/link/logo_chinaqw.jpg"></a>
+                <!-- <a href="http://www.ucpnz.com" target="_blank" title="新西兰联合报" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-ucpnz.jpg" /></a> -->
+                <a href="http://www.globaltimes.com.cn" target="_blank" title="环球时报" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-global-times.jpg"></a>
+                <a href="http://g.58.com/j-glauckland/" target="_blank" title="58同城奥克兰站"><img alt="58同城奥克兰站" src="http://www.skykiwi.com/home2011/images/link/logo-58.jpg"></a>
+                <!-- <a href="http://www.wanguo.co.nz" target="_blank" title="新西兰万国旅行社" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-wanguo.jpg" title="Link to wanguo.co.nz" /></a> -->
+
+                <a href="https://www.priceme.co.nz" target="_blank" title="PriceMe" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo_priceme.png" title="Link to Priceme.co.nz"></a>
+            </div>
+            <div id="footer">
+                <p><a href="http://em.skykiwi.com/aboutus.html" target="_blank" class="ico"> 关于天维</a> | <a href="http://em.skykiwi.com/english.html" target="_blank">About Us</a> | <a href="http://em.skykiwi.com/termsofuse.html" target="_blank">使用条款</a> | <a href="http://em.skykiwi.com/privacy.html" target="_blank">隐私声明</a> | <a href="http://em.skykiwi.com" target="_blank">广告服务</a> | <a href="http://em.skykiwi.com/contactus.html" target="_blank">联系我们</a> | <a href="http://em.skykiwi.com/aboutus_join.html" target="_blank">招贤纳士</a> | <a href="http://bbs.skykiwi.com/member.php?mod=regsky.php" target="_blank">会员注册</a></p>
+                <p><span>©&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
             </div>
         </div>
     </div>
