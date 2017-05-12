@@ -340,17 +340,15 @@ body {
     line-height: 25px;
 }
 
-.list-group-generalitem {
-    overflow:hidden;
-    line-height:26px
-}
-
 .list-group-item {
     background: url(/image/newstag4_07.png) 2px 7px no-repeat;
     padding-left: 20px;
     letter-spacing: 1px;
 }
-
+.list-group-item-noimage {
+    padding-left: 20px;
+    letter-spacing: 1px;
+}
 .list-news-item {
     padding-top: 16px;
     margin-left: 3px;
@@ -448,6 +446,7 @@ body {
 }
 .lvyou-list-ul {
     float: left;
+    margin-top: 8px;
     text-align: center;
     padding-bottom:10px
 }
