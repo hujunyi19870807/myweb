@@ -4,21 +4,58 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="style.css" rel="stylesheet" />
-    <script src="jquery-1.12.4.min.js"></script>
-    <script src="http://www.skykiwi.com/home2011/js/FocusPic.js"></script>
+    <link href="FocusPic-v1.0.css" rel="stylesheet" />
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="FocusPic-v1.0.js"></script>
     <script type="text/javascript">
 
         $(function () {
+            //初始化幻灯片 begin
+            $('#flash0').slideBox({
+                duration: 0.3,
+                easing: 'swing',
+                delay: 5,
+                hideClickBar: false,
+                clickBarRadius: 10,
+                width: 625,
+                height: 300
+            });
+
+            $('#flash1').slideBox({
+                duration: 0.3,
+                easing: 'swing',
+                delay: 5,
+                hideClickBar: false,
+                clickBarRadius: 10,
+                width: 300,
+                height: 400
+            });
+
+            $('#flash2').slideBox({
+                duration: 0.3,
+                easing: 'swing',
+                delay: 5,
+                hideClickBar: false,
+                clickBarRadius: 10,
+                width: 300,
+                height: 270
+            });
+
+            //初始化幻灯片 end
+
             $(".tab-left-double").find("div .caijin-title-span").each(function (e) {
                 $(this).children().first().click();
             });
+
         });
 
         function initTabClass(obj, colorName, index) {
             var controlIndex = $(obj).attr("controlindex");
             $(obj).css("color", colorName);
+            $(obj).addClass("active-tit-a");
             $(obj).siblings().each(function () {
                 $(this).css("color", "#6b6b6b");
+                $(this).removeClass("active-tit-a");
             });
             $(obj).parent().siblings().each(function () {
                 $(this).children().each(function () {
@@ -131,7 +168,7 @@
                 </ul>
                 <div class="sky-phone">
                     <div class="sky-phone-left">
-                        <img src="image/tianweiphone_03.png" />
+                        <img src="image/tianweiphone_03_02.png" />
                     </div>
                     <div class="sky-phone-right">
                         <img src="image/erweima.png" />
@@ -149,30 +186,190 @@
             </div>
         </div>
 
-        <div class="rightdiv" style="">
+        <div class="rightdiv">
             <div class="topbanner"></div>
             <div class="topbannermiddle">
                 <img src="image/bannnernew002_06.jpg" />
             </div>
             <div>
                 <div class="rightdivchid1">
-                    <div id="flash"></div>
-                    <script src="http://www.skykiwi.com/home2011/js/FocusPic.js"></script>
-                    <script type="text/javascript">
-                        FocusPic.FocusObj = 'flash';
-                        FocusPic.Width = 625;
-                        FocusPic.Height = 300;
-                        FocusPic.Pics = 'http://www.skykiwi.com/d/file/news/world/gj/sh/2014-07-21/47e7983e7c9eab076763182e9209262a.jpg|http://www.skykiwi.com/d/file/money/realestate/2014-07-16/eadbdcd26934f0887bb79fe0d4977510.jpg|http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/22a6bdee97efd18dbbe7327fb8f84893.jpg|http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/9c4cd2671d1637792ad35096a452a812.jpg|http://www.skykiwi.com/d/file/news/world/gj/kj/2014-07-21/b006f4c15d4167eb630bf6f8c31e81d1.jpg';
-                        FocusPic.Titles = '快来看！萤火虫集体交配 上演震撼灯光秀|Albany梅西旁新高级公寓 乐享3分钟优尚生活圈|大妈争抢免费物品 现场工作台被掀翻|小猫被用开水烫死高空丢下 或是一大学生所为|别再用平板电脑拍照了：看起来二极了？';
-                        FocusPic.Links = 'http://news.skykiwi.com/world/gj/sh/2014-07-21/182921.shtml|http://money.skykiwi.com/realestate/2014-07-16/182695.shtml|http://news.skykiwi.com/world/dl/sh/2014-07-21/182923.shtml|http://news.skykiwi.com/world/dl/sh/2014-07-21/182920.shtml|http://news.skykiwi.com/world/gj/kj/2014-07-21/182918.shtml';
-                        FocusPic.init();
-                    </script>
-                    <div style="margin-top:80px; width:625px;height:29px;color:white;line-height:29px; background:url(/image/hotnews_bg.png)">
+
+                    <div id="flash0" class="slideBox">
+                        <ul class="items">
+                            <li><a href="https://google.com" title="这里是测试标题一"><img src="http://www.skykiwi.com/d/file/news/world/gj/sh/2014-07-21/47e7983e7c9eab076763182e9209262a.jpg"></a></li>
+                            <li><a href="https://baidu.com" title="这里是测试标题二"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/9c4cd2671d1637792ad35096a452a812.jpg"></a></li>
+                            <li><a href="https//yahoo.cn" title="这里是测试标题三"><img src="http://www.skykiwi.com/d/file/money/realestate/2014-07-16/eadbdcd26934f0887bb79fe0d4977510.jpg"></a></li>
+                            <li><a href="http://www.skykiwi.com/" title="这里是测试标题四"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/22a6bdee97efd18dbbe7327fb8f84893.jpg"></a></li>
+                            <li><a href="http://bbs.skykiwi.com" title="这里是测试标题五"><img src="http://www.skykiwi.com/d/file/news/world/gj/kj/2014-07-21/b006f4c15d4167eb630bf6f8c31e81d1.jpg"></a></li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top:20px; width:625px;height:29px;color:white;line-height:29px; background:url(/image/hotnews_bg.png)">
                         <span style="margin-left:15px">HOT 突发新闻</span><span style="float:right;text-align:center;width:80%">为今年大选全力开路？工党副党魁宣布退位让贤</span>
                     </div>
                     <div style="height:27px;width:100%; margin-top:20px">
-                        <span style="margin-left:15px;font-size:18px"><label style="color:black">天维</label><label style="color:#ef7f13">新闻</label></span>
-                        <span class="sky-more-style">更多>></span>
+                        <span style="margin-left:15px;font-size:18px;border-left:2px solid #ef7f13"><label style="color:black">天维</label><label style="color:#ef7f13">新闻</label></span>
+                        <a href="##" class="sky-more-style" style="color:#ef7f13">更多>></a>
+                    </div>
+
+                    <div class="list-news-item">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div class="list-news-item">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div class="list-news-item">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div class="list-news-item">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+
+                    <div>
+                        <img width="625" height="80" alt="" src="image/banner4.png" />
+                    </div>
+
+                    <div class="list-news-item" style="border-top:0px !important">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div class="list-news-item">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div class="list-news-item">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div class="list-news-item">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div>
+                        <img width="625" height="80" alt="" src="image/banner4.png" />
+                    </div>
+
+                    <div class="list-news-item" style="border-top:0px !important">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div class="list-news-item">
+                        <div class="list-news-item-float"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-float">
+                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-float-bottom">
+                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">国际新闻</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
                     </div>
 
                     <div class="list-news-item">
@@ -183,163 +380,7 @@
                                 <div><span>2017年4月20日15：00pm</span></div>
                                 <div style="margin-top:5px">
                                     <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div style="height:80px;">
-                        <img width="625" alt="" src="image/banner4.png" />
-                    </div>
-                    <div class="list-news-item" style="border-top: 0px">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div style="height:80px;">
-                        <img width="625" alt="" src="image/banner4.png">
-                    </div>
-                    <div class="list-news-item" style="border-top: 0px;">
-                        <div style="width:160px;float:left"><img src="image/listitem.png"></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
-                        <div style="float:left;">
-                            <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div style="font-size:12px;padding-top:30px">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span style="margin-left:20px">突发事件</span><span style="margin-left:20px">圣彼得堡</span><span style="margin-left:20px">爆炸案</span>
+                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
                                 </div>
                             </div>
                         </div>
@@ -368,11 +409,11 @@
                     </div>
                     <div style="clear:both">
                     </div>
-                    <div style="width:300px;height:250px">
-                        <img src="image/bannerright1.jpg" />
+                    <div>
+                        <img width="300" height="250" src="image/bannerright1.jpg" />
                     </div>
-                    <div style="width:300px;height:auto;border-top: 1px solid #ccc;border-bottom:1px solid #ccc;padding-left:0px;padding-bottom:15px">
-                        <ul class="list-group-generalitem">
+                    <div class="news-general-list">
+                        <ul>
                             <li>柳岩素颜惨不忍睹 美女主播卸妆后对比惊人</li>
                             <li>柳岩素颜惨不忍睹 美女主播卸妆后对比惊人</li>
                             <li>柳岩素颜惨不忍睹 美女主播卸妆后对比惊人</li>
@@ -383,14 +424,14 @@
                         </ul>
                     </div>
 
-                    <div style="height:30px;background-color:black;line-height:28px;margin-top:15px">
-                        <span style="width:100px; color:white; padding-left:10px">天维视频</span>
-                        <span class="sky-more-style">更多>></span>
+                    <div class="sky-video-right">
+                        <span class="sky-video-right-title">天维视频</span>
+                        <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div>
                         <iframe width="300" height="193" src="https://www.youtube.com/embed/b4yDRpc4q04" frameborder="0" allowfullscreen=""></iframe>
                     </div>
-                    <div style="height:46px;font-size:13px;vertical-align:middle;line-height:44px;font-weight:bold">
+                    <div class="sky-video-right-small-title">
                         新西兰加点糖】暖心 | 在新西兰，我们这样过年
                     </div>
                     <div class="bannerlist">
@@ -411,43 +452,45 @@
                             </dd>
                         </dl>
                     </div>
-                    <div style="height:380px;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;line-height:20px; padding-top:20px">
-                        <table>
-                            <tr>
-                                <td rowspan="2"><img src="image/wanguo.jpg" /></td>
-                                <td style="font-size:14px;font-weight:bold">万国20周年,各种邮轮惊喜特价</td>
-                            </tr>
-                            <tr>
-                                <td style="font-size:12px">万国20周年,各种邮轮惊喜万国20周年,各种邮轮惊喜特价</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="image/wanguo.jpg" /></td>
-                                <td style="font-size:14px;font-weight:bold">万国20周年,各种邮轮惊喜特价</td>
-                            </tr>
-                            <tr>
-                                <td style="font-size:12px">万国20周年,各种邮轮惊喜万国20周年,各种邮轮惊喜特价</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="image/wanguo.jpg" /></td>
-                                <td style="font-size:14px;font-weight:bold">万国20周年,各种邮轮惊喜特价</td>
-                            </tr>
-                            <tr>
-                                <td style="font-size:12px">万国20周年,各种邮轮惊喜万国20周年,各种邮轮惊喜特价</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2"><img src="image/wanguo.jpg" /></td>
-                                <td style="font-size:14px;font-weight:bold">万国20周年,各种邮轮惊喜特价</td>
-                            </tr>
-                            <tr>
-                                <td style="font-size:12px">万国20周年,各种邮轮惊喜万国20周年,各种邮轮惊喜特价</td>
-                            </tr>
-                        </table>
+
+                    <div class="clearfix banner-table">
+                        <ul class="clearfix" style="margin-top:-1px">
+                            <li>
+                                <img src="image/wanguo.jpg">
+                                <span class="banner-table-right">
+                                    <span class="banner-table-right-tit">万国 20 周年,各种邮轮惊喜!</span>
+                                    <span class="banner-table-right-text">万国旅行社在大家的大力支持下，今年成立二十周年啦！</span>
+                                </span>
+                                </li>
+                            <li>
+                                <img src="image/wanguo.jpg">
+                                <span class="banner-table-right">
+                                    <span class="banner-table-right-tit">万国 20 周年,各种邮轮惊喜!</span>
+                                    <span class="banner-table-right-text">万国旅行社在大家的大力支持下，今年成立二十周年啦！</span>
+                                </span>
+                            </li>
+                            <li>
+                                <img src="image/wanguo.jpg">
+                                <span class="banner-table-right">
+                                    <span class="banner-table-right-tit">万国 20 周年,各种邮轮惊喜!</span>
+                                    <span class="banner-table-right-text">万国旅行社在大家的大力支持下，今年成立二十周年啦！</span>
+                                </span>
+                            </li>
+                            <li>
+                                <img src="image/wanguo.jpg">
+                                <span class="banner-table-right">
+                                    <span class="banner-table-right-tit">万国 20 周年,各种邮轮惊喜!</span>
+                                    <span class="banner-table-right-text">万国旅行社在大家的大力支持下，今年成立二十周年啦！</span>
+                                </span>
+                            </li>
+                        </ul>
                     </div>
-                    <div style="height:30px;line-height:28px;border-top: 2px solid #ef7f13;border-bottom: 1px solid #ccc; margin-top:15px">
+
+                    <div class="hot-search-title">
                         <span style="font-size:18px;padding-left:10px"><label style="color:gray">HOT</label><label style="color:#ef7f13;">热搜榜</label></span>
-                        <span class="sky-more-style" style="color:#7f7f7f">更多>></span>
+                        <a href="##" class="sky-more-style" style="color:#7f7f7f">更多>></a>
                     </div>
-                    <div style="border-bottom: 1px solid #ccc;padding-bottom:10px">
+                    <div class="news-general-list" style="border-top:0px !important">
                         <ul>
                             <li class="list-group-item" style="background:url(/image/newstag1_07.png) 2px 7px no-repeat;padding-left: 20px;">柳颜惨不忍睹 美女主播卸妆后对比惊人</li>
                             <li class="list-group-item" style="background:url(/image/newstag2_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆比惊人</li>
@@ -460,8 +503,8 @@
                             <li class="list-group-item">柳岩素颜惨不忍睹 美女主播卸妆</li>
                         </ul>
                     </div>
-                    <div>
-                        <iframe src="http://ads.mcmnz.com/JINYUAN-RATE/" width="300" height="163" scrolling="no" frameborder="0"></iframe>
+                    <div style="margin-top:20px;border:1px solid #898989;height:150px">
+                        <iframe src="http://ads.mcmnz.com/JINYUAN-RATE/" width="298" scrolling="no" frameborder="0"></iframe>
                     </div>
 
                 </div>
@@ -471,17 +514,17 @@
                 <img src="image/banner0008_03.jpg" />
             </div>
             <div class="tab-left-double">
-                <div style="float:left;overflow:hidden;padding-bottom:16px;padding-top:16px">
+                <div class="tab-left-double-top">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',1)">在售房源</span>
-                        <span class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',2)">拍卖结果</span>
+                        <!--<span class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',2)">拍卖结果</span>-->
                     </div>
                     <div style="margin-top:13px">
                         <div controlindex="1"><img src="image/fangyuan_07.jpg" /></div>
                         <div controlindex="2" style="display:none"></div>
                     </div>
                 </div>
-                <div style="float:left; margin-left:20px; width:300px; overflow:hidden;padding-bottom:16px;padding-top:16px">
+                <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',1)">纽澳财经</span>
                         <span controlindex="2" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',2)">投资热门</span>
@@ -592,22 +635,22 @@
                     <img width="625" alt="" src="image/banner4.png">
                 </div>
                 <!--生活 旅游 begin-->
-                <script src="http://www.skykiwi.com/home2011/js/FocusPic.js"></script>
-                <div id="flash1" style="float:left;padding-top:16px"></div>
-                <script type="text/javascript">
-                    FocusPic.FocusObj = 'flash1';
-                    FocusPic.Width = 300;
-                    FocusPic.Height = 400;
-                    FocusPic.Pics = 'http://www.skykiwi.com/d/file/news/world/gj/sh/2014-07-21/47e7983e7c9eab076763182e9209262a.jpg|http://www.skykiwi.com/d/file/money/realestate/2014-07-16/eadbdcd26934f0887bb79fe0d4977510.jpg|http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/22a6bdee97efd18dbbe7327fb8f84893.jpg|http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/9c4cd2671d1637792ad35096a452a812.jpg|http://www.skykiwi.com/d/file/news/world/gj/kj/2014-07-21/b006f4c15d4167eb630bf6f8c31e81d1.jpg';
-                    FocusPic.Titles = '快来看！萤火虫集体交配 上演震撼灯光秀|Albany梅西旁新高级公寓 乐享3分钟优尚生活圈|大妈争抢免费物品 现场工作台被掀翻|小猫被用开水烫死高空丢下 或是一大学生所为|别再用平板电脑拍照了：看起来二极了？';
-                    FocusPic.Links = 'http://news.skykiwi.com/world/gj/sh/2014-07-21/182921.shtml|http://money.skykiwi.com/realestate/2014-07-16/182695.shtml|http://news.skykiwi.com/world/dl/sh/2014-07-21/182923.shtml|http://news.skykiwi.com/world/dl/sh/2014-07-21/182920.shtml|http://news.skykiwi.com/world/gj/kj/2014-07-21/182918.shtml';
-                    FocusPic.init();
-                </script>
-                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;padding-top:16px">
+                <div id="flash1" class="slideBox" style="float:left;padding-top:15px;">
+                    <ul class="items">
+                        <li><a href="https://google.com" title="这里是测试标题一"><img src="http://www.skykiwi.com/d/file/news/world/gj/sh/2014-07-21/47e7983e7c9eab076763182e9209262a.jpg"></a></li>
+                        <li><a href="https://baidu.com" title="这里是测试标题二"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/9c4cd2671d1637792ad35096a452a812.jpg"></a></li>
+                        <li><a href="https//yahoo.cn" title="这里是测试标题三"><img src="http://www.skykiwi.com/d/file/money/realestate/2014-07-16/eadbdcd26934f0887bb79fe0d4977510.jpg"></a></li>
+                        <li><a href="http://www.skykiwi.com/" title="这里是测试标题四"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/22a6bdee97efd18dbbe7327fb8f84893.jpg"></a></li>
+                        <li><a href="http://bbs.skykiwi.com" title="这里是测试标题五"><img src="http://www.skykiwi.com/d/file/news/world/gj/kj/2014-07-21/b006f4c15d4167eb630bf6f8c31e81d1.jpg"></a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
-                        <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#ff96ac',1)">生活</span>
-                        <span controlindex="2" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#ff96ac',2)">旅游</span>
-                        <span class="sky-more-style">更多>></span>
+                        <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)">生活</span>
+                        <span controlindex="2" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',2)">旅游</span>
+                        <!--<span class="sky-more-style">更多>></span>-->
+                        <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div style="margin-top:10px">
                         <div class="caijin-span" controlindex="1">
@@ -724,29 +767,29 @@
                 </div>
                 <!--生活 旅游  end-->
                 <!--特价 时尚 美食 begin-->
-                <div style="float:left;width:300px; overflow:hidden;padding-top:16px">
+                <div class="tab-left-double-top">
                     <div class="caijin-title-span">
-                        <span controlindex="1" class="caijin-span-tit active-tit-a" style="color:#ff96ac">特价</span>
+                        <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)" style="color:#ff96ac;">特价</span>
                     </div>
                     <div style="margin-top:10px">
-                        <div class="caijin-span">
+                        <div class="caijin-span" controlindex="1">
                             <div>
-                                <ul>
-                                    <li style="background:url(/image/shishang_07.png) no-repeat"></li>
-                                    <li style="background:url(/image/shishang_07.png) no-repeat"></li>
-                                    <li style="background:url(/image/shishang_07.png) no-repeat"></li>
-                                    <li style="background:url(/image/shishang_07.png) no-repeat"></li>
+                                <ul class="caijin-span-tejia">
+                                    <li><img src="image/shishang_07.png" /></li>
+                                    <li><img src="image/tejia-001.png" /></li>
+                                    <li><img src="image/tejia-002.png" /></li>
+                                    <li><img src="image/shishang_07.png" /></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;padding-top:16px;">
+                <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
-                        <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#ff96ac',1)">时尚</span>
-                        <span controlindex="2" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#ff96ac',2)">美食</span>
-                        <span class="sky-more-style">更多>></span>
+                        <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)">时尚</span>
+                        <span controlindex="2" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',2)">美食</span>
+                        <!--<span class="sky-more-style">更多>></span>-->
+                        <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div style="margin-top:10px">
                         <div class="caijin-span" controlindex="1">
@@ -819,24 +862,31 @@
                 </div>
                 <!--特价时尚美食 end-->
                 <!--广告 begin-->
-                <div style="float:left;width:300px; overflow:hidden; margin-top:5px">
+                <div class="tab-left-double-banner">
                     <img style="width:300px;height:100px" src="image/tejia.png" />
                 </div>
-                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;margin-top:5px">
+                <div class="tab-left-double-banner" style="margin-left:20px;">
                     <img style="width:300px;height:100px" src="image/00025.png" />
                 </div>
                 <!--广告 end-->
                 <!--天维专题  begin-->
-                <div style="float:left;width:300px; overflow:hidden; margin-top:15px">
-
+                <div id="flash2" class="slideBox" style="float:left;padding-top:15px;">
+                    <ul class="items">
+                        <li><a href="https://google.com" title="这里是测试标题一"><img src="http://www.skykiwi.com/d/file/news/world/gj/sh/2014-07-21/47e7983e7c9eab076763182e9209262a.jpg"></a></li>
+                        <li><a href="https://baidu.com" title="这里是测试标题二"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/9c4cd2671d1637792ad35096a452a812.jpg"></a></li>
+                        <li><a href="https//yahoo.cn" title="这里是测试标题三"><img src="http://www.skykiwi.com/d/file/money/realestate/2014-07-16/eadbdcd26934f0887bb79fe0d4977510.jpg"></a></li>
+                        <li><a href="http://www.skykiwi.com/" title="这里是测试标题四"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/22a6bdee97efd18dbbe7327fb8f84893.jpg"></a></li>
+                        <li><a href="http://bbs.skykiwi.com" title="这里是测试标题五"><img src="http://www.skykiwi.com/d/file/news/world/gj/kj/2014-07-21/b006f4c15d4167eb630bf6f8c31e81d1.jpg"></a></li>
+                    </ul>
                 </div>
-                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;margin-top:15px">
+                <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
-                        <span class="caijin-span-tit active-tit-a" style="color:#f5842b">天维专题</span>
-                        <span class="sky-more-style" style="color:#7f7f7f">更多>></span>
+                        <span controlindex="1" class="caijin-span-tit active-tit-azhaunti" onclick="initTabClass(this, '#f5842b', 1)" style="color:#f5842b">天维专题</span>
+                        <!--<span class="sky-more-style" style="color:#7f7f7f">更多>></span>-->
+                        <a href="##" class="sky-more-style">更多>></a>
                     </div>
-                    <div style="margin-top:5px">
-                        <div class="caijin-span">
+                    <div style="margin-top:10px">
+                        <div class="caijin-span" controlindex="1">
                             <div style="text-align:left">
                                 <div style="font-size:16px;color:#293e73;">投资移民政策也变！土豪有钱？先翻你一番再说！</div>
                                 <div style="font-size:12px; margin-top:10px">
@@ -857,13 +907,14 @@
                 </div>
                 <!--天维专题 end-->
                 <!--留学移民 专栏 begin-->
-                <div style="float:left;width:300px; overflow:hidden; margin-top:15px">
+                <div class="tab-left-double-top">
                     <div class="caijin-title-span">
-                        <span class="caijin-span-tit active-tit-a" style="color:#458f50">留学移民</span>
-                        <span class="sky-more-style" style="color:#7f7f7f">更多>></span>
+                        <span controlindex="1" class="caijin-span-tit active-tit-aliuxue" onclick="initTabClass(this, '#458f50', 1)" style="color:#458f50">留学移民</span>
+                        <!--<span class="sky-more-style" style="color:#7f7f7f">更多>></span>-->
+                        <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div style="margin-top:9px">
-                        <div class="caijin-span">
+                        <div class="caijin-span" controlindex="1">
                             <div style="text-align:left;">
                                 <div style="float:left"><img src="image/liuxueyiming.png" /></div>
                                 <div style="float:left;width:145px;margin-left:10px">
@@ -882,12 +933,12 @@
                         </div>
                     </div>
                 </div>
-                <div style="float:left;margin-left:20px; width:300px; overflow:hidden;margin-top:15px">
+                <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
-                        <span class="caijin-span-tit active-tit-a" style="color:#663781">专栏</span>
+                        <span controlindex="1" class="caijin-span-tit active-tit-azhuanlan" onclick="initTabClass(this, '#663781', 1)" style="color:#663781">专栏</span>
                     </div>
                     <div style="margin-top:9px">
-                        <div class="caijin-span">
+                        <div class="caijin-span" controlindex="1">
                             <div style="text-align:left">
                                 <div style="float:left"><img src="image/zhuanlan.png" /></div>
                                 <div style="float:left;width:187px;margin-left:10px">
@@ -904,14 +955,14 @@
                 <!--留学移民 专栏end-->
             </div>
             <div class="activity-right">
-                <div class="caijin-title-span" style="padding-top:16px">
-                    <a class="caijin-span-tit active-tit-a" style="color:#f5842b" href="javascript:void(0)">活动</a>
+                <div class="hot-search-title" style="margin-top:8px !important">
+                    <a class="caijin-span-tit" style="color:#f5842b" href="javascript:void(0)">活动</a>
                 </div>
-                <div style="margin-top:20px;height:120px;">
+                <div style="margin-top:13px;height:120px;">
                     <div style="float:left;">
                         <img src="image/huodong2_03.png" />
                     </div>
-                    <div style="float:left;width:137px; margin: -12px 0 0 16px;">
+                    <div style="float:left;width:137px; margin: 0px 0 0 14px;">
                         <span class="activity-right-tit" style="color:#f5842b;">文化中国 四海同春</span>
                         <p>
                             为庆祝2017年中国鸡年和元宵节的到来，由中华人民共和国国务院侨务办公室， 中国海外交流协会主办...
@@ -922,7 +973,7 @@
                     <div style="float:left;">
                         <img src="image/huodong2_03.png" />
                     </div>
-                    <div style="float:left;width:137px; margin: -12px 0 0 16px;">
+                    <div style="float:left;width:137px; margin: 0px 0 0 14px;">
                         <span class="activity-right-tit" style="color:#f5842b;">文化中国 四海同春</span>
                         <p>
                             为庆祝2017年中国鸡年和元宵节的到来，由中华人民共和国国务院侨务办公室， 中国海外交流协会主办...
@@ -935,7 +986,7 @@
                 <div style="width:300px;height:250px; margin:20px 0">
                     <img src="image/guanggao-009_03.jpg">
                 </div>
-                <div style="height:30px;line-height:30px;border-top: 2px solid #ef7f13;border-bottom: 1px solid #ccc;margin:20px 0">
+                <div class="tianwei-right-tab">
                     <span style="font-size:18px;padding-left:10px">天维福利.团购</span>
                     <span class="sky-more-style" style="color:#7f7f7f"></span>
                 </div>
@@ -943,7 +994,7 @@
                     <img style="height:405px;width:285px" src="image/tuangou.png" />
                 </div>
                 <div style="text-align:center"><img style="height:250px;width:300px" src="image/guanggao008.png" /></div>
-                <div style="height:30px;line-height:30px;border-top: 2px solid #ef7f13;border-bottom: 1px solid #ccc; margin:20px 0">
+                <div class="tianwei-right-tab" >
                     <span style="font-size:18px;padding-left:10px">天维橙页VIP商家</span>
                     <span class="sky-more-style" style="color:#7f7f7f"></span>
                 </div>
@@ -965,41 +1016,45 @@
                 </div>
             </div>
             <div style="clear:both;"></div>
-            <div style="margin:20px 0;height:80px">
-                <img src="image/guangao007.png" />
+            <div style="margin:5px 0;">
+                <img height="80" width="948" src="image/guangao007.png" />
             </div>
             <div style="margin:20px 0;height:105px;display:inline">
                 <div class="sky-left-logo" style="float:left"><img src="image/skykiwi.png"></div>
                 <div style="float:left"><img src="image/skykiwi-contract.png"></div>
-                <div style="float:left">
+                <div class="foot-banner-nav" style="float:left">
                     <ul style="overflow:hidden;display:block">
                         <li>
-                            广告首页
+                            <a href="###">广告首页</a>
                         </li>
                         <li>
-                            宣传方案
+                            <a href="###">宣传方案</a>
                         </li>
                         <li>
-                            广告图示
+                            <a href="###">广告图示</a>
                         </li>
                         <li>
-                            报价下载
+                            <a href="###">报价下载</a>
                         </li>
                         <li>
-                            成功案例
+                            <a href="###">成功案例</a>
                         </li>
                         <li>
-                            常识须知
+                            <a href="###">常识须知</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot-banner-nav-s">
+                    <ul>
+                        <li>
+                            <a href="###">关于天维</a>
+                        </li>
+                        <li>
+                            <a href="###">联系我们</a>
                         </li>
                     </ul>
                 </div>
 
-                <div style="float:left">
-                    <ul>
-                        <li>关于天维</li>
-                        <li>联系我们</li>
-                    </ul>
-                </div>
             </div>
             <div style="clear:both;"></div>
             <div id="part3">

@@ -156,20 +156,20 @@ body {
     padding-bottom: 20px;
     border-bottom: 1px solid #b8b8b8;
 }
-.sky-phone > .sky-phone-left {
-    width: 107px;
-    overflow: hidden;
-    float: left;
-}
+
+    .sky-phone > .sky-phone-left {
+        width: 107px;
+        overflow: hidden;
+        float: left;
+    }
 
     .sky-phone > .sky-phone-right {
         float: right;
-
     }
 
-        .sky-phone > .sky-phone-right > img {
-            width: 60px;
-        }
+    .sky-phone > .sky-phone-right > img {
+        width: 60px;
+    }
 
 .sky-video {
     overflow: hidden;
@@ -281,7 +281,7 @@ body {
     }
 
 .bannerlist {
-    height: 150px;
+    height: 140px;
 }
 
     .bannerlist dl {
@@ -314,7 +314,7 @@ body {
 .rightdivchid1 {
     width: 625px;
     float: left;
-    height:auto;
+    height: auto;
 }
 
 .rightdivchid2 {
@@ -345,10 +345,12 @@ body {
     padding-left: 20px;
     letter-spacing: 1px;
 }
+
 .list-group-item-noimage {
     padding-left: 20px;
     letter-spacing: 1px;
 }
+
 .list-news-item {
     padding-top: 16px;
     margin-left: 3px;
@@ -356,39 +358,56 @@ body {
     padding-bottom: 14px;
 }
 
+    .list-news-item > .list-news-item-float {
+        float: left;
+    }
+
+        .list-news-item > .list-news-item-float > .list-news-item-float-bottom {
+            font-size: 12px;
+            padding-top: 30px;
+        }
+
+        .list-news-item > .list-news-item-float img {
+            margin-right: 20px;
+        }
+
+.list-news-item-word {
+    margin-left: 20px;
+}
+
 .news-list-mindle ul {
     width: 100%;
     margin-top: 15px;
-    font-size:14px;
+    font-size: 14px;
 }
 
 .news-list-mindle li {
-    
     float: left;
     display: block;
-    padding-top:5px;
+    padding-top: 5px;
     letter-spacing: 1px;
 }
 
 .span1 {
     font-size: 18px;
     border-top: 2px solid #ccc;
-    margin-top:10px;
-    width:105px;
+    margin-top: 10px;
+    width: 105px;
 }
+
 .span2 {
     font-size: 18px;
     margin-top: 10px;
     width: 105px;
-    padding-left:20px;
+    padding-left: 20px;
 }
 
 .caijin-span1 {
-    
     border-top: 2px solid #ccc;
     margin-top: 10px;
     width: 105px;
 }
+
 .caijin-title-span {
     font-size: 18px;
     letter-spacing: 2px;
@@ -396,6 +415,12 @@ body {
     border-bottom: 1px solid #b7b7b7;
 }
 
+.caijin-title-spanexpend {
+    font-size: 18px;
+    letter-spacing: 2px;
+    height: 30px;
+    border-bottom: 1px solid #b7b7b7;
+}
 /* 以上内容是左侧导航栏样式 */
 
 
@@ -404,65 +429,113 @@ body {
 /* 以下内容是主页部分内容 */
 
 
-.caijin-span-tit{
+.caijin-span-tit {
     display: inline-block;
     text-decoration: none;
     color: #6b6b6b;
     font-size: 18px;
-    padding:0 10px;
+    padding: 0 10px;
 }
-.active-tit-a{
-    /*color: #075490 !important;*/
+
+.active-tit-a {
     position: relative;
-    cursor:pointer;
+    cursor: pointer;
 }
-.active-tit-a:before{
+
+    .active-tit-a:before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 2px;
+        background: #035b99;
+        position: absolute;
+        top: 0px;
+        left: 0;
+    }
+
+.active-tit-ashenghuo:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #ff96ac;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.active-tit-azhaunti:before {
     content: "";
     display: block;
     width: 100px;
     height: 2px;
-    background: #035b99;
+    background: #f5842b;
     position: absolute;
     top: 0px;
-    left: 0;
+    left: 0px;
+}
+.active-tit-aliuxue:before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: #458f50;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.active-tit-azhuanlan:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #663781;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
-
-
-.activity-right{
-    float:left;
-    margin-left:15px;
+.activity-right {
+    float: left;
+    margin-left: 15px;
     width: 299px;
 }
 
-.activity-right-tit{
-    display: block;
-    margin:0 0 10px 15px;
+.activity-right-tit {
+    margin-top: 10px;
+    text-align: left;
 }
+
 .tab-left-double {
     overflow: hidden;
     width: 630px;
     float: left;
 }
+
 .lvyou-list-ul {
     float: left;
     margin-top: 8px;
     text-align: center;
-    padding-bottom:10px
+    padding-bottom: 10px;
 }
+
 .shishang-list-dl {
     color: #ff96ac;
     margin-top: 8px;
     text-align: left;
 }
+
 .sky-more-style {
     width: 80px;
     float: right;
     color: white;
     text-align: right;
-    padding-right: 10px;
-    font-size:14px;
+    font-size: 14px;
+    color: #ef7f13;
+    text-decoration: none;
+    color: #fff;
 }
+
 .caijin-span li {
     list-style: none;
     font-size: 14px;
@@ -522,10 +595,10 @@ body {
     width: 950px;
 }
 
-#footer .ico {
-    background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
-    padding-left: 15px;
-}
+    #footer .ico {
+        background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
+        padding-left: 15px;
+    }
 
 .copyright {
     font-family: Arial;
@@ -544,85 +617,168 @@ body {
     font-size: 12px;
     width: 180px;
 }
+
 .mg15 {
-    margin-top:12px;
+    margin-top: 12px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 底部广告导航 */
+.foot-banner-nav {
+    float: left;
+    width: 300px;
+    height: 60px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+    .foot-banner-nav > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 10px;
+    }
+
+        .foot-banner-nav > ul > li {
+            float: left;
+            margin: 0 14px 17px;
+        }
+
+            .foot-banner-nav > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #444545;
+            }
+
+.foot-banner-nav-s {
+    float: left;
+    width: 110px;
+    height: 60px;
+    overflow: hidden;
+}
+
+    .foot-banner-nav-s > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 13px;
+    }
+
+        .foot-banner-nav-s > ul > li {
+            /*margin: left;*/
+            margin: 0 14px 15px;
+        }
+
+            .foot-banner-nav-s > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #f5842b;
+            }
+
+.news-general-list {
+    width: 300px;
+    height: auto;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-left: 0px;
+    margin-top: 10px;
+    padding-bottom:10px;
+}
+.sky-video-right {
+    height:30px;
+    background-color:black;
+    line-height:28px;
+    margin-top:15px
+}
+.sky-video-right-title {
+    width:100px; 
+    padding-left:10px;
+    color: white;
+}
+.sky-video-right-small-title{
+height:38px;font-size:13px;vertical-align:middle;line-height:38px;font-weight:bold
+}
+.hot-search-title {
+    height:30px;
+    line-height:28px;
+    border-top: 2px solid #ef7f13;
+    border-bottom: 1px solid #ccc; 
+    margin-top:15px
+}
+
+/* 表格样式 */
+.banner-table{
+    border-top: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+.banner-table > ul{
+    width: 300px;
+}
+
+.banner-table > ul > li{
+    height: 82px;
+    margin: 15px 0;
+}
+
+.banner-table > ul > li > img{
+    width: 125px;
+    height: 75px;
+    overflow: hidden;
+    float: left;
+    vertical-align: top;
+    border: 1px solid #999;
+}
+
+.banner-table > ul > li > .banner-table-right{
+    width: 156px;
+    height: 78px;
+    float: left;
+    margin-left: 17px;
+    vertical-align: top;
+}
+.banner-table > ul > li > .banner-table-right > .banner-table-right-tit{
+    color: #080808;
+    font-size: 14px;
+    display: block;
+    line-height: 1.25;
+}
+.banner-table > ul > li > .banner-table-right > .banner-table-right-text{
+    color: #4d4e4d;
+    font-size: 12px;
+    display: block;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+.tab-left-double-top {
+    float:left;
+    width:300px;
+    overflow:hidden;
+    padding:10px 0;
+}
+
+.tab-left-double-banner {
+    float:left;
+    width:300px;
+    overflow:hidden;
+}
+.caijin-span-tejia {
+    overflow: hidden;
+}
+.caijin-span-tejia li{
+    float:left;
+    height:150px;
+}
+.caijin-span-tejia > li:nth-child(2),
+.caijin-span-tejia > li:nth-child(4)
+{
+    margin-left:20px;
+}
+.caijin-span-tejia > li:nth-child(1),
+.caijin-span-tejia > li:nth-child(2)
+{
+    margin-top:8px;
+    margin-bottom:45px;
+}
+.tianwei-right-tab {
+height:30px;
+line-height:30px;
+border-top: 2px solid #ef7f13;
+border-bottom: 1px solid #ccc;
+margin:20px 0
+}
