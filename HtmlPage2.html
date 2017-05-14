@@ -45,7 +45,6 @@
 
             $(".tab-left-double").find("div .caijin-title-span").each(function (e) {
                 $(this).find("span").eq(0).click();
-                //alert($(this).find("span").eq(0).html());
             });
 
         });
@@ -75,6 +74,12 @@
                     }
                 });
             });
+        }
+        function previousItem() {
+            alert('上一个');
+        }
+        function nextItem() {
+            alert('下一个');
         }
     </script>
 </head>
@@ -215,19 +220,19 @@
                     <div class="sky-hotnews-title">
                         <span style="margin-left:15px">HOT 突发新闻</span>
                         <div style="float:right;text-align:center;width:80%">
-                            <span style="float:left;margin-left:50px;">
-                                为今年大选全力开路？工党副党魁宣布退位让贤
-                            </span>
-                            <span style="display:block;width:20px;height:29px;float:right; padding-top:4px;">
-                                <img style="height:9px;width:14px;display:block;" src="image/wir-top.png" />
-                                <img style="height:9px;width:14px;display:block; margin-top:5px;" src="image/wir-bot.png" />
+                            <dl style="float:left;margin-left:50px;">
+                                <dd>为今年大选全力开路？工党副党魁宣布退位让贤</dd>
+                            </dl>
+                            <span style="display:block;width:20px;height:29px;float:right;">
+                                <a class="sky-hotnews-addpre" style="margin-top:-8px" id="pre_opage">▲</a>
+                                <a class="sky-hotnews-addpre" style="margin-top:4px;" id="next_opage">▼</a>
                             </span>
                         </div>
                     </div>
 
                     <div class="sky-news-title">
-                        <span style="font-size:18px;"><label style="color:black;padding-left:10px">天维</label><label style="color:#ef7f13">新闻</label></span>
-                        <a href="##" class="sky-more-style" style="color:#ef7f13">更多>></a>
+                        <span style="font-size:18px;"><label style="color:black;padding-left:10px">天维</label><label style="color:#f17142">新闻</label></span>
+                        <a href="##" class="sky-more-style" style="color:#f17142">更多>></a>
                     </div>
 
                     <div class="list-news-item">
@@ -505,7 +510,7 @@
                     </div>
 
                     <div class="hot-search-title">
-                        <span style="font-size:18px;padding-left:10px"><label style="color:gray">HOT</label><label style="color:#ef7f13;">热搜榜</label></span>
+                        <span style="font-size:18px;padding-left:10px"><label style="color:gray">HOT</label><label style="color:#f17142;">热搜榜</label></span>
                         <a href="##" class="sky-more-style" style="color:#7f7f7f">更多>></a>
                     </div>
                     <div class="news-general-list" style="border-top:0px !important">
@@ -787,6 +792,10 @@
                 <div class="tab-left-double-top">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)" style="color:#ff96ac;">特价</span>
+                        <span style="width:40px;float:right; height:30px;">
+                            <a class="sky-hotnews-addpre" style="color:#ff96ac;display:inline-block;" id="pre_opage">◀</a>
+                            <a class="sky-hotnews-addpre" style="color:#ff96ac;display:inline-block;" id="next_opage">▶</a>
+                        </span>
                     </div>
                     <div style="margin-top:10px">
                         <div class="caijin-span" controlindex="1">
@@ -1010,7 +1019,10 @@
                 <div style="text-align:center"><img style="height:250px;width:300px" src="image/guanggao008.png" /></div>
                 <div class="tianwei-right-tab" >
                     <span style="font-size:18px;padding-left:10px">天维橙页VIP商家</span>
-                    <span class="sky-more-style" style="color:#7f7f7f"></span>
+                    <div style="display:inline;width:40px;float:right;">
+                        <a class="sky-hotnews-addpre" style="display:inline-block;color:#f17142" id="pre_opage">▲</a>
+                        <a class="sky-hotnews-addpre" style="display:inline-block;color:#f17142" id="next_opage">▼</a>
+                    </div>
                 </div>
                 <div>
                     <ul style="line-height:26px;overflow:hidden">
