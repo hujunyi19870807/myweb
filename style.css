@@ -16,18 +16,19 @@ body {
     *zoom: 1;
 }
 
-    .clearfix:before,
-    .clearfix:after {
-        display: table;
-        line-height: 0;
-        content: "";
-    }
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
 
 .sky-left-nav {
     width: 208px;
     background: #676566;
     float: left;
     position: fixed;
+    z-index:1;
 }
 
     .sky-left-nav > .sky-left-logo {
@@ -51,6 +52,7 @@ body {
         .sky-left-nav > .sky-left-box > .sky-left-ul {
             color: #fff;
             border-bottom: 1px solid #b8b8b8;
+            line-height:15px;
         }
 
             .sky-left-nav > .sky-left-box > .sky-left-ul > li {
@@ -73,17 +75,18 @@ body {
     .sky-nav-index > .sky-nav-tit {
         color: #f17142;
         display: block;
-        margin: 25px 0 20px;
+        margin: 10px 0 10px;
     }
 
     .sky-nav-index > .sky-nav-ul {
         overflow: hidden;
         border-bottom: 1px solid #b8b8b8;
+        line-height:15px;
     }
 
         .sky-nav-index > .sky-nav-ul > li {
             float: left;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
             .sky-nav-index > .sky-nav-ul > li > a {
@@ -108,12 +111,13 @@ body {
 
 .sky-share {
     overflow: hidden;
-    margin-top: 19px;
+    margin-top: 15px;
+    line-height:15px;
 }
 
     .sky-share li {
         overflow: hidden;
-        margin-bottom: 15px;
+        margin-bottom: 8px;
     }
 
         .sky-share li .ky-share-box {
@@ -135,25 +139,31 @@ body {
             }
 
 .sky-share-img-a {
-    background: url(image/tianweiwang_03.png) -5px 0 no-repeat;
+    background: url(image/skykiwiapplist.png) -1px 0 no-repeat;
 }
 
 .sky-share-img-b {
-    background: url(image/tianweiwang_03.png) -38px 0 no-repeat;
+    background: url(image/skykiwiapplist.png) -33px 0 no-repeat;
 }
 
 .sky-share-img-c {
-    background: url(image/tianweiwang_03.png) -72px 0 no-repeat;
+    background: url(image/skykiwiapplist.png) -67px 0 no-repeat;
 }
 
 .sky-share-img-d {
-    background: url(image/tianweiwang_03.png) -106px 0 no-repeat;
+    background: url(image/skykiwiapplist.png) -101px 0 no-repeat;
 }
 
+.sky-share-img-e {
+    background: url(image/skykiwishopapplist.png) -106px 0 no-repeat;
+}
+.sky-share-img-f {
+    background: url(image/skykiwishopapplist.png) -106px 0 no-repeat;
+}
 
 .sky-phone {
     overflow: hidden;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #b8b8b8;
 }
 
