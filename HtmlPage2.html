@@ -44,19 +44,27 @@
             //初始化幻灯片 end
 
             $(".tab-left-double").find("div .caijin-title-span").each(function (e) {
-                $(this).children().first().click();
+                $(this).find("span").eq(0).click();
+                //alert($(this).find("span").eq(0).html());
             });
 
         });
-
+        var tabChangeList = ["美食", "旅游", "生活", "时尚"];
         function initTabClass(obj, colorName, index) {
             var controlIndex = $(obj).attr("controlindex");
             $(obj).css("color", colorName);
             $(obj).addClass("active-tit-a");
+
+            if (tabChangeList.indexOf($(obj).html())>-1) {
+                $(obj).addClass("active-tit-ashenghuo");
+            }
+            
+            //100002571312
             $(obj).siblings().each(function () {
                 $(this).css("color", "#6b6b6b");
-                $(this).removeClass("active-tit-a");
+                $(this).removeClass("active-tit-a").removeClass("active-tit-ashenghuo");
             });
+
             $(obj).parent().siblings().each(function () {
                 $(this).children().each(function () {
                     if ($(this).attr("controlIndex") == controlIndex) {
@@ -204,11 +212,21 @@
                         </ul>
                     </div>
 
-                    <div style="margin-top:20px; width:625px;height:29px;color:white;line-height:29px; background:url(/image/hotnews_bg.png)">
-                        <span style="margin-left:15px">HOT 突发新闻</span><span style="float:right;text-align:center;width:80%">为今年大选全力开路？工党副党魁宣布退位让贤</span>
+                    <div class="sky-hotnews-title">
+                        <span style="margin-left:15px">HOT 突发新闻</span>
+                        <div style="float:right;text-align:center;width:80%">
+                            <span style="float:left;margin-left:50px;">
+                                为今年大选全力开路？工党副党魁宣布退位让贤
+                            </span>
+                            <span style="display:block;width:20px;height:29px;float:right; padding-top:4px;">
+                                <img style="height:9px;width:14px;display:block;" src="image/wir-top.png" />
+                                <img style="height:9px;width:14px;display:block; margin-top:5px;" src="image/wir-bot.png" />
+                            </span>
+                        </div>
                     </div>
-                    <div style="height:27px;width:100%; margin-top:20px">
-                        <span style="margin-left:15px;font-size:18px;border-left:2px solid #ef7f13"><label style="color:black">天维</label><label style="color:#ef7f13">新闻</label></span>
+
+                    <div class="sky-news-title">
+                        <span style="font-size:18px;"><label style="color:black;padding-left:10px">天维</label><label style="color:#ef7f13">新闻</label></span>
                         <a href="##" class="sky-more-style" style="color:#ef7f13">更多>></a>
                     </div>
 
@@ -257,7 +275,7 @@
                         <div style="clear:both">
                         </div>
                     </div>
-                    <div class="list-news-item">
+                    <div class="list-news-item" style="border-bottom:0px !important">
                         <div class="list-news-item-float"><img src="image/listitem.png" /></div>
                         <div class="list-news-item-float">
                             <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
@@ -322,7 +340,7 @@
                         <div style="clear:both">
                         </div>
                     </div>
-                    <div class="list-news-item">
+                    <div class="list-news-item" style="border-bottom:0px !important">
                         <div class="list-news-item-float"><img src="image/listitem.png" /></div>
                         <div class="list-news-item-float">
                             <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
@@ -372,7 +390,7 @@
                         </div>
                     </div>
 
-                    <div class="list-news-item">
+                    <div class="list-news-item" style="border-bottom:0px !important">
                         <div style="width:160px;float:left"><img src="image/listitem.png" /></div>
                         <div style="float:left;">
                             <div style="font-size:18px">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
@@ -526,8 +544,8 @@
                 </div>
                 <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
-                        <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',1)">纽澳财经</span>
-                        <span controlindex="2" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',2)">投资热门</span>
+                        <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#075490',1)">纽澳财经</span>
+                        <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#075490',2)">投资热门</span>
                     </div>
                     <div style="margin-top:13px;">
                         <div class="caijin-span" controlindex="1">
@@ -647,9 +665,8 @@
 
                 <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
-                        <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)">生活</span>
-                        <span controlindex="2" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',2)">旅游</span>
-                        <!--<span class="sky-more-style">更多>></span>-->
+                        <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#ff96ac',1)">生活</span>
+                        <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#ff96ac',2)">旅游</span>
                         <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div style="margin-top:10px">
@@ -786,9 +803,8 @@
                 </div>
                 <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
-                        <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)">时尚</span>
-                        <span controlindex="2" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',2)">美食</span>
-                        <!--<span class="sky-more-style">更多>></span>-->
+                        <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#ff96ac',1)">时尚</span>
+                        <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#ff96ac',2)">美食</span>
                         <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div style="margin-top:10px">
@@ -882,7 +898,6 @@
                 <div class="tab-left-double-top" style="margin-left:20px;">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-azhaunti" onclick="initTabClass(this, '#f5842b', 1)" style="color:#f5842b">天维专题</span>
-                        <!--<span class="sky-more-style" style="color:#7f7f7f">更多>></span>-->
                         <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div style="margin-top:10px">
@@ -910,7 +925,6 @@
                 <div class="tab-left-double-top">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-aliuxue" onclick="initTabClass(this, '#458f50', 1)" style="color:#458f50">留学移民</span>
-                        <!--<span class="sky-more-style" style="color:#7f7f7f">更多>></span>-->
                         <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div style="margin-top:9px">
