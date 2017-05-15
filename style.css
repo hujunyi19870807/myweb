@@ -16,19 +16,18 @@ body {
     *zoom: 1;
 }
 
-.clearfix:before,
-.clearfix:after {
-    display: table;
-    line-height: 0;
-    content: "";
-}
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
 
 .sky-left-nav {
     width: 208px;
     background: #676566;
     float: left;
     position: fixed;
-    z-index:1;
 }
 
     .sky-left-nav > .sky-left-logo {
@@ -52,7 +51,6 @@ body {
         .sky-left-nav > .sky-left-box > .sky-left-ul {
             color: #fff;
             border-bottom: 1px solid #b8b8b8;
-            line-height:15px;
         }
 
             .sky-left-nav > .sky-left-box > .sky-left-ul > li {
@@ -75,18 +73,17 @@ body {
     .sky-nav-index > .sky-nav-tit {
         color: #f17142;
         display: block;
-        margin: 10px 0 10px;
+        margin: 25px 0 20px;
     }
 
     .sky-nav-index > .sky-nav-ul {
         overflow: hidden;
         border-bottom: 1px solid #b8b8b8;
-        line-height:15px;
     }
 
         .sky-nav-index > .sky-nav-ul > li {
             float: left;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
             .sky-nav-index > .sky-nav-ul > li > a {
@@ -111,13 +108,12 @@ body {
 
 .sky-share {
     overflow: hidden;
-    margin-top: 15px;
-    line-height:15px;
+    margin-top: 19px;
 }
 
     .sky-share li {
         overflow: hidden;
-        margin-bottom: 8px;
+        margin-bottom: 15px;
     }
 
         .sky-share li .ky-share-box {
@@ -139,31 +135,25 @@ body {
             }
 
 .sky-share-img-a {
-    background: url(image/skykiwiapplist.png) -1px 0 no-repeat;
+    background: url(image/tianweiwang_03.png) -5px 0 no-repeat;
 }
 
 .sky-share-img-b {
-    background: url(image/skykiwiapplist.png) -33px 0 no-repeat;
+    background: url(image/tianweiwang_03.png) -38px 0 no-repeat;
 }
 
 .sky-share-img-c {
-    background: url(image/skykiwiapplist.png) -67px 0 no-repeat;
+    background: url(image/tianweiwang_03.png) -72px 0 no-repeat;
 }
 
 .sky-share-img-d {
-    background: url(image/skykiwiapplist.png) -101px 0 no-repeat;
+    background: url(image/tianweiwang_03.png) -106px 0 no-repeat;
 }
 
-.sky-share-img-e {
-    background: url(image/skykiwishopapplist.png) -106px 0 no-repeat;
-}
-.sky-share-img-f {
-    background: url(image/skykiwishopapplist.png) -106px 0 no-repeat;
-}
 
 .sky-phone {
     overflow: hidden;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #b8b8b8;
 }
 
@@ -368,22 +358,18 @@ body {
     padding-bottom: 14px;
 }
 
-    .list-news-item > .list-news-item-l {
+    .list-news-item > .list-news-item-float {
         float: left;
     }
-     .list-news-item > .list-news-item-r {
-        float: left;
-    }
-    .list-news-item > .list-news-item-r > .list-news-item-r-bottom {
-        font-size: 12px;
-        padding-top: 30px;
-    }
 
-    .list-news-item > .list-news-item-l img {
-        margin-right: 20px;
-    }
+        .list-news-item > .list-news-item-float > .list-news-item-float-bottom {
+            font-size: 12px;
+            padding-top: 30px;
+        }
 
-
+        .list-news-item > .list-news-item-float img {
+            margin-right: 20px;
+        }
 
 .list-news-item-word {
     margin-left: 20px;
@@ -513,7 +499,6 @@ body {
     float: left;
     margin-left: 15px;
     width: 299px;
-    padding:10px 0;
 }
 
 .activity-right-tit {
@@ -533,20 +518,12 @@ body {
     text-align: center;
     padding-bottom: 10px;
 }
-    .lvyou-list-ul img {
-        width: 140px;
-        height: 80px
-    }
-.lvyou-list-ul-line {
-    border-bottom: 1px dashed #b7b7b7;
+
+.shishang-list-dl {
+    color: #ff96ac;
     margin-top: 8px;
-    margin-bottom: 8px;
+    text-align: left;
 }
-    .shishang-list-dl {
-        color: #ff96ac;
-        margin-top: 8px;
-        text-align: left;
-    }
 
 .sky-more-style {
     width: 80px;
@@ -662,10 +639,6 @@ body {
     overflow: hidden;
     margin-left: 20px;
 }
-    .foot-banner-nav ul {
-        overflow: hidden;
-        display: block
-    }
 
     .foot-banner-nav > ul {
         border-left: 1px dashed #959595;
@@ -715,17 +688,6 @@ body {
     margin-top: 10px;
     padding-bottom:10px;
 }
-.list-group-item-line {
-    border-bottom: 1px dashed #b7b7b7;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height:1px !important;
-}
-.sky-jinyuanjinrong {
-    margin-top: 20px;
-    border: 1px solid #898989;
-    height: 150px;
-}
 .sky-video-right {
     height:30px;
     background-color:black;
@@ -747,16 +709,7 @@ height:38px;font-size:13px;vertical-align:middle;line-height:38px;font-weight:bo
     border-bottom: 1px solid #ccc; 
     margin-top:15px
 }
-    .hot-search-title span {
-        font-size: 18px;
-        padding-left: 10px;
-    }
-    .hot-search-title-label1 {
-        color: gray;
-    }
-.hot-search-title-label2 {
-    color: #f17142;
-}
+
 /* 表格样式 */
 .banner-table{
     border-top: 1px solid #c2c2c2;
@@ -801,19 +754,13 @@ height:38px;font-size:13px;vertical-align:middle;line-height:38px;font-weight:bo
     line-height: 1.5;
     margin-top: 10px;
 }
-.tab-left-double-div1 {
+.tab-left-double-top {
     float:left;
     width:300px;
     overflow:hidden;
     padding:10px 0;
 }
-.tab-left-double-div2 {
-    float: left;
-    width: 300px;
-    overflow: hidden;
-    padding: 10px 0;
-    margin-left:20px;
-}
+
 .tab-left-double-banner {
     float:left;
     width:300px;
@@ -842,7 +789,7 @@ height:30px;
 line-height:30px;
 border-top: 2px solid #f17142;
 border-bottom: 1px solid #ccc;
-margin:15px 0
+margin:20px 0
 }
 
 .caijin-title-span > a {
@@ -854,25 +801,15 @@ margin:15px 0
     color: #f17142;
 }
 
-.sky-news {
-    height:25px;
-    width:100%; 
-    margin-top:15px;
-    margin-bottom:0px;
-    border-left:2px solid #f17142;
-    border-bottom: 1px solid #ccc;
+.sky-news-title {
+height:25px;
+width:100%; 
+margin-top:15px;
+margin-bottom:0px;
+border-left:2px solid #f17142;
+border-bottom: 1px solid #ccc;
 }
-    .sky-news span {
-        font-size: 18px;
-    }
-.sky-news-a {
-    color: black;
-    padding-left: 10px
-}
-.sky-news-color {
-    color: #f17142;
-}
-.sky-hot-news {
+.sky-hotnews-title {
 margin-top:20px; 
 width:625px;
 height:29px;
@@ -880,185 +817,9 @@ color:white;
 line-height:29px;
  background:url(/image/hotnews_bg.png)
 }
-.sky-hot-news-title {
-    margin-left: 15px;
-}
-.sky-hot-news-context {
-    float: right;
-    text-align: center;
-    width: 80%;
-}
-    .sky-hot-news-context dl {
-        float: left;
-        margin-left: 50px;
-    }
-    .sky-hot-news-context span {
-        display: block;
-        width: 20px;
-        height: 29px;
-        float: right;
-    }
-.sky-hot-news-context-pre {
-    height: 9px;
-    width: 14px;
-    display: block;
-    cursor: pointer;
-    margin-top: -8px
-}
-.sky-hot-news-context-next {
-    height: 9px;
-    width: 14px;
-    display: block;
-    cursor: pointer;
-    margin-top: 4px;
-}
-
-.border {
-    border: 1px solid #898989;
-}
-.sky-font18 {
-    font-size: 18px
-}
-
-.sky-margintop10 {
-    margin-top: 10px;
-}
 .sky-hotnews-addpre {
-    height: 9px;
-    width: 14px;
-    display: block;
-    cursor: pointer;
-}
-.sky-liuxueyimin {
-    float: left;
-    width: 145px;
-    margin-left: 10px
-}
-    .sky-liuxueyimin dl dd {
-        color: #458f50;
-        margin-bottom: 10px
-    }
-.sky-liuxueyimin-list {
-    margin-top: 10px;
-    display: list-item;
-}
-.sky-floatL {
-    float: left;
-}
-.sky-floatR {
-    float: right;
-    width:185px;
-}
-.sky-tejia-span2 {
-    width: 40px;
-    float: right;
-    height: 30px;
-}
-.sky-tejia-updown {
-    height: 9px;
-    width: 14px;
-    display: block;
-    cursor: pointer;
-    color: #ff96ac;
-    display: inline-block;
-}
-.sky-shishang {
-    float: left;
-    display: block;
-}
-.sky-shishang-img1 {
-    width: 300px;
-    height: 190px;
-}
-.sky-zhuanti-title {
-    font-size: 16px;
-    color: #293e73;
-}
-.sky-zhuanti-content {
-    font-size: 12px;
-    margin-top: 10px
-}
-.sky-zhuanti-list {
-    margin-top: 10px;
-    display: list-item
-}
-    .sky-ul-list1 {
-        background: url(/image/newstag4_07.png) 2px 7px no-repeat;
-        padding-left: 20px;
-        letter-spacing: 1px;
-    }
-.sky-zhuanlan-author {
-    margin-bottom: 10px
-}
-.sky-zhuanlan-title {
-    color: #653780;
-    margin-bottom: 10px;
-}
-.sky-zhuanlan-content {
-    font-size: 12px
-}
-.sky-activity-title {
-    font-size: 18px;
-    /*letter-spacing: 1px;*/
-    height: 30px;
-    border-bottom: 1px solid #b7b7b7;
-    border-top: 2px solid #f17142;
-    padding-left: 10px;
-    color: #f5842b;
-}
-.sky-activity-info {
-    margin-top: 10px;
-    height: 120px;
-}
-.sky-activity-info-div2 {
-    float: left;
-    width: 137px;
-    margin-left:10px
-}
-    .sky-activity-info-div2 span {
-        color: #f5842b;
-        text-align: left;
-        margin-top:0px;
-        margin-bottom:10px
-    }
-.tianwei-right-tab span {
-    font-size: 18px;
-    padding-left: 10px;
-}
-.sky-vip {
-    width: 40px;
-    float: right;
-}
-    .sky-vip a {
-        height: 9px;
-        width: 14px;
-        cursor: pointer;
-        display: inline-block;
-        color: #f17142
-    }
-.sky-vip-list {
-    line-height: 26px;
-    overflow: hidden;
-}
-.sky-info {
-    margin: 20px 0;
-    height: 105px;
-    display: inline
-}
-.sky-banner {
-    margin: 20px 0;
-}
-.sky-caijing {
-    float: left;
-    margin-top: 10px;
-}
-.sky-caijing-info {
-    float: left;
-    margin-left: 10px;
-    width: 160px;
-}
-.sky-caijing-info-title {
-    font-size: 16px;
-    color: #256091;
-    display: inline
+    height:9px;
+    width:14px;
+    display:block;
+    cursor:pointer;
 }
