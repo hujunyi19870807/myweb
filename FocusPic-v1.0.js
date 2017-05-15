@@ -37,8 +37,8 @@
             ul.find('li:eq(' + settings.startIndex + ')').addClass('active');
 
             if (!settings.hideBottomBar) {//ADD.JENA.201208090859
-                var tips = $('<div class="tips"></div>').css('opacity', 0.6).appendTo(wrapper);
-                var title = $('<div class="title"></div>').html(function () {
+                var tips = $('<div class="tips"></div>').appendTo(wrapper);
+                var title = $('<div class="title" style="opacity: 0.5;"></div>').html(function () {
                     var active = ul.find('li.active').find('a'), text = active.attr('title'), href = active.attr('href');
                     return $('<a>').attr('href', href).text(text);
                 }).appendTo(tips);
