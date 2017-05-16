@@ -16,19 +16,19 @@ body {
     *zoom: 1;
 }
 
-    .clearfix:before,
-    .clearfix:after {
-        display: table;
-        line-height: 0;
-        content: "";
-    }
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
 
 .sky-left-nav {
     width: 208px;
     background: #676566;
     float: left;
     position: fixed;
-    z-index: 1;
+    z-index:1;
 }
 
     .sky-left-nav > .sky-left-logo {
@@ -52,7 +52,7 @@ body {
         .sky-left-nav > .sky-left-box > .sky-left-ul {
             color: #fff;
             border-bottom: 1px solid #b8b8b8;
-            line-height: 15px;
+            line-height:15px;
         }
 
             .sky-left-nav > .sky-left-box > .sky-left-ul > li {
@@ -81,7 +81,7 @@ body {
     .sky-nav-index > .sky-nav-ul {
         overflow: hidden;
         border-bottom: 1px solid #b8b8b8;
-        line-height: 15px;
+        line-height:15px;
     }
 
         .sky-nav-index > .sky-nav-ul > li {
@@ -112,7 +112,7 @@ body {
 .sky-share {
     overflow: hidden;
     margin-top: 15px;
-    line-height: 15px;
+    line-height:15px;
 }
 
     .sky-share li {
@@ -139,27 +139,26 @@ body {
             }
 
 .sky-share-img-a {
-    background: url(image/skykiwiapplist.png) -1px 0 no-repeat;
+    background: url(/image/skykiwiapplist.png) -1px 0 no-repeat;
 }
 
 .sky-share-img-b {
-    background: url(image/skykiwiapplist.png) -33px 0 no-repeat;
+    background: url(/image/skykiwiapplist.png) -33px 0 no-repeat;
 }
 
 .sky-share-img-c {
-    background: url(image/skykiwiapplist.png) -67px 0 no-repeat;
+    background: url(/image/skykiwiapplist.png) -67px 0 no-repeat;
 }
 
 .sky-share-img-d {
-    background: url(image/skykiwiapplist.png) -101px 0 no-repeat;
+    background: url(/image/skykiwiapplist.png) -101px 0 no-repeat;
 }
 
 .sky-share-img-e {
-    background: url(image/skykiwishopapplist.png) -106px 0 no-repeat;
+    background: url(/image/skykiwishopapplist.png) -106px 0 no-repeat;
 }
-
 .sky-share-img-f {
-    background: url(image/skykiwishopapplist.png) -106px 0 no-repeat;
+    background: url(/image/skykiwishopapplist.png) -106px 0 no-repeat;
 }
 
 .sky-phone {
@@ -178,9 +177,9 @@ body {
         float: right;
     }
 
-        .sky-phone > .sky-phone-right > img {
-            width: 60px;
-        }
+    .sky-phone > .sky-phone-right > img {
+        width: 60px;
+    }
 
 .sky-video {
     overflow: hidden;
@@ -313,7 +312,7 @@ body {
     width: 100%;
     height: 90px;
     border: 0px;
-    background-image: url(image/bannernew01_03.jpg);
+    background-image: url(/image/bannernew01_03.jpg);
 }
 
 .topbannermiddle {
@@ -372,15 +371,13 @@ body {
     .list-news-item > .list-news-item-l {
         float: left;
     }
-
-    .list-news-item > .list-news-item-r {
+     .list-news-item > .list-news-item-r {
         float: left;
     }
-
-        .list-news-item > .list-news-item-r > .list-news-item-r-bottom {
-            font-size: 12px;
-            padding-top: 30px;
-        }
+    .list-news-item > .list-news-item-r > .list-news-item-r-bottom {
+        font-size: 12px;
+        padding-top: 30px;
+    }
 
     .list-news-item > .list-news-item-l img {
         margin-right: 20px;
@@ -491,7 +488,6 @@ body {
     top: 0px;
     left: 0px;
 }
-
 .active-tit-aliuxue:before {
     content: "";
     display: block;
@@ -502,7 +498,6 @@ body {
     top: 0px;
     left: 0px;
 }
-
 .active-tit-azhuanlan:before {
     content: "";
     display: block;
@@ -518,7 +513,7 @@ body {
     float: left;
     margin-left: 15px;
     width: 299px;
-    padding: 10px 0;
+    padding:10px 0;
 }
 
 .activity-right-tit {
@@ -538,23 +533,20 @@ body {
     text-align: center;
     padding-bottom: 10px;
 }
-
     .lvyou-list-ul img {
         width: 140px;
         height: 80px
     }
-
 .lvyou-list-ul-line {
     border-bottom: 1px dashed #b7b7b7;
     margin-top: 8px;
     margin-bottom: 8px;
 }
-
-.shishang-list-dl {
-    color: #ff96ac;
-    margin-top: 8px;
-    text-align: left;
-}
+    .shishang-list-dl {
+        color: #ff96ac;
+        margin-top: 8px;
+        text-align: left;
+    }
 
 .sky-more-style {
     width: 80px;
@@ -601,9 +593,9 @@ body {
         cursor: pointer;
     }
 
-        .links a:hover {
-            border-color: #CCC;
-        }
+    .links a:hover {
+        border-color: #CCC;
+    }
 
     .links img {
         max-width: 96px;
@@ -624,19 +616,18 @@ body {
     text-decoration: none;
 }
 
-    #footer > p > a {
-        text-decoration: none;
-        color: #6b6b6b;
-    }
+#footer > p > a {
+   text-decoration: none;
+   color: #6b6b6b;
+}
+#footer > p > a:hover {
+   color: #f17142;
+}
 
-        #footer > p > a:hover {
-            color: #f17142;
-        }
-
-    #footer .ico {
-        background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
-        padding-left: 15px;
-    }
+#footer .ico {
+    background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
+    padding-left: 15px;
+}
 
 .copyright {
     font-family: Arial;
@@ -654,13 +645,13 @@ body {
     margin: 0px 0px 0px 15px;
     font-size: 12px;
     width: 180px;
-    vertical-align: bottom;
+    vertical-align:bottom;
 }
 
 .mg15 {
     margin-top: 16px;
-    margin-left: 32px;
-    vertical-align: bottom; /*地步对其*/
+    margin-left:32px;
+    vertical-align:bottom;/*地步对其*/
 }
 
 /* 底部广告导航 */
@@ -671,7 +662,6 @@ body {
     overflow: hidden;
     margin-left: 20px;
 }
-
     .foot-banner-nav ul {
         overflow: hidden;
         display: block
@@ -723,157 +713,136 @@ body {
     border-bottom: 1px solid #ccc;
     padding-left: 0px;
     margin-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom:10px;
 }
-
 .list-group-item-line {
     border-bottom: 1px dashed #b7b7b7;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 1px !important;
+    height:1px !important;
 }
-
 .sky-jinyuanjinrong {
     margin-top: 20px;
     border: 1px solid #898989;
     height: 150px;
 }
-
 .sky-video-right {
-    height: 30px;
-    background-color: black;
-    line-height: 28px;
-    margin-top: 15px
+    height:30px;
+    background-color:black;
+    line-height:28px;
+    margin-top:15px
 }
-
 .sky-video-right-title {
-    width: 100px;
-    padding-left: 10px;
+    width:100px; 
+    padding-left:10px;
     color: white;
 }
-
-.sky-video-right-small-title {
-    height: 38px;
-    font-size: 13px;
-    vertical-align: middle;
-    line-height: 38px;
-    font-weight: bold
+.sky-video-right-small-title{
+height:38px;font-size:13px;vertical-align:middle;line-height:38px;font-weight:bold
 }
-
 .hot-search-title {
-    height: 30px;
-    line-height: 28px;
+    height:30px;
+    line-height:28px;
     border-top: 2px solid #f17142;
-    border-bottom: 1px solid #ccc;
-    margin-top: 15px
+    border-bottom: 1px solid #ccc; 
+    margin-top:15px
 }
-
     .hot-search-title span {
         font-size: 18px;
         padding-left: 10px;
     }
-
-.hot-search-title-label1 {
-    color: gray;
-}
-
+    .hot-search-title-label1 {
+        color: gray;
+    }
 .hot-search-title-label2 {
     color: #f17142;
 }
 /* 表格样式 */
-.banner-table {
+.banner-table{
     border-top: 1px solid #c2c2c2;
     border-bottom: 1px solid #c2c2c2;
 }
 
-    .banner-table > ul {
-        width: 300px;
-    }
+.banner-table > ul{
+    width: 300px;
+}
 
-        .banner-table > ul > li {
-            height: 82px;
-            margin: 15px 0;
-        }
+.banner-table > ul > li{
+    height: 82px;
+    margin: 15px 0;
+}
 
-            .banner-table > ul > li > img {
-                width: 125px;
-                height: 75px;
-                overflow: hidden;
-                float: left;
-                vertical-align: top;
-                border: 1px solid #999;
-            }
+.banner-table > ul > li > img{
+    width: 125px;
+    height: 75px;
+    overflow: hidden;
+    float: left;
+    vertical-align: top;
+    border: 1px solid #999;
+}
 
-            .banner-table > ul > li > .banner-table-right {
-                width: 156px;
-                height: 78px;
-                float: left;
-                margin-left: 17px;
-                vertical-align: top;
-            }
-
-                .banner-table > ul > li > .banner-table-right > .banner-table-right-tit {
-                    color: #080808;
-                    font-size: 14px;
-                    display: block;
-                    line-height: 1.25;
-                }
-
-                .banner-table > ul > li > .banner-table-right > .banner-table-right-text {
-                    color: #4d4e4d;
-                    font-size: 12px;
-                    display: block;
-                    line-height: 1.5;
-                    margin-top: 10px;
-                }
-
+.banner-table > ul > li > .banner-table-right{
+    width: 156px;
+    height: 78px;
+    float: left;
+    margin-left: 17px;
+    vertical-align: top;
+}
+.banner-table > ul > li > .banner-table-right > .banner-table-right-tit{
+    color: #080808;
+    font-size: 14px;
+    display: block;
+    line-height: 1.25;
+}
+.banner-table > ul > li > .banner-table-right > .banner-table-right-text{
+    color: #4d4e4d;
+    font-size: 12px;
+    display: block;
+    line-height: 1.5;
+    margin-top: 10px;
+}
 .tab-left-double-div1 {
-    float: left;
-    width: 300px;
-    overflow: hidden;
-    padding: 10px 0;
+    float:left;
+    width:300px;
+    overflow:hidden;
+    padding:10px 0;
 }
-
 .tab-left-double-div2 {
-    float: left;
+    float: right;
     width: 300px;
     overflow: hidden;
     padding: 10px 0;
-    margin-left: 20px;
+    margin-left:20px;
 }
-
 .tab-left-double-banner {
-    float: left;
-    width: 300px;
-    overflow: hidden;
+    float:left;
+    width:300px;
+    overflow:hidden;
 }
-
 .caijin-span-tejia {
     overflow: hidden;
 }
-
-    .caijin-span-tejia li {
-        float: left;
-        height: 150px;
-    }
-
-    .caijin-span-tejia > li:nth-child(2),
-    .caijin-span-tejia > li:nth-child(4) {
-        margin-left: 20px;
-    }
-
-    .caijin-span-tejia > li:nth-child(1),
-    .caijin-span-tejia > li:nth-child(2) {
-        margin-top: 8px;
-        margin-bottom: 45px;
-    }
-
+.caijin-span-tejia li{
+    float:left;
+    height:150px;
+}
+.caijin-span-tejia > li:nth-child(2),
+.caijin-span-tejia > li:nth-child(4)
+{
+    margin-left:20px;
+}
+.caijin-span-tejia > li:nth-child(1),
+.caijin-span-tejia > li:nth-child(2)
+{
+    margin-top:8px;
+    margin-bottom:45px;
+}
 .tianwei-right-tab {
-    height: 30px;
-    line-height: 30px;
-    border-top: 2px solid #f17142;
-    border-bottom: 1px solid #ccc;
-    margin: 15px 0
+height:30px;
+line-height:30px;
+border-top: 2px solid #f17142;
+border-bottom: 1px solid #ccc;
+margin:15px 0
 }
 
 .caijin-title-span > a {
@@ -881,63 +850,54 @@ body {
     color: #fff;
 }
 
-    .caijin-title-span > a:hover {
-        color: #f17142;
-    }
-
-.sky-news {
-    height: 25px;
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 0px;
-    border-left: 2px solid #f17142;
-    border-bottom: 1px solid #ccc;
+.caijin-title-span> a:hover  {
+    color: #f17142;
 }
 
+.sky-news {
+    height:25px;
+    width:100%; 
+    margin-top:15px;
+    margin-bottom:0px;
+    border-left:2px solid #f17142;
+    border-bottom: 1px solid #ccc;
+}
     .sky-news span {
         font-size: 18px;
     }
-
 .sky-news-a {
     color: black;
     padding-left: 10px
 }
-
 .sky-news-color {
     color: #f17142;
 }
-
 .sky-hot-news {
-    margin-top: 20px;
-    width: 625px;
-    height: 29px;
-    color: white;
-    line-height: 29px;
-    background: url(/image/hotnews_bg.png)
+margin-top:20px; 
+width:625px;
+height:29px;
+color:white;
+line-height:29px;
+ background:url(/image/hotnews_bg.png)
 }
-
 .sky-hot-news-title {
     margin-left: 15px;
 }
-
 .sky-hot-news-context {
     float: right;
     text-align: center;
     width: 80%;
 }
-
     .sky-hot-news-context dl {
         float: left;
         margin-left: 50px;
     }
-
     .sky-hot-news-context span {
         display: block;
         width: 20px;
         height: 29px;
         float: right;
     }
-
 .sky-hot-news-context-pre {
     height: 9px;
     width: 14px;
@@ -945,7 +905,6 @@ body {
     cursor: pointer;
     margin-top: -8px
 }
-
 .sky-hot-news-context-next {
     height: 9px;
     width: 14px;
@@ -957,7 +916,6 @@ body {
 .border {
     border: 1px solid #898989;
 }
-
 .sky-font18 {
     font-size: 18px
 }
@@ -965,45 +923,37 @@ body {
 .sky-margintop10 {
     margin-top: 10px;
 }
-
 .sky-hotnews-addpre {
     height: 9px;
     width: 14px;
     display: block;
     cursor: pointer;
 }
-
 .sky-liuxueyimin {
     float: left;
     width: 145px;
     margin-left: 10px
 }
-
     .sky-liuxueyimin dl dd {
         color: #458f50;
         margin-bottom: 10px
     }
-
 .sky-liuxueyimin-list {
     margin-top: 10px;
     display: list-item;
 }
-
 .sky-floatL {
     float: left;
 }
-
 .sky-floatR {
     float: right;
-    width: 185px;
+    width:185px;
 }
-
 .sky-tejia-span2 {
     width: 40px;
     float: right;
     height: 30px;
 }
-
 .sky-tejia-updown {
     height: 9px;
     width: 14px;
@@ -1012,51 +962,41 @@ body {
     color: #ff96ac;
     display: inline-block;
 }
-
 .sky-shishang {
     float: left;
     display: block;
 }
-
 .sky-shishang-img1 {
     width: 300px;
     height: 190px;
 }
-
 .sky-zhuanti-title {
     font-size: 16px;
     color: #293e73;
 }
-
 .sky-zhuanti-content {
     font-size: 12px;
     margin-top: 10px
 }
-
 .sky-zhuanti-list {
     margin-top: 10px;
     display: list-item
 }
-
-.sky-ul-list1 {
-    background: url(/image/newstag4_07.png) 2px 7px no-repeat;
-    padding-left: 20px;
-    letter-spacing: 1px;
-}
-
+    .sky-ul-list1 {
+        background: url(/image/newstag4_07.png) 2px 7px no-repeat;
+        padding-left: 20px;
+        letter-spacing: 1px;
+    }
 .sky-zhuanlan-author {
     margin-bottom: 10px
 }
-
 .sky-zhuanlan-title {
     color: #653780;
     margin-bottom: 10px;
 }
-
 .sky-zhuanlan-content {
     font-size: 12px
 }
-
 .sky-activity-title {
     font-size: 18px;
     /*letter-spacing: 1px;*/
@@ -1066,35 +1006,29 @@ body {
     padding-left: 10px;
     color: #f5842b;
 }
-
 .sky-activity-info {
     margin-top: 10px;
     height: 120px;
 }
-
 .sky-activity-info-div2 {
     float: left;
     width: 137px;
-    margin-left: 10px
+    margin-left:10px
 }
-
     .sky-activity-info-div2 span {
         color: #f5842b;
         text-align: left;
-        margin-top: 0px;
-        margin-bottom: 10px
+        margin-top:0px;
+        margin-bottom:10px
     }
-
 .tianwei-right-tab span {
     font-size: 18px;
     padding-left: 10px;
 }
-
 .sky-vip {
     width: 40px;
     float: right;
 }
-
     .sky-vip a {
         height: 9px;
         width: 14px;
@@ -1102,33 +1036,27 @@ body {
         display: inline-block;
         color: #f17142
     }
-
 .sky-vip-list {
     line-height: 26px;
     overflow: hidden;
 }
-
 .sky-info {
     margin: 20px 0;
     height: 105px;
     display: inline
 }
-
 .sky-banner {
     margin: 20px 0;
 }
-
 .sky-caijing {
     float: left;
     margin-top: 10px;
 }
-
 .sky-caijing-info {
     float: left;
     margin-left: 10px;
     width: 160px;
 }
-
 .sky-caijing-info-title {
     font-size: 16px;
     color: #256091;
