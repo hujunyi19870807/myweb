@@ -4,7 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <title>天维首页新版</title>
-    <link href="http://cms6.skykiwi.com/css/index-20170701.css" rel="stylesheet" />
+
+    <link href="index-20170701.css" rel="stylesheet" />
     <link href="http://cms6.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://cms6.skykiwi.com/js/FocusPic-v1.0.js"></script>
@@ -71,7 +72,7 @@
                     }
                     return -1;
                 };
-            }  
+            }
 
 
             if (tabChangeList.indexOf($(obj).html()) > -1) {
@@ -93,6 +94,19 @@
                     }
                 });
             });
+        }
+        //function wechathome() { wechat_home.style.display = "block"; }
+        //function wechatgo() { wechat_go.style.display = "block"; }
+        //function wechatproperty() { wechat_property.style.display = "block"; }
+        //function wechattuangou() { wechat_soku.style.display = "block"; }
+        //function wechatmoney() { wechat_money.style.display = "block"; }
+        //function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
+        //document.onclick = hidden;
+        function wechathome() {
+            $("#wechathome").show();
+        }
+        function wechat_home() {
+
         }
     </script>
 </head>
@@ -160,17 +174,26 @@
                     <li>
                         <span class="ky-share-box">
                             <span class="text-col sky-share-tit">天维网</span>
-                            <i class="sky-share-img-a"><a target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博"></a></i>
-                            <i class="sky-share-img-b" title="关注我们的微信"><a class="weixin_home" href="javascript:wechathome()" title="关注我们的微信"></a></i>
-                            <i class="sky-share-img-c"><a target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书"></a></i>
-                            <i class="sky-share-img-d"><a target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特"></a></i>
+                            <a target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
+                                <i class="sky-share-img-a"></i>
+                            </a>
+                            <a class="weixin_home" href="javascript:wechathome();" title="关注我们的微信">
+                                <i class="sky-share-img-b" title="关注我们的微信"></i>
+                            </a>
+                            <label id="wechat_home"></label>
+                            <a target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书"><i class="sky-share-img-c"></i></a>
+                            <a target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特"><i class="sky-share-img-d"></i></a>
                         </span>
                     </li>
                     <li>
                         <span class="ky-share-box">
                             <span class="text-col sky-share-tit">导购</span>
-                            <i class="sky-share-img-a"><a class="blog_go" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博"></a></i>
-                            <i class="sky-share-img-b"><a class="weixin_go" href="javascript:wechatgo()" title="关注我们的导购微信"></a></i>
+                            <a class="blog_go" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
+                                <i class="sky-share-img-a"></i>
+                            </a>
+                            <a class="weixin_go" href="javascript:wechatgo()" title="关注我们的导购微信">
+                                <i class="sky-share-img-b"></i>
+                            </a>
                         </span>
                         <span class="ky-share-box" style="margin-left:12px;">
                             <span class="text-col sky-share-tit">生活</span>
@@ -180,11 +203,11 @@
                     <li>
                         <span class="ky-share-box">
                             <span class="text-col sky-share-tit">房地产</span>
-                            <i class="sky-share-img-b"><a class="weixin_property" href="javascript:wechatproperty()" title="关注我们的房产微信"></a></i>
+                            <a class="weixin_property" href="javascript:wechatproperty()" title="关注我们的房产微信"><i class="sky-share-img-b"></i></a>
                         </span>
                         <span class="ky-share-box" style="margin-left:10px;">
                             <span class="text-col sky-share-tit">微财经</span>
-                            <i class="sky-share-img-b"><a class="weixin_money" href="javascript:wechatmoney()" title="关注我们的财经微信"></a></i>
+                            <a class="weixin_money" href="javascript:wechatmoney()" title="关注我们的财经微信"><i class="sky-share-img-b"></i></a>
                         </span>
                     </li>
                 </ul>
@@ -243,7 +266,7 @@
                         <span style=""><label class="sky-news-a">天维</label><label class="sky-news-color">新闻</label></span>
                         <a href="##" class="sky-more-style sky-news-color">更多>></a>
                     </div>
-                    
+
                     [e:loop={'select classid, id, title, titlepic, newstime, smalltext from phome_ecms_news where havehtml=1 and checked=1 and classid in (4,5,7,8,9,49,161,67,110,111,112,166) order by newstime desc limit 0,4', 2, 24, 0}]
 
                     <div class="list-news-item">
@@ -263,7 +286,7 @@
                         <div style="clear:both">
                         </div>
                     </div>
-                    [/e:loop]  
+                    [/e:loop]
 
                     <div>
                         <img width="625" height="80" alt="" src="image/banner4.png" />

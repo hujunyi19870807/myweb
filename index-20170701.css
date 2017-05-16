@@ -131,7 +131,7 @@ body {
                 margin-right: 2px;
             }
 
-            .sky-share li .ky-share-box > i {
+            .sky-share li .ky-share-box i {
                 float: left;
                 display: block;
                 width: 31px;
@@ -1141,4 +1141,58 @@ body {
     font-size: 16px;
     color: #256091;
     display: inline
+}
+#wechat_home {
+    width: 125px;
+    height: 115px;
+    background: url(http://www.skykiwi.com/images/wechat_home.png);
+    position: absolute;
+    top: 0px;
+    left: 58px;
+    display: none;
+    z-index: 9999;
+}
+
+#wechat_go {
+    width: 125px;
+    height: 115px;
+    background: url(http://www.skykiwi.com/images/wechat_go.png);
+    position: absolute;
+    top: 83px;
+    left: 1px;
+    display: none;
+    z-index: 9999;
+}
+
+#wechat_property {
+    width: 125px;
+    height: 115px;
+    background: url(http://www.skykiwi.com/images/wechat_property.png);
+    position: absolute;
+    top: 200px;
+    left: 70px;
+    display: none;
+    z-index: 9999;
+}
+
+#wechat_money {
+    width: 125px;
+    height: 115px;
+    background: url(http://www.skykiwi.com/images/wechat_money.png);
+    position: absolute;
+    top: 200px;
+    left: 190px;
+    display: none;
+    z-index: 9999;
+}
+
+#wechat_soku {
+    width: 125px;
+    height: 115px;
+    background: url(http://www.skykiwi.com/images/wechat_tuangou.png);
+    position: absolute;
+    top: 120px;
+    left: 188px;
+    display: none;
+    z-index: 9999;
 }
