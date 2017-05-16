@@ -370,6 +370,7 @@ body {
 }
 
     .list-news-item > .list-news-item-l {
+        width: 160px;
         float: left;
     }
 
@@ -383,7 +384,14 @@ body {
         }
 
     .list-news-item > .list-news-item-l img {
-        margin-right: 20px;
+        width: 140px;
+        height: 88px;
+    }
+
+    .list-news-item > .list-news-item-r > .list-news-item-r-title a {
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
     }
 
 

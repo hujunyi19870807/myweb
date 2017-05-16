@@ -243,13 +243,17 @@
                         <span style=""><label class="sky-news-a">天维</label><label class="sky-news-color">新闻</label></span>
                         <a href="##" class="sky-more-style sky-news-color">更多>></a>
                     </div>
-                    <!--[e:loop={'43,21',11,,1,'1=1',}]-->
+                    
+                    [e:loop={'select classid, id, title, titlepic, newstime, smalltext from phome_ecms_news where havehtml=1 and checked=1 and classid in (4,5,7,8,9,49,161,67,110,111,112,166) order by newstime desc limit 0,4', 2, 24, 0}]
+
                     <div class="list-news-item">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
+                        <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
                         <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
+                            <div class="list-news-item-r-title">
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
+                            </div>
                             <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
+                                <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
                                 <div style="margin-top:5px">
                                     <span style="color:red">国际新闻</span>
                                     <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
@@ -259,52 +263,7 @@
                         <div style="clear:both">
                         </div>
                     </div>
-                    <!--[/e:loop]-->
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item" style="border-bottom:0px !important">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
+                    [/e:loop]  
 
                     <div>
                         <img width="625" height="80" alt="" src="image/banner4.png" />
