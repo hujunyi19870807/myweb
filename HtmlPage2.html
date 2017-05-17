@@ -142,32 +142,21 @@
                             <a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a>
                         </li>
                         <li>
-                            <a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a>
+                            <a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房产</a>
                         </li>
                         <li>
                             <a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a>
                         </li>
                         <li>
-                            <a href="###">论坛</a>
+                            <a href="http://shop.skykiwi.com" target="_blank" title="新西兰比价购物频道 - 为您节省每一分钱，方便的网上比价购物体验 - 点击进入天维价格比较频道 / 合作网站 PriceMe">比价</a>
                         </li>
                         <li>
-                            <a href="###">移民</a>
+                            <a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a>
                         </li>
                         <li>
-                            <a href="###">汽车</a>
+                            <a href="http://opage.skykiwi.com" target="_self" title="新西兰最大最全的商业服务、生活实用咨询搜索系统，奥克兰、惠灵顿、基督城商家搜索 - 点击进入天维橙页搜索系统">橙页</a>
                         </li>
-                        <li>
-                            <a href="###">百科</a>
-                        </li>
-                        <!--<li>
-                            <a href="###">导航</a>
-                        </li>
-                        <li>
-                            <a href="###">比价</a>
-                        </li>
-                        <li>
-                            <a href="###">商城</a>
-                        </li>-->
+                       
                     </ul>
                 </div>
                 <ul class="sky-share">
@@ -266,9 +255,7 @@
                         <span style=""><label class="sky-news-a">天维</label><label class="sky-news-color">新闻</label></span>
                         <a href="##" class="sky-more-style sky-news-color">更多>></a>
                     </div>
-
-                    [e:loop={'select classid, id, title, titlepic, newstime, smalltext from phome_ecms_news where havehtml=1 and checked=1 and classid in (4,5,7,8,9,49,161,67,110,111,112,166) order by newstime desc limit 0,4', 2, 24, 0}]
-
+                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=1 order by newstime desc limit 0,1', 4, 24, 1}]
                     <div class="list-news-item">
                         <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
                         <div class="list-news-item-r">
@@ -278,8 +265,102 @@
                             <div class="list-news-item-r-bottom">
                                 <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
                                 <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
+                                    <span style="color:red">
+                                        <?php $naclassid = array("4","5","6","7","8","9");
+                                        $hqclassid = array("14","15","16","17","18","19");
+                                        $tzclassid = array("49","50","51","52","53","160","161");
+                                        $ymclassid = array("110","111","112","113","114","115","116");
+                                        if(in_array($bqr[classid],$naclassid,true)){
+                                        echo '纽澳新闻';
+                                        }
+                                        elseif(in_array($bqr[classid],$hqclassid,true)){
+                                        echo '环球报道';
+                                        }
+                                        elseif(in_array($bqr[classid],$tzclassid,true)){
+                                        echo '投资频道';
+                                        }
+                                        elseif(in_array($bqr[classid],$ymclassid,true)){
+                                        echo("留学移民");
+                                        }
+                                        ?>
+                                    </span>
+                                    <span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    [/e:loop]
+                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=2 order by newstime desc limit 0,1', 4, 24, 1}]
+                    <div class="list-news-item">
+                        <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
+                        <div class="list-news-item-r">
+                            <div class="list-news-item-r-title">
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
+                            </div>
+                            <div class="list-news-item-r-bottom">
+                                <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">
+                                        <?php $naclassid = array("4","5","6","7","8","9");
+                                        $hqclassid = array("14","15","16","17","18","19");
+                                        $tzclassid = array("49","50","51","52","53","160","161");
+                                        $ymclassid = array("110","111","112","113","114","115","116");
+                                        if(in_array($bqr[classid],$naclassid,true))
+                                        {
+                                        echo '纽澳新闻';
+                                        }
+                                        elseif(in_array($bqr[classid],$hqclassid,true)){
+                                        echo '环球报道';
+                                        }
+                                        elseif(in_array($bqr[classid],$tzclassid,true)){
+                                        echo '投资频道';
+                                        }
+                                        elseif(in_array($bqr[classid],$ymclassid,true)){
+                                        echo("留学移民");
+                                        }
+                                        ?>
+                                    </span>
+                                    <span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    [/e:loop]
+                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=3 order by newstime desc limit 0,1', 4, 24, 1}]
+                    <div class="list-news-item">
+                        <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
+                        <div class="list-news-item-r">
+                            <div class="list-news-item-r-title">
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
+                            </div>
+                            <div class="list-news-item-r-bottom">
+                                <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">
+                                        <?php $naclassid = array("4","5","6","7","8","9");
+                                        $hqclassid = array("14","15","16","17","18","19");
+                                        $tzclassid = array("49","50","51","52","53","160","161");
+                                        $ymclassid = array("110","111","112","113","114","115","116");
+                                        if(in_array($bqr[classid],$naclassid,true))
+                                        {
+                                        echo '纽澳新闻';
+                                        }
+                                        elseif(in_array($bqr[classid],$hqclassid,true)){
+                                        echo '环球报道';
+                                        }
+                                        elseif(in_array($bqr[classid],$tzclassid,true)){
+                                        echo '投资频道';
+                                        }
+                                        elseif(in_array($bqr[classid],$ymclassid,true)){
+                                        echo '留学移民';
+                                        }
+                                        ?>
+                                    </span>
+                                    <span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>
                                 </div>
                             </div>
                         </div>
@@ -288,120 +369,58 @@
                     </div>
                     [/e:loop]
 
+                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1
+                                and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
+                                and checked=1 and havehtml=1 and orderid IN (1,2,3)
+                                GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
+                                order by newstime desc limit 0,8', 4, 24, 1}]
+                    <div class="list-news-item">
+                        <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
+                        <div class="list-news-item-r">
+                            <div class="list-news-item-r-title">
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
+                            </div>
+                            <div class="list-news-item-r-bottom">
+                                <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
+                                <div style="margin-top:5px">
+                                    <span style="color:red">
+                                        <?php $naclassid = array("4","5","6","7","8","9");
+                                        $hqclassid = array("14","15","16","17","18","19");
+                                        $tzclassid = array("49","50","51","52","53","160","161");
+                                        $ymclassid = array("110","111","112","113","114","115","116");
+                                        if(in_array($bqr[classid],$naclassid,true))
+                                        {
+                                        echo '纽澳新闻';
+                                        }
+                                        elseif(in_array($bqr[classid],$hqclassid,true)){
+                                        echo '环球报道';
+                                        }
+                                        elseif(in_array($bqr[classid],$tzclassid,true)){
+                                        echo '投资频道';
+                                        }
+                                        elseif(in_array($bqr[classid],$ymclassid,true)){
+                                        echo '留学移民';
+                                        }
+                                        ?>
+                                    </span>
+                                    <span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    [/e:loop]
+                   
                     <div>
                         <img width="625" height="80" alt="" src="image/banner4.png" />
                     </div>
 
-                    <div class="list-news-item" style="border-top:0px !important">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item" style="border-bottom:0px !important">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
                     <div>
                         <img width="625" height="80" alt="" src="image/banner4.png" />
                     </div>
 
-                    <div class="list-news-item" style="border-top:0px !important">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
 
-                    <div class="list-news-item" style="border-bottom:0px !important">
-                        <div class="list-news-item-l"><img src="image/listitem.png" /></div>
-                        <div class="list-news-item-r">
-                            <div class="sky-font18">圣彼得堡地铁爆炸案嫌疑人阿齐莫夫的哥哥落网</div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span>2017年4月20日15：00pm</span></div>
-                                <div style="margin-top:5px">
-                                    <span style="color:red">国际新闻</span>
-                                    <span class="list-news-item-word">突发事件</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">爆炸案</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
                 </div>
                 <div class="rightdivchid2">
                     <div class="bannerlist">
@@ -441,31 +460,38 @@
 
                     <div class="sky-video-right">
                         <span class="sky-video-right-title">天维视频</span>
-                        <a href="##" class="sky-more-style">更多>></a>
+                        <a class="sky-more-style" href="http://ent.skykiwi.com/" target="_self" title="新西兰房地产频道" id="link_title_blue">更多>></a>
                     </div>
+                    [e:loop={'211',1,2,0}]
                     <div>
-                        <iframe width="300" height="193" src="https://www.youtube.com/embed/b4yDRpc4q04" frameborder="0" allowfullscreen=""></iframe>
+                        <?=$bqsr[smalltext]?>
                     </div>
                     <div class="sky-video-right-small-title">
-                        新西兰加点糖】暖心 | 在新西兰，我们这样过年
+                        【新西兰加点糖】<a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],15)?>...</a>
                     </div>
+                    [/e:loop]
                     <div class="bannerlist">
-                        <dl>
-                            <dt>
-                                <img src="image/vieo_03.png" />
-                            </dt>
-                            <dd>
-                                <a style="text-decoration: none;" href="" target="_blank" title="">【天维现场】华人家庭遭洋人恶邻频繁骚扰... </a>
-                            </dd>
-                        </dl>
+                       
+                        [e:loop={'206',1,2,0}]
+                            <dl>
+                                <dt>
+                                    【天维热点】<a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],20)?>...</a>
+                                </dt>
+                                <dd>
+                                    <!--<a style="text-decoration: none;" href="" target="_blank" title=""><?=$bqsr[smalltext]?></a>-->
+                                </dd>
+                            </dl>
+                        [/e:loop]
+                        [e:loop={'209',1,2,0}]
                         <dl class="bannerlistdl2">
                             <dt>
-                                <img src="image/vieo_03.png" />
+                                【天维现场】<a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],20)?>...</a>
                             </dt>
                             <dd>
-                                <a style="text-decoration: none;" href="" target="_blank" title="">【天维现场】华人家庭遭洋人恶邻频繁骚扰... </a>
+                                <!--<a style="text-decoration: none;" href="" target="_blank" title=""><?=$bqsr[smalltext]?></a>-->
                             </dd>
                         </dl>
+                        [/e:loop]
                     </div>
 
                     <div class="clearfix banner-table">
@@ -529,6 +555,8 @@
                 <img src="image/banner0008_03.jpg" />
             </div>
             <div class="tab-left-double">
+
+                <!--房产 begin-->
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',1)">在售房源</span>
@@ -539,6 +567,8 @@
                         <div controlindex="2" style="display:none"></div>
                     </div>
                 </div>
+                <!--房产  end-->
+                <!--纽澳财经 begin-->
                 <div class="tab-left-double-div2">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#075490',1)">纽澳财经</span>
@@ -546,108 +576,51 @@
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
-                            <div>
-                                <div class="sky-floatL"><img src="image/caijing_03.png" /></div>
+                            [e:loop={'49',1,12,1}]
+                            <div style="height:165px">
+                                <div class="sky-floatL"><img width="125" height="155" src="<?=$bqr[titlepic]?>" /></div>
                                 <div class="sky-caijing-info">
                                     <span class="sky-caijing-info-title">
-                                        罕见梦幻物业上市分割7块！
+                                        <a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],32)?></a>
                                     </span>
                                     <br />
-                                    <span>
-                                        【天维网3月6日报道 援引
-                                        Stuff消息】 这个豪华物业
-                                        位于奥克兰Remuera区的
-                                        1920年代的物业在一个
-                                        6.4公顷的公园...<a>[详细]</a>
+                                    <span class="sky-caijing-info-detail">
+                                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[smalltext],200)?>...[详细]</a>
                                     </span>
                                 </div>
                             </div>
+                            [/e:loop]
+
                             <div class="sky-caijing">
                                 <ul class="list-group-generalitem">
-                                    <li>
-                                        干货说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        干货说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        新西兰不可错过的美味海鲜小镇大搜罗！
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
+                                    [ecmsinfo]49,9,38,0,0,18,0[/ecmsinfo]
                                 </ul>
                             </div>
                         </div>
                         <div class="caijin-span" style="display:none" controlindex="2">
-                            <div>
-                                <div style="float:left"><img src="image/caijing_03.png" /></div>
-                                <div style="float:left; margin-left:10px; width:160px;">
-                                    <span style="font-size:16px; color:#256091;">
-                                        @@@@@@￥￥￥￥￥%%DDDD
+                            [e:loop={'161',1,12,1}]
+                            <div style="height:165px">
+                                <div class="sky-floatL"><img width="125" height="155" src="<?=$bqr[titlepic]?>" /></div>
+                                <div class="sky-caijing-info">
+                                    <span class="sky-caijing-info-title">
+                                        <a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],32)?></a>
                                     </span>
                                     <br />
-                                    <span>
-                                        【天维网3月6日报道 援引
-                                        Stuff随风倒十分豪华物业
-                                        位于奥造型出现在era区的
-                                        1920年代的物业在一个
-                                        6.4公顷的公园...<a>[详细]</a>
+                                    <span class="sky-caijing-info-detail">
+                                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[smalltext],200)?>...[详细]</a>
                                     </span>
                                 </div>
                             </div>
-                            <div style="float:left; padding-top:30px">
+                            [/e:loop]
+                            <div class="sky-caijing">
                                 <ul class="list-group-generalitem">
-                                    <li>
-                                        干货说说4343434343请房屋补贴？
-                                    </li>
-                                    <li>
-                                        新西兰不43434343小镇大搜罗！
-                                    </li>
-                                    <li>
-                                        儿的发表么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干43654 鬼地方高浮雕该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
+                                    [ecmsinfo]161,9,38,0,0,18,0[/ecmsinfo]
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--纽澳财经  end-->
                 <div style="clear:both;"></div>
                 <div>
                     <img height="80" width="625" alt="" src="image/banner4.png">
@@ -784,10 +757,10 @@
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)" style="color:#ff96ac;">特价</span>
-                        <span class="sky-tejia-span2">
+                        <!--<span class="sky-tejia-span2">
                             <a class="sky-tejia-updown" id="pre_opage">&#9664;</a>
                             <a class="sky-tejia-updown" id="next_opage">&#9654;</a>
-                        </span>
+                        </span>-->
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
@@ -901,16 +874,16 @@
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
-                            <div class="sky-zhuanti-title">投资移民政策也变！土豪有钱？先翻你一番再说！</div>
+                            [e:loop={'203',1,12,0}]
+                            <div class="sky-zhuanti-title"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[title],58)?></a></div>
                             <div class="sky-zhuanti-content">
-                                新西兰移民新政一波未平一波又起，目前看来移民部长Michael Woodhouse的组合拳誓要打到底了。部长称，对投资移民政策作出修改，将起到鼓励投资的作用，会
-                                给新西兰经济带来巨...
+                                <?=esub($bqr[smalltext],160)?>...
                             </div>
+                            [/e:loop]
                             <ul class="sky-zhuanti-list">
-                                <li class="sky-ul-list1">柳颜惨不忍睹 美女主惊人</li>
-                                <li class="sky-ul-list1">柳岩素颜惨不忍睹 美女主播卸妆比惊人</li>
-                                <li class="sky-ul-list1">柳岩素颜惨不忍睹 美女主播卸妆后对比</li>
-                                <li class="sky-ul-list1">柳岩素颜惨不忍睹 美女主播卸妆后对比</li>
+                                [e:loop={'203',4,0,0}]
+                                <li class="sky-ul-list1"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],35)?></a></li>
+                                [/e:loop]
                             </ul>
                         </div>
                     </div>
@@ -921,23 +894,26 @@
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-aliuxue" onclick="initTabClass(this, '#458f50', 1)" style="color:#458f50">留学移民</span>
-                        <a href="##" class="sky-more-style">更多>></a>
+                        <a href="http://imedu.skykiwi.com" target="_blank" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击查看更多留学移民新闻" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
                             <div>
-                                <div class="sky-floatL"><img src="image/liuxueyiming.png" /></div>
+                                [e:loop={'109',1,12,1}]
+                                <div class="sky-floatL" style="border:1px solid #898989"><img width="138" height="82" src="<?=$bqr[titlepic]?>" /></div>
                                 <div class="sky-liuxueyimin">
                                     <dl>
-                                        <dd>中国移民数量创新高</dd>
-                                        <dt>去年,因工作签证到了70600人的新高度。</dt>
+                                        <dd><?=esub($bqr[ftitle],12)?></dd>
+                                        <dt><?=esub($bqr[smalltext],56)?>...</dt>
                                     </dl>
                                 </div>
+                                [/e:loop]
                             </div>
                             <div class="sky-floatL">
                                 <ul>
-                                    <li class="sky-ul-list1">柳颜惨不忍睹 美女主播卸妆后对比惊人</li>
-                                    <li class="sky-ul-list1">柳岩素颜惨不忍睹 美女主播卸妆比惊人</li>
+                                    [e:loop={'109',2,0,0}]
+                                    <li class="sky-ul-list1"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],35)?></a></li>
+                                    [/e:loop]
                                 </ul>
                             </div>
                         </div>
@@ -1012,20 +988,13 @@
                     </div>
                 </div>
                 <div>
-                    <ul class="sky-vip-list">
-                        <li class="list-group-item">Annie Chen 注册会计</li>
-                        <li class="list-group-item">香城烧腊 09-8468388</li>
-                        <li class="list-group-item">友邦保险 Ben 曹振锋</li>
-                        <li class="list-group-item">信诚保险代理公司 周雪凌</li>
-                        <li class="list-group-item">成功雅思专业家教辅导</li>
-                        <li class="list-group-item">Apollo足浴堂 ACC注册</li>
-                        <li class="list-group-item">大肠水疗助你健康排毒美容</li>
-                        <li class="list-group-item">Vintage 文治注册会计师事务所</li>
-                        <li class="list-group-item">美你医疗美容产后修复中心</li>
-                        <li class="list-group-item">五星地毯清洁</li>
-                        <li class="list-group-item">魏氏律师楼 copy</li>
-                        <li class="list-group-item">远大广告服务</li>
-                    </ul>
+                    <dl class="sky-vip-list" id="opage_vip_list">
+                        <!--<script type="text/javascript" src="http://opage.skykiwi.com/js.php?callid=58"></script>-->
+                    </dl>
+                    <script language="javascript" type="text/javascript">
+                        //var scroll_opage = new ScrollText("opage_vip_list", "pre_opage", "next_opage", true, 80, true);
+                        //scroll_opage.LineHeight = 22;
+                    </script>
                 </div>
             </div>
             <div style="clear:both;"></div>
@@ -1144,7 +1113,7 @@
             </div>
             <div id="footer">
                 <p><a href="http://em.skykiwi.com/aboutus.html" target="_blank" class="ico"> 关于天维</a> | <a href="http://em.skykiwi.com/english.html" target="_blank">About Us</a> | <a href="http://em.skykiwi.com/termsofuse.html" target="_blank">使用条款</a> | <a href="http://em.skykiwi.com/privacy.html" target="_blank">隐私声明</a> | <a href="http://em.skykiwi.com" target="_blank">广告服务</a> | <a href="http://em.skykiwi.com/contactus.html" target="_blank">联系我们</a> | <a href="http://em.skykiwi.com/aboutus_join.html" target="_blank">招贤纳士</a> | <a href="http://bbs.skykiwi.com/member.php?mod=regsky.php" target="_blank">会员注册</a></p>
-                <p><span>©&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
+                <p><span>&copy;&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
             </div>
         </div>
     </div>

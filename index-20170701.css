@@ -67,6 +67,14 @@ body {
                 .sky-left-nav > .sky-left-box > .sky-left-ul > li > .active-text {
                     color: #f17142;
                 }
+                .sky-left-ul > li > span > a {
+                    text-decoration: none;
+                    color: #fff;
+                }
+                    .sky-left-ul > li > span > a:hover {
+                        color: #f17142;
+                    }
+
 
 .sky-nav-index {
     font-size: 16px;
@@ -757,7 +765,8 @@ body {
 .sky-video-right-title {
     width: 100px;
     padding-left: 10px;
-    color: white;
+    color: #f17142;
+    font-weight:bold;
 }
 
 .sky-video-right-small-title {
@@ -765,7 +774,8 @@ body {
     font-size: 13px;
     vertical-align: middle;
     line-height: 38px;
-    font-weight: bold
+    font-weight: bold;
+    color: #f17142
 }
 
 .hot-search-title {
@@ -984,7 +994,10 @@ body {
 .sky-liuxueyimin {
     float: left;
     width: 145px;
-    margin-left: 10px
+    margin-left: 10px;
+}
+.sky-liuxueyimin dl dd {
+    font-weight: bold;
 }
 
     .sky-liuxueyimin dl dd {
@@ -998,6 +1011,9 @@ body {
 }
 
 .sky-floatL {
+    float: left;
+}
+.sky-floatL > ul>li>a {
     float: left;
 }
 
@@ -1034,6 +1050,7 @@ body {
 .sky-zhuanti-title {
     font-size: 16px;
     color: #293e73;
+    font-weight:bold;
 }
 
 .sky-zhuanti-content {
@@ -1196,3 +1213,33 @@ body {
     display: none;
     z-index: 9999;
 }
+.sky-ul-list1 a {
+    text-decoration: none;
+    color: black;
+}
+.sky-ul-list1 a:hover {
+    color: #f17142;
+}
+.sky-zhuanti-title a {
+    text-decoration: none;
+    color: #293e73;
+}
+.sky-caijing-info-title a {
+    text-decoration: none;
+    color: #256091;
+    font-weight:bold;
+}
+.list-group-generalitem a {
+    text-decoration: none;
+    color: black;
+}
+
+.list-group-generalitem a:hover {
+    color: #f17142;
+}
+.sky-caijing-info-detail a {
+    text-decoration: none;
+}
+    .sky-caijing-info-detail a:hover {
+        color: #f17142;
+    }
