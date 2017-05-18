@@ -1,4 +1,4 @@
-﻿
+
 (function ($) {
     $.fn.extend({
         Scroll: function (opt, callback) {
@@ -21,7 +21,7 @@
                     marginTop: upHeight
                 }, speed, function () {
                     for (i = 1; i <= line; i++) {
-                        _this.find("li:first").appendTo(_this);
+                        _this.find("dd:first").appendTo(_this);
                     }
                     _this.css({ marginTop: 0 });
                     _btnUp.bind("click", scrollUp); //Shawphy:绑定向上按钮的点击事件
