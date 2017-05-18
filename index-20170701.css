@@ -310,12 +310,20 @@ body {
         margin-top: 0px;
     }
 
-    .bannerlist dd {
+    .bannerlist dt {
         font-size: 12px;
         float: left;
         margin-left: 0px;
         margin-top: 6px;
+
     }
+    .bannerlist dt a {
+        text-decoration:none;
+        color:black;
+    }
+        .bannerlist dt a:hover {
+            color: #f17142;
+        }
 
 .topbanner {
     width: 100%;
@@ -381,6 +389,10 @@ body {
         width: 160px;
         float: left;
     }
+    .list-news-item > a img {
+        border: 1px solid #898989;
+    }
+
 
     .list-news-item > .list-news-item-r {
         float: left;
@@ -393,7 +405,8 @@ body {
 
     .list-news-item > .list-news-item-l img {
         width: 140px;
-        height: 88px;
+        height: 90px;
+        border: 1px solid #898989;
     }
 
     .list-news-item > .list-news-item-r > .list-news-item-r-title a {
@@ -777,7 +790,11 @@ body {
     font-weight: bold;
     color: #f17142
 }
-
+.sky-video-right-small-title a {
+    color: #f17142;
+    text-decoration:none;
+}
+   
 .hot-search-title {
     height: 30px;
     line-height: 28px;
@@ -823,9 +840,9 @@ body {
             }
 
             .banner-table > ul > li > .banner-table-right {
-                width: 156px;
+                width: 150px;
                 height: 78px;
-                float: left;
+                float: right;
                 margin-left: 17px;
                 vertical-align: top;
             }
@@ -844,7 +861,13 @@ body {
                     line-height: 1.5;
                     margin-top: 10px;
                 }
-
+.banner-table-right-tit a {
+    text-decoration: none;
+    color: black;
+}
+.banner-table-right-tit a:hover {
+    color: #f17142;
+}
 .tab-left-double-div1 {
     float: left;
     width: 300px;
@@ -942,6 +965,7 @@ body {
     float: right;
     text-align: center;
     width: 80%;
+    height:30px;
 }
 
     .sky-hot-news-context dl {
@@ -954,6 +978,13 @@ body {
         width: 20px;
         height: 29px;
         float: right;
+    }
+.sky-hot-news-context a{
+    color:white;
+    text-decoration:none;
+}
+    .sky-hot-news-context a:hover {
+        color: #f17142;
     }
 
 .sky-hot-news-context-pre {
@@ -996,14 +1027,15 @@ body {
     width: 145px;
     margin-left: 10px;
 }
-.sky-liuxueyimin dl dd {
-    font-weight: bold;
-}
 
     .sky-liuxueyimin dl dd {
-        color: #458f50;
         margin-bottom: 10px
     }
+        .sky-liuxueyimin dl dd a {
+            color: #458f50;
+            font-weight: bold;
+            text-decoration:none;
+        }
 
 .sky-liuxueyimin-list {
     margin-top: 10px;
@@ -1157,7 +1189,7 @@ body {
 .sky-caijing-info-title {
     font-size: 16px;
     color: #256091;
-    display: inline
+    margin-bottom:10px;
 }
 #wechat_home {
     width: 125px;
@@ -1237,9 +1269,13 @@ body {
 .list-group-generalitem a:hover {
     color: #f17142;
 }
+.sky-caijing-info-detail {
+
+}
 .sky-caijing-info-detail a {
+    color: black;
     text-decoration: none;
 }
-    .sky-caijing-info-detail a:hover {
-        color: #f17142;
-    }
+.sky-caijing-info-detail a:hover {
+    color: #f17142;
+}
