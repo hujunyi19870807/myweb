@@ -1,58 +1,110 @@
+function ScrollText(content, btnPrevious, btnNext, autoStart, timeout, isSmoothScroll) {
+    this.Speed = 10;
+    this.Timeout = timeout;
+    this.stopscroll = false;//是否停止滚动的标志位
+    this.isSmoothScroll = isSmoothScroll;//是否平滑连续滚动
+    this.LineHeight = 20;//默认高度。可以在外部根据需要设置
+    this.NextButton = this.$(btnNext);
+    this.PreviousButton = this.$(btnPrevious);
+    this.ScrollContent = this.$(content);
+    this.ScrollContent.innerHTML += this.ScrollContent.innerHTML;//为了平滑滚动再加一遍
 
-(function ($) {
-    $.fn.extend({
-        Scroll: function (opt, callback) {
-            //参数初始化
-            if (!opt) var opt = {};
-            var _btnUp = $("#" + opt.up);//Shawphy:向上按钮
-            var _btnDown = $("#" + opt.down);//Shawphy:向下按钮
-            var timerID;
-            var _this = this.eq(0).find("dl:first");
-            var lineH = _this.find("dd:first").height(), //获取行高
-                line = opt.line ? parseInt(opt.line, 10) : parseInt(this.height() / lineH, 10), //每次滚动的行数，默认为一屏，即父容器高度
-                speed = opt.speed ? parseInt(opt.speed, 10) : 500; //卷动速度，数值越大，速度越慢（毫秒）
-            timer = opt.timer //?parseInt(opt.timer,10):3000; //滚动的时间间隔（毫秒）
-            if (line == 0) line = 1;
-            var upHeight = 0 - line * lineH;
-            //滚动函数
-            var scrollUp = function () {
-                _btnUp.unbind("click", scrollUp); //Shawphy:取消向上按钮的函数绑定
-                _this.animate({
-                    marginTop: upHeight
-                }, speed, function () {
-                    for (i = 1; i <= line; i++) {
-                        _this.find("dd:first").appendTo(_this);
-                    }
-                    _this.css({ marginTop: 0 });
-                    _btnUp.bind("click", scrollUp); //Shawphy:绑定向上按钮的点击事件
-                });
+    if (this.PreviousButton) {
+        this.PreviousButton.onclick = this.GetFunction(this, "Previous");
+        this.PreviousButton.onmouseover = this.GetFunction(this, "MouseOver");
+        this.PreviousButton.onmouseout = this.GetFunction(this, "MouseOut");
+    }
+    if (this.NextButton) {
+        this.NextButton.onclick = this.GetFunction(this, "Next");
+        this.NextButton.onmouseover = this.GetFunction(this, "MouseOver");
+        this.NextButton.onmouseout = this.GetFunction(this, "MouseOut");
+    }
+    this.ScrollContent.onmouseover = this.GetFunction(this, "MouseOver");
+    this.ScrollContent.onmouseout = this.GetFunction(this, "MouseOut");
 
-            }
-            //Shawphy:向下翻页函数
-            var scrollDown = function () {
-                _btnDown.unbind("click", scrollDown);
-                for (i = 1; i <= line; i++) {
-                    _this.find("dd:last").show().prependTo(_this);
-                }
-                _this.css({ marginTop: upHeight });
-                _this.animate({
-                    marginTop: 0
-                }, speed, function () {
-                    _btnDown.bind("click", scrollDown);
-                });
-            }
-            //Shawphy:自动播放
-            var autoPlay = function () {
-                if (timer) timerID = window.setInterval(scrollUp, timer);
-            };
-            var autoStop = function () {
-                if (timer) window.clearInterval(timerID);
-            };
-            //鼠标事件绑定
-            _this.hover(autoStop, autoPlay).mouseout();
-            _btnUp.css("cursor", "pointer").click(scrollUp).hover(autoStop, autoPlay);//Shawphy:向上向下鼠标事件绑定
-            _btnDown.css("cursor", "pointer").click(scrollDown).hover(autoStop, autoPlay);
+    if (autoStart) {
+        this.Start();
+    }
+}
 
+ScrollText.prototype = {
+
+    $: function (element) {
+        return document.getElementById(element);
+    },
+    Previous: function () {
+        this.stopscroll = true;
+        this.Scroll("up");
+    },
+    Next: function () {
+        this.stopscroll = true;
+        this.Scroll("down");
+    },
+    Start: function () {
+        if (this.isSmoothScroll) {
+            this.AutoScrollTimer = setInterval(this.GetFunction(this, "SmoothScroll"), this.Timeout);
         }
-    })
-})(jQuery);
+        else {
+            this.AutoScrollTimer = setInterval(this.GetFunction(this, "AutoScroll"), this.Timeout);
+        }
+    },
+    Stop: function () {
+        clearTimeout(this.AutoScrollTimer);
+        this.DelayTimerStop = 0;
+    },
+    MouseOver: function () {
+        this.stopscroll = true;
+    },
+    MouseOut: function () {
+        this.stopscroll = false;
+    },
+    AutoScroll: function () {
+        if (this.stopscroll) {
+            return;
+        }
+        this.ScrollContent.scrollTop++;
+        if (parseInt(this.ScrollContent.scrollTop) % this.LineHeight != 0) {
+            this.ScrollTimer = setTimeout(this.GetFunction(this, "AutoScroll"), this.Speed);
+        }
+        else {
+            if (parseInt(this.ScrollContent.scrollTop) >= parseInt(this.ScrollContent.scrollHeight) / 2) {
+                this.ScrollContent.scrollTop = 0;
+            }
+            clearTimeout(this.ScrollTimer);
+            //this.AutoScrollTimer = setTimeout(this.GetFunction(this,"AutoScroll"), this.Timeout);
+        }
+    },
+    SmoothScroll: function () {
+        if (this.stopscroll) {
+            return;
+        }
+        this.ScrollContent.scrollTop++;
+        if (parseInt(this.ScrollContent.scrollTop) >= parseInt(this.ScrollContent.scrollHeight) / 2) {
+            this.ScrollContent.scrollTop = 0;
+        }
+    },
+    Scroll: function (direction) {
+
+        if (direction == "up") {
+            this.ScrollContent.scrollTop--;
+        }
+        else {
+            this.ScrollContent.scrollTop++;
+        }
+        if (parseInt(this.ScrollContent.scrollTop) >= parseInt(this.ScrollContent.scrollHeight) / 2) {
+            this.ScrollContent.scrollTop = 0;
+        }
+        else if (parseInt(this.ScrollContent.scrollTop) <= 0) {
+            this.ScrollContent.scrollTop = parseInt(this.ScrollContent.scrollHeight) / 2;
+        }
+
+        if (parseInt(this.ScrollContent.scrollTop) % this.LineHeight != 0) {
+            this.ScrollTimer = setTimeout(this.GetFunction(this, "Scroll", direction), this.Speed);
+        }
+    },
+    GetFunction: function (variable, method, param) {
+        return function () {
+            variable[method](param);
+        }
+    }
+}

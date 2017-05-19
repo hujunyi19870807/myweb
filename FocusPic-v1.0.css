@@ -12,5 +12,5 @@ div.slideBox div.tips div.title a{ color:#FFF; font-size:18px;margin-left:10px; 
 div.slideBox div.tips div.title a:hover{ text-decoration:underline !important;}
 
 div.slideBox div.tips div.nums{ position:absolute; right:0px; top:25px; height:50%;}
-div.slideBox div.tips div.nums a{ display:inline-block;float:left;/*For IE.ADD.JENA.201206300844*/ width:15px; height:15px; background-color:#FFF; text-indent:-99999px; margin:20px 10px 0px 0px;background: #000;}
+div.slideBox div.tips div.nums a{ display:inline-block;float:left;/*For IE.ADD.JENA.201206300844*/ width:15px; height:15px; background-color:#FFF; text-indent:-99999px; margin:20px 10px 0px 0px;}
 div.slideBox div.tips div.nums a.active{ background-color:#F60;}

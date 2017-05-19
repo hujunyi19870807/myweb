@@ -48,15 +48,9 @@
             $(".tab-left-double").find("div .caijin-title-span").each(function (e) {
                 $(this).find("span").eq(0).click();
             });
-                       $(".sky-hot-news-context").Scroll({
-                line: 1,
-                speed: 500,
-                timer: 3000,
-                up: "pre_opage",
-                down: "next_opage"
-            });
+
             bannerlist();//广告列表方法
-           
+            addhotserach();//动态修改hot热搜样式
         });
         var tabChangeList = ["美食", "旅游", "生活", "时尚"];
         function initTabClass(obj, colorName, index) {
@@ -120,8 +114,14 @@
         function bannerlist() {
             $(".rightdivchid1").find(".list-news-item").eq(3).after("<div style='width: 625px;height: 80px;margin-top: 10px;margin-bottom: 10px;'><img width= '625' height= '80' alt= '' src= 'image/banner4.png' /></div >");
             $(".rightdivchid1").find(".list-news-item").eq(7).after("<div style='width: 625px;height: 80px;margin-top: 10px;margin-bottom: 10px;'><img width= '625' height= '80' alt= '' src= 'image/banner4.png' /></div >");
-            $(".rightdivchid1").find(".list-news-item").eq(3).css("border-bottom","0px");
-            $(".rightdivchid1").find(".list-news-item").eq(7).css("border-bottom","0px");
+            $(".rightdivchid1").find(".list-news-item").eq(3).css("border-bottom", "0px");
+            $(".rightdivchid1").find(".list-news-item").eq(7).css("border-bottom", "0px");
+        }
+        function addhotserach() {
+            $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst");
+            $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend");
+            $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend");
+            $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>');
         }
     </script>
 </head>
@@ -245,18 +245,17 @@
 
                     <div id="flash0" class="border slideBox">
                         <ul class="items">
-                            <li><a href="https://google.com" title="这里是测试标题一"><img src="http://www.skykiwi.com/d/file/news/world/gj/sh/2014-07-21/47e7983e7c9eab076763182e9209262a.jpg"></a></li>
-                            <li><a href="https://baidu.com" title="这里是测试标题二"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/9c4cd2671d1637792ad35096a452a812.jpg"></a></li>
-                            <li><a href="https//yahoo.cn" title="这里是测试标题三"><img src="http://www.skykiwi.com/d/file/money/realestate/2014-07-16/eadbdcd26934f0887bb79fe0d4977510.jpg"></a></li>
-                            <li><a href="http://www.skykiwi.com/" title="这里是测试标题四"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/22a6bdee97efd18dbbe7327fb8f84893.jpg"></a></li>
-                            <li><a href="http://bbs.skykiwi.com" title="这里是测试标题五"><img src="http://www.skykiwi.com/d/file/news/world/gj/kj/2014-07-21/b006f4c15d4167eb630bf6f8c31e81d1.jpg"></a></li>
+                            [e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]
+                            <li><a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[ftitle]?>">
+                                <img width="625" height="300" src="<?=$bqsr[titlepic]?>"></a></li>
+                            [/e:loop]
                         </ul>
                     </div>
 
                     <div class="sky-hot-news">
                         <span class="sky-hot-news-title">HOT 突发新闻</span>
                         <div class="sky-hot-news-context">
-                            <dl style="z-index:2;">
+                            <dl id="opage_hot_list">
                                 <dd><a href="#">为今年大选全力开路？工党副党魁宣布退位让贤0</a></dd>
                                 <dd>为今年大选全力开路？工党副党魁宣布退位让贤1</dd>
                                 <dd>为今年大选全力开路？工党副党魁宣布退位让贤2</dd>
@@ -268,6 +267,10 @@
                                 <a class="sky-hot-news-context-pre" id="pre_opage">▲</a>
                                 <a class="sky-hot-news-context-next" id="next_opage">▼</a>
                             </span>
+                            <script language="javascript" type="text/javascript">
+                                var scroll_opage = new ScrollText("opage_hot_list", "pre_opage", "next_opage", true, 80, true);
+                                scroll_opage.LineHeight = 29;
+                            </script>
                         </div>
                     </div>
 
@@ -393,7 +396,7 @@
                     and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
                     and checked=1 and havehtml=1 and orderid IN (1,2,3)
                     GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
-                    order by newstime desc limit 0,10', 4, 24, 1}]
+                    order by newstime desc limit 0,8', 4, 24, 1}]
                     <div class="list-news-item">
                         <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
                         <div class="list-news-item-r">
@@ -467,7 +470,7 @@
                         <a class="sky-more-style" href="http://ent.skykiwi.com/" target="_self" title="新西兰房地产频道" id="link_title_blue">更多>></a>
                     </div>
                     [e:loop={'211',1,2,0}]
-                    <div>
+                    <div class="sky-video-right-top1">
                         <?=$bqsr[smalltext]?>
                     </div>
                     <div class="sky-video-right-small-title">
@@ -475,21 +478,22 @@
                     </div>
                     [/e:loop]
                     <div class="bannerlist">
-
                         [e:loop={'206',1,2,0}]
-                        <dl style="width:130px;height:136px">
+                        <dl>
                             <dt>
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">【天维热点】<?=esub($bqr[title],20)?>...</a>
+                                <?=$bqsr[smalltext]?>
+
                             </dt>
-                            <dd style="width:130px;height:90px"><?=$bqsr[smalltext]?></dd>
+                            <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">【天维热点】<?=esub($bqr[title],20)?>...</a></dd>
                         </dl>
                         [/e:loop]
                         [e:loop={'209',1,2,0}]
-                        <dl class="bannerlistdl2">
+                        <dl style="margin-left:19px">
                             <dt>
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">【天维现场】<?=esub($bqr[title],20)?>...</a>
+                                <?=$bqsr[smalltext]?>
+
                             </dt>
-                            <dd style="width:130px;height:90px"><?=$bqsr[smalltext]?></dd>
+                            <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">【天维热点】<?=esub($bqr[title],20)?>...</a></dd>
                         </dl>
                         [/e:loop]
                     </div>
@@ -502,7 +506,7 @@
                                 <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
                                     <img src="<?=$bqr[titlepic]?>" width="130" height="78" />
                                 </a>
-                                
+
                                 <span class="banner-table-right">
                                     <span class="banner-table-right-tit">
                                         <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
@@ -520,20 +524,14 @@
 
                     <div class="hot-search-title">
                         <span><label class="hot-search-title-label1">HOT</label><label class="hot-search-title-label2">热搜榜</label></span>
-                        <a href="##" class="sky-more-style" style="color:#7f7f7f">更多>></a>
+                        <a href="http://news.skykiwi.com" class="sky-more-style" style="color:#7f7f7f" target="_blank">更多>></a>
                     </div>
                     <div class="news-general-list" style="border-top:0px !important">
-                        
-                        <ul>
-                            <li class="list-group-item" style="background:url(/image/newstag1_07.png) 2px 7px no-repeat;padding-left: 20px;">柳颜惨不忍睹 美女主播卸妆后对比惊人</li>
-                            <li class="list-group-item" style="background:url(/image/newstag2_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆比惊人</li>
-                            <li class="list-group-item" style="background:url(/image/newstag2_07.png) 2px 7px no-repeat;padding-left: 20px;">柳岩素颜惨不忍睹 美女主播卸妆后对比</li>
-                            <li class="list-group-item-line"></li>
-                            <li class="list-group-item">柳岩素颜惨不忍睹 美女妆后对比惊人</li>
-                            <li class="list-group-item">柳岩素颜惨不忍睹 美女主播对比惊人</li>
-                            <li class="list-group-item" style="background:url(/image/newstag3_07.png) 2px 7px no-repeat;padding-left: 22px;">柳岩素颜惨女主播卸妆后对比惊人</li>
-                            <li class="list-group-item">柳岩素颜惨不忍睹 美女主播卸妆后对</li>
-                            <li class="list-group-item">柳岩素颜惨不忍睹 美女主播卸妆</li>
+
+                        <ul id="ul-hotsearch-news">
+                            [e:loop={'SELECT * FROM phome_ecms_news WHERE checked=1 AND DATE_SUB(CURDATE(), INTERVAL 7 DAY) < newstime ORDER BY onclick DESC LIMIT 0,9', 9, 24, 0}]
+                            <li class="list-group-item"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],35)?></a></li>
+                            [/e:loop]
                         </ul>
                     </div>
                     <div class="sky-jinyuanjinrong">
@@ -574,7 +572,7 @@
                                 <div class="sky-caijing-info">
                                     <dl>
                                         <dt class="sky-caijing-info-title"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],32)?></a></dt>
-                                        <dd class="sky-caijing-info-detail"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[smalltext],200)?>...[详细]</a></dd>
+                                        <dd class="sky-caijing-info-detail"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[smalltext],160)?>...[详细]</a></dd>
                                     </dl>
                                 </div>
                             </div>
@@ -886,7 +884,8 @@
                         <div class="caijin-span" controlindex="1">
                             <div>
                                 [e:loop={'109',1,12,1}]
-                                <div class="sky-floatL"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img width="140" height="80" src="<?=$bqr[titlepic]?>" /></a>
+                                <div class="sky-floatL">
+                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img width="140" height="80" src="<?=$bqr[titlepic]?>" /></a>
                                 </div>
                                 <div class="sky-liuxueyimin">
                                     <dl>
@@ -970,17 +969,18 @@
                 <div class="tianwei-right-tab">
                     <span>天维橙页VIP商家</span>
                     <div class="sky-vip">
-                        <a id="pre_opage">▲</a>
-                        <a id="next_opage">▼</a>
+                        <a id="pre_vipopage">▲</a>
+                        <a id="next_vipopage">▼</a>
                     </div>
                 </div>
-                <div>
+                <div style="overflow:hidden">
                     <dl class="sky-vip-list" id="opage_vip_list">
-                        <!--<script type="text/javascript" src="http://opage.skykiwi.com/js.php?callid=58"></script>-->
+                        <script type="text/javascript" src="http://opage.skykiwi.com/js.php?callid=58"></script>
                     </dl>
                     <script language="javascript" type="text/javascript">
-                        //var scroll_opage = new ScrollText("opage_vip_list", "pre_opage", "next_opage", true, 80, true);
-                        //scroll_opage.LineHeight = 22;
+                        var scroll_opage = new ScrollText("opage_vip_list", "pre_vipopage", "next_vipopage", true, 80, true);
+                        scroll_opage.LineHeight = 24;
+                        $(".sky-vip-list dd").addClass("list-group-item");
                     </script>
                 </div>
             </div>
