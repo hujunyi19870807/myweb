@@ -5,11 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <title>天维首页新版</title>
 
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <link href="index-20170701.css" rel="stylesheet" />
-    <link href="http://cms6.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
+
+    <link href="FocusPic-v1.0.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://cms6.skykiwi.com/js/FocusPic-v1.0.js"></script>
+    <script src="FocusPic-v1.0.js"></script>
     <script src="http://cms6.skykiwi.com/js/scroll-v1.0.js"></script>
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script type="text/javascript">
         $(function () {
             // begin
@@ -98,19 +104,7 @@
                 });
             });
         }
-        //function wechathome() { wechat_home.style.display = "block"; }
-        //function wechatgo() { wechat_go.style.display = "block"; }
-        //function wechatproperty() { wechat_property.style.display = "block"; }
-        //function wechattuangou() { wechat_soku.style.display = "block"; }
-        //function wechatmoney() { wechat_money.style.display = "block"; }
-        //function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
-        //document.onclick = hidden;
-        function wechathome() {
-            $("#wechathome").show();
-        }
-        function wechat_home() {
 
-        }
         function bannerlist() {
             $(".rightdivchid1").find(".list-news-item").eq(3).after("<div style='width: 625px;height: 80px;margin-top: 10px;margin-bottom: 10px;'><img width= '625' height= '80' alt= '' src= 'image/banner4.png' /></div >");
             $(".rightdivchid1").find(".list-news-item").eq(7).after("<div style='width: 625px;height: 80px;margin-top: 10px;margin-bottom: 10px;'><img width= '625' height= '80' alt= '' src= 'image/banner4.png' /></div >");
@@ -122,6 +116,16 @@
             $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend");
             $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend");
             $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>');
+        }
+        function show(obj, id) {
+            var objDiv = $("#" + id + "");
+            $(objDiv).css("display", "block");
+            $(objDiv).css("left", event.clientX - 232);
+            $(objDiv).css("top", event.clientY - 12);
+        }
+        function hide(obj, id) {
+            var objDiv = $("#" + id + "");
+            $(objDiv).css("display", "none");
         }
     </script>
 </head>
@@ -141,7 +145,7 @@
                         <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
                     </li>
                     <li>
-                        <span class="active-text">22°</span>/18° <span>Auckland</span>
+                        <span class="active-text">22°</span>/18° <span>Auckland</span><span style="color:#f17142">  ▼</span>
                     </li>
                 </ul>
                 <div class="sky-nav-index">
@@ -176,42 +180,56 @@
                 </div>
                 <ul class="sky-share">
                     <li>
-                        <span class="ky-share-box">
+                        <span class="ky-share-box ky-share-icon">
                             <span class="text-col sky-share-tit">天维网</span>
-                            <a target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
-                                <i class="sky-share-img-a"></i>
+
+                            <a class="icon-nav" target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
+                                <i class="fa fa-weibo"></i>
                             </a>
-                            <a class="weixin_home" href="javascript:wechathome();" title="关注我们的微信">
-                                <i class="sky-share-img-b" title="关注我们的微信"></i>
+                            <div id="wechat_home" style="display: none;"></div>
+                            <a class="icon-nav" onMouseOver="javascript: show(this, 'wechat_home');" onMouseOut="javascript: hide(this, 'wechat_home')">
+                                <i class="fa fa-wechat" title="关注我们的微信"></i>
                             </a>
-                            <label id="wechat_home"></label>
-                            <a target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书"><i class="sky-share-img-c"></i></a>
-                            <a target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特"><i class="sky-share-img-d"></i></a>
+                            <a class="icon-nav" target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a class="icon-nav" target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特">
+                                <i class="fa fa-twitter"></i>
+                            </a>
                         </span>
                     </li>
                     <li>
-                        <span class="ky-share-box">
+                        <span class="ky-share-box ky-share-icon">
                             <span class="text-col sky-share-tit">导购</span>
-                            <a class="blog_go" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
-                                <i class="sky-share-img-a"></i>
+                            <a class="icon-nav" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
+                                <i class="fa fa-weibo"></i>
                             </a>
-                            <a class="weixin_go" href="javascript:wechatgo()" title="关注我们的导购微信">
-                                <i class="sky-share-img-b"></i>
+                            <div id="wechat_go" style="display: none;"></div>
+                            <a class="icon-nav" onMouseOver="javascript: show(this, 'wechat_go');" onMouseOut="javascript:hide(this, 'wechat_go')">
+                                <i class="fa fa-wechat"></i>
                             </a>
                         </span>
-                        <span class="ky-share-box" style="margin-left:12px;">
+                        <span class="ky-share-box ky-share-icon" style="margin-left:12px;">
                             <span class="text-col sky-share-tit">生活</span>
-                            <i class="sky-share-img-b"></i>
+                            <a class="icon-nav" title="关注我们的导购微信">
+                                <i class="fa fa-wechat"></i>
+                            </a>
                         </span>
                     </li>
                     <li>
-                        <span class="ky-share-box">
+                        <span class="ky-share-box ky-share-icon">
                             <span class="text-col sky-share-tit">房地产</span>
-                            <a class="weixin_property" href="javascript:wechatproperty()" title="关注我们的房产微信"><i class="sky-share-img-b"></i></a>
+                            <div id="wechat_property" style="display: none;"></div>
+                            <a class="icon-nav" onMouseOver="javascript:show(this, 'wechat_property');" onMouseOut="javascript:hide(this, 'wechat_property')" title="关注我们的导购微信">
+                                <i class="fa fa-wechat"></i>
+                            </a>
                         </span>
-                        <span class="ky-share-box" style="margin-left:10px;">
+                        <span class="ky-share-box ky-share-icon" style="margin-left:10px;">
                             <span class="text-col sky-share-tit">微财经</span>
-                            <a class="weixin_money" href="javascript:wechatmoney()" title="关注我们的财经微信"><i class="sky-share-img-b"></i></a>
+                            <div id="wechat_money" style="display: none;"></div>
+                            <a class="icon-nav" onMouseOver="show(this, 'wechat_money');" onMouseOut="hide(this, 'wechat_money')" title="关注我们的导购微信">
+                                <i class="fa fa-wechat"></i>
+                            </a>
                         </span>
                     </li>
                 </ul>
@@ -246,8 +264,11 @@
                     <div id="flash0" class="border slideBox">
                         <ul class="items">
                             [e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]
-                            <li><a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[ftitle]?>">
-                                <img width="625" height="300" src="<?=$bqsr[titlepic]?>"></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[ftitle]?>">
+                                    <img width="625" height="300" src="<?=$bqsr[titlepic]?>">
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </div>

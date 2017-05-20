@@ -131,6 +131,7 @@ body {
         .sky-share li .ky-share-box {
             overflow: hidden;
             float: left;
+            display:inline-block;
         }
 
             .sky-share li .ky-share-box > .sky-share-tit {
@@ -138,14 +139,14 @@ body {
                 padding-top: 5px;
                 margin-right: 2px;
             }
-
-            .sky-share li .ky-share-box i {
+            
+            /* .sky-share li .ky-share-box i {
                 float: left;
                 display: block;
-                width: 31px;
-                height: 27px;
+                width: 25px;
+                height: 25px;
             }
-
+             */
 .sky-share-img-a {
     background: url(/image/skykiwiapplist.png) -1px 0 no-repeat;
 }
@@ -1333,3 +1334,122 @@ body {
         .sky-vip-list dd a:hover {
             color: #f17142;
         }
+
+.ky-share-icon{
+
+}
+
+.ky-share-icon > .icon-nav{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    justify-content:center;
+    align-items:center;
+}
+
+.ky-share-icon > .icon-nav:hover{
+    background: #ccc; 
+}
+
+
+.ky-share-icon > .icon-nav:hover i{
+    /*color: #676566;*/ 
+    color:#f17142;
+}
+.ky-share-icon > .icon-nav i{
+    color: #ccc; 
+    text-align: center;
+    margin:0 5px;
+    line-height: 25px;
+    transition: all 0.3s;
+}
+#wechat_home {
+    width: 97px;
+    height: 97px;
+    background: url(/image/wechat_home_03.png);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    border:2px solid #f17142;
+}
+
+#wechat_go {
+    width: 97px;
+    height: 97px;
+    background: url(/image/wechat_go_03.png);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    border:2px solid #f17142;
+}
+
+#wechat_property {
+    width: 97px;
+    height: 97px;
+    background: url(/image/wechat_property_03.png);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    border:2px solid #f17142;
+}
+
+#wechat_money {
+    width: 97px;
+    height: 97px;
+    background: url(/image/wechat_money_03.png);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    border:2px solid #f17142;
+}
+
+#wechat_soku {
+    width: 97px;
+    height: 97px;
+    background: url(http://www.skykiwi.com/images/wechat_tuangou.png);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    border:2px solid #f17142;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

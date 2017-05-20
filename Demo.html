@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        function show(obj, id) {
+            var objDiv = $("#" + id + "");
+            $(objDiv).css("display", "block");
+            $(objDiv).css("left", event.clientX);
+            $(objDiv).css("top", event.clientY + 10);
+        }
+        function hide(obj, id) {
+            var objDiv = $("#" + id + "");
+            $(objDiv).css("display", "none");
+        }
+    </script>
+</head>
+<body>
+    <div id="mydiv1" style="position:absolute;display:none;border:1px solid silver;background:silver;">
+        提示1效果
+    </div>
+    <div id="mydiv2" style="position:absolute;display:none;border:1px solid silver;background:silver;">
+        提示2效果
+    </div>
+
+    <a id="t1" onMouseOver="javascript:show(this,'mydiv1');" onMouseOut="hide(this,'mydiv1')">鼠标放上去1</a>
+    <br><br><br><br><br>
+    <a id="t2" onMouseOver="javascript:show(this,'mydiv2');" onMouseOut="hide(this,'mydiv2')">鼠标放上去2</a>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#DBEAF5">
+        <tr>
+            <td height="25" bgcolor="#FFFFFF">
+                信息属性:
+                <input name="checked" type="checkbox" value="1"<?=$r[checked]?' checked':''?>>
+                审核 &nbsp;&nbsp; 推荐
+                <select name="isgood" id="isgood">
+                    <option value="0">不推荐</option>
+                    <?=$ftnr['igname']?>
+                </select>
+                &nbsp;&nbsp; 头条
+                <select name="firsttitle" id="firsttitle">
+                    <option value="0">非头条</option>
+                    <?=$ftnr['ftname']?>
+                </select>
+                &nbsp;&nbsp;<input name="issudden" type="checkbox" value="1"<?=$r[issudden]?> />&nbsp;&nbsp;突发
+            </td>
+        </tr>
+        <tr>
+            <td height="25" bgcolor="#FFFFFF">
+                关键字&nbsp;&nbsp;&nbsp;:
+                <input name="keyboard" type="text" size="52" value="<?=stripSlashes($r[keyboard])?>">
+                <font color="#666666">(多个请用&quot;,&quot;隔开)</font>
+            </td>
+        </tr>
+        <tr>
+            <td height="25" bgcolor="#FFFFFF">
+                外部链接:
+                <input name="titleurl" type="text" value="<?=stripSlashes($r[titleurl])?>" size="52">
+                <font color="#666666">(填写后信息连接地址将为此链接)</font>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
