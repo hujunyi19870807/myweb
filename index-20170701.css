@@ -67,13 +67,15 @@ body {
                 .sky-left-nav > .sky-left-box > .sky-left-ul > li > .active-text {
                     color: #f17142;
                 }
-                .sky-left-ul > li > span > a {
-                    text-decoration: none;
-                    color: #fff;
-                }
-                    .sky-left-ul > li > span > a:hover {
-                        color: #f17142;
-                    }
+
+.sky-left-ul > li > span > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+    .sky-left-ul > li > span > a:hover {
+        color: #f17142;
+    }
 
 
 .sky-nav-index {
@@ -131,7 +133,7 @@ body {
         .sky-share li .ky-share-box {
             overflow: hidden;
             float: left;
-            display:inline-block;
+            display: inline-block;
         }
 
             .sky-share li .ky-share-box > .sky-share-tit {
@@ -139,8 +141,8 @@ body {
                 padding-top: 5px;
                 margin-right: 2px;
             }
-            
-            /* .sky-share li .ky-share-box i {
+
+/* .sky-share li .ky-share-box i {
                 float: left;
                 display: block;
                 width: 25px;
@@ -320,30 +322,36 @@ body {
         height: 90px;
         margin-bottom: 7px;
     }
-    .bannerlist dt a {
-        text-decoration:none;
-        color:black;
-    }
-        .bannerlist dt a:hover {
-            color: #f17142;
+
+        .bannerlist dt a {
+            text-decoration: none;
+            color: black;
         }
+
+            .bannerlist dt a:hover {
+                color: #f17142;
+            }
+
         .bannerlist dt iframe {
             width: 133px;
             height: 90px;
         }
-.bannerlist dd a{
-    text-decoration:none;
-    color:black;
-}
-    .bannerlist dd a:hover {
-        color: #f17142;
+
+    .bannerlist dd a {
+        text-decoration: none;
+        color: black;
     }
+
+        .bannerlist dd a:hover {
+            color: #f17142;
+        }
+
 .topbanner {
-        width: 100%;
-        height: 90px;
-        border: 0px;
-        background-image: url(/image/bannernew01_03.jpg);
-    }
+    width: 100%;
+    height: 90px;
+    border: 0px;
+    background-image: url(/image/bannernew01_03.jpg);
+}
 
 .topbannermiddle {
     width: 100%;
@@ -385,17 +393,21 @@ body {
     padding-left: 20px;
     letter-spacing: 1px;
 }
+
     .list-group-item a {
-        text-decoration:none;
-        color:black;
+        text-decoration: none;
+        color: black;
     }
+
         .list-group-item a:hover {
             color: #f17142;
         }
-    .hotnewfirst {
-        background: url(/image/newstag1_07.png) 2px 4px no-repeat;
-        padding-left: 20px;
-    }
+
+.hotnewfirst {
+    background: url(/image/newstag1_07.png) 2px 4px no-repeat;
+    padding-left: 20px;
+}
+
 .hotnewsecend {
     background: url(/image/newstag2_07.png) 2px 4px no-repeat;
     padding-left: 20px;
@@ -407,16 +419,17 @@ body {
 }
 
 .list-news-item {
-    padding:14px 0px;
+    padding: 14px 0px;
     margin-left: 3px;
     border-bottom: 1px solid #ccc;
 }
 
     .list-news-item > .list-news-item-l {
         width: 160px;
-        height:90px;
+        height: 90px;
         float: left;
     }
+
     .list-news-item > a img {
         border: 1px solid #898989;
     }
@@ -598,7 +611,7 @@ body {
 
     .lvyou-list-ul img {
         width: 140px;
-        height: 80px
+        height: 80px;
     }
 
 .lvyou-list-ul-line {
@@ -731,7 +744,7 @@ body {
 
     .foot-banner-nav ul {
         overflow: hidden;
-        display: block
+        display: block;
     }
 
     .foot-banner-nav > ul {
@@ -791,25 +804,27 @@ body {
 }
 
 .sky-jinyuanjinrong {
-    margin:12px 0px;
+    margin: 12px 0px;
     border: 1px solid #898989;
     height: 196px;
 }
+
     .sky-jinyuanjinrong iframe {
         height: 196px;
     }
+
 .sky-video-right {
-        height: 30px;
-        background-color: black;
-        line-height: 28px;
-        margin-top: 15px
-    }
+    height: 30px;
+    background-color: black;
+    line-height: 28px;
+    margin-top: 15px;
+}
 
 .sky-video-right-title {
     width: 100px;
     padding-left: 10px;
     color: #f17142;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 .sky-video-right-small-title {
@@ -818,19 +833,20 @@ body {
     vertical-align: middle;
     line-height: 35px;
     font-weight: bold;
-    color: #f17142
-}
-.sky-video-right-small-title a {
     color: #f17142;
-    text-decoration:none;
 }
-   
+
+    .sky-video-right-small-title a {
+        color: #f17142;
+        text-decoration: none;
+    }
+
 .hot-search-title {
     height: 30px;
     line-height: 28px;
     border-top: 2px solid #f17142;
     border-bottom: 1px solid #ccc;
-    margin-top: 15px
+    margin-top: 15px;
 }
 
     .hot-search-title span {
@@ -891,13 +907,16 @@ body {
                     line-height: 1.5;
                     margin-top: 10px;
                 }
+
 .banner-table-right-tit a {
     text-decoration: none;
     color: black;
 }
-.banner-table-right-tit a:hover {
-    color: #f17142;
-}
+
+    .banner-table-right-tit a:hover {
+        color: #f17142;
+    }
+
 .tab-left-double-div1 {
     float: left;
     width: 300px;
@@ -963,7 +982,7 @@ body {
 
 .sky-news-a {
     color: black;
-    padding-left: 10px
+    padding-left: 10px;
 }
 
 .sky-news-color {
@@ -976,7 +995,7 @@ body {
     height: 29px;
     color: white;
     line-height: 29px;
-    background: url(/image/hotnews_bg.png)
+    background: url(/image/hotnews_bg.png);
 }
 
 .sky-hot-news-title {
@@ -987,14 +1006,14 @@ body {
     float: right;
     text-align: center;
     width: 80%;
-    height:32px;
+    height: 32px;
 }
 
     .sky-hot-news-context dl {
         float: left;
         margin-left: 50px;
-        height:30px;
-        overflow:hidden;
+        height: 30px;
+        overflow: hidden;
     }
 
     .sky-hot-news-context span {
@@ -1003,20 +1022,22 @@ body {
         height: 29px;
         float: right;
     }
-.sky-hot-news-context a{
-    color:white;
-    text-decoration:none;
-}
-    .sky-hot-news-context a:hover {
-        color: #f17142;
+
+    .sky-hot-news-context a {
+        color: white;
+        text-decoration: none;
     }
+
+        .sky-hot-news-context a:hover {
+            color: #f17142;
+        }
 
 .sky-hot-news-context-pre {
     height: 9px;
     width: 14px;
     display: block;
     cursor: pointer;
-    margin-top: -8px
+    margin-top: -8px;
 }
 
 .sky-hot-news-context-next {
@@ -1032,7 +1053,7 @@ body {
 }
 
 .sky-font18 {
-    font-size: 18px
+    font-size: 18px;
 }
 
 .sky-margintop10 {
@@ -1053,12 +1074,13 @@ body {
 }
 
     .sky-liuxueyimin dl dd {
-        margin-bottom: 10px
+        margin-bottom: 10px;
     }
+
         .sky-liuxueyimin dl dd a {
             color: #458f50;
             font-weight: bold;
-            text-decoration:none;
+            text-decoration: none;
         }
 
 .sky-liuxueyimin-list {
@@ -1069,9 +1091,10 @@ body {
 .sky-floatL {
     float: left;
 }
-.sky-floatL > ul>li>a {
-    float: left;
-}
+
+    .sky-floatL > ul > li > a {
+        float: left;
+    }
 
 .sky-floatR {
     float: right;
@@ -1106,17 +1129,17 @@ body {
 .sky-zhuanti-title {
     font-size: 16px;
     color: #293e73;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 .sky-zhuanti-content {
     font-size: 12px;
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 .sky-zhuanti-list {
     margin-top: 10px;
-    display: list-item
+    display: list-item;
 }
 
 .sky-ul-list1 {
@@ -1126,7 +1149,7 @@ body {
 }
 
 .sky-zhuanlan-author {
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .sky-zhuanlan-title {
@@ -1135,7 +1158,7 @@ body {
 }
 
 .sky-zhuanlan-content {
-    font-size: 12px
+    font-size: 12px;
 }
 
 .sky-activity-title {
@@ -1156,14 +1179,14 @@ body {
 .sky-activity-info-div2 {
     float: left;
     width: 137px;
-    margin-left: 10px
+    margin-left: 10px;
 }
 
     .sky-activity-info-div2 span {
         color: #f5842b;
         text-align: left;
         margin-top: 0px;
-        margin-bottom: 10px
+        margin-bottom: 10px;
     }
 
 .tianwei-right-tab span {
@@ -1181,7 +1204,7 @@ body {
         width: 14px;
         cursor: pointer;
         display: inline-block;
-        color: #f17142
+        color: #f17142;
     }
 
 
@@ -1189,7 +1212,7 @@ body {
 .sky-info {
     margin: 20px 0;
     height: 105px;
-    display: inline
+    display: inline;
 }
 
 .sky-banner {
@@ -1210,8 +1233,9 @@ body {
 .sky-caijing-info-title {
     font-size: 16px;
     color: #256091;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
+
 #wechat_home {
     width: 125px;
     height: 115px;
@@ -1266,45 +1290,55 @@ body {
     display: none;
     z-index: 9999;
 }
+
 .sky-ul-list1 a {
     text-decoration: none;
     color: black;
 }
-.sky-ul-list1 a:hover {
-    color: #f17142;
-}
+
+    .sky-ul-list1 a:hover {
+        color: #f17142;
+    }
+
 .sky-zhuanti-title a {
     text-decoration: none;
     color: #293e73;
 }
+
 .sky-caijing-info-title a {
     text-decoration: none;
     color: #256091;
-    font-weight:bold;
+    font-weight: bold;
 }
+
 .list-group-generalitem a {
     text-decoration: none;
     color: black;
 }
 
-.list-group-generalitem a:hover {
-    color: #f17142;
-}
+    .list-group-generalitem a:hover {
+        color: #f17142;
+    }
+
 .sky-caijing-info-detail {
-    height:108px;
-    overflow:hidden;
+    height: 108px;
+    overflow: hidden;
 }
-.sky-caijing-info-detail a {
-    color: black;
-    text-decoration: none;
-}
-.sky-caijing-info-detail a:hover {
-    color: #f17142;
-}
+
+    .sky-caijing-info-detail a {
+        color: black;
+        text-decoration: none;
+    }
+
+        .sky-caijing-info-detail a:hover {
+            color: #f17142;
+        }
+
 .sky-video-right-top1 {
     width: 300px;
     height: 190px;
 }
+
     .sky-video-right-top1 iframe {
         width: 300px;
         height: 190px;
@@ -1315,9 +1349,10 @@ body {
     line-height: 30px;
     border-top: 2px solid #f17142;
     border-bottom: 1px solid #ccc;
-    margin-top:15px;
-    margin-bottom:4px;
+    margin-top: 15px;
+    margin-bottom: 4px;
 }
+
 .sky-vip-list {
     line-height: 24px;
     overflow: hidden;
@@ -1327,46 +1362,49 @@ body {
     display: inline;
     overflow: hidden;
 }
+
     .sky-vip-list dd a {
-        text-decoration:none;
-        color:black;
+        text-decoration: none;
+        color: black;
     }
+
         .sky-vip-list dd a:hover {
             color: #f17142;
         }
 
-.ky-share-icon{
-
+.ky-share-icon {
 }
 
-.ky-share-icon > .icon-nav{
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s;
-    justify-content:center;
-    align-items:center;
-}
+    .ky-share-icon > .icon-nav {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+        justify-content: center;
+        align-items: center;
+    }
 
-.ky-share-icon > .icon-nav:hover{
-    background: #ccc; 
-}
+        .ky-share-icon > .icon-nav:hover {
+            background: #ccc;
+        }
 
 
-.ky-share-icon > .icon-nav:hover i{
-    /*color: #676566;*/ 
-    color:#f17142;
-}
-.ky-share-icon > .icon-nav i{
-    color: #ccc; 
-    text-align: center;
-    margin:0 5px;
-    line-height: 25px;
-    transition: all 0.3s;
-}
+            .ky-share-icon > .icon-nav:hover i {
+                /*color: #676566;*/
+                color: #f17142;
+            }
+
+        .ky-share-icon > .icon-nav i {
+            color: #ccc;
+            text-align: center;
+            margin: 0 5px;
+            line-height: 25px;
+            transition: all 0.3s;
+        }
+
 #wechat_home {
     width: 97px;
     height: 97px;
@@ -1374,7 +1412,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border:2px solid #f17142;
+    border: 2px solid #f17142;
 }
 
 #wechat_go {
@@ -1384,7 +1422,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border:2px solid #f17142;
+    border: 2px solid #f17142;
 }
 
 #wechat_property {
@@ -1394,7 +1432,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border:2px solid #f17142;
+    border: 2px solid #f17142;
 }
 
 #wechat_money {
@@ -1404,7 +1442,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border:2px solid #f17142;
+    border: 2px solid #f17142;
 }
 
 #wechat_soku {
@@ -1414,42 +1452,17 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border:2px solid #f17142;
+    border: 2px solid #f17142;
 }
 
+.rightdivchid1-newsmore {
+    border: 1px solid #ef010a;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .rightdivchid1-newsmore a {
+        color: #ef010a;
+    }
