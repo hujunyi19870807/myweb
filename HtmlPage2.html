@@ -323,7 +323,12 @@
                                         }
                                         ?>
                                     </span>
-                                    <span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>
+                                    <?php $keywordlist = explode(',',$bqr[keyword]);
+                                         foreach($keywordlist as $value){
+                                            <span class="list-news-item-word">echo $value</span>
+                                         }
+                                    ?>
+                                    <!--<span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>-->
                                 </div>
                             </div>
                         </div>
