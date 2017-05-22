@@ -4,13 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <title>天维首页新版</title>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="index-20170701.css" rel="stylesheet" />
-    <link href="FocusPic-v1.0.css" rel="stylesheet" />
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script src="FocusPic-v1.0.js"></script>
+    <link href="http://cms6.skykiwi.com/css/index-20170701.css" rel="stylesheet" />
+    <link href="http://cms6.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
+
+    <link href="http://cms6.skykiwi.com/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    
+    <script src="http://cms6.skykiwi.com/js/jquery-1.12.4.min.js"></script>
+    <script src="http://cms6.skykiwi.com/js/FocusPic-v1.0.js"></script>
     <script src="http://cms6.skykiwi.com/js/scroll-v1.0.js"></script>
-    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script type="text/javascript">
         $(function () {
             // begin
@@ -304,31 +305,30 @@
                             <div class="list-news-item-r-bottom">
                                 <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
                                 <div style="margin-top:5px">
-                                    <span style="color:red">
                                         <?php $naclassid = array("4","5","6","7","8","9");
                                         $hqclassid = array("14","15","16","17","18","19");
                                         $tzclassid = array("49","50","51","52","53","160","161");
                                         $ymclassid = array("110","111","112","113","114","115","116");
                                         if(in_array($bqr[classid],$naclassid,true)){
-                                        echo '纽澳新闻';
+                                            echo ('<span style="color: red">纽澳新闻</span>');
                                         }
                                         elseif(in_array($bqr[classid],$hqclassid,true)){
-                                        echo '环球报道';
+                                            echo ('<span style="color: red">环球报道</span>');
                                         }
                                         elseif(in_array($bqr[classid],$tzclassid,true)){
-                                        echo '投资频道';
+                                            echo ('<span style="color: red">投资频道</span>');
                                         }
                                         elseif(in_array($bqr[classid],$ymclassid,true)){
-                                        echo("留学移民");
+                                            echo ('<span style="color: red">留学移民</span>');
                                         }
-                                        ?>
-                                    </span>
-                                    <?php $keywordlist = explode(',',$bqr[keyword]);
-                                         foreach($keywordlist as $value){
-                                            <span class="list-news-item-word">echo $value</span>
-                                         }
-                                    ?>
-                                    <!--<span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>-->
+                                        
+                                        if (!empty($bqr[keyboard])){
+                                            $keywordlist = explode(',',$bqr[keyboard]);
+                                            foreach($keywordlist as $value){
+                                                echo("<span class='list-news-item-word'>$value</span>");
+                                            }
+                                        }
+                                        ?> 
                                 </div>
                             </div>
                         </div>
@@ -346,27 +346,31 @@
                             <div class="list-news-item-r-bottom">
                                 <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
                                 <div style="margin-top:5px">
-                                    <span style="color:red">
                                         <?php $naclassid = array("4","5","6","7","8","9");
                                         $hqclassid = array("14","15","16","17","18","19");
                                         $tzclassid = array("49","50","51","52","53","160","161");
                                         $ymclassid = array("110","111","112","113","114","115","116");
                                         if(in_array($bqr[classid],$naclassid,true))
                                         {
-                                        echo '纽澳新闻';
+                                        echo ('<span style="color: red">纽澳新闻</span>');
                                         }
                                         elseif(in_array($bqr[classid],$hqclassid,true)){
-                                        echo '环球报道';
+                                        echo ('<span style="color: red">环球报道</span>');
                                         }
                                         elseif(in_array($bqr[classid],$tzclassid,true)){
-                                        echo '投资频道';
+                                        echo ('<span style="color: red">投资频道</span>');
                                         }
                                         elseif(in_array($bqr[classid],$ymclassid,true)){
-                                        echo("留学移民");
+                                        echo ('<span style="color: red">留学移民</span>');
+                                        }
+
+                                        if (!empty($bqr[keyboard])){
+                                            $keywordlist = explode(',',$bqr[keyboard]);
+                                            foreach($keywordlist as $value){
+                                                echo("<span class='list-news-item-word'>$value</span>");
+                                            }
                                         }
                                         ?>
-                                    </span>
-                                    <span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>
                                 </div>
                             </div>
                         </div>
@@ -384,27 +388,30 @@
                             <div class="list-news-item-r-bottom">
                                 <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
                                 <div style="margin-top:5px">
-                                    <span style="color:red">
                                         <?php $naclassid = array("4","5","6","7","8","9");
                                         $hqclassid = array("14","15","16","17","18","19");
                                         $tzclassid = array("49","50","51","52","53","160","161");
                                         $ymclassid = array("110","111","112","113","114","115","116");
                                         if(in_array($bqr[classid],$naclassid,true))
                                         {
-                                        echo '纽澳新闻';
+                                        echo ('<span style="color: red">纽澳新闻</span>');
                                         }
                                         elseif(in_array($bqr[classid],$hqclassid,true)){
-                                        echo '环球报道';
+                                        echo ('<span style="color: red">环球报道</span>');
                                         }
                                         elseif(in_array($bqr[classid],$tzclassid,true)){
-                                        echo '投资频道';
+                                        echo ('<span style="color: red">投资频道</span>');
                                         }
                                         elseif(in_array($bqr[classid],$ymclassid,true)){
-                                        echo '留学移民';
+                                        echo ('<span style="color: red">留学移民</span>');
+                                        }
+                                        if (!empty($bqr[keyboard])){
+                                            $keywordlist = explode(',',$bqr[keyboard]);
+                                            foreach($keywordlist as $value){
+                                                echo("<span class='list-news-item-word'>$value</span>");
+                                            }
                                         }
                                         ?>
-                                    </span>
-                                    <span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>
                                 </div>
                             </div>
                         </div>
@@ -427,27 +434,32 @@
                             <div class="list-news-item-r-bottom">
                                 <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
                                 <div style="margin-top:5px">
-                                    <span style="color:red">
                                         <?php $naclassid = array("4","5","6","7","8","9");
                                         $hqclassid = array("14","15","16","17","18","19");
                                         $tzclassid = array("49","50","51","52","53","160","161");
                                         $ymclassid = array("110","111","112","113","114","115","116");
                                         if(in_array($bqr[classid],$naclassid,true))
                                         {
-                                        echo '纽澳新闻';
+                                        echo ('<span style="color: red">纽澳新闻</span>');
                                         }
                                         elseif(in_array($bqr[classid],$hqclassid,true)){
-                                        echo '环球报道';
+                                        echo ('<span style="color: red">环球报道</span>');
                                         }
                                         elseif(in_array($bqr[classid],$tzclassid,true)){
-                                        echo '投资频道';
+                                        echo ('<span style="color: red">投资频道</span>');
                                         }
                                         elseif(in_array($bqr[classid],$ymclassid,true)){
-                                        echo '留学移民';
+                                        echo ('<span style="color: red">留学移民</span>');
+                                        }
+                                        
+                                        if (!empty($bqr[keyboard])){
+                                            $keywordlist = explode(',',$bqr[keyboard]);
+                                            foreach($keywordlist as $value){
+                                                echo("<span class='list-news-item-word'>$value</span>");
+                                            }
                                         }
                                         ?>
-                                    </span>
-                                    <span class="list-news-item-word">爆炸案</span><span class="list-news-item-word">圣彼得堡</span><span class="list-news-item-word">突发事件</span>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -603,7 +615,7 @@
                             <div class="sky-caijing">
                                 <ul class="list-group-generalitem">
                                     [e:loop={'49',9,12,0}]
-                                    <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[ftitle],38)?></a></li>
+                                    <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],38)?></a></li>
                                     [/e:loop]
                                 </ul>
                             </div>
@@ -623,7 +635,7 @@
                             <div class="sky-caijing">
                                 <ul class="list-group-generalitem">
                                     [e:loop={'161',9,12,0}]
-                                    <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[ftitle],38)?></a></li>
+                                    <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],38)?></a></li>
                                     [/e:loop]
                                 </ul>
                                 <!--[ecmsinfo]161,9,38,0,0,18,0[/ecmsinfo]-->
@@ -655,108 +667,34 @@
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
-                            <div style="display: inline-block;">
-                                <dl class="lvyou-list-ul">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd>
-                                        意是否有人贱卖
-                                    </dd>
-                                </dl>
-                                <dl class="lvyou-list-ul" style="margin-left:19px">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd>
-                                        新西兰的补习班是怎么
-                                    </dd>
-                                </dl>
-                                <div style="clear:both;"></div>
-                                <div class="lvyou-list-ul-line"></div>
-                                <dl class="lvyou-list-ul">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd>
-                                        意是否有人贱卖
-                                    </dd>
-                                </dl>
-                                <dl class="lvyou-list-ul" style="margin-left:19px">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd>
-                                        新西兰的补习班是怎么
-                                    </dd>
-                                </dl>
-                                <div style="clear:both;"></div>
-                                <div class="lvyou-list-ul-line"></div>
+                            <div style="display: inline-block;" id="div-life-control">
+                                <script type="text/javascript" src="http://go.skykiwi.com/homepage_life.js"></script>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $("#div-life-control dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
+                                        $("#div-life-control dl:eq(3)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
+                                    })
+                                </script>
                             </div>
                             <div>
                                 <ul>
-                                    <li>
-                                        干货说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        新西兰不可错过的美味海鲜小镇大搜罗！
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
+                                    <script type="text/javascript" src="http://go.skykiwi.com/homepage_lifelist.js"></script>
                                 </ul>
                             </div>
                         </div>
                         <div class="caijin-span" controlindex="2">
-                            <div style="display: inline-block;">
-                                <dl class="lvyou-list-ul">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd>
-                                        意是否有人贱卖
-                                    </dd>
-                                </dl>
-                                <dl class="lvyou-list-ul" style="margin-left:19px">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd>
-                                        新西兰的补习班是怎么
-                                    </dd>
-                                </dl>
-                                <div style="clear:both;"></div>
-                                <div class="lvyou-list-ul-line"></div>
-                                <dl class="lvyou-list-ul">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd>
-                                        意是否有人贱卖
-                                    </dd>
-                                </dl>
-                                <dl class="lvyou-list-ul" style="margin-left:19px">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd>
-                                        新西兰的补习班是怎么
-                                    </dd>
-                                </dl>
-                                <div style="clear:both;"></div>
-                                <div class="lvyou-list-ul-line"></div>
+                            <div style="display: inline-block;" id="div-tourism-control">
+                                <script type="text/javascript" src="http://go.skykiwi.com/homepage_tourism.js"></script>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $("#div-tourism-control dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
+                                        $("#div-tourism-control dl:eq(3)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
+                                    })
+                                </script>
                             </div>
                             <div>
                                 <ul>
-                                    <li>
-                                        干货说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
-                                    <li>
-                                        新西兰不可错过的美味海鲜小镇大搜罗！
-                                    </li>
-                                    <li>
-                                        【干货】说说在新西兰应该怎么申请房屋补贴？
-                                    </li>
+                                    <script type="text/javascript" src="http://go.skykiwi.com/homepage_tourismlist.js"></script>
                                 </ul>
                             </div>
                         </div>
@@ -768,19 +706,12 @@
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)" style="color:#ff96ac;">特价</span>
-                        <!--<span class="sky-tejia-span2">
-                            <a class="sky-tejia-updown" id="pre_opage">&#9664;</a>
-                            <a class="sky-tejia-updown" id="next_opage">&#9654;</a>
-                        </span>-->
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
                             <div>
                                 <ul class="caijin-span-tejia">
-                                    <li><img src="image/shishang_07.png" /></li>
-                                    <li><img src="image/tejia-001.png" /></li>
-                                    <li><img src="image/tejia-002.png" /></li>
-                                    <li><img src="image/shishang_07.png" /></li>
+                                    <script type="text/javascript" src="http://go.skykiwi.com/homepage_specialoffer.js"></script>
                                 </ul>
                             </div>
                         </div>
@@ -795,14 +726,7 @@
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
                             <div class="sky-shishang">
-                                <dl class="lvyou-list-ul">
-                                    <dt>
-                                        <img style="width:300px;height:190px" src="image/0001_03.png">
-                                    </dt>
-                                    <dd class="shishang-list-dl">
-                                        奥克兰咖啡盛典，美食咖啡...
-                                    </dd>
-                                </dl>
+                                <script type="text/javascript" src="http://go.skykiwi.com/homepage_fashion.js"></script>
                             </div>
                             <div class="sky-shishang">
                                 <dl class="lvyou-list-ul">
@@ -938,14 +862,16 @@
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
+                            [e:loop={'SELECT * FROM phome_enewsclass INNER JOIN phome_ecms_news ON phome_enewsclass.classid=phome_ecms_news.classid WHERE bclassid in (32,58) ORDER BY firsttitle DESC,newstime DESC LIMIT 0,1',1,24,0}]
                             <div class="sky-floatL"><img src="image/zhuanlan.png" /></div>
                             <div class="sky-floatR">
                                 <dl>
-                                    <dd class="sky-zhuanlan-author">专栏作者：俞敏洪</dd>
-                                    <dt class="sky-zhuanlan-title">做好这三件事是成为好妈妈 的开始</dt>
-                                    <content class="sky-zhuanlan-content">一个现代家庭的子后依然能兼顾工作和家庭， 并把孩子带好呢？我觉得最重要的 有如下三个要素……</content>
+                                    <dd class="sky-zhuanlan-author">专栏作者：<?=$bqr[writer]?></dd>
+                                    <dt class="sky-zhuanlan-title"><a href="<?=$bqsr[titleurl]?>" style="text-decoration:none" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],50)?></a></dt>
+                                    <content class="sky-zhuanlan-content"><?=esub($bqr[smalltext],88)?>...</content>
                                 </dl>
                             </div>
+                            [/e:loop] 
                         </div>
                     </div>
                 </div>
@@ -956,28 +882,11 @@
                 <div class="sky-activity-title">
                     <span>活动</span>
                 </div>
-
                 <div class="sky-activity-info">
-                    <div class="sky-floatL">
-                        <img src="image/huodong2_03.png" />
-                    </div>
-                    <div class="sky-activity-info-div2">
-                        <span>文化中国 四海同春</span>
-                        <p>
-                            为庆祝2017年中国鸡年和元宵节的到来，由中华人民共和国国务院侨务办公室， 中国海外交流协会主办...
-                        </p>
-                    </div>
+                    <img src="image/huodong01.png" alt="" />
                 </div>
                 <div class="sky-activity-info">
-                    <div class="sky-floatL">
-                        <img src="image/huodong2_03.png" />
-                    </div>
-                    <div class="sky-activity-info-div2">
-                        <span>文化中国 四海同春</span>
-                        <p>
-                            为庆祝2017年中国鸡年和元宵节的到来，由中华人民共和国国务院侨务办公室， 中国海外交流协会主办...
-                        </p>
-                    </div>
+                    <img src="image/huodong02.png" alt="" />
                 </div>
 
                 <div class="sky-banner">

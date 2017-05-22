@@ -1174,20 +1174,9 @@ body {
 .sky-activity-info {
     margin-top: 10px;
     height: 120px;
+    width:300px;
+    height:110px;
 }
-
-.sky-activity-info-div2 {
-    float: left;
-    width: 137px;
-    margin-left: 10px;
-}
-
-    .sky-activity-info-div2 span {
-        color: #f5842b;
-        text-align: left;
-        margin-top: 0px;
-        margin-bottom: 10px;
-    }
 
 .tianwei-right-tab span {
     font-size: 18px;
@@ -1461,6 +1450,7 @@ body {
     text-align: center;
     line-height: 30px;
     letter-spacing: 2px;
+    margin:15px 0px;
 }
 
     .rightdivchid1-newsmore a {
