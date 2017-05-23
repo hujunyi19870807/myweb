@@ -489,11 +489,6 @@ body {
     padding-left: 20px;
 }
 
-.caijin-span1 {
-    border-top: 2px solid #ccc;
-    margin-top: 10px;
-    width: 105px;
-}
 
 .caijin-title-span {
     font-size: 18px;
@@ -604,7 +599,6 @@ body {
 
 .lvyou-list-ul {
     float: left;
-    margin-top: 8px;
     text-align: center;
     padding-bottom: 10px;
 }
@@ -641,7 +635,13 @@ body {
     height: 25px;
     line-height: 25px;
 }
-
+.caijin-span a {
+    color:black;
+    text-decoration:none;
+}
+.caijin-span a:hover {
+  color:#f5842b;
+}
 
 /* NEWS Channel Exchange Links */
 
@@ -944,18 +944,18 @@ body {
 
     .caijin-span-tejia li {
         float: left;
-        height: 150px;
+        height: 155px;
     }
 
-    .caijin-span-tejia > li:nth-child(2),
-    .caijin-span-tejia > li:nth-child(4) {
+    .caijin-span-tejia > li:nth-child(3),
+    .caijin-span-tejia > li:nth-child(5)
+    {
         margin-left: 20px;
     }
 
-    .caijin-span-tejia > li:nth-child(1),
-    .caijin-span-tejia > li:nth-child(2) {
-        margin-top: 8px;
-        margin-bottom: 45px;
+    .caijin-span-tejia > li:nth-child(4),
+    .caijin-span-tejia > li:nth-child(5) {
+        margin-top:20px;
     }
 
 .caijin-title-span > a {
@@ -1310,7 +1310,7 @@ body {
     }
 
 .sky-caijing-info-detail {
-    height: 108px;
+    height: 110px;
     overflow: hidden;
 }
 

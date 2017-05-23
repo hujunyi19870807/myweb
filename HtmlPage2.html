@@ -4,7 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <title>天维首页新版</title>
-    <link href="http://cms6.skykiwi.com/css/index-20170701.css" rel="stylesheet" />
+    <!--<link href="http://cms6.skykiwi.com/css/index-20170701.css" rel="stylesheet" />-->
+
+    <link href="index-20170701.css" rel="stylesheet" />
     <link href="http://cms6.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
 
     <link href="http://cms6.skykiwi.com/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -59,7 +61,14 @@
             var controlIndex = $(obj).attr("controlindex");
             $(obj).css("color", colorName);
             $(obj).addClass("active-tit-a");
-
+            $(obj).siblings("a").each(function (i) {
+                if ($(this).attr("controlindex") == controlIndex) {
+                    $(this).show();
+                }
+                else {
+                    $(this).hide();
+                }
+            });
 
             if (!Array.prototype.indexOf) {
                 Array.prototype.indexOf = function (elt /*, from*/) {
@@ -90,7 +99,7 @@
             });
 
             $(obj).parent().siblings().each(function () {
-                $(this).children().each(function () {
+                $(this).children().each(function (i) {
                     if ($(this).attr("controlIndex") == controlIndex) {
                         $(this).show();
                     }
@@ -527,7 +536,7 @@
                                 <?=$bqsr[smalltext]?>
 
                             </dt>
-                            <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">【天维热点】<?=esub($bqr[title],20)?>...</a></dd>
+                            <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">【天维现场】<?=esub($bqr[title],20)?>...</a></dd>
                         </dl>
                         [/e:loop]
                     </div>
@@ -587,8 +596,8 @@
                         <!--<span class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#075490',2)">拍卖结果</span>-->
                     </div>
                     <div class="sky-margintop10">
-                        <div controlindex="1"><img src="image/fangyuan_07.jpg" /></div>
-                        <div controlindex="2" style="display:none"></div>
+                        <div controlindex="1"><!--#include virtual="/ssi/indexhome201706.html" --></div>
+                        <!--<div controlindex="2" style="display:none"></div>-->
                     </div>
                 </div>
                 <!--房产  end-->
@@ -602,7 +611,7 @@
                         <div class="caijin-span" controlindex="1">
                             [e:loop={'49',1,12,1}]
                             <div style="height:165px">
-                                <div class="sky-floatL"><a href="<?=$bqsr[titleurl]?>" target="_blank"><img width="125" height="155" src="<?=$bqr[titlepic]?>" /></a></div>
+                                <div class="sky-floatL"><a href="<?=$bqsr[titleurl]?>" target="_blank"><img style="border:1px solid #898989" width="125" height="155" src="<?=$bqr[titlepic]?>" /></a></div>
                                 <div class="sky-caijing-info">
                                     <dl>
                                         <dt class="sky-caijing-info-title"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],32)?></a></dt>
@@ -611,7 +620,7 @@
                                 </div>
                             </div>
                             [/e:loop]
-
+                            <div class="lvyou-list-ul-line"></div>
                             <div class="sky-caijing">
                                 <ul class="list-group-generalitem">
                                     [e:loop={'49',9,12,0}]
@@ -623,7 +632,7 @@
                         <div class="caijin-span" style="display:none" controlindex="2">
                             [e:loop={'161',1,12,1}]
                             <div style="height:165px">
-                                <div class="sky-floatL"><a href="<?=$bqsr[titleurl]?>" target="_blank"><img width="125" height="155" src="<?=$bqr[titlepic]?>" /></a></div>
+                                <div class="sky-floatL"><a href="<?=$bqsr[titleurl]?>" target="_blank"><img style="border:1px solid #898989" width="125" height="155" src="<?=$bqr[titlepic]?>" /></a></div>
                                 <div class="sky-caijing-info">
                                     <dl>
                                         <dt class="sky-caijing-info-title"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],32)?></a></dt>
@@ -632,6 +641,7 @@
                                 </div>
                             </div>
                             [/e:loop]
+                            <div class="lvyou-list-ul-line"></div>
                             <div class="sky-caijing">
                                 <ul class="list-group-generalitem">
                                     [e:loop={'161',9,12,0}]
@@ -650,20 +660,15 @@
                 </div>
                 <!--生活 旅游 begin-->
                 <div id="flash1" class="slideBox sky-floatL" style="padding-top:15px;">
-                    <ul class="items">
-                        <li><a href="https://google.com" title="这里是测试标题一"><img src="http://www.skykiwi.com/d/file/news/world/gj/sh/2014-07-21/47e7983e7c9eab076763182e9209262a.jpg"></a></li>
-                        <li><a href="https://baidu.com" title="这里是测试标题二"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/9c4cd2671d1637792ad35096a452a812.jpg"></a></li>
-                        <li><a href="https//yahoo.cn" title="这里是测试标题三"><img src="http://www.skykiwi.com/d/file/money/realestate/2014-07-16/eadbdcd26934f0887bb79fe0d4977510.jpg"></a></li>
-                        <li><a href="http://www.skykiwi.com/" title="这里是测试标题四"><img src="http://www.skykiwi.com/d/file/news/world/dl/sh/2014-07-21/22a6bdee97efd18dbbe7327fb8f84893.jpg"></a></li>
-                        <li><a href="http://bbs.skykiwi.com" title="这里是测试标题五"><img src="http://www.skykiwi.com/d/file/news/world/gj/kj/2014-07-21/b006f4c15d4167eb630bf6f8c31e81d1.jpg"></a></li>
-                    </ul>
+                        <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_slidelist.js" charset="utf-8"></script>     
                 </div>
 
                 <div class="tab-left-double-div2">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#ff96ac',1)">生活</span>
                         <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#ff96ac',2)">旅游</span>
-                        <a href="##" class="sky-more-style">更多>></a>
+                        <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/life/" class="sky-more-style">更多>></a>
+                        <a controlindex="2" target="_blank" href="http://go.skykiwi.com/skyselected/entertainment/" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
@@ -706,6 +711,7 @@
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit active-tit-ashenghuo" onclick="initTabClass(this,'#ff96ac',1)" style="color:#ff96ac;">特价</span>
+                        <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/supermarket/" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
@@ -721,62 +727,35 @@
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#ff96ac',1)">时尚</span>
                         <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#ff96ac',2)">美食</span>
-                        <a href="##" class="sky-more-style">更多>></a>
+                        <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/fashion/" class="sky-more-style">更多>></a>
+                        <a controlindex="2" target="_blank" href="http://go.skykiwi.com/skyselected/food/" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
                             <div class="sky-shishang">
                                 <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_fashion.js" charset="utf-8"></script>
-                                
                             </div>
-                            <div class="sky-shishang">
-                                <dl class="lvyou-list-ul">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd class="shishang-list-dl">
-                                        意是否有人贱卖
-                                    </dd>
-                                </dl>
-                                <dl class="lvyou-list-ul" style="margin-left:19px">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd class="shishang-list-dl">
-                                        新西兰的补习班是怎么
-                                    </dd>
-                                </dl>
+                            <div class="sky-shishang" id="div-fashion-controllist">
+                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_fashionlist.js" charset="utf-8"></script>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $("#div-fashion-controllist dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div>');
+                                    })
+                                </script>
                                 <div style="clear:both;"></div>
                             </div>
                         </div>
                         <div class="caijin-span" controlindex="2">
                             <div class="sky-shishang">
-                                <dl class="lvyou-list-ul">
-                                    <dt>
-                                        <img style="width:300px;height:190px" src="image/0001_03.png">
-                                    </dt>
-                                    <dd class="shishang-list-dl">
-                                        奥克兰咖啡盛典，美食咖啡...
-                                    </dd>
-                                </dl>
+                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_food.js" charset="utf-8"></script>
                             </div>
-                            <div class="sky-shishang">
-                                <dl class="lvyou-list-ul">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd class="shishang-list-dl">
-                                        意是否有人贱卖
-                                    </dd>
-                                </dl>
-                                <dl class="lvyou-list-ul" style="margin-left:19px">
-                                    <dt>
-                                        <img src="image/lvyou_03.png">
-                                    </dt>
-                                    <dd class="shishang-list-dl">
-                                        新西兰的补习班是怎么
-                                    </dd>
-                                </dl>
+                            <div class="sky-shishang" id="div-food-controllist">
+                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_foodlist.js" charset="utf-8"></script>
+                                <script type="text/javascript" id="div-food-controllist">
+                                     $(function () {
+                                         $("#div-food-controllist dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div>');
+                                     })
+                                </script>
                                 <div style="clear:both;"></div>
                             </div>
                         </div>
@@ -837,7 +816,7 @@
                             <div>
                                 [e:loop={'109',1,12,1}]
                                 <div class="sky-floatL">
-                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img width="140" height="80" src="<?=$bqr[titlepic]?>" /></a>
+                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="border:1px solid #898989" width="140" height="80" src="<?=$bqr[titlepic]?>" /></a>
                                 </div>
                                 <div class="sky-liuxueyimin">
                                     <dl>
@@ -864,7 +843,7 @@
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
                             [e:loop={'SELECT * FROM phome_enewsclass INNER JOIN phome_ecms_news ON phome_enewsclass.classid=phome_ecms_news.classid WHERE bclassid in (32,58) ORDER BY firsttitle DESC,newstime DESC LIMIT 0,1',1,24,0}]
-                            <div class="sky-floatL"><img src="image/zhuanlan.png" /></div>
+                            <div class="sky-floatL"><img style="width:100px;height:130px;border:1px solid #898989" src="<?=$bqr[classimg]?>" /></div>
                             <div class="sky-floatR">
                                 <dl>
                                     <dd class="sky-zhuanlan-author">专栏作者：<?=$bqr[writer]?></dd>
@@ -887,7 +866,7 @@
                     <img src="image/huodong01.png" alt="" />
                 </div>
                 <div class="sky-activity-info">
-                    <img src="image/huodong02.png" alt="" />
+                    <img style="" src="image/huodong02.png" alt="" />
                 </div>
 
                 <div class="sky-banner">
@@ -1026,7 +1005,7 @@
                 <a href="http://www.tv3.co.nz" target="_blank" title="New Zealand TV3" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-tv3.jpg"></a>
                 <a href="http://huaren.haiwainet.cn" target="_blank" title="海外网" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-haiwainet.jpg"></a>
                 <a href="http://chinese.people.com.cn" target="_blank" title="人民网" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-people.jpg"></a>
-                <a href="http://www.3rdplanet.com.cn" target="_blank" title="第三星球"><img src="http://www.skykiwi.com/home2011/images/link/logo_3rdplanet.png"></a>
+                <a href="https://www.feijipiao.co.nz/" target="_blank" title="途翼旅行"><img src="http://www.skykiwi.com/home2011/images/link/logo-tourism.jpg" /></a>
                 <a href="http://www.chinaqw.com/" target="_blank" title="中国侨网"><img src="http://www.skykiwi.com/home2011/images/link/logo_chinaqw.jpg"></a>
                 <!-- <a href="http://www.ucpnz.com" target="_blank" title="新西兰联合报" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-ucpnz.jpg" /></a> -->
                 <a href="http://www.globaltimes.com.cn" target="_blank" title="环球时报" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-global-times.jpg"></a>
