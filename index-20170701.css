@@ -646,7 +646,7 @@ body {
 /* NEWS Channel Exchange Links */
 
 .links {
-    margin: 8px 0px;
+    margin: 15px 0px;
     width: 948px;
     border: 1px solid #AAA;
     padding: 0px 0px 8px 0px;
@@ -688,10 +688,10 @@ body {
 #footer {
     line-height: 22px;
     text-align: center;
-    padding: 15px 0 20px 0;
     background: #FFF;
     width: 950px;
     text-decoration: none;
+    margin:15px 0px;
 }
 
     #footer > p > a {
@@ -714,7 +714,7 @@ body {
 
 #part3 {
     height: 50px;
-    margin: 20px 0px;
+    margin: 15px 0px;
     background: #DDD;
     overflow: hidden;
 }
@@ -1199,9 +1199,7 @@ body {
 
 
 .sky-info {
-    margin: 20px 0;
-    height: 105px;
-    display: inline;
+    margin: 15px 0;
 }
 
 .sky-banner {
@@ -1455,4 +1453,76 @@ body {
 
     .rightdivchid1-newsmore a {
         color: #ef010a;
+    }
+
+.indexhomes-info {
+    height: 100px;
+    text-align: center;
+    border-bottom: 1px solid #898989;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.indexhomes-info strong {
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+    display: block;
+}
+
+    .indexhomes-info strong a {
+        color: #265294;
+        display: block;
+        overflow: hidden;
+        max-height:46px;
+        line-height:23px;
+        margin:5px 0px;
+    }
+
+    .indexhomes-info span {
+        display: block;
+        overflow: hidden;
+        margin-top:5px;
+    }
+
+.indexhomes-roomcount {
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+    .indexhomes-roomcount span {
+        color: #000;
+        background:url(/image/icon.png) no-repeat 0 0;
+    }
+.icon-ws {
+    background-position: 0 0;
+    padding-left: 30px;
+}
+
+.icon-wy {
+    background-position: 0 -23px;
+    padding-left: 30px;
+}
+.indexhomes-imagecount {
+    width: 100%;
+    height: 30px;
+    background-color: #e1e1e1;
+    line-height: 30px;
+    display: inline-block;
+    margin:10px 0px;
+}
+.indexhomes-roomchange {
+    height: 30px;
+    background-color: #e1e1e1;
+    line-height: 30px
+}
+
+.hsPhoto {
+    display: block;
+    height: 200px;
+    overflow: hidden
+}
+
+.hsPhoto img {
+        float: left
     }

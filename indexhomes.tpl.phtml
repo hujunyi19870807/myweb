@@ -1,0 +1,61 @@
+<?php
+foreach($results as $k=>$result)
+{
+
+	$displayInit = $k > 0 ? ' style="display:none;" ' : '';
+
+
+?>
+
+<div class="indexhomes" data-index="<?=$k?>"<?=$displayInit?>>
+    <a href="http://home.skykiwi.com/<?=$result['propertyId']?>.html">
+        <span class="hsPhoto">
+            <img class="loading" src="<?=PREFIX_IMG?>images/loading.gif" style="display:none" />
+            <em class="mask" style="display:none"></em>
+            <img class="photo" src="<?=$result['photo']['urlPrefix']?><?=$result['photo']['filePath']?>30_<?=$result['photo']['fileName']?>" width="300" height="210" data-src='<?=json_encode(array_values($result['pictures']))?>' />
+            <?php if ((! empty($result['video1'])) OR (! empty($result['video2']))) {?><em class="video-s"></em><?php }elseif (! empty($value['openhomes'])) { ?><em class="openday-s"></em><?php } ?>
+        </span>
+    </a>
+    <div class="indexhomes-imagecount">
+        <img style="margin-left:10px" src="<?=$result['agency']['photo']['urlPrefix']?><?=$result['agency']['photo']['filePath']?><?=$result['agency']['photo']['fileName']?>" alt="" width="90" height="25" />
+        <span style="float:right;margin-right:10px"><i class="fa fa-chevron-left" aria-hidden="true" onclick="prev()" style="cursor:pointer;"></i><i style="margin-right:5px"><em>1</em>/<?=$result['imageCount']?></i><i onclick="next()" style="cursor:pointer;" class="fa fa-chevron-right" aria-hidden="true"></i></span>
+    </div>
+    <div style="border:1px solid #898989">
+        <p class="indexhomes-info">
+            <strong>
+                <a href="http://home.skykiwi.com/<?=$result['propertyId']?>.html"><?=$result['teaser']?></a>
+                <?php
+                if ($result['priceMethodId'] == 1) {
+                    ?>
+                    Auction
+                    <?php
+                } elseif ($result['priceMethodId'] == 2) {
+                    ?>
+                    Price by Negotiation
+                    <?php
+                } elseif ($result['priceMethodId'] == 3) {
+                    ?>
+                    Asking Price $<?=number_format($result['price'], 0)?>
+                    <?php
+                } elseif ($result['priceMethodId'] == 4) {
+                    ?>
+                    Tender
+                    <?php
+                } else {
+                    ?>
+                    Sale
+                    <?php
+                }
+                ?>
+            </strong>
+            <span><?=$result['priceMethodId']?>, <?=$result['priceMethodId']?></span>
+        </p>
+
+        <div class="indexhomes-roomcount"><span class="icon-ws"><?=$result['bedroom']?> 卧室</span>|<span class="icon-wy"><?=$result['bathroom']?> 卫浴</span></div>
+        <div class="indexhomes-roomchange"><span style="margin-left:10px;cursor:pointer;" onclick="prevproperty()">上一个</span><span style="float:right;margin-right:10px;cursor:pointer;" onclick="nextproperty()">下一个</span></div>
+    </div>
+</div>
+
+<?php
+}
+?>
