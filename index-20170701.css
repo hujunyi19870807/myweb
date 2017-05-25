@@ -1496,18 +1496,34 @@ body {
         float: left
     }
 .sky-weather {
-    z-index:99999;
-    position:absolute;
-}
-.sky-weather:before {
-    content: '';
-    display: block;
-    background: #fff;
-    width: 14px;
-    height: 14px;
-    border-radius: 2px;
-    transform: rotate(45deg);
     position: absolute;
-    top: -7px;
-    left: 80px;
+    display: block;
+    box-shadow: 0px 3px 16px 0px rgba(111, 165, 255, 0.4);
+    z-index: 100;
+    right: 0;
+    transition: top .3s,visibility .3s,opacity .3s;
+    padding: 8px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color:#000;
+    margin-top:38px;
+}
+    .sky-weather:before {
+        content: '';
+        display: block;
+        background: #fff;
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        transform: rotate(45deg);
+        position: absolute;
+        top: -7px;
+        left: 100px;
+    }
+#weatherCities li {
+    cursor:pointer;
+}
+#div-weather-change span {
+margin-top:1px;
 }
