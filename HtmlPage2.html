@@ -108,6 +108,22 @@
                     }
                 });
             });
+
+            //$("#li-weather-change").mouseover(function () {
+            //    //$(this).next(".show2").slideDown(500);
+            //    $(".sky-weather").show();
+            //});
+            //$("#li-weather-change").mouseout(function () {
+            //    //$(".sky-weather").hide();
+            //});
+            //$(".sky-weather").mouseover(function () {
+            //    $(this).show();
+            //});
+
+
+            //$(".sky-weather").mouseout(function () {
+            //    $(this).hide();
+            //});
         }
 
         function bannerlist() {
@@ -166,6 +182,7 @@
             }
             imgIndex = 0;
         }
+        
     </script>
 </head>
 <body>
@@ -183,10 +200,24 @@
                     <li>
                         <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
                     </li>
-                    <li>
-                        <span class="active-text">22°</span>/18° <span>Auckland</span><span style="color:#f17142">  ▼</span>
+                    <li id="li-weather-change" style="display:flex">
+                        <img style="width:24px;height:24px;padding-right:4px; margin-top:-4px" src="/image/01d.png" /><span class="active-text" id="span-mix-temp">22°</span><span id="span-min-temp">/18°</span><span id="span-city">Auckland</span><span style="color:#f17142; margin-left:4px">▼</span>
                     </li>
                 </ul>
+                <div class="sky-weather" style="display:block;position:relative;background-color:red">
+                    <ul id="weatherCities">
+                        <li class="" data-min-temp="12.38" data-max-temp="26.8" data-icon="clear-sky-day" data-desc="天气描述">奥克兰（Auckland）</li>
+                        <li class="" data-min-temp="3.1" data-max-temp="30.1" data-icon="few-clouds-day" data-desc="天气描述">惠灵顿（Wellington）</li>
+                        <li class="" data-min-temp="11.12" data-max-temp="27.9" data-icon="clear-sky-day" data-desc="天气描述">基督城（Christchurch）</li>
+                        <li class="" data-min-temp="10.28" data-max-temp="29" data-icon="scattered-clouds-night" data-desc="天气描述">哈密尔顿（Hamilton）</li>
+                        <li class="" data-min-temp="9.51" data-max-temp="28" data-icon="broken-clouds-day" data-desc="天气描述">达尼丁（Dunedin）</li>
+                        <li class="" data-min-temp="8.91" data-max-temp="30.10" data-icon="shower-rain-day" data-desc="天气描述">北帕默斯顿（PalmerstonNorth）</li>
+                        <li class="" data-min-temp="3.82" data-max-temp="12.09" data-icon="rain-day" data-desc="天气描述">新普利茅斯（NewPlymouth）</li>
+                        <li class="" data-min-temp="5.55" data-max-temp="38" data-icon="thunderstorm-night" data-desc="天气描述">因弗卡吉尔（Invercargill）</li>
+                        <li class="" data-min-temp="7.13" data-max-temp="18" data-icon="snow-day" data-desc="天气描述">旺格雷（Whangalei）</li>
+                        <li class="" data-min-temp="9.81" data-max-temp="28.1" data-icon="mist-day" data-desc="天气描述">皇后镇（Queenstown）</li>
+                    </ul>
+                </div>
                 <div class="sky-nav-index">
                     <span class="sky-nav-tit">天维首页</span>
                     <ul class="sky-nav-ul clearfix">

@@ -503,7 +503,7 @@ body {
     text-decoration: none;
     color: #6b6b6b;
     font-size: 18px;
-    padding: 0 10px;
+    padding: 3px 10px;
 }
 
 .active-tit-a {
@@ -1495,3 +1495,19 @@ body {
 .hsPhoto img {
         float: left
     }
+.sky-weather {
+    z-index:99999;
+    position:absolute;
+}
+.sky-weather:before {
+    content: '';
+    display: block;
+    background: #fff;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -7px;
+    left: 80px;
+}
