@@ -310,17 +310,15 @@ body {
         width: 140px;
         height: 150px;
         float: left;
-        margin-top: 0px;
     }
 
     .bannerlist dt {
         font-size: 12px;
         float: left;
         margin-left: 0px;
-        margin-top: 6px;
         width: 135px;
         height: 90px;
-        margin-bottom: 7px;
+        margin-bottom:10px;
     }
 
         .bannerlist dt a {
@@ -375,18 +373,7 @@ body {
     margin-left: 19px;
 }
 
-.rightdivchid2 ul {
-    width: 300px;
-    margin-top: 10px;
-    padding-left: 0px;
-}
 
-.rightdivchid2 li {
-    list-style: none;
-    font-size: 14px;
-    height: 25px;
-    line-height: 25px;
-}
 
 .list-group-item {
     background: url(/image/newstag4_07.png) 2px 7px no-repeat;
@@ -419,7 +406,7 @@ body {
 }
 
 .list-news-item {
-    padding: 14px 0px;
+    padding: 13px 0px;
     margin-left: 3px;
     border-bottom: 1px solid #ccc;
 }
@@ -524,7 +511,7 @@ body {
     cursor: pointer;
 }
 
-    .active-tit-a:before {
+.active-tit-a:before {
         content: "";
         display: block;
         width: 100px;
@@ -546,37 +533,11 @@ body {
     left: 0px;
 }
 
-.active-tit-azhaunti:before {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 2px;
-    background: #f5842b;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-.active-tit-aliuxue:before {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 2px;
-    background: #458f50;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-.active-tit-azhuanlan:before {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: #663781;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.active-tit-single {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 10px;
 }
 
 .activity-right {
@@ -600,9 +561,7 @@ body {
 .lvyou-list-ul {
     float: left;
     text-align: center;
-    padding-bottom: 10px;
 }
-
     .lvyou-list-ul img {
         width: 140px;
         height: 80px;
@@ -616,8 +575,8 @@ body {
 
 .shishang-list-dl {
     color: #ff96ac;
-    margin-top: 8px;
     text-align: left;
+    margin:7px 0px;
 }
 
 .sky-more-style {
@@ -792,9 +751,16 @@ body {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     padding-left: 0px;
-    margin-top: 10px;
-    padding-bottom: 10px;
+    margin:10px 0px;
 }
+    .news-general-list ul {
+        margin: 8px 0px;
+    }
+        .news-general-list ul li {
+            height: 25px;
+            line-height: 25px;
+        }
+
 
 .list-group-item-line {
     border-bottom: 1px dashed #b7b7b7;
@@ -804,7 +770,7 @@ body {
 }
 
 .sky-jinyuanjinrong {
-    margin: 12px 0px;
+    margin: 10px 0px;
     border: 1px solid #898989;
     height: 196px;
 }
@@ -817,7 +783,6 @@ body {
     height: 30px;
     background-color: black;
     line-height: 28px;
-    margin-top: 15px;
 }
 
 .sky-video-right-title {
@@ -843,10 +808,10 @@ body {
 
 .hot-search-title {
     height: 30px;
-    line-height: 28px;
+    line-height: 30px;
     border-top: 2px solid #f17142;
     border-bottom: 1px solid #ccc;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
     .hot-search-title span {
@@ -872,7 +837,7 @@ body {
     }
 
         .banner-table > ul > li {
-            height: 82px;
+            height: 78px;
             margin: 15px 0;
         }
 
@@ -1125,7 +1090,9 @@ body {
     width: 300px;
     height: 190px;
 }
-
+.lvyou-list-ul dd {
+    margin:10px 0px;
+}
 .sky-zhuanti-title {
     font-size: 16px;
     color: #293e73;
@@ -1221,6 +1188,8 @@ body {
     font-size: 16px;
     color: #256091;
     margin-bottom: 10px;
+    height:40px;
+    overflow:hidden;
 }
 
 #wechat_home {
@@ -1308,7 +1277,7 @@ body {
     }
 
 .sky-caijing-info-detail {
-    height: 110px;
+    height: 106px;
     overflow: hidden;
 }
 
@@ -1448,7 +1417,7 @@ body {
     text-align: center;
     line-height: 30px;
     letter-spacing: 2px;
-    margin:15px 0px;
+    margin:13px 0px;
 }
 
     .rightdivchid1-newsmore a {
