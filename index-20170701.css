@@ -53,10 +53,11 @@ body {
             color: #fff;
             border-bottom: 1px solid #b8b8b8;
             line-height: 15px;
+            padding:8px 0;
         }
 
             .sky-left-nav > .sky-left-box > .sky-left-ul > li {
-                margin: 17px 0;
+                padding:8px 0;
                 text-align: center;
             }
 
@@ -1192,59 +1193,54 @@ body {
 }
 
 #wechat_home {
-    width: 125px;
-    height: 115px;
-    background: url(http://www.skykiwi.com/images/wechat_home.png);
+    width: 90px;
+    height: 90px;
+    background: url(/image/tianweiwang.jpg);
     position: absolute;
-    top: 0px;
     left: 58px;
     display: none;
     z-index: 9999;
+    margin-top:-5px;
 }
 
 #wechat_go {
-    width: 125px;
-    height: 115px;
-    background: url(http://www.skykiwi.com/images/wechat_go.png);
+    width: 90px;
+    height: 90px;
+    background: url(/image/daogou.jpg);
     position: absolute;
-    top: 83px;
-    left: 1px;
+    left: 45px;
     display: none;
     z-index: 9999;
+    margin-top: -5px;
 }
-
-#wechat_property {
-    width: 125px;
-    height: 115px;
-    background: url(http://www.skykiwi.com/images/wechat_property.png);
+#wechat_soku {
+    width: 90px;
+    height: 90px;
+    background: url(/image/shenghuo.jpg);
     position: absolute;
-    top: 200px;
-    left: 70px;
+    display: none;
+    z-index: 9999;
+    margin-top: -5px;
+}
+#wechat_property {
+    width: 90px;
+    height: 90px;
+    background: url(/image/weifangcan.jpg);
+    position: absolute;
     display: none;
     z-index: 9999;
 }
 
 #wechat_money {
-    width: 125px;
-    height: 115px;
-    background: url(http://www.skykiwi.com/images/wechat_money.png);
+    width: 90px;
+    height: 90px;
+    background: url(/image/weicaijing.jpg);
     position: absolute;
-    top: 200px;
-    left: 190px;
     display: none;
     z-index: 9999;
 }
 
-#wechat_soku {
-    width: 125px;
-    height: 115px;
-    background: url(http://www.skykiwi.com/images/wechat_tuangou.png);
-    position: absolute;
-    top: 120px;
-    left: 188px;
-    display: none;
-    z-index: 9999;
-}
+
 
 .sky-ul-list1 a {
     text-decoration: none;
@@ -1360,56 +1356,6 @@ body {
             transition: all 0.3s;
         }
 
-#wechat_home {
-    width: 97px;
-    height: 97px;
-    background: url(/image/wechat_home_03.png);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    border: 2px solid #ec7f16;
-}
-
-#wechat_go {
-    width: 97px;
-    height: 97px;
-    background: url(/image/wechat_go_03.png);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    border: 2px solid #ec7f16;
-}
-
-#wechat_property {
-    width: 97px;
-    height: 97px;
-    background: url(/image/wechat_property_03.png);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    border: 2px solid #ec7f16;
-}
-
-#wechat_money {
-    width: 97px;
-    height: 97px;
-    background: url(/image/wechat_money_03.png);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    border: 2px solid #ec7f16;
-}
-
-#wechat_soku {
-    width: 97px;
-    height: 97px;
-    background: url(http://www.skykiwi.com/images/wechat_tuangou.png);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    border: 2px solid #ec7f16;
-}
-
 .rightdivchid1-newsmore {
     border: 1px solid #ef010a;
     height: 30px;
@@ -1498,7 +1444,7 @@ body {
     position: absolute;
     display: block;
     box-shadow: 0px 3px 16px 0px rgba(111, 165, 255, 0.4);
-    z-index: 100;
+    z-index: 9999;
     right: 0;
     transition: top .3s,visibility .3s,opacity .3s;
     padding: 8px 8px;
@@ -1506,7 +1452,7 @@ body {
     border-radius: 6px;
     background-color: #fff;
     color:#000;
-    margin-top:38px;
+    margin-top:34px;
 }
     .sky-weather:before {
         content: '';

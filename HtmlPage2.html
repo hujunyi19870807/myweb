@@ -108,21 +108,20 @@
                 });
             });
 
+
+            $("#li-weather-control").mouseout(function () {
+                $(".sky-weather").hide();
+            });
+            
+
             $("#li-weather-control").mouseover(function () {
                 $(".sky-weather").show();
             });
-            //$("#div-weather-change").mouseout(function () {
-            //    $(".sky-weather").hide();
-            //});
-            $("#div-weather-content").mouseover(function () {
-                $(".sky-weather").show();
-            });
+
             $("#div-weather-content").mouseout(function () {
                 $(".sky-weather").hide();
             });
-            $("#weatherCities li").click(function () {
-                //alert($(this).attr());
-            })
+
         }
 
         function bannerlist() {
@@ -193,7 +192,6 @@
             }
             imgIndex = 0;
         }
-        
     </script>
 </head>
 <body>
@@ -208,9 +206,7 @@
                         <span><a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook">English</a></span> |
                         <span class="active-text">中文</span>
                     </li>
-                    <li>
-                        <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
-                    </li>
+                    <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
                     <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
                         <div id="div-weather-change"><img style="width:24px;height:24px;padding-right:4px;" src="/image/01d.png" /><span class="active-text" id="span-mix-temp">22°</span><span id="span-min-temp">/18°</span><span id="span-city">Auckland</span><span style="color:#ec7f16; margin-left:4px">▼</span></div>
                         <div id="div-weather-content" class="sky-weather" style="display:none">
@@ -268,10 +264,10 @@
                             <a class="icon-nav" target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
                                 <i class="fa fa-weibo"></i>
                             </a>
-                            <div id="wechat_home" style="display: none;"></div>
-                            <a class="icon-nav">
+                            <a class="icon-nav" href="javascript:wechathome()">
                                 <i class="fa fa-wechat" title="关注我们的微信"></i>
                             </a>
+                            <span id="wechat_home" style="display: none;"></span>
                             <a class="icon-nav" target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书">
                                 <i class="fa fa-facebook"></i>
                             </a>
@@ -286,35 +282,45 @@
                             <a class="icon-nav" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
                                 <i class="fa fa-weibo"></i>
                             </a>
-                            <div id="wechat_go" style="display: none;"></div>
-                            <a class="icon-nav">
-                                <i class="fa fa-wechat"></i>
+                            <a class="icon-nav" href="javascript:wechatgo()" >
+                                <i class="fa fa-wechat" ></i>
                             </a>
+                            <span id="wechat_go" style="display: none;"></span>
                         </span>
                         <span class="ky-share-box ky-share-icon" style="margin-left:12px;">
                             <span class="text-col sky-share-tit">生活</span>
-                            <a class="icon-nav" title="关注我们的导购微信">
+                            <a class="icon-nav" title="关注我们的导购微信" href="javascript:wechattuangou()" >
                                 <i class="fa fa-wechat"></i>
                             </a>
+                            <span id="wechat_soku" style="display: none;"></span>
                         </span>
                     </li>
                     <li>
                         <span class="ky-share-box ky-share-icon">
                             <span class="text-col sky-share-tit">房地产</span>
-                            <div id="wechat_property" style="display: none;"></div>
-                            <a class="icon-nav" title="关注我们的导购微信">
+                            <a class="icon-nav" title="关注我们的导购微信" href="javascript:wechatproperty()">
                                 <i class="fa fa-wechat"></i>
                             </a>
+                            <span id="wechat_property" style="display: none;"></span>
                         </span>
                         <span class="ky-share-box ky-share-icon" style="margin-left:10px;">
                             <span class="text-col sky-share-tit">微财经</span>
-                            <div id="wechat_money" style="display: none;"></div>
-                            <a class="icon-nav" title="关注我们的导购微信">
+                            <a class="icon-nav" title="关注我们的导购微信" href="javascript:wechatmoney()">
                                 <i class="fa fa-wechat"></i>
                             </a>
+                            <span id="wechat_money" style="display: none;"></span>
                         </span>
                     </li>
                 </ul>
+                <script type="text/javascript">
+                     function wechathome() { wechat_home.style.display = "block"; }
+                     function wechatgo() { wechat_go.style.display = "block"; }
+                     function wechatproperty() { wechat_property.style.display = "block"; }
+                     function wechattuangou() { wechat_soku.style.display = "block"; }
+                     function wechatmoney() { wechat_money.style.display = "block"; }
+                     function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
+                     document.onclick = hidden;
+                </script>
                 <div class="sky-phone">
                     <div class="sky-phone-left">
                         <img src="image/tianweiphone_03_02.png" />
