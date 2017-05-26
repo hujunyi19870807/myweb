@@ -7,7 +7,7 @@
 body {
     font-size: 14px;
     color: #333;
-    font-family: "Microsoft Yahei";
+    font-family:"Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
 }
 /* 以上内容不用复制 */
 
@@ -65,7 +65,7 @@ body {
                 }
 
                 .sky-left-nav > .sky-left-box > .sky-left-ul > li > .active-text {
-                    color: #f17142;
+                    color: #ec7f16;
                 }
 
 .sky-left-ul > li > span > a {
@@ -74,7 +74,7 @@ body {
 }
 
     .sky-left-ul > li > span > a:hover {
-        color: #f17142;
+        color: #ec7f16;
     }
 
 
@@ -83,7 +83,7 @@ body {
 }
 
     .sky-nav-index > .sky-nav-tit {
-        color: #f17142;
+        color: #ec7f16;
         display: block;
         margin: 10px 0 10px;
     }
@@ -112,7 +112,7 @@ body {
             }
 
             .sky-nav-index > .sky-nav-ul > li:hover > a {
-                color: #f17142;
+                color: #ec7f16;
             }
 
 .text-col {
@@ -244,7 +244,7 @@ body {
 }
 
     #flash a {
-        font-family: "黑体","Hei";
+        font-family: "Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
     }
 
 #ad_text_zone li {
@@ -327,7 +327,7 @@ body {
         }
 
             .bannerlist dt a:hover {
-                color: #f17142;
+                color: #ec7f16;
             }
 
         .bannerlist dt iframe {
@@ -341,7 +341,7 @@ body {
     }
 
         .bannerlist dd a:hover {
-            color: #f17142;
+            color: #ec7f16;
         }
 
 .topbanner {
@@ -387,7 +387,7 @@ body {
     }
 
         .list-group-item a:hover {
-            color: #f17142;
+            color: #ec7f16;
         }
 
 .hotnewfirst {
@@ -527,7 +527,7 @@ body {
     display: block;
     width: 60px;
     height: 2px;
-    background: #ff96ac;
+    background: #ef537a;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -572,9 +572,8 @@ body {
     margin-top: 8px;
     margin-bottom: 8px;
 }
-
 .shishang-list-dl {
-    color: #ff96ac;
+    color: #ef537a;
     text-align: left;
     margin:7px 0px;
 }
@@ -659,7 +658,7 @@ body {
     }
 
         #footer > p > a:hover {
-            color: #f17142;
+            color: #ec7f16;
         }
 
     #footer .ico {
@@ -668,7 +667,7 @@ body {
     }
 
 .copyright {
-    font-family: Arial;
+    font-family: "Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
 }
 
 #part3 {
@@ -788,7 +787,7 @@ body {
 .sky-video-right-title {
     width: 100px;
     padding-left: 10px;
-    color: #f17142;
+    color: #ec7f16;
     font-weight: bold;
 }
 
@@ -798,18 +797,18 @@ body {
     vertical-align: middle;
     line-height: 35px;
     font-weight: bold;
-    color: #f17142;
+    color: #ec7f16;
 }
 
     .sky-video-right-small-title a {
-        color: #f17142;
+        color: #ec7f16;
         text-decoration: none;
     }
 
 .hot-search-title {
     height: 30px;
     line-height: 30px;
-    border-top: 2px solid #f17142;
+    border-top: 2px solid #ec7f16;
     border-bottom: 1px solid #ccc;
     margin-top: 12px;
 }
@@ -824,7 +823,7 @@ body {
 }
 
 .hot-search-title-label2 {
-    color: #f17142;
+    color: #ec7f16;
 }
 /* 表格样式 */
 .banner-table {
@@ -879,7 +878,7 @@ body {
 }
 
     .banner-table-right-tit a:hover {
-        color: #f17142;
+        color: #ec7f16;
     }
 
 .tab-left-double-div1 {
@@ -929,7 +928,7 @@ body {
 }
 
     .caijin-title-span > a:hover {
-        color: #f17142;
+        color: #ec7f16;
     }
 
 .sky-news {
@@ -937,7 +936,7 @@ body {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 0px;
-    border-left: 2px solid #f17142;
+    border-left: 2px solid #ec7f16;
     border-bottom: 1px solid #ccc;
 }
 
@@ -951,7 +950,7 @@ body {
 }
 
 .sky-news-color {
-    color: #f17142;
+    color: #ec7f16;
 }
 
 .sky-hot-news {
@@ -994,7 +993,7 @@ body {
     }
 
         .sky-hot-news-context a:hover {
-            color: #f17142;
+            color: #ec7f16;
         }
 
 .sky-hot-news-context-pre {
@@ -1043,7 +1042,7 @@ body {
     }
 
         .sky-liuxueyimin dl dd a {
-            color: #458f50;
+            color: #448e4f;
             font-weight: bold;
             text-decoration: none;
         }
@@ -1077,7 +1076,7 @@ body {
     width: 14px;
     display: block;
     cursor: pointer;
-    color: #ff96ac;
+    color: #ef537a;
     display: inline-block;
 }
 
@@ -1133,7 +1132,7 @@ body {
     /*letter-spacing: 1px;*/
     height: 30px;
     border-bottom: 1px solid #b7b7b7;
-    border-top: 2px solid #f17142;
+    border-top: 2px solid #ec7f16;
     padding-left: 10px;
     color: #f5842b;
 }
@@ -1160,7 +1159,7 @@ body {
         width: 14px;
         cursor: pointer;
         display: inline-block;
-        color: #f17142;
+        color: #ec7f16;
     }
 
 
@@ -1253,7 +1252,7 @@ body {
 }
 
     .sky-ul-list1 a:hover {
-        color: #f17142;
+        color: #ec7f16;
     }
 
 .sky-zhuanti-title a {
@@ -1273,7 +1272,7 @@ body {
 }
 
     .list-group-generalitem a:hover {
-        color: #f17142;
+        color: #ec7f16;
     }
 
 .sky-caijing-info-detail {
@@ -1287,7 +1286,7 @@ body {
     }
 
         .sky-caijing-info-detail a:hover {
-            color: #f17142;
+            color: #ec7f16;
         }
 
 .sky-video-right-top1 {
@@ -1303,7 +1302,7 @@ body {
 .tianwei-right-tab {
     height: 30px;
     line-height: 30px;
-    border-top: 2px solid #f17142;
+    border-top: 2px solid #ec7f16;
     border-bottom: 1px solid #ccc;
     margin-top: 15px;
     margin-bottom: 4px;
@@ -1325,7 +1324,7 @@ body {
     }
 
         .sky-vip-list dd a:hover {
-            color: #f17142;
+            color: #ec7f16;
         }
 
 .ky-share-icon {
@@ -1350,7 +1349,7 @@ body {
 
             .ky-share-icon > .icon-nav:hover i {
                 /*color: #676566;*/
-                color: #f17142;
+                color: #ec7f16;
             }
 
         .ky-share-icon > .icon-nav i {
@@ -1368,7 +1367,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border: 2px solid #f17142;
+    border: 2px solid #ec7f16;
 }
 
 #wechat_go {
@@ -1378,7 +1377,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border: 2px solid #f17142;
+    border: 2px solid #ec7f16;
 }
 
 #wechat_property {
@@ -1388,7 +1387,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border: 2px solid #f17142;
+    border: 2px solid #ec7f16;
 }
 
 #wechat_money {
@@ -1398,7 +1397,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border: 2px solid #f17142;
+    border: 2px solid #ec7f16;
 }
 
 #wechat_soku {
@@ -1408,7 +1407,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
-    border: 2px solid #f17142;
+    border: 2px solid #ec7f16;
 }
 
 .rightdivchid1-newsmore {
@@ -1526,7 +1525,7 @@ body {
     text-align:left;
 }
 #weatherCities li:hover {
-    color:#f17142;
+    color:#ec7f16;
 }
 #div-weather-change {
     cursor:pointer;
@@ -1536,3 +1535,31 @@ body {
 #div-weather-change span {
     vertical-align:6px;
 }
+.clear-sky-day {
+
+}
+.rightdivchid1-bannerlist4 {
+    padding: 0 0;
+    height: 86px;
+    text-align: center;
+    display: inline-flex;
+    margin: 10px 0px;
+}
+    .rightdivchid1-bannerlist4 img {
+        width: 138px;
+        height: 84px;
+        margin: 0px 8px;
+        border: 1px solid #898989;
+    }
+    .rightdivchid1-bannerlist4 div {
+        line-height: 24px;
+        position: absolute;
+        width: 138px;
+        background: rgba(0,0,0,0.3);
+        margin-left: 9px;
+        margin-right: 9px;
+        margin-top: 61px;
+    }
+    .rightdivchid1-bannerlist4 div a{
+        color:white;
+    }
