@@ -1144,8 +1144,16 @@ body {
 }
 
 .tianwei-right-tab span {
-    font-size: 18px;
-    padding-left: 10px;
+    margin-left:10px;
+    height:30px;
+    line-height:30px;
+    vertical-align:middle
+}
+
+.tianwei-right-tab {
+    border-top: 2px solid #ec7f16;
+    background-color:#ebebeb;
+    width:300px;
 }
 
 .sky-vip {
@@ -1293,14 +1301,7 @@ body {
         height: 190px;
     }
 
-.tianwei-right-tab {
-    height: 30px;
-    line-height: 30px;
-    border-top: 2px solid #ec7f16;
-    border-bottom: 1px solid #ccc;
-    margin-top: 15px;
-    margin-bottom: 4px;
-}
+
 
 .sky-vip-list {
     line-height: 24px;
