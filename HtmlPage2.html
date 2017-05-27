@@ -54,6 +54,17 @@
 
             bannerlist();//广告列表方法
             addhotserach();//动态修改hot热搜样式
+
+            $("#li-weather-control").mouseover(function () {
+                $(".sky-weather").show();
+            });
+            $("#li-weather-control").mouseout(function () {
+                $(".sky-weather").hide();
+            });
+
+            $("#div-weather-content").mouseout(function () {
+                $(".sky-weather").hide();
+            });
         });
         var tabChangeList = ["美食", "旅游", "生活", "时尚"];
         function initTabClass(obj, colorName, index) {
@@ -107,21 +118,6 @@
                     }
                 });
             });
-
-
-            $("#li-weather-control").mouseout(function () {
-                $(".sky-weather").hide();
-            });
-            
-
-            $("#li-weather-control").mouseover(function () {
-                $(".sky-weather").show();
-            });
-
-            $("#div-weather-content").mouseout(function () {
-                $(".sky-weather").hide();
-            });
-
         }
 
         function bannerlist() {
@@ -192,11 +188,14 @@
             }
             imgIndex = 0;
         }
+
+
+       
     </script>
 </head>
 <body>
     <div class="maindiv">
-        <div class="sky-left-nav">
+        <div class="sky-left-nav" id="div-sky-leftnav">
             <div class="sky-left-logo">
                 <img src="image/skykiwi.png">
             </div>
@@ -798,7 +797,7 @@
                 <!--特价 时尚 美食 begin-->
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="active-tit-single" style="color:#ef537a">特价</span>
+                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-ashenghuo" style="color:#ef537a">特价</span>
                         <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/supermarket/" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
@@ -874,7 +873,7 @@
                 </div>
                 <div class="tab-left-double-div2">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="active-tit-single" style="color:#f5842b">天维专题</span>
+                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanti" style="color:#f5842b">天维专题</span>
                         <a href="##" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
@@ -898,7 +897,7 @@
                 <!--留学移民 专栏 begin-->
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="active-tit-single" style="color:#448e4f">留学移民</span>
+                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-ayimin" style="color:#448e4f">留学移民</span>
                         <a href="http://imedu.skykiwi.com" target="_blank" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击查看更多留学移民新闻" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
@@ -928,7 +927,7 @@
                 </div>
                 <div class="tab-left-double-div2">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="active-tit-single" style="color:#653780">专栏</span>
+                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanlan" style="color:#653780">专栏</span>
                     </div>
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
@@ -965,11 +964,17 @@
                 <div class="sky-banner">
                     <img height="250" width="300" src="image/guanggao-009_03.jpg">
                 </div>
-                <div class="tianwei-right-tab">
+                <div class="tianwei-right-tab" style="margin-bottom:10px">
                     <span>天维福利.团购</span>
-                </div>
-                <div class="sky-banner">
-                    <img style="height:405px;width:285px" src="image/tuangou.png" />
+                    <div style="height:410px;padding:8px 8px;border-top:1px solid gray">
+                        <img style="height:284px;width:284px" src="image/tuangou.png" />
+                        <ol style="font-size:16px; margin:6px 0;line-height:30px">
+                            <li>2017“我想”张杰世界巡回演唱会</li>
+                            <li style="color:red">已售200</li>
+                        </ol>
+                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$99</h1>
+                    </div>
                 </div>
                 <div><img style="height:250px;width:300px" src="image/guanggao008.png" /></div>
                 <div class="tianwei-right-tab">

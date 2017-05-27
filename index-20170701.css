@@ -45,7 +45,7 @@ body {
     .sky-left-nav > .sky-left-box {
         width: 168px;
         background: #676566;
-        padding: 0 20px 0;
+        padding: 0 20px;
         overflow: hidden;
     }
 
@@ -122,13 +122,13 @@ body {
 
 .sky-share {
     overflow: hidden;
-    margin-top: 15px;
-    line-height: 15px;
+    margin:13px 0;
+    line-height: 30px;
 }
 
     .sky-share li {
         overflow: hidden;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
     }
 
         .sky-share li .ky-share-box {
@@ -139,17 +139,9 @@ body {
 
             .sky-share li .ky-share-box > .sky-share-tit {
                 float: left;
-                padding-top: 5px;
                 margin-right: 2px;
             }
 
-/* .sky-share li .ky-share-box i {
-                float: left;
-                display: block;
-                width: 25px;
-                height: 25px;
-            }
-             */
 .sky-share-img-a {
     background: url(/image/skykiwiapplist.png) -1px 0 no-repeat;
 }
@@ -505,11 +497,11 @@ body {
     color: #6b6b6b;
     font-size: 18px;
     padding: 3px 10px;
+    cursor:pointer
 }
 
 .active-tit-a {
     position: relative;
-    cursor: pointer;
 }
 
 .active-tit-a:before {
@@ -524,28 +516,34 @@ body {
     }
 
 .active-tit-ashenghuo:before {
-    content: "";
-    display: block;
     width: 60px;
-    height: 2px;
     background: #ef537a;
-    position: absolute;
-    top: 0px;
-    left: 0px;
 }
 
 .active-tit-single {
     display: inline-block;
     text-decoration: none;
     font-size: 18px;
-    padding: 0 10px;
+    padding: 3px 10px;
+    cursor:pointer;
 }
 
+.active-tit-azhuanti:before {
+    background: #f5842b;
+}
+.active-tit-azhuanlan:before {
+    width: 60px;
+    background: #653780;
+}
+.active-tit-ayimin:before {
+    width: 100px;
+    background: #448e4f;
+}
 .activity-right {
     float: left;
     margin-left: 15px;
     width: 299px;
-    padding: 10px 0;
+    padding: 9px 0;
 }
 
 .activity-right-tit {
@@ -1146,8 +1144,15 @@ body {
 }
 
 .tianwei-right-tab span {
-    font-size: 18px;
-    padding-left: 10px;
+    margin-left:10px;
+    height:30px;
+    line-height:30px;
+    vertical-align:middle
+}
+
+.tianwei-right-tab {
+    border-top: 2px solid #ec7f16;
+    background-color:#ebebeb;
 }
 
 .sky-vip {
@@ -1295,14 +1300,7 @@ body {
         height: 190px;
     }
 
-.tianwei-right-tab {
-    height: 30px;
-    line-height: 30px;
-    border-top: 2px solid #ec7f16;
-    border-bottom: 1px solid #ccc;
-    margin-top: 15px;
-    margin-bottom: 4px;
-}
+
 
 .sky-vip-list {
     line-height: 24px;

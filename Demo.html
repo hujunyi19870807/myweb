@@ -1,39 +1,70 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <meta charset="utf-8" />
-    <script src="jquery-1.12.4.min.js"></script>
-    <script>
-
-        function show(obj, id) {
-            var objDiv = $("#" + id + "");
-            $(objDiv).css("display", "block");
-            $(objDiv).css("left", event.clientX);
-            $(objDiv).css("top", event.clientY + 10);
-        }
-        function hide(obj, id) {
-            var objDiv = $("#" + id + "");
-            $(objDiv).css("display", "none");
-        }
-    </script>
-</head>
-<body>
-    
-   
-
-    <!--http://www.ablanxue.com/prone_3421_1.html-->
-
-    <div id="mydiv1" style="position:absolute;display:none;border:1px solid silver;background:silver;">
-        提示1效果
-    </div>
-    <div id="mydiv2" style="position:absolute;display:none;border:1px solid silver;background:silver;">
-        提示2效果
-    </div>
-
-    <a id="t1" onMouseOver="javascript:show(this,'mydiv1');" onMouseOut="hide(this,'mydiv1')">鼠标放上去1</a>
-    <br><br><br><br><br>
-    <a id="t2" onMouseOver="javascript:show(this,'mydiv2');" onMouseOut="hide(this,'mydiv2')">鼠标放上去2</a>
-
-</body>
+﻿<html>
+  <head>
+    <style>
+ #myTable{height:100%;border:solid 1px red;width:100%;}
+  #top{margin-top:1px;height:100px;border:solid 1px green}
+ #down{margin-top:1px;height:89%;border:solid 1px silver}
+  #left{height:100%;border:solid 1px black;margin:1px;width:200px;float:left;}
+  #right{border:solid 1px #0aa;margin:1px;height:100%;width:240px;overflow:scroll;
+ }
+ </style>
+ </head>
+ <body>
+ <table id='myTable'>
+ <tr><td>
+ <div id='top'></div>
+ <div id='down'>
+<div id='left'></div>
+ <div id='right'>
+1 这里是内容
+0 这里是内容容这里是内容
+21 这里是内容
+22 这里是内容
+23 这里是内容
+24 这里是内容
+25 这里是内容这里是内容
+26 这里这里是内容
+27 
+28 这里是内容
+29 这里是内容
+30 这里是内容
+31 
+32 这里是内容
+33 这里是内容
+34 这里是内容
+35 这里是内容这里是内容
+36 这里这里是内容
+37 
+38 这里是内容
+39 这里是内容
+40 这里是内容
+41 
+42 这里是内容
+43 这里是内容这里是内容
+44 
+45 这里是内容
+46 
+47 这里是内容
+48 这里是内容这里是内容
+49 这里这里是内容
+50 
+51 这里是内容
+52 这里是内容
+53 这里是内容
+54 这里是内容
+55 这里是内容容这里是内容
+56 这里是内容
+57 这里是内容这里是内容
+58 这里这里是内容
+59 
+60 这里是内容
+61 这里是内容
+62 这里是内容
+63 这里是内容
+64 这里是内容容这里是内容
+</div>
+ </div>
+ </td>
+ </tr></table>
+ </body>
 </html>
