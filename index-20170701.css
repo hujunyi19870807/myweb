@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -1154,6 +1154,7 @@ body {
     border-top: 2px solid #ec7f16;
     background-color:#ebebeb;
     width:300px;
+   margin-bottom:18px;
 }
 
 .sky-vip {
@@ -1176,7 +1177,7 @@ body {
 }
 
 .sky-banner {
-    margin: 20px 0;
+    margin: 18px 0;
 }
 
 .sky-caijing {
