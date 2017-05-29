@@ -1,0 +1,9 @@
+<ul id="weatherCities" style="line-height:1.6">
+<?php
+foreach($results as $k=>$result){
+?>
+	<li data-min-temp="<?=$result['minTemperature']?>" data-max-temp="<?=$result['maxTemperature']?>" data-icon="<?=$result['weather']['icon']?>" data-desc="<?=$result['weather']['desc']?>" data-title-ch="<?=$result['titlecn']?>" data-title-en="<?=$result['title']?>"><?=$result['titlecn']?>(<?=$result['title']?>)</li>
+<?php
+}
+?>
+</ul>

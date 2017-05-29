@@ -65,7 +65,7 @@ body {
                     cursor: pointer;
                 }
 
-                .sky-left-nav > .sky-left-box > .sky-left-ul > li > .active-text {
+                .active-text {
                     color: #ec7f16;
                 }
 
@@ -417,11 +417,13 @@ body {
 
     .list-news-item > .list-news-item-r {
         float: left;
+        width:450px;
+        overflow:hidden;
     }
 
         .list-news-item > .list-news-item-r > .list-news-item-r-bottom {
             font-size: 12px;
-            padding-top: 30px;
+            margin-top:30px;
         }
 
     .list-news-item > .list-news-item-l img {
@@ -1307,6 +1309,7 @@ body {
     .sky-caijing-info-detail a {
         color: black;
         text-decoration: none;
+        line-height:1.6
     }
 
         .sky-caijing-info-detail a:hover {
@@ -1526,7 +1529,23 @@ body {
         margin-left: 9px;
         margin-right: 9px;
         margin-top: 61px;
+        height:25px;
+        line-height:25px;
+        overflow:hidden;
     }
     .rightdivchid1-bannerlist4 div a{
         color:white;
+        text-decoration:none;
     }
+        .rightdivchid1-bannerlist4 div a:hover {
+            color: #ec7f16;
+        }
+        .rightdivchid1-bannerlist4 div:nth-child(2) {
+            margin-left: 165px;
+        }
+        .rightdivchid1-bannerlist4 div:nth-child(4) {
+            margin-left: 321px;
+        }
+        .rightdivchid1-bannerlist4 div:nth-child(6) {
+            margin-left: 477px;
+        }

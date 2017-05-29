@@ -64,6 +64,7 @@
             $("#div-weather-content").mouseout(function () {
                 $(".sky-weather").hide();
             });
+
         });
         var tabChangeList = ["美食", "旅游", "生活", "时尚"];
         function initTabClass(obj, colorName, index) {
@@ -121,21 +122,7 @@
 
         function bannerlist() {
             $(".rightdivchid1").find(".list-news-item").eq(3).after("<div style='width: 625px;height: 80px;margin-top: 10px;margin-bottom: 10px;'><img width= '625' height= '80' alt= '' src= 'image/banner4.png' /></div >");
-            var bannerContent = '<div class="rightdivchid1-bannerlist4">' +
-                '<img src= "/image/banner-001.png" />' +
-                '<img src="/image/banner-001.png" />' +
-                '<img src= "/image/banner-001.png" />' +
-                '<img src="/image/banner-001.png" />' +
-                '<div><a>奥克兰大好心让开路</a></div>' +
-                '<div style="margin-left:165px"><a>北岸区招募“朝阳群</a></div>' +
-                '<div style="margin-left:321px"><a>赫功勋，名扬四海却</a></div>' +
-                '<div style="margin-left:477px"><a>不好，警方不力，政</a></div>' +
-                '</div >';
-
-            $(".rightdivchid1").find(".list-news-item").eq(7).after(bannerContent);
-
             $(".rightdivchid1").find(".list-news-item").eq(3).css("border-bottom", "0px");
-            $(".rightdivchid1").find(".list-news-item").eq(7).css("border-bottom", "0px");
         }
         function addhotserach() {
             $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst");
@@ -158,7 +145,7 @@
             var jsonObjList = $.parseJSON(obj.attr("data-src"));
             if (imgIndex < jsonObjList.length - 1) {
                 imgIndex = imgIndex + 1;
-                $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex+1);
+                $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex + 1);
                 var jsonObj = jsonObjList[imgIndex];
                 obj.attr("src", jsonObj.urlPrefix + jsonObj.filePath + jsonObj.fileName);
             }
@@ -168,27 +155,26 @@
             var jsonObjList = $.parseJSON(obj.attr("data-src"));
             if (imgIndex > 0) {
                 imgIndex = imgIndex - 1;
-                $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex+1);
+                $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex + 1);
                 var jsonObj = jsonObjList[imgIndex];
                 obj.attr("src", jsonObj.urlPrefix + jsonObj.filePath + jsonObj.fileName);
             }
         }
         function nextproperty() {
             var dataindex = $(".indexhomes:visible").attr("data-index");
-            if (dataindex <4) {
+            if (dataindex < 4) {
                 $(".indexhomes:visible").hide().next().show();
             }
             imgIndex = 0;
         }
         function prevproperty() {
             var dataindex = $(".indexhomes:visible").attr("data-index");
-            if (dataindex >0) {
+            if (dataindex > 0) {
                 $(".indexhomes:visible").hide().prev().show();
             }
             imgIndex = 0;
         }
         function nexttuangou() {
-
             var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next().attr("data-index");
             if (dataindex < 4 && dataindex != undefined) {
                 $(".tianwei-tuangou-item:visible").hide().next().show();
@@ -216,24 +202,29 @@
                     </li>
                     <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
                     <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
-                        <div id="div-weather-change"><img style="width:24px;height:24px;padding-right:4px;" src="/image/01d.png" /><span class="active-text" id="span-mix-temp">22°</span><span id="span-min-temp">/18°</span><span id="span-city">Auckland</span><span style="color:#ec7f16; margin-left:4px">▼</span></div>
-                        <div id="div-weather-content" class="sky-weather" style="display:none">
-                            <ul id="weatherCities" style="line-height:20px">
-                                <li class="" data-min-temp="12.38" data-max-temp="26.8" data-icon="clear-sky-day" data-desc="天气描述">奥克兰(Auckland)</li>
-                                <li class="" data-min-temp="3.1" data-max-temp="30.1" data-icon="few-clouds-day" data-desc="天气描述">惠灵顿(Wellington)</li>
-                                <li class="" data-min-temp="11.12" data-max-temp="27.9" data-icon="clear-sky-day" data-desc="天气描述">基督城(Christchurch)</li>
-                                <li class="" data-min-temp="10.28" data-max-temp="29" data-icon="scattered-clouds-night" data-desc="天气描述">哈密尔顿(Hamilton)</li>
-                                <li class="" data-min-temp="9.51" data-max-temp="28" data-icon="broken-clouds-day" data-desc="天气描述">达尼丁(Dunedin)</li>
-                                <li class="" data-min-temp="8.91" data-max-temp="30.10" data-icon="shower-rain-day" data-desc="天气描述">北帕默斯顿(PalmerstonNorth)</li>
-                                <li class="" data-min-temp="3.82" data-max-temp="12.09" data-icon="rain-day" data-desc="天气描述">新普利茅斯(NewPlymouth)</li>
-                                <li class="" data-min-temp="5.55" data-max-temp="38" data-icon="thunderstorm-night" data-desc="天气描述">因弗卡吉尔(Invercargill)</li>
-                                <li class="" data-min-temp="7.13" data-max-temp="18" data-icon="snow-day" data-desc="天气描述">旺格雷(Whangalei)</li>
-                                <li class="" data-min-temp="9.81" data-max-temp="28.1" data-icon="mist-day" data-desc="天气描述">皇后镇(Queenstown)</li>
-                            </ul>
+                        <div id="div-weather-change">
+                            <img style="width:24px;height:24px;padding-right:4px;" src="/image/01d.png" />
+                            <span style="color:#ec7f16" id="span-mix-temp"></span>
+                            <span id="span-min-temp"></span>
+                            <span id="span-city"></span>
+                            <span style="color:#ec7f16; margin-left:2px">▼</span>
                         </div>
+                        <div id="div-weather-content" class="sky-weather" style="display:none">
+                            <!--#include virtual="/ssi/weather201707.html" -->
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $("#weatherCities li").click(function () {
+                                    $("#span-city").html($(this).attr("data-title-en"));
+                                    $("#span-min-temp").html("/" + $(this).attr("data-min-temp") + "°");
+                                    $("#span-mix-temp").html($(this).attr("data-max-temp") + "°");
+                                });
+                                $("#weatherCities li:eq(0)").click();
+                            })
+                        </script>
                     </li>
                 </ul>
-                
+
                 <div class="sky-nav-index">
                     <span class="sky-nav-tit">天维首页</span>
                     <ul class="sky-nav-ul clearfix">
@@ -290,14 +281,14 @@
                             <a class="icon-nav" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
                                 <i class="fa fa-weibo"></i>
                             </a>
-                            <a class="icon-nav" href="javascript:wechatgo()" >
-                                <i class="fa fa-wechat" ></i>
+                            <a class="icon-nav" href="javascript:wechatgo()">
+                                <i class="fa fa-wechat"></i>
                             </a>
                             <span id="wechat_go" style="display: none;"></span>
                         </span>
                         <span class="ky-share-box ky-share-icon" style="margin-left:12px;">
                             <span class="text-col sky-share-tit">生活</span>
-                            <a class="icon-nav" title="关注我们的导购微信" href="javascript:wechattuangou()" >
+                            <a class="icon-nav" title="关注我们的导购微信" href="javascript:wechattuangou()">
                                 <i class="fa fa-wechat"></i>
                             </a>
                             <span id="wechat_soku" style="display: none;"></span>
@@ -321,13 +312,13 @@
                     </li>
                 </ul>
                 <script type="text/javascript">
-                     function wechathome() { wechat_home.style.display = "block"; }
-                     function wechatgo() { wechat_go.style.display = "block"; }
-                     function wechatproperty() { wechat_property.style.display = "block"; }
-                     function wechattuangou() { wechat_soku.style.display = "block"; }
-                     function wechatmoney() { wechat_money.style.display = "block"; }
-                     function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
-                     document.onclick = hidden;
+                            function wechathome() { wechat_home.style.display = "block"; }
+                            function wechatgo() { wechat_go.style.display = "block"; }
+                            function wechatproperty() { wechat_property.style.display = "block"; }
+                            function wechattuangou() { wechat_soku.style.display = "block"; }
+                            function wechatmoney() { wechat_money.style.display = "block"; }
+                            function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
+                            document.onclick = hidden;
                 </script>
                 <div class="sky-phone">
                     <div class="sky-phone-left">
@@ -404,7 +395,7 @@
                     <div class="list-news-item">
                         <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
                         <div class="list-news-item-r">
-                            <div class="list-news-item-r-title">
+                            <div class="list-news-item-r-title" style="height:25px;line-height:25px;overflow:hidden">
                                 <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
                             </div>
                             <div class="list-news-item-r-bottom">
@@ -572,6 +563,20 @@
                         </div>
                     </div>
                     [/e:loop]
+
+                    <div class="rightdivchid1-bannerlist4">
+                        [e:loop={'220', 4, 15, 1}]
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img alt="" src="<?=$bqr[titlepic]?>" /></a>
+                        <div><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></div>
+                        [/e:loop]
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $(".rightdivchid1").find(".list-news-item").eq(7).after($(".rightdivchid1-bannerlist4"));
+                            $(".rightdivchid1").find(".list-news-item").eq(7).css("border-bottom", "0px");
+                            //$(".rightdivchid1").find(".list-news-item").eq(7).after(bannerContent);
+                        })
+                    </script>
                     <div class="rightdivchid1-newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
                 </div>
                 <div class="rightdivchid2">
@@ -690,7 +695,7 @@
                     </div>
                     <div class="sky-margintop10">
                         <div controlindex="1">
-                            <!--#include virtual="/ssi/indexhome201706.html" -->                         
+                            <!--#include virtual="/ssi/indexhome201706.html" -->
                         </div>
                         <!--<div controlindex="2" style="display:none"></div>-->
                         <!--<iframe src="http://cms6.skykiwi.com/ssi/indexhome201706.html"></iframe>-->
@@ -711,7 +716,7 @@
                                 <div class="sky-caijing-info">
                                     <dl>
                                         <dt class="sky-caijing-info-title"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],32)?></a></dt>
-                                        <dd class="sky-caijing-info-detail"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[smalltext],160)?>...[详细]</a></dd>
+                                        <dd class="sky-caijing-info-detail"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[smalltext],100)?>...[详细]</a></dd>
                                     </dl>
                                 </div>
                             </div>
@@ -732,7 +737,7 @@
                                 <div class="sky-caijing-info">
                                     <dl>
                                         <dt class="sky-caijing-info-title"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],32)?></a></dt>
-                                        <dd class="sky-caijing-info-detail"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[smalltext],200)?>...[详细]</a></dd>
+                                        <dd class="sky-caijing-info-detail"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[smalltext],100)?>...[详细]</a></dd>
                                     </dl>
                                 </div>
                             </div>

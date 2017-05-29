@@ -1,10 +1,1570 @@
-﻿body {
+﻿* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.a {
-margin-top:10px;
-margin-bottom:10px;
-padding-bottom:10px;
-margin-left:10px;
-margin-bottom:10px;
-padding-top:20px
+
+body {
+    font-size: 14px;
+    color: #333;
+    font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
 }
+/* 以上内容不用复制 */
+
+
+.clearfix {
+    *zoom: 1;
+}
+
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+.sky-left-nav {
+    width: 208px;
+    background: #676566;
+    float: left;
+    position: fixed;
+    z-index: 1;
+}
+
+    .sky-left-nav > .sky-left-logo {
+        width: 208px;
+        height: 70.5px;
+        background: #fff;
+        padding-top: 17.5px;
+    }
+
+        .sky-left-nav > .sky-left-logo > img {
+            width: 208px;
+        }
+
+    .sky-left-nav > .sky-left-box {
+        width: 168px;
+        background: #676566;
+        padding: 0 20px;
+        overflow: hidden;
+    }
+
+        .sky-left-nav > .sky-left-box > .sky-left-ul {
+            color: #fff;
+            border-bottom: 1px solid #b8b8b8;
+            line-height: 15px;
+            padding: 8px 0;
+        }
+
+            .sky-left-nav > .sky-left-box > .sky-left-ul > li {
+                padding: 8px 0;
+                text-align: center;
+            }
+
+                .sky-left-nav > .sky-left-box > .sky-left-ul > li > span {
+                    cursor: pointer;
+                }
+
+                .sky-left-nav > .sky-left-box > .sky-left-ul > li > .active-text {
+                    color: #ec7f16;
+                }
+
+.sky-left-ul > li > span > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+    .sky-left-ul > li > span > a:hover {
+        color: #ec7f16;
+    }
+
+
+.sky-nav-index {
+    font-size: 16px;
+}
+
+    .sky-nav-index > .sky-nav-tit {
+        color: #ec7f16;
+        display: block;
+        margin: 10px 0 10px;
+    }
+
+    .sky-nav-index > .sky-nav-ul {
+        overflow: hidden;
+        border-bottom: 1px solid #b8b8b8;
+        line-height: 15px;
+    }
+
+        .sky-nav-index > .sky-nav-ul > li {
+            float: left;
+            margin-bottom: 20px;
+        }
+
+            .sky-nav-index > .sky-nav-ul > li > a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .sky-nav-index > .sky-nav-ul > li:nth-child(2),
+            .sky-nav-index > .sky-nav-ul > li:nth-child(5),
+            .sky-nav-index > .sky-nav-ul > li:nth-child(8),
+            .sky-nav-index > .sky-nav-ul > li:nth-child(11) {
+                margin: 0 30px;
+            }
+
+            .sky-nav-index > .sky-nav-ul > li:hover > a {
+                color: #ec7f16;
+            }
+
+.text-col {
+    color: #dbd9d9;
+}
+
+.sky-share {
+    overflow: hidden;
+    margin: 13px 0;
+    line-height: 30px;
+}
+
+    .sky-share li {
+        overflow: hidden;
+        margin-bottom: 5px;
+    }
+
+        .sky-share li .ky-share-box {
+            overflow: hidden;
+            float: left;
+            display: inline-block;
+        }
+
+            .sky-share li .ky-share-box > .sky-share-tit {
+                float: left;
+                margin-right: 2px;
+            }
+
+.sky-share-img-a {
+    background: url(/image/skykiwiapplist.png) -1px 0 no-repeat;
+}
+
+.sky-share-img-b {
+    background: url(/image/skykiwiapplist.png) -33px 0 no-repeat;
+}
+
+.sky-share-img-c {
+    background: url(/image/skykiwiapplist.png) -67px 0 no-repeat;
+}
+
+.sky-share-img-d {
+    background: url(/image/skykiwiapplist.png) -101px 0 no-repeat;
+}
+
+.sky-share-img-e {
+    background: url(/image/skykiwishopapplist.png) -106px 0 no-repeat;
+}
+
+.sky-share-img-f {
+    background: url(/image/skykiwishopapplist.png) -106px 0 no-repeat;
+}
+
+.sky-phone {
+    overflow: hidden;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+    .sky-phone > .sky-phone-left {
+        width: 107px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .sky-phone > .sky-phone-right {
+        float: right;
+    }
+
+        .sky-phone > .sky-phone-right > img {
+            width: 60px;
+        }
+
+.sky-video {
+    overflow: hidden;
+    margin-top: 12px;
+    height: 140px;
+    width: 156px;
+    border: 1px solid #b8b8b8;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+    .sky-video > .sky-video-tit {
+        color: #f07f14;
+        font-size: 16px;
+    }
+
+    .sky-video > .sky-video-box {
+        width: 100%;
+        height: 108px;
+        background: #ccc;
+    }
+
+.maindiv {
+    margin: 0 auto;
+    height: auto;
+    padding-top: 0px;
+    width: 1180px;
+}
+
+.leftdiv {
+    width: 208px;
+    background: #676566;
+}
+
+.rightdiv {
+    margin-left: 25px;
+    float: right;
+    width: 80%;
+}
+/* css注释：为了观察效果设置宽度 边框 高度等样式 */
+
+/* Flash Slider Show CSS */
+#flash {
+    width: 380px;
+    height: 228px;
+    margin-bottom: 9px;
+    border-bottom: solid 1px #AAA;
+    padding-bottom: 9px;
+}
+
+    #flash a {
+        font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
+    }
+
+#ad_text_zone li {
+    width: 185px;
+    padding: 0px 5px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    float: left;
+    display: inline;
+    margin: 0px;
+    overflow: hidden;
+}
+
+#s_pic_news {
+    width: 378px;
+    height: 88px;
+    border: solid 1px #AAA;
+    margin: 6px 0 0 0;
+}
+
+    #s_pic_news:hover {
+        border: solid 1px #F60;
+        cursor: pointer;
+    }
+
+    #s_pic_news img {
+        width: 130px;
+        height: 78px;
+        margin: 5px;
+        float: left;
+    }
+
+    #s_pic_news dt {
+        width: 238px;
+        font-size: 14px;
+        height: 18px;
+        line-height: 18px;
+        overflow: hidden;
+        float: left;
+        display: inline;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    #s_pic_news dd {
+        width: 238px;
+        font-size: 12px;
+        height: 56px;
+        line-height: 18px;
+        overflow: hidden;
+        float: left;
+        display: inline;
+        margin-top: 6px;
+        color: #666;
+    }
+
+.bannerlist {
+    height: 150px;
+}
+
+    .bannerlist dl {
+        width: 140px;
+        height: 150px;
+        float: left;
+    }
+
+    .bannerlist dt {
+        font-size: 12px;
+        float: left;
+        margin-left: 0px;
+        width: 135px;
+        height: 90px;
+        margin-bottom: 10px;
+    }
+
+        .bannerlist dt a {
+            text-decoration: none;
+            color: black;
+        }
+
+            .bannerlist dt a:hover {
+                color: #ec7f16;
+            }
+
+        .bannerlist dt iframe {
+            width: 133px;
+            height: 90px;
+        }
+
+    .bannerlist dd a {
+        text-decoration: none;
+        color: black;
+    }
+
+        .bannerlist dd a:hover {
+            color: #ec7f16;
+        }
+
+.topbanner {
+    width: 100%;
+    height: 90px;
+    border: 0px;
+    background-image: url(/image/bannernew01_03.jpg);
+}
+
+.topbannermiddle {
+    width: 100%;
+    border: 0px;
+    margin: 20px 0;
+}
+
+.rightdivchid1 {
+    width: 625px;
+    float: left;
+    height: auto;
+}
+
+.rightdivchid2 {
+    width: 300px;
+    float: right;
+    margin-top: 0px;
+}
+
+.bannerlistdl2 {
+    margin-left: 19px;
+}
+
+
+
+.list-group-item {
+    background: url(/image/newstag4_07.png) 2px 7px no-repeat;
+    padding-left: 20px;
+    letter-spacing: 1px;
+}
+
+    .list-group-item a {
+        text-decoration: none;
+        color: black;
+    }
+
+        .list-group-item a:hover {
+            color: #ec7f16;
+        }
+
+.hotnewfirst {
+    background: url(/image/newstag1_07.png) 2px 4px no-repeat;
+    padding-left: 20px;
+}
+
+.hotnewsecend {
+    background: url(/image/newstag2_07.png) 2px 4px no-repeat;
+    padding-left: 20px;
+}
+
+.list-group-item-noimage {
+    padding-left: 20px;
+    letter-spacing: 1px;
+}
+
+.list-news-item {
+    padding: 13px 0px;
+    margin-left: 3px;
+    border-bottom: 1px solid #ccc;
+}
+
+    .list-news-item > .list-news-item-l {
+        width: 160px;
+        height: 90px;
+        float: left;
+    }
+
+    .list-news-item > a img {
+        border: 1px solid #898989;
+    }
+
+
+    .list-news-item > .list-news-item-r {
+        float: left;
+        width: 450px;
+        overflow: hidden;
+    }
+
+        .list-news-item > .list-news-item-r > .list-news-item-r-bottom {
+            font-size: 12px;
+            margin-top: 30px;
+        }
+
+    .list-news-item > .list-news-item-l img {
+        width: 140px;
+        height: 90px;
+        border: 1px solid #898989;
+    }
+
+    .list-news-item > .list-news-item-r > .list-news-item-r-title a {
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+.list-news-item-word {
+    margin-left: 20px;
+}
+
+.news-list-mindle ul {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.news-list-mindle li {
+    float: left;
+    display: block;
+    padding-top: 5px;
+    letter-spacing: 1px;
+}
+
+.span1 {
+    font-size: 18px;
+    border-top: 2px solid #ccc;
+    margin-top: 10px;
+    width: 105px;
+}
+
+.span2 {
+    font-size: 18px;
+    margin-top: 10px;
+    width: 105px;
+    padding-left: 20px;
+}
+
+
+.caijin-title-span {
+    font-size: 18px;
+    letter-spacing: 2px;
+    height: 30px;
+    border-bottom: 1px solid #b7b7b7;
+}
+
+.caijin-title-spanexpend {
+    font-size: 18px;
+    letter-spacing: 2px;
+    height: 30px;
+    border-bottom: 1px solid #b7b7b7;
+}
+/* 以上内容是左侧导航栏样式 */
+
+
+
+
+/* 以下内容是主页部分内容 */
+
+
+.caijin-span-tit {
+    display: inline-block;
+    text-decoration: none;
+    color: #6b6b6b;
+    font-size: 18px;
+    padding: 3px 10px;
+    cursor: pointer
+}
+
+.active-tit-a {
+    position: relative;
+}
+
+    .active-tit-a:before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 2px;
+        background: #035b99;
+        position: absolute;
+        top: 0px;
+        left: 0;
+    }
+
+.active-tit-ashenghuo:before {
+    width: 60px;
+    background: #ef537a;
+}
+
+.active-tit-single {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.active-tit-azhuanti:before {
+    background: #f5842b;
+}
+
+.active-tit-azhuanlan:before {
+    width: 60px;
+    background: #653780;
+}
+
+.active-tit-ayimin:before {
+    width: 100px;
+    background: #448e4f;
+}
+
+.activity-right {
+    float: left;
+    margin-left: 15px;
+    width: 299px;
+    padding: 9px 0;
+}
+
+.activity-right-tit {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.tab-left-double {
+    overflow: hidden;
+    width: 630px;
+    float: left;
+}
+
+.lvyou-list-ul {
+    float: left;
+    text-align: center;
+}
+
+    .lvyou-list-ul img {
+        width: 140px;
+        height: 80px;
+    }
+
+.lvyou-list-ul-line {
+    border-bottom: 1px dashed #b7b7b7;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.shishang-list-dl {
+    color: #ef537a;
+    text-align: left;
+    margin: 7px 0px;
+}
+
+    .shishang-list-dl a {
+        width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+.sky-more-style {
+    width: 80px;
+    float: right;
+    text-align: right;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.caijin-span li {
+    list-style: none;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.caijin-span a {
+    color: black;
+    text-decoration: none;
+}
+
+    .caijin-span a:hover {
+        color: #f5842b;
+    }
+
+/* NEWS Channel Exchange Links */
+
+.links {
+    margin: 15px 0px;
+    width: 948px;
+    border: 1px solid #AAA;
+    padding: 0px 0px 8px 0px;
+    overflow: hidden;
+}
+
+    .links h3 {
+        font: bold 12px/14px '&Icirc;&cent;&Egrave;í&Ntilde;&Aring;&ordm;&Uacute;', &Euml;
+        &Icirc;
+        &Igrave;
+        &aring;
+        , Hei;
+        padding: 8px 0 1px 12px;
+        color: #D12026;
+        display: block;
+    }
+
+    .links a {
+        float: left;
+        display: inline;
+        width: 96px;
+        margin: 8px 2px 0px 3px;
+        border: 2px solid #FFF;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .links a:hover {
+            border-color: #CCC;
+        }
+
+    .links img {
+        max-width: 96px;
+        max-height: 30px;
+        border: 0px;
+    }
+
+
+
+/* footer CSS */
+
+#footer {
+    line-height: 22px;
+    text-align: center;
+    background: #FFF;
+    width: 950px;
+    text-decoration: none;
+    margin: 15px 0px;
+}
+
+    #footer > p > a {
+        text-decoration: none;
+        color: #6b6b6b;
+    }
+
+        #footer > p > a:hover {
+            color: #ec7f16;
+        }
+
+    #footer .ico {
+        background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
+        padding-left: 15px;
+    }
+
+.copyright {
+    font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
+}
+
+#part3 {
+    height: 50px;
+    margin: 15px 0px;
+    background: #DDD;
+    overflow: hidden;
+}
+
+#jumpMenu {
+    height: 20px;
+    margin: 0px 0px 0px 15px;
+    font-size: 12px;
+    width: 180px;
+    vertical-align: bottom;
+}
+
+.mg15 {
+    margin-top: 16px;
+    margin-left: 32px;
+    vertical-align: bottom; /*地步对其*/
+}
+
+/* 底部广告导航 */
+.foot-banner-nav {
+    float: left;
+    width: 300px;
+    height: 60px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+    .foot-banner-nav ul {
+        overflow: hidden;
+        display: block;
+    }
+
+    .foot-banner-nav > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 10px;
+    }
+
+        .foot-banner-nav > ul > li {
+            float: left;
+            margin: 0 14px 17px;
+        }
+
+            .foot-banner-nav > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #444545;
+            }
+
+.foot-banner-nav-s {
+    float: left;
+    width: 110px;
+    height: 60px;
+    overflow: hidden;
+}
+
+    .foot-banner-nav-s > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 13px;
+    }
+
+        .foot-banner-nav-s > ul > li {
+            /*margin: left;*/
+            margin: 0 14px 15px;
+        }
+
+            .foot-banner-nav-s > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #f5842b;
+            }
+
+.news-general-list {
+    width: 300px;
+    height: auto;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-left: 0px;
+    margin: 10px 0px;
+}
+
+    .news-general-list ul {
+        margin: 8px 0px;
+    }
+
+        .news-general-list ul li {
+            height: 25px;
+            line-height: 25px;
+        }
+
+
+.list-group-item-line {
+    border-bottom: 1px dashed #b7b7b7;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px !important;
+}
+
+.sky-jinyuanjinrong {
+    margin: 10px 0px;
+    border: 1px solid #898989;
+    height: 196px;
+}
+
+    .sky-jinyuanjinrong iframe {
+        height: 196px;
+    }
+
+.sky-video-right {
+    height: 30px;
+    background-color: black;
+    line-height: 28px;
+}
+
+.sky-video-right-title {
+    width: 100px;
+    padding-left: 10px;
+    color: #ec7f16;
+    font-weight: bold;
+}
+
+.sky-video-right-small-title {
+    height: 35px;
+    font-size: 13px;
+    vertical-align: middle;
+    line-height: 35px;
+    font-weight: bold;
+    color: #ec7f16;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+}
+
+    .sky-video-right-small-title a {
+        color: #ec7f16;
+        text-decoration: none;
+    }
+
+.hot-search-title {
+    height: 30px;
+    line-height: 30px;
+    border-top: 2px solid #ec7f16;
+    border-bottom: 1px solid #ccc;
+    margin-top: 12px;
+}
+
+    .hot-search-title span {
+        font-size: 18px;
+        padding-left: 10px;
+    }
+
+.hot-search-title-label1 {
+    color: gray;
+}
+
+.hot-search-title-label2 {
+    color: #ec7f16;
+}
+/* 表格样式 */
+.banner-table {
+    border-top: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+    .banner-table > ul {
+        width: 300px;
+    }
+
+        .banner-table > ul > li {
+            height: 78px;
+            margin: 15px 0;
+        }
+
+            .banner-table > ul > li > img {
+                width: 125px;
+                height: 75px;
+                overflow: hidden;
+                float: left;
+                vertical-align: top;
+                border: 1px solid #999;
+            }
+
+            .banner-table > ul > li > .banner-table-right {
+                width: 149px;
+                height: 78px;
+                float: right;
+                margin-left: 17px;
+                vertical-align: top;
+            }
+
+                .banner-table > ul > li > .banner-table-right > .banner-table-right-tit {
+                    color: #080808;
+                    font-size: 14px;
+                    display: block;
+                    line-height: 1.25;
+                }
+
+                .banner-table > ul > li > .banner-table-right > .banner-table-right-text {
+                    color: #4d4e4d;
+                    font-size: 12px;
+                    display: block;
+                    line-height: 1.5;
+                    margin-top: 10px;
+                }
+
+.banner-table-right-tit a {
+    text-decoration: none;
+    color: black;
+}
+
+    .banner-table-right-tit a:hover {
+        color: #ec7f16;
+    }
+
+.tab-left-double-div1 {
+    float: left;
+    width: 300px;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.tab-left-double-div2 {
+    float: right;
+    width: 300px;
+    overflow: hidden;
+    padding: 10px 0;
+    margin-left: 20px;
+}
+
+.tab-left-double-banner {
+    float: left;
+    width: 300px;
+    overflow: hidden;
+}
+
+.caijin-span-tejia {
+    overflow: hidden;
+}
+
+    .caijin-span-tejia li {
+        float: left;
+        height: 155px;
+    }
+
+    .caijin-span-tejia > li:nth-child(3),
+    .caijin-span-tejia > li:nth-child(5) {
+        margin-left: 20px;
+    }
+
+    .caijin-span-tejia > li:nth-child(4),
+    .caijin-span-tejia > li:nth-child(5) {
+        margin-top: 20px;
+    }
+
+.caijin-title-span > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+    .caijin-title-span > a:hover {
+        color: #ec7f16;
+    }
+
+.sky-news {
+    height: 25px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    border-left: 2px solid #ec7f16;
+    border-bottom: 1px solid #ccc;
+}
+
+    .sky-news span {
+        font-size: 18px;
+    }
+
+.sky-news-a {
+    color: black;
+    padding-left: 10px;
+}
+
+.sky-news-color {
+    color: #ec7f16;
+}
+
+.sky-hot-news {
+    margin-top: 20px;
+    width: 625px;
+    height: 29px;
+    color: white;
+    line-height: 29px;
+    background: url(/image/hotnews_bg.png);
+}
+
+.sky-hot-news-title {
+    margin-left: 15px;
+}
+
+.sky-hot-news-context {
+    float: right;
+    text-align: center;
+    width: 80%;
+    height: 32px;
+}
+
+    .sky-hot-news-context dl {
+        float: left;
+        margin-left: 50px;
+        height: 30px;
+        overflow: hidden;
+    }
+
+    .sky-hot-news-context span {
+        display: block;
+        width: 20px;
+        height: 29px;
+        float: right;
+    }
+
+    .sky-hot-news-context a {
+        color: white;
+        text-decoration: none;
+    }
+
+        .sky-hot-news-context a:hover {
+            color: #ec7f16;
+        }
+
+.sky-hot-news-context-pre {
+    height: 9px;
+    width: 14px;
+    display: block;
+    cursor: pointer;
+    margin-top: -8px;
+}
+
+.sky-hot-news-context-next {
+    height: 9px;
+    width: 14px;
+    display: block;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.border {
+    border: 1px solid #898989;
+}
+
+.sky-font18 {
+    font-size: 18px;
+}
+
+.sky-margintop10 {
+    margin-top: 10px;
+}
+
+.sky-hotnews-addpre {
+    height: 9px;
+    width: 14px;
+    display: block;
+    cursor: pointer;
+}
+
+.sky-liuxueyimin {
+    float: left;
+    width: 145px;
+    margin-left: 10px;
+}
+
+    .sky-liuxueyimin dl dd {
+        margin-bottom: 10px;
+    }
+
+        .sky-liuxueyimin dl dd a {
+            color: #448e4f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+.sky-liuxueyimin-list {
+    margin-top: 10px;
+    display: list-item;
+}
+
+.sky-floatL {
+    float: left;
+}
+
+    .sky-floatL > ul > li > a {
+        float: left;
+    }
+
+.sky-floatR {
+    float: right;
+    width: 185px;
+}
+
+.sky-tejia-span2 {
+    width: 40px;
+    float: right;
+    height: 30px;
+}
+
+.sky-tejia-updown {
+    height: 9px;
+    width: 14px;
+    display: block;
+    cursor: pointer;
+    color: #ef537a;
+    display: inline-block;
+}
+
+.sky-shishang {
+    float: left;
+    display: block;
+}
+
+.sky-shishang-img1 {
+    width: 300px;
+    height: 190px;
+}
+
+.lvyou-list-ul dd {
+    margin: 10px 0px;
+}
+
+.sky-zhuanti-title {
+    font-size: 16px;
+    color: #293e73;
+    font-weight: bold;
+}
+
+.sky-zhuanti-content {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.sky-zhuanti-list {
+    margin-top: 10px;
+    display: list-item;
+}
+
+.sky-ul-list1 {
+    background: url(/image/newstag4_07.png) 2px 7px no-repeat;
+    padding-left: 20px;
+    letter-spacing: 1px;
+}
+
+.sky-zhuanlan-author {
+    margin-bottom: 10px;
+}
+
+.sky-zhuanlan-title {
+    color: #653780;
+    margin-bottom: 10px;
+}
+
+.sky-zhuanlan-content {
+    font-size: 12px;
+}
+
+.sky-activity-title {
+    font-size: 18px;
+    /*letter-spacing: 1px;*/
+    height: 30px;
+    border-bottom: 1px solid #b7b7b7;
+    border-top: 2px solid #ec7f16;
+    padding-left: 10px;
+    color: #f5842b;
+}
+
+.sky-activity-info {
+    margin-top: 10px;
+    height: 120px;
+    width: 300px;
+    height: 110px;
+}
+
+.tianwei-right-tab {
+    border-top: 2px solid #ec7f16;
+    background-color: #ebebeb;
+    width: 300px;
+    margin-bottom: 18px;
+    position: relative
+}
+
+    .tianwei-right-tab span {
+        margin-left: 10px;
+        height: 30px;
+        line-height: 30px;
+        vertical-align: middle
+    }
+
+    .tianwei-right-tab .tuangou-list-select {
+        font-size: 2.83em;
+        font-weight: bold;
+        position: absolute;
+        top: 200px;
+        cursor: pointer;
+    }
+
+.tianwei-tuangou-item {
+    height: 398px;
+    padding: 8px 8px;
+    border-top: 1px solid gray;
+}
+
+.sky-vip {
+    width: 40px;
+    float: right;
+}
+
+    .sky-vip a {
+        height: 9px;
+        width: 14px;
+        cursor: pointer;
+        display: inline-block;
+        color: #ec7f16;
+    }
+
+
+
+.sky-info {
+    margin: 15px 0;
+}
+
+.sky-banner {
+    margin: 18px 0;
+}
+
+.sky-caijing {
+    float: left;
+    margin-top: 10px;
+}
+
+.sky-caijing-info {
+    float: left;
+    margin-left: 10px;
+    width: 160px;
+}
+
+.sky-caijing-info-title {
+    font-size: 16px;
+    color: #256091;
+    margin-bottom: 10px;
+    height: 40px;
+    overflow: hidden;
+}
+
+#wechat_home {
+    width: 90px;
+    height: 90px;
+    background: url(/image/tianweiwang.jpg);
+    position: absolute;
+    left: 58px;
+    display: none;
+    z-index: 9999;
+    margin-top: -5px;
+}
+
+#wechat_go {
+    width: 90px;
+    height: 90px;
+    background: url(/image/daogou.jpg);
+    position: absolute;
+    left: 45px;
+    display: none;
+    z-index: 9999;
+    margin-top: -5px;
+}
+
+#wechat_soku {
+    width: 90px;
+    height: 90px;
+    background: url(/image/shenghuo.jpg);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    margin-top: -5px;
+}
+
+#wechat_property {
+    width: 90px;
+    height: 90px;
+    background: url(/image/weifangcan.jpg);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+}
+
+#wechat_money {
+    width: 90px;
+    height: 90px;
+    background: url(/image/weicaijing.jpg);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+}
+
+
+
+.sky-ul-list1 a {
+    text-decoration: none;
+    color: black;
+}
+
+    .sky-ul-list1 a:hover {
+        color: #ec7f16;
+    }
+
+.sky-zhuanti-title a {
+    text-decoration: none;
+    color: #293e73;
+}
+
+.sky-caijing-info-title a {
+    text-decoration: none;
+    color: #256091;
+    font-weight: bold;
+}
+
+.list-group-generalitem a {
+    text-decoration: none;
+    color: black;
+}
+
+    .list-group-generalitem a:hover {
+        color: #ec7f16;
+    }
+
+.sky-caijing-info-detail {
+    height: 106px;
+    overflow: hidden;
+}
+
+    .sky-caijing-info-detail a {
+        color: black;
+        text-decoration: none;
+        line-height: 1.6
+    }
+
+        .sky-caijing-info-detail a:hover {
+            color: #ec7f16;
+        }
+
+.sky-video-right-top1 {
+    width: 300px;
+    height: 190px;
+}
+
+    .sky-video-right-top1 iframe {
+        width: 300px;
+        height: 190px;
+    }
+
+
+
+.sky-vip-list {
+    line-height: 24px;
+    overflow: hidden;
+    height: 330px;
+    width: 300px;
+    float: left;
+    display: inline;
+    overflow: hidden;
+}
+
+    .sky-vip-list dd a {
+        text-decoration: none;
+        color: black;
+    }
+
+        .sky-vip-list dd a:hover {
+            color: #ec7f16;
+        }
+
+.ky-share-icon {
+}
+
+    .ky-share-icon > .icon-nav {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .ky-share-icon > .icon-nav:hover {
+            background: #ccc;
+        }
+
+
+            .ky-share-icon > .icon-nav:hover i {
+                /*color: #676566;*/
+                color: #ec7f16;
+            }
+
+        .ky-share-icon > .icon-nav i {
+            color: #ccc;
+            text-align: center;
+            margin: 0 5px;
+            line-height: 25px;
+            transition: all 0.3s;
+        }
+
+.rightdivchid1-newsmore {
+    border: 1px solid #ef010a;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    letter-spacing: 2px;
+    margin: 13px 0px;
+}
+
+    .rightdivchid1-newsmore a {
+        color: #ef010a;
+    }
+
+.indexhomes-info {
+    height: 100px;
+    text-align: center;
+    border-bottom: 1px solid #898989;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+    .indexhomes-info strong {
+        font-weight: bold;
+        color: #000;
+        font-size: 14px;
+        display: block;
+    }
+
+        .indexhomes-info strong a {
+            color: #265294;
+            display: block;
+            overflow: hidden;
+            max-height: 46px;
+            line-height: 23px;
+            margin: 5px 0px;
+        }
+
+    .indexhomes-info span {
+        display: block;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+.indexhomes-roomcount {
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+    .indexhomes-roomcount span {
+        color: #000;
+        background: url(/image/icon.png) no-repeat 0 0;
+    }
+
+.icon-ws {
+    background-position: 0 0;
+    padding-left: 30px;
+}
+
+.icon-wy {
+    background-position: 0 -23px;
+    padding-left: 30px;
+}
+
+.indexhomes-imagecount {
+    width: 100%;
+    height: 30px;
+    background-color: #e1e1e1;
+    line-height: 30px;
+    display: inline-block;
+    margin: 10px 0px;
+}
+
+.indexhomes-roomchange {
+    height: 30px;
+    background-color: #e1e1e1;
+    line-height: 30px
+}
+
+.hsPhoto {
+    display: block;
+    height: 200px;
+    overflow: hidden
+}
+
+    .hsPhoto img {
+        float: left
+    }
+
+.sky-weather {
+    position: absolute;
+    display: block;
+    box-shadow: 0px 3px 16px 0px rgba(111, 165, 255, 0.4);
+    z-index: 9999;
+    right: 0;
+    transition: top .3s,visibility .3s,opacity .3s;
+    padding: 8px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+    margin-top: 32px;
+}
+
+    .sky-weather:before {
+        content: '';
+        display: block;
+        background: #fff;
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        transform: rotate(45deg);
+        position: absolute;
+        top: -7px;
+        left: 100px;
+    }
+
+#weatherCities li {
+    cursor: pointer;
+    text-align: left;
+}
+
+    #weatherCities li:hover {
+        color: #ec7f16;
+    }
+
+#div-weather-change {
+    cursor: pointer;
+    height: 24px;
+    margin: 0px 0px;
+}
+
+    #div-weather-change span {
+        vertical-align: 6px;
+    }
+
+.clear-sky-day {
+}
+
+.rightdivchid1-bannerlist4 {
+    padding: 0 0;
+    height: 86px;
+    text-align: center;
+    display: inline-flex;
+    margin: 10px 0px;
+}
+
+    .rightdivchid1-bannerlist4 img {
+        width: 138px;
+        height: 84px;
+        margin: 0px 8px;
+        border: 1px solid #898989;
+    }
+
+    .rightdivchid1-bannerlist4 div {
+        line-height: 24px;
+        position: absolute;
+        width: 138px;
+        background: rgba(0,0,0,0.3);
+        margin-left: 9px;
+        margin-right: 9px;
+        margin-top: 61px;
+    }
+
+        .rightdivchid1-bannerlist4 div a {
+            color: white;
+        }
