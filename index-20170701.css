@@ -576,6 +576,12 @@ body {
     text-align: left;
     margin:7px 0px;
 }
+    .shishang-list-dl a {
+        width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 
 .sky-more-style {
     width: 80px;
@@ -797,6 +803,10 @@ body {
     line-height: 35px;
     font-weight: bold;
     color: #ec7f16;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
 }
 
     .sky-video-right-small-title a {
@@ -1143,20 +1153,31 @@ body {
     height:110px;
 }
 
-.tianwei-right-tab span {
-    margin-left:10px;
-    height:30px;
-    line-height:30px;
-    vertical-align:middle
-}
-
 .tianwei-right-tab {
     border-top: 2px solid #ec7f16;
-    background-color:#ebebeb;
-    width:300px;
-   margin-bottom:18px;
+    background-color: #ebebeb;
+    width: 300px;
+    margin-bottom: 18px;
+    position: relative
 }
-
+    .tianwei-right-tab span {
+        margin-left: 10px;
+        height: 30px;
+        line-height: 30px;
+        vertical-align: middle
+    }
+    .tianwei-right-tab .tuangou-list-select {
+        font-size: 2.83em;
+        font-weight: bold;
+        position: absolute;
+        top: 200px;
+        cursor:pointer;
+    }
+.tianwei-tuangou-item {
+    height: 398px;
+    padding: 8px 8px;
+    border-top: 1px solid gray;
+}
 .sky-vip {
     width: 40px;
     float: right;
