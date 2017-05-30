@@ -565,17 +565,20 @@
                     [/e:loop]
 
                     <div class="rightdivchid1-bannerlist4">
-                        [e:loop={'220', 4, 15, 1}]
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img alt="" src="<?=$bqr[titlepic]?>" /></a>
-                        <div><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></div>
-                        [/e:loop]
+                        <ul>
+                            [e:loop={'220', 4, 15, 1}]
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img alt="" src="<?=$bqr[titlepic]?>" /></a>
+                                <span><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></span>
+                            </li>
+                            [/e:loop]
+                        </ul>
                     </div>
                     <script type="text/javascript">
-                        $(function () {
-                            $(".rightdivchid1").find(".list-news-item").eq(7).after($(".rightdivchid1-bannerlist4"));
-                            $(".rightdivchid1").find(".list-news-item").eq(7).css("border-bottom", "0px");
-                            //$(".rightdivchid1").find(".list-news-item").eq(7).after(bannerContent);
-                        })
+                                $(function () {
+                                    $(".rightdivchid1").find(".list-news-item").eq(7).after($(".rightdivchid1-bannerlist4"));
+                                    $(".rightdivchid1").find(".list-news-item").eq(7).css("border-bottom", "0px");
+                                })
                     </script>
                     <div class="rightdivchid1-newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
                 </div>
@@ -697,10 +700,10 @@
                         <div controlindex="1">
                             <!--#include virtual="/ssi/indexhome201706.html" -->
                         </div>
-                        <!--<div controlindex="2" style="display:none"></div>-->
-                        <!--<iframe src="http://cms6.skykiwi.com/ssi/indexhome201706.html"></iframe>-->
                     </div>
                 </div>
+                <!--<div controlindex="2" style="display:none"></div>-->
+                <!--<iframe src="http://cms6.skykiwi.com/ssi/indexhome201706.html"></iframe>-->
                 <!--房产  end-->
                 <!--纽澳财经 begin-->
                 <div class="tab-left-double-div2">
@@ -911,7 +914,7 @@
                 <!--留学移民 专栏 begin-->
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-ayimin" style="color:#448e4f">留学移民</span>
+                        <span class="active-tit-single active-tit-a active-tit-ayimin" style="color:#448e4f">留学移民</span>
                         <a href="http://imedu.skykiwi.com" target="_blank" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击查看更多留学移民新闻" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
@@ -923,8 +926,8 @@
                                 </div>
                                 <div class="sky-liuxueyimin">
                                     <dl>
-                                        <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[ftitle],12)?></a></dd>
-                                        <dt><?=esub($bqr[smalltext],56)?>...</dt>
+                                        <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[ftitle]?></a></dd>
+                                        <dt style="height:55px;overflow:hidden"><?=esub($bqr[smalltext],56)?>...</dt>
                                     </dl>
                                 </div>
                                 [/e:loop]
@@ -946,11 +949,11 @@
                     <div class="sky-margintop10">
                         <div class="caijin-span" controlindex="1">
                             [e:loop={'SELECT * FROM phome_enewsclass INNER JOIN phome_ecms_news ON phome_enewsclass.classid=phome_ecms_news.classid WHERE bclassid in (32,58) ORDER BY firsttitle DESC,newstime DESC LIMIT 0,1',1,24,0}]
-                            <div class="sky-floatL"><img style="width:100px;height:130px;border:1px solid #898989" src="<?=$bqr[classimg]?>" /></div>
+                            <div class="sky-floatL"><img style="width:100px;height:130px;border:1px solid #898989;display:block" src="<?=$bqr[classimg]?>" /></div>
                             <div class="sky-floatR">
                                 <dl>
                                     <dd class="sky-zhuanlan-author">专栏作者：<?=$bqr[writer]?></dd>
-                                    <dt class="sky-zhuanlan-title"><a href="<?=$bqsr[titleurl]?>" style="text-decoration:none;font-weight:bold;color:#653780" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],50)?></a></dt>
+                                    <dt class="sky-zhuanlan-title"><a href="<?=$bqsr[titleurl]?>" style="text-decoration:none;font-weight:bold;color:#653780" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
                                     <content class="sky-zhuanlan-content"><?=esub($bqr[smalltext],88)?>...</content>
                                 </dl>
                             </div>
@@ -973,13 +976,13 @@
                 </div>
 
                 <div class="sky-banner">
-                    <img height="250" width="300" src="image/bannerright1.jpg">
+                    <img height="250" style="display:block" width="300" src="image/bannerright1.jpg">
                 </div>
                 <div class="sky-banner">
-                    <img height="250" width="300" src="image/guanggao-009_03.jpg">
+                    <img height="250" style="display:block" width="300" src="image/guanggao-009_03.jpg">
                 </div>
                 <div class="tianwei-right-tab">
-                    <span>天维福利.团购</span>
+                    <span class="tianwei-right-title">天维福利.团购</span>
                     <div data-index="0" class="tianwei-tuangou-item">
                         <a href="#"><img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou.png" /></a>
                         <ol style="font-size:16px; margin:0px 0;line-height:30px">
@@ -998,26 +1001,26 @@
                         <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
                         <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$10</h1>
                     </div>
-                    <span class="tuangou-list-select" onclick="prevtuangou()">〈</span>
-                    <span class="tuangou-list-select" style="left:240px" onclick="nexttuangou()">〉</span>
+                    <span class="tuangou-list-select" style="left:10px;" onclick="prevtuangou()">〈</span>
+                    <span class="tuangou-list-select" style="right:10px;" onclick="nexttuangou()">〉</span>
                 </div>
-                <div class="sky-banner"><img style="height:250px;width:300px" src="image/guanggao008.png" /></div>
+                <div class="sky-banner"><img  style="height:250px;width:300px;display:block" src="image/guanggao008.png" /></div>
                 <div class="tianwei-right-tab">
-                    <span>天维橙页VIP商家</span>
+                    <span class="tianwei-right-title">天维橙页VIP商家</span>
                     <div class="sky-vip">
                         <a id="pre_vipopage">▲</a>
                         <a id="next_vipopage">▼</a>
                     </div>
-                </div>
-                <div style="overflow:hidden">
-                    <dl class="sky-vip-list" id="opage_vip_list">
-                        <script type="text/javascript" src="http://opage.skykiwi.com/js.php?callid=58"></script>
-                    </dl>
-                    <script language="javascript" type="text/javascript">
-                        var scroll_opage = new ScrollText("opage_vip_list", "pre_vipopage", "next_vipopage", true, 80, true);
-                        scroll_opage.LineHeight = 24;
-                        $(".sky-vip-list dd").addClass("list-group-item");
-                    </script>
+                    <div class="tianwei-VIP-item" style="height:335px; padding-top:15px; padding-bottom:15px">
+                        <dl class="sky-vip-list" id="opage_vip_list">
+                            <script type="text/javascript" src="http://opage.skykiwi.com/js.php?callid=58"></script>
+                        </dl>
+                        <script language="javascript" type="text/javascript">
+                            var scroll_opage = new ScrollText("opage_vip_list", "pre_vipopage", "next_vipopage", true, 80, true);
+                            scroll_opage.LineHeight = 24;
+                            $(".sky-vip-list dd").addClass("list-group-item");
+                        </script>
+                    </div>
                 </div>
             </div>
             <div style="clear:both;"></div>

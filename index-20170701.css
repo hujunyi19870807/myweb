@@ -591,7 +591,7 @@ body {
     text-align: right;
     font-size: 14px;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .caijin-span li {
@@ -1050,6 +1050,9 @@ body {
 
     .sky-liuxueyimin dl dd {
         margin-bottom: 10px;
+        height:20px;
+        line-height:20px;
+        overflow:hidden;
     }
 
         .sky-liuxueyimin dl dd a {
@@ -1132,10 +1135,14 @@ body {
 .sky-zhuanlan-title {
     color: #653780;
     margin-bottom: 10px;
+    height:38px;
+    overflow:hidden;
 }
 
 .sky-zhuanlan-content {
     font-size: 12px;
+    height:54px;
+    overflow:hidden;
 }
 
 .sky-activity-title {
@@ -1159,14 +1166,13 @@ body {
     border-top: 2px solid #ec7f16;
     background-color: #ebebeb;
     width: 300px;
-    margin-bottom: 18px;
-    position: relative
+    position: relative;
 }
-    .tianwei-right-tab span {
+    .tianwei-right-tab .tianwei-right-title {
         margin-left: 10px;
         height: 30px;
         line-height: 30px;
-        vertical-align: middle
+        vertical-align: middle;
     }
     .tianwei-right-tab .tuangou-list-select {
         font-size: 2.83em;
@@ -1175,14 +1181,22 @@ body {
         top: 200px;
         cursor:pointer;
     }
+
 .tianwei-tuangou-item {
     height: 398px;
     padding: 8px 8px;
-    border-top: 1px solid gray;
+    border-top: 1px solid #b7b7b7;
+}
+.tianwei-VIP-item {
+    height: 398px;
+    padding: 8px 8px;
+    border-top: 1px solid #b7b7b7;
 }
 .sky-vip {
     width: 40px;
     float: right;
+    height: 30px;
+    line-height: 30px;
 }
 
     .sky-vip a {
@@ -1326,12 +1340,10 @@ body {
         height: 190px;
     }
 
-
-
 .sky-vip-list {
-    line-height: 24px;
+    line-height: 25px;
     overflow: hidden;
-    height: 330px;
+    height: 335px;
     width: 300px;
     float: left;
     display: inline;
@@ -1500,7 +1512,8 @@ body {
 #div-weather-change {
     cursor:pointer;
     height:24px;
-    margin: 0px 0px;
+    margin: 0 0;
+    padding:0 0;
 }
 #div-weather-change span {
     vertical-align:6px;
@@ -1509,43 +1522,42 @@ body {
 
 }
 .rightdivchid1-bannerlist4 {
-    padding: 0 0;
-    height: 86px;
-    text-align: center;
-    display: inline-flex;
-    margin: 10px 0px;
+    margin:0px 0px;
+    padding:0px 0px;
 }
-    .rightdivchid1-bannerlist4 img {
-        width: 138px;
-        height: 84px;
-        margin: 0px 8px;
-        border: 1px solid #898989;
+    .rightdivchid1-bannerlist4 ul {
+        width:625px;
+        height:86px;
     }
-    .rightdivchid1-bannerlist4 div {
-        line-height: 24px;
+ .rightdivchid1-bannerlist4 ul li {
+        width: 140px;
+        float: left;
+        margin-left: 13px;
+    }
+.rightdivchid1-bannerlist4 img {
+    width: 138px;
+    height: 84px;
+    border: 1px solid #898989;
+}
+    .rightdivchid1-bannerlist4 span {
         position: absolute;
-        width: 138px;
+        width: 140px;
+        height: 20px;
         background: rgba(0,0,0,0.3);
-        margin-left: 9px;
-        margin-right: 9px;
-        margin-top: 61px;
-        height:25px;
-        line-height:25px;
-        overflow:hidden;
+        line-height: 1.6;
+        overflow: hidden;
+        text-align: center;
+        display:block;
+        margin-top:-25px;
     }
-    .rightdivchid1-bannerlist4 div a{
+    .rightdivchid1-bannerlist4 span a{
         color:white;
         text-decoration:none;
     }
-        .rightdivchid1-bannerlist4 div a:hover {
+        .rightdivchid1-bannerlist4 span a:hover {
             color: #ec7f16;
         }
-        .rightdivchid1-bannerlist4 div:nth-child(2) {
-            margin-left: 165px;
-        }
-        .rightdivchid1-bannerlist4 div:nth-child(4) {
-            margin-left: 321px;
-        }
-        .rightdivchid1-bannerlist4 div:nth-child(6) {
-            margin-left: 477px;
-        }
+.area-btn-imgCng {
+    float: right;
+    margin-right: 10px
+}
