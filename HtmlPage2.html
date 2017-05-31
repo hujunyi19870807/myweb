@@ -140,26 +140,26 @@
             var objDiv = $("#" + id + "");
             $(objDiv).css("display", "none");
         }
-        function next() {
-            var obj = $(".indexhomes:visible").find(".photo");
-            var jsonObjList = $.parseJSON(obj.attr("data-src"));
-            if (imgIndex < jsonObjList.length - 1) {
-                imgIndex = imgIndex + 1;
-                $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex + 1);
-                var jsonObj = jsonObjList[imgIndex];
-                obj.attr("src", jsonObj.urlPrefix + jsonObj.filePath + jsonObj.fileName);
-            }
-        }
-        function prev() {
-            var obj = $(".indexhomes:visible").find(".photo");
-            var jsonObjList = $.parseJSON(obj.attr("data-src"));
-            if (imgIndex > 0) {
-                imgIndex = imgIndex - 1;
-                $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex + 1);
-                var jsonObj = jsonObjList[imgIndex];
-                obj.attr("src", jsonObj.urlPrefix + jsonObj.filePath + jsonObj.fileName);
-            }
-        }
+        //function next() {
+        //    var obj = $(".indexhomes:visible").find(".photo");
+        //    var jsonObjList = $.parseJSON(obj.attr("data-src"));
+        //    if (imgIndex < jsonObjList.length - 1) {
+        //        imgIndex = imgIndex + 1;
+        //        $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex + 1);
+        //        var jsonObj = jsonObjList[imgIndex];
+        //        obj.attr("src", jsonObj.urlPrefix + jsonObj.filePath + jsonObj.fileName);
+        //    }
+        //}
+        //function prev() {
+        //    var obj = $(".indexhomes:visible").find(".photo");
+        //    var jsonObjList = $.parseJSON(obj.attr("data-src"));
+        //    if (imgIndex > 0) {
+        //        imgIndex = imgIndex - 1;
+        //        $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex + 1);
+        //        var jsonObj = jsonObjList[imgIndex];
+        //        obj.attr("src", jsonObj.urlPrefix + jsonObj.filePath + jsonObj.fileName);
+        //    }
+        //}
         function nextproperty() {
             var dataindex = $(".indexhomes:visible").attr("data-index");
             if (dataindex < 4) {
@@ -611,7 +611,7 @@
                             [fillblank]92,7,30[/fillblank]
                         </ul>
                     </div>
-
+                    
                     <div class="sky-video-right">
                         <span class="sky-video-right-title">天维视频</span>
                         <a class="sky-more-style" href="http://ent.skykiwi.com/" target="_self" title="新西兰房地产频道" id="link_title_blue">更多>></a>
@@ -701,7 +701,9 @@
                             <!--#include virtual="/ssi/indexhome201706.html" -->
                         </div>
                     </div>
+                    <script src="http://cms6.skykiwi.com/js/pglist-v1.0.js" type="text/javascript"></script>
                 </div>
+
                 <!--<div controlindex="2" style="display:none"></div>-->
                 <!--<iframe src="http://cms6.skykiwi.com/ssi/indexhome201706.html"></iframe>-->
                 <!--房产  end-->

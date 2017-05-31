@@ -1,28 +1,39 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
+﻿<!DOCTYPE html>
 
-<html xmlns="
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        .auto-style3 {
+            width: 762px;
+        }
+    </style>
+    <script type="text/javascript">
+        function person(name) {
+            this.name = name;
+        }
+        person.prototype.getname = function () {
+            return this.name
+        }
+        person.prototype.getage = function () {
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title><a href="https://www.baidu.com/s?wd=CSS&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLP1Dzm1c3n1Tkrjm4PvNB0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3ErHnLn161rHfznW0zn1bvPjRz" target="_blank" class="baidu-highlight">CSS</a>实现超过特定长度显示<a href="https://www.baidu.com/s?wd=%E7%9C%81%E7%95%A5%E5%8F%B7&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLP1Dzm1c3n1Tkrjm4PvNB0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3ErHnLn161rHfznW0zn1bvPjRz" target="_blank" class="baidu-highlight">省略号</a>的方法</title>
-<style type="text/<a href="https://www.baidu.com/s?wd=css&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLP1Dzm1c3n1Tkrjm4PvNB0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3ErHnLn161rHfznW0zn1bvPjRz" target="_blank" class="baidu-highlight">css</a>">
-li {
-width:200px;/*宽度，超过即会溢出*/
-line-height:25px;/*设置行间距*/
-text-overflow:ellipsis;/*当文本溢出时显示…此时还必须定义：
-强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden）*/
-white-space:nowrap;/*表示文本不会换行*/
-overflow:hidden;/*表示溢出的内容会被隐藏*/
-}
-</style>
+        }
+    </script>
 </head>
 <body>
-<ul>
-<li>3D打印机网</li>
-<li>
-<a title="<a href="https://www.baidu.com/s?wd=%E9%83%91%E5%B7%9E%E4%B9%90%E5%BD%A9%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YLP1Dzm1c3n1Tkrjm4PvNB0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3ErHnLn161rHfznW0zn1bvPjRz" target="_blank" class="baidu-highlight">郑州乐彩科技股份有限公司</a> 3D打印机网站"
-target="_blank" href="www.locor3d.com">
-乐彩3D打印机</a></li>
-</ul>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style3">
+                <tr>
+                    <td rowspan="2">111111</td>
+                    <td>222222</td>
+                </tr>
+                <tr>
+                    <td>333333</td>
+                </tr>
+            </table>
+        </div>
+    </form>
 </body>
 </html>

@@ -22,38 +22,45 @@ function SImage(callback) {
 SImage.prototype.get = function (url) {
     this.img.src = url;
 }
+var imgIndex = 0;
 
-var _getArea = $('.area-btn-imgCng');
-
-_getArea.each(function (index, element) {
-    var _this = $(this),
-        _now = _this.find('.now'),
-        _nowNum, _imgObj = _this.parent().prev(),
+$(".indexhomes").each(function () {
+    var _imgObj = $(this).children(0),
+        _countpart = $(this).children(1),
         _imgSrc = _imgObj.find('.hsPhoto img.photo'),
         _loadimg = _imgObj.find('.hsPhoto img.loading'),
         _loadmask = _imgObj.find('.hsPhoto em.mask'),
-        _pre = _this.find("i.fa.fa-chevron-left"),
-        _next = _this.find("i.fa.fa-chevron-right");
+        _pre = _countpart.find("span i.fa.fa-chevron-left"),
+        _next = _countpart.find("span i.fa.fa-chevron-right"),
+        _now = _countpart.find("span i:eq(1) em:eq(0)"),
+        _total = _countpart.find("span i:eq(1) em:eq(1)"),
+        _nowNum;
 
-    if (_imgSrc.attr('data-src') != '') {
-        var _imgArry = eval('(' + _imgSrc.attr('data-src') + ')');
-        _imgArry.unshift(_imgSrc.attr('src'));
-        _pre.css('opacity', '0.2');
-
+    var jsonObjList = $.parseJSON(_imgSrc.attr("data-src"));
+    _pre.css('opacity', '0.2');
+    if (jsonObjList.length >=2 ) {
+        
         _next.click(function () {
-            _nowNum = _now.html() * 1;
+            _nowNum = _now.html() * 1,
+                _totalNum = _total.html() * 1;
 
-            if (_now.html() != _imgArry.length) {
+            if (_now.html() != jsonObjList.length) {
+
                 _now.html(_nowNum + 1);
+
                 _pre.css('opacity', '1');
 
-                if ((_nowNum + 1) == _imgArry.length) {
+                if ((_nowNum + 1) == jsonObjList.length) {
+
                     _next.css('opacity', '0.2');
+
                 } else {
+
                     _loadimg.show();
                     _loadmask.show();
-                }
 
+                }
+                
                 function icall(obj) {
                     _loadimg.hide();
                     _loadmask.hide();
@@ -61,7 +68,7 @@ _getArea.each(function (index, element) {
                 }
 
                 var img = new SImage(icall);
-                img.get(_imgArry[_nowNum].urlPrefix + _imgArry[_nowNum].filePath + _imgArry[_nowNum].fileName);
+                img.get(jsonObjList[_nowNum].urlPrefix + jsonObjList[_nowNum].filePath + jsonObjList[_nowNum].fileName);
 
             } else {
                 _next.css('opacity', '0.2');
@@ -69,24 +76,30 @@ _getArea.each(function (index, element) {
         });
 
         _pre.click(function () {
-            _nowNum = _now.html() * 1;
+            _nowNum = _now.html() * 1,
+                _totalNum = _total.html() * 1;
 
             if (_now.html() != 1) {
                 _now.html(_nowNum - 1);
+
                 _next.css('opacity', '1');
+
                 if ((_nowNum - 1) == 1) {
                     _pre.css('opacity', '0.2');
                 } else {
                     _loadimg.show();
                     _loadmask.show();
                 }
+
                 function icall(obj) {
                     _loadimg.hide();
                     _loadmask.hide();
                     _imgSrc.attr('src', obj.src);
                 }
+
                 var img = new SImage(icall);
-                img.get(_imgArry[_nowNum-2].urlPrefix + _imgArry[_nowNum-2].filePath + _imgArry[_nowNum-2].fileName);
+                img.get(jsonObjList[_nowNum - 2].urlPrefix + jsonObjList[_nowNum - 2].filePath + jsonObjList[_nowNum - 2].fileName);
+
             } else {
                 _pre.css('opacity', '0.2');
             }
