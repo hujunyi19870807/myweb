@@ -1,0 +1,23 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+}
+
+body {
+    font-size: 14px;
+    color: #333;
+    font-family: "Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }

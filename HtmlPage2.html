@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1,minimal-ui">
     <title>天维首页新版</title>
 
     <link href="index-20170701.css" rel="stylesheet" />
@@ -64,8 +65,14 @@
             $("#div-weather-content").mouseout(function () {
                 $(".sky-weather").hide();
             });
-
+            var total = document.documentElement.clientHeight;
+            var height = total - 100 - document.getElementById("div-sky-leftnav").offsetTop;
+            $(".sky-left-nav").css("height", height);
+            //if (height <850) {
+            //    $("#div-sky-leftnav").addClass("sky-left-nav-small").removeClass("sky-left-nav");
+            //}
         });
+        
         var tabChangeList = ["美食", "旅游", "生活", "时尚"];
         function initTabClass(obj, colorName, index) {
             var controlIndex = $(obj).attr("controlindex");
@@ -121,8 +128,7 @@
         }
 
         function bannerlist() {
-            $(".rightdivchid1").find(".list-news-item").eq(3).after("<div style='width: 625px;height: 80px;margin-top: 10px;margin-bottom: 10px;'><img width= '625' height= '80' alt= '' src= 'image/banner4.png' /></div >");
-            $(".rightdivchid1").find(".list-news-item").eq(3).css("border-bottom", "0px");
+            
         }
         function addhotserach() {
             $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst");
@@ -140,39 +146,18 @@
             var objDiv = $("#" + id + "");
             $(objDiv).css("display", "none");
         }
-        //function next() {
-        //    var obj = $(".indexhomes:visible").find(".photo");
-        //    var jsonObjList = $.parseJSON(obj.attr("data-src"));
-        //    if (imgIndex < jsonObjList.length - 1) {
-        //        imgIndex = imgIndex + 1;
-        //        $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex + 1);
-        //        var jsonObj = jsonObjList[imgIndex];
-        //        obj.attr("src", jsonObj.urlPrefix + jsonObj.filePath + jsonObj.fileName);
-        //    }
-        //}
-        //function prev() {
-        //    var obj = $(".indexhomes:visible").find(".photo");
-        //    var jsonObjList = $.parseJSON(obj.attr("data-src"));
-        //    if (imgIndex > 0) {
-        //        imgIndex = imgIndex - 1;
-        //        $(".indexhomes:visible").find(".indexhomes-imagecount span i em:eq(0)").html(imgIndex + 1);
-        //        var jsonObj = jsonObjList[imgIndex];
-        //        obj.attr("src", jsonObj.urlPrefix + jsonObj.filePath + jsonObj.fileName);
-        //    }
-        //}
+       
         function nextproperty() {
             var dataindex = $(".indexhomes:visible").attr("data-index");
             if (dataindex < 4) {
                 $(".indexhomes:visible").hide().next().show();
             }
-            imgIndex = 0;
         }
         function prevproperty() {
             var dataindex = $(".indexhomes:visible").attr("data-index");
             if (dataindex > 0) {
                 $(".indexhomes:visible").hide().prev().show();
             }
-            imgIndex = 0;
         }
         function nexttuangou() {
             var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next().attr("data-index");
@@ -186,10 +171,11 @@
                 $(".tianwei-tuangou-item:visible").hide().prev().show();
             }
         }
+
     </script>
 </head>
 <body>
-    <div class="maindiv">
+    <div class="wrapper">
         <div class="sky-left-nav" id="div-sky-leftnav">
             <div class="sky-left-logo">
                 <img src="image/skykiwi.png">
@@ -202,12 +188,12 @@
                     </li>
                     <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
                     <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
-                        <div id="div-weather-change">
-                            <img style="width:24px;height:24px;padding-right:4px;" src="/image/01d.png" />
-                            <span style="color:#ec7f16" id="span-mix-temp"></span>
-                            <span id="span-min-temp"></span>
-                            <span id="span-city"></span>
-                            <span style="color:#ec7f16; margin-left:2px">▼</span>
+                        <div id="div-weather-change" class="clearfix">
+                            <img style="width:24px;height:24px;float:left" src="/image/01d.png" />
+                            <span style="color:#ec7f16;float:left" id="span-mix-temp"></span>
+                            <span id="span-min-temp" style="float:left"></span>
+                            <span id="span-city" style="float:left;display:inline-block;width:79px;text-align:center"></span>
+                            <span style="color:#ec7f16; float:right">▼</span>
                         </div>
                         <div id="div-weather-content" class="sky-weather" style="display:none">
                             <!--#include virtual="/ssi/weather201707.html" -->
@@ -255,104 +241,35 @@
 
                     </ul>
                 </div>
-                <ul class="sky-share">
-                    <li>
-                        <span class="ky-share-box ky-share-icon">
-                            <span class="text-col sky-share-tit">天维网</span>
-
-                            <a class="icon-nav" target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
-                                <i class="fa fa-weibo"></i>
-                            </a>
-                            <a class="icon-nav" href="javascript:wechathome()">
-                                <i class="fa fa-wechat" title="关注我们的微信"></i>
-                            </a>
-                            <span id="wechat_home" style="display: none;"></span>
-                            <a class="icon-nav" target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a class="icon-nav" target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="ky-share-box ky-share-icon">
-                            <span class="text-col sky-share-tit">导购</span>
-                            <a class="icon-nav" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
-                                <i class="fa fa-weibo"></i>
-                            </a>
-                            <a class="icon-nav" href="javascript:wechatgo()">
-                                <i class="fa fa-wechat"></i>
-                            </a>
-                            <span id="wechat_go" style="display: none;"></span>
-                        </span>
-                        <span class="ky-share-box ky-share-icon" style="margin-left:12px;">
-                            <span class="text-col sky-share-tit">生活</span>
-                            <a class="icon-nav" title="关注我们的导购微信" href="javascript:wechattuangou()">
-                                <i class="fa fa-wechat"></i>
-                            </a>
-                            <span id="wechat_soku" style="display: none;"></span>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="ky-share-box ky-share-icon">
-                            <span class="text-col sky-share-tit">房地产</span>
-                            <a class="icon-nav" title="关注我们的导购微信" href="javascript:wechatproperty()">
-                                <i class="fa fa-wechat"></i>
-                            </a>
-                            <span id="wechat_property" style="display: none;"></span>
-                        </span>
-                        <span class="ky-share-box ky-share-icon" style="margin-left:10px;">
-                            <span class="text-col sky-share-tit">微财经</span>
-                            <a class="icon-nav" title="关注我们的导购微信" href="javascript:wechatmoney()">
-                                <i class="fa fa-wechat"></i>
-                            </a>
-                            <span id="wechat_money" style="display: none;"></span>
-                        </span>
-                    </li>
-                </ul>
-                <script type="text/javascript">
-                            function wechathome() { wechat_home.style.display = "block"; }
-                            function wechatgo() { wechat_go.style.display = "block"; }
-                            function wechatproperty() { wechat_property.style.display = "block"; }
-                            function wechattuangou() { wechat_soku.style.display = "block"; }
-                            function wechatmoney() { wechat_money.style.display = "block"; }
-                            function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
-                            document.onclick = hidden;
-                </script>
                 <div class="sky-phone">
                     <div class="sky-phone-left">
-                        <img src="image/tianweiphone_03_02.png" />
+                        <img style="display:block" src="image/tianweiphone_03_02.png" />
                     </div>
                     <div class="sky-phone-right">
-                        <img src="image/erweima.png" />
+                        <img style="display:block" src="image/erweima.png" />
                     </div>
                 </div>
                 <div class="sky-video">
-                    <span class="sky-video-tit">
-                        正在直播...
-                    </span>
-                    <object type="application/x-shockwave-flash" data="//static.yizhibo.com/pc_live/static/video.swf?onPlay=YZB.play&amp;onPause=YZB.pause&amp;onSeek=YZB.seek&amp;scid=H7Ss1Omud8RVx3nq" width="155" height="108" id="J_flash" style="visibility: visible; margin-left: 0px;">
-                        <param name="hasPriority" value="true">
-                        <param name="swliveconnect" value="true">
-                        <param name="allowScriptAccess" value="always">
-                        <param name="wmode" value="Opaque">
-                        <param name="onPlay" value="alert">
-                        <param name="onPause" value="alert()">
-                    </object>
+                    <div class="sky-video-tit">正在直播...</div>
+                    <div class="sky-video-content">
+                        <img alt="" height="105" width="165" src="/image/sky-nav-banner.png" />
+                    </div>
                 </div>
-
+                <div class="sky-nav-banner">
+                    <img alt=""  src="/image/sky-nav-banner.png" />
+                </div>
             </div>
         </div>
 
-        <div class="rightdiv">
-            <div class="topbanner"></div>
+        <div class="maincontent">
             <div class="topbannermiddle">
                 <img src="image/bannnernew002_06.jpg" />
             </div>
+            <div class="topbanner">
+                <img src="image/banner002.png" />
+            </div>
             <div>
                 <div class="rightdivchid1">
-
                     <div id="flash0" class="border slideBox">
                         <ul class="items">
                             [e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]
@@ -364,7 +281,6 @@
                             [/e:loop]
                         </ul>
                     </div>
-
                     <div class="sky-hot-news">
                         <span class="sky-hot-news-title">HOT 突发新闻</span>
                         <div class="sky-hot-news-context">
@@ -391,195 +307,201 @@
                         <span style=""><label class="sky-news-a">天维</label><label class="sky-news-color">新闻</label></span>
                         <a class="sky-more-style sky-news-color" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">更多>></a>
                     </div>
-                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=1 order by newstime desc limit 0,1', 4, 24, 1}]
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
-                        <div class="list-news-item-r">
-                            <div class="list-news-item-r-title" style="height:25px;line-height:25px;overflow:hidden">
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
-                            </div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
-                                <div style="margin-top:5px">
+
+                    <ul id="ul-new-list">
+                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=1 order by newstime desc limit 0,1', 4, 24, 1}]
+                        <li class="list-news-item">
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
+                            </a>
+                            <dl>
+                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
+                                <dd>时间：2017年4月20日15：00pm </dd>
+                                <content>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
                                     $tzclassid = array("49","50","51","52","53","160","161");
                                     $ymclassid = array("110","111","112","113","114","115","116");
                                     if(in_array($bqr[classid],$naclassid,true)){
-                                    echo ('<span style="color: red">纽澳新闻</span>');
+                                    echo ('
+                                    <span style="color: red">纽澳新闻</span>');
                                     }
                                     elseif(in_array($bqr[classid],$hqclassid,true)){
-                                    echo ('<span style="color: red">环球报道</span>');
+                                    echo ('
+                                    <span style="color: red">环球报道</span>');
                                     }
                                     elseif(in_array($bqr[classid],$tzclassid,true)){
-                                    echo ('<span style="color: red">投资频道</span>');
+                                    echo ('
+                                    <span style="color: red">投资频道</span>');
                                     }
                                     elseif(in_array($bqr[classid],$ymclassid,true)){
-                                    echo ('<span style="color: red">留学移民</span>');
+                                    echo ('
+                                    <span style="color: red">留学移民</span>');
                                     }
 
                                     if (!empty($bqr[keyboard])){
                                     $keywordlist = explode(',',$bqr[keyboard]);
                                     foreach($keywordlist as $value){
-                                    echo("<span class='list-news-item-word'>$value</span>");
+                                    echo("
+                                    <span class='list-news-item-word'>$value</span>");
                                     }
                                     }
                                     ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    [/e:loop]
-                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=2 order by newstime desc limit 0,1', 4, 24, 1}]
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
-                        <div class="list-news-item-r">
-                            <div class="list-news-item-r-title">
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
-                            </div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
-                                <div style="margin-top:5px">
+                                </content>
+                            </dl>
+                        </li>
+                        [/e:loop]
+                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=2 order by newstime desc limit 0,1', 4, 24, 1}]
+                        <li class="list-news-item">
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
+                            </a>
+                            <dl>
+                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
+                                <dd>时间：2017年4月20日15：00pm </dd>
+                                <content>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
                                     $tzclassid = array("49","50","51","52","53","160","161");
                                     $ymclassid = array("110","111","112","113","114","115","116");
-                                    if(in_array($bqr[classid],$naclassid,true))
-                                    {
-                                    echo ('<span style="color: red">纽澳新闻</span>');
+                                    if(in_array($bqr[classid],$naclassid,true)){
+                                    echo ('
+                                    <span style="color: red">纽澳新闻</span>');
                                     }
                                     elseif(in_array($bqr[classid],$hqclassid,true)){
-                                    echo ('<span style="color: red">环球报道</span>');
+                                    echo ('
+                                    <span style="color: red">环球报道</span>');
                                     }
                                     elseif(in_array($bqr[classid],$tzclassid,true)){
-                                    echo ('<span style="color: red">投资频道</span>');
+                                    echo ('
+                                    <span style="color: red">投资频道</span>');
                                     }
                                     elseif(in_array($bqr[classid],$ymclassid,true)){
-                                    echo ('<span style="color: red">留学移民</span>');
+                                    echo ('
+                                    <span style="color: red">留学移民</span>');
                                     }
 
                                     if (!empty($bqr[keyboard])){
                                     $keywordlist = explode(',',$bqr[keyboard]);
                                     foreach($keywordlist as $value){
-                                    echo("<span class='list-news-item-word'>$value</span>");
+                                    echo("
+                                    <span class='list-news-item-word'>$value</span>");
                                     }
                                     }
                                     ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    [/e:loop]
-                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=3 order by newstime desc limit 0,1', 4, 24, 1}]
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
-                        <div class="list-news-item-r">
-                            <div class="list-news-item-r-title">
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
-                            </div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
-                                <div style="margin-top:5px">
+                                </content>
+                            </dl>
+                        </li>
+                        [/e:loop]
+                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=3 order by newstime desc limit 0,1', 4, 24, 1}]
+                        <li class="list-news-item">
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
+                            </a>
+                            <dl>
+                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
+                                <dd>时间：2017年4月20日15：00pm </dd>
+                                <content>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
                                     $tzclassid = array("49","50","51","52","53","160","161");
                                     $ymclassid = array("110","111","112","113","114","115","116");
-                                    if(in_array($bqr[classid],$naclassid,true))
-                                    {
-                                    echo ('<span style="color: red">纽澳新闻</span>');
+                                    if(in_array($bqr[classid],$naclassid,true)){
+                                    echo ('
+                                    <span style="color: red">纽澳新闻</span>');
                                     }
                                     elseif(in_array($bqr[classid],$hqclassid,true)){
-                                    echo ('<span style="color: red">环球报道</span>');
+                                    echo ('
+                                    <span style="color: red">环球报道</span>');
                                     }
                                     elseif(in_array($bqr[classid],$tzclassid,true)){
-                                    echo ('<span style="color: red">投资频道</span>');
+                                    echo ('
+                                    <span style="color: red">投资频道</span>');
                                     }
                                     elseif(in_array($bqr[classid],$ymclassid,true)){
-                                    echo ('<span style="color: red">留学移民</span>');
+                                    echo ('
+                                    <span style="color: red">留学移民</span>');
                                     }
+
                                     if (!empty($bqr[keyboard])){
                                     $keywordlist = explode(',',$bqr[keyboard]);
                                     foreach($keywordlist as $value){
-                                    echo("<span class='list-news-item-word'>$value</span>");
+                                    echo("
+                                    <span class='list-news-item-word'>$value</span>");
                                     }
                                     }
                                     ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    [/e:loop]
+                                </content>
+                            </dl>
+                        </li>
+                        [/e:loop]
 
-                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1
-                    and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
-                    and checked=1 and havehtml=1 and orderid IN (1,2,3)
-                    GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
-                    order by newstime desc limit 0,8', 4, 24, 1}]
-                    <div class="list-news-item">
-                        <div class="list-news-item-l"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img src="<?=$bqr[titlepic]?>" /></a></div>
-                        <div class="list-news-item-r">
-                            <div class="list-news-item-r-title">
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a>
-                            </div>
-                            <div class="list-news-item-r-bottom">
-                                <div><span><?=format_datetime($bqr[newstime],'Y年m月d日')?></span></div>
-                                <div style="margin-top:5px">
+                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1
+                        and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
+                        and checked=1 and havehtml=1 and orderid IN (1,2,3)
+                        GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
+                        order by newstime desc limit 0,9', 4, 24, 1}]
+                        <li class="list-news-item">
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
+                            </a>
+                            <dl>
+                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
+                                <dd>时间：2017年4月20日15：00pm </dd>
+                                <content>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
                                     $tzclassid = array("49","50","51","52","53","160","161");
                                     $ymclassid = array("110","111","112","113","114","115","116");
-                                    if(in_array($bqr[classid],$naclassid,true))
-                                    {
-                                    echo ('<span style="color: red">纽澳新闻</span>');
+                                    if(in_array($bqr[classid],$naclassid,true)){
+                                    echo ('
+                                    <span style="color: red">纽澳新闻</span>');
                                     }
                                     elseif(in_array($bqr[classid],$hqclassid,true)){
-                                    echo ('<span style="color: red">环球报道</span>');
+                                    echo ('
+                                    <span style="color: red">环球报道</span>');
                                     }
                                     elseif(in_array($bqr[classid],$tzclassid,true)){
-                                    echo ('<span style="color: red">投资频道</span>');
+                                    echo ('
+                                    <span style="color: red">投资频道</span>');
                                     }
                                     elseif(in_array($bqr[classid],$ymclassid,true)){
-                                    echo ('<span style="color: red">留学移民</span>');
+                                    echo ('
+                                    <span style="color: red">留学移民</span>');
                                     }
 
                                     if (!empty($bqr[keyboard])){
                                     $keywordlist = explode(',',$bqr[keyboard]);
                                     foreach($keywordlist as $value){
-                                    echo("<span class='list-news-item-word'>$value</span>");
+                                    echo("
+                                    <span class='list-news-item-word'>$value</span>");
                                     }
                                     }
                                     ?>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both">
-                        </div>
-                    </div>
-                    [/e:loop]
-
-                    <div class="rightdivchid1-bannerlist4">
-                        <ul>
-                            [e:loop={'220', 4, 15, 1}]
-                            <li>
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img alt="" src="<?=$bqr[titlepic]?>" /></a>
-                                <span><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></span>
-                            </li>
-                            [/e:loop]
+                                </content>
+                            </dl>
+                        </li>
+                        [/e:loop]
+                       
+                        <li class="rightdivchid1-bannerlist4" style="height:115px;border-bottom:1px solid #ccc ">
+                            <ul>
+                                [e:loop={'220', 4, 15, 1}]
+                                <li>
+                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img alt="" src="<?=$bqr[titlepic]?>" /></a>
+                                    <span><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></span>
+                                </li>
+                                [/e:loop]
+                            </ul>
+                        </li>
                         </ul>
-                    </div>
+
                     <script type="text/javascript">
                                 $(function () {
-                                    $(".rightdivchid1").find(".list-news-item").eq(7).after($(".rightdivchid1-bannerlist4"));
-                                    $(".rightdivchid1").find(".list-news-item").eq(7).css("border-bottom", "0px");
+                                    $("#ul-new-list li:eq(3)").after("<li class='list-news-item'><img height='75' src='/image/banner4.png' /></li>");
+                                    $("#ul-new-list li:eq(8)").after($(".rightdivchid1-bannerlist4"));
                                 })
                     </script>
+
                     <div class="rightdivchid1-newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
                 </div>
                 <div class="rightdivchid2">
@@ -603,8 +525,8 @@
                     </div>
                     <div style="clear:both">
                     </div>
-                    <div>
-                        <img width="300" height="250" style="display:block" src="image/bannerright1.jpg" />
+                    <div class="sky-banner">
+                        <img src="image/bannerright1.jpg" />
                     </div>
                     <div class="news-general-list">
                         <ul>
@@ -685,7 +607,7 @@
                 </div>
             </div>
             <div style="clear:both;"></div>
-            <div>
+            <div style="width:950px;height:105px">
                 <img src="image/banner0008_03.jpg" />
             </div>
             <div class="tab-left-double">
@@ -761,7 +683,7 @@
                 </div>
                 <!--纽澳财经  end-->
                 <div style="clear:both;"></div>
-                <div>
+                <div style="height:80px;width:625px;overflow:hidden">
                     <img height="80" width="625" alt="" src="image/banner4.png">
                 </div>
                 <!--生活 旅游 begin-->
@@ -870,10 +792,10 @@
                 <!--特价时尚美食 end-->
                 <div style="clear:both;"></div>
                 <!--广告 begin-->
-                <div class="tab-left-double-banner">
+                <div style="float:left;width:300px;height:100px;overflow:hidden">
                     <img style="width:300px;height:100px" src="image/tejia.png" />
                 </div>
-                <div class="tab-left-double-banner" style="margin-left:20px;">
+                <div style="float:right;width:300px;height:100px;overflow:hidden">
                     <img style="width:300px;height:100px" src="image/00025.png" />
                 </div>
                 <!--广告 end-->
@@ -1026,7 +948,7 @@
                 </div>
             </div>
             <div style="clear:both;"></div>
-            <div>
+            <div style="height:80px;width:950px;overflow:hidden">
                 <img height="80" width="948" src="image/guangao007.png" />
             </div>
             <div class="sky-info">

@@ -1,0 +1,142 @@
+﻿.sky-left-nav-small {
+    width: 208px;
+    float: left;
+    position: fixed;
+    z-index: 1;
+}
+
+    .sky-left-nav-small > .sky-left-logo {
+        width: 208px;
+        height: 70.5px;
+        background: #fff;
+        padding-top: 17.5px;
+    }
+
+        .sky-left-nav-small > .sky-left-logo > img {
+            width: 208px;
+        }
+
+
+    .sky-left-nav-small > .sky-left-box {
+        width: 175px;
+        background: #676566;
+        padding: 0 10px;
+        overflow: hidden;
+    }
+
+        .sky-left-nav-small > .sky-left-box > .sky-left-ul {
+            color: #fff;
+            border-bottom: 1px solid #b8b8b8;
+            line-height: 10px;
+            margin-top: 10px;
+        }
+
+            .sky-left-nav-small > .sky-left-box > .sky-left-ul > li {
+                padding: 8px 0;
+                text-align: center;
+            }
+
+                .sky-left-nav-small > .sky-left-box > .sky-left-ul > li > span {
+                    cursor: pointer;
+                }
+
+.active-text {
+    color: #ec7f16;
+}
+
+.sky-left-nav-small > .sky-left-box > .sky-nav-index {
+    font-size: 16px;
+}
+
+    .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-tit {
+        color: #ec7f16;
+        display: block;
+        margin-top: 4px;
+    }
+
+    .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul {
+        overflow: hidden;
+    }
+
+        .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul > li {
+            float: left;
+            line-height: 1.8;
+        }
+
+            .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul > li > a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul > li:nth-child(2),
+            .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul > li:nth-child(5),
+            .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul > li:nth-child(8),
+            .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul > li:nth-child(11) {
+                margin: 0 25px;
+            }
+
+            .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul > li:hover > a {
+                color: #ec7f16;
+            }
+
+.text-col {
+    color: #dbd9d9;
+}
+
+.sky-left-nav-small > .sky-left-box > .sky-phone {
+    overflow: hidden;
+    border-bottom: 1px solid #b8b8b8;
+    border-top: 1px solid #b8b8b8;
+    padding: 8px 0;
+    margin-top: 5px;
+}
+
+    .sky-left-nav-small > .sky-left-box > .sky-phone > .sky-phone-left {
+        width: 98px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .sky-left-nav-small > .sky-left-box > .sky-phone > .sky-phone-right {
+        float: right;
+    }
+
+        .sky-left-nav-small > .sky-left-box > .sky-phone > .sky-phone-right > img {
+            width: 60px;
+        }
+
+.sky-left-nav-small > .sky-left-box > .sky-video {
+    width: 160px;
+    height: 125px;
+    background: #ffffff;
+    margin-top: 10px;
+}
+
+    .sky-left-nav-small > .sky-left-box > .sky-video > .sky-video-tit {
+        color: #f07f14;
+        font-size: 16px;
+        height: 25px;
+        line-height: 25px;
+        padding-left: 5px;
+    }
+    .sky-left-nav-small > .sky-left-box > .sky-video > .sky-video-content {
+        height: 90px;
+        width: 150px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        padding-right: 5px;
+    }
+.sky-left-nav-small > .sky-left-box > .sky-video > .sky-video-content img {
+    height: 90px;
+    width: 150px;
+}
+    .sky-left-nav-small > .sky-left-box > .sky-video > .sky-video-box {
+        width: 100%;
+        height: 108px;
+    }
+
+.sky-left-nav-small > .sky-left-box > .sky-nav-banner {
+    height: 90px;
+    width: 150px;
+    margin: 10px 0;
+}
