@@ -7,7 +7,8 @@
 body {
     font-size: 14px;
     color: #333;
-    font-family:"Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
+    font-family:"Microsoft YaHei","5fae8f6f96c59ed1";
+    height:100%;
 }
 /* 以上内容不用复制 */
 
@@ -26,8 +27,8 @@ body {
 .sky-left-nav {
     width: 208px;
     float: left;
-    position: fixed;
     z-index: 1;
+    position:absolute;
 }
 
     .sky-left-nav > .sky-left-logo {
@@ -46,18 +47,19 @@ body {
         background: #676566;
         padding: 0 16px;
         overflow: hidden;
+        height:auto;
     }
 
         .sky-left-nav > .sky-left-box > .sky-left-ul {
             color: #fff;
             border-bottom: 1px solid #b8b8b8;
-            line-height: 15px;
-            margin-top: 15px;
+            height:18%;
         }
 
             .sky-left-nav > .sky-left-box > .sky-left-ul > li {
                 padding:8px 0;
                 text-align: center;
+                
             }
 
                 .sky-left-nav > .sky-left-box > .sky-left-ul > li > span {
@@ -68,14 +70,14 @@ body {
                     color: #ec7f16;
                 }
 
-/*.sky-left-ul > li > span > a {
+.sky-left-ul > li > span > a {
     text-decoration: none;
     color: #fff;
 }
 
     .sky-left-ul > li > span > a:hover {
         color: #ec7f16;
-    }*/
+    }
 
 
 .sky-left-nav > .sky-left-box > .sky-nav-index {
@@ -94,7 +96,7 @@ body {
 
         .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul > li {
             float: left;
-            line-height: 3.0;
+            line-height: 38px;
         }
 
             .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul > li > a {
@@ -176,6 +178,76 @@ body {
 }
 
 
+
+
+
+
+/* 兼容1366px 的屏幕分辨率 
+
+@media all and (max-width: 1366px) {
+    .sky-left-nav > .sky-left-logo {
+        padding-top: 1px;
+        height: 56.5px;
+    }
+
+    .sky-left-nav > .sky-left-box > .sky-left-ul > li {
+        padding: 3px 0;
+    }
+
+    .sky-left-nav > .sky-left-box > .sky-nav-index {
+        margin-top: 5px;
+    }
+
+        .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul > li {
+            line-height: 27px;
+        }
+
+    .sky-left-nav > .sky-left-box > .sky-phone {
+        padding: 5px 0;
+        margin: 3px 0;
+    }
+
+    .sky-left-nav > .sky-left-box > .sky-video {
+        margin-top: 8px;
+    }
+
+    .sky-left-nav > .sky-left-box > .sky-nav-banner {
+        margin: 6px 0;
+    }
+}
+@media all and (max-width: 1680px){
+  .sky-left-nav > .sky-left-logo{
+        padding-top: 1px;
+        height: 56.5px;
+  }
+.sky-left-nav > .sky-left-box > .sky-left-ul > li{
+    padding: 3px 0;
+}
+.sky-left-nav > .sky-left-box > .sky-nav-index{
+    margin-top: 5px;
+}
+.sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul > li{
+    line-height: 27px;
+}
+.sky-left-nav > .sky-left-box > .sky-phone{
+    padding: 5px 0;
+    margin: 3px 0;
+}
+.sky-left-nav > .sky-left-box > .sky-video{
+    margin-top: 8px;
+}
+
+.sky-left-nav > .sky-left-box > .sky-nav-banner{
+    margin: 6px 0;
+}
+
+
+}
+
+@media all and (min-width:1367px) {
+
+}*/
+
 .wrapper {
     margin: 0 auto;
     height: auto;
@@ -200,7 +272,7 @@ body {
 }
 
     #flash a {
-        font-family: "Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
+        font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
     }
 
 #ad_text_zone li {
@@ -372,21 +444,32 @@ body {
     .list-news-item dl {
         width: 465px;
         float: right;
-        height: 75px;
+        height: 77px;
         margin-left:15px;
-        margin-top:14px;
+        margin-top:12px;
+        overflow:hidden;
+    }
+    .list-news-item dt{
+        margin-bottom:14px;
     }
     .list-news-item dt a {
         font-size: 18px;
         text-decoration: none;
         color: black;
     }
-    .list-news-item dd content {
+    .list-news-item dl dd {
         font-size: 12px;
+        height: 20px;
+        color: #7b7979;
     }
-    .list-news-item dd {
-        padding-top:12px;
-    }
+    .list-news-item dl dd span.list-news-item-category {
+            color: #d11e26;
+            font-weight:bold;
+        }
+        .list-news-item dl dd span.list-news-item-word {
+            margin-left: 20px;
+        }
+
 
     .list-news-item > .list-news-item-l {
         width: 140px;
@@ -427,9 +510,7 @@ body {
 
 
 
-.list-news-item-word {
-    margin-left: 20px;
-}
+
 
 .news-list-mindle ul {
     width: 100%;
@@ -606,7 +687,7 @@ body {
 }
 
     .links h3 {
-        font: bold 12px/14px 'Î¢ÈíÑÅºÚ', ËÎÌå, Hei;
+        font: bold 12px/14px '&Icirc;&cent;&Egrave;í&Ntilde;&Aring;&ordm;&Uacute;', &Euml;&Icirc;&Igrave;&aring;, Hei;
         padding: 8px 0 1px 12px;
         color: #D12026;
         display: block;
@@ -661,7 +742,7 @@ body {
     }
 
 .copyright {
-    font-family: "Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
+    font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
 }
 
 #part3 {
@@ -747,12 +828,15 @@ body {
     margin:10px 0px;
 }
     .news-general-list ul {
-        margin: 7px 0px;
+        margin: 3px 0px;
     }
         .news-general-list ul li {
             height: 23px;
             line-height: 23px;
         }
+            .news-general-list ul li a {
+                text-decoration: none;
+            }
 
 
 .list-group-item-line {
@@ -836,7 +920,7 @@ body {
 
         .banner-table > ul > li {
             height: 78px;
-            margin: 15px 0;
+            margin: 18px 0;
         }
 
             .banner-table > ul > li > img {
@@ -858,13 +942,13 @@ body {
 
                 .banner-table > ul > li > .banner-table-right > .banner-table-right-tit {
                     color: #080808;
-                    font-size: 14px;
+                    font-size: 15px;
                     display: block;
                     line-height: 1.25;
                 }
 
                 .banner-table > ul > li > .banner-table-right > .banner-table-right-text {
-                    color: #4d4e4d;
+                    color: #7b7979;
                     font-size: 12px;
                     display: block;
                     line-height: 1.5;
@@ -873,7 +957,7 @@ body {
 
 .banner-table-right-tit a {
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 
     .banner-table-right-tit a:hover {
@@ -1377,16 +1461,22 @@ body {
         }
 
 .rightdivchid1-newsmore {
-    border: 1px solid #ef010a;
-    height: 30px;
+    border: 1px solid #d11e26;
+    height: 38px;
     text-align: center;
-    line-height: 30px;
-    letter-spacing: 2px;
-    margin:13px 0px;
+    line-height: 38px;
+    letter-spacing: 1px;
+    margin: 13px 0px;
+    font-size:15px;
+    
 }
 
     .rightdivchid1-newsmore a {
-        color: #ef010a;
+        color: #d11e26;
+        text-decoration: none;
+    }
+    .rightdivchid1-newsmore a:hover {
+        text-decoration:none;
     }
 
 .indexhomes-info {
@@ -1719,3 +1809,49 @@ body {
     height: 90px;
     width: 175px;
 }
+#skyapp {
+    height: 85px;
+    border-bottom: 1px dashed #b7b7b7;
+    border-top: 1px dashed #b7b7b7;
+    display: table-cell;
+    vertical-align: middle;
+}
+#skyapp ul{
+    display: block;
+    width: 950px;
+    margin: 0 auto;
+    /*position: relative;*/
+}
+    #skyapp ul li {
+    float:left;
+    }
+    #skyapp ul >.sky-app-content {
+        margin-left:15px;
+    }
+    #skyapp ul li a {
+        display: inline-block;
+        width: 52px;
+        height: 52px;
+        cursor: pointer;
+    }
+    #skyapp ul li img {
+       margin-right:15px;
+    }
+
+    .ky-share-icon > .icon-nav:hover {
+        background: #ccc;
+    }
+
+
+        .ky-share-icon > .icon-nav:hover i {
+            /*color: #676566;*/
+            color: #ec7f16;
+        }
+
+    .ky-share-icon > .icon-nav i {
+        color: #ccc;
+        text-align: center;
+        margin: 0 5px;
+        line-height: 25px;
+        transition: all 0.3s;
+    }

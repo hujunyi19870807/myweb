@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>在底部的层</title>
+</head>
+<body>
+    <style>
+        .show {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            z-index: 1000;
+            background: #F4F4F4;
+            border: 1px solid #DFDFDF;
+            padding: 10px;
+            font-size: 12px;
+        }
+    </style>
+    <div id="showDiv" class="show">看到这个不动的层了吗???</div>
+    <script>
+function divPo(){
+	var winWidth=document.documentElement.clientWidth;
+	var winHeight=document.documentElement.clientHeight;
+	document.getElementById("showDiv").style.left=(winWidth-222)+"px"; //减去的和DIV的宽度和padding相关
+	if(navigator.appName=="Microsoft Internet Explorer")
+	{
+		document.getElementById("showDiv").style.top=Math.floor(winHeight-122)+parseInt(document.documentElement.scrollTop)+"px";
+		window.onscroll=function(){
+			document.getElementById("showDiv").style.top=Math.floor(winHeight-122)+parseInt(document.documentElement.scrollTop)+"px";
+		}
+	}
+	else
+	{
+		document.getElementById("showDiv").style.position="fixed";
+		document.getElementById("showDiv").style.top=Math.floor(winHeight-250)+"px";
+	}
+}
+divPo();
+    </script>
+    <p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p>
+</body>
+</html>
