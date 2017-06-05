@@ -51,7 +51,6 @@
                 $(this).find("span").eq(0).click();
             });
 
-            bannerlist();//广告列表方法
             addhotserach();//动态修改hot热搜样式
 
             $("#li-weather-control").mouseover(function () {
@@ -79,7 +78,52 @@
                 }
             });
 
+            //天维团购特效 begin
+            var flag = true;
+            $("#sky-tuangou-prev").on("click", function () {
+                var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").prev().attr("data-index");
+                if (dataindex >= 0 && dataindex != undefined) {
+                    $(".tianwei-tuangou-item:visible").hide().prev().show();
+                }
+            });
+            $("#sky-tuangou-next").on("click", function () {
+                var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next().attr("data-index");
+                if (dataindex < 4 && dataindex != undefined) {
+                    $(".tianwei-tuangou-item:visible").hide().next().show();
+                }
+            });
+            var timer = null;
+            $("#sky-tuangou-tab").hover(function () {
+                flag = false;
+                clearInterval(timer);
+            }, function () {
+                flag = true;
+                timer = setInterval(go, 3000);
+            });
+            function autoGo(bol) {
+                //自动行走
+                if (bol) 
+                    timer = setInterval(go, 3000);
+            }
+            autoGo(flag);
+            function go() {
+                var dataindex =parseInt($(".tianwei-right-tab .tianwei-tuangou-item:visible").attr("data-index"));
+                dataindex = dataindex + 1;
+                if (dataindex >= 4) {
+                    dataindex = 0;
+                }
+                $(".tianwei-right-tab .tianwei-tuangou-item").eq(dataindex).show().siblings("div").hide();
+            }
+            //天维团购特效 end
+            //天维动态广告 begin
+            var arg0 = Math.floor(Math.random() * 10);//使用除以2取余的算法获取广告。
+            //var arg1=Math.floor(arg0);
+            //alert(arg0);
+            //alert(arg1);
+            
+            //天维动态广告 end
         });
+
         var imgIndex = 0;
 
         var tabChangeList = ["美食", "旅游", "生活", "时尚"];
@@ -136,9 +180,6 @@
             });
         }
 
-        function bannerlist() {
-
-        }
         function addhotserach() {
             $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst");
             $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend");
@@ -168,19 +209,7 @@
                 $(".indexhomes:visible").hide().prev().show();
             }
         }
-        function nexttuangou() {
-            var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next().attr("data-index");
-            if (dataindex < 4 && dataindex != undefined) {
-                $(".tianwei-tuangou-item:visible").hide().next().show();
-            }
-        }
-        function prevtuangou() {
-            var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").prev().attr("data-index");
-            if (dataindex >= 0 && dataindex != undefined) {
-                $(".tianwei-tuangou-item:visible").hide().prev().show();
-            }
-        }
-
+        
     </script>
 </head>
 <body>
@@ -306,7 +335,7 @@
                             </span>
                             <script language="javascript" type="text/javascript">
                                 var scroll_opage = new ScrollText("opage_hot_list", "pre_opage", "next_opage", true, 80, true);
-                                scroll_opage.LineHeight = 29;
+                                scroll_opage.LineHeight = 25;
                             </script>
                         </div>
                     </div>
@@ -914,28 +943,46 @@
                 <div class="sky-banner">
                     <img height="250" style="display:block" width="300" src="image/guanggao-009_03.jpg">
                 </div>
-                <div class="tianwei-right-tab">
+                <div class="tianwei-right-tab" id="sky-tuangou-tab">
                     <span class="tianwei-right-title">天维福利.团购</span>
                     <div data-index="0" class="tianwei-tuangou-item">
-                        <a href="#"><img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou.png" /></a>
+                        <a href="#"><img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou1.png" /></a>
                         <ol style="font-size:16px; margin:0px 0;line-height:30px">
-                            <li>2017“我想”张杰世界巡回演唱会</li>
+                            <li>AAAAAAAAAAAAAAAAAAAAA</li>
                             <li style="color:red">已售200</li>
                         </ol>
                         <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
-                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$99</h1>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$1</h1>
                     </div>
                     <div data-index="1" class="tianwei-tuangou-item" style="display:none">
-                        <img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou.png" />
+                        <img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou2.png" />
                         <ol style="font-size:16px; margin:0px 0;line-height:30px">
-                            <li>2017张惠美世界巡回演唱会</li>
+                            <li>BBBBBBBBBBBBBBBBBB</li>
                             <li style="color:red">已售100</li>
                         </ol>
                         <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
-                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$10</h1>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$2</h1>
                     </div>
-                    <span class="tuangou-list-select" style="left:10px;" onclick="prevtuangou()">〈</span>
-                    <span class="tuangou-list-select" style="right:10px;" onclick="nexttuangou()">〉</span>
+                    <div data-index="2" class="tianwei-tuangou-item" style="display:none">
+                        <img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou3.png" />
+                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
+                            <li>CCCCCCCCCCCCCCCCCCCCC</li>
+                            <li style="color:red">已售100</li>
+                        </ol>
+                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$3</h1>
+                    </div>
+                    <div data-index="3" class="tianwei-tuangou-item" style="display:none">
+                        <img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou4.png" />
+                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
+                            <li>DDDDDDDDDDDDDDDDD</li>
+                            <li style="color:red">已售100</li>
+                        </ol>
+                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$4</h1>
+                    </div>
+                    <span id="sky-tuangou-prev" class="tuangou-list-select" style="left:10px;">〈</span>
+                    <span id="sky-tuangou-next" class="tuangou-list-select" style="right:10px;">〉</span>
                 </div>
                 <div class="sky-banner"><img style="height:250px;width:300px;display:block" src="image/guanggao008.png" /></div>
                 <div class="tianwei-right-tab">
