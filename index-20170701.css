@@ -29,17 +29,18 @@ body {
     float: left;
     z-index: 1;
     position:absolute;
+    top:30px;
 }
 
     .sky-left-nav > .sky-left-logo {
         width: 208px;
-        height: 70.5px;
         background: #fff;
-        padding-top: 17.5px;
+        padding: 25px 0;
     }
 
         .sky-left-nav > .sky-left-logo > img {
             width: 208px;
+            display:block;
         }
 
     .sky-left-nav > .sky-left-box {
@@ -53,13 +54,11 @@ body {
         .sky-left-nav > .sky-left-box > .sky-left-ul {
             color: #fff;
             border-bottom: 1px solid #b8b8b8;
-            height:18%;
         }
 
             .sky-left-nav > .sky-left-box > .sky-left-ul > li {
-                padding:8px 0;
                 text-align: center;
-                
+                margin: 14px 0;
             }
 
                 .sky-left-nav > .sky-left-box > .sky-left-ul > li > span {
@@ -82,16 +81,18 @@ body {
 
 .sky-left-nav > .sky-left-box > .sky-nav-index {
     font-size: 16px;
-    margin-top:20px;
 }
 
     .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-tit {
         color: #ec7f16;
         display: block;
+        margin-top:17px;
+        margin-bottom:10px;
     }
 
     .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul {
         overflow: hidden;
+        margin-bottom:14px;
     }
 
         .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul > li {
@@ -123,8 +124,8 @@ body {
     overflow: hidden;
     border-bottom: 1px solid #b8b8b8;
     border-top: 1px solid #b8b8b8;
-    padding: 15px 0;
-    margin:10px 0;
+    padding: 18px 0;
+    margin:11px 0;
 }
 
     .sky-left-nav > .sky-left-box > .sky-phone > .sky-phone-left {
@@ -145,7 +146,7 @@ body {
     width: 175px;
     height: 140px;
     background: #ffffff;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
     .sky-left-nav > .sky-left-box > .sky-video > .sky-video-tit {
@@ -169,13 +170,14 @@ body {
     }
 .sky-left-nav > .sky-left-box > .sky-nav-banner {
     width: 175px;
-    height: 140px;
-    margin: 15px 0;
+    height: 160px;
+    margin: 19px 0;
 }
-.sky-left-nav > .sky-left-box > .sky-nav-banner img {
-    width: 175px;
-    height: 140px;
-}
+    .sky-left-nav > .sky-left-box > .sky-nav-banner img {
+        width: 175px;
+        height: 160px;
+        border: 1px solid #898989;
+    }
 
 
 
@@ -382,7 +384,7 @@ body {
     width: 950px;
     height: 40px;
     overflow: hidden;
-    margin-top:20px;
+    margin-top:8px;
 }
 
 .rightdivchid1 {
@@ -437,7 +439,7 @@ body {
 
 .list-news-item {
     border-bottom: 1px solid #ccc;
-    height: 102px;
+    height: 104px;
     text-align: left;
     margin: 0 auto;
 }
@@ -446,7 +448,7 @@ body {
         float: right;
         height: 77px;
         margin-left:15px;
-        margin-top:12px;
+        margin-top:13px;
         overflow:hidden;
     }
     .list-news-item dt{
@@ -481,7 +483,7 @@ body {
         border: 1px solid #898989;
         display: inline-block;
         float: left;
-        margin-top: 12px;
+        margin-top: 13px;
     }
 
 
@@ -630,6 +632,7 @@ body {
 .lvyou-list-ul {
     float: left;
     text-align: center;
+    padding:7px 0;
 }
     .lvyou-list-ul img {
         width: 140px;
@@ -724,7 +727,7 @@ body {
     background: #FFF;
     width: 950px;
     text-decoration: none;
-    margin:15px 0px;
+    margin:50px 0px;
 }
 
     #footer > p > a {
@@ -746,7 +749,7 @@ body {
 }
 
 #part3 {
-    height: 50px;
+    height: 65px;
     margin: 15px 0px;
     background: #DDD;
     overflow: hidden;
@@ -761,7 +764,7 @@ body {
 }
 
 .mg15 {
-    margin-top: 16px;
+    margin-top: 22px;
     margin-left: 32px;
     vertical-align: bottom; /*地步对其*/
 }
@@ -827,9 +830,26 @@ body {
     padding-left: 0px;
     margin:10px 0px;
 }
-    .news-general-list ul {
-        margin: 3px 0px;
+.news-general-list-ul {
+    width:300px;
+    height:240px;
+}
+    .news-general-list-ul li {
+        float: left;
+        width: 145px;
+        height: 23px;
+        line-height: 23px;
+        overflow:hidden;
     }
+        .news-general-list-ul li:nth-child(2), .news-general-list-ul li:nth-child(4),
+        .news-general-list-ul li:nth-child(6), .news-general-list-ul li:nth-child(8),
+        .news-general-list-ul li:nth-child(10), .news-general-list-ul li:nth-child(12),
+        .news-general-list-ul li:nth-child(14), .news-general-list-ul li:nth-child(16) {
+            float: right;
+        }
+.news-general-list ul {
+    margin: 3px 0px;
+}
         .news-general-list ul li {
             height: 23px;
             line-height: 23px;
@@ -968,19 +988,20 @@ body {
     float: left;
     width: 300px;
     overflow: hidden;
-    padding: 10px 0;
+    margin: 10px 0;
 }
 
 .tab-left-double-div2 {
     float: right;
     width: 300px;
     overflow: hidden;
-    padding: 10px 0;
+    margin: 10px 0;
     margin-left: 20px;
 }
 
 .caijin-span-tejia {
     overflow: hidden;
+    padding:13px 0;
 }
 
     .caijin-span-tejia li {
@@ -1170,7 +1191,7 @@ body {
     height: 190px;
 }
 .lvyou-list-ul dd {
-    margin:10px 0px;
+    margin-top:10px;
 }
 .sky-zhuanti-title {
     font-size: 16px;
@@ -1253,6 +1274,11 @@ body {
     padding: 8px 8px;
     border-top: 1px solid #b7b7b7;
 }
+.tianwei-tuangou-item ol li {
+     line-height:30px;
+     overflow:hidden;
+     height:30px;
+}
 .tianwei-VIP-item {
     height: 398px;
     padding: 8px 8px;
@@ -1276,11 +1302,14 @@ body {
 
 
 .sky-info {
-    margin: 15px 0;
+    height: 80px;
+    display: block;
+    padding-top: 24px;
+    border-top: 5px solid #ec7f16;
 }
 
 .sky-banner {
-    margin: 10px 0;
+    margin: 22px 0;
     width: 300px;
     height: 250px;
 }
@@ -1461,18 +1490,17 @@ body {
         }
 
 .rightdivchid1-newsmore {
-    border: 1px solid #d11e26;
+    border: 1px solid #ec7f16;
     height: 38px;
     text-align: center;
     line-height: 38px;
     letter-spacing: 1px;
     margin: 13px 0px;
-    font-size:15px;
-    
+    font-size: 15px;
 }
 
     .rightdivchid1-newsmore a {
-        color: #d11e26;
+        color: #ec7f16;
         text-decoration: none;
     }
     .rightdivchid1-newsmore a:hover {
@@ -1580,7 +1608,7 @@ body {
     border-radius: 6px;
     background-color: #fff;
     color:#000;
-    margin-top:32px;
+    margin-top:25px;
 }
     .sky-weather:before {
         content: '';

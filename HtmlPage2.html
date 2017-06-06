@@ -13,6 +13,9 @@
     <script src="http://cms6.skykiwi.com/js/FocusPic-v1.0.js"></script>
     <script src="http://cms6.skykiwi.com/js/scroll-v1.0.js"></script>
     <script type="text/javascript">
+        window.onload = function () {
+            //document.getElementById("div-sky-leftnav").style.top = "0px";
+        }
         $(document).ready(function () {
             // begin
             $('#flash0').slideBox({
@@ -68,13 +71,17 @@
                 var divheight = leftnav.height();
                 var winheight = $(window).height();
                 var scrollheight = $(window).scrollTop();
-                if (scrollheight <= divheight - winheight) {
-                    //alert("滚动条已经到达底部为" + $(document).scrolltop());
-                    //需要固定不层为fixed
+                if (divheight + 30 < winheight) {
                     document.getElementById("div-sky-leftnav").style.position = "fixed";
-                    document.getElementById("div-sky-leftnav").style.top = (-scrollheight) + "px";
-                    //leftnav.css("position", "fixed");
-                    //leftnav.css("top", (-scrollheight) + "px");
+                    document.getElementById("div-sky-leftnav").style.top = "30px";
+                }
+                else {
+                    if (scrollheight < divheight - winheight) {
+                        //alert("滚动条已经到达底部为" + $(document).scrolltop());
+                        //需要固定层为fixed
+                        document.getElementById("div-sky-leftnav").style.position = "fixed";
+                        document.getElementById("div-sky-leftnav").style.top = ((-scrollheight)+30) + "px";
+                    }
                 }
             });
 
@@ -209,10 +216,33 @@
                 $(".indexhomes:visible").hide().prev().show();
             }
         }
-        
+       
+
     </script>
+    <style type="text/css">
+        .head {
+            background: #222;
+            height: 30px;
+            line-height:30px;
+            text-align:center;
+        }
+            .head a {
+                text-decoration: none;
+                color: #fff;
+                float:right;
+            }
+                .head a:hover {
+                    color: #ec7f16;
+                }
+    </style>
 </head>
 <body>
+    <header class="head">
+        <div style="margin:0 auto;width:1180px;">
+            <a href="http://www.skykiwi.com/" target="_blank" title="回天维旧版">回天维旧版</a>
+        </div>
+    </header>
+    
     <div class="wrapper">
         <div class="sky-left-nav" id="div-sky-leftnav">
             <div class="sky-left-logo">
@@ -220,7 +250,7 @@
             </div>
             <div class="sky-left-box">
                 <ul class="sky-left-ul clearfix">
-                    <li>
+                    <li style="margin-top:18px">
                         <span><a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook">English</a></span> |
                         <span class="active-text">中文</span>
                     </li>
@@ -283,7 +313,7 @@
                         <img style="display:block" src="image/tianweiphone_03_02.png" />
                     </div>
                     <div class="sky-phone-right">
-                        <img style="display:block" src="image/erweima.png" />
+                        <img style="display:block" src="image/erweima.jpg" />
                     </div>
                 </div>
                 <div class="sky-video">
@@ -322,12 +352,9 @@
                         <span class="sky-hot-news-title">HOT 突发新闻</span>
                         <div class="sky-hot-news-context">
                             <dl id="opage_hot_list">
-                                <dd><a href="#">为今年大选全力开路？工党副党魁宣布退位让贤0</a></dd>
-                                <dd>为今年大选全力开路？工党副党魁宣布退位让贤1</dd>
-                                <dd>为今年大选全力开路？工党副党魁宣布退位让贤2</dd>
-                                <dd>为今年大选全力开路？工党副党魁宣布退位让贤3</dd>
-                                <dd>为今年大选全力开路？工党副党魁宣布退位让贤4</dd>
-                                <dd>为今年大选全力开路？工党副党魁宣布退位让贤5</dd>
+                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and issudden=1 order by issudden,newstime desc limit 0,3', 4, 24, 1}]
+                                <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dd>
+                                [/e:loop]
                             </dl>
                             <span>
                                 <a class="sky-hot-news-context-pre" id="pre_opage">▲</a>
@@ -534,7 +561,7 @@
 
                     <script type="text/javascript">
                                 $(function () {
-                                    $("#ul-new-list li:eq(3)").after("<li class='list-news-item'><div style='height:77px;width:950px;padding:12px 0'><img height='77' src='/image/banner4.png' /><div></li>");
+                                    $("#ul-new-list li:eq(3)").after("<li class='list-news-item' style='height:110px'><div style='height:84px;width:950px;padding:16px 0'><img height='77' src='/image/banner4.png' /></div></li>");
                                     $("#ul-new-list li:eq(8)").after($(".rightdivchid1-bannerlist4"));
                                     $("#ul-new-list li:last-child").css("border", "0px");
                                 })
@@ -563,12 +590,12 @@
                     </div>
                     <div style="clear:both">
                     </div>
-                    <div class="sky-banner">
+                    <div class="sky-banner" style="margin-top:18px">
                         <img src="image/bannerright1.jpg" />
                     </div>
                     <div class="news-general-list">
-                        <ul>
-                            [fillblank]92,8,30[/fillblank]
+                        <ul class="news-general-list-ul">
+                            [fillblank]92,16,30[/fillblank]
                         </ul>
                     </div>
 
@@ -633,7 +660,7 @@
                     <div class="news-general-list" style="border-top:0px !important">
 
                         <ul id="ul-hotsearch-news">
-                            [e:loop={'SELECT * FROM phome_ecms_news WHERE checked=1 AND DATE_SUB(CURDATE(), INTERVAL 7 DAY) < newstime ORDER BY onclick DESC LIMIT 0,9', 9, 24, 0}]
+                            [e:loop={'SELECT * FROM phome_ecms_news WHERE checked=1 AND DATE_SUB(CURDATE(), INTERVAL 2 DAY) < newstime ORDER BY onclick DESC LIMIT 0,9', 9, 24, 0}]
                             <li class="list-group-item"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],33)?></a></li>
                             [/e:loop]
                         </ul>
@@ -725,7 +752,7 @@
                     <img height="80" width="625" alt="" src="image/banner4.png">
                 </div>
                 <!--生活 旅游 begin-->
-                <div id="flash1" class="slideBox sky-floatL" style="padding-top:15px;">
+                <div id="flash1" class="slideBox sky-floatL" style="margin: 10px 0;">
                     <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_slidelist.js" charset="utf-8"></script>
                 </div>
 
@@ -830,16 +857,16 @@
                 <!--特价时尚美食 end-->
                 <div style="clear:both;"></div>
                 <!--广告 begin-->
-                <div style="float:left;width:300px;height:100px;overflow:hidden">
+                <div style="float:left;width:300px;height:100px;overflow:hidden;margin:10px 0">
                     <img style="width:300px;height:100px" src="image/tejia.png" />
                 </div>
-                <div style="float:right;width:300px;height:100px;overflow:hidden">
+                <div style="float:right;width:300px;height:100px;overflow:hidden;margin:10px 0">
                     <img style="width:300px;height:100px" src="image/00025.png" />
                 </div>
                 <!--广告 end-->
                 <div style="clear:both;"></div>
                 <!--天维专题  begin-->
-                <div id="flash2" class="slideBox" style="float:left;padding-top:15px;">
+                <div id="flash2" class="slideBox" style="float:left;margin:10px 0">
                     <ul class="items">
                         [e:loop={"select * from phome_ecms_news where classid=219 and checked=1 order by istop asc limit 5",5,24,1}]
                         <li>
@@ -928,7 +955,7 @@
             </div>
             <div class="activity-right">
                 <div class="sky-activity-title">
-                    <span>活动</span>
+                    <span>近期活动</span>
                 </div>
                 <div class="sky-activity-info">
                     <img src="image/huodong01.png" alt="" />
@@ -945,42 +972,7 @@
                 </div>
                 <div class="tianwei-right-tab" id="sky-tuangou-tab">
                     <span class="tianwei-right-title">天维福利.团购</span>
-                    <div data-index="0" class="tianwei-tuangou-item">
-                        <a href="#"><img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou1.png" /></a>
-                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
-                            <li>AAAAAAAAAAAAAAAAAAAAA</li>
-                            <li style="color:red">已售200</li>
-                        </ol>
-                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
-                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$1</h1>
-                    </div>
-                    <div data-index="1" class="tianwei-tuangou-item" style="display:none">
-                        <img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou2.png" />
-                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
-                            <li>BBBBBBBBBBBBBBBBBB</li>
-                            <li style="color:red">已售100</li>
-                        </ol>
-                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
-                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$2</h1>
-                    </div>
-                    <div data-index="2" class="tianwei-tuangou-item" style="display:none">
-                        <img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou3.png" />
-                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
-                            <li>CCCCCCCCCCCCCCCCCCCCC</li>
-                            <li style="color:red">已售100</li>
-                        </ol>
-                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
-                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$3</h1>
-                    </div>
-                    <div data-index="3" class="tianwei-tuangou-item" style="display:none">
-                        <img style="height:282px;width:282px;border:1px solid #898989" src="image/tuangou4.png" />
-                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
-                            <li>DDDDDDDDDDDDDDDDD</li>
-                            <li style="color:red">已售100</li>
-                        </ol>
-                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价199&nbsp;&nbsp;</del></p>
-                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$4</h1>
-                    </div>
+                    <!--#include virtual="/ssi/bonusListsIndex201706.html" -->
                     <span id="sky-tuangou-prev" class="tuangou-list-select" style="left:10px;">〈</span>
                     <span id="sky-tuangou-next" class="tuangou-list-select" style="right:10px;">〉</span>
                 </div>
@@ -1004,7 +996,7 @@
                 </div>
             </div>
             <div style="clear:both;"></div>
-            <div style="height:80px;width:950px;overflow:hidden">
+            <div style="height:80px;width:950px;overflow:hidden; margin:25px 0">
                 <img height="80" width="948" src="image/guangao007.png" />
             </div>
             <div class="sky-info">
@@ -1042,66 +1034,8 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
-
             <div style="clear:both;"></div>
-            <div id="part3">
-                <img src="http://www.skykiwi.com/home2011/images/icon_links.jpg" width="75" height="20" title="新西兰常用网站链接，天维网为您搜集最全的新西兰实用网址导航" class="mg15">
-                <select size="1" name="jumpMenu1" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
-                    <option selected="selected">------主要政府网站------</option>
-                    <option value="http://www.police.govt.nz/">警察局</option>
-                    <option value="http://www.immigration.govt.nz">移民局</option>
-                    <option value="http://www.ird.govt.nz">政府税务</option>
-                    <option value="http://www.govt.nz">新西兰政府</option>
-                    <option value="http://www.nzpost.co.nz/">邮政局</option>
-                    <option value="http://www.studylink.govt.nz/financing-study/student-allowance/index.html">学生津贴</option>
-                    <option value="http://www.customs.govt.nz/default.htm">新西兰海关</option>
-                    <option value="http://www.studylink.govt.nz/financing-study/student-loan/index.html">学生贷款</option>
-                    <option value="http://www.companies.govt.nz/pls/web/dbssiten.main">公司注册</option>
-                    <option value="http://www.newzealand.com/travel/">旅游局</option>
-                    <option value="http://www.chinaembassy.org.nz/eng/">中国大使馆</option>
-                    <option value="http://www.chinaconsulate.org.nz/chn/default.htm">中驻奥克兰领事馆</option>
-                </select>
-                <select size="1" name="jumpMenu2" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
-                    <option selected="selected">------文化教育链接------</option>
-                    <option value="http://www.auckland.ac.nz">奥克兰大学</option>
-                    <option value="http://www.aut.ac.nz">奥克兰理工大学</option>
-                    <option value="http://www.massey.ac.nz">梅西大学</option>
-                    <option value="http://www.victoria.ac.nz">维多利亚大学</option>
-                    <option value="http://www.otago.ac.nz">奥塔哥大学</option>
-                    <option value="http://www.canterbury.ac.nz">坎特伯雷大学</option>
-                    <option value="http://www.waikato.ac.nz">怀卡托大学</option>
-                    <option value="http://www.lincoln.ac.nz">林肯大学</option>
-                    <option value="http://www.nzqa.govt.nz">学历认证</option>
-                    <option value="http://www.internationaleducationmedia.com/newzealand/schools.htm">新西兰学校介绍</option>
-                    <option value="http://www.englishnewzealand.co.nz">英语教学机构</option>
-                    <option value="http://www.educationnz.org.nz">新西兰教育网</option>
-                    <option value="http://www.onlynz.net">学在新西兰</option>
-                </select>
-                <select size="1" name="jumpMenu3" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
-                    <option selected="selected">------医疗健康链接------</option>
-                    <option value="http://www.moh.govt.nz/healthsystem">新西兰医疗制度</option>
-                    <option value="http://www.moh.govt.nz/childhealth">幼儿保健</option>
-                    <option value="http://www.healthinsurance.co.nz/health_International_Students.cfm">留学生医疗保险</option>
-                    <option value="http://www.moh.govt.nz/olderpeople">老年人医疗</option>
-                    <option value="http://www.emigratenz.org/healthcare-migrants-newzealand.html">在新西兰看病</option>
-                </select>
-                <select size="1" name="jumpMenu4" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
-                    <option selected="selected">------其他实用链接------</option>
-                    <option value="http://www.village.co.nz/vistait/village/Default.aspx?Control=NowShowing">电影院</option>
-                    <option value="http://www.tapeka.com/publicholidays.htm">公定假期</option>
-                    <option value="http://www.timeanddate.com/worldclock/">世界时间</option>
-                    <option value="http://www.railnewzealand.com/">铁路交通</option>
-                    <option value="http://www.police.govt.nz/service/111/index.html">紧急事故</option>
-                    <option value="http://www.yellowpages.co.nz/">电话黄页</option>
-                    <option value="http://www.ltsa.govt.nz">驾照执照</option>
-                    <option value="http://www.aa.co.nz">AA汽车协会</option>
-                    <option value="http://b2b.ratestogo.com">酒店预定</option>
-                    <option value="http://www.carjam.co.nz">汽车信息查询</option>
-                    <option value="http://www.turners.co.nz">汽车拍卖</option>
-                </select>
-            </div>
             <div id="skyapp">
                 <ul style="width:950px">
                     <li>
@@ -1151,15 +1085,74 @@
                     </div>
                 </ul>
                 <script type="text/javascript">
-                    function wechathome() { wechat_home.style.display = "block"; }
-                    function wechatgo() { wechat_go.style.display = "block"; }
-                    function wechatproperty() { wechat_property.style.display = "block"; }
-                    function wechattuangou() { wechat_soku.style.display = "block"; }
-                    function wechatmoney() { wechat_money.style.display = "block"; }
-                    function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
-                    document.onclick = hidden;
+                            function wechathome() { wechat_home.style.display = "block"; }
+                            function wechatgo() { wechat_go.style.display = "block"; }
+                            function wechatproperty() { wechat_property.style.display = "block"; }
+                            function wechattuangou() { wechat_soku.style.display = "block"; }
+                            function wechatmoney() { wechat_money.style.display = "block"; }
+                            function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
+                            document.onclick = hidden;
                 </script>
             </div>
+            <div style="border-bottom:1px dashed #b7b7b7">
+                <div id="part3">
+                    <img src="http://www.skykiwi.com/home2011/images/icon_links.jpg" width="75" height="20" title="新西兰常用网站链接，天维网为您搜集最全的新西兰实用网址导航" class="mg15">
+                    <select size="1" name="jumpMenu1" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                        <option selected="selected">------主要政府网站------</option>
+                        <option value="http://www.police.govt.nz/">警察局</option>
+                        <option value="http://www.immigration.govt.nz">移民局</option>
+                        <option value="http://www.ird.govt.nz">政府税务</option>
+                        <option value="http://www.govt.nz">新西兰政府</option>
+                        <option value="http://www.nzpost.co.nz/">邮政局</option>
+                        <option value="http://www.studylink.govt.nz/financing-study/student-allowance/index.html">学生津贴</option>
+                        <option value="http://www.customs.govt.nz/default.htm">新西兰海关</option>
+                        <option value="http://www.studylink.govt.nz/financing-study/student-loan/index.html">学生贷款</option>
+                        <option value="http://www.companies.govt.nz/pls/web/dbssiten.main">公司注册</option>
+                        <option value="http://www.newzealand.com/travel/">旅游局</option>
+                        <option value="http://www.chinaembassy.org.nz/eng/">中国大使馆</option>
+                        <option value="http://www.chinaconsulate.org.nz/chn/default.htm">中驻奥克兰领事馆</option>
+                    </select>
+                    <select size="1" name="jumpMenu2" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                        <option selected="selected">------文化教育链接------</option>
+                        <option value="http://www.auckland.ac.nz">奥克兰大学</option>
+                        <option value="http://www.aut.ac.nz">奥克兰理工大学</option>
+                        <option value="http://www.massey.ac.nz">梅西大学</option>
+                        <option value="http://www.victoria.ac.nz">维多利亚大学</option>
+                        <option value="http://www.otago.ac.nz">奥塔哥大学</option>
+                        <option value="http://www.canterbury.ac.nz">坎特伯雷大学</option>
+                        <option value="http://www.waikato.ac.nz">怀卡托大学</option>
+                        <option value="http://www.lincoln.ac.nz">林肯大学</option>
+                        <option value="http://www.nzqa.govt.nz">学历认证</option>
+                        <option value="http://www.internationaleducationmedia.com/newzealand/schools.htm">新西兰学校介绍</option>
+                        <option value="http://www.englishnewzealand.co.nz">英语教学机构</option>
+                        <option value="http://www.educationnz.org.nz">新西兰教育网</option>
+                        <option value="http://www.onlynz.net">学在新西兰</option>
+                    </select>
+                    <select size="1" name="jumpMenu3" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                        <option selected="selected">------医疗健康链接------</option>
+                        <option value="http://www.moh.govt.nz/healthsystem">新西兰医疗制度</option>
+                        <option value="http://www.moh.govt.nz/childhealth">幼儿保健</option>
+                        <option value="http://www.healthinsurance.co.nz/health_International_Students.cfm">留学生医疗保险</option>
+                        <option value="http://www.moh.govt.nz/olderpeople">老年人医疗</option>
+                        <option value="http://www.emigratenz.org/healthcare-migrants-newzealand.html">在新西兰看病</option>
+                    </select>
+                    <select size="1" name="jumpMenu4" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                        <option selected="selected">------其他实用链接------</option>
+                        <option value="http://www.village.co.nz/vistait/village/Default.aspx?Control=NowShowing">电影院</option>
+                        <option value="http://www.tapeka.com/publicholidays.htm">公定假期</option>
+                        <option value="http://www.timeanddate.com/worldclock/">世界时间</option>
+                        <option value="http://www.railnewzealand.com/">铁路交通</option>
+                        <option value="http://www.police.govt.nz/service/111/index.html">紧急事故</option>
+                        <option value="http://www.yellowpages.co.nz/">电话黄页</option>
+                        <option value="http://www.ltsa.govt.nz">驾照执照</option>
+                        <option value="http://www.aa.co.nz">AA汽车协会</option>
+                        <option value="http://b2b.ratestogo.com">酒店预定</option>
+                        <option value="http://www.carjam.co.nz">汽车信息查询</option>
+                        <option value="http://www.turners.co.nz">汽车拍卖</option>
+                    </select>
+                </div>
+            </div>
+           
             <div class="links">
                 <h3>友情链接</h3>
                 <a href="http://www.nzherald.co.nz" target="_blank" title="New Zealand Herald" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-nzherald.jpg"></a>
