@@ -1723,6 +1723,53 @@ body {
     background: url(/image/sky-weather.png) 1px -300px no-repeat;
     border: 0px;
 }
+.thunderstorm-day {
+    width: 32px;
+    height: 30px;
+    float: left;
+    background: url(/image/sky-weather.png) 1px -420px no-repeat;
+    border: 0px;
+}
+
+.thunderstorm-night {
+    width: 32px;
+    height: 30px;
+    float: left;
+    background: url(/image/sky-weather.png) 1px -420px no-repeat;
+    border: 0px;
+}
+
+.snow-day {
+    width: 32px;
+    height: 30px;
+    float: left;
+    background: url(/image/sky-weather.png) 1px -390px no-repeat;
+    border: 0px;
+}
+
+.snow-night {
+    width: 32px;
+    height: 30px;
+    float: left;
+    background: url(/image/sky-weather.png) 1px -390px no-repeat;
+    border: 0px;
+}
+.mist-day {
+    width: 32px;
+    height: 30px;
+    float: left;
+    background: url(/image/sky-weather.png) 1px -360px no-repeat;
+    border: 0px;
+}
+
+.mist-night {
+    width: 32px;
+    height: 30px;
+    float: left;
+    background: url(/image/sky-weather.png) 1px -360px no-repeat;
+    border: 0px;
+}
+
 .rightdivchid1-bannerlist4 {
     margin: 0px 0px;
     padding: 0px 0px;

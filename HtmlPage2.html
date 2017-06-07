@@ -355,7 +355,7 @@
                         <span class="sky-hot-news-title">HOT 突发新闻</span>
                         <div class="sky-hot-news-context">
                             <dl id="opage_hot_list">
-                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and issudden=1 order by issudden,newstime desc limit 0,3', 4, 24, 1}]
+                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and issudden=1 order by issudden,newstime desc limit 0,3', 4, 24, 1}]
                                 <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dd>
                                 [/e:loop]
                             </dl>
