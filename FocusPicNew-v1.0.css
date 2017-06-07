@@ -1,0 +1,39 @@
+﻿@charset "utf-8";
+
+div.slideBox{ position:relative; overflow:hidden;}
+div.slideBox ul.items{ position:absolute; float:left; background:none; list-style:none; padding:0px; margin-top:8px;}
+div.slideBox ul.items li{ float:left; background:none; list-style:none; padding:0px; margin:0px;}
+div.slideBox ul.items li a{ float:left; line-height:normal !important; padding:0px !important; border:none/*For IE.ADD.JENA.201206300844*/;}
+div.slideBox ul.items li a img{ margin:0px !important; padding:0px !important; display:block; border:none/*For IE.ADD.JENA.201206300844*/;}
+
+div.slideBox div.tips{ display:inline-block;position:absolute; bottom:0px; width:100%; height:30px; overflow:hidden;}
+div.slideBox div.tips div.title{ background-color:#ec7f16;line-height:30px;overflow:hidden}
+div.slideBox div.tips div.title a{ color:#ffffff; font-size:18px;margin-left:10px; text-decoration:none;}
+div.slideBox div.tips div.title a:hover{ text-decoration:none !important;}
+    div.slideBox div.toptittle {
+        height: 30px;
+        border-left: 4px solid red;
+        border-bottom: 1px solid #ccc;
+        line-height:30px;
+        font-size: 16px; 
+        padding-left: 5px;
+        letter-spacing: 2px;
+        font-weight:normal;
+    }
+    div.slideBox div.toptittle div.nums {
+        float: right;
+        height: 30px;
+        
+    }
+    div.slideBox div.toptittle div.nums a {
+        display: inline-block;
+        float: left; /*For IE.ADD.JENA.201206300844*/
+        width: 10px;
+        height: 10px;
+        background-color: #d7d7d7;
+        text-indent: -99999px;
+        margin: 10px 4px;
+    }
+        div.slideBox div.toptittle div.nums a.active {
+            background-color: #d11e26;
+        }

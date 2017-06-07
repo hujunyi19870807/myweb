@@ -257,10 +257,10 @@
                     <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
                     <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
                         <div id="div-weather-change" class="clearfix">
-                            <img style="width:24px;height:24px;float:left" src="/image/01d.png" />
+                            <span id="img-weather" style="margin-top:-5px" src="image/sky-weather.png" class=""></span>
                             <span style="color:#ec7f16;float:left" id="span-mix-temp"></span>
                             <span id="span-min-temp" style="float:left"></span>
-                            <span id="span-city" style="float:left;display:inline-block;width:79px;text-align:center"></span>
+                            <span id="span-city" style="float:left;display:inline-block;width:75px;text-align:center"></span>
                             <span style="color:#ec7f16; float:right">▼</span>
                         </div>
                         <div id="div-weather-content" class="sky-weather" style="display:none">
@@ -272,6 +272,7 @@
                                     $("#span-city").html($(this).attr("data-title-en"));
                                     $("#span-min-temp").html("/" + $(this).attr("data-min-temp") + "°");
                                     $("#span-mix-temp").html($(this).attr("data-max-temp") + "°");
+                                    $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon"));
                                 });
                                 $("#weatherCities li:eq(0)").click();
                             })
@@ -305,7 +306,9 @@
                         <li>
                             <a href="http://opage.skykiwi.com" target="_self" title="新西兰最大最全的商业服务、生活实用咨询搜索系统，奥克兰、惠灵顿、基督城商家搜索 - 点击进入天维橙页搜索系统">橙页</a>
                         </li>
-
+                        <li>
+                            <a href="http://www.soku.co.nz/bonus/list?source=index_navigation" target="_blank" title="新西兰团购打折，尽在天维福利！剁手党的福音！">福利</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="sky-phone">
@@ -319,7 +322,7 @@
                 <div class="sky-video">
                     <div class="sky-video-tit">正在直播...</div>
                     <div class="sky-video-content">
-                        <img alt="" height="105" width="165" src="/image/sky-nav-banner.png" />
+                        <img alt="" height="105" width="165" src="/image/zhibo.gif" />
                     </div>
                 </div>
                 <div class="sky-nav-banner">
@@ -595,6 +598,7 @@
                     </div>
                     <div class="news-general-list">
                         <ul class="news-general-list-ul">
+                            [fillblank]92,16,30[/fillblank]
                             [fillblank]92,16,30[/fillblank]
                         </ul>
                     </div>

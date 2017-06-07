@@ -4,34 +4,824 @@
     <meta charset="utf-8" />
     <title>新闻首页</title>
     <link href="common.css" rel="stylesheet" />
-    <style>
+    <link href="FocusPic-v1.0.css" rel="stylesheet" />
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="FocusPic-v1.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // begin
+            $('#newsSlide').slideBox({
+                duration: 0.3,
+                easing: 'swing',
+                delay: 5,
+                hideClickBar: false,
+                clickBarRadius: 10,
+                width: 600,
+                height: 280
+            });
+        });
+    </script>
+    <style type="text/css">
         div#header {
             height: 50px;
             background-color: #363636;
-            width:100%;
+            width: 100%;
         }
+
         div#navfirst {
-            height:235px;
-            border-bottom:2px solid red;
-            padding-top:25px;
+            height: 235px;
+            border-bottom: 2px solid red;
         }
+
         div#maincontent {
             margin: 20px auto;
             width: 1200px;
-            height:auto;
+            height: auto;
         }
+
+        div#navsecond {
+            width: 1200px;
+            height: 60px;
+            margin: 0 auto;
+            margin-top:40px;
+        }
+            div#navsecond ul {
+                float: right;
+            }
+                div#navsecond ul li {
+                    margin: 20px 8px ; 
+                    float: left;
+                    font-size: 16px;
+                    border-right: 1px solid #ccc;
+                    padding-right: 16px;
+                    letter-spacing:2px;
+                }
+        div#left-main {
+            width:200px;
+            float:left;
+        }
+        div#center-main .mid_topslider-title {
+            height: 28px;
+            width: 100%;
+            line-height: 28px;
+            border-left: 2px solid #ec7f16;
+        }
+
+        div#center-main {
+            width: 600px;
+            float: left;
+        }
+        div#center-main  .mid_topslider {
+                width: 600px;
+                border: 1px solid red;
+            }
+        div#right-main {
+            float: right;
+            width: 300px;
+        }
+        div#top-newlist ul li {
+            float: left;
+            font-size: 16px;
+            letter-spacing: 2px;
+            height:20px;
+            margin:5px 0;
+        }
+            div#top-newlist ul li:nth-child(even) {
+                float:right;
+                border-left: 1px solid #ccc;
+                padding-left:15px;
+            }
+
+        .list-news-item {
+            border-top: 1px solid #ccc;
+            height: 125px;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+            .list-news-item dl {
+                width: 440px;
+                float: right;
+                height: 77px;
+                margin-left: 15px;
+                margin-top: 23px;
+                overflow: hidden;
+            }
+           
+
+            .list-news-item dt {
+                margin-bottom: 14px;
+            }
+
+                .list-news-item dt a {
+                    font-size: 18px;
+                    text-decoration: none;
+                    color: black;
+                }
+
+            .list-news-item dl dd {
+                font-size: 12px;
+                height: 20px;
+                color: #7b7979;
+            }
+
+                .list-news-item dl dd span.list-news-item-category {
+                    color: #d11e26;
+                    font-weight: bold;
+                }
+
+                .list-news-item dl dd span.list-news-item-word {
+                    margin-left: 20px;
+                }
+
+
+            .list-news-item > .list-news-item-l {
+                width: 140px;
+                height: 75px;
+                float: left;
+            }
+          
+            .list-news-item > a img {
+                border: 1px solid #898989;
+                display: inline-block;
+                float: left;
+                margin-top: 23px;
+            }
+
+
+            .list-news-item > .list-news-item-r {
+                float: left;
+                width: 450px;
+                overflow: hidden;
+            }
+
+                .list-news-item > .list-news-item-r > .list-news-item-r-bottom {
+                    font-size: 12px;
+                    margin-top: 30px;
+                }
+
+            .list-news-item > .list-news-item-l img {
+                width: 140px;
+                height: 90px;
+                border: 1px solid #898989;
+            }
+
+            .list-news-item > .list-news-item-r > .list-news-item-r-title a {
+                font-size: 18px;
+                text-decoration: none;
+                color: black;
+            }
+        span.list-news-item-category {
+            color: #d11e26;
+            font-weight:bold;
+        }
+        span.list-news-item-word {
+            margin-left: 20px;
+        }
+        #center-main .newsmore {
+            border: 1px solid #ec7f16;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+            letter-spacing: 1px;
+            margin: 13px 0px;
+            font-size: 15px;
+        }
+        #center-main .newsmore a {
+            color: #ec7f16;
+            text-decoration: none;
+        }
+        #right-main .newlist {
+            height: 70px;
+            margin: 10px 0
+        }
+        #right-main .newlist li {
+            height: 25px;
+            line-height: 25px;
+        }
+        #right-main .news-title {
+            height: 30px;
+            line-height: 30px;
+            background-color: #e1e1e1;
+            text-align: left;
+            color: #d11e26;
+            padding-left: 5px;
+            font-weight: bold
+        }
+        div#right-main .column-list {
+            width: 300px;
+        }
+
+            div#right-main .column-list li div {
+                border-top: 2px solid red;
+                border-bottom: 1px solid gray;
+                font-size: 16px;
+                font-weight: bold;
+                width: 300px;
+                height: 38px;
+                line-height: 38px;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+            }
+            div#right-main .column-list li dl {
+                width: 120px
+            }
+        .column-itemlist {
+             float:right;
+             width:170px;
+        }
+        div#right-main .column-itemlist li {
+            width: 170px;
+            border-bottom: 1px dashed black;
+            color: #50504f;
+            font-size: 14px;
+            padding:11px 0;
+        }
+        div#right-main .column-itemlist li:last-child {
+            border-bottom: 0px;
+        }
+        #yizhibo .comiis_wrap960, .comiis_wrapad {
+            width: 284px;
+            border: solid 8px #8445a4;
+        }
+
+        .cl:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .cl {
+            zoom: 1;
+        }
+
+        .frame {
+            margin-bottom: 10px;
+            border: 1px solid #e1e1e1;
+            background: #FFF;
+        }
+
+        .title {
+            padding: 0 10px;
+            height: 32px;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 32px;
+            overflow: hidden;
+        }
+
+        .block {
+            margin: 10px 10px 0;
+        }
+
+        .temp {
+            margin: 1px;
+        }
+
+        .slideshow {
+            clear: both;
+        }
+
+            .slideshow li {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .slideshow span.title {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin-bottom: 0;
+                width: 100%;
+                height: 32px;
+                line-height: 32px;
+                font-size: 14px;
+                text-indent: 10px;
+            }
+
+            .slideshow span.title, .slidebar li {
+                background: rgba(0, 0, 0, 0.3);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #30000000, endColorstr = #30000000);
+                color: #FFF;
+                overflow: hidden;
+            }
+
+        .slidebar li {
+            float: left;
+            margin-right: 1px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+            .slidebar li.on {
+                background: rgba(255, 255, 255, 0.5);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #50FFFFFF, endColorstr = #50FFFFFF);
+                color: #000;
+                font-weight: 700;
+            }
+
+        ul, li {
+            list-style: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #a50001;
+        }
+
+        .frame {
+            background: none;
+            border: 0px solid #fff;
+            margin-bottom: 0px;
+        }
+
+        .temp {
+            margin: 0;
+        }
+
+        .slidebar {
+            position: absolute;
+            top: 5px;
+            left: 4px;
+        }
+
+            .slideshow span.title, .slidebar li {
+                background: rgba(0, 0, 0, 0.3);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #90000000, endColorstr = #90000000);
+                color: #FFF;
+                overflow: hidden;
+            }
+
+                .slidebar li.on {
+                    background: rgba(255, 255, 255, 0.5);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #90000000, endColorstr = #90000000);
+                    color: #ff0;
+                    font-weight: 700;
+                }
+
+        .slideshow SPAN.title {
+            text-indent: 0px;
+        }
+
+        .block {
+            margin: 0;
+            position: relative;
+        }
+
+        #frameHlicAe {
+             width:300px;
+        }
+
+        .comiis_wrapad {
+            overflow: hidden;
+        }
+
+            .comiis_wrapad img {
+                float: left;
+                margin-top: 0px;
+            }
+
+        #slidesImgs li {
+            width: 263px;
+            height: 201px;
+            display: none;
+        }
+
+
     </style>
 </head>
 <body>
     <div id="header"></div>
     <div id="navfirst">
         <div style="width:1200px;height:125px;overflow:hidden;border:1px solid gray;margin:0 auto;">广告</div>
-        <div id="navsecond"></div>
+        <div id="navsecond">
+            <img src="newImage/sky-new.png" />
+            <ul>
+                <li style="color:#ec7f16;">天维首页</li>
+                <li> 论坛</li>
+                <li style="color:#d11e26">新闻</li>
+                <li>导购</li>
+                <li>房源</li>
+                <li>投资</li>
+                <li>移民</li>
+                <li>教育</li>
+                <li>汽车</li>
+                <li>导航</li>
+                <li>比价</li>
+                <li>商城</li>
+                <li style="border:none;">百科</li>
+            </ul>
+        </div>
     </div>
     <div id="maincontent">
-        <div id="left-main"></div>
-        <div id="center-main"></div>
-        <div id="right-main"></div>
+        <div id="left-main">
+            <div style="height:290px;border:2px solid red">
+
+            </div>
+        </div>
+        <div id="center-main" style="float:left;margin-left:48px">
+            <div id="newsSlide" class="border slideBox" style="width: 600px; height: 280px;">
+                <div class="toptittle">天维独家</div>
+                <ul class="items" style="width: 3600px; left: -600px;">
+                    <li style="width: 600px; height: 250px;" class="active">
+                        <a href="http://ent.skykiwi.com/video_news/2017-06-06/242168.shtml" title="1.83亿退税金无人领取 快来看看有没有你的那份">
+                            <img width="600" height="250" src="http://www.skykiwi.com/d/file/video/video_news/2017-06-07/a033410a5bceeb24e0c02b045a3ed816.jpg">
+                        </a>
+                    </li>
+                    <li class="" style="width: 600px; height: 250px;">
+                        <a href="http://radio.skykiwi.com/tuijian/2017-06-06/242170.shtml" title="最近得这个病的人暴多起来，要千万注意！">
+                            <img width="600" height="250" src="http://www.skykiwi.com/d/file/fillblank/home_slider/2017-06-07/bba5a1c90d53d9826460dc7ce6c74ecb.jpg">
+                        </a>
+                    </li>
+                    <li class="" style="width: 600px; height: 250px;">
+                        <a href="http://ent.skykiwi.com/video_news/2017-06-06/242131.shtml" title="超刺激高空滑翔伞体验！你敢来尝试一下吗？(视) ">
+                            <img width="600" height="250" src="http://www.skykiwi.com/d/file/video/video_news/2017-06-07/a1a8e698d44ed2f1976382f23330e078.jpg">
+                        </a>
+                    </li>
+                    <li style="width: 600px; height: 250px;">
+                        <a href="http://go.skykiwi.com/recommend/149179516210937.shtml" title="新西兰模范夫妇：50年的爱情，50年的不变经典">
+                            <img width="600" height="250" src="http://www.skykiwi.com/d/file/fillblank/home_slider/2017-06-07/473f2ea69d52af004b01b85d853086ad.jpg">
+                        </a>
+                    </li>
+                    <li style="width: 600px; height: 250px;">
+                        <a href="http://news.skykiwi.com/world/gj/sh/2017-06-07/242191.shtml" title="惊呆！悉尼最古老精英学院 竟如此迷乱不堪">
+                            <img width="600" height="250" src="http://www.skykiwi.com/d/file/fillblank/home_slider/2017-06-07/ed7710108b4f05c4aca73b36fa768007.jpg">
+                        </a>
+                    </li>
+                    <li style="width: 600px; height: 250px;">
+                        <a href="http://news.skykiwi.com/world/gj/zh/2017-06-07/242200.shtml" title="巴黎圣母院一男子袭警 高呼“为了叙利亚”">
+                            <img width="600" height="250" src="http://www.skykiwi.com/d/file/fillblank/home_slider/2017-06-07/091f0b4abb75b59013baec3a4959adb0.jpg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="top-newlist">
+                <ul style="margin-top:10px">
+                    <li>更多重磅!工签也将要求工资 不达标</li>
+                    <li>更多重磅!工签也将要求工资 不达标</li>
+                    <li>更多重磅!工签也将要求工资 不达标</li>
+                    <li>更多重磅!工签也将要求工资 不达标</li>
+                    <li>更多重磅!工签也将要求工资 不达标</li>
+                    <li>更多重磅!工签也将要求工资 不达标</li>
+                    <div style="clear:both"></div>
+                </ul>
+                </div>
+         
+            <div style="height:50px; width:600px;border:1px solid red;margin:20px 0">
+                广告
+            </div>
+            <ul id="ul-new-list">
+                <li class="list-news-item">
+                    <a href="http://news.skykiwi.com/na/zh/2017-05-18/241199.shtml" target="_blank" title="新西兰企业：用这样的包装最能打动中国消费者！">
+                        <img src="http://www.skykiwi.com/d/file/news/na/zh/2017-05-18/c6ae52a7588074b89f15cca755c0d69f.jpg" width="140" height="75">
+                    </a>
+                    <dl>
+                        <dt><a href="http://news.skykiwi.com/na/zh/2017-05-18/241199.shtml" target="_blank" title="新西兰企业：用这样的包装最能打动中国消费者！">新西兰企业：用这样的包装最能打动中国消费者！</a></dt>
+                        <dd>时间：2017年4月20日15：00pm </dd>
+                        <dd>
+                            <span class="list-news-item-category">纽澳新闻</span>
+                            <span class="list-news-item-word">企业</span>
+                            <span class="list-news-item-word">消费者</span>
+                            <span class="list-news-item-word">中国市场</span>
+                        </dd>
+                    </dl>
+                    <div style="clear:both"></div>
+                </li>
+                <li class="list-news-item">
+                    <a href="http://news.skykiwi.com/world/dl/zh/2017-05-16/241069.shtml" target="_blank" title="穿越鳌太线幸存者：曾下跪求队友救老公 (组图) ">
+                        <img src="http://www.skykiwi.com/d/file/news/world/dl/zh/2017-05-16/efbea614f997e04b4c219db41b8e9be2.jpeg" width="140" height="75">
+                    </a>
+                    <dl>
+                        <dt><a href="http://news.skykiwi.com/world/dl/zh/2017-05-16/241069.shtml" target="_blank" title="穿越鳌太线幸存者：曾下跪求队友救老公 (组图) ">穿越鳌太线幸存者：曾下跪求队友救老公 (组图) </a></dt>
+                        <dd>时间：2017年4月20日15：00pm </dd>
+                        <dd>
+
+                            <span class="list-news-item-category">环球报道</span>
+                            <span class="list-news-item-word">旅游</span>
+                            <span class="list-news-item-word">徒步</span>
+                        </dd>
+                    </dl>
+                    <div style="clear:both"></div>
+                </li>
+                <li class="list-news-item">
+                    <a href="http://news.skykiwi.com/na/zh/2017-05-19/241307.shtml" target="_blank" title="奥克兰这个华人小伙子获奖了 看看他的设计你喜欢不">
+                        <img src="http://www.skykiwi.com/d/file/news/na/zh/2017-05-19/1f366d1413dd4b7c87582fb04b17c0d1.jpg" width="140" height="75">
+                    </a>
+                    <dl>
+                        <dt><a href="http://news.skykiwi.com/na/zh/2017-05-19/241307.shtml" target="_blank" title="奥克兰这个华人小伙子获奖了 看看他的设计你喜欢不">奥克兰这个华人小伙子获奖了 看看他的设计你喜欢</a></dt>
+                        <dd>时间：2017年4月20日15：00pm </dd>
+                        <dd>
+
+                            <span class="list-news-item-category">纽澳新闻</span>
+                            <span class="list-news-item-word">华人</span>
+                            <span class="list-news-item-word">设计</span>
+                            <span class="list-news-item-word">获奖</span>
+                        </dd>
+                    </dl>
+                    <div style="clear:both"></div>
+                </li>
+                <li class="list-news-item">
+                    <a href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">
+                        <img src="http://www.skykiwi.com/d/file/news/world/dl/yl/2017-06-07/fc91c699f3306210a0ceb9ebad29d191.jpg" width="140" height="75">
+                    </a>
+                    <dl>
+                        <dt><a href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
+                        <dd>时间：2017年4月20日15：00pm </dd>
+                        <dd>
+                            <span class="list-news-item-category">环球报道</span>
+                            <span class="list-news-item-word">明星</span>
+                        </dd>
+                    </dl>
+                    <div style="clear:both"></div>
+                </li>
+                <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
+                    <dl>
+                        <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
+                        <dd style="height:120px;display:inline-block;margin:15px 0">
+                            <img width="190" src="/newImage/new190.jpg" />
+                            <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                            <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                        </dd>
+                        <dd>
+                            <span class="list-news-item-category">环球报道</span>
+                            <span class="list-news-item-word">明星</span>
+                            <span style="float:right">时间：2017年4月20日15：00pm</span>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="list-news-item" style="height:200px; padding:24px 0">
+                   <img height="200" src="/newImage/banner001_03.jpg" />
+                </li>
+                <li class="list-news-item">
+                    <a href="http://news.skykiwi.com/na/zh/2017-05-18/241199.shtml" target="_blank" title="新西兰企业：用这样的包装最能打动中国消费者！">
+                        <img src="http://www.skykiwi.com/d/file/news/na/zh/2017-05-18/c6ae52a7588074b89f15cca755c0d69f.jpg" width="140" height="75">
+                    </a>
+                    <dl>
+                        <dt><a href="http://news.skykiwi.com/na/zh/2017-05-18/241199.shtml" target="_blank" title="新西兰企业：用这样的包装最能打动中国消费者！">新西兰企业：用这样的包装最能打动中国消费者！</a></dt>
+                        <dd>时间：2017年4月20日15：00pm </dd>
+                        <dd>
+                            <span class="list-news-item-category">纽澳新闻</span>
+                            <span class="list-news-item-word">企业</span>
+                            <span class="list-news-item-word">消费者</span>
+                            <span class="list-news-item-word">中国市场</span>
+                        </dd>
+                    </dl>
+                    <div style="clear:both"></div>
+                </li>
+                <li class="list-news-item">
+                    <a href="http://news.skykiwi.com/world/dl/zh/2017-05-16/241069.shtml" target="_blank" title="穿越鳌太线幸存者：曾下跪求队友救老公 (组图) ">
+                        <img src="http://www.skykiwi.com/d/file/news/world/dl/zh/2017-05-16/efbea614f997e04b4c219db41b8e9be2.jpeg" width="140" height="75">
+                    </a>
+                    <dl>
+                        <dt><a href="http://news.skykiwi.com/world/dl/zh/2017-05-16/241069.shtml" target="_blank" title="穿越鳌太线幸存者：曾下跪求队友救老公 (组图) ">穿越鳌太线幸存者：曾下跪求队友救老公 (组图) </a></dt>
+                        <dd>时间：2017年4月20日15：00pm </dd>
+                        <dd>
+
+                            <span class="list-news-item-category">环球报道</span>
+                            <span class="list-news-item-word">旅游</span>
+                            <span class="list-news-item-word">徒步</span>
+                        </dd>
+                    </dl>
+                    <div style="clear:both"></div>
+                </li>
+                <li class="list-news-item">
+                    <a href="http://news.skykiwi.com/na/zh/2017-05-19/241307.shtml" target="_blank" title="奥克兰这个华人小伙子获奖了 看看他的设计你喜欢不">
+                        <img src="http://www.skykiwi.com/d/file/news/na/zh/2017-05-19/1f366d1413dd4b7c87582fb04b17c0d1.jpg" width="140" height="75">
+                    </a>
+                    <dl>
+                        <dt><a href="http://news.skykiwi.com/na/zh/2017-05-19/241307.shtml" target="_blank" title="奥克兰这个华人小伙子获奖了 看看他的设计你喜欢不">奥克兰这个华人小伙子获奖了 看看他的设计你喜欢</a></dt>
+                        <dd>时间：2017年4月20日15：00pm </dd>
+                        <dd>
+
+                            <span class="list-news-item-category">纽澳新闻</span>
+                            <span class="list-news-item-word">华人</span>
+                            <span class="list-news-item-word">设计</span>
+                            <span class="list-news-item-word">获奖</span>
+                        </dd>
+                    </dl>
+                    <div style="clear:both"></div>
+                </li>
+                <li class="list-news-item">
+                    <a href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">
+                        <img src="http://www.skykiwi.com/d/file/news/world/dl/yl/2017-06-07/fc91c699f3306210a0ceb9ebad29d191.jpg" width="140" height="75">
+                    </a>
+                    <dl>
+                        <dt><a href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
+                        <dd>时间：2017年4月20日15：00pm </dd>
+                        <dd>
+
+                            <span class="list-news-item-category">环球报道</span>
+                            <span class="list-news-item-word">明星</span>
+                        </dd>
+                    </dl>
+                    <div style="clear:both"></div>
+                </li>
+                <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
+                    <dl>
+                        <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
+                        <dd style="height:120px;display:inline-block;margin:15px 0">
+                            <img width="190" src="/newImage/new190.jpg" />
+                            <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                            <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                        </dd>
+                        <dd>
+                            <span class="list-news-item-category">环球报道</span>
+                            <span class="list-news-item-word">明星</span>
+                            <span style="float:right">时间：2017年4月20日15：00pm</span>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="list-news-item" style="height:200px; padding:24px 0">
+                    <img height="200" src="/newImage/banner001_03.jpg" />
+                </li>
+               
+            </ul>
+            <div class="newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
+
+        </div>
+        <div id="right-main">
+            <div class="news-title">
+                新闻视频
+            </div>
+            <div class="news-content">
+                <img alt="" style="display:block;" src="/newImage/newvideo.jpg" />
+            </div>
+            <ul class="newlist">
+                <li style="color:red">
+                    【天维调查】移民新政重磅来袭 几家欢喜几
+                </li>
+                <li>
+                    【天维调查】移民新政重磅来袭 几家欢喜几
+                </li>
+                <li>
+                    【天维调查】移民新政重磅来袭 几家欢喜几
+                </li>
+            </ul>
+            <div style="margin:20px 0;height:285px">
+                <img alt="" style="display:block;" src="/newImage/newbanner.jpg" />
+            </div>
+            <div style="margin:30px 0;height:250px">
+                <img alt="" style="display:block;" src="/newImage/banner2_03.jpg" />
+            </div>
+            <ul class="column-list">
+                <li>
+                    <div >新西兰总理比尔英格利希专栏</div>
+                    <dl style="float:left">
+                        <dt><img width="120" height="155" src="newImage/column.jpg" /></dt>
+                        <dd><img width="120" height="70" src="newImage/column2_18.jpg" /></dd>
+                    </dl>
+                    <ul class="column-itemlist">
+                        <li style="padding-top:0px">
+                            NCEA通过率创新高政府：未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                    </ul>
+                    <div style="clear:both;height:0px;border:0px"></div>
+                </li>
+                <li>
+                    <div>新西兰总理比尔英格利希专栏</div>
+                    <dl style="float:left">
+                        <dt><img width="120" height="155" src="newImage/column.jpg" /></dt>
+                        <dd><img width="120" height="70" src="newImage/column2_18.jpg" /></dd>
+                    </dl>
+                    <ul class="column-itemlist">
+                        <li style="padding-top:0px">
+                            NCEA通过率创新高政府：未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                    </ul>
+                    <div style="clear:both;height:0px;border:0px"></div>
+                </li>
+                <li>
+                    <div>新西兰总理比尔英格利希专栏</div>
+                    <dl style="float:left">
+                        <dt><img width="120" height="155" src="newImage/column.jpg" /></dt>
+                        <dd><img width="120" height="70" src="newImage/column2_18.jpg" /></dd>
+                    </dl>
+                    <ul class="column-itemlist">
+                        <li style="padding-top:0px">
+                            NCEA通过率创新高政府：未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                    </ul>
+                    <div style="clear:both;height:0px;border:0px"></div>
+                </li>
+                <li>
+                    <div>新西兰总理比尔英格利希专栏</div>
+                    <dl style="float:left">
+                        <dt><img width="120" height="155" src="newImage/column.jpg" /></dt>
+                        <dd><img width="120" height="70" src="newImage/column2_18.jpg" /></dd>
+                    </dl>
+                    <ul class="column-itemlist">
+                        <li style="padding-top:0px">
+                            NCEA通过率创新高政府：未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                        <li>
+                            NCEA通过率创新高 政府：
+                            未来还将投入更多资金
+                        </li>
+                    </ul>
+                    <div style="clear:both;height:0px;border:0px"></div>
+                </li>
+            </ul>
+            <div style="height:250px;width:300px">
+                <img src="newImage/banner4_18.jpg" style="display:block" />
+            </div>
+            <div class="news-title" style="margin-top:20px">
+                直播
+            </div>
+            <div class="comiis_wrapad" id="slideContainer">
+                <div id="frameHlicAe" class="frame cl">
+                    <div class="temp"></div>
+                    <div class="block">
+                        <div class="cl">
+                            <ul class="slideshow" id="slidesImgs">
+
+                                <li style="display: block;">
+                                    <a href="http://m.yizhibo.com/l/H7Ss1Omud8RVx3nq.html?memberid=dp-bIsDnOn33oJbj&amp;from=singlemessage&amp;isappinstalled=1" target="_blank">
+                                        <img src="http://www.skykiwi.com/d/file/video/slidershow/2017-04-24/e5e37f45fdcd49d634217b0652d1a2ca.jpg" width="263" height="201" alt="">
+                                    </a><a href="http://m.yizhibo.com/l/H7Ss1Omud8RVx3nq.html?memberid=dp-bIsDnOn33oJbj&amp;from=singlemessage&amp;isappinstalled=1" target="_blank"><span class="title">新西兰最有效的蜂毒面膜原来是它</span></a>
+                                </li>
+
+                                <li style="display: none;">
+                                    <a href="http://m.yizhibo.com/l/bNa6DivjI7qhnI1c.html?memberid=dp-bIsDnOn33oJbj&amp;from=singlemessage&amp;isappinstalled=1" target="_blank">
+                                        <img src="http://www.skykiwi.com/d/file/video/slidershow/2017-04-24/8041ad924ec6fe060e6ca565281e694d.jpg" width="263" height="201" alt="">
+                                    </a><a href="http://m.yizhibo.com/l/bNa6DivjI7qhnI1c.html?memberid=dp-bIsDnOn33oJbj&amp;from=singlemessage&amp;isappinstalled=1" target="_blank"><span class="title">earth wise创始人送好礼啦！</span></a>
+                                </li>
+
+                                <li style="display: none;">
+                                    <a href="http://m.yizhibo.com/l/tIwikG5DyUasGCbE.html?memberid=dp-bIsDnOn33oJbj" target="_blank">
+                                        <img src="http://www.skykiwi.com/d/file/video/slidershow/2017-04-24/2aac0ce98af8fa246f9bc9bb5a187a42.jpg" width="263" height="201" alt="">
+                                    </a><a href="http://m.yizhibo.com/l/tIwikG5DyUasGCbE.html?memberid=dp-bIsDnOn33oJbj" target="_blank"><span class="title"></span></a>
+                                </li>
+
+                                <li style="display: none;">
+                                    <a href="http://m.yizhibo.com/l/B55OzoxpQni-3UWu.html?memberid=dp-bIsDnOn33oJbj&amp;from=singlemessage&amp;isappinstalled=1" target="_blank">
+                                        <img src="http://www.skykiwi.com/d/file/video/slidershow/2017-04-24/bee604d3bbbe2b7617bd9759f4cf32d4.jpg" width="263" height="201" alt="">
+                                    </a><a href="http://m.yizhibo.com/l/B55OzoxpQni-3UWu.html?memberid=dp-bIsDnOn33oJbj&amp;from=singlemessage&amp;isappinstalled=1" target="_blank"><span class="title">移民政策又变了！是走还是留？！</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slidebar" id="slideBar">
+                            <ul>
+                                <li class="on">1</li>
+                                <li class="">2</li>
+                                <li class="">3</li>
+                                <li class="">4</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
     </div>
 </body>
 </html>
