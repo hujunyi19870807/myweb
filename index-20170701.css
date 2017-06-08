@@ -98,6 +98,7 @@ body {
         .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul > li {
             float: left;
             line-height: 38px;
+            letter-spacing:2px;
         }
 
             .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul > li > a {
@@ -340,14 +341,12 @@ body {
         width: 140px;
         float: left;
     }
-
+    .bannerlist dl:nth-child(2) {
+        float: right;
+    }
     .bannerlist dt {
         font-size: 12px;
         float: left;
-        margin-left: 0px;
-        width: 135px;
-        height: 90px;
-        margin-bottom:10px;
     }
 
         .bannerlist dt a {
@@ -363,7 +362,9 @@ body {
             width: 133px;
             height: 90px;
         }
-
+    .bannerlist dd {
+        margin-top:100px;
+    }
     .bannerlist dd a {
         text-decoration: none;
         color: black;
@@ -912,7 +913,6 @@ body {
     line-height: 28px;
     border-top: 2px solid #ec7f16;
     border-bottom: 1px solid #ccc;
-    margin-top: 12px;
 }
 
     .hot-search-title span {
@@ -1001,7 +1001,7 @@ body {
 
 .caijin-span-tejia {
     overflow: hidden;
-    padding:13px 0;
+    margin:15px 0;
 }
 
     .caijin-span-tejia li {
@@ -1160,6 +1160,29 @@ body {
     .sky-floatL > ul > li > a {
         float: left;
     }
+.sky-activity-info-div2 {
+    float: right;
+    margin-left: 15px;
+    width: 145px;
+    font-size: 14px;
+}
+    .sky-activity-info-div2 span {
+        color: #f5842b;
+        height:20px;
+        overflow:hidden;
+        display:inline-block;
+    }
+    .sky-activity-info-div2 p {
+        color: #363636;
+        margin-top:6px;
+        height:76px;
+        overflow:hidden;
+    }
+    .sky-activity-info-div2 a {
+        text-decoration: none;
+        color: #f5842b;
+    }
+
 
 .sky-floatR {
     float: right;
@@ -1640,154 +1663,164 @@ body {
     vertical-align:6px;
 }
 .clear-sky-day {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 0px 0px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px 0px no-repeat;
     border: 0px;
 }
 .clear-sky-night {
-    width: 33px;
-    height: 30px;
+    width: 32px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -30px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px 0px no-repeat;
     border: 0px;
 }
 .few-clouds-day {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 0px -60px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px 0px no-repeat;
     border: 0px;
 }
 .few-clouds-night {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -90px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px 0px no-repeat;
     border: 0px;
 }
 .scattered-clouds-day {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -120px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -187px no-repeat;
     border: 0px;
 }
 .scattered-clouds-night {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -120px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -187px no-repeat;
     border: 0px;
 }
 .broken-clouds-day {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -180px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -165px no-repeat;
     border: 0px;
 }
 .broken-clouds-night {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -180px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -165px no-repeat;
     border: 0px;
 }
 .shower-rain-day {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -270px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -140px no-repeat;
     border: 0px;
 }
 .shower-rain-night {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -270px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -140px no-repeat;
     border: 0px;
 }
 .rain-day {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -330px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -111px no-repeat;
     border: 0px;
 }
 .rain-night {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -300px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -111px no-repeat;
     border: 0px;
 }
 .thunderstorm-day {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -420px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -212px no-repeat;
     border: 0px;
 }
 
 .thunderstorm-night {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -420px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -212px no-repeat;
     border: 0px;
 }
 
 .snow-day {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -390px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -527px no-repeat;
     border: 0px;
 }
 
 .snow-night {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -390px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -527px no-repeat;
     border: 0px;
 }
 .mist-day {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -360px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -316px no-repeat;
     border: 0px;
 }
 
 .mist-night {
     width: 32px;
-    height: 30px;
+    height: 22px;
     float: left;
-    background: url(/image/sky-weather.png) 1px -360px no-repeat;
+    background: url(/image/sky-weather-icon.png) 10px -316px no-repeat;
     border: 0px;
 }
 
 .rightdivchid1-bannerlist4 {
     margin: 0px 0px;
     padding: 0px 0px;
+    border-bottom: 1px solid #ccc
 }
     .rightdivchid1-bannerlist4 ul {
         width:625px;
-        height:86px;
     }
- .rightdivchid1-bannerlist4 ul li {
+        .rightdivchid1-bannerlist4 ul li {
+            width: 140px;
+            float: left;
+            margin-right: 21px;
+            margin-top: 20px;
+            margin-bottom: 18px;
+        }
+        .rightdivchid1-bannerlist4 ul li:last-child {
+            width: 140px;
+            float: right;
+            margin-right:1px;
+        }
+    .rightdivchid1-bannerlist4 ul li:first-child {
         width: 140px;
         float: left;
-        margin-left: 13px;
-        margin-top:14px;
+        margin-left: 1px;
     }
 .rightdivchid1-bannerlist4 img {
-    width: 138px;
-    height: 84px;
-    border: 1px solid #898989;
+    width: 140px;
+    height: 75px;
 }
     .rightdivchid1-bannerlist4 span {
         position: absolute;

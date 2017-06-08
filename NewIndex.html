@@ -1,12 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>新闻首页</title>
-    <link href="common.css" rel="stylesheet" />
-    <link href="FocusPicNew-v1.0.css" rel="stylesheet" />
-    <script src="jquery-1.12.4.min.js"></script>
-    <script src="FocusPicNew-v1.0.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1,minimal-ui">
+    <title>天维新闻首页新版</title>
+    <link href="http://cms6.skykiwi.com/css/common.css" rel="stylesheet" />
+    <link href="NewIndex.css" rel="stylesheet" />
+    <link href="http://cms6.skykiwi.com/css/FocusPicNew-v1.0.css" rel="stylesheet" />
+    <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
+    <script src="http://cms6.skykiwi.com/js/FocusPicNew-v1.0.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             // begin
@@ -21,383 +25,70 @@
             });
         });
     </script>
-    <style type="text/css">
-        div#header {
-            height: 50px;
-            background-color: #363636;
-            width: 100%;
-        }
-
-        div#navfirst {
-            height: 235px;
-            border-bottom: 2px solid red;
-        }
-
-        div#maincontent {
-            margin: 20px auto;
-            width: 1200px;
-            height: auto;
-        }
-
-        div#navsecond {
-            width: 1200px;
-            height: 60px;
-            margin: 0 auto;
-            margin-top:40px;
-        }
-            div#navsecond ul {
-                float: right;
-            }
-                div#navsecond ul li {
-                    margin: 20px 8px ; 
-                    float: left;
-                    font-size: 16px;
-                    border-right: 1px solid #ccc;
-                    padding-right: 16px;
-                    letter-spacing:2px;
-                }
-        div#left-main {
-            width:200px;
-            float:left;
-        }
-        div#center-main .mid_topslider-title {
-            height: 28px;
-            width: 100%;
-            line-height: 28px;
-            border-left: 2px solid #ec7f16;
-        }
-
-        div#center-main {
-            width: 600px;
-            float: left;
-        }
-        div#center-main  .mid_topslider {
-                width: 600px;
-                border: 1px solid red;
-            }
-        div#right-main {
-            float: right;
-            width: 300px;
-        }
-        div#top-newlist ul li {
-            float: left;
-            font-size: 16px;
-            letter-spacing: 2px;
-            height:20px;
-            margin:5px 0;
-        }
-            div#top-newlist ul li:nth-child(even) {
-                float:right;
-                border-left: 1px solid #ccc;
-                padding-left:15px;
-            }
-
-        .list-news-item {
-            border-top: 1px solid #ccc;
-            height: 125px;
-            text-align: left;
-            margin: 0 auto;
-        }
-
-            .list-news-item dl {
-                width: 440px;
-                float: right;
-                height: 77px;
-                margin-left: 15px;
-                margin-top: 23px;
-                overflow: hidden;
-            }
-           
-
-            .list-news-item dt {
-                margin-bottom: 14px;
-            }
-
-                .list-news-item dt a {
-                    font-size: 18px;
-                    text-decoration: none;
-                    color: black;
-                }
-
-            .list-news-item dl dd {
-                font-size: 12px;
-                height: 20px;
-                color: #7b7979;
-            }
-
-                .list-news-item dl dd span.list-news-item-category {
-                    color: #d11e26;
-                    font-weight: bold;
-                }
-
-                .list-news-item dl dd span.list-news-item-word {
-                    margin-left: 20px;
-                }
-
-
-            .list-news-item > .list-news-item-l {
-                width: 140px;
-                height: 75px;
-                float: left;
-            }
-          
-            .list-news-item > a img {
-                border: 1px solid #898989;
-                display: inline-block;
-                float: left;
-                margin-top: 23px;
-            }
-
-
-            .list-news-item > .list-news-item-r {
-                float: left;
-                width: 450px;
-                overflow: hidden;
-            }
-
-                .list-news-item > .list-news-item-r > .list-news-item-r-bottom {
-                    font-size: 12px;
-                    margin-top: 30px;
-                }
-
-            .list-news-item > .list-news-item-l img {
-                width: 140px;
-                height: 90px;
-                border: 1px solid #898989;
-            }
-
-            .list-news-item > .list-news-item-r > .list-news-item-r-title a {
-                font-size: 18px;
-                text-decoration: none;
-                color: black;
-            }
-        span.list-news-item-category {
-            color: #d11e26;
-            font-weight:bold;
-        }
-        span.list-news-item-word {
-            margin-left: 20px;
-        }
-        #center-main .newsmore {
-            border: 1px solid #ec7f16;
-            height: 38px;
-            text-align: center;
-            line-height: 38px;
-            letter-spacing: 1px;
-            margin: 13px 0px;
-            font-size: 15px;
-        }
-        #center-main .newsmore a {
-            color: #ec7f16;
-            text-decoration: none;
-        }
-        #right-main .newlist {
-            height: 70px;
-            margin: 10px 0
-        }
-        #right-main .newlist li {
-            height: 25px;
-            line-height: 25px;
-        }
-        #right-main .news-title {
-            height: 30px;
-            line-height: 30px;
-            background-color: #e1e1e1;
-            text-align: left;
-            color: #d11e26;
-            padding-left: 5px;
-            font-weight: bold
-        }
-        div#right-main .column-list {
-            width: 300px;
-        }
-
-            div#right-main .column-list li div {
-                border-top: 2px solid red;
-                border-bottom: 1px solid gray;
-                font-size: 16px;
-                font-weight: bold;
-                width: 300px;
-                height: 38px;
-                line-height: 38px;
-                letter-spacing: 1px;
-                margin-bottom: 10px;
-            }
-            div#right-main .column-list li dl {
-                width: 120px
-            }
-        .column-itemlist {
-             float:right;
-             width:170px;
-        }
-        div#right-main .column-itemlist li {
-            width: 170px;
-            border-bottom: 1px dashed black;
-            color: #50504f;
-            font-size: 14px;
-            padding:11px 0;
-        }
-        div#right-main .column-itemlist li:last-child {
-            border-bottom: 0px;
-        }
-        #yizhibo .comiis_wrap960, .comiis_wrapad {
-            width: 284px;
-            border: solid 8px #8445a4;
-        }
-
-        .cl:after {
-            content: ".";
-            display: block;
-            height: 0;
-            clear: both;
-            visibility: hidden;
-        }
-
-        .cl {
-            zoom: 1;
-        }
-
-        .frame {
-            margin-bottom: 10px;
-            border: 1px solid #e1e1e1;
-            background: #FFF;
-        }
-
-        .title {
-            padding: 0 10px;
-            height: 32px;
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 32px;
-            overflow: hidden;
-        }
-
-        .block {
-            margin: 10px 10px 0;
-        }
-
-        .temp {
-            margin: 1px;
-        }
-
-        .slideshow {
-            clear: both;
-        }
-
-            .slideshow li {
-                position: relative;
-                overflow: hidden;
-            }
-
-            .slideshow span.title {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                margin-bottom: 0;
-                width: 100%;
-                height: 32px;
-                line-height: 32px;
-                font-size: 14px;
-                text-indent: 10px;
-            }
-
-            .slideshow span.title, .slidebar li {
-                background: rgba(0, 0, 0, 0.3);
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #30000000, endColorstr = #30000000);
-                color: #FFF;
-                overflow: hidden;
-            }
-
-        .slidebar li {
-            float: left;
-            margin-right: 1px;
-            width: 20px;
-            height: 20px;
-            line-height: 20px;
-            text-align: center;
-            font-size: 10px;
-            cursor: pointer;
-        }
-
-            .slidebar li.on {
-                background: rgba(255, 255, 255, 0.5);
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #50FFFFFF, endColorstr = #50FFFFFF);
-                color: #000;
-                font-weight: 700;
-            }
-
-        ul, li {
-            list-style: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: #a50001;
-        }
-
-        .frame {
-            background: none;
-            border: 0px solid #fff;
-            margin-bottom: 0px;
-        }
-
-        .temp {
-            margin: 0;
-        }
-
-        .slidebar {
-            position: absolute;
-            top: 5px;
-            left: 4px;
-        }
-
-            .slideshow span.title, .slidebar li {
-                background: rgba(0, 0, 0, 0.3);
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #90000000, endColorstr = #90000000);
-                color: #FFF;
-                overflow: hidden;
-            }
-
-                .slidebar li.on {
-                    background: rgba(255, 255, 255, 0.5);
-                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = #90000000, endColorstr = #90000000);
-                    color: #ff0;
-                    font-weight: 700;
-                }
-
-        .slideshow SPAN.title {
-            text-indent: 0px;
-        }
-
-        .block {
-            margin: 0;
-            position: relative;
-        }
-
-        #frameHlicAe {
-             width:300px;
-        }
-
-        .comiis_wrapad {
-            overflow: hidden;
-        }
-
-            .comiis_wrapad img {
-                float: left;
-                margin-top: 0px;
-            }
-
-        #slidesImgs li {
-            width: 263px;
-            height: 201px;
-            display: none;
-        }
-
-
-    </style>
 </head>
 <body>
-    <div id="header"></div>
+    <div id="header">
+        <div class="header-content">
+            <ul>
+                <li>
+                    <span><a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook" style="color:#dbd9d9;text-decoration:none">English</a></span> |
+                    <span style="color:#ec7f16">中文</span>
+                </li>
+                <li class="header-content-app">
+                    <span>天维网</span>
+                    <a style="background:url(/newImage/sky-app-logo.png) -1px 0px  no-repeat;" target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
+                    </a>
+                    <a style="background:url(/newImage/sky-app-logo.png) -36px 0px  no-repeat;" href="javascript:wechathome()" title="关注我们的微信">
+                    </a>
+                    <span id="wechat_home" style="display: none;"></span>
+                    <a style="background:url(/newImage/sky-app-logo.png) -71px 0px  no-repeat;" target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书">
+                    </a>
+                    <a style="background:url(/newImage/sky-app-logo.png) -106px 0px  no-repeat;" target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特">
+                    </a>
+                </li>
+                <li class="header-content-app">
+                    <span>导购</span>
+                    <a class="icon-nav" style="background:url(/newImage/sky-app-logo.png) -1px 0px  no-repeat;" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
+
+                    </a>
+                    <a class="icon-nav" style="background:url(/newImage/sky-app-logo.png) -36px 0px  no-repeat;" href="javascript:wechatgo()">
+
+                    </a>
+                    <span id="wechat_go" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>生活</span>
+                    <a class="icon-nav" style="background:url(/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的天维生活" href="javascript:wechattuangou()">
+
+                    </a>
+                    <span id="wechat_soku" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>微房产</span>
+                    <a class="icon-nav" style="background:url(/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的微房产" href="javascript:wechatproperty()">
+                    </a>
+                    <span id="wechat_property" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>微财经</span>
+                    <a class="icon-nav" style="background:url(/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的导购微信" href="javascript:wechatmoney()">
+                    </a>
+                    <span id="wechat_money" style="display: none;"></span>
+                </li>
+            </ul>
+            <script type="text/javascript">
+                function wechathome() { wechat_home.style.display = "block"; }
+                function wechatgo() { wechat_go.style.display = "block"; }
+                function wechatproperty() { wechat_property.style.display = "block"; }
+                function wechattuangou() { wechat_soku.style.display = "block"; }
+                function wechatmoney() { wechat_money.style.display = "block"; }
+                function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
+                document.onclick = hidden;
+            </script>
+            <div style="clear:both"></div>
+
+        </div>
+    </div>
     <div id="navfirst">
         <div style="width:1200px;height:125px;overflow:hidden;border:1px solid gray;margin:0 auto;">广告</div>
         <div id="navsecond">
@@ -421,8 +112,92 @@
     </div>
     <div id="maincontent">
         <div id="left-main">
-            <div style="height:290px;border:2px solid red">
-
+            <div class="left-main-tianweirenwu">
+                <img src="/newImage/skyrenwu.jpg" />
+                <h3 style="color:#020202;font-size:16px;letter-spacing:2px;margin:15px 0;padding-left:3px;">天维人物第87期</h3>
+                <p style="color:#676767;font-size:14px;line-height:28px;padding-left:3px;margin-bottom: 25px;">
+                    他是新西兰洗护传奇创始人，从一名普通的“拆鸡”工人，白手起家创建了新西兰规...
+                </p>
+            </div>
+            <div class="left-main-pinpai">
+                <img src="newImage/sky-pinpai-logo.jpg" style="margin:20px 0;display:block;" />
+                <img src="newImage/sky-pinpai.jpg" style="margin:20px 0;display:block;" />
+                <h3 style="color:#020202;font-size:16px;letter-spacing:2px;margin:15px 0;padding-left:3px;">新西兰洗护传奇创始人</h3>
+                <p style="color:#676767;font-size:14px;line-height:28px;padding-left:3px;margin-bottom: 25px;">
+                    他是老一代华人移民，从一名普通的“拆鸡”工人，白手起家创建了新西兰规模最...
+                </p>
+            </div>
+            <div class="left-main-shudu">
+                <img src="newImage/sky-shudu.jpg" style="margin:20px 0;display:block;" />
+                <ul style="margin-bottom:25px;">
+                    <li>2012年新西兰人上网习惯调查</li>
+                    <li>世界捐助指数2010-2011</li>
+                    <li>世界竞争力（2012）</li>
+                    <li>人工流产手术2005-2011</li>
+                    <li>十年维和路</li>
+                </ul>
+            </div>
+            <div class="left-main-nianjie">
+                <img src="newImage/sky-nianjie.jpg" style="margin:20px 0;display:block;" />
+                <ul style="margin-bottom:26px;">
+                    <li>2014</li>
+                    <li>2015</li>
+                    <li style="border:none">2016</li>
+                    <div style="clear:both"></div>
+                </ul>
+            </div>
+            <div class="left-main-niandu">
+                <img src="newImage/sky-niandu.jpg" style="margin:15px 0;display:block;" />
+                <ul style="margin-bottom:26px;">
+                    <li>2010</li>
+                    <li>2011</li>
+                    <li>2012</li>
+                    <li>2013</li>
+                    <li>2014</li>
+                    <li>2015</li>
+                    <li>2016</li>
+                    <div style="clear:both"></div>
+                </ul>
+            </div>
+            <div class="left-main-zhuanti">
+                <div class="left-main-zhuanti-head">
+                    <span style="font-size:18px;color:#e7040b;float:left;width:100px;margin-top: 10px;margin-left: 12px;letter-spacing: 2px;;font-weight:bold">天维专题</span>
+                    <img src="newImage/zhuanti_news_hot.jpg" style="float:right" />
+                </div>
+                <div style="clear:both"></div>
+                <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:11px;margin-right:8px" />
+                <div class="left-main-zhuanti-body">
+                    <ul>
+                        <li><img src="newImage/sky-zhuanti-title.jpg" /></li>
+                        <li>
+                            <h2 style="font-size:16px;color:#020202;margin:18px 0;letter-spacing:2px">总理李克强访问新西兰</h2>
+                            <p style="color:#676767;font-size:14px;line-height:23px;letter-spacing:1px">
+                                周一早上10点，新西兰总督
+                                府将会就举行欢迎仪式，欢
+                                迎中国国务院总理李克强和
+                                夫人。欢迎仪式结束后，李
+                                克强总理和新西兰总理
+                                Bill English一行人乘车到
+                                总理府，举行双边会谈...
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="left-main-zhuanti-past">
+                    <h2 style="font-size:18px;color:#e7040b;width:100px;margin-left:12px;letter-spacing: 2px;font-weight:bold;margin-top:10px; margin-bottom:10px">往期专题</h2>
+                    <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:11px;margin-right:8px" />
+                    <ul style="margin: 10px 10px 20px 10px ">
+                        <li style="color:#020202;font-size:16px;line-height:30px;letter-spacing:2px">
+                            2016移民新政解读
+                        </li>
+                        <li style="color:#020202;font-size:16px;line-height:30px;letter-spacing:2px">
+                            2016移民新政解读
+                        </li>
+                        <li style="color:#020202;font-size:16px;line-height:30px;letter-spacing:2px">
+                            2016移民新政解读
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="center-main" style="float:left;margin-left:48px">
@@ -471,8 +246,8 @@
                     <li>更多重磅!工签也将要求工资 不达标</li>
                     <div style="clear:both"></div>
                 </ul>
-                </div>
-         
+            </div>
+
             <div style="height:50px; width:600px;border:1px solid red;margin:20px 0">
                 广告
             </div>
@@ -556,7 +331,7 @@
                     </dl>
                 </li>
                 <li class="list-news-item" style="height:200px; padding:24px 0">
-                   <img height="200" src="/newImage/banner001_03.jpg" />
+                    <img height="200" src="/newImage/banner001_03.jpg" />
                 </li>
                 <li class="list-news-item">
                     <a href="http://news.skykiwi.com/na/zh/2017-05-18/241199.shtml" target="_blank" title="新西兰企业：用这样的包装最能打动中国消费者！">
@@ -640,7 +415,7 @@
                 <li class="list-news-item" style="height:200px; padding:24px 0">
                     <img height="200" src="/newImage/banner001_03.jpg" />
                 </li>
-               
+
             </ul>
             <div class="newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
 
@@ -671,7 +446,7 @@
             </div>
             <ul class="column-list">
                 <li>
-                    <div >新西兰总理比尔英格利希专栏</div>
+                    <div>新西兰总理比尔英格利希专栏</div>
                     <dl style="float:left">
                         <dt><img width="120" height="155" src="newImage/column.jpg" /></dt>
                         <dd><img width="120" height="70" src="newImage/column2_18.jpg" /></dd>

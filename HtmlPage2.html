@@ -257,7 +257,7 @@
                     <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
                     <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
                         <div id="div-weather-change" class="clearfix">
-                            <span id="img-weather" style="margin-top:-5px" src="image/sky-weather.png" class=""></span>
+                            <span id="img-weather" style="margin-top:-1px" src="image/sky-weather.png" class=""></span>
                             <span style="color:#ec7f16;float:left" id="span-mix-temp"></span>
                             <span id="span-min-temp" style="float:left"></span>
                             <span id="span-city" style="float:left;display:inline-block;width:75px;text-align:center"></span>
@@ -289,7 +289,7 @@
                             <a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
                         </li>
                         <li>
-                            <a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a>
+                            <a href="http://www.soku.co.nz/" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a>
                         </li>
                         <li>
                             <a href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">房产</a>
@@ -306,9 +306,7 @@
                         <li>
                             <a href="http://opage.skykiwi.com" target="_self" title="新西兰最大最全的商业服务、生活实用咨询搜索系统，奥克兰、惠灵顿、基督城商家搜索 - 点击进入天维橙页搜索系统">橙页</a>
                         </li>
-                        <li>
-                            <a href="http://www.soku.co.nz/bonus/list?source=index_navigation" target="_blank" title="新西兰团购打折，尽在天维福利！剁手党的福音！">福利</a>
-                        </li>
+                       
                     </ul>
                 </div>
                 <div class="sky-phone">
@@ -550,21 +548,22 @@
                         </li>
                         [/e:loop]
 
-                        <li class="rightdivchid1-bannerlist4" style="height:115px;border-bottom:1px solid #ccc ">
+                        <li class="rightdivchid1-bannerlist4">
                             <ul>
                                 [e:loop={'220', 4, 15, 1}]
                                 <li>
-                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img alt="" src="<?=$bqr[titlepic]?>" /></a>
+                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img width="140" height="75" alt="" src="<?=$bqr[titlepic]?>" /></a>
                                     <span><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></span>
                                 </li>
                                 [/e:loop]
                             </ul>
+                            <div style="clear:both"></div>
                         </li>
                     </ul>
 
                     <script type="text/javascript">
                                 $(function () {
-                                    $("#ul-new-list li:eq(3)").after("<li class='list-news-item' style='height:110px'><div style='height:84px;width:950px;padding:16px 0'><img height='77' src='/image/banner4.png' /></div></li>");
+                                    $("#ul-new-list li:eq(3)").after("<li class='list-news-item' style='height:auto'><div style='height:80px;width:625px;margin:20px 0;'><img width='625' height='80' src='/image/banner4.png' /></div></li>");
                                     $("#ul-new-list li:eq(8)").after($(".rightdivchid1-bannerlist4"));
                                     $("#ul-new-list li:last-child").css("border", "0px");
                                 })
@@ -574,35 +573,36 @@
                 </div>
                 <div class="rightdivchid2">
                     <div class="bannerlist">
+                        [e:loop={'222', 2, 15, 1}]
                         <dl>
                             <dt>
-                                <img src="image/bannersmall1.jpg" />
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                <img width="140" height="90" alt="" src="<?=$bqr[titlepic]?>" /></a>
                             </dt>
                             <dd>
-                                眼镜店别偷禅了！请留意是否有人贱卖
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],35)?></a>
                             </dd>
                         </dl>
-                        <dl class="bannerlistdl2">
-                            <dt>
-                                <img src="image/bannersmall1.jpg" />
-                            </dt>
-                            <dd>
-                                <a href="" target="_blank" title="">眼镜店别偷禅了！请留意是否有人贱卖</a>
-                            </dd>
-                        </dl>
+                        [/e:loop]
+                      
                     </div>
                     <div style="clear:both">
                     </div>
                     <div class="sky-banner" style="margin-top:18px">
                         <img src="image/bannerright1.jpg" />
                     </div>
-                    <div class="news-general-list">
-                        <ul class="news-general-list-ul">
-                            [fillblank]92,16,30[/fillblank]
-                            [fillblank]92,16,30[/fillblank]
+                    <div class="hot-search-title">
+                        <span><label class="hot-search-title-label1">HOT</label><label class="hot-search-title-label2">热搜榜</label></span>
+                        <a href="http://news.skykiwi.com" class="sky-more-style" style="color:#7f7f7f" target="_blank">更多>></a>
+                    </div>
+                    <div class="news-general-list" style="border-top:0px !important;margin-bottom:20px">
+                        <ul id="ul-hotsearch-news">
+                            [e:loop={'SELECT * FROM phome_ecms_news WHERE checked=1 AND DATE_SUB(CURDATE(), INTERVAL 2 DAY) < newstime ORDER BY onclick DESC LIMIT 0,9', 9, 24, 0}]
+                            <li class="list-group-item"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],33)?></a></li>
+                            [/e:loop]
                         </ul>
                     </div>
-
+                    
                     <div class="sky-video-right">
                         <span class="sky-video-right-title">天维视频</span>
                         <a class="sky-more-style" href="http://ent.skykiwi.com/" target="_self" title="新西兰房地产频道" id="link_title_blue">更多>></a>
@@ -615,6 +615,9 @@
                         <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">【新西兰加点糖】<?=$bqr[title]?>...</a>
                     </div>
                     [/e:loop]
+
+
+
                     <div class="bannerlist">
                         [e:loop={'206',1,2,0}]
                         <dl>
@@ -657,16 +660,10 @@
                         </ul>
                     </div>
 
-                    <div class="hot-search-title">
-                        <span><label class="hot-search-title-label1">HOT</label><label class="hot-search-title-label2">热搜榜</label></span>
-                        <a href="http://news.skykiwi.com" class="sky-more-style" style="color:#7f7f7f" target="_blank">更多>></a>
-                    </div>
-                    <div class="news-general-list" style="border-top:0px !important">
-
-                        <ul id="ul-hotsearch-news">
-                            [e:loop={'SELECT * FROM phome_ecms_news WHERE checked=1 AND DATE_SUB(CURDATE(), INTERVAL 2 DAY) < newstime ORDER BY onclick DESC LIMIT 0,9', 9, 24, 0}]
-                            <li class="list-group-item"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],33)?></a></li>
-                            [/e:loop]
+                    <div class="news-general-list" style="border-top:0px !important;margin-bottom:20px">
+                        <ul class="news-general-list-ul" style="margin-bottom:10px">
+                            [fillblank]92,16,30[/fillblank]
+                            [fillblank]92,16,30[/fillblank]
                         </ul>
                     </div>
                     <div class="sky-jinyuanjinrong">
@@ -807,16 +804,14 @@
                 <!--特价 时尚 美食 begin-->
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-ashenghuo" style="color:#ef537a">特价</span>
-                        <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/supermarket/" class="sky-more-style">更多>></a>
+                        <span class="active-tit-single active-tit-a active-tit-ashenghuo" style="color:#ef537a">特价</span>
+                        <a target="_blank" href="http://go.skykiwi.com/skyselected/supermarket/" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
-                        <div class="caijin-span" controlindex="1">
-                            <div>
+                        <div class="caijin-span">
                                 <ul class="caijin-span-tejia">
                                     <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_specialoffer.js" charset="utf-8"></script>
                                 </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -961,13 +956,26 @@
                 <div class="sky-activity-title">
                     <span>近期活动</span>
                 </div>
+                [e:loop={'224', 2, 15, 1}]
                 <div class="sky-activity-info">
-                    <img src="image/huodong01.png" alt="" />
+                    <div style="float:left">
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                            <img width="138" height="110" alt="" src="<?=$bqr[titlepic]?>" />
+                        </a>
+                    </div>
+                    <div class="sky-activity-info-div2">
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a>
+                        <p>
+                            <?=$bqsr[smalltext]?>
+                        </p>
+                    </div>
                 </div>
-                <div class="sky-activity-info">
-                    <img style="" src="image/huodong02.png" alt="" />
-                </div>
-
+                [/e:loop]
+                <script type="text/javascript">
+                        $(function () {
+                            $(".sky-activity-info").eq(1).css("margin-top", "20px");
+                        })
+                </script>
                 <div class="sky-banner">
                     <img height="250" style="display:block" width="300" src="image/bannerright1.jpg">
                 </div>
@@ -1000,8 +1008,8 @@
                 </div>
             </div>
             <div style="clear:both;"></div>
-            <div style="height:80px;width:950px;overflow:hidden; margin:25px 0">
-                <img height="80" width="948" src="image/guangao007.png" />
+            <div style="height:100px;width:950px;overflow:hidden; margin:25px 0">
+                <img height="100" width="950" src="image/guangao007.png" />
             </div>
             <div class="sky-info">
                 <div class="sky-left-logo sky-floatL"><img src="image/skykiwi.png"></div>
