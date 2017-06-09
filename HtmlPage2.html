@@ -7,11 +7,11 @@
     <title>天维首3页新版</title>
 
     <link href="index-20170701.css?2017060203" rel="stylesheet" />
-    <link href="http://cms6.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
-    <link href="http://cms6.skykiwi.com/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
-    <script src="http://cms6.skykiwi.com/js/FocusPic-v1.0.js"></script>
-    <script src="http://cms6.skykiwi.com/js/scroll-v1.0.js"></script>
+    <script src="http://www.skykiwi.com/js/FocusPic-v1.0.js"></script>
+    <script src="http://www.skykiwi.com/js/scroll-v1.0.js"></script>
     <script type="text/javascript">
         window.onload = function () {
             //document.getElementById("div-sky-leftnav").style.top = "0px";
@@ -225,6 +225,9 @@
             height: 30px;
             line-height:30px;
             text-align:center;
+            position:fixed;
+            width:100%;
+            z-index:9999;
         }
             .head a {
                 text-decoration: none;
@@ -254,13 +257,13 @@
                         <span><a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook">English</a></span> |
                         <span class="active-text">中文</span>
                     </li>
-                    <script src="http://cms6.skykiwi.com/js/lunar-v1.0.js"></script>
+                    <script src="http://www.skykiwi.com/js/lunar-v1.0.js"></script>
                     <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
                         <div id="div-weather-change" class="clearfix">
                             <span id="img-weather" style="margin-top:-1px" src="image/sky-weather.png" class=""></span>
                             <span style="color:#ec7f16;float:left" id="span-mix-temp"></span>
                             <span id="span-min-temp" style="float:left"></span>
-                            <span id="span-city" style="float:left;display:inline-block;width:75px;text-align:center"></span>
+                            <span id="span-city" style="float:left;display:inline-block;width:78px;text-align:left;overflow:hidden"></span>
                             <span style="color:#ec7f16; float:right">▼</span>
                         </div>
                         <div id="div-weather-content" class="sky-weather" style="display:none">
@@ -270,7 +273,7 @@
                             $(function () {
                                 $("#weatherCities li").click(function () {
                                     $("#span-city").html($(this).attr("data-title-en"));
-                                    $("#span-min-temp").html("/" + $(this).attr("data-min-temp") + "°");
+                                    $("#span-min-temp").html("/&nbsp;" + $(this).attr("data-min-temp") + "°");
                                     $("#span-mix-temp").html($(this).attr("data-max-temp") + "°");
                                     $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon"));
                                 });
@@ -374,14 +377,14 @@
                     </div>
 
                     <ul id="ul-new-list">
-                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=1 order by newstime desc limit 0,1', 4, 24, 1}]
+                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=1 order by newstime desc limit 0,1', 4, 24, 1}]
                         <li class="list-news-item">
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
                                 <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd>时间：2017年4月20日15：00pm </dd>
+                                <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?></dd>
                                 <dd>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
@@ -416,14 +419,14 @@
                             </dl>
                         </li>
                         [/e:loop]
-                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=2 order by newstime desc limit 0,1', 4, 24, 1}]
+                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=2 order by newstime desc limit 0,1', 4, 24, 1}]
                         <li class="list-news-item">
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
                                 <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd>时间：2017年4月20日15：00pm </dd>
+                                <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?></dd>
                                 <dd>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
@@ -458,14 +461,14 @@
                             </dl>
                         </li>
                         [/e:loop]
-                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 and orderid=3 order by newstime desc limit 0,1', 4, 24, 1}]
+                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=3 order by newstime desc limit 0,1', 4, 24, 1}]
                         <li class="list-news-item">
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
                                 <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd>时间：2017年4月20日15：00pm </dd>
+                                <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?></dd>
                                 <dd>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
@@ -512,7 +515,7 @@
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd>时间：2017年4月20日15：00pm </dd>
+                                <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?></dd>
                                 <dd>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
@@ -603,20 +606,38 @@
                         </ul>
                     </div>
                     
-                    <div class="sky-video-right">
-                        <span class="sky-video-right-title">天维视频</span>
-                        <a class="sky-more-style" href="http://ent.skykiwi.com/" target="_self" title="新西兰房地产频道" id="link_title_blue">更多>></a>
-                    </div>
-                    [e:loop={'211',1,2,0}]
-                    <div class="sky-video-right-top1">
-                        <?=$bqsr[smalltext]?>
-                    </div>
-                    <div class="sky-video-right-small-title">
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">【新西兰加点糖】<?=$bqr[title]?>...</a>
+                    [e:loop={'225', 3, 0, 1}]
+                    <div data-index="<?=$bqno?>" class="sky-video-slideshow">
+                        <div class="sky-video-right">
+                            <span class="sky-video-right-title"><?=$bqr[title]?></span>
+                        </div>
+                        <div class="sky-video-right-top1">
+                            <img width="300" height="190" alt="" src="<?=$bqr[titlepic]?>" />
+                        </div>
+                        <div class="sky-video-right-small-title">
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[ftitle]?>"><?=$bqr[ftitle]?></a>
+                        </div>
                     </div>
                     [/e:loop]
 
+                    <script type="text/javascript">
+                                $(function () {
+                                    $(".sky-video-slideshow[data-index='2']").css("display","none");
+                                    $(".sky-video-slideshow[data-index='3']").css("display", "none");
 
+                                    setInterval(go, 3000);
+                                    
+                                    function go() {
+                                        var dataindex = parseInt($(".sky-video-slideshow:visible").attr("data-index"));
+                                        dataindex = dataindex + 1;
+                                        if (dataindex > 3) {
+                                            dataindex = 1;
+                                        }
+                                        
+                                        $(".sky-video-slideshow[data-index='" + dataindex + "']").show().siblings(".sky-video-slideshow").hide();
+                                    }
+                            })
+                    </script>
 
                     <div class="bannerlist">
                         [e:loop={'206',1,2,0}]
@@ -689,11 +710,11 @@
                             <!--#include virtual="/ssi/indexhome201706.html" -->
                         </div>
                     </div>
-                    <script src="http://cms6.skykiwi.com/js/pglist-v1.0.js" type="text/javascript"></script>
+                    <script src="http://www.skykiwi.com/js/pglist-v1.0.js" type="text/javascript"></script>
                 </div>
 
                 <!--<div controlindex="2" style="display:none"></div>-->
-                <!--<iframe src="http://cms6.skykiwi.com/ssi/indexhome201706.html"></iframe>-->
+                <!--<iframe src="http://www.skykiwi.com/ssi/indexhome201706.html"></iframe>-->
                 <!--房产  end-->
                 <!--纽澳财经 begin-->
                 <div class="tab-left-double-div2">
