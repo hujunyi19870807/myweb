@@ -466,6 +466,7 @@ body {
         font-size: 12px;
         height: 20px;
         color: #7b7979;
+        letter-spacing:2px;
     }
     .list-news-item dl dd span.list-news-item-category {
             color: #d11e26;
@@ -1014,7 +1015,7 @@ body {
     .caijin-span-tejia > li:nth-child(3),
     .caijin-span-tejia > li:nth-child(5)
     {
-        margin-left: 20px;
+        float:right;
     }
 
     .caijin-span-tejia > li:nth-child(4),
@@ -1165,7 +1166,7 @@ body {
 .sky-activity-info-div2 {
     float: right;
     margin-left: 15px;
-    width: 145px;
+    width: 140px;
     font-size: 14px;
 }
     .sky-activity-info-div2 span {
@@ -1363,7 +1364,6 @@ body {
     height: 90px;
     background: url(/image/tianweiwang.jpg);
     position: absolute;
-    left: 58px;
     display: none;
     z-index: 9999;
     margin-top:-5px;
@@ -1374,7 +1374,6 @@ body {
     height: 90px;
     background: url(/image/daogou.jpg);
     position: absolute;
-    left: 45px;
     display: none;
     z-index: 9999;
     margin-top: -5px;
@@ -1395,6 +1394,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
+    margin-top: -5px;
 }
 
 #wechat_money {
@@ -1404,6 +1404,7 @@ body {
     position: absolute;
     display: none;
     z-index: 9999;
+    margin-top: -5px;
 }
 
 

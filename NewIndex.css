@@ -5,7 +5,7 @@
 }
 
 div#navfirst {
-    height: 235px;
+    height: 215px;
     border-bottom: 2px solid red;
 }
 
@@ -19,7 +19,7 @@ div#navsecond {
     width: 1200px;
     height: 60px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
     div#navsecond ul {
@@ -34,6 +34,13 @@ div#navsecond {
             padding-right: 16px;
             letter-spacing: 2px;
         }
+            div#navsecond ul li a {
+                text-decoration: none;
+                color: #020202;
+            }
+                div#navsecond ul li a:hover {
+                    color: #ec7f16;
+                }
 
 div#left-main {
     width: 200px;
@@ -188,8 +195,20 @@ span.list-news-item-word {
     #right-main .newlist li {
         height: 25px;
         line-height: 25px;
+        overflow:hidden;
+        letter-spacing:1px;
     }
-
+        #right-main .newlist li a {
+            color: #50504f;
+            text-decoration:none;
+        }
+        #right-main .newlist li:first-child a {
+            color: #f20626;
+            font-weight:bold;
+        }
+            #right-main .newlist li a:hover {
+                color: #ec7f16;
+            }
 #right-main .news-title {
     height: 30px;
     line-height: 30px;
@@ -220,19 +239,28 @@ div#right-main .column-list {
         width: 120px
     }
 
-.column-itemlist {
+div#right-main .column-itemlist {
     float: right;
     width: 170px;
 }
 
-div#right-main .column-itemlist li {
-    width: 170px;
-    border-bottom: 1px dashed black;
-    color: #50504f;
-    font-size: 14px;
-    padding: 11px 0;
-}
-
+    div#right-main .column-itemlist li {
+        width: 170px;
+        border-bottom: 1px dashed black;
+        max-height: 40px;
+        overflow: hidden;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    div#right-main .column-itemlist li a {
+        text-decoration: none;
+        color: #50504f;
+        font-size: 14px;
+    }
+        div#right-main .column-itemlist li a:hover {
+            color: #ec7f16;
+        }
     div#right-main .column-itemlist li:last-child {
         border-bottom: 0px;
     }
@@ -372,7 +400,7 @@ a:hover {
 }
 
 #frameHlicAe {
-    width: 300px;
+    width: 284px;
 }
 
 .comiis_wrapad {
@@ -385,18 +413,32 @@ a:hover {
     }
 
 #slidesImgs li {
-    width: 263px;
+    width: 284px;
     height: 201px;
     display: none;
 }
 
-div#left-main .left-main-tianweirenwu {
+div#left-main .left-main-personalstory {
     border-bottom: 1px solid #acacac;
 }
-
-div#left-main .left-main-pinpai {
-    border-bottom: 1px solid #acacac;
-}
+    div#left-main .left-main-personalstory span {
+        color: black;
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin: 7px 0;
+        padding-left: 3px;
+        display: inline-block;
+        font-weight: 600
+    }
+    div#left-main .left-main-personalstory p {
+        color: #676767;
+        font-size: 14px;
+        line-height: 25px;
+        padding-left: 3px;
+        margin-bottom: 20px;
+        height: 75px;
+        overflow: hidden
+    }
 
 div#left-main .left-main-shudu {
     border-bottom: 1px solid #acacac;
@@ -442,11 +484,50 @@ div#left-main .left-main-niandu {
 
 div#left-main .left-main-zhuanti .left-main-zhuanti-body {
     margin: 15px 8px;
+    position:relative;
 }
 
+div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a {
+    text-decoration:none;
+    color:black;
+}
+    div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a:hover {
+        color: #ec7f16;
+    }
+    div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips {
+        height: 30px;
+        top: 155px;
+        position: absolute;
+        left: 57px;
+    }
+    div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a {
+        display: inline-block;
+        float: left;
+        width: 10px;
+        height: 10px;
+        background-color: #d7d7d7;
+        text-indent: -99999px;
+        margin: 10px 4px;
+        border-radius: 10px;
+    }
+        div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a.active {
+            background-color: #d11e26;
+        }
 div#left-main .left-main-zhuanti .left-main-zhuanti-past {
     border-bottom: 1px solid #acacac;
 }
+div#left-main .left-main-zhuanti .left-main-zhuanti-past ul li {
+    height:30px;
+    line-height:30px;
+}
+div#left-main .left-main-zhuanti .left-main-zhuanti-past a {
+    color:black;
+    font-size:16px;
+    text-decoration:none;
+}
+    div#left-main .left-main-zhuanti .left-main-zhuanti-past a:hover {
+        color: #ec7f16;
+    }
 
 div#header .header-content {
     width: 1200px;
@@ -522,9 +603,22 @@ div#header .header-content {
 #wechat_money {
     width: 90px;
     height: 90px;
-    background: url(/newImage/weicaijing.jpg);
+    background: url(/newImage/weicaijing.jpg) no-repeat;
     position: absolute;
     display: none;
     z-index: 9999;
     margin-top: -9px;
+}
+#wechat_skyphone {
+    width: 90px;
+    height: 90px;
+    background: url(/newImage/erweima.jpg) no-repeat;
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    margin-top: -9px;
+}
+.news-content iframe {
+    width: 300px;
+    height: 195px;
 }
