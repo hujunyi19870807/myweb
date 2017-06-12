@@ -3,7 +3,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1,minimal-ui">
     <title>新西兰天维网_新西兰最大的中文网络门户</title>
     <link href="http://cms6.skykiwi.com/css/common.css" rel="stylesheet" />
     <link href="NewIndex.css" rel="stylesheet" />
@@ -114,14 +113,11 @@
                 <li><a style="color:#d11e26;text-decoration:none" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
                 <li><a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
                 <li><a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a></li>
-                <li>投资</li>
                 <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
-                <li>教育</li>
-                <li>汽车</li>
+                <li ><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
                 <li><a href="http://d.skykiwi.com" target="_self" title="新西兰网址导航，新西兰百科知识，新西兰商家查询 - 点击进入新西兰网址导航频道">导航</a></li>
                 <li><a href="http://shop.skykiwi.com" target="_blank" title="新西兰比价购物频道 - 为您节省每一分钱，方便的网上比价购物体验 - 点击进入天维价格比较频道 / 合作网站 PriceMe">比价</a></li>
-                <li><a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a></li>
-                <li style="border:none;">百科</li>
+                <li style="border:none;"><a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a></li>
             </ul>
         </div>
     </div>
@@ -129,8 +125,14 @@
         <div id="left-main">
             <div class="left-main-personalstory">
                 [e:loop={'123',1,2,1}]
-                <img src="<?=$bqr[titlepic]?>" width="200" height="300" />
-                <span><?=esub($bqr[ftitle],20)?></span>
+                <a href="<?=$bqr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                    <img src="<?=$bqr[titlepic]?>" width="200" height="300" />
+                </a>
+                <span>
+                    <a href="<?=$bqr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                        <?=$bqr[title]?>
+                    </a>
+                </span>
                 <p>
                     <?=$bqr[smalltext]?>
                 </p>
@@ -139,8 +141,14 @@
             <div class="left-main-personalstory">
                 <img src="newImage/sky-pinpai-logo.jpg" style="margin:20px 0;display:block;" />
                 [e:loop={'226',1,0,1}]
-                <img src="<?=$bqr[titlepic]?>" width="200" height="120" />
-                <span><?=esub($bqr[ftitle],20)?></span>
+                <a href="<?=$bqr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                    <img src="<?=$bqr[titlepic]?>" width="200" height="120" />
+                </a>
+                <span>
+                    <a href="<?=$bqr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                        <?=$bqr[title]?>
+                    </a>
+                </span>
                 <p>
                     <?=$bqr[smalltext]?>
                 </p>
@@ -256,12 +264,9 @@
             </div>
             <div id="top-newlist">
                 <ul style="margin-top:10px">
-                    <li>更多重磅!工签也将要求工资 不达标</li>
-                    <li>更多重磅!工签也将要求工资 不达标</li>
-                    <li>更多重磅!工签也将要求工资 不达标</li>
-                    <li>更多重磅!工签也将要求工资 不达标</li>
-                    <li>更多重磅!工签也将要求工资 不达标</li>
-                    <li>更多重磅!工签也将要求工资 不达标</li>
+                    [e:loop={'3,10',6,12,0}]
+                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],30)?></a></li>
+                    [/e:loop]
                     <div style="clear:both"></div>
                 </ul>
             </div>

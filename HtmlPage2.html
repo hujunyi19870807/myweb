@@ -3,9 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1,minimal-ui">
     <title>天维新版首页beta</title>
-    <link href="index-20170701.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/index-20170701.css?001" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
@@ -22,7 +21,7 @@
                     var dvalue = divheight - winheight;
                     if (scrollheight < dvalue) {
                         document.getElementById("div-sky-leftnav").style.position = "fixed";
-                        document.getElementById("div-sky-leftnav").style.top = (-scrollheight+30) + "px";
+                        document.getElementById("div-sky-leftnav").style.top = (-scrollheight + 30) + "px";
                     }
                     if (scrollheight >= dvalue) {
                         document.getElementById("div-sky-leftnav").style.position = "fixed";
@@ -34,7 +33,7 @@
                 }
             });
         })(jQuery);
-        
+
 
         $(document).ready(function () {
             // begin
@@ -95,11 +94,18 @@
                 if (dataindex >= 0 && dataindex != undefined) {
                     $(".tianwei-tuangou-item:visible").hide().prev("div.tianwei-tuangou-item").show();
                 }
+                else {
+                    $(".tianwei-tuangou-item").eq(3).show().siblings("div.tianwei-tuangou-item").hide();
+                }
             });
             $("#sky-tuangou-next").on("click", function () {
                 var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next("div.tianwei-tuangou-item").attr("data-index");
                 if (dataindex < 4 && dataindex != undefined) {
                     $(".tianwei-tuangou-item:visible").hide().next("div.tianwei-tuangou-item").show();
+                }
+                else {
+                    $(".tianwei-tuangou-item").eq(3).hide();
+                    $(".tianwei-tuangou-item").eq(0).show();
                 }
             });
             var timer = null;
@@ -266,9 +272,9 @@
                     <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
                         <div id="div-weather-change" class="clearfix">
                             <span id="img-weather" style="margin-top:-1px" src="image/sky-weather.png" class=""></span>
-                            <span style="color:#ec7f16;float:left" id="span-mix-temp"></span>
-                            <span id="span-min-temp" style="float:left"></span>
-                            <span id="span-city" style="float:left;display:inline-block;width:70px;text-align:left;overflow:hidden"></span>
+                            <span style="color:#ec7f16;float:left;width:25px;" id="span-mix-temp"></span>
+                            <span id="span-min-temp" style="float:left;width:28px;"></span>
+                            <span id="span-city" style="float:left;width:70px;text-align:left;overflow:hidden"></span>
                             <span style="color:#ec7f16; float:right">▼</span>
                         </div>
                         <div id="div-weather-content" class="sky-weather" style="display:none">
@@ -413,13 +419,6 @@
                                     <span class="list-news-item-category">留学移民</span>');
                                     }
 
-                                    if (!empty($bqr[keyboard])){
-                                    $keywordlist = explode(',',$bqr[keyboard]);
-                                    foreach($keywordlist as $value){
-                                    echo("
-                                    <span class='list-news-item-word'>$value</span>");
-                                    }
-                                    }
                                     ?>
                                 </dd>
                             </dl>
@@ -455,13 +454,7 @@
                                     <span class="list-news-item-category">留学移民</span>');
                                     }
 
-                                    if (!empty($bqr[keyboard])){
-                                    $keywordlist = explode(',',$bqr[keyboard]);
-                                    foreach($keywordlist as $value){
-                                    echo("
-                                    <span class='list-news-item-word'>$value</span>");
-                                    }
-                                    }
+
                                     ?>
                                 </dd>
                             </dl>
@@ -497,13 +490,6 @@
                                     <span class="list-news-item-category">留学移民</span>');
                                     }
 
-                                    if (!empty($bqr[keyboard])){
-                                    $keywordlist = explode(',',$bqr[keyboard]);
-                                    foreach($keywordlist as $value){
-                                    echo("
-                                    <span class='list-news-item-word'>$value</span>");
-                                    }
-                                    }
                                     ?>
                                 </dd>
                             </dl>
@@ -544,13 +530,6 @@
                                     <span class="list-news-item-category">留学移民</span>');
                                     }
 
-                                    if (!empty($bqr[keyboard])){
-                                    $keywordlist = explode(',',$bqr[keyboard]);
-                                    foreach($keywordlist as $value){
-                                    echo("
-                                    <span class='list-news-item-word'>$value</span>");
-                                    }
-                                    }
                                     ?>
                                 </dd>
                             </dl>
@@ -689,10 +668,16 @@
                         </ul>
                     </div>
 
-                    <div class="news-general-list" style="border-top:0px !important;margin-bottom:20px">
-                        <ul class="news-general-list-ul" style="margin-bottom:10px">
-                            [fillblank]92,16,30[/fillblank]
-                            [fillblank]92,16,30[/fillblank]
+                    <div class="news-general-list" style="border-top:0px !important;margin-bottom:15px">
+                        <ul class="news-general-list-ul" style="margin-bottom:15px;position:relative">
+                            [e:loop={'select * from phome_ecms_news where classid =220 and checked=1 order by newstime desc limit 4,2', 2, 24, 1}]
+                            <li style="height:75px">
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img width="140" height="75" alt="" src="<?=$bqr[titlepic]?>" /></a>
+                                <span><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></span>
+                            </li>
+                            [/e:loop]
+                            <li class="lvyou-list-ul-line" style="width:100%;height:3px"></li>
+                            [fillblank]92,8,30[/fillblank]
                         </ul>
                     </div>
                     <div class="sky-jinyuanjinrong">

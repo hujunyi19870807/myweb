@@ -863,7 +863,24 @@ body {
                 text-decoration: none;
             }
 
-
+.news-general-list-ul span {
+    position: absolute;
+    width: 140px;
+    height: 20px;
+    background: rgba(0,0,0,0.3);
+    line-height: 1.6;
+    overflow: hidden;
+    text-align: center;
+    display: block;
+    margin-top: -27px;
+}
+    .news-general-list-ul span a {
+        color: white;
+        text-decoration: none;
+    }
+        .news-general-list-ul span a:hover {
+            color: #ec7f16;
+        }
 .list-group-item-line {
     border-bottom: 1px dashed #b7b7b7;
     margin-top: 4px;
