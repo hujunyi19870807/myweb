@@ -376,13 +376,16 @@ body {
         .bannerlist dd a:hover {
             color: #ec7f16;
         }
-
-.topbanner {
-    width: 950px;
-    height: 55px;
-    overflow:hidden;
-    margin:8px 0;
-}
+    .bannerlist iframe #player .html5-video-player unstarted-mode ytp-hide-controls ytp-small-mode .ytp-chrome-top ytp-watch-later-button-visible{
+        display:none;
+    }
+    
+    .topbanner {
+        width: 950px;
+        height: 55px;
+        overflow: hidden;
+        margin: 8px 0;
+    }
 
 .topbannermiddle {
     width: 950px;
@@ -450,13 +453,12 @@ body {
     .list-news-item dl {
         width: 465px;
         float: right;
-        height: 77px;
-        margin-left:15px;
-        margin-top:13px;
+        height: 72px;
         overflow:hidden;
+        margin:16px 0;
     }
     .list-news-item dt{
-        margin-bottom:14px;
+        margin-bottom:10px;
     }
     .list-news-item dt a {
         font-size: 18px;
@@ -488,7 +490,7 @@ body {
         border: 1px solid #898989;
         display: inline-block;
         float: left;
-        margin-top: 13px;
+        margin:16px 0;
     }
 
 

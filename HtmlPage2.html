@@ -273,8 +273,7 @@
                         <div id="div-weather-change" class="clearfix">
                             <span id="img-weather" style="margin-top:-1px" src="image/sky-weather.png" class=""></span>
                             <span style="color:#ec7f16;float:left;width:25px;" id="span-mix-temp"></span>
-                            <span id="span-min-temp" style="float:left;width:28px;"></span>
-                            <span id="span-city" style="float:left;width:70px;text-align:left;overflow:hidden"></span>
+                            <span id="span-min-city" style="float:left;width:107px;overflow:hidden"></span>
                             <span style="color:#ec7f16; float:right">▼</span>
                         </div>
                         <div id="div-weather-content" class="sky-weather" style="display:none">
@@ -283,10 +282,10 @@
                         <script type="text/javascript">
                             $(function () {
                                 $("#weatherCities li").click(function () {
-                                    $("#span-city").html($(this).attr("data-title-en"));
-                                    $("#span-min-temp").html("/&nbsp;" + $(this).attr("data-min-temp") + "°");
-                                    $("#span-mix-temp").html($(this).attr("data-max-temp") + "°");
                                     $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon"));
+                                    $("#span-mix-temp").html($(this).attr("data-max-temp") + "°");
+
+                                    $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en"));
                                 });
                                 $("#weatherCities li:eq(0)").click();
                             })
@@ -392,7 +391,7 @@
                         [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=1 order by newstime desc limit 0,1', 4, 24, 1}]
                         <li class="list-news-item">
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
+                                <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
@@ -427,7 +426,7 @@
                         [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=2 order by newstime desc limit 0,1', 4, 24, 1}]
                         <li class="list-news-item">
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
+                                <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
@@ -463,7 +462,7 @@
                         [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=3 order by newstime desc limit 0,1', 4, 24, 1}]
                         <li class="list-news-item">
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
+                                <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
@@ -503,7 +502,7 @@
                         order by newstime desc limit 0,9', 4, 24, 1}]
                         <li class="list-news-item">
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
+                                <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
@@ -646,7 +645,7 @@
                         </dl>
                         [/e:loop]
                     </div>
-
+                  
                     <div class="clearfix banner-table">
                         <ul class="clearfix">
                             [e:loop={'160',4,0,1}]
@@ -670,14 +669,14 @@
 
                     <div class="news-general-list" style="border-top:0px !important;margin-bottom:15px">
                         <ul class="news-general-list-ul" style="margin-bottom:15px;position:relative">
+                            [fillblank]92,8,30[/fillblank]
+                            <li class="lvyou-list-ul-line" style="width:100%;height:3px"></li>
                             [e:loop={'select * from phome_ecms_news where classid =220 and checked=1 order by newstime desc limit 4,2', 2, 24, 1}]
                             <li style="height:75px">
                                 <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img width="140" height="75" alt="" src="<?=$bqr[titlepic]?>" /></a>
                                 <span><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></span>
                             </li>
                             [/e:loop]
-                            <li class="lvyou-list-ul-line" style="width:100%;height:3px"></li>
-                            [fillblank]92,8,30[/fillblank]
                         </ul>
                     </div>
                     <div class="sky-jinyuanjinrong">
