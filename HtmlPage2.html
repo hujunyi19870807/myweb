@@ -598,7 +598,9 @@
                             <span class="sky-video-right-title"><?=$bqr[title]?></span>
                         </div>
                         <div class="sky-video-right-top1">
-                            <img width="300" height="190" alt="" src="<?=$bqr[titlepic]?>" />
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[ftitle]?>">
+                                <img width="300" height="190" alt="" src="<?=$bqr[titlepic]?>" />
+                            </a>
                         </div>
                         <div class="sky-video-right-small-title">
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[ftitle]?>"><?=$bqr[ftitle]?></a>
@@ -762,7 +764,7 @@
                 </div>
                 <!--纽澳财经  end-->
                 <div style="clear:both;"></div>
-                <div style="height:80px;width:625px;overflow:hidden;margin:10px 0">
+                <div style="height:80px;width:625px;overflow:hidden;margin-bottom:10px; margin-top:5px">
                     <iframe id='a58e3db6' name='a58e3db6' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=96&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='625' height='80'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a59c122c&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=96&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a59c122c&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
                 </div>
                 <!--生活 旅游 begin-->
@@ -777,7 +779,7 @@
                         <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/life/" class="sky-more-style">更多>></a>
                         <a controlindex="2" target="_blank" href="http://go.skykiwi.com/skyselected/entertainment/" class="sky-more-style">更多>></a>
                     </div>
-                    <div class="sky-margintop10">
+                    <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
                             <div style="display: inline-block;" id="div-life-control">
                                 <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_life.js" charset="utf-8"></script>
@@ -788,7 +790,7 @@
                                     })
                                 </script>
                             </div>
-                            <div>
+                            <div class="sky-life-list">
                                 <ul>
                                     <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_lifelist.js" charset="utf-8"></script>
                                 </ul>
@@ -804,11 +806,19 @@
                                     })
                                 </script>
                             </div>
-                            <div>
+                            <div class="sky-life-list">
                                 <ul>
                                     <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_tourismlist.js" charset="utf-8"></script>
                                 </ul>
                             </div>
+                            <script type="text/javascript">
+                                    $(function () {
+                                        $(".sky-life-list ul li:eq(0) a").css("color", "#0958fa");
+                                        $(".sky-life-list ul li:eq(1) a").css("color", "#fa5882");
+                                        $(".sky-life-list ul li:eq(3) a").css("color", "#0958fa");
+                                        $(".sky-life-list ul li:eq(4) a").css("color", "#fa5882");
+                                    });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -820,7 +830,7 @@
                         <span class="active-tit-single active-tit-a active-tit-ashenghuo" style="color:#ef537a">特价</span>
                         <a target="_blank" href="http://go.skykiwi.com/skyselected/supermarket/" class="sky-more-style">更多>></a>
                     </div>
-                    <div class="sky-margintop10">
+                    <div class="sky-margintop-daogou">
                         <div class="caijin-span">
                             <ul class="caijin-span-tejia">
                                 <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_specialoffer.js" charset="utf-8"></script>
@@ -835,7 +845,7 @@
                         <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/fashion/" class="sky-more-style">更多>></a>
                         <a controlindex="2" target="_blank" href="http://go.skykiwi.com/skyselected/food/" class="sky-more-style">更多>></a>
                     </div>
-                    <div class="sky-margintop10">
+                    <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
                             <div class="sky-shishang">
                                 <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_fashion.js" charset="utf-8"></script>
@@ -849,6 +859,7 @@
                                 </script>
                                 <div style="clear:both;"></div>
                             </div>
+                            <div style="clear:both;"></div>
                         </div>
                         <div class="caijin-span" controlindex="2">
                             <div class="sky-shishang">
@@ -863,7 +874,9 @@
                                 </script>
                                 <div style="clear:both;"></div>
                             </div>
+                            <div style="clear:both;"></div>
                         </div>
+                        <div style="clear:both;"></div>
                     </div>
                 </div>
                 <!--特价时尚美食 end-->
@@ -893,7 +906,7 @@
                     <div class="caijin-title-spanexpend">
                         <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanti" style="color:#f5842b">天维专题</span>
                     </div>
-                    <div class="sky-margintop10">
+                    <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
                             [e:loop={'203',1,12,0}]
                             <div class="sky-zhuanti-title"><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[title],58)?></a></div>
@@ -917,7 +930,7 @@
                         <span class="active-tit-single active-tit-a active-tit-ayimin" style="color:#448e4f">留学移民</span>
                         <a href="http://imedu.skykiwi.com" target="_blank" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击查看更多留学移民新闻" class="sky-more-style">更多>></a>
                     </div>
-                    <div class="sky-margintop10">
+                    <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
                             <div>
                                 [e:loop={'109',1,12,1}]
@@ -946,7 +959,7 @@
                     <div class="caijin-title-spanexpend">
                         <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanlan" style="color:#653780">专栏</span>
                     </div>
-                    <div class="sky-margintop10">
+                    <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
                             [e:loop={'SELECT * FROM phome_enewsclass INNER JOIN phome_ecms_news ON phome_enewsclass.classid=phome_ecms_news.classid WHERE bclassid in (32,58) ORDER BY firsttitle DESC,newstime DESC LIMIT 0,1',1,24,0}]
                             <div class="sky-floatL"><img style="width:100px;height:130px;border:1px solid #898989;display:block" src="<?=$bqr[classimg]?>" /></div>
@@ -1024,7 +1037,7 @@
                 </div>
             </div>
             <div style="clear:both;"></div>
-            <div style="height:100px;width:950px;overflow:hidden; margin:25px 0">
+            <div style="height:100px;width:950px;overflow:hidden; margin-bottom:25px;margin-top:10px">
                 <iframe id='a9516ee3' name='a9516ee3' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=95&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='950' height='100'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa8e0f2b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=95&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa8e0f2b&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
             </div>
             <div class="sky-info">
