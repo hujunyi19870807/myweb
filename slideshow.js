@@ -1,5 +1,4 @@
-﻿/* 代码整理：懒人之家 www.lanrenzhijia.com */
-function SlideShow(c) {
+﻿function SlideShow(c) {
     var a = document.getElementById("slideContainer"), f = document.getElementById("slidesImgs").getElementsByTagName("li"), h = document.getElementById("slideBar"), n = h.getElementsByTagName("li"), d = f.length, c = c || 3000, e = lastI = 0, j, m;
     function b() {
         m = setInterval(function () {
@@ -29,5 +28,3 @@ function SlideShow(c) {
     };
     b()
 }
-;
-/* 代码整理：懒人之家 www.lanrenzhijia.com */

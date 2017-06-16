@@ -1,0 +1,183 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>简约风格模板</title>
+    <meta content="" name="description">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://qty83k.creatby.com/sites/favicon/24eb9218e32c0132b7f8239553852b98.ico">
+    <link type="text/css" href="http://o3bnyc.creatby.com/diazo/c_play/thirdparty_css/bootstrap.min.css" rel="stylesheet" media="all">
+    <link type="text/css" href="http://o3bnyc.creatby.com/diazo/c_play/thirdparty_css/font-awesome.min.css" rel="stylesheet" media="all">
+    <script type="text/javascript" src="http://o3bnyc.creatby.com/diazo/c_play/thirdparty_js/jquery-1.8.1.min.js"></script>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #8F8F8F;
+        }
+
+        .previewTop {
+            position: absolute;
+            background-color: #000;
+            padding: 0 20px;
+            width: 100%;
+            z-index: 1;
+        }
+
+            .previewTop img {
+                float: left;
+                width: 100px;
+                margin-top: 6px;
+            }
+
+            .previewTop div {
+                margin: 0 auto;
+                width: 134px;
+            }
+
+                .previewTop div ul {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                    .previewTop div ul li {
+                        float: left;
+                        list-style: none;
+                    }
+
+                        .previewTop div ul li a {
+                            width: 40px;
+                            height: 30px;
+                            min-height: 30px;
+                            margin-right: 4px;
+                            margin-top: 0px;
+                            display: inline-block;
+                            text-align: center;
+                        }
+
+                            .previewTop div ul li a:hover {
+                                background-color: rgba(128,128,128,1);
+                            }
+
+                            .previewTop div ul li a i {
+                                line-height: 31px;
+                                color: #EAEAEA;
+                            }
+
+            .previewTop > a {
+                float: right;
+                color: #fff;
+                border: none;
+                font-size: 16px;
+                width: 20px;
+                height: 20px;
+                margin-top: 5px;
+            }
+
+        .clear {
+            clear: both;
+        }
+
+        .previewContentDiv {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 0;
+            margin: 30px auto 0;
+        }
+
+        #previewContent {
+            position: absolute;
+            width: 100%;
+            height: 99%;
+            border: none;
+        }
+
+            #previewContent.c-mobile {
+                top: 50%;
+                height: 593px;
+                margin-top: -297px;
+            }
+    </style>
+</head>
+</body>
+<div class="previewTop">
+    <img src="http://o3bnyc.creatby.com/diazo/images/coolsite/coolsite360-logo.png" alt="" />
+    <div>
+        <ul>
+            <li>
+                <a href="#" class="screenMedia desktop" data-toggle="tooltip" data-placement="auto bottom" title="" data-template="T/components/tooltip.js" data-original-title="Desktop">
+                    <i class="fa fa-laptop fa-2x"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="screenMedia tablet" data-toggle="tooltip" data-placement="auto bottom" title="" data-template="T/components/tooltip.js" data-original-title="Tablet">
+                    <i class="fa fa-tablet fa-2x"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="screenMedia mobile" data-toggle="tooltip" data-placement="auto bottom" title="" data-template="T/components/tooltip.js" data-original-title="Mobile">
+                    <i class="fa fa-mobile fa-2x"></i>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <a href="#" class="c-close">
+        <svg width="20px" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <line x1="5" y1="5" x2="15" y2="15" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+            <line x1="5" y1="15" x2="15" y2="5" style="stroke:rgb(255,255,255);stroke-width:1"></line>
+        </svg>
+    </a>
+
+</div>
+<div class="previewContentDiv">
+    <iframe id="previewContent" src="/sites/rq30nc/"></iframe>
+</div>
+<script type="text/javascript">
+        // $('.previewTop div ul li a.desktop').live('click',function(){
+        //     $('#previewContent').width(100%).height(99%);
+        // })
+        // $('.previewTop div ul li a.tablet').live('click',function(){
+        //     $('#previewContent').width(1024).;
+        // })
+        $('.previewTop div ul li a').live('click',function(){
+            $(this).css('background-color','#8f8f8f').parent().siblings().children('a').css('background-color','#000');
+            if($(this).hasClass('desktop')){
+                $('.previewContentDiv').css('width','100%');
+                $('#previewContent').attr('class','c-desktop');
+            }
+            if($(this).hasClass('tablet')){
+                $('.previewContentDiv').width(768);
+                $('#previewContent').attr('class','c-tablet');
+            }
+            if($(this).hasClass('mobile')){
+                $('.previewContentDiv').width(370);
+                $('#previewContent').attr('class','c-mobile');
+            }
+        })
+        $('.c-close').on('click',function(){
+            $(this).closest('.previewTop').remove();
+            $('.previewContentDiv').css('margin-top',0);
+            return false;
+        })
+</script>
+<!-- JiaThis Button BEGIN -->
+<div class="qr_style" style="width: 200px;height: auto; position: fixed; z-index: -1; top: 50%; left: 0; margin-top: 0px;margin-left: 0px;overflow: auto;">
+    <img src="http://qr.liantu.com/api.php?text=http%3A//www.coolsite360.com/sites/rq30nc/&w=200&logo=http://o3bnyc.creatby.com/diazo/images/coolsite/coolsite360-logo.png&bg=ffffff&fg=6C6868">
+</div>
+<script type="text/javascript">
+    var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1368148870797327" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+</body>
+</html>

@@ -10,6 +10,14 @@
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script src="http://www.skykiwi.com/js/FocusPic-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/scroll-v1.0.js"></script>
+    <!--<script type="text/javascript">
+        resolution = screen.width;
+        url = window.location.href;
+        if ((resolution < 700) && (url.indexOf("index.shtml") == -1)) {
+            window.location.href = "http://www.skykiwi.com/3g.html";
+        }
+    </script>-->
+
     <script type="text/javascript">
         (function () {
             $(window).scroll(function () {
@@ -138,6 +146,15 @@
             //alert(arg1);
 
             //天维动态广告 end
+            //$(".topbannermiddle").css("height", $(window).height() + "px");
+
+            var winWidth = document.documentElement.clientWidth;
+            var winHeight = document.documentElement.clientHeight;
+            var tagblack = Math.floor((winWidth - $(".wrapper").width()) / 2);
+            $("#div-warn").css("position", "fixed");
+            $("#div-warn").css("left", ($(".wrapper").width()+tagblack) + "px");
+            $("#div-warn").css("top", (winHeight-300) + "px");
+
         });
 
         var imgIndex = 0;
@@ -348,7 +365,6 @@
             </div>
             <div class="topbanner">
                 <iframe id='a44f295f' name='a44f295f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=85&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='950' height='55'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa6726d1&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=85&amp;cb=&amp;n=aa6726d1&amp;ct0=' border='0' alt='' /></a></iframe>
-
             </div>
             <div>
                 <div class="rightdivchid1">
@@ -650,7 +666,7 @@
                   
                     <div class="clearfix banner-table">
                         <ul class="clearfix">
-                            [e:loop={'160',4,0,1}]
+                            [e:loop={'229',4,0,1}]
                             <li>
                                 <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
                                     <img src="<?=$bqr[titlepic]?>" width="130" height="78" />
@@ -915,7 +931,7 @@
                             </div>
                             [/e:loop]
                             <ul class="sky-zhuanti-list">
-                                [e:loop={'203',4,12,0}]
+                                [e:loop={'203',4,0,0}]
                                 <li class="sky-ul-list1"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],35)?></a></li>
                                 [/e:loop]
                             </ul>
@@ -1213,7 +1229,11 @@
                 <p><a href="http://em.skykiwi.com/aboutus.html" target="_blank" class="ico"> 关于天维</a> | <a href="http://em.skykiwi.com/english.html" target="_blank">About Us</a> | <a href="http://em.skykiwi.com/termsofuse.html" target="_blank">使用条款</a> | <a href="http://em.skykiwi.com/privacy.html" target="_blank">隐私声明</a> | <a href="http://em.skykiwi.com" target="_blank">广告服务</a> | <a href="http://em.skykiwi.com/contactus.html" target="_blank">联系我们</a> | <a href="http://em.skykiwi.com/aboutus_join.html" target="_blank">招贤纳士</a> | <a href="http://bbs.skykiwi.com/member.php?mod=regsky.php" target="_blank">会员注册</a></p>
                 <p><span>&copy;&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
             </div>
+            <div id="div-warn" style="position:absolute; width:200px; height:200px; ">
+                <img src="/image/bottom.gif" width="150" height="228"/>
+            </div>
         </div>
+        <div style="clear:both"></div>
     </div>
 </body>
 </html>

@@ -19,25 +19,31 @@
     </style>
     <div id="showDiv" class="show">看到这个不动的层了吗???</div>
     <script>
-function divPo(){
-	var winWidth=document.documentElement.clientWidth;
-	var winHeight=document.documentElement.clientHeight;
-	document.getElementById("showDiv").style.left=(winWidth-222)+"px"; //减去的和DIV的宽度和padding相关
-	if(navigator.appName=="Microsoft Internet Explorer")
-	{
-		document.getElementById("showDiv").style.top=Math.floor(winHeight-122)+parseInt(document.documentElement.scrollTop)+"px";
-		window.onscroll=function(){
-			document.getElementById("showDiv").style.top=Math.floor(winHeight-122)+parseInt(document.documentElement.scrollTop)+"px";
-		}
-	}
-	else
-	{
-		document.getElementById("showDiv").style.position="fixed";
-		document.getElementById("showDiv").style.top=Math.floor(winHeight-250)+"px";
-	}
-}
-divPo();
+        function divPo() {
+            debugger;
+            var winWidth = document.documentElement.clientWidth;
+            var winHeight = document.documentElement.clientHeight;
+            document.getElementById("showDiv").style.left = (winWidth - 222) + "px"; //减去的和DIV的宽度和padding相关
+            if (navigator.appName == "Microsoft Internet Explorer") {
+                document.getElementById("showDiv").style.top = Math.floor(winHeight - 122) + parseInt(document.documentElement.scrollTop) + "px";
+                window.onscroll = function () {
+                    document.getElementById("showDiv").style.top = Math.floor(winHeight - 122) + parseInt(document.documentElement.scrollTop) + "px";
+                }
+            }
+            else {
+                document.getElementById("showDiv").style.position = "fixed";
+                document.getElementById("showDiv").style.top = Math.floor(winHeight - 250) + "px";
+            }
+        }
+        divPo();
     </script>
-    <p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p>
+    <p> dfgfd </p><p> </p><p> dfgfd</p><p> dfd</p><p>ddd </p><p> dffd</p><p>ffd </p><p> fddf</p>
+    <p>fdfd </p><p>dffd </p><p> 特意</p><p>ty </p><p>fgdh </p><p>fgdh </p><p> </p><p> </p>
+    <p>fdfd </p><p>fdfd </p><p> erwe</p><p>ty </p><p>fgdh </p><p> </p><p>fgdh </p><p> </p><p>ty </p><p> yt</p>
+    <p>fdfd </p><p>fdfd </p><p> ewr</p><p>ewr </p><p>fgd </p><p> </p><p> </p><p> </p><p>tyr </p><p> ty</p><p>try </p>
+    <p> fdfd</p><p>fdfd </p><p> tr</p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><p>tyr </p><p> </p><p> ty</p>
+    <p>fddf </p><p> fdfd</p><p>ty </p><p>dfgh </p><p> dfgh</p><p>dfgh </p><p>dfgh </p><p> fdgh</p><p> </p><p> </p>
+    <p> dfgh</p><p> dfgh</p><p>fgdh
+    </p><p> ghggh</p>
 </body>
 </html>

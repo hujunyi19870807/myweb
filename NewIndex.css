@@ -34,10 +34,12 @@ div#navsecond {
             padding-right: 16px;
             letter-spacing: 2px;
         }
+
             div#navsecond ul li a {
                 text-decoration: none;
                 color: #020202;
             }
+
                 div#navsecond ul li a:hover {
                     color: #ec7f16;
                 }
@@ -75,13 +77,18 @@ div#top-newlist ul li {
     letter-spacing: 2px;
     height: 20px;
     margin: 5px 0;
-    width:285px;
+    width: 285px;
 }
+
     div#top-newlist ul li a {
         font-size: 16px;
-        color:black;
-        text-decoration:none;
+        color: black;
+        text-decoration: none;
+        height:21px;
+        display:list-item;
+        overflow:hidden
     }
+
         div#top-newlist ul li a:hover {
             color: #ec7f16;
         }
@@ -204,20 +211,24 @@ span.list-news-item-word {
     #right-main .newlist li {
         height: 25px;
         line-height: 25px;
-        overflow:hidden;
-        letter-spacing:1px;
+        overflow: hidden;
+        letter-spacing: 1px;
     }
+
         #right-main .newlist li a {
             color: #50504f;
-            text-decoration:none;
+            text-decoration: none;
         }
+
         #right-main .newlist li:first-child a {
             color: #f20626;
-            font-weight:bold;
+            font-weight: bold;
         }
-            #right-main .newlist li a:hover {
-                color: #ec7f16;
-            }
+
+        #right-main .newlist li a:hover {
+            color: #ec7f16;
+        }
+
 #right-main .news-title {
     height: 30px;
     line-height: 30px;
@@ -262,17 +273,47 @@ div#right-main .column-itemlist {
         margin-bottom: 10px;
         padding-bottom: 10px;
     }
-    div#right-main .column-itemlist li a {
-        text-decoration: none;
-        color: #50504f;
-        font-size: 14px;
-    }
-        div#right-main .column-itemlist li a:hover {
-            color: #ec7f16;
+
+        div#right-main .column-itemlist li a {
+            text-decoration: none;
+            color: #50504f;
+            font-size: 14px;
         }
-    div#right-main .column-itemlist li:last-child {
-        border-bottom: 0px;
+
+            div#right-main .column-itemlist li a:hover {
+                color: #ec7f16;
+            }
+
+        div#right-main .column-itemlist li:last-child {
+            border-bottom: 0px;
+        }
+
+div#right-main .column-itemdasiguanlist {
+    width: 100%;
+}
+
+    div#right-main .column-itemdasiguanlist li {
+        border-bottom: 1px dashed black;
+        max-height: 40px;
+        overflow: hidden;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
     }
+
+        div#right-main .column-itemdasiguanlist li a {
+            text-decoration: none;
+            color: #50504f;
+            font-size: 14px;
+        }
+
+            div#right-main .column-itemdasiguanlist li a:hover {
+                color: #ec7f16;
+            }
+
+        div#right-main .column-itemdasiguanlist li:last-child {
+            border-bottom: 0px;
+        }
 
 #yizhibo .comiis_wrap960, .comiis_wrapad {
     width: 284px;
@@ -430,6 +471,7 @@ a:hover {
 div#left-main .left-main-personalstory {
     border-bottom: 1px solid #acacac;
 }
+
     div#left-main .left-main-personalstory span {
         color: black;
         font-size: 16px;
@@ -439,13 +481,16 @@ div#left-main .left-main-personalstory {
         display: inline-block;
         font-weight: 600
     }
-    div#left-main .left-main-personalstory span a {
-       text-decoration:none;
-       color:black;
-    }
-        div#left-main .left-main-personalstory span a:hover {
-            color: #ec7f16
+
+        div#left-main .left-main-personalstory span a {
+            text-decoration: none;
+            color: black;
         }
+
+            div#left-main .left-main-personalstory span a:hover {
+                color: #ec7f16
+            }
+
     div#left-main .left-main-personalstory p {
         color: #676767;
         font-size: 14px;
@@ -465,6 +510,13 @@ div#left-main .left-main-shudu {
         color: #020202;
         margin: 8px 0;
     }
+    div#left-main .left-main-shudu ul li a {
+        color: #020202;
+        text-decoration:none;
+    }
+        div#left-main .left-main-shudu ul li a:hover {
+            color: #ec7f16;
+        }
 
 div#left-main .left-main-nianjie {
     border-bottom: 1px solid #acacac;
@@ -479,10 +531,15 @@ div#left-main .left-main-nianjie {
         height: 22px;
         line-height: 22px;
     }
+        div#left-main .left-main-nianjie ul li a {
+            color: #020202;
+            text-decoration: none;
+        }
 
-div#left-main .left-main-niandu {
-    border-bottom: 1px solid #acacac;
-}
+            div#left-main .left-main-nianjie ul li a:hover {
+                color: #ec7f16;
+            }
+
 
     div#left-main .left-main-niandu ul li {
         float: left;
@@ -497,53 +554,69 @@ div#left-main .left-main-niandu {
         div#left-main .left-main-niandu ul li:nth-child(6) {
             border: none;
         }
+    div#left-main .left-main-niandu ul li a {
+        color: #020202;
+        text-decoration: none;
+    }
+
+    div#left-main .left-main-niandu ul li a:hover {
+        color: #ec7f16;
+    }
 
 div#left-main .left-main-zhuanti .left-main-zhuanti-body {
     margin: 15px 8px;
-    position:relative;
+    position: relative;
 }
 
-div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a {
-    text-decoration:none;
-    color:black;
-}
-    div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a:hover {
-        color: #ec7f16;
+    div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a {
+        text-decoration: none;
+        color: black;
     }
+
+        div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a:hover {
+            color: #ec7f16;
+        }
+
     div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips {
         height: 30px;
         top: 155px;
         position: absolute;
         left: 57px;
     }
-    div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a {
-        display: inline-block;
-        float: left;
-        width: 10px;
-        height: 10px;
-        background-color: #d7d7d7;
-        text-indent: -99999px;
-        margin: 10px 4px;
-        border-radius: 10px;
-    }
-        div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a.active {
-            background-color: #d11e26;
+
+        div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a {
+            display: inline-block;
+            float: left;
+            width: 10px;
+            height: 10px;
+            background-color: #d7d7d7;
+            text-indent: -99999px;
+            margin: 10px 4px;
+            border-radius: 10px;
         }
+
+            div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a.active {
+                background-color: #d11e26;
+            }
+
 div#left-main .left-main-zhuanti .left-main-zhuanti-past {
     border-bottom: 1px solid #acacac;
 }
-div#left-main .left-main-zhuanti .left-main-zhuanti-past ul li {
-    height:30px;
-    line-height:30px;
-}
-div#left-main .left-main-zhuanti .left-main-zhuanti-past a {
-    color:black;
-    font-size:16px;
-    text-decoration:none;
-}
-    div#left-main .left-main-zhuanti .left-main-zhuanti-past a:hover {
-        color: #ec7f16;
+
+    div#left-main .left-main-zhuanti .left-main-zhuanti-past ul li {
+        height: 30px;
+        line-height: 30px;
     }
+
+    div#left-main .left-main-zhuanti .left-main-zhuanti-past a {
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+        div#left-main .left-main-zhuanti .left-main-zhuanti-past a:hover {
+            color: #ec7f16;
+        }
 
 div#header .header-content {
     width: 1200px;
@@ -625,6 +698,7 @@ div#header .header-content {
     z-index: 9999;
     margin-top: -9px;
 }
+
 #wechat_skyphone {
     width: 90px;
     height: 90px;
@@ -634,7 +708,154 @@ div#header .header-content {
     z-index: 9999;
     margin-top: -9px;
 }
+
 .news-content iframe {
     width: 300px;
     height: 195px;
 }
+/* NEWS Channel Exchange Links */
+
+.links {
+    margin: 15px 0px;
+    width: 948px;
+    border: 1px solid #AAA;
+    padding: 0px 0px 8px 0px;
+    overflow: hidden;
+}
+
+    .links h3 {
+        font: bold 12px/14px '&Icirc;&cent;&Egrave;í&Ntilde;&Aring;&ordm;&Uacute;', &Euml;
+        &Icirc;
+        &Igrave;
+        &aring;
+        , Hei;
+        padding: 8px 0 1px 12px;
+        color: #D12026;
+        display: block;
+    }
+
+    .links a {
+        float: left;
+        display: inline;
+        width: 96px;
+        margin: 8px 2px 0px 3px;
+        border: 2px solid #FFF;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .links a:hover {
+            border-color: #CCC;
+        }
+
+    .links img {
+        max-width: 96px;
+        max-height: 30px;
+        border: 0px;
+    }
+
+
+
+/* footer CSS */
+
+#footer {
+    line-height: 22px;
+    text-align: center;
+    background: #FFF;
+    width: 950px;
+    text-decoration: none;
+    margin: 50px 0px;
+}
+
+    #footer > p > a {
+        text-decoration: none;
+        color: #6b6b6b;
+    }
+
+        #footer > p > a:hover {
+            color: #ec7f16;
+        }
+
+    #footer .ico {
+        background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
+        padding-left: 15px;
+    }
+
+.copyright {
+    font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
+}
+
+#part3 {
+    height: 65px;
+    margin: 15px 0px;
+    background: #DDD;
+    overflow: hidden;
+}
+
+#jumpMenu {
+    height: 20px;
+    margin: 0px 0px 0px 15px;
+    font-size: 12px;
+    width: 180px;
+    vertical-align: bottom;
+}
+
+.mg15 {
+    margin-top: 22px;
+    margin-left: 32px;
+    vertical-align: bottom; /*地步对其*/
+}
+
+/* 底部广告导航 */
+.foot-banner-nav {
+    float: left;
+    width: 300px;
+    height: 60px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+    .foot-banner-nav ul {
+        overflow: hidden;
+        display: block;
+    }
+
+    .foot-banner-nav > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 10px;
+    }
+
+        .foot-banner-nav > ul > li {
+            float: left;
+            margin: 0 14px 17px;
+        }
+
+            .foot-banner-nav > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #444545;
+            }
+
+.foot-banner-nav-s {
+    float: left;
+    width: 110px;
+    height: 60px;
+    overflow: hidden;
+}
+
+    .foot-banner-nav-s > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 13px;
+    }
+
+        .foot-banner-nav-s > ul > li {
+            /*margin: left;*/
+            margin: 0 14px 15px;
+        }
+
+            .foot-banner-nav-s > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #f5842b;
+            }

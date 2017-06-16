@@ -4,15 +4,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <title>新西兰天维网_新西兰最大的中文网络门户</title>
-    <link href="http://cms6.skykiwi.com/css/common.css" rel="stylesheet" />
-    <link href="NewIndex.css" rel="stylesheet" />
-    <link href="http://cms6.skykiwi.com/css/FocusPicNew-v1.0.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
+
+    <link href="newindex.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/FocusPicNew-v1.0.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
-    <script src="http://cms6.skykiwi.com/js/FocusPicNew-v1.0.js"></script>
-    <script src="http://cms6.skykiwi.com/js/slideshow.js"></script>
+    <script src="http://www.skykiwi.com/js/FocusPicNew-v1.0.js"></script>
+    <script src="http://www.skykiwi.com/js/slideshow.js"></script>
     <script type="text/javascript">
+        (function () {
+            $(window).scroll(function () {
+                var leftnav = $("#left-main");
+                var divheight = leftnav.height();
+                var winheight = $(window).height();
+                var scrollheight = $(window).scrollTop();
+
+                var dvalue = divheight - winheight;
+
+                if (scrollheight < dvalue) {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = (-scrollheight + 312) + "px";
+                }
+                if (scrollheight >= dvalue) {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = (-dvalue) + "px";
+                }
+            });
+        })(jQuery);
+
         $(document).ready(function () {
-            // begin
             $('#newsSlide').slideBox({
                 duration: 0.3,
                 easing: 'swing',
@@ -20,7 +40,7 @@
                 hideClickBar: false,
                 clickBarRadius: 10,
                 width: 600,
-                height: 280
+                height: 318
             });
         });
     </script>
@@ -114,7 +134,7 @@
                 <li><a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
                 <li><a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a></li>
                 <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
-                <li ><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
+                <li><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
                 <li><a href="http://d.skykiwi.com" target="_self" title="新西兰网址导航，新西兰百科知识，新西兰商家查询 - 点击进入新西兰网址导航频道">导航</a></li>
                 <li><a href="http://shop.skykiwi.com" target="_blank" title="新西兰比价购物频道 - 为您节省每一分钱，方便的网上比价购物体验 - 点击进入天维价格比较频道 / 合作网站 PriceMe">比价</a></li>
                 <li style="border:none;"><a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a></li>
@@ -162,10 +182,10 @@
                 <div style="clear:both"></div>
                 <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:11px;margin-right:8px" />
                 <div class="left-main-zhuanti-body">
-                    [e:loop={'203',4,12,0}]
+                    [e:loop={'228',2,0,0}]
                     <ul data-index="<?=$bqno?>">
                         <li>
-                            <a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[ftitle]?>">
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank"  title="<?=$bqr[ftitle]?>">
                                 <img width="185" height="185" src="<?=$bqsr[titlepic]?>">
                             </a>
                         </li>
@@ -185,8 +205,6 @@
                     <div class="left-main-zhuanti-body-tips" style="height:30px;">
                         <a href="javascript:void(0);" data-index='1'>1</a>
                         <a href="javascript:void(0);" data-index='2'>2</a>
-                        <a href="javascript:void(0);" data-index='3'>3</a>
-                        <a href="javascript:void(0);" data-index='4'>4</a>
                     </div>
                 </div>
                 <script type="text/javascript">
@@ -197,7 +215,7 @@
                         function go() {
                             var dataindex = parseInt($(".left-main-zhuanti-body ul:visible").attr("data-index"));
                             dataindex = dataindex + 1;
-                            if (dataindex > 4) {
+                            if (dataindex > 2) {
                                 dataindex = 1;
                             }
                             $(".left-main-zhuanti-body-tips a[data-index='" + dataindex + "']").addClass('active').siblings().removeClass('active');
@@ -210,7 +228,7 @@
                     <h2 style="font-size:18px;color:#e7040b;width:100px;margin-left:12px;letter-spacing: 2px;font-weight:bold;margin-top:10px; margin-bottom:10px">往期专题</h2>
                     <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:11px;margin-right:8px" />
                     <ul style="margin: 10px 10px 20px 10px ">
-                        [e:loop={'203',3,0,0}]
+                        [e:loop={'select * from phome_ecms_news where classid = 228 order by newstime desc limit 2,3', 3, 24, 0}]
                         <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],20)?></a></li>
                         [/e:loop]
                     </ul>
@@ -220,296 +238,337 @@
             <div class="left-main-shudu">
                 <img src="newImage/sky-shudu.jpg" style="margin:20px 0;display:block;" />
                 <ul style="margin-bottom:25px;">
-                    <li>2012年新西兰人上网习惯调查</li>
-                    <li>世界捐助指数2010-2011</li>
-                    <li>世界竞争力（2012）</li>
-                    <li>人工流产手术2005-2011</li>
-                    <li>十年维和路</li>
+                    [fillblank]227,5,80[/fillblank]
                 </ul>
             </div>
             <div class="left-main-nianjie">
                 <img src="newImage/sky-nianjie.jpg" style="margin:20px 0;display:block;" />
                 <ul style="margin-bottom:26px;">
-                    <li>2014</li>
+                    <li>2016</li>
                     <li>2015</li>
-                    <li style="border:none">2016</li>
+                    <li style="border:none"><a href="http://news.skykiwi.com/na/zh/2016-12-21/232740.shtml" target="_blank" title="2014新西兰年鉴">2014</a></li>
                     <div style="clear:both"></div>
                 </ul>
             </div>
             <div class="left-main-niandu">
                 <img src="newImage/sky-niandu.jpg" style="margin:15px 0;display:block;" />
                 <ul style="margin-bottom:26px;">
-                    <li>2010</li>
-                    <li>2011</li>
-                    <li>2012</li>
-                    <li>2013</li>
-                    <li>2014</li>
-                    <li>2015</li>
-                    <li>2016</li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2016-12-21/232740.shtml" target="_blank" title="2016年度新闻年终总结">2016</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2015-11-12/208058.shtml" target="_blank" title="2015年度新闻年终总结">2015</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2014-12-20/191000.shtml" target="_blank" title="2014年度新闻年终总结">2014</a></li>
+                    <li><a href="http://www.skykiwi.com/2013news/" target="_blank" title="2013年度新闻年终总结">2013</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2012-12-21/152579.shtml" target="_blank" title="2012年度新闻年终总结">2012</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2011-12-22/132536.shtml" target="_blank" title="2011年度新闻年终总结">2011</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2010-12-23/114288.shtml" target="_blank" title="2010年度新闻年终总结">2010</a></li>
                     <div style="clear:both"></div>
                 </ul>
             </div>
-        
+
         </div>
-        <div id="center-main" style="float:left;margin-left:48px">
-            <div id="newsSlide" class="border slideBox" style="width: 600px; height: 280px;">
-                <div class="toptittle">天维独家</div>
-                <ul class="items" style="width: 3600px; left: -600px;">
-                    [e:loop={'3,10',4,2,1}]
-                    <li style="width: 600px; height: 250px;">
-                        <a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[ftitle]?>">
-                            <img width="600" height="250" src="<?=$bqr[titlepic]?>">
+        <div style="width:1000px;float:right">
+            <div id="center-main" style="margin-left:48px;">
+                <div id="newsSlide" class="border slideBox" style="width: 600px; height: 318px;">
+                    <div class="toptittle">天维独家</div>
+                    <ul class="items" style="width: 3600px; left: -600px;">
+                        [e:loop={'3,10',4,2,1}]
+                        <li style="width: 600px; height: 288px;">
+                            <a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[ftitle]?>">
+                                <img width="600" height="288" src="<?=$bqr[titlepic]?>">
+                            </a>
+                        </li>
+                        [/e:loop]
+                    </ul>
+                </div>
+                <div id="top-newlist">
+                    <ul style="margin-top:10px">
+                        [e:loop={'3,10',6,12,0}]
+                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],30)?></a></li>
+                        [/e:loop]
+                        <div style="clear:both"></div>
+                    </ul>
+                </div>
+
+                <div style="height:50px; width:600px;margin:20px 0">
+                    <img src="newImage/banner2.png" />
+                </div>
+                <ul id="ul-new-list">
+                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit 0,4', 4, 24, 1}]
+                    <li class="list-news-item">
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                            <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
                         </a>
+                        <dl>
+                            <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
+                            <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
+                            <dd>
+                                <?php $naclassid = array("4","5","6","7","8","9");
+                                $hqclassid = array("14","15","16","17","18","19");
+                                $tzclassid = array("49","50","51","52","53","160","161");
+                                $ymclassid = array("110","111","112","113","114","115","116");
+                                if(in_array($bqr[classid],$naclassid,true)){
+                                echo ('
+                                <span class="list-news-item-category">纽澳新闻</span>');
+                                }
+                                elseif(in_array($bqr[classid],$hqclassid,true)){
+                                echo ('
+                                <span class="list-news-item-category">环球报道</span>');
+                                }
+                                elseif(in_array($bqr[classid],$tzclassid,true)){
+                                echo ('
+                                <span class="list-news-item-category">投资频道</span>');
+                                }
+                                elseif(in_array($bqr[classid],$ymclassid,true)){
+                                echo ('
+                                <span class="list-news-item-category">留学移民</span>');
+                                }
+
+                                if (!empty($bqr[keyboard])){
+                                $keywordlist = explode(',',$bqr[keyboard]);
+                                foreach($keywordlist as $value){
+                                echo("
+                                <span class='list-news-item-word'>$value</span>");
+                                }
+                                }
+                                ?>
+                            </dd>
+                        </dl>
+                    </li>
+                    [/e:loop]
+
+                    <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
+                        <dl>
+                            <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
+                            <dd style="height:120px;display:inline-block;margin:15px 0">
+                                <img width="190" src="/newImage/new190.jpg" />
+                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                            </dd>
+                            <dd>
+                                <span class="list-news-item-category">环球报道</span>
+                                <span class="list-news-item-word">明星</span>
+                                <span style="float:right">时间：2017年4月20日15：00pm</span>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="list-news-item" style="height:200px; padding:24px 0">
+                        <img height="200" src="/newImage/banner001_03.jpg" />
+                    </li>
+                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit 4,4', 4, 24, 1}]
+                    <li class="list-news-item">
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                            <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
+                        </a>
+                        <dl>
+                            <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
+                            <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
+                            <dd>
+                                <?php $naclassid = array("4","5","6","7","8","9");
+                                $hqclassid = array("14","15","16","17","18","19");
+                                $tzclassid = array("49","50","51","52","53","160","161");
+                                $ymclassid = array("110","111","112","113","114","115","116");
+                                if(in_array($bqr[classid],$naclassid,true)){
+                                echo ('
+                                <span class="list-news-item-category">纽澳新闻</span>');
+                                }
+                                elseif(in_array($bqr[classid],$hqclassid,true)){
+                                echo ('
+                                <span class="list-news-item-category">环球报道</span>');
+                                }
+                                elseif(in_array($bqr[classid],$tzclassid,true)){
+                                echo ('
+                                <span class="list-news-item-category">投资频道</span>');
+                                }
+                                elseif(in_array($bqr[classid],$ymclassid,true)){
+                                echo ('
+                                <span class="list-news-item-category">留学移民</span>');
+                                }
+
+                                if (!empty($bqr[keyboard])){
+                                $keywordlist = explode(',',$bqr[keyboard]);
+                                foreach($keywordlist as $value){
+                                echo("
+                                <span class='list-news-item-word'>$value</span>");
+                                }
+                                }
+                                ?>
+                            </dd>
+                        </dl>
+                    </li>
+                    [/e:loop]
+                    <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
+                        <dl>
+                            <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
+                            <dd style="height:120px;display:inline-block;margin:15px 0">
+                                <img width="190" src="/newImage/new190.jpg" />
+                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                            </dd>
+                            <dd>
+                                <span class="list-news-item-category">环球报道</span>
+                                <span class="list-news-item-word">明星</span>
+                                <span style="float:right">时间：2017年4月20日15：00pm</span>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li class="list-news-item" style="height:200px; padding:24px 0">
+                        <img height="200" src="/newImage/banner001_03.jpg" />
+                    </li>
+                    <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
+                        <dl>
+                            <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
+                            <dd style="height:120px;display:inline-block;margin:15px 0">
+                                <img width="190" src="/newImage/new190.jpg" />
+                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                            </dd>
+                            <dd>
+                                <span class="list-news-item-category">环球报道</span>
+                                <span class="list-news-item-word">明星</span>
+                                <span style="float:right">时间：2017年4月20日15：00pm</span>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li class="list-news-item" style="height:200px; padding:24px 0">
+                        <img height="200" src="/newImage/banner001_03.jpg" />
+                    </li>
+                    <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
+                        <dl>
+                            <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
+                            <dd style="height:120px;display:inline-block;margin:15px 0">
+                                <img width="190" src="/newImage/new190.jpg" />
+                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
+                            </dd>
+                            <dd>
+                                <span class="list-news-item-category">环球报道</span>
+                                <span class="list-news-item-word">明星</span>
+                                <span style="float:right">时间：2017年4月20日15：00pm</span>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li class="list-news-item" style="height:200px; padding:24px 0">
+                        <img height="200" src="/newImage/banner001_03.jpg" />
+                    </li>
+
+                </ul>
+                <div class="newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
+              
+            </div>
+            <div id="right-main">
+                <div class="news-title">
+                    新闻视频
+                </div>
+                <div class="news-content" style="width:300px;height:195px">
+                    [e:loop={'214',1,12,0}]
+                    <?=$bqsr[smalltext]?>
+                    [/e:loop]
+                </div>
+                <ul class="newlist">
+                    [e:loop={'173,174',3,2,1}]
+                    <li>
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a>
                     </li>
                     [/e:loop]
                 </ul>
-            </div>
-            <div id="top-newlist">
-                <ul style="margin-top:10px">
-                    [e:loop={'3,10',6,12,0}]
-                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],30)?></a></li>
-                    [/e:loop]
-                    <div style="clear:both"></div>
-                </ul>
-            </div>
-
-            <div style="height:50px; width:600px;margin:20px 0">
-                <img src="newImage/banner2.png" />
-            </div>
-            <ul id="ul-new-list">
-                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit 0,4', 4, 24, 1}]
-                <li class="list-news-item">
-                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                        <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
-                    </a>
-                    <dl>
-                        <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                        <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
-                        <dd>
-                            <?php $naclassid = array("4","5","6","7","8","9");
-                            $hqclassid = array("14","15","16","17","18","19");
-                            $tzclassid = array("49","50","51","52","53","160","161");
-                            $ymclassid = array("110","111","112","113","114","115","116");
-                            if(in_array($bqr[classid],$naclassid,true)){
-                            echo ('
-                            <span class="list-news-item-category">纽澳新闻</span>');
-                            }
-                            elseif(in_array($bqr[classid],$hqclassid,true)){
-                            echo ('
-                            <span class="list-news-item-category">环球报道</span>');
-                            }
-                            elseif(in_array($bqr[classid],$tzclassid,true)){
-                            echo ('
-                            <span class="list-news-item-category">投资频道</span>');
-                            }
-                            elseif(in_array($bqr[classid],$ymclassid,true)){
-                            echo ('
-                            <span class="list-news-item-category">留学移民</span>');
-                            }
-
-                            if (!empty($bqr[keyboard])){
-                            $keywordlist = explode(',',$bqr[keyboard]);
-                            foreach($keywordlist as $value){
-                            echo("
-                            <span class='list-news-item-word'>$value</span>");
-                            }
-                            }
-                            ?>
-                        </dd>
-                    </dl>
-                </li>
-                [/e:loop]
-
-                <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
-                    <dl>
-                        <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
-                        <dd style="height:120px;display:inline-block;margin:15px 0">
-                            <img width="190" src="/newImage/new190.jpg" />
-                            <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                            <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                        </dd>
-                        <dd>
-                            <span class="list-news-item-category">环球报道</span>
-                            <span class="list-news-item-word">明星</span>
-                            <span style="float:right">时间：2017年4月20日15：00pm</span>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="list-news-item" style="height:200px; padding:24px 0">
-                    <img height="200" src="/newImage/banner001_03.jpg" />
-                </li>
-                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit 4,4', 4, 24, 1}]
-                <li class="list-news-item">
-                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                        <img width="140" height="75" src="<?=$bqr[titlepic]?>" />
-                    </a>
-                    <dl>
-                        <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                        <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
-                        <dd>
-                            <?php $naclassid = array("4","5","6","7","8","9");
-                            $hqclassid = array("14","15","16","17","18","19");
-                            $tzclassid = array("49","50","51","52","53","160","161");
-                            $ymclassid = array("110","111","112","113","114","115","116");
-                            if(in_array($bqr[classid],$naclassid,true)){
-                            echo ('
-                            <span class="list-news-item-category">纽澳新闻</span>');
-                            }
-                            elseif(in_array($bqr[classid],$hqclassid,true)){
-                            echo ('
-                            <span class="list-news-item-category">环球报道</span>');
-                            }
-                            elseif(in_array($bqr[classid],$tzclassid,true)){
-                            echo ('
-                            <span class="list-news-item-category">投资频道</span>');
-                            }
-                            elseif(in_array($bqr[classid],$ymclassid,true)){
-                            echo ('
-                            <span class="list-news-item-category">留学移民</span>');
-                            }
-
-                            if (!empty($bqr[keyboard])){
-                            $keywordlist = explode(',',$bqr[keyboard]);
-                            foreach($keywordlist as $value){
-                            echo("
-                            <span class='list-news-item-word'>$value</span>");
-                            }
-                            }
-                            ?>
-                        </dd>
-                    </dl>
-                </li>
-                [/e:loop]
-                <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
-                    <dl>
-                        <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
-                        <dd style="height:120px;display:inline-block;margin:15px 0">
-                            <img width="190" src="/newImage/new190.jpg" />
-                            <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                            <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                        </dd>
-                        <dd>
-                            <span class="list-news-item-category">环球报道</span>
-                            <span class="list-news-item-word">明星</span>
-                            <span style="float:right">时间：2017年4月20日15：00pm</span>
-                        </dd>
-                    </dl>
-                </li>
-
-                <li class="list-news-item" style="height:200px; padding:24px 0">
-                    <img height="200" src="/newImage/banner001_03.jpg" />
-                </li>
-            </ul>
-            <div class="newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
-
-        </div>
-        <div id="right-main">
-            <div class="news-title">
-                新闻视频
-            </div>
-            <div class="news-content" style="width:300px;height:195px">
-                [e:loop={'214',1,12,0}]
-                <?=$bqsr[smalltext]?>
-                [/e:loop]
-            </div>
-            <ul class="newlist">
-                [e:loop={'173,174',3,2,1}]
-                <li>
-                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a>
-                </li>
-                [/e:loop]
-            </ul>
-            <script type="text/javascript">
+                <script type="text/javascript">
                     $(function () {
                         $(".newlist:eq(0)").css("color", "f20626");
                     })
-            </script>
-            <div style="margin:20px 0;height:285px">
-                <img alt="" style="display:block;" src="/newImage/newbanner.jpg" />
-            </div>
-            <div style="margin:30px 0;height:250px">
-                <img alt="" style="display:block;" src="/newImage/banner2_03.jpg" />
-            </div>
-            <ul class="column-list">
-                <li>
-                    <div>新西兰总理比尔英格利希专栏</div>
-                    <img width="120" height="225" src="newImage/0.png" />
-                    <ul class="column-itemlist">
-                        [e:loop={'62',4,0,0}]
-                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
-                        [/e:loop]
-                    </ul>
-                    <div style="clear:both;height:0px;border:0px"></div>
-                </li>
-                <li>
-                    <div>国家党国会议员杨健专栏</div>
-                    <img width="120" height="225" src="newImage/1.png" />
-                    <ul class="column-itemlist">
-                        [e:loop={'63',4,0,0}]
-                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
-                        [/e:loop]
-                    </ul>
-                    <div style="clear:both;height:0px;border:0px"></div>
-                </li>
-                <li>
-                    <div>工党专栏</div>
-                    <img width="120" height="225" src="newImage/2.png" />
-                    <ul class="column-itemlist">
-                        [e:loop={'64',4,0,0}]
-                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
-                        [/e:loop]
-                    </ul>
-                    <div style="clear:both;height:0px;border:0px"></div>
-                </li>
-                <li>
-                    <div>行动党党魁大卫西蒙专栏</div>
-                    <img width="120" height="225" src="newImage/3.png" />
-                    <ul class="column-itemlist">
-                        [e:loop={'61',4,0,0}]
-                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
-                        [/e:loop]
-                    </ul>
-                    <div style="clear:both;height:0px;border:0px"></div>
-                </li>
-            </ul>
-            <div style="height:250px;width:300px">
-                <img src="newImage/banner4_18.jpg" style="display:block" />
-            </div>
-            <div class="news-title" style="margin-top:20px">
-                直播
-            </div>
-            <!-- START: SLIDESHOW -->
-            <div class="comiis_wrapad" id="slideContainer">
-                <div id="frameHlicAe" class="frame cl">
-                    <div class="temp"></div>
-                    <div class="block">
-                        <div class="cl">
-                            <ul class="slideshow" id="slidesImgs">
-                                [e:loop={'208',4,2,1}]
-                                <li>
-                                    <a href="<?=$bqsr[titleurl]?>" target="_blank">
-                                        <img src="<?=$bqr[titlepic]?>" width="284" height="201" alt="" />
-                                    </a><a href="<?=$bqsr[titleurl]?>" target="_blank"><span class="title"><?=esub($bqr[ftitle],38)?></span></a>
-                                </li>
-                                [/e:loop]
-                            </ul>
-                        </div>
-                        <div class="slidebar" id="slideBar">
-                            <ul>
-                                <li class="on">1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                            </ul>
-                        </div>
-                    </div>
+                </script>
+                <div style="margin:20px 0;height:285px">
+                    <img alt="" style="display:block;" src="/newImage/newbanner.jpg" />
+                </div>
+                <div style="margin:30px 0;height:250px">
+                    <img alt="" style="display:block;" src="/newImage/banner2_03.jpg" />
+                </div>
+                <ul class="column-list">
+                    <li>
+                        <div>新西兰总理比尔英格利希专栏</div>
+                        <img width="120" height="225" src="newImage/0.png" />
+                        <ul class="column-itemlist">
+                            [e:loop={'62',4,0,0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            [/e:loop]
+                        </ul>
+                        <div style="clear:both;height:0px;border:0px"></div>
+                    </li>
+                    <li>
+                        <div>国家党国会议员杨健专栏</div>
+                        <img width="120" height="225" src="newImage/1.png" />
+                        <ul class="column-itemlist">
+                            [e:loop={'63',4,0,0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            [/e:loop]
+                        </ul>
+                        <div style="clear:both;height:0px;border:0px"></div>
+                    </li>
+                    <li>
+                        <div>工党专栏</div>
+                        <img width="120" height="225" src="newImage/2.png" />
+                        <ul class="column-itemlist">
+                            [e:loop={'64',4,0,0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            [/e:loop]
+                        </ul>
+                        <div style="clear:both;height:0px;border:0px"></div>
+                    </li>
+                    <li>
+                        <div>行动党党魁大卫西蒙专栏</div>
+                        <img width="120" height="225" src="newImage/3.png" />
+                        <ul class="column-itemlist">
+                            [e:loop={'61',4,0,0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            [/e:loop]
+                        </ul>
+                        <div style="clear:both;height:0px;border:0px"></div>
+                    </li>
+                    <li>
+                        <div>中华人民共和国驻新西兰大使馆</div>
+                        <ul class="column-itemdasiguanlist">
+                            [e:loop={'124',5,0,0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
+                            [/e:loop]
+                        </ul>
+                    </li>
+                    <li>
+                        <div>中华人民共和国驻奥克兰总领事馆</div>
+                        <ul class="column-itemdasiguanlist">
+                            [e:loop={'125',5,0,0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
+                            [/e:loop]
+                        </ul>
+                    </li>
+                    <li>
+                        <div>中华人民共和国驻克赖斯特彻奇总领馆</div>
+                        <ul class="column-itemdasiguanlist">
+                            [e:loop={'64',5,0,0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
+                            [/e:loop]
+                        </ul>
+                    </li>
+                </ul>
+
+                <div style="height:250px;width:300px">
+                    <img src="newImage/banner4_18.jpg" style="display:block" />
                 </div>
             </div>
-            <script>
-                    SlideShow(3000);
-            </script>
-            <!-- END: SLIDESHOW -->
+            <div class="links" style="float:right">
+                <h3>友情媒体</h3>
+                <a href="http://www.people.com.cn" target="_blank" title="人民网"><img src="http://www.skykiwi.com/home2011/images/link/logo-people.jpg"></a>
+                <a href="http://huaren.haiwainet.cn/" target="_blank" title="海外网"><img src="http://www.skykiwi.com/home2011/images/link/logo-haiwainet.jpg"></a>
+                <a href="http://www.aptimes.nz" target="_blank" title="中新时报"><img src="http://www.skykiwi.com/home2011/images/link/logo-asia-pacific-time.jpg"></a>
+            </div>
+            <div style="clear:both"></div>
+            <div id="footer" style="float: right;">
+                <p><a href="http://em.skykiwi.com/aboutus.html" target="_blank" class="ico"> 关于天维</a> | <a href="http://em.skykiwi.com/english.html" target="_blank">About Us</a> | <a href="http://em.skykiwi.com/termsofuse.html" target="_blank">使用条款</a> | <a href="http://em.skykiwi.com/privacy.html" target="_blank">隐私声明</a> | <a href="http://em.skykiwi.com" target="_blank">广告服务</a> | <a href="http://em.skykiwi.com/contactus.html" target="_blank">联系我们</a> | <a href="http://em.skykiwi.com/aboutus_join.html" target="_blank">招贤纳士</a> | <a href="http://bbs.skykiwi.com/member.php?mod=regsky.php" target="_blank">会员注册</a></p>
+                <p><span>©&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
+            </div>
+            <div style="clear:both"></div>
         </div>
+      
         <div style="clear:both"></div>
     </div>
 </body>
