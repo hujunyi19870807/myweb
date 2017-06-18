@@ -254,7 +254,14 @@ div#right-main .column-list {
         letter-spacing: 1px;
         margin-bottom: 10px;
     }
-
+    div#right-main .column-list li p {
+        font-size: 10px;
+        font-weight: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        margin-top: -7px;
+        color:#404040;
+    }
     div#right-main .column-list li dl {
         width: 120px
     }
@@ -721,6 +728,7 @@ div#header .header-content {
     border: 1px solid #AAA;
     padding: 0px 0px 8px 0px;
     overflow: hidden;
+    float:right;
 }
 
     .links h3 {
@@ -766,6 +774,7 @@ div#header .header-content {
     width: 950px;
     text-decoration: none;
     margin: 50px 0px;
+    float:right;
 }
 
     #footer > p > a {

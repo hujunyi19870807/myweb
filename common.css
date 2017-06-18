@@ -11,13 +11,14 @@ body {
     font-family: "Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
 }
 
-.clearfix {
-    *zoom: 1;
-}
+.clearfix:before, 
 
-    .clearfix:before,
-    .clearfix:after {
-        display: table;
-        line-height: 0;
-        content: "";
-    }
+.clearfix:after { 
+  display: table; 
+  line-height: 0; 
+  content: ""; 
+} 
+
+.clearfix:after { 
+  clear: both; 
+} 

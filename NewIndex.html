@@ -142,7 +142,7 @@
         </div>
     </div>
     <div id="maincontent">
-        <div id="left-main">
+        <div id="left-main" class="clearfix">
             <div class="left-main-personalstory">
                 [e:loop={'123',1,2,1}]
                 <a href="<?=$bqr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
@@ -265,7 +265,7 @@
             </div>
 
         </div>
-        <div style="width:1000px;float:right">
+        <div style="width:1000px;float:right" class="clearfix">
             <div id="center-main" style="margin-left:48px;">
                 <div id="newsSlide" class="border slideBox" style="width: 600px; height: 318px;">
                     <div class="toptittle">天维独家</div>
@@ -484,7 +484,7 @@
                 <div style="margin:30px 0;height:250px">
                     <img alt="" style="display:block;" src="/newImage/banner2_03.jpg" />
                 </div>
-                <ul class="column-list">
+                <ul class="column-list clearfix">
                     <li>
                         <div>新西兰总理比尔英格利希专栏</div>
                         <img width="120" height="225" src="newImage/0.png" />
@@ -493,7 +493,6 @@
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
                             [/e:loop]
                         </ul>
-                        <div style="clear:both;height:0px;border:0px"></div>
                     </li>
                     <li>
                         <div>国家党国会议员杨健专栏</div>
@@ -503,7 +502,6 @@
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
                             [/e:loop]
                         </ul>
-                        <div style="clear:both;height:0px;border:0px"></div>
                     </li>
                     <li>
                         <div>工党专栏</div>
@@ -513,7 +511,6 @@
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
                             [/e:loop]
                         </ul>
-                        <div style="clear:both;height:0px;border:0px"></div>
                     </li>
                     <li>
                         <div>行动党党魁大卫西蒙专栏</div>
@@ -523,10 +520,11 @@
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
                             [/e:loop]
                         </ul>
-                        <div style="clear:both;height:0px;border:0px"></div>
                     </li>
                     <li>
-                        <div>中华人民共和国驻新西兰大使馆</div>
+                        <div style="height:66px">中华人民共和国驻新西兰大使馆
+                        <p>THE EMBASSY OF THE PEOPLE'S REPUBLIC OF CHINA IN NEW ZEALAND</p>
+                        </div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'124',5,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
@@ -534,7 +532,8 @@
                         </ul>
                     </li>
                     <li>
-                        <div>中华人民共和国驻奥克兰总领事馆</div>
+                        <div style="height:66px">中华人民共和国驻奥克兰总领事馆
+                        <p>CONSULATE-GENERAL OF THE PEOPLE'S REPUBLIC OF CHINA IN AUCKLAND</p></div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'125',5,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
@@ -542,7 +541,8 @@
                         </ul>
                     </li>
                     <li>
-                        <div>中华人民共和国驻克赖斯特彻奇总领馆</div>
+                        <div style="height:66px">中华人民共和国驻克赖斯特彻奇总领馆
+                        <p>CONSULATE-GENERAL OF THE PEOPLE'S REPUBLIC OF CHINA IN CHRISTCHURCH</p></div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'64',5,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
@@ -555,21 +555,17 @@
                     <img src="newImage/banner4_18.jpg" style="display:block" />
                 </div>
             </div>
-            <div class="links" style="float:right">
+            <div class="links clearfix">
                 <h3>友情媒体</h3>
                 <a href="http://www.people.com.cn" target="_blank" title="人民网"><img src="http://www.skykiwi.com/home2011/images/link/logo-people.jpg"></a>
                 <a href="http://huaren.haiwainet.cn/" target="_blank" title="海外网"><img src="http://www.skykiwi.com/home2011/images/link/logo-haiwainet.jpg"></a>
                 <a href="http://www.aptimes.nz" target="_blank" title="中新时报"><img src="http://www.skykiwi.com/home2011/images/link/logo-asia-pacific-time.jpg"></a>
             </div>
-            <div style="clear:both"></div>
-            <div id="footer" style="float: right;">
+            <div id="footer" class="clearfix">
                 <p><a href="http://em.skykiwi.com/aboutus.html" target="_blank" class="ico"> 关于天维</a> | <a href="http://em.skykiwi.com/english.html" target="_blank">About Us</a> | <a href="http://em.skykiwi.com/termsofuse.html" target="_blank">使用条款</a> | <a href="http://em.skykiwi.com/privacy.html" target="_blank">隐私声明</a> | <a href="http://em.skykiwi.com" target="_blank">广告服务</a> | <a href="http://em.skykiwi.com/contactus.html" target="_blank">联系我们</a> | <a href="http://em.skykiwi.com/aboutus_join.html" target="_blank">招贤纳士</a> | <a href="http://bbs.skykiwi.com/member.php?mod=regsky.php" target="_blank">会员注册</a></p>
                 <p><span>©&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
             </div>
-            <div style="clear:both"></div>
         </div>
-      
-        <div style="clear:both"></div>
     </div>
 </body>
 </html>
