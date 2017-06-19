@@ -4,7 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <title>天维新版首页beta</title>
-    <link href="http://www.skykiwi.com/css/index-20170701.css?001" rel="stylesheet" />
+
+    <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/index-20170701.css" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
@@ -404,14 +406,39 @@
                     </div>
 
                     <ul id="ul-new-list">
-                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=1 order by newstime desc limit 0,1', 4, 24, 1}]
-                        <li class="list-news-item">
-                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
-                            </a>
-                            <dl>
-                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
+                        <li class="list-news-item clearfix">
+                            [e:loop={'select * from phome_ecms_news where classid =231 and checked=1 order by newstime desc limit 2', 1, 24, 1}]
+                                <?php
+                                        if($bqno==1){
+                                ?>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <img width="150" height="200" src="<?=$bqr[titlepic]?>" />
+                                </a>
+                                <dl>
+                                    <dt style="margin-top:-3px"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=esub($bqr[title],44)?></a></dt>
+                                    <dd>
+                                        <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">维度</a>
+                                        &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                    </dd>
+                                <?php
+                                } else {
+                                ?>
+                                <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
+                                <dd><a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">维度</a>
+                                            &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                </dd>
+                                <?php
+                                }
+                                ?>
+
+                                [/e:loop]
+
+                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1
+                                and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
+                                and checked=1 and havehtml=1 and orderid IN (1,2,3)
+                                GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
+                                order by newstime desc limit 2', 2, 24, 1}]
+                                <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
                                 <dd>
                                     <?php $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19");
@@ -419,138 +446,81 @@
                                     $ymclassid = array("110","111","112","113","114","115","116");
                                     if(in_array($bqr[classid],$naclassid,true)){
                                     echo ('
-                                    <span class="list-news-item-category">纽澳新闻</span>');
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>');
                                     }
                                     elseif(in_array($bqr[classid],$hqclassid,true)){
                                     echo ('
-                                    <span class="list-news-item-category">环球报道</span>');
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>');
                                     }
                                     elseif(in_array($bqr[classid],$tzclassid,true)){
                                     echo ('
-                                    <span class="list-news-item-category">投资频道</span>');
+                                    <a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>');
                                     }
                                     elseif(in_array($bqr[classid],$ymclassid,true)){
                                     echo ('
-                                    <span class="list-news-item-category">留学移民</span>');
+                                    <a class="list-news-item-category" href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">留学移民</a>');
                                     }
-
                                     ?>
+                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
                                 </dd>
+                                [/e:loop]
                             </dl>
                         </li>
-                        [/e:loop]
-                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=2 order by newstime desc limit 0,1', 4, 24, 1}]
-                        <li class="list-news-item">
-                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
-                            </a>
-                            <dl>
-                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
-                                <dd>
-                                    <?php $naclassid = array("4","5","6","7","8","9");
-                                    $hqclassid = array("14","15","16","17","18","19");
-                                    $tzclassid = array("49","50","51","52","53","160","161");
-                                    $ymclassid = array("110","111","112","113","114","115","116");
-                                    if(in_array($bqr[classid],$naclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">纽澳新闻</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$hqclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">环球报道</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$tzclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">投资频道</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$ymclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">留学移民</span>');
-                                    }
 
 
-                                    ?>
-                                </dd>
-                            </dl>
+                        <?php
+                            for ($x=1; $x<=5; $x++) {
+                        ?>
+                            <li class="list-news-item clearfix">
+                                    [e:loop={'select * from phome_ecms_news where classid =231 and checked=1 order by newstime desc limit '.($x+1).',1', 1, 24, 1}]
+                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                        <img width="150" height="200" src="<?=$bqr[titlepic]?>" />
+                                    </a>
+                                    <dl>
+                                        <dt style="margin-top:-3px"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=esub($bqr[title],44)?></a></dt>
+                                        <dd>
+                                            <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">维度</a>
+                                            &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                        </dd>
+                                    [/e:loop]
+
+                                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1
+                                        and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
+                                        and checked=1 and havehtml=1 and orderid IN (1,2,3)
+                                        GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
+                                        order by newstime desc limit '.(3*$x-1).',3', 3, 24, 1}]
+                                        <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
+                                        <dd>
+                                            <?php $naclassid = array("4","5","6","7","8","9");
+                                            $hqclassid = array("14","15","16","17","18","19");
+                                            $tzclassid = array("49","50","51","52","53","160","161");
+                                            $ymclassid = array("110","111","112","113","114","115","116");
+                                            if(in_array($bqr[classid],$naclassid,true)){
+                                            echo ('
+                                            <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>');
+                                            }
+                                            elseif(in_array($bqr[classid],$hqclassid,true)){
+                                            echo ('
+                                            <a  class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>');
+                                            }
+                                            elseif(in_array($bqr[classid],$tzclassid,true)){
+                                            echo ('
+                                            <a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐" >投资频道</a>');
+                                            }
+                                            elseif(in_array($bqr[classid],$ymclassid,true)){
+                                            echo ('
+                                            <a class="list-news-item-category" href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">留学移民</a>');
+                                            }
+                                            ?>
+                                            &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                        </dd>
+                                        [/e:loop]
+                                    </dl>
                         </li>
-                        [/e:loop]
-                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and orderid=3 order by newstime desc limit 0,1', 4, 24, 1}]
-                        <li class="list-news-item">
-                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
-                            </a>
-                            <dl>
-                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
-                                <dd>
-                                    <?php $naclassid = array("4","5","6","7","8","9");
-                                    $hqclassid = array("14","15","16","17","18","19");
-                                    $tzclassid = array("49","50","51","52","53","160","161");
-                                    $ymclassid = array("110","111","112","113","114","115","116");
-                                    if(in_array($bqr[classid],$naclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">纽澳新闻</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$hqclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">环球报道</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$tzclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">投资频道</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$ymclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">留学移民</span>');
-                                    }
-
-                                    ?>
-                                </dd>
-                            </dl>
-                        </li>
-                        [/e:loop]
-
-                        [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1
-                        and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
-                        and checked=1 and havehtml=1 and orderid IN (1,2,3)
-                        GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
-                        order by newstime desc limit 0,9', 4, 24, 1}]
-                        <li class="list-news-item">
-                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
-                            </a>
-                            <dl>
-                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
-                                <dd>
-                                    <?php $naclassid = array("4","5","6","7","8","9");
-                                    $hqclassid = array("14","15","16","17","18","19");
-                                    $tzclassid = array("49","50","51","52","53","160","161");
-                                    $ymclassid = array("110","111","112","113","114","115","116");
-                                    if(in_array($bqr[classid],$naclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">纽澳新闻</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$hqclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">环球报道</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$tzclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">投资频道</span>');
-                                    }
-                                    elseif(in_array($bqr[classid],$ymclassid,true)){
-                                    echo ('
-                                    <span class="list-news-item-category">留学移民</span>');
-                                    }
-
-                                    ?>
-                                </dd>
-                            </dl>
-                        </li>
-                        [/e:loop]
-
+                        <?php
+                            }
+                        ?>
+                       
                         <li class="rightdivchid1-bannerlist4">
                             <ul>
                                 [e:loop={'220', 4, 15, 1}]
@@ -566,8 +536,8 @@
 
                     <script type="text/javascript">
                                 $(function () {
-                                    $("#ul-new-list li:eq(3)").after("<li class='list-news-item' style='height:auto'><iframe style='margin:20px 0;' id='aef8c790' name='aef8c790' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=87&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='625' height='80'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a2441570&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=87&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a2441570&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe></li>");
-                                    $("#ul-new-list li:eq(8)").after($(".rightdivchid1-bannerlist4"));
+                                    $("#ul-new-list li:eq(1)").after("<li class='list-news-item' style='height:110px'><iframe style='margin:15px 0;' id='aef8c790' name='aef8c790' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=87&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='625' height='80'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a2441570&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=87&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a2441570&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe></li>");
+                                    $("#ul-new-list li:eq(4)").after($(".rightdivchid1-bannerlist4"));
                                     $("#ul-new-list li:last-child").css("border", "0px");
                                 })
                     </script>
@@ -602,7 +572,7 @@
                     </div>
                     <div class="news-general-list" style="border-top:0px !important;margin-bottom:20px">
                         <ul id="ul-hotsearch-news">
-                            [e:loop={'SELECT * FROM phome_ecms_news WHERE checked=1 AND DATE_SUB(CURDATE(), INTERVAL 2 DAY) < newstime ORDER BY onclick DESC LIMIT 0,9', 9, 24, 0}]
+                            [e:loop={'SELECT * FROM phome_ecms_news WHERE checked=1 AND DATE_SUB(CURDATE(), INTERVAL 2 DAY) < newstime ORDER BY onclick DESC LIMIT 0,10', 10, 24, 0}]
                             <li class="list-group-item"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],33)?></a></li>
                             [/e:loop]
                         </ul>
@@ -643,7 +613,7 @@
                                 })
                     </script>
 
-                    <div class="bannerlist">
+                    <div class="bannerlist" style="margin-bottom:15px;margin-top:10px">
                         [e:loop={'206',1,2,0}]
                         <dl>
                             <dt>
@@ -685,10 +655,10 @@
                         </ul>
                     </div>
 
-                    <div class="news-general-list" style="border-top:0px !important;margin-bottom:15px">
-                        <ul class="news-general-list-ul" style="margin-bottom:15px;position:relative">
+                    <div class="news-general-list clearfix" style="border-top:0px !important;">
+                        <ul class="news-general-list-ul clearfix">
                             [fillblank]92,8,30[/fillblank]
-                            <li class="lvyou-list-ul-line" style="width:100%;height:3px"></li>
+                            <li class="lvyou-list-ul-line" style="width:100%;height:2px"></li>
                             [e:loop={'select * from phome_ecms_news where classid =220 and checked=1 order by newstime desc limit 4,2', 2, 24, 1}]
                             <li style="height:75px">
                                 <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img width="140" height="75" alt="" src="<?=$bqr[titlepic]?>" /></a>
@@ -697,10 +667,9 @@
                             [/e:loop]
                         </ul>
                     </div>
-                    <div class="sky-jinyuanjinrong">
+                    <div class="sky-jinyuanjinrong clearfix" style="">
                         <iframe src="http://ads.mcmnz.com/JINYUAN-RATE/" width="298" scrolling="no" frameborder="0"></iframe>
                     </div>
-
                 </div>
             </div>
             <div style="clear:both;"></div>

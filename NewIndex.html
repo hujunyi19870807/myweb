@@ -291,6 +291,18 @@
                 <div style="height:50px; width:600px;margin:20px 0">
                     <img src="newImage/banner2.png" />
                 </div>
+                <div id="tab-newclass">
+                    <span>纽澳新闻</span>
+                    <span>国际新闻</span>
+                    <span>纽澳新闻</span>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $("#tab-newclass span").bind("click", function () {
+                                
+                        })
+                    })
+                </script>
                 <ul id="ul-new-list">
                     [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit 0,4', 4, 24, 1}]
                     <li class="list-news-item">

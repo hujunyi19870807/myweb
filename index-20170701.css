@@ -445,34 +445,42 @@ body {
 
 .list-news-item {
     border-bottom: 1px solid #ccc;
-    height: 104px;
     text-align: left;
     margin: 0 auto;
 }
     .list-news-item dl {
-        width: 465px;
-        float: right;
-        height: 72px;
-        overflow:hidden;
-        margin:16px 0;
+        float: left;
+        overflow: hidden;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+        height:202px;
     }
-    .list-news-item dt{
-        margin-bottom:10px;
+    .list-news-item dt {
+        margin-bottom: 8px;
+        letter-spacing:1px;
     }
     .list-news-item dt a {
-        font-size: 18px;
+        font-size: 16px;
         text-decoration: none;
         color: black;
     }
+        .list-news-item dt a:hover {
+            color: #f5842b;
+        }
     .list-news-item dl dd {
-        font-size: 12px;
-        height: 20px;
-        color: #7b7979;
-        letter-spacing:2px;
+        font-size: 10px;
+        color: #cabfbf;
+        letter-spacing: 2px;
     }
-    .list-news-item dl dd span.list-news-item-category {
+    .list-news-item dl dt.newlist-tit {
+        margin-top:6px;
+    }
+    .list-news-item dl dd a.list-news-item-category {
             color: #d11e26;
             font-weight:bold;
+            text-decoration:none;
+            font-size:12px;
         }
         .list-news-item dl dd span.list-news-item-word {
             margin-left: 20px;
@@ -489,7 +497,7 @@ body {
         border: 1px solid #898989;
         display: inline-block;
         float: left;
-        margin:16px 0;
+        margin:15px 0;
     }
 
 
@@ -837,7 +845,6 @@ body {
 }
 .news-general-list-ul {
     width:300px;
-    height:180px;
 }
     .news-general-list-ul li {
         float: left;
@@ -853,11 +860,11 @@ body {
             float: right;
         }
 .news-general-list ul {
-    margin: 3px 0px;
+    margin-bottom:17px;
 }
         .news-general-list ul li {
-            height: 23px;
-            line-height: 23px;
+            height: 25px;
+            line-height: 25px;
         }
             .news-general-list ul li a {
                 text-decoration: none;
@@ -889,9 +896,9 @@ body {
 }
 
 .sky-jinyuanjinrong {
-    margin: 10px 0px;
     border: 1px solid #898989;
     height: 196px;
+    margin-top:15px;
 }
 
     .sky-jinyuanjinrong iframe {
@@ -1540,7 +1547,7 @@ body {
     text-align: center;
     line-height: 38px;
     letter-spacing: 1px;
-    margin: 13px 0px;
+    margin: 6px 0px;
     font-size: 15px;
 }
 
@@ -1827,8 +1834,8 @@ body {
             width: 140px;
             float: left;
             margin-right: 21px;
-            margin-top: 20px;
-            margin-bottom: 18px;
+            margin-top: 15px;
+            margin-bottom: 12px;
         }
         .rightdivchid1-bannerlist4 ul li:last-child {
             width: 140px;
