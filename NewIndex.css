@@ -188,19 +188,91 @@ span.list-news-item-word {
     margin-left: 20px;
 }
 
-#center-main .newsmore {
-    border: 1px solid #ec7f16;
-    height: 38px;
+.sky-load-more {
+    width: 598px;
+    height: 30px;
+    display: none;
+    padding: 14px 0;
+    margin: 30px 0 0;
+    font: normal 20px/30px "Microsoft Yahei";
+    color: #404040;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    position: relative;
     text-align: center;
-    line-height: 38px;
-    letter-spacing: 1px;
-    margin: 13px 0px;
-    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer
 }
 
-    #center-main .newsmore a {
-        color: #ec7f16;
-        text-decoration: none;
+.newsmore, .newsloading {
+    width: 140px;
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+    overflow: hidden;
+    background-color: #fff
+}
+    .newsmore i {
+        float: left;
+        display: block;
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        margin: 5px;
+        background: url(/newImage/loading.png) no-repeat 0 0;
+        font-size: 40px;
+        font-style: normal;
+        text-indent: -999px;
+        -webkit-transition: transform .3s;
+        -o-transition: transform .3s;
+        transition: transform .3s
+    }
+
+.sky-load-more:hover {
+    color: #ec7f16;
+    border-color: #ec7f16;
+}
+
+    .sky-load-more:hover .newsmore i {
+        background-position: 0 -50px;
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg)
+    }
+
+.newsloading i {
+    float: left;
+    display: block;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    margin: 3px;
+    background: url(/newImage/loading.png) no-repeat 0 -100px;
+    font-size: 40px;
+    font-style: normal;
+    text-indent: -999px;
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center;
+    -webkit-animation: rotateIn .8s linear infinite;
+    -ms-animation: rotateIn .8s linear infinte;
+    -o-animation: rotateIn .8s linear infinte;
+    animation: rotateIn .8s linear infinte
+}
+
+.newsloading {
+    color: #ec7f16;
+    display: none;
+}
+.sky-load-more.current {
+    border-color: #ec7f16;
+}
+
+    .sky-load-more.current .newsloading {
+        display: block;
     }
 
 #right-main .newlist {

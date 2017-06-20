@@ -42,8 +42,72 @@
                 width: 600,
                 height: 318
             });
+
+            /*加载更多 begin*/
+            var pageIndex = 1;
+            getData(8, 1, "all", $("#ul-new-list"));
+            $(document).on('click', "#sky-loading-more", function () {
+                pageIndex++;
+                getData(8, pageIndex, "all",$("#ul-new-list"));
+            });
+            /*加载更多 end*/
         });
+
+        function getData(pageSize, pageIndex, cid, ulid) {
+            var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&cids=' + cid;
+            $(".newsmore").hide();
+            $(".newsloading").show();
+            $.getJSON(apiUrl + '&callback=?', function (responses) {
+
+                if (typeof responses.code == 'undefined') {
+                    alert('系统遇到了错误。');
+                    return false;
+                }
+                if (responses.code != 1) {
+                    var msg = responses.msg == '' ? '系统遇到了错误。' : responses.msg;
+                    alert(msg);
+                    return false;
+                }
+                $(".newsmore").show();
+                $(".newsloading").hide();
+                var li = "";
+                var ul = ulid;
+                var dl = "";
+                $.each(responses.data.items, function (index, item) {
+                    li = $('<li class="list-news-item"></li>').appendTo(ul);
+                    $('<a href="' + item["href"]+'" target="_blank" title="' + item["title"] + '"><img width= "140" height= "70" src= "' + item["poster"] + '" /></a >').appendTo(li);
+                    dl = $("<dl></dl>").appendTo(li);
+                    $('<dt><a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '">' + item["title"] + '</a></dt>').appendTo(dl);
+
+                    $('<dd>时间：' + item["datetime"] + '</dd>').appendTo(dl);
+                    $('<span class="list-news-item-category">环球报道</span>').appendTo(dl);
+                });
+            });
+        }
+
+        function getAdvert() {
+
+        }
     </script>
+    <style type="text/css">
+        @keyframes rotateIn {
+            0% {
+                -webkit-transform: rotate(-360deg);
+                -moz-transform: rotate(-360deg);
+                -ms-transform: rotate(-360deg);
+                -o-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+
+            100% {
+                -webkit-transform: none;
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                transform: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header">
@@ -144,7 +208,7 @@
     <div id="maincontent">
         <div id="left-main" class="clearfix">
             <div class="left-main-personalstory">
-                [e:loop={'123',1,2,1}]
+                [e:loop={'123',1,0,1}]
                 <a href="<?=$bqr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
                     <img src="<?=$bqr[titlepic]?>" width="200" height="300" />
                 </a>
@@ -304,170 +368,20 @@
                     })
                 </script>
                 <ul id="ul-new-list">
-                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit 0,4', 4, 24, 1}]
-                    <li class="list-news-item">
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                            <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
-                        </a>
-                        <dl>
-                            <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                            <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
-                            <dd>
-                                <?php $naclassid = array("4","5","6","7","8","9");
-                                $hqclassid = array("14","15","16","17","18","19");
-                                $tzclassid = array("49","50","51","52","53","160","161");
-                                $ymclassid = array("110","111","112","113","114","115","116");
-                                if(in_array($bqr[classid],$naclassid,true)){
-                                echo ('
-                                <span class="list-news-item-category">纽澳新闻</span>');
-                                }
-                                elseif(in_array($bqr[classid],$hqclassid,true)){
-                                echo ('
-                                <span class="list-news-item-category">环球报道</span>');
-                                }
-                                elseif(in_array($bqr[classid],$tzclassid,true)){
-                                echo ('
-                                <span class="list-news-item-category">投资频道</span>');
-                                }
-                                elseif(in_array($bqr[classid],$ymclassid,true)){
-                                echo ('
-                                <span class="list-news-item-category">留学移民</span>');
-                                }
-
-                                if (!empty($bqr[keyboard])){
-                                $keywordlist = explode(',',$bqr[keyboard]);
-                                foreach($keywordlist as $value){
-                                echo("
-                                <span class='list-news-item-word'>$value</span>");
-                                }
-                                }
-                                ?>
-                            </dd>
-                        </dl>
-                    </li>
-                    [/e:loop]
-
-                    <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
-                        <dl>
-                            <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
-                            <dd style="height:120px;display:inline-block;margin:15px 0">
-                                <img width="190" src="/newImage/new190.jpg" />
-                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                            </dd>
-                            <dd>
-                                <span class="list-news-item-category">环球报道</span>
-                                <span class="list-news-item-word">明星</span>
-                                <span style="float:right">时间：2017年4月20日15：00pm</span>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="list-news-item" style="height:200px; padding:24px 0">
-                        <img height="200" src="/newImage/banner001_03.jpg" />
-                    </li>
-                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit 4,4', 4, 24, 1}]
-                    <li class="list-news-item">
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                            <img width="140" height="70" src="<?=$bqr[titlepic]?>" />
-                        </a>
-                        <dl>
-                            <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                            <dd>时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></dd>
-                            <dd>
-                                <?php $naclassid = array("4","5","6","7","8","9");
-                                $hqclassid = array("14","15","16","17","18","19");
-                                $tzclassid = array("49","50","51","52","53","160","161");
-                                $ymclassid = array("110","111","112","113","114","115","116");
-                                if(in_array($bqr[classid],$naclassid,true)){
-                                echo ('
-                                <span class="list-news-item-category">纽澳新闻</span>');
-                                }
-                                elseif(in_array($bqr[classid],$hqclassid,true)){
-                                echo ('
-                                <span class="list-news-item-category">环球报道</span>');
-                                }
-                                elseif(in_array($bqr[classid],$tzclassid,true)){
-                                echo ('
-                                <span class="list-news-item-category">投资频道</span>');
-                                }
-                                elseif(in_array($bqr[classid],$ymclassid,true)){
-                                echo ('
-                                <span class="list-news-item-category">留学移民</span>');
-                                }
-
-                                if (!empty($bqr[keyboard])){
-                                $keywordlist = explode(',',$bqr[keyboard]);
-                                foreach($keywordlist as $value){
-                                echo("
-                                <span class='list-news-item-word'>$value</span>");
-                                }
-                                }
-                                ?>
-                            </dd>
-                        </dl>
-                    </li>
-                    [/e:loop]
-                    <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
-                        <dl>
-                            <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
-                            <dd style="height:120px;display:inline-block;margin:15px 0">
-                                <img width="190" src="/newImage/new190.jpg" />
-                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                            </dd>
-                            <dd>
-                                <span class="list-news-item-category">环球报道</span>
-                                <span class="list-news-item-word">明星</span>
-                                <span style="float:right">时间：2017年4月20日15：00pm</span>
-                            </dd>
-                        </dl>
-                    </li>
-
-                    <li class="list-news-item" style="height:200px; padding:24px 0">
-                        <img height="200" src="/newImage/banner001_03.jpg" />
-                    </li>
-                    <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
-                        <dl>
-                            <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
-                            <dd style="height:120px;display:inline-block;margin:15px 0">
-                                <img width="190" src="/newImage/new190.jpg" />
-                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                            </dd>
-                            <dd>
-                                <span class="list-news-item-category">环球报道</span>
-                                <span class="list-news-item-word">明星</span>
-                                <span style="float:right">时间：2017年4月20日15：00pm</span>
-                            </dd>
-                        </dl>
-                    </li>
-
-                    <li class="list-news-item" style="height:200px; padding:24px 0">
-                        <img height="200" src="/newImage/banner001_03.jpg" />
-                    </li>
-                    <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0">
-                        <dl>
-                            <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/dl/yl/2017-06-07/242199.shtml" target="_blank" title="当高晓松一本正经的聊起自己的颜值 记者都哭了…">当高晓松一本正经的聊起自己的颜值 记者都哭了…</a></dt>
-                            <dd style="height:120px;display:inline-block;margin:15px 0">
-                                <img width="190" src="/newImage/new190.jpg" />
-                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                                <img style="margin-left:10px" width="190" src="/newImage/new190.jpg" />
-                            </dd>
-                            <dd>
-                                <span class="list-news-item-category">环球报道</span>
-                                <span class="list-news-item-word">明星</span>
-                                <span style="float:right">时间：2017年4月20日15：00pm</span>
-                            </dd>
-                        </dl>
-                    </li>
-
-                    <li class="list-news-item" style="height:200px; padding:24px 0">
-                        <img height="200" src="/newImage/banner001_03.jpg" />
-                    </li>
 
                 </ul>
-                <div class="newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
-              
+                
+                <a id="sky-loading-more" class="sky-load-more" style="display: block;">
+                    <div class="newsmore" style="display: block;">
+                        <i>+</i>
+                        <span>加载更多</span>
+                    </div>
+                    <div class="newsloading" style="display: none;">
+                        <i>+</i>
+                        <span>加载中...</span>
+                    </div>
+                </a>
+
             </div>
             <div id="right-main">
                 <div class="news-title">
@@ -579,5 +493,8 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+                  
+    </script>
 </body>
 </html>
