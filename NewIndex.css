@@ -41,7 +41,7 @@ div#navsecond {
             }
 
                 div#navsecond ul li a:hover {
-                    color: #ec7f16;
+                    color: #f20626;
                 }
 
 div#left-main {
@@ -90,7 +90,7 @@ div#top-newlist ul li {
     }
 
         div#top-newlist ul li a:hover {
-            color: #ec7f16;
+            color: #f20626;
         }
 
     div#top-newlist ul li:nth-child(even) {
@@ -98,10 +98,10 @@ div#top-newlist ul li {
         border-left: 1px solid #020202;
         padding-left: 15px;
     }
-
+.ul-news-list {
+}
 .list-news-item {
     border-top: 1px solid #ccc;
-    height: 125px;
     text-align: left;
     margin: 0 auto;
 }
@@ -109,15 +109,16 @@ div#top-newlist ul li {
     .list-news-item dl {
         width: 440px;
         float: right;
-        height: 77px;
+        height: 72px;
         margin-left: 15px;
-        margin-top: 23px;
         overflow: hidden;
+        margin-top:19px;
+        margin-bottom:20px;
     }
 
 
     .list-news-item dt {
-        margin-bottom: 14px;
+        margin-bottom: 10px;
     }
 
         .list-news-item dt a {
@@ -133,7 +134,7 @@ div#top-newlist ul li {
     }
 
         .list-news-item dl dd span.list-news-item-category {
-            color: #d11e26;
+            color: #f20626;
             font-weight: bold;
         }
 
@@ -152,7 +153,8 @@ div#top-newlist ul li {
         border: 1px solid #898989;
         display: inline-block;
         float: left;
-        margin-top: 23px;
+        margin-top:19px;
+        margin-bottom:20px;
     }
 
 
@@ -180,7 +182,7 @@ div#top-newlist ul li {
     }
 
 span.list-news-item-category {
-    color: #d11e26;
+    color: #f20626;
     font-weight: bold;
 }
 
@@ -229,8 +231,8 @@ span.list-news-item-word {
     }
 
 .sky-load-more:hover {
-    color: #ec7f16;
-    border-color: #ec7f16;
+    color: #f20626;
+    border-color: #f20626;
 }
 
     .sky-load-more:hover .newsmore i {
@@ -264,11 +266,11 @@ span.list-news-item-word {
 }
 
 .newsloading {
-    color: #ec7f16;
+    color: #f20626;
     display: none;
 }
 .sky-load-more.current {
-    border-color: #ec7f16;
+    border-color: #f20626;
 }
 
     .sky-load-more.current .newsloading {
@@ -298,7 +300,7 @@ span.list-news-item-word {
         }
 
         #right-main .newlist li a:hover {
-            color: #ec7f16;
+            color: #f20626;
         }
 
 #right-main .news-title {
@@ -306,7 +308,7 @@ span.list-news-item-word {
     line-height: 30px;
     background-color: #e1e1e1;
     text-align: left;
-    color: #d11e26;
+    color: #f20626;
     padding-left: 5px;
     font-weight: bold
 }
@@ -360,7 +362,7 @@ div#right-main .column-itemlist {
         }
 
             div#right-main .column-itemlist li a:hover {
-                color: #ec7f16;
+                color: #f20626;
             }
 
         div#right-main .column-itemlist li:last-child {
@@ -387,7 +389,7 @@ div#right-main .column-itemdasiguanlist {
         }
 
             div#right-main .column-itemdasiguanlist li a:hover {
-                color: #ec7f16;
+                color: #f20626;
             }
 
         div#right-main .column-itemdasiguanlist li:last-child {
@@ -482,6 +484,7 @@ div#right-main .column-itemdasiguanlist {
 
 ul, li {
     list-style: none;
+    overflow:hidden;
 }
 
 a:hover {
@@ -567,7 +570,7 @@ div#left-main .left-main-personalstory {
         }
 
             div#left-main .left-main-personalstory span a:hover {
-                color: #ec7f16
+                color: #f20626
             }
 
     div#left-main .left-main-personalstory p {
@@ -594,7 +597,7 @@ div#left-main .left-main-shudu {
         text-decoration:none;
     }
         div#left-main .left-main-shudu ul li a:hover {
-            color: #ec7f16;
+            color: #f20626;
         }
 
 div#left-main .left-main-nianjie {
@@ -616,7 +619,7 @@ div#left-main .left-main-nianjie {
         }
 
             div#left-main .left-main-nianjie ul li a:hover {
-                color: #ec7f16;
+                color: #f20626;
             }
 
 
@@ -639,9 +642,22 @@ div#left-main .left-main-nianjie {
     }
 
     div#left-main .left-main-niandu ul li a:hover {
-        color: #ec7f16;
+        color: #f20626;
     }
-
+div#left-main .left-main-zhuanti {
+    border-left: 1px solid #acacac;
+    border-right: 1px solid #acacac;
+}
+    div#left-main .left-main-zhuanti .left-main-zhuanti-head span {
+        font-size: 18px;
+        color: #e7040b;
+        float: left;
+        width: 100px;
+        margin-top: 10px;
+        margin-left: 12px;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
 div#left-main .left-main-zhuanti .left-main-zhuanti-body {
     margin: 15px 8px;
     position: relative;
@@ -653,7 +669,7 @@ div#left-main .left-main-zhuanti .left-main-zhuanti-body {
     }
 
         div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a:hover {
-            color: #ec7f16;
+            color: #f20626;
         }
 
     div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips {
@@ -675,7 +691,7 @@ div#left-main .left-main-zhuanti .left-main-zhuanti-body {
         }
 
             div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a.active {
-                background-color: #d11e26;
+                background-color: #f20626;
             }
 
 div#left-main .left-main-zhuanti .left-main-zhuanti-past {
@@ -694,7 +710,7 @@ div#left-main .left-main-zhuanti .left-main-zhuanti-past {
     }
 
         div#left-main .left-main-zhuanti .left-main-zhuanti-past a:hover {
-            color: #ec7f16;
+            color: #f20626;
         }
 
 div#header .header-content {
@@ -855,7 +871,7 @@ div#header .header-content {
     }
 
         #footer > p > a:hover {
-            color: #ec7f16;
+            color: #f20626;
         }
 
     #footer .ico {
@@ -940,14 +956,14 @@ div#header .header-content {
                 font-size: 16px;
                 color: #f5842b;
             }
-div#tab-newclass {
+div#tab-newsclass {
     color: #333;
     height: 39px;
     line-height: 40px;
-    border-bottom: 1px solid #e9e9e9;
+    background: #e1e1e1;
 }
 
-    div#tab-newclass span {
+    div#tab-newsclass span {
         width: 100px;
         display: inline-block;
         vertical-align: top;
@@ -955,6 +971,11 @@ div#tab-newclass {
         cursor: pointer
     }
 
-        div#tab-newclass span:hover {
-            background-color: #9a9da2;
+        div#tab-newsclass span:hover {
+            background-color: #f20626;
+            color:white;
+        }
+        div#tab-newsclass .currenTab {
+            background-color: #f20626;
+            color: white;
         }

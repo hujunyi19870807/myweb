@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <title>新西兰天维网_新西兰最大的中文网络门户</title>
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
-
-    <link href="newindex.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/newindex.css" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/FocusPicNew-v1.0.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script src="http://www.skykiwi.com/js/FocusPicNew-v1.0.js"></script>
@@ -45,20 +44,43 @@
 
             /*加载更多 begin*/
             var pageIndex = 1;
-            getData(8, 1, "all", $("#ul-new-list"));
+            var pageSize = 8;
+            getData(pageSize, 1, 0, $("#ul-news-list"));
             $(document).on('click', "#sky-loading-more", function () {
                 pageIndex++;
-                getData(8, pageIndex, "all",$("#ul-new-list"));
+                getData(pageSize, pageIndex,0, $("#ul-news-list"));
+            });
+
+            var pagenaIndex = 1;
+            getData(pageSize, 1, 1, $("#ul-news-nalist"));
+            $(document).on('click', "#sky-naloading-more", function () {
+                pagenaIndex++;
+                getData(pageSize, pagenaIndex, 1, $("#ul-news-nalist"));
+            });
+
+            var pagehqIndex = 1;
+            getData(pageSize, 1, 2, $("#ul-news-hqlist"));
+            $(document).on('click', "#sky-hqloading-more", function () {
+                pagehqIndex++;
+                getData(pageSize, pagehqIndex, 2, $("#ul-news-hqlist"));
             });
             /*加载更多 end*/
-        });
 
+            $("#tab-newsclass span").on("click", function () {
+                if (!$(this).hasClass("currenTab")) {
+                    $(this).addClass("currenTab").siblings().removeClass("currenTab");
+                    var groupid = $(this).attr("groupid");
+                    $('.sky-load-more[groupid=' + groupid + ']').fadeIn().css("display", "block").siblings(".sky-load-more").fadeOut();
+                    $(".ul-news-list[groupid=" + groupid + "]").show().siblings(".ul-news-list").hide();
+                }
+            });
+        });
+        
         function getData(pageSize, pageIndex, cid, ulid) {
             var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&cids=' + cid;
             $(".newsmore").hide();
             $(".newsloading").show();
             $.getJSON(apiUrl + '&callback=?', function (responses) {
-
                 if (typeof responses.code == 'undefined') {
                     alert('系统遇到了错误。');
                     return false;
@@ -80,13 +102,25 @@
                     $('<dt><a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '">' + item["title"] + '</a></dt>').appendTo(dl);
 
                     $('<dd>时间：' + item["datetime"] + '</dd>').appendTo(dl);
-                    $('<span class="list-news-item-category">环球报道</span>').appendTo(dl);
+                    $('<dd><span class="list-news-item-category">环球报道</span></dd>').appendTo(dl);
                 });
+                if (cid == 0) {
+                    getAdvert(pageIndex);
+                }
             });
         }
 
-        function getAdvert() {
-
+        function getAdvert(pageIndex) {
+            if (pageIndex == 1) {
+                $("#ul-news-list li").eq(3).after($("#ul-newadvert li").eq(0));
+                $("#ul-news-list li").eq(3).after($("#ul-newfillbank li").eq(0));
+            }
+            appendNewsAdvert(pageIndex);
+        }
+        function appendNewsAdvert(pageIndex) {
+            var ulNewsCount = $("#ul-news-list li").length;
+            $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newadvert li").eq(0));
+            $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newfillbank li").eq(0 ));
         }
     </script>
     <style type="text/css">
@@ -238,40 +272,40 @@
                 </p>
                 [/e:loop]
             </div>
-            <div class="left-main-zhuanti">
-                <div class="left-main-zhuanti-head">
-                    <span style="font-size:18px;color:#e7040b;float:left;width:100px;margin-top: 10px;margin-left: 12px;letter-spacing: 2px;;font-weight:bold">天维专题</span>
-                    <img src="newImage/zhuanti_news_hot.jpg" style="float:right" />
-                </div>
-                <div style="clear:both"></div>
-                <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:11px;margin-right:8px" />
-                <div class="left-main-zhuanti-body">
-                    [e:loop={'228',2,0,0}]
-                    <ul data-index="<?=$bqno?>">
-                        <li>
-                            <a href="<?=$bqsr[titleurl]?>" target="_blank"  title="<?=$bqr[ftitle]?>">
-                                <img width="185" height="185" src="<?=$bqsr[titlepic]?>">
-                            </a>
-                        </li>
-                        <li>
-                            <h2 style="font-size:16px;color:black;margin:15px 0;letter-spacing:1px">
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[ftitle]?>">
-                                    <?=esub($bqr[title],40)?>
-                                </a>
-                            </h2>
-                            <p style="color:#676767;font-size:14px;line-height:23px;letter-spacing:1px;height:160px;overflow:hidden">
-                                <?=$bqsr[smalltext]?>
-                            </p>
-                        </li>
-                    </ul>
-                    [/e:loop]
-
-                    <div class="left-main-zhuanti-body-tips" style="height:30px;">
-                        <a href="javascript:void(0);" data-index='1'>1</a>
-                        <a href="javascript:void(0);" data-index='2'>2</a>
+            <div>
+                <div class="left-main-zhuanti">
+                    <div class="left-main-zhuanti-head clearfix">
+                        <span>天维专题</span>
+                        <img src="newImage/zhuanti_news_hot.jpg" style="float:right" />
                     </div>
-                </div>
-                <script type="text/javascript">
+                    <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:8px;margin-right:8px" />
+                    <div class="left-main-zhuanti-body">
+                        [e:loop={'228',2,0,0}]
+                        <ul data-index="<?=$bqno?>">
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[ftitle]?>">
+                                    <img width="185" height="185" src="<?=$bqsr[titlepic]?>">
+                                </a>
+                            </li>
+                            <li>
+                                <h2 style="font-size:16px;color:black;margin:15px 0;letter-spacing:1px">
+                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[ftitle]?>">
+                                        <?=esub($bqr[title],40)?>
+                                    </a>
+                                </h2>
+                                <p style="color:#676767;font-size:14px;line-height:23px;letter-spacing:1px;height:160px;overflow:hidden">
+                                    <?=$bqsr[smalltext]?>
+                                </p>
+                            </li>
+                        </ul>
+                        [/e:loop]
+
+                        <div class="left-main-zhuanti-body-tips" style="height:30px;">
+                            <a href="javascript:void(0);" data-index='1'>1</a>
+                            <a href="javascript:void(0);" data-index='2'>2</a>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
                     $(function () {
                         $(".left-main-zhuanti-body ul[data-index='1']").siblings("ul").css("display", "none");
                         $(".left-main-zhuanti-body-tips a[data-index='1']").addClass('active').siblings().removeClass('active');
@@ -286,16 +320,18 @@
                             $(".left-main-zhuanti-body ul[data-index='" + dataindex + "']").show().siblings("ul").hide();
                         }
                     });
-                </script>
-
-                <div class="left-main-zhuanti-past">
-                    <h2 style="font-size:18px;color:#e7040b;width:100px;margin-left:12px;letter-spacing: 2px;font-weight:bold;margin-top:10px; margin-bottom:10px">往期专题</h2>
+                    </script>
+                    <div class="left-main-zhuanti-head clearfix">
+                        <span style="margin-bottom:6px">往期专题</span>
+                    </div>
                     <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:11px;margin-right:8px" />
-                    <ul style="margin: 10px 10px 20px 10px ">
-                        [e:loop={'select * from phome_ecms_news where classid = 228 order by newstime desc limit 2,3', 3, 24, 0}]
-                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],20)?></a></li>
-                        [/e:loop]
-                    </ul>
+                    <div class="left-main-zhuanti-past">
+                        <ul style="margin: 10px 10px 20px 10px ">
+                            [e:loop={'select * from phome_ecms_news where classid = 228 order by newstime desc limit 2,3', 3, 24, 0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],20)?></a></li>
+                            [/e:loop]
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -314,7 +350,7 @@
                     <div style="clear:both"></div>
                 </ul>
             </div>
-            <div class="left-main-niandu">
+            <div class="left-main-niandu clearfix">
                 <img src="newImage/sky-niandu.jpg" style="margin:15px 0;display:block;" />
                 <ul style="margin-bottom:26px;">
                     <li><a href="http://news.skykiwi.com/na/zh/2016-12-21/232740.shtml" target="_blank" title="2016年度新闻年终总结">2016</a></li>
@@ -324,7 +360,6 @@
                     <li><a href="http://news.skykiwi.com/na/zh/2012-12-21/152579.shtml" target="_blank" title="2012年度新闻年终总结">2012</a></li>
                     <li><a href="http://news.skykiwi.com/na/zh/2011-12-22/132536.shtml" target="_blank" title="2011年度新闻年终总结">2011</a></li>
                     <li><a href="http://news.skykiwi.com/na/zh/2010-12-23/114288.shtml" target="_blank" title="2010年度新闻年终总结">2010</a></li>
-                    <div style="clear:both"></div>
                 </ul>
             </div>
 
@@ -355,23 +390,36 @@
                 <div style="height:50px; width:600px;margin:20px 0">
                     <img src="newImage/banner2.png" />
                 </div>
-                <div id="tab-newclass">
-                    <span>纽澳新闻</span>
-                    <span>国际新闻</span>
-                    <span>纽澳新闻</span>
+                <div id="tab-newsclass">
+                    <span class="currenTab" groupid="0">天维新闻</span>
+                    <span groupid="1">纽澳新闻</span>
+                    <span groupid="2">环球报道</span>
                 </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $("#tab-newclass span").bind("click", function () {
-                                
-                        })
-                    })
-                </script>
-                <ul id="ul-new-list">
-
-                </ul>
+                <ul class="ul-news-list" id="ul-news-list" groupid="0"></ul>
+                <ul class="ul-news-list" id="ul-news-nalist" style="display:none" groupid="1"></ul>
+                <ul class="ul-news-list" id="ul-news-hqlist" style="display:none" groupid="2"></ul>
                 
-                <a id="sky-loading-more" class="sky-load-more" style="display: block;">
+                <a id="sky-loading-more" class="sky-load-more" style="display: block;" groupid="0">
+                    <div class="newsmore" style="display: block;">
+                        <i>+</i>
+                        <span>加载更多</span>
+                    </div>
+                    <div class="newsloading" style="display: none;">
+                        <i>+</i>
+                        <span>加载中...</span>
+                    </div>
+                </a>
+                <a id="sky-naloading-more" class="sky-load-more" style="display: none;" groupid="1">
+                    <div class="newsmore" style="display: block;">
+                        <i>+</i>
+                        <span>加载更多</span>
+                    </div>
+                    <div class="newsloading" style="display: none;">
+                        <i>+</i>
+                        <span>加载中...</span>
+                    </div>
+                </a>
+                <a id="sky-hqloading-more" class="sky-load-more" style="display: none;" groupid="2">
                     <div class="newsmore" style="display: block;">
                         <i>+</i>
                         <span>加载更多</span>
@@ -448,7 +496,7 @@
                         </ul>
                     </li>
                     <li>
-                        <div style="height:66px">中华人民共和国驻新西兰大使馆
+                        <div style="height:66px;margin-top:30px">中华人民共和国驻新西兰大使馆
                         <p>THE EMBASSY OF THE PEOPLE'S REPUBLIC OF CHINA IN NEW ZEALAND</p>
                         </div>
                         <ul class="column-itemdasiguanlist">
@@ -492,9 +540,34 @@
                 <p><span>©&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
             </div>
         </div>
+       
+
     </div>
-    <script type="text/javascript">
-                  
-    </script>
+    <ul style="display:none" id="ul-newfillbank">
+        [e:loop={'232',3,0,1}]
+            <li style="border-top: 1px solid #ccc;text-align: left;padding:15px 0" data-type="newfillbank">
+                <dl>
+                    <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
+                    <dd style="height:120px;display:inline-block;margin:15px 0">
+                        <img width="190" src="<?=$bqsr[titlepic]?>" />
+                        <img style="margin-left:10px" width="190" src="<?=$bqsr[apic1]?>" />
+                        <img style="margin-left:10px" width="190" src="<?=$bqsr[apic2]?>" />
+                    </dd>
+                    <dd>
+                        <span class="list-news-item-category"><?=$bqsr[new_type]?></span>
+                        <span style="float:right">时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></span>
+                    </dd>
+                </dl>
+            </li>
+        [/e:loop]
+    </ul>
+    <ul style="display:none" id="ul-newadvert">
+        <li class="list-news-item" style="height:200px; padding:20px 0">
+            <img height="200" src="/newImage/banner001_03.jpg" />
+        </li>
+        <li class="list-news-item" style="height:200px; padding:20px 0">
+            <img height="200" src="/newImage/banner001_03.jpg" />
+        </li>
+    </ul>
 </body>
 </html>
