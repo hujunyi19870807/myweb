@@ -43,23 +43,24 @@
             });
 
             /*加载更多 begin*/
-            var pageIndex = 1;
             var pageSize = 8;
-            getData(pageSize, 1, 0, $("#ul-news-list"));
+
+            var pageIndex = 1;
+            getData(pageSize, pageIndex, 0, $("#ul-news-list"));
             $(document).on('click', "#sky-loading-more", function () {
                 pageIndex++;
                 getData(pageSize, pageIndex,0, $("#ul-news-list"));
             });
 
             var pagenaIndex = 1;
-            getData(pageSize, 1, 1, $("#ul-news-nalist"));
+            getData(pageSize, pagenaIndex, 1, $("#ul-news-nalist"));
             $(document).on('click', "#sky-naloading-more", function () {
                 pagenaIndex++;
                 getData(pageSize, pagenaIndex, 1, $("#ul-news-nalist"));
             });
 
             var pagehqIndex = 1;
-            getData(pageSize, 1, 2, $("#ul-news-hqlist"));
+            getData(pageSize, pagehqIndex, 2, $("#ul-news-hqlist"));
             $(document).on('click', "#sky-hqloading-more", function () {
                 pagehqIndex++;
                 getData(pageSize, pagehqIndex, 2, $("#ul-news-hqlist"));
@@ -77,10 +78,11 @@
         });
         
         function getData(pageSize, pageIndex, cid, ulid) {
-            var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&cids=' + cid;
+            var taken = '';
+            var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&aliasCid=' + cid;
             $(".newsmore").hide();
             $(".newsloading").show();
-            $.getJSON(apiUrl + '&callback=?', function (responses) {
+            $.getJSON(apiUrl + '&callback=?'+'&', function (responses) {
                 if (typeof responses.code == 'undefined') {
                     alert('系统遇到了错误。');
                     return false;
@@ -102,7 +104,7 @@
                     $('<dt><a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '">' + item["title"] + '</a></dt>').appendTo(dl);
 
                     $('<dd>时间：' + item["datetime"] + '</dd>').appendTo(dl);
-                    $('<dd><span class="list-news-item-category">环球报道</span></dd>').appendTo(dl);
+                    $('<dd><span class="list-news-item-category">' + item["cname"]+'</span></dd>').appendTo(dl);
                 });
                 if (cid == 0) {
                     getAdvert(pageIndex);

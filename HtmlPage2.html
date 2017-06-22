@@ -157,6 +157,14 @@
             $("#div-warn").css("left", ($(".wrapper").width()+tagblack) + "px");
             $("#div-warn").css("top", (winHeight-300) + "px");
 
+            //天气
+            $("#weatherCities li").click(function () {
+                $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon"));
+                $("#span-mix-temp").html($(this).attr("data-max-temp") + "°");
+
+                $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en"));
+            });
+            $("#weatherCities li:eq(0)").click();
         });
 
         var imgIndex = 0;
@@ -244,8 +252,6 @@
                 $(".indexhomes:visible").hide().prev().show();
             }
         }
-
-
     </script>
     <style type="text/css">
         .head {
@@ -300,13 +306,7 @@
                         </div>
                         <script type="text/javascript">
                             $(function () {
-                                $("#weatherCities li").click(function () {
-                                    $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon"));
-                                    $("#span-mix-temp").html($(this).attr("data-max-temp") + "°");
-
-                                    $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en"));
-                                });
-                                $("#weatherCities li:eq(0)").click();
+                                
                             })
                         </script>
                     </li>
@@ -318,7 +318,7 @@
                             <a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a>
                         </li>
                         <li>
-                            <a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
+                            <a href="http://www.skykiwi.com/newsindex.html" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
                         </li>
                         <li>
                             <a href="http://www.soku.co.nz/" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a>
@@ -407,24 +407,24 @@
 
                     <ul id="ul-new-list">
                         <li class="list-news-item clearfix">
-                            [e:loop={'select * from phome_ecms_news where classid =231 and checked=1 order by newstime desc limit 2', 1, 24, 1}]
+                            [e:loop={'select * from phome_ecms_news where classid =233 and checked=1 order by newstime desc limit 2', 1, 24, 1}]
                                 <?php
                                         if($bqno==1){
                                 ?>
                                 <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                    <img width="150" height="200" src="<?=$bqr[titlepic]?>" />
+                                    <img width="150" height="200" src="<?=$bqr[apic]?>" />
                                 </a>
                                 <dl>
                                     <dt style="margin-top:-3px"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=esub($bqr[title],44)?></a></dt>
                                     <dd>
-                                        <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">维度</a>
+                                        <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
                                         &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
                                     </dd>
                                 <?php
                                 } else {
                                 ?>
                                 <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
-                                <dd><a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">维度</a>
+                                <dd><a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
                                             &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
                                 </dd>
                                 <?php
@@ -472,14 +472,14 @@
                             for ($x=1; $x<=5; $x++) {
                         ?>
                             <li class="list-news-item clearfix">
-                                    [e:loop={'select * from phome_ecms_news where classid =231 and checked=1 order by newstime desc limit '.($x+1).',1', 1, 24, 1}]
+                                    [e:loop={'select * from phome_ecms_news where classid =233 and checked=1 order by newstime desc limit '.($x+1).',1', 1, 24, 1}]
                                     <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                        <img width="150" height="200" src="<?=$bqr[titlepic]?>" />
+                                        <img width="150" height="200" src="<?=$bqr[apic]?>" />
                                     </a>
                                     <dl>
                                         <dt style="margin-top:-3px"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=esub($bqr[title],44)?></a></dt>
                                         <dd>
-                                            <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">维度</a>
+                                            <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
                                             &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
                                         </dd>
                                     [/e:loop]

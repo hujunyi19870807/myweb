@@ -1599,13 +1599,15 @@ body {
         background:url(/image/icon.png) no-repeat 0 0;
     }
 .icon-ws {
-    background-position: 0 0;
+    background-position: 0 0 !important;
     padding-left: 30px;
+    margin-right: 5px;
 }
 
 .icon-wy {
-    background-position: 0 -23px;
+    background-position: 0px -23px !important;
     padding-left: 30px;
+    margin-left: 5px;
 }
 .indexhomes-imagecount {
     width: 100%;
