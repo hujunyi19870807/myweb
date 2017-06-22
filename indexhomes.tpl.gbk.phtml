@@ -8,11 +8,11 @@ foreach($results as $k=>$result)
 ?>
 
 <div class="indexhomes" data-index="<?=$k?>"<?=$displayInit?>>
-    <a href="http://home.skykiwi.com/<?=$result['propertyId']?>.html">
+    <a target="_selft" href="http://home.skykiwi.com/<?=$result['propertyId']?>.html">
         <span class="hsPhoto">
             <img class="loading" src="<?=PREFIX_IMG?>home_201401/images/loading.gif" style="display:none" />
             <em class="mask" style="display:none"></em>
-            <img style="border:1px solid #898989" class="photo" src="<?=$result['photo']['urlPrefix']?><?=$result['photo']['filePath']?>30_<?=$result['photo']['fileName']?>" width="298" height="198" data-src='<?=json_encode(array_values($result['pictures']))?>' />
+            <img style="border:1px solid #898989" class="photo" src="<?=$result['photo']['urlPrefix']?><?=$result['photo']['filePath']?><?=$result['photo']['fileName']?>" width="298" height="198" data-src='<?=json_encode(array_values($result['pictures']))?>' />
             <?php if ((! empty($result['video1'])) OR (! empty($result['video2']))) {?><em class="video-s"></em><?php }elseif (! empty($value['openhomes'])) { ?><em class="openday-s"></em><?php } ?>
         </span>
     </a>
@@ -23,7 +23,7 @@ foreach($results as $k=>$result)
     <div style="border:1px solid #898989">
         <p class="indexhomes-info">
             <strong>
-                <a href="http://home.skykiwi.com/<?=$result['propertyId']?>.html"><?=$result['teaser']?></a>
+                <a target="_selft" href="http://home.skykiwi.com/<?=$result['propertyId']?>.html"><?=$result['teaser']?></a>
                 <?php
                 if ($result['priceMethodId'] == 1) {
                     ?>

@@ -22,7 +22,7 @@
 
                 if (scrollheight < dvalue) {
                     document.getElementById("left-main").style.position = "fixed";
-                    document.getElementById("left-main").style.top = (-scrollheight + 312) + "px";
+                    document.getElementById("left-main").style.top = (-scrollheight + 292) + "px";
                 }
                 if (scrollheight >= dvalue) {
                     document.getElementById("left-main").style.position = "fixed";
@@ -82,7 +82,7 @@
             var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&aliasCid=' + cid;
             $(".newsmore").hide();
             $(".newsloading").show();
-            $.getJSON(apiUrl + '&callback=?'+'&', function (responses) {
+            $.getJSON(apiUrl + '&callback=?', function (responses) {
                 if (typeof responses.code == 'undefined') {
                     alert('系统遇到了错误。');
                     return false;
@@ -121,8 +121,13 @@
         }
         function appendNewsAdvert(pageIndex) {
             var ulNewsCount = $("#ul-news-list li").length;
-            $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newadvert li").eq(0));
-            $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newfillbank li").eq(0 ));
+            if ($("#ul-newadvert li").length > 0) {
+                $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newadvert li").eq(0));
+            }
+            else {
+                $("#ul-news-list li[data-type='newsadvert']:last").clone(true).appendTo($("#ul-news-list"));
+            }
+            $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newfillbank li").eq(0));
         }
     </script>
     <style type="text/css">
@@ -228,9 +233,9 @@
         <div id="navsecond">
             <img src="newImage/sky-new.png" />
             <ul>
-                <li><a style="color:#ec7f16;text-decoration:none" href="http://www.skykiwi.com" target="_self" title="返回天维网首页 - 天维网，新西兰最大的华人门户网站">天维首页</a></li>
+                <li><a style="color:#ec7f16;text-decoration:none" href="http://www.skykiwi.com/index.html" target="_self" title="返回天维网首页 - 天维网，新西兰最大的华人门户网站">天维首页</a></li>
                 <li><a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a></li>
-                <li><a style="color:#d11e26;text-decoration:none" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
+                <li><a style="color:#d11e26;text-decoration:none" href="http://www.skykiwi.com/newsindex.html" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
                 <li><a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
                 <li><a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a></li>
                 <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
@@ -463,7 +468,7 @@
                 <ul class="column-list clearfix">
                     <li>
                         <div>新西兰总理比尔英格利希专栏</div>
-                        <img width="120" height="225" src="newImage/0.png" />
+                        <img width="120" height="225" src="/newImage/0.png" />
                         <ul class="column-itemlist">
                             [e:loop={'62',4,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
@@ -472,7 +477,7 @@
                     </li>
                     <li>
                         <div>国家党国会议员杨健专栏</div>
-                        <img width="120" height="225" src="newImage/1.png" />
+                        <img width="120" height="225" src="/newImage/1.png" />
                         <ul class="column-itemlist">
                             [e:loop={'63',4,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
@@ -481,7 +486,7 @@
                     </li>
                     <li>
                         <div>工党专栏</div>
-                        <img width="120" height="225" src="newImage/2.png" />
+                        <img width="120" height="225" src="/newImage/2.png" />
                         <ul class="column-itemlist">
                             [e:loop={'64',4,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
@@ -490,13 +495,24 @@
                     </li>
                     <li>
                         <div>行动党党魁大卫西蒙专栏</div>
-                        <img width="120" height="225" src="newImage/3.png" />
+                        <img width="120" height="225" src="/newImage/3.png" />
                         <ul class="column-itemlist">
                             [e:loop={'61',4,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
                             [/e:loop]
                         </ul>
                     </li>
+                    <li>
+                        <div>新西兰国会议员霍建强专栏</div>
+                        <img width="120" height="225" src="/newImage/4.jpg" />
+                        <ul class="column-itemlist">
+                            [e:loop={'34',4,0,0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            [/e:loop]
+                        </ul>
+                    </li>
+
+
                     <li>
                         <div style="height:66px;margin-top:30px">中华人民共和国驻新西兰大使馆
                         <p>THE EMBASSY OF THE PEOPLE'S REPUBLIC OF CHINA IN NEW ZEALAND</p>
@@ -551,9 +567,9 @@
                 <dl>
                     <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
                     <dd style="height:120px;display:inline-block;margin:15px 0">
-                        <img width="190" src="<?=$bqsr[titlepic]?>" />
-                        <img style="margin-left:10px" width="190" src="<?=$bqsr[apic1]?>" />
-                        <img style="margin-left:10px" width="190" src="<?=$bqsr[apic2]?>" />
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[titlepic]?>" /></a>
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic1]?>" /></a>
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic2]?>" /></a>
                     </dd>
                     <dd>
                         <span class="list-news-item-category"><?=$bqsr[new_type]?></span>
@@ -564,10 +580,10 @@
         [/e:loop]
     </ul>
     <ul style="display:none" id="ul-newadvert">
-        <li class="list-news-item" style="height:200px; padding:20px 0">
+        <li class="list-news-item" style="height:200px; padding:20px 0" data-type="newsadvert">
             <img height="200" src="/newImage/banner001_03.jpg" />
         </li>
-        <li class="list-news-item" style="height:200px; padding:20px 0">
+        <li class="list-news-item" style="height:200px; padding:20px 0" data-type="newsadvert">
             <img height="200" src="/newImage/banner001_03.jpg" />
         </li>
     </ul>

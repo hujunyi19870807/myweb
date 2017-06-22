@@ -1,9 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang='zh-CN' xml:lang='zh-CN' xmlns='http://www.w3.org/1999/xhtml'>
 <head>
+    <title>新西兰天维网_新西兰最大的中文网络门户</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <meta name="Keywords" content="新西兰中文门户网站,新西兰中文新闻,新西兰留学移民,新西兰财经,新西兰旅游,新西兰南岛" />
+    <meta name="Description" content="天维网是新西兰最大的中文门户网站,我们为您提供每天最新的新西兰及国际新闻;社区论坛有25万注册会员与您一起讨论、分享、排忧解难;新西兰导航频道为您找出提供优质服务的商家,了解新西兰百科知识;社交网络让您在网上结交新的朋友,让新西兰的生活丰富多彩;健康体验频道让您足不出户享受最纯净的新西兰健康产品." />
+    <meta name="robots" content="all,follow" />
+    <meta name="alexaVerifyID" content="BZC0AGDE296idAdhhKLi5Q19i24" />
+    <meta name="google-site-verification" content="s4kD2-70IFXkxDXROz3MwuA_MGHpQZzssTXTAgq6LSs" />
+    <meta name="baidu-site-verification" content="RvpTAeznEp" />
+    <meta http-equiv="content-language" content="zh-CN" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-    <title>天维新版首页beta</title>
+    <meta name="alexaVerifyID" content="t1fAOANfV1Q4Jiy3uIFAFfTaOGY" />
 
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/index-20170701.css" rel="stylesheet" />
@@ -21,264 +29,13 @@
     </script>-->
 
     <script type="text/javascript">
-        (function () {
-            $(window).scroll(function () {
-                var leftnav = $("#div-sky-leftnav");
-                var divheight = leftnav.height();
-                var winheight = $(window).height();
-                var scrollheight = $(window).scrollTop();
-                if (divheight > winheight) {
-                    var dvalue = divheight - winheight;
-                    if (scrollheight < dvalue) {
-                        document.getElementById("div-sky-leftnav").style.position = "fixed";
-                        document.getElementById("div-sky-leftnav").style.top = (-scrollheight + 30) + "px";
-                    }
-                    if (scrollheight >= dvalue) {
-                        document.getElementById("div-sky-leftnav").style.position = "fixed";
-                        document.getElementById("div-sky-leftnav").style.top = (-dvalue) + "px";
-                    }
-                }
-                else {
-                    document.getElementById("div-sky-leftnav").style.position = "fixed";
-                }
-            });
-        })(jQuery);
-
-
-        $(document).ready(function () {
-            // begin
-            $('#flash0').slideBox({
-                duration: 0.3,
-                easing: 'swing',
-                delay: 5,
-                hideClickBar: false,
-                clickBarRadius: 10,
-                width: 625,
-                height: 300
-            });
-
-            $('#flash1').slideBox({
-                duration: 0.3,
-                easing: 'swing',
-                delay: 5,
-                hideClickBar: false,
-                clickBarRadius: 10,
-                width: 300,
-                height: 400
-            });
-
-            $('#flash2').slideBox({
-                duration: 0.3,
-                easing: 'swing',
-                delay: 5,
-                hideClickBar: false,
-                clickBarRadius: 10,
-                width: 300,
-                height: 270
-            });
-
-            //end
-
-            $(".tab-left-double").find("div .caijin-title-span").each(function (e) {
-                $(this).find("span").eq(0).click();
-            });
-
-            addhotserach();//动态修改hot热搜样式
-
-            $("#li-weather-control").mouseover(function () {
-                $(".sky-weather").show();
-            });
-            $("#li-weather-control").mouseout(function () {
-                $(".sky-weather").hide();
-            });
-            $("#div-weather-content").mouseout(function () {
-                $(".sky-weather").hide();
-            });
-
-
-
-            //天维团购特效 begin
-            var flag = true;
-            $("#sky-tuangou-prev").on("click", function () {
-                var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").prev("div.tianwei-tuangou-item").attr("data-index");
-                if (dataindex >= 0 && dataindex != undefined) {
-                    $(".tianwei-tuangou-item:visible").hide().prev("div.tianwei-tuangou-item").show();
-                }
-                else {
-                    $(".tianwei-tuangou-item").eq(3).show().siblings("div.tianwei-tuangou-item").hide();
-                }
-            });
-            $("#sky-tuangou-next").on("click", function () {
-                var dataindex = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next("div.tianwei-tuangou-item").attr("data-index");
-                if (dataindex < 4 && dataindex != undefined) {
-                    $(".tianwei-tuangou-item:visible").hide().next("div.tianwei-tuangou-item").show();
-                }
-                else {
-                    $(".tianwei-tuangou-item").eq(3).hide();
-                    $(".tianwei-tuangou-item").eq(0).show();
-                }
-            });
-            var timer = null;
-            $("#sky-tuangou-tab").hover(function () {
-                flag = false;
-                clearInterval(timer);
-            }, function () {
-                flag = true;
-                timer = setInterval(go, 3000);
-            });
-            function autoGo(bol) {
-                //自动行走
-                if (bol)
-                    timer = setInterval(go, 3000);
-            }
-            autoGo(flag);
-            function go() {
-                var dataindex = parseInt($(".tianwei-right-tab .tianwei-tuangou-item:visible").attr("data-index"));
-                dataindex = dataindex + 1;
-                if (dataindex >= 4) {
-                    dataindex = 0;
-                }
-                $(".tianwei-right-tab .tianwei-tuangou-item").eq(dataindex).show().siblings("div.tianwei-tuangou-item").hide();
-            }
-            //天维团购特效 end
-            //天维动态广告 begin
-            var arg0 = Math.floor(Math.random() * 10);//使用除以2取余的算法获取广告。
-            //var arg1=Math.floor(arg0);
-            //alert(arg0);
-            //alert(arg1);
-
-            //天维动态广告 end
-            //$(".topbannermiddle").css("height", $(window).height() + "px");
-
-            var winWidth = document.documentElement.clientWidth;
-            var winHeight = document.documentElement.clientHeight;
-            var tagblack = Math.floor((winWidth - $(".wrapper").width()) / 2);
-            $("#div-warn").css("position", "fixed");
-            $("#div-warn").css("left", ($(".wrapper").width()+tagblack) + "px");
-            $("#div-warn").css("top", (winHeight-300) + "px");
-
-            //天气
-            $("#weatherCities li").click(function () {
-                $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon"));
-                $("#span-mix-temp").html($(this).attr("data-max-temp") + "°");
-
-                $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en"));
-            });
-            $("#weatherCities li:eq(0)").click();
-        });
-
-        var imgIndex = 0;
-
-        var tabChangeList = ["美食", "旅游", "生活", "时尚"];
-        function initTabClass(obj, colorName, index) {
-            var controlIndex = $(obj).attr("controlindex");
-            $(obj).css("color", colorName);
-            $(obj).addClass("active-tit-a");
-            $(obj).siblings("a").each(function (i) {
-                if ($(this).attr("controlindex") == controlIndex) {
-                    $(this).show();
-                }
-                else {
-                    $(this).hide();
-                }
-            });
-
-            if (!Array.prototype.indexOf) {
-                Array.prototype.indexOf = function (elt /*, from*/) {
-                    var len = this.length >>> 0;
-                    var from = Number(arguments[1]) || 0;
-                    from = (from < 0)
-                        ? Math.ceil(from)
-                        : Math.floor(from);
-                    if (from < 0)
-                        from += len;
-                    for (; from < len; from++) {
-                        if (from in this &&
-                            this[from] === elt)
-                            return from;
-                    }
-                    return -1;
-                };
-            }
-
-
-            if (tabChangeList.indexOf($(obj).html()) > -1) {
-                $(obj).addClass("active-tit-ashenghuo");
-            }
-
-            $(obj).siblings().each(function () {
-                $(this).css("color", "#5c5c5c");
-                $(this).removeClass("active-tit-a").removeClass("active-tit-ashenghuo");
-            });
-
-            $(obj).parent().siblings().each(function () {
-                $(this).children().each(function (i) {
-                    if ($(this).attr("controlIndex") == controlIndex) {
-                        $(this).show();
-                    }
-                    else {
-                        $(this).hide();
-                    }
-                });
-            });
-        }
-
-        function addhotserach() {
-            $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst");
-            $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend");
-            $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend");
-            $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>');
-        }
-        function show(obj, id) {
-            var objDiv = $("#" + id + "");
-            $(objDiv).css("display", "block");
-            $(objDiv).css("left", event.clientX - 232);
-            $(objDiv).css("top", event.clientY - 12);
-        }
-        function hide(obj, id) {
-            var objDiv = $("#" + id + "");
-            $(objDiv).css("display", "none");
-        }
-
-        function nextproperty() {
-            var dataindex = $(".indexhomes:visible").attr("data-index");
-            if (dataindex < 4) {
-                $(".indexhomes:visible").hide().next().show();
-            }
-        }
-        function prevproperty() {
-            var dataindex = $(".indexhomes:visible").attr("data-index");
-            if (dataindex > 0) {
-                $(".indexhomes:visible").hide().prev().show();
-            }
-        }
+        (function () { $(window).scroll(function () { var d = $("#div-sky-leftnav"); var c = d.height(); var a = $(window).height(); var b = $(window).scrollTop(); if (c > a) { var e = c - a; if (b < e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-b + 30) + "px" } if (b >= e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-e) + "px" } } else { document.getElementById("div-sky-leftnav").style.position = "fixed" } }) })(jQuery); $(document).ready(function () { $("#flash0").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 625, height: 300 }); $("#flash1").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 400 }); $("#flash2").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 270 }); $(".tab-left-double").find("div .caijin-title-span").each(function (i) { $(this).find("span").eq(0).click() }); addhotserach(); $("#li-weather-control").mouseover(function () { $(".sky-weather").show() }); $("#li-weather-control").mouseout(function () { $(".sky-weather").hide() }); $("#div-weather-content").mouseout(function () { $(".sky-weather").hide() }); var c = true; $("#sky-tuangou-prev").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").prev("div.tianwei-tuangou-item").attr("data-index"); if (i >= 0 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().prev("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).show().siblings("div.tianwei-tuangou-item").hide() } }); $("#sky-tuangou-next").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next("div.tianwei-tuangou-item").attr("data-index"); if (i < 4 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().next("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).hide(); $(".tianwei-tuangou-item").eq(0).show() } }); var h = null; $("#sky-tuangou-tab").hover(function () { c = false; clearInterval(h) }, function () { c = true; h = setInterval(e, 3000) }); function g(i) { if (i) { h = setInterval(e, 3000) } } g(c); function e() { var i = parseInt($(".tianwei-right-tab .tianwei-tuangou-item:visible").attr("data-index")); i = i + 1; if (i >= 4) { i = 0 } $(".tianwei-right-tab .tianwei-tuangou-item").eq(i).show().siblings("div.tianwei-tuangou-item").hide() } var d = Math.floor(Math.random() * 10); var b = document.documentElement.clientWidth; var a = document.documentElement.clientHeight; var f = Math.floor((b - $(".wrapper").width()) / 2); $("#div-warn").css("position", "fixed"); $("#div-warn").css("left", ($(".wrapper").width() + f) + "px"); $("#div-warn").css("top", (a - 300) + "px"); $("#weatherCities li").click(function () { $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon")); $("#span-mix-temp").html($(this).attr("data-max-temp") + "°"); $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en")) }); $("#weatherCities li:eq(0)").click() }); var imgIndex = 0; var tabChangeList = ["美食", "旅游", "生活", "时尚"]; function initTabClass(d, a, b) { var c = $(d).attr("controlindex"); $(d).css("color", a); $(d).addClass("active-tit-a"); $(d).siblings("a").each(function (e) { if ($(this).attr("controlindex") == c) { $(this).show() } else { $(this).hide() } }); if (!Array.prototype.indexOf) { Array.prototype.indexOf = function (f) { var e = this.length >>> 0; var g = Number(arguments[1]) || 0; g = (g < 0) ? Math.ceil(g) : Math.floor(g); if (g < 0) { g += e } for (; g < e; g++) { if (g in this && this[g] === f) { return g } } return -1 } } if (tabChangeList.indexOf($(d).html()) > -1) { $(d).addClass("active-tit-ashenghuo") } $(d).siblings().each(function () { $(this).css("color", "#5c5c5c"); $(this).removeClass("active-tit-a").removeClass("active-tit-ashenghuo") }); $(d).parent().siblings().each(function () { $(this).children().each(function (e) { if ($(this).attr("controlIndex") == c) { $(this).show() } else { $(this).hide() } }) }) } function addhotserach() { $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst"); $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>') } function show(b, c) { var a = $("#" + c + ""); $(a).css("display", "block"); $(a).css("left", event.clientX - 232); $(a).css("top", event.clientY - 12) } function hide(b, c) { var a = $("#" + c + ""); $(a).css("display", "none") } function nextproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a < 4) { $(".indexhomes:visible").hide().next().show() } } function prevproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a > 0) { $(".indexhomes:visible").hide().prev().show() } };
     </script>
-    <style type="text/css">
-        .head {
-            background: #222;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            z-index: 9999;
-        }
-
-            .head a {
-                text-decoration: none;
-                color: #fff;
-                float: right;
-            }
-
-                .head a:hover {
-                    color: #ec7f16;
-                }
-    </style>
 </head>
 <body>
     <header class="head">
         <div style="margin:0 auto;width:1180px;">
-            <a href="http://www.skykiwi.com/" target="_blank" title="回天维旧版">回天维旧版</a>
+            <a href="http://www.skykiwi.com/index.shtml" target="_blank" title="回天维旧版">回天维旧版</a>
         </div>
     </header>
 
@@ -315,10 +72,10 @@
                     <span class="sky-nav-tit">天维首页</span>
                     <ul class="sky-nav-ul clearfix">
                         <li>
-                            <a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a>
+                            <a href="http://www.skykiwi.com/newsindex.html" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
                         </li>
                         <li>
-                            <a href="http://www.skykiwi.com/newsindex.html" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
+                            <a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a>
                         </li>
                         <li>
                             <a href="http://www.soku.co.nz/" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a>
@@ -1204,5 +961,18 @@
         </div>
         <div style="clear:both"></div>
     </div>
+    <!-- START: Google Analyse -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-4716393-5");
+            pageTracker._setDomainName("skykiwi.com");
+            pageTracker._trackPageview();
+        } catch (err) { }
+    </script>
+    <!-- END: Google Analyse -->
 </body>
 </html>

@@ -1,0 +1,20 @@
+<!-- 团购券 -->
+<?php
+
+foreach($results as $k=>$result)
+{
+if ($k>3) break;
+?>
+<div data-index="<?=$k?>" class="tianwei-tuangou-item"<?php if ($k>0){?> style="display:none"<?php } ?>>
+	<a target="_selft" href="<?=$result['URL']?>"><img style="height:282px;width:282px;border:1px solid #898989" src="<?=$result['IMG_SRC']?>"></a>
+	<ol style="font-size:16px; margin:0px 0;line-height:30px">
+		<li><?=$result['TITLE']?></li>
+		<li style="color:red">已售<?=$result['BUIED_COUNT']?></li>
+	</ol>
+	<p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价<?=$result['ORIGN_PRICE']?>&nbsp;&nbsp;</del></p>
+	<h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$<?=$result['BONUS_PRICE']?></h1>
+</div>
+
+<?php
+}
+?>

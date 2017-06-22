@@ -2081,3 +2081,22 @@ body {
 .sky-life-list {
 
 }
+.head {
+    background: #222;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+    .head a {
+        text-decoration: none;
+        color: #fff;
+        float: right;
+    }
+
+        .head a:hover {
+            color: #ec7f16;
+        }
