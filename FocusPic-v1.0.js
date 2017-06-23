@@ -113,9 +113,10 @@
         }, function () {
             wrapper.data('timeid', window.setTimeout(start, settings.delay * 1000))
         });
+        
         //首张图片加载完毕后执行初始化
-        var imgLoader = new Image();
-        imgLoader.onload = function () {
+       var imgLoader = new Image();
+       imgLoader.onload = function () {
             imgLoader.onload = null;
             init();
         }

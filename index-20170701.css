@@ -268,74 +268,6 @@ body {
 }
 /* css注释：为了观察效果设置宽度 边框 高度等样式 */
 
-/* Flash Slider Show CSS */
-#flash {
-    width: 380px;
-    height: 228px;
-    margin-bottom: 9px;
-    border-bottom: solid 1px #AAA;
-    padding-bottom: 9px;
-}
-
-    #flash a {
-        font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
-    }
-
-#ad_text_zone li {
-    width: 185px;
-    padding: 0px 5px;
-    height: 18px;
-    line-height: 18px;
-    font-size: 12px;
-    float: left;
-    display: inline;
-    margin: 0px;
-    overflow: hidden;
-}
-
-#s_pic_news {
-    width: 378px;
-    height: 88px;
-    border: solid 1px #AAA;
-    margin: 6px 0 0 0;
-}
-
-    #s_pic_news:hover {
-        border: solid 1px #F60;
-        cursor: pointer;
-    }
-
-    #s_pic_news img {
-        width: 130px;
-        height: 78px;
-        margin: 5px;
-        float: left;
-    }
-
-    #s_pic_news dt {
-        width: 238px;
-        font-size: 14px;
-        height: 18px;
-        line-height: 18px;
-        overflow: hidden;
-        float: left;
-        display: inline;
-        margin-top: 5px;
-        font-weight: bold;
-    }
-
-    #s_pic_news dd {
-        width: 238px;
-        font-size: 12px;
-        height: 56px;
-        line-height: 18px;
-        overflow: hidden;
-        float: left;
-        display: inline;
-        margin-top: 6px;
-        color: #666;
-    }
-
 .bannerlist {
     height: 138px;
 }
@@ -1101,7 +1033,7 @@ body {
     .sky-hot-news-context dl {
         float: left;
         margin-left: 50px;
-        height: 30px;
+        height: 25px;
         overflow: hidden;
     }
 

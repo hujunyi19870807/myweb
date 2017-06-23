@@ -20,6 +20,7 @@
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script src="http://www.skykiwi.com/js/FocusPic-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/scroll-v1.0.js"></script>
+    <script src="http://www.skykiwi.com/js/Top-FocusPic.js"></script>
     <!--<script type="text/javascript">
         resolution = screen.width;
         url = window.location.href;
@@ -27,9 +28,68 @@
             window.location.href = "http://www.skykiwi.com/3g.html";
         }
     </script>-->
+    <style type="text/css">
+        /* Flash Slider Show CSS */
+        #flash {
+            width: 625px;
+            height: 300px;
+        }
 
+            #flash a {
+                font-family: "黑体","Hei";
+                text-decoration: none;
+            }
+
+        #ad_text_zone li {
+            width: 185px;
+            padding: 0px 5px;
+            height: 18px;
+            line-height: 18px;
+            font-size: 12px;
+            float: left;
+            display: inline;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #s_pic_news {
+            width: 378px;
+            height: 88px;
+            border: solid 1px #AAA;
+            margin: 6px 0 0 0;
+        }
+
+            #s_pic_news:hover {
+                border: solid 1px #F60;
+                cursor: pointer;
+            }
+
+            #s_pic_news dt {
+                width: 625px;
+                font-size: 14px;
+                height: 18px;
+                line-height: 18px;
+                overflow: hidden;
+                float: left;
+                display: inline;
+                margin-top: 5px;
+                font-weight: bold;
+            }
+
+            #s_pic_news dd {
+                width: 625px;
+                font-size: 12px;
+                height: 56px;
+                line-height: 18px;
+                overflow: hidden;
+                float: left;
+                display: inline;
+                margin-top: 6px;
+                color: #666;
+            }
+    </style>
     <script type="text/javascript">
-        (function () { $(window).scroll(function () { var d = $("#div-sky-leftnav"); var c = d.height(); var a = $(window).height(); var b = $(window).scrollTop(); if (c > a) { var e = c - a; if (b < e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-b + 30) + "px" } if (b >= e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-e) + "px" } } else { document.getElementById("div-sky-leftnav").style.position = "fixed" } }) })(jQuery); $(document).ready(function () { $("#flash0").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 625, height: 300 }); $("#flash1").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 400 }); $("#flash2").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 270 }); $(".tab-left-double").find("div .caijin-title-span").each(function (i) { $(this).find("span").eq(0).click() }); addhotserach(); $("#li-weather-control").mouseover(function () { $(".sky-weather").show() }); $("#li-weather-control").mouseout(function () { $(".sky-weather").hide() }); $("#div-weather-content").mouseout(function () { $(".sky-weather").hide() }); var c = true; $("#sky-tuangou-prev").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").prev("div.tianwei-tuangou-item").attr("data-index"); if (i >= 0 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().prev("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).show().siblings("div.tianwei-tuangou-item").hide() } }); $("#sky-tuangou-next").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next("div.tianwei-tuangou-item").attr("data-index"); if (i < 4 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().next("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).hide(); $(".tianwei-tuangou-item").eq(0).show() } }); var h = null; $("#sky-tuangou-tab").hover(function () { c = false; clearInterval(h) }, function () { c = true; h = setInterval(e, 3000) }); function g(i) { if (i) { h = setInterval(e, 3000) } } g(c); function e() { var i = parseInt($(".tianwei-right-tab .tianwei-tuangou-item:visible").attr("data-index")); i = i + 1; if (i >= 4) { i = 0 } $(".tianwei-right-tab .tianwei-tuangou-item").eq(i).show().siblings("div.tianwei-tuangou-item").hide() } var d = Math.floor(Math.random() * 10); var b = document.documentElement.clientWidth; var a = document.documentElement.clientHeight; var f = Math.floor((b - $(".wrapper").width()) / 2); $("#div-warn").css("position", "fixed"); $("#div-warn").css("left", ($(".wrapper").width() + f) + "px"); $("#div-warn").css("top", (a - 300) + "px"); $("#weatherCities li").click(function () { $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon")); $("#span-mix-temp").html($(this).attr("data-max-temp") + "°"); $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en")) }); $("#weatherCities li:eq(0)").click() }); var imgIndex = 0; var tabChangeList = ["美食", "旅游", "生活", "时尚"]; function initTabClass(d, a, b) { var c = $(d).attr("controlindex"); $(d).css("color", a); $(d).addClass("active-tit-a"); $(d).siblings("a").each(function (e) { if ($(this).attr("controlindex") == c) { $(this).show() } else { $(this).hide() } }); if (!Array.prototype.indexOf) { Array.prototype.indexOf = function (f) { var e = this.length >>> 0; var g = Number(arguments[1]) || 0; g = (g < 0) ? Math.ceil(g) : Math.floor(g); if (g < 0) { g += e } for (; g < e; g++) { if (g in this && this[g] === f) { return g } } return -1 } } if (tabChangeList.indexOf($(d).html()) > -1) { $(d).addClass("active-tit-ashenghuo") } $(d).siblings().each(function () { $(this).css("color", "#5c5c5c"); $(this).removeClass("active-tit-a").removeClass("active-tit-ashenghuo") }); $(d).parent().siblings().each(function () { $(this).children().each(function (e) { if ($(this).attr("controlIndex") == c) { $(this).show() } else { $(this).hide() } }) }) } function addhotserach() { $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst"); $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>') } function show(b, c) { var a = $("#" + c + ""); $(a).css("display", "block"); $(a).css("left", event.clientX - 232); $(a).css("top", event.clientY - 12) } function hide(b, c) { var a = $("#" + c + ""); $(a).css("display", "none") } function nextproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a < 4) { $(".indexhomes:visible").hide().next().show() } } function prevproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a > 0) { $(".indexhomes:visible").hide().prev().show() } };
+        (function () { $(window).scroll(function () { var d = $("#div-sky-leftnav"); var c = d.height(); var a = $(window).height(); var b = $(window).scrollTop(); if (c > a) { var e = c - a; if (b < e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-b + 30) + "px" } if (b >= e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-e) + "px" } } else { document.getElementById("div-sky-leftnav").style.position = "fixed" } }) })(jQuery); $(document).ready(function () { $("#flash1").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 400 }); $("#flash2").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 270 }); $(".tab-left-double").find("div .caijin-title-span").each(function (i) { $(this).find("span").eq(0).click() }); addhotserach(); $("#li-weather-control").mouseover(function () { $(".sky-weather").show() }); $("#li-weather-control").mouseout(function () { $(".sky-weather").hide() }); $("#div-weather-content").mouseout(function () { $(".sky-weather").hide() }); var c = true; $("#sky-tuangou-prev").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").prev("div.tianwei-tuangou-item").attr("data-index"); if (i >= 0 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().prev("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).show().siblings("div.tianwei-tuangou-item").hide() } }); $("#sky-tuangou-next").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next("div.tianwei-tuangou-item").attr("data-index"); if (i < 4 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().next("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).hide(); $(".tianwei-tuangou-item").eq(0).show() } }); var h = null; $("#sky-tuangou-tab").hover(function () { c = false; clearInterval(h) }, function () { c = true; h = setInterval(e, 3000) }); function g(i) { if (i) { h = setInterval(e, 3000) } } g(c); function e() { var i = parseInt($(".tianwei-right-tab .tianwei-tuangou-item:visible").attr("data-index")); i = i + 1; if (i >= 4) { i = 0 } $(".tianwei-right-tab .tianwei-tuangou-item").eq(i).show().siblings("div.tianwei-tuangou-item").hide() } var d = Math.floor(Math.random() * 10); var b = document.documentElement.clientWidth; var a = document.documentElement.clientHeight; var f = Math.floor((b - $(".wrapper").width()) / 2); $("#div-warn").css("position", "fixed"); $("#div-warn").css("left", ($(".wrapper").width() + f) + "px"); $("#div-warn").css("top", (a - 300) + "px"); $("#weatherCities li").click(function () { $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon")); $("#span-mix-temp").html($(this).attr("data-max-temp") + "°"); $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en")) }); $("#weatherCities li:eq(0)").click() }); var imgIndex = 0; var tabChangeList = ["美食", "旅游", "生活", "时尚"]; function initTabClass(d, a, b) { var c = $(d).attr("controlindex"); $(d).css("color", a); $(d).addClass("active-tit-a"); $(d).siblings("a").each(function (e) { if ($(this).attr("controlindex") == c) { $(this).show() } else { $(this).hide() } }); if (!Array.prototype.indexOf) { Array.prototype.indexOf = function (f) { var e = this.length >>> 0; var g = Number(arguments[1]) || 0; g = (g < 0) ? Math.ceil(g) : Math.floor(g); if (g < 0) { g += e } for (; g < e; g++) { if (g in this && this[g] === f) { return g } } return -1 } } if (tabChangeList.indexOf($(d).html()) > -1) { $(d).addClass("active-tit-ashenghuo") } $(d).siblings().each(function () { $(this).css("color", "#5c5c5c"); $(this).removeClass("active-tit-a").removeClass("active-tit-ashenghuo") }); $(d).parent().siblings().each(function () { $(this).children().each(function (e) { if ($(this).attr("controlIndex") == c) { $(this).show() } else { $(this).hide() } }) }) } function addhotserach() { $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst"); $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>') } function show(b, c) { var a = $("#" + c + ""); $(a).css("display", "block"); $(a).css("left", event.clientX - 232); $(a).css("top", event.clientY - 12) } function hide(b, c) { var a = $("#" + c + ""); $(a).css("display", "none") } function nextproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a < 4) { $(".indexhomes:visible").hide().next().show() } } function prevproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a > 0) { $(".indexhomes:visible").hide().prev().show() } };
     </script>
 </head>
 <body>
@@ -78,7 +138,7 @@
                             <a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a>
                         </li>
                         <li>
-                            <a href="http://www.soku.co.nz/" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a>
+                            <a href="http://mobile.skykiwi.com/" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">生活</a>
                         </li>
                         <li>
                             <a href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">房产</a>
@@ -127,17 +187,17 @@
             </div>
             <div>
                 <div class="rightdivchid1">
-                    <div id="flash0" class="border slideBox">
-                        <ul class="items">
-                            [e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]
-                            <li>
-                                <a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[ftitle]?>">
-                                    <img width="625" height="300" src="<?=$bqsr[titlepic]?>">
-                                </a>
-                            </li>
-                            [/e:loop]
-                        </ul>
-                    </div>
+                    <div id="flash"></div>
+                    <script type="text/javascript">
+                            FocusPic.FocusObj = 'flash';
+                            FocusPic.Width = 625;
+                            FocusPic.Height = 300;
+                            FocusPic.Pics = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[titlepic]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                            FocusPic.Titles = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[ftitle]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                            FocusPic.Links = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqsr[titleurl]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                            FocusPic.init();
+                    </script>
+
                     <div class="sky-hot-news">
                         <span class="sky-hot-news-title">HOT 突发新闻</span>
                         <div class="sky-hot-news-context">
@@ -689,7 +749,7 @@
                             </div>
                             <div class="sky-floatL">
                                 <ul>
-                                    [e:loop={'109',2,12,0}]
+                                    [e:loop={'109',2,0,0}]
                                     <li class="sky-ul-list1"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],35)?></a></li>
                                     [/e:loop]
                                 </ul>
@@ -959,7 +1019,7 @@
                 <img src="/image/bottom.gif" width="150" height="228"/>
             </div>
         </div>
-        <div style="clear:both"></div>
+        <div style="clear:both"></div>#flash
     </div>
     <!-- START: Google Analyse -->
     <script type="text/javascript">
