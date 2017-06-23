@@ -221,7 +221,7 @@ span.list-news-item-word {
         height: 20px;
         overflow: hidden;
         margin: 5px;
-        background: url(/newImage/loading.png) no-repeat 0 0;
+        background: url(http://www.skykiwi.com/newImage/loading.png) no-repeat 0 0;
         font-size: 40px;
         font-style: normal;
         text-indent: -999px;
@@ -250,7 +250,7 @@ span.list-news-item-word {
     height: 24px;
     overflow: hidden;
     margin: 3px;
-    background: url(/newImage/loading.png) no-repeat 0 -100px;
+    background: url(http://www.skykiwi.com/newImage/loading.png) no-repeat 0 -100px;
     font-size: 40px;
     font-style: normal;
     text-indent: -999px;
@@ -747,7 +747,7 @@ div#header .header-content {
 #wechat_home {
     width: 90px;
     height: 90px;
-    background: url(/newImage/tianweiwang.jpg);
+    background: url(http://www.skykiwi.com/newImage/tianweiwang.jpg);
     position: absolute;
     display: none;
     z-index: 9999;
@@ -757,7 +757,7 @@ div#header .header-content {
 #wechat_go {
     width: 90px;
     height: 90px;
-    background: url(/newImage/daogou.jpg);
+    background: url(http://www.skykiwi.com/newImage/daogou.jpg);
     position: absolute;
     display: none;
     z-index: 9999;
@@ -767,7 +767,7 @@ div#header .header-content {
 #wechat_soku {
     width: 90px;
     height: 90px;
-    background: url(/newImage/shenghuo.jpg);
+    background: url(http://www.skykiwi.com/newImage/shenghuo.jpg);
     position: absolute;
     display: none;
     z-index: 9999;
@@ -777,7 +777,7 @@ div#header .header-content {
 #wechat_property {
     width: 90px;
     height: 90px;
-    background: url(/newImage/weifangcan.jpg);
+    background: url(http://www.skykiwi.com/newImage/weifangcan.jpg);
     position: absolute;
     display: none;
     z-index: 9999;
@@ -787,7 +787,7 @@ div#header .header-content {
 #wechat_money {
     width: 90px;
     height: 90px;
-    background: url(/newImage/weicaijing.jpg) no-repeat;
+    background: url(http://www.skykiwi.com/newImage/weicaijing.jpg) no-repeat;
     position: absolute;
     display: none;
     z-index: 9999;
@@ -797,7 +797,7 @@ div#header .header-content {
 #wechat_skyphone {
     width: 90px;
     height: 90px;
-    background: url(/newImage/erweima.jpg) no-repeat;
+    background: url(http://www.skykiwi.com/newImage/erweima.jpg) no-repeat;
     position: absolute;
     display: none;
     z-index: 9999;
