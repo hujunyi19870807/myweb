@@ -317,12 +317,18 @@ body {
         height: 55px;
         overflow: hidden;
         margin: 8px 0;
+        margin-top:8px;
+        margin-bottom:8px;
     }
 
 .topbannermiddle {
     width: 950px;
     overflow: hidden;
-    margin-top:8px;
+    margin-top: 8px;
+    position: fixed;
+    z-index: 9999;
+    /*background:#000;
+    opacity:0.5;*/
 }
 
 .rightdivchid1 {
@@ -933,6 +939,7 @@ body {
                     display: block;
                     line-height: 1.5;
                     margin-top: 10px;
+                    text-align:justify;
                 }
 
 .banner-table-right-tit a {
@@ -1139,6 +1146,7 @@ body {
         height:88px;
         overflow:hidden;
         line-height:18px;
+        text-align:justify;
     }
     .sky-activity-info-div2 a {
         text-decoration: none;
@@ -1187,6 +1195,7 @@ body {
 .sky-zhuanti-content {
     font-size: 12px;
     margin-top: 10px;
+    text-align:justify;
 }
 
 .sky-zhuanti-list {
@@ -1399,6 +1408,7 @@ body {
 .sky-caijing-info-detail {
     height: 106px;
     overflow: hidden;
+    text-align:justify;
 }
 
     .sky-caijing-info-detail a {
@@ -1587,7 +1597,6 @@ body {
     display: block;
     box-shadow: 0px 3px 16px 0px rgba(111, 165, 255, 0.4);
     z-index: 9999;
-    right: 0;
     transition: top .3s,visibility .3s,opacity .3s;
     padding: 8px 8px;
     border: 1px solid #ccc;
@@ -1595,6 +1604,8 @@ body {
     background-color: #fff;
     color:#000;
     margin-top:25px;
+    left:0;
+    width:190px;
 }
     .sky-weather:before {
         content: '';

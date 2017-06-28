@@ -181,14 +181,31 @@ div#top-newlist ul li {
         color: black;
     }
 
-span.list-news-item-category {
-    color: #f20626;
-    font-weight: bold;
-}
-
+    .list-news-item dl dd a.list-news-item-category {
+        color: #f20626;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 12px;
+    }
 span.list-news-item-word {
     margin-left: 20px;
 }
+
+.list-news-specialitem {
+    border-top: 1px solid #ccc;
+    text-align: left;
+    padding: 15px 0
+}
+    .list-news-specialitem dl dd {
+        font-size: 12px;
+        height: 20px;
+        color: #7b7979;
+    }
+
+        .list-news-specialitem dl dd span.list-news-item-category {
+            color: #f20626;
+            font-weight: bold;
+        }
 
 .sky-load-more {
     width: 598px;
@@ -813,7 +830,6 @@ div#header .header-content {
 .links {
     margin: 15px 0px;
     width: 948px;
-    border: 1px solid #AAA;
     padding: 0px 0px 8px 0px;
     overflow: hidden;
     float:right;

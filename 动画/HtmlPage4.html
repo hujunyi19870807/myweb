@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+    <title>JS+CSS做文字闪烁</title>
+    <style>
+        .dstyle1 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #f00;
+        }
+
+        .dstyle2 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <span class="dstyle1" id="dingning">获奖名单</span>
+    <script language="javascript">
+
+ function ChangeColor()
+ {
+ if(document.getElementById("dingning").className=="dstyle1")
+    document.getElementById("dingning").className="dstyle2";
+ else
+    document.getElementById("dingning").className="dstyle1";
+ setTimeout("ChangeColor()",200);
+ }
+ ChangeColor();
+    </script>
+</body>
+</html>  

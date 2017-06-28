@@ -104,6 +104,13 @@ div#center-main {
             width: expression(this.width > 595 && this.width/this.height > 0.7 ? 595 : true);
             height: expression(this.height > 1000 && this.width/this.height < 0.7 ? 1000 : true);
         }
+        div#center-main .artText p a {
+            text-decoration: none;
+            color: black;
+        }
+            div#center-main .artText p a:hover {
+                color: #f20626
+            }
 div#right-main {
     float: right;
     width: 300px;
@@ -171,9 +178,11 @@ div#top-newlist ul li {
         color: #7b7979;
     }
 
-        .list-news-item dl dd span.list-news-item-category {
-            color: #f20626;
+        .list-news-item dl dd a.list-news-item-category {
+            color: #d11e26;
             font-weight: bold;
+            text-decoration: none;
+            font-size: 12px;
         }
 
         .list-news-item dl dd span.list-news-item-word {
@@ -1192,6 +1201,13 @@ div#tab-newsclass {
             font-size: 14px;
             padding-left: 6px;
         }
+        .dg dl dd a {
+            color: #020202;
+            text-decoration:none;
+        }
+            .dg dl dd a:hover {
+                color: #f20626;
+            }
 /* Cold News CSS */
 .cold {
     margin-bottom: 6px;
@@ -1337,3 +1353,11 @@ div.mobilephone {
     height: 250px;
     margin: 20px 0;
 }
+#pricemeDIV a {
+    color: #020202 !important;
+    text-decoration: none;
+}
+
+    #pricemeDIV a:hover {
+        color: #f20626 !important;
+    }

@@ -21,6 +21,7 @@
     <script src="http://www.skykiwi.com/js/FocusPic-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/scroll-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/Top-FocusPic.js"></script>
+    <!--<script src="sky-ad.js"></script>-->
     <!--<script type="text/javascript">
         resolution = screen.width;
         url = window.location.href;
@@ -121,11 +122,6 @@
                         <div id="div-weather-content" class="sky-weather" style="display:none">
                             <!--#include virtual="/ssi/weather201707.html" -->
                         </div>
-                        <script type="text/javascript">
-                            $(function () {
-                                
-                            })
-                        </script>
                     </li>
                 </ul>
                 <div class="sky-nav-index">
@@ -169,7 +165,7 @@
                 <div class="sky-video">
                     <div class="sky-video-tit">正在直播...</div>
                     <div class="sky-video-content">
-                        <img alt="" height="105" width="165" src="/image/zhibo.gif" />
+                        <iframe id='ab70b4aa' name='ab70b4aa' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=99&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='165' height='105'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a5e4a1cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=99&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5e4a1cc&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
                     </div>
                 </div>
                 <div class="sky-nav-banner">
@@ -179,9 +175,45 @@
         </div>
 
         <div class="maincontent">
-            <div class="topbannermiddle">
-                <img src="image/bannnernew002_06.jpg" />
+            <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
+                <iframe id='a77882a6' name='a77882a6' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='950' height='40'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a7e44dd7&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7e44dd7&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
             </div>
+            <div class="topbannermiddle" id="div-first-banner">
+                <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;display:none"></div>
+                <iframe id='abac80f0' name='abac80f0' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=97&amp;cb=09309228820170628&amp;ct0=' frameborder='0' scrolling='no' width='950' height='900'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a12b9973&amp;cb=09309228820170628' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=09309228820170628&amp;n=a12b9973&amp;ct0=' border='0' alt='' /></a></iframe>
+            </div>
+
+            <script type="text/javascript">
+                $(function () {
+                    //$("#abac80f0").find("body").children().length;
+                    debugger;
+                    alert($("#abac80f0 html body").length)
+                    var winheight = $(window).height() - 45;
+                    $("#div-first-banner").css("height", winheight + "px");
+                    $("#div-first-banner embed").css("height", winheight + "px");
+                    $("#div-first-banner embed").css("width", "100%");
+                    $(".absolute").click(function () {
+                        $("#div-first-banner").hide();
+                        $("#div-secend-banner").fadeIn(1000);
+                    });
+                });
+                onload = function () {
+                    setInterval(go, 1000);
+                }
+                var x = 3; //利用了全局变量来执行
+                function go() {
+                    x--;
+                    if (x > 0) {
+                        //document.getElementById("sp").innerHTML = x; //每次设置的x的值都不一样了。
+                    } else {
+                        $("#div-first-banner").animate({ height: "40px", opacity: "1" }, 1000, function () {
+                            $(this).hide();
+                            $("#div-secend-banner").fadeIn(1000);
+                        });
+                    }
+                }
+            </script>
+            
             <div class="topbanner">
                 <iframe id='a44f295f' name='a44f295f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=85&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='950' height='55'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa6726d1&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=85&amp;cb=&amp;n=aa6726d1&amp;ct0=' border='0' alt='' /></a></iframe>
             </div>
@@ -202,7 +234,7 @@
                         <span class="sky-hot-news-title">HOT 突发新闻</span>
                         <div class="sky-hot-news-context">
                             <dl id="opage_hot_list">
-                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and issudden=1 order by issudden,newstime desc limit 0,3', 4, 24, 1}]
+                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and ((issudden=1 and date_sub(curdate(),interval 2 day)<=date(newstime)) or (firsttitle=1 and date_sub(curdate(),interval 3 day)<=date(newstime)) or (isgood=1 and date_sub(curdate(),interval 7 day)<=date(newstime)) or (issudden=0 and firsttitle=0 and isgood=0)) order by issudden,firsttitle,isgood,newstime desc limit 4', 4, 24, 1}]
                                 <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dd>
                                 [/e:loop]
                             </dl>
@@ -250,15 +282,11 @@
 
                                 [/e:loop]
 
-                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1
-                                and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
-                                and checked=1 and havehtml=1 and orderid IN (1,2,3)
-                                GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
-                                order by newstime desc limit 2', 2, 24, 1}]
+                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 order by newstime desc limit 2', 2, 24, 1}]
                                 <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
                                 <dd>
                                     <?php $naclassid = array("4","5","6","7","8","9");
-                                    $hqclassid = array("14","15","16","17","18","19");
+                                    $hqclassid = array("14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31");
                                     $tzclassid = array("49","50","51","52","53","160","161");
                                     $ymclassid = array("110","111","112","113","114","115","116");
                                     if(in_array($bqr[classid],$naclassid,true)){
@@ -301,15 +329,11 @@
                                         </dd>
                                     [/e:loop]
 
-                                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1
-                                        and not exists(select 1 from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116)
-                                        and checked=1 and havehtml=1 and orderid IN (1,2,3)
-                                        GROUP BY orderid HAVING MAX(newstime)=phome_ecms_news.newstime AND orderid=phome_ecms_news.orderid)
-                                        order by newstime desc limit '.(3*$x-1).',3', 3, 24, 1}]
+                                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and havehtml=1 order by newstime desc limit '.(3*$x-1).',3', 3, 24, 1}]
                                         <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dt>
                                         <dd>
                                             <?php $naclassid = array("4","5","6","7","8","9");
-                                            $hqclassid = array("14","15","16","17","18","19");
+                                            $hqclassid = array("14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31");
                                             $tzclassid = array("49","50","51","52","53","160","161");
                                             $ymclassid = array("110","111","112","113","114","115","116");
                                             if(in_array($bqr[classid],$naclassid,true)){
@@ -534,7 +558,7 @@
                             <div class="lvyou-list-ul-line"></div>
                             <div class="sky-caijing">
                                 <ul class="list-group-generalitem">
-                                    [e:loop={'49',9,12,0}]
+                                    [e:loop={'49',9,0,0}]
                                     <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],38)?></a></li>
                                     [/e:loop]
                                 </ul>
@@ -555,7 +579,7 @@
                             <div class="lvyou-list-ul-line"></div>
                             <div class="sky-caijing">
                                 <ul class="list-group-generalitem">
-                                    [e:loop={'161',9,12,0}]
+                                    [e:loop={'161',9,0,0}]
                                     <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],38)?></a></li>
                                     [/e:loop]
                                 </ul>
@@ -578,8 +602,8 @@
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#ef537a',1)">生活</span>
                         <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#ef537a',2)">旅游</span>
-                        <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/life/" class="sky-more-style">更多>></a>
-                        <a controlindex="2" target="_blank" href="http://go.skykiwi.com/skyselected/entertainment/" class="sky-more-style">更多>></a>
+                        <a controlindex="1" target="_blank" href="http://go.skykiwi.com" class="sky-more-style">更多>></a>
+                        <a controlindex="2" target="_blank" href="http://go.skykiwi.com" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
@@ -630,7 +654,7 @@
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-spanexpend">
                         <span class="active-tit-single active-tit-a active-tit-ashenghuo" style="color:#ef537a">特价</span>
-                        <a target="_blank" href="http://go.skykiwi.com/skyselected/supermarket/" class="sky-more-style">更多>></a>
+                        <a target="_blank" href="http://go.skykiwi.com" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop-daogou">
                         <div class="caijin-span">
@@ -644,8 +668,8 @@
                     <div class="caijin-title-span">
                         <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#ef537a',1)">时尚</span>
                         <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#ef537a',2)">美食</span>
-                        <a controlindex="1" target="_blank" href="http://go.skykiwi.com/skyselected/fashion/" class="sky-more-style">更多>></a>
-                        <a controlindex="2" target="_blank" href="http://go.skykiwi.com/skyselected/food/" class="sky-more-style">更多>></a>
+                        <a controlindex="1" target="_blank" href="http://go.skykiwi.com" class="sky-more-style">更多>></a>
+                        <a controlindex="2" target="_blank" href="http://go.skykiwi.com" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
@@ -742,7 +766,7 @@
                                 <div class="sky-liuxueyimin">
                                     <dl>
                                         <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[ftitle]?></a></dd>
-                                        <dt style="height:55px;overflow:hidden"><?=esub($bqr[smalltext],56)?>...</dt>
+                                        <dt style="height:55px;overflow:hidden;text-align:justify"><?=esub($bqr[smalltext],56)?>...</dt>
                                     </dl>
                                 </div>
                                 [/e:loop]
@@ -783,7 +807,7 @@
                 <div class="sky-activity-title">
                     <span>近期活动</span>
                 </div>
-                [e:loop={'224', 2, 15, 1}]
+                [e:loop={'224', 2, 0, 1}]
                 <div class="sky-activity-info">
                     <div style="float:left">
                         <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
@@ -1019,7 +1043,7 @@
                 <img src="/image/bottom.gif" width="150" height="228"/>
             </div>
         </div>
-        <div style="clear:both"></div>#flash
+        <div style="clear:both"></div>
     </div>
     <!-- START: Google Analyse -->
     <script type="text/javascript">
