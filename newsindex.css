@@ -119,6 +119,8 @@ div#top-newlist ul li {
 
     .list-news-item dt {
         margin-bottom: 10px;
+        height: 25px;
+        overflow: hidden;
     }
 
         .list-news-item dt a {

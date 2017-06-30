@@ -10,6 +10,7 @@
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script src="http://www.skykiwi.com/js/FocusPicNew-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/slideshow.js"></script>
+    <script src="http://www.skykiwi.com/js/Top-FocusPic-new.js"></script>
     <script type="text/javascript">
         (function () {
             $(window).scroll(function () {
@@ -158,6 +159,67 @@
                 transform: none;
             }
         }
+
+        /* Flash Slider Show CSS */
+        #flash {
+            width: 600px;
+            height: 288px;
+            margin-top:5px;
+        }
+
+            #flash a {
+                font-family: "黑体","Hei";
+                text-decoration: none;
+            }
+
+        #ad_text_zone li {
+            width: 185px;
+            padding: 0px 5px;
+            height: 18px;
+            line-height: 18px;
+            font-size: 12px;
+            float: left;
+            display: inline;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #s_pic_news {
+            width: 378px;
+            height: 88px;
+            border: solid 1px #AAA;
+            margin: 6px 0 0 0;
+        }
+
+            #s_pic_news:hover {
+                border: solid 1px #F60;
+                cursor: pointer;
+            }
+
+            #s_pic_news dt {
+                width: 625px;
+                font-size: 14px;
+                height: 18px;
+                line-height: 18px;
+                overflow: hidden;
+                float: left;
+                display: inline;
+                margin-top: 5px;
+                font-weight: bold;
+            }
+
+            #s_pic_news dd {
+                width: 625px;
+                font-size: 12px;
+                height: 56px;
+                line-height: 18px;
+                overflow: hidden;
+                float: left;
+                display: inline;
+                margin-top: 6px;
+                color: #666;
+            }
+
     </style>
 </head>
 <body>
@@ -167,17 +229,18 @@
         [!--temp.leftmain2017_newsindex--]
         <div style="width:1000px;float:right" class="clearfix">
             <div id="center-main" style="margin-left:48px;">
-                <div id="newsSlide" class="border slideBox" style="width: 600px; height: 318px;">
+                <div id="newsSlide" class="border slideBox">
                     <div class="toptittle">天维热点</div>
-                    <ul class="items" style="width: 3600px; left: -600px;">
-                        [e:loop={'3,10',4,2,1}]
-                        <li style="width: 600px; height: 288px;">
-                            <a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[ftitle]?>">
-                                <img width="600" height="288" src="<?=$bqr[titlepic]?>">
-                            </a>
-                        </li>
-                        [/e:loop]
-                    </ul>
+                    <div id="flash"></div>
+                    <script type="text/javascript">
+                        FocusPic.FocusObj = 'flash';
+                        FocusPic.Width = 600;
+                        FocusPic.Height = 288;
+                        FocusPic.Pics = '[e:loop={'3, 10',4,2,1}]<?=$bqr[titlepic]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Titles = '[e:loop={'3, 10',4,2,1}]<?=$bqr[ftitle]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Links = '[e:loop={'3, 10',4,2,1}]<?=$bqsr[titleurl]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.init();
+                    </script>
                 </div>
                 <div id="top-newlist">
                     <ul style="margin-top:10px">
@@ -189,7 +252,7 @@
                 </div>
 
                 <div style="height:50px; width:600px;margin:20px 0">
-                    <img src="http://www.skykiwi.com/newImage/banner2.png" />
+                    <iframe id='aceb5368' name='aceb5368' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=208&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='50'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a74d423d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=208&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a74d423d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
                 </div>
                 <div id="tab-newsclass">
                     <span class="currenTab" groupid="0">天维新闻</span>
@@ -253,11 +316,11 @@
                         $(".newlist:eq(0)").css("color", "f20626");
                     })
                 </script>
-                <div style="margin:20px 0;height:285px">
-                    <img alt="" style="display:block;" src="http://www.skykiwi.com/newImage/newbanner.jpg" />
+                <div style="margin:20px 0;height:250px">
+                    <iframe id='a895aba1' name='a895aba1' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=205&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa6b23bd&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=205&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa6b23bd&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
                 </div>
                 <div style="margin:30px 0;height:250px">
-                    <img alt="" style="display:block;" src="http://www.skykiwi.com/newImage/banner2_03.jpg" />
+                    <iframe id='afc0b588' name='afc0b588' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=206&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a7047feb&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=206&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7047feb&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
                 </div>
                 <ul class="column-list clearfix">
                     <li>
@@ -338,7 +401,7 @@
                 </ul>
 
                 <div style="height:250px;width:300px">
-                    <img src="http://www.skykiwi.com/newImage/banner4_18.jpg" style="display:block" />
+                    <iframe id='a9906274' name='a9906274' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=207&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa2e929b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=207&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa2e929b&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
                 </div>
             </div>
             [!--temp.links2017_newsindex--]
@@ -357,7 +420,6 @@
                     </dd>
                     <dd>
                         <span class="list-news-item-category"><?=$bqsr[new_type]?></span>
-                        <span style="float:right">时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?></span>
                     </dd>
                 </dl>
             </li>
@@ -365,10 +427,10 @@
     </ul>
     <ul style="display:none" id="ul-newadvert">
         <li class="list-news-item" style="height:200px; padding:20px 0" data-type="newsadvert">
-            <img height="200" src="http://www.skykiwi.com/newImage/banner001_03.jpg" />
+            <iframe id='a701fb76' name='a701fb76' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=209&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='200'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a49f4980&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=209&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a49f4980&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
         </li>
         <li class="list-news-item" style="height:200px; padding:20px 0" data-type="newsadvert">
-            <img height="200" src="http://www.skykiwi.com/newImage/banner001_03.jpg" />
+            <iframe id='a363eefe' name='a363eefe' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='200'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a8308398&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a8308398&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
         </li>
     </ul>
 </body>

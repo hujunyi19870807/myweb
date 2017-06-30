@@ -397,6 +397,9 @@ body {
     .list-news-item dt {
         margin-bottom: 8px;
         letter-spacing:1px;
+        width:430px;
+        height:22px;
+        overflow:hidden;
     }
     .list-news-item dt a {
         font-size: 16px;
@@ -413,6 +416,9 @@ body {
     }
     .list-news-item dl dt.newlist-tit {
         margin-top:6px;
+        overflow:hidden;
+        width:430px;
+        height:21px;
     }
     .list-news-item dl dd a.list-news-item-category {
             color: #d11e26;
@@ -621,6 +627,8 @@ body {
     font-size: 14px;
     height: 26px;
     line-height: 26px;
+    overflow: hidden;
+    text-align: justify;
 }
 .caijin-span a {
     color:black;
@@ -792,18 +800,19 @@ body {
         overflow:hidden;
     }
         .news-general-list-ul li:nth-child(2), .news-general-list-ul li:nth-child(4),
-        .news-general-list-ul li:nth-child(6), .news-general-list-ul li:nth-child(8),
-        .news-general-list-ul li:nth-child(10), .news-general-list-ul li:nth-child(12),
-        .news-general-list-ul li:nth-child(14), .news-general-list-ul li:nth-child(16) {
+        .news-general-list-ul li:nth-child(6), .news-general-list-ul li:nth-child(8), .news-general-list-ul li:nth-child(11) {
             float: right;
         }
-.news-general-list ul {
-    margin-bottom:17px;
-}
-        .news-general-list ul li {
-            height: 25px;
-            line-height: 25px;
-        }
+        
+        .news-general-list ul {
+                margin-bottom: 17px;
+            }
+            .news-general-list ul li {
+                height: 25px;
+                line-height: 25px;
+                overflow: hidden;
+                text-align: justify;
+            }
             .news-general-list ul li a {
                 text-decoration: none;
             }
@@ -1104,7 +1113,7 @@ body {
 }
 
     .sky-liuxueyimin dl dd {
-        margin-bottom: 10px;
+        margin-bottom: 7px;
         height:20px;
         line-height:20px;
         overflow:hidden;
@@ -1502,33 +1511,37 @@ body {
     }
 
 .indexhomes-info {
-    height: 100px;
+    height: 92px;
     text-align: center;
     border-bottom: 1px solid #898989;
     text-overflow: ellipsis;
     vertical-align: middle;
 }
 
-.indexhomes-info strong {
-    font-weight: bold;
-    color: #000;
-    font-size: 14px;
-    display: block;
-}
-
-    .indexhomes-info strong a {
-        color: #265294;
+    .indexhomes-info strong {
+        font-weight: bold;
+        color: #000000;
         display: block;
-        overflow: hidden;
-        max-height:46px;
-        line-height:23px;
-        margin:5px 0px;
+        margin-bottom: 10px;
+        margin-top: 13px;
     }
+
+        .indexhomes-info strong a {
+            color: #075490;
+            display: block;
+            overflow: hidden;
+            max-height: 46px;
+            line-height: 23px;
+            margin: 5px 0px;
+            text-decoration: none;
+        }
 
     .indexhomes-info span {
         display: block;
         overflow: hidden;
-        margin-top:5px;
+        margin-bottom: 15px;
+        color: #8c8c8b;
+        font-size: 12px;
     }
 
 .indexhomes-roomcount {
@@ -1668,14 +1681,14 @@ body {
     width: 27px;
     height: 22px;
     float: left;
-    background: url(/image/sky-weather-icon.png) 5px -187px no-repeat;
+    background: url(/image/sky-weather-icon.png) 5px -166px no-repeat;
     border: 0px;
 }
 .scattered-clouds-night {
     width: 27px;
     height: 22px;
     float: left;
-    background: url(/image/sky-weather-icon.png) 5px -187px no-repeat;
+    background: url(/image/sky-weather-icon.png) 5px -166px no-repeat;
     border: 0px;
 }
 .broken-clouds-day {
@@ -1696,28 +1709,28 @@ body {
     width: 27px;
     height: 22px;
     float: left;
-    background: url(/image/sky-weather-icon.png) 5px -140px no-repeat;
+    background: url(/image/sky-weather-icon.png) 5px -368px no-repeat;
     border: 0px;
 }
 .shower-rain-night {
     width: 27px;
     height: 22px;
     float: left;
-    background: url(/image/sky-weather-icon.png) 5px -140px no-repeat;
+    background: url(/image/sky-weather-icon.png) 5px -368px no-repeat;
     border: 0px;
 }
 .rain-day {
     width: 27px;
     height: 22px;
     float: left;
-    background: url(/image/sky-weather-icon.png) 5px -111px no-repeat;
+    background: url(/image/sky-weather-icon.png) 5px -140px no-repeat;
     border: 0px;
 }
 .rain-night {
     width: 27px;
     height: 22px;
     float: left;
-    background: url(/image/sky-weather-icon.png) 5px -111px no-repeat;
+    background: url(/image/sky-weather-icon.png) 5px -140px no-repeat;
     border: 0px;
 }
 .thunderstorm-day {
@@ -1740,7 +1753,7 @@ body {
     width: 27px;
     height: 22px;
     float: left;
-    background: url(/image/sky-weather-icon.png) 5px -527px no-repeat;
+    background: url(/image/sky-weather-icon.png) 5px -498px no-repeat;
     border: 0px;
 }
 
@@ -1748,7 +1761,7 @@ body {
     width: 27px;
     height: 22px;
     float: left;
-    background: url(/image/sky-weather-icon.png) 5px -527px no-repeat;
+    background: url(/image/sky-weather-icon.png) 5px -498px no-repeat;
     border: 0px;
 }
 .mist-day {

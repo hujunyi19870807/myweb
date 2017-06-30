@@ -860,18 +860,12 @@ div#header .header-content {
 .links {
     margin: 15px 0px;
     width: 948px;
-    border: 1px solid #AAA;
     padding: 0px 0px 8px 0px;
     overflow: hidden;
     float:right;
 }
 
     .links h3 {
-        font: bold 12px/14px '&Icirc;&cent;&Egrave;í&Ntilde;&Aring;&ordm;&Uacute;', &Euml;
-        &Icirc;
-        &Igrave;
-        &aring;
-        , Hei;
         padding: 8px 0 1px 12px;
         color: #D12026;
         display: block;
