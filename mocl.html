@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script type="text/javascript">
+        // Note: It is recommended that all input parameters be validated when they are
+        // first obtained from the user or user interface.
+        function createFolder(urisource, vXML) {
+
+            // Initialize the XMLHTTP request object.
+            var Req = new ActiveXObject("Microsoft.XMLHTTP");
+
+            // Open the request object with the MKCOL method and
+            // specify that it will be sent asynchronously.
+            Req.open("MKCOL", urisource, false);
+
+            if (vXML != "") {
+                // Set the Content-Type header to "text/xml".
+                Req.setRequestHeader("Content-Type", "text/xml");
+
+                // Send the MKCOL method request with the specified
+                // XML body.
+                Req.send(vXML);
+            }
+            else {
+                // Send the MKCOL method request.
+                Req.send();
+            }
+
+            // An error occurred on the server.
+            if (Req.status >= 500) {
+                this.document.writeln("Status: " + Req.status);
+                this.document.writeln("Status text: An error occurred on the server.");
+            }
+
+            else {
+                this.document.writeln("Status: " + Req.status);
+                this.document.writeln("Status text: " + Req.statustext);
+            }
+
+            return Req;
+            createFolder();
+        }
+        function aa()
+        {
+            var xml='<?xml version="1.0"?>'+
+                '<g:propertyupdate xmlns:g="DAV:" >'+
+                    '<g:set>'+
+                        '<g:prop>'+
+                            '<g:displayname>value</g:displayname>'+
+                        '</g:prop>'+
+                        '<g:prop>'+
+                            '<f:myprop xmlns:f="urn:schemas-mydomain-tld:">Test</f:myprop>'+
+                        '</g:prop>'+
+                    '</g:set>'+
+                '</g:propertyupdate>"';
+            createFolder("http://localhost:60666/api/Customer/MakeCollection", xml);
+        }
+    </script>
+</head>
+<body>
+    <div><input type="button" onclick="aa()" value="点击我" /></div>
+</body>
+</html>

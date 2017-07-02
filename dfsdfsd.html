@@ -1,0 +1,79 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title> New Document </title>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <link rel="stylesheet" type="text/css" href="">
+    <style type="text/css">
+        body {
+            position: relative;
+        }
+
+        .inner {
+        }
+
+        .divone {
+            width: 500px;
+            height: 500px;
+            background: red;
+        }
+
+        .ceng {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            /**透明层兼容**/
+            filter: alpha(opacity=0);
+            -moz-opacity: 0.0;
+            -khtml-opacity: 0.0;
+            opacity: 0.0;
+            background-color: black;
+            z-index: 0;
+            position: absolute;
+       filter:alpha(opacity=50);   
+      -moz-opacity:0.5;   
+      -khtml-opacity: 0.5;   
+      opacity: 0.5;
+        }
+
+        .nr {
+            border: 1px solid red;
+            width: 500px;
+            height: 300px;
+            margin: 100px auto 0px;
+            background: #fff;
+            z-index: 1000;
+            position: relative;
+        }
+
+            .nr div {
+                position: absolute;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="inner">
+        <div class="divone"></div>    <!--body里的内容-->
+        <div class="ceng">
+            <!--覆盖的层-->
+            <div class="bg" style="border:1px solid yellow">ww</div>        <!--层内的透明背景-->
+            <div class="nr">
+                <!--层内的内容-->
+                <div>12312312312312</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
