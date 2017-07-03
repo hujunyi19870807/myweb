@@ -14,21 +14,21 @@
     <meta name="alexaVerifyID" content="t1fAOANfV1Q4Jiy3uIFAFfTaOGY" />
 
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
-    <link href="http://www.skykiwi.com/css/index-20170701.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/index-20170701.css?2017070303" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
+    <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170703"></script>
     <script src="http://www.skykiwi.com/js/FocusPic-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/scroll-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/Top-FocusPic.js"></script>
 
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
         resolution = screen.width;
         url = window.location.href;
         if ((resolution < 700) && (url.indexOf("index.shtml") == -1)) {
             window.location.href = "http://www.skykiwi.com/3g.html";
         }
-    </script>-->
+    </script>
     <style type="text/css">
         /* Flash Slider Show CSS */
         #flash {
@@ -94,19 +94,21 @@
 </head>
 
 <body style="background:url(http://www.skykiwi.com/e/images/ad/index_bg_niuaokangyuan.jpg) center top no-repeat;">
-    <div id="divleftbanner" style="display:block;width:110px;height:50px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;top:130px">
-        <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:110px;height:50px;cursor:pointer"></a>
+    <div id="divleftbanner" style="display:block; height:930px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;">
+        <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:100%;height:930px;cursor:pointer"></a>
     </div>
-    <div id="divrightbanner" style="display:block;width:110px;height:50px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;top:130px">
-        <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:110px;height:50px;cursor:pointer"></a>
+    <div id="divrightbanner" style="display:block;height:930px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;">
+        <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:100%;height:930px;cursor:pointer"></a>
     </div>
     <script type="text/javascript">
-    $(function () {
-        var widthcontent = document.documentElement.clientWidth;
-        var divleft = (widthcontent - 1180) / 2;
-        $("#divleftbanner").css("right", (divleft + 1180 + 12) + "px");
-        $("#divrightbanner").css("left", (divleft + 1180 + 12) + "px");
-    });
+        $(function () {
+            var widthcontent = document.documentElement.clientWidth;
+            var divleft = (widthcontent - 1180) / 2;
+            $("#divleftbanner").css("right", (divleft + 1180 + 12) + "px");
+            $("#divrightbanner").css("left", (divleft + 1180 + 12) + "px");
+            $("#divrightbanner").css("width", (divleft - 12) + "px");
+            $("#divleftbanner").css("width", (divleft - 12) + "px");
+        });
     </script>
     <header class="head">
         <div style="margin:0 auto;width:1180px;">
@@ -142,7 +144,7 @@
                     <span class="sky-nav-tit">天维首页</span>
                     <ul class="sky-nav-ul clearfix">
                         <li>
-                            <a href="http://news.skykiwi.com/" target="_blank" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
+                            <a href="http://news.skykiwi.com/index.shtml" target="_blank" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
                         </li>
                         <li>
                             <a href="http://bbs.skykiwi.com" target="_blank" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a>
@@ -165,6 +167,9 @@
                         <li>
                             <a href="http://opage.skykiwi.com" target="_self" title="新西兰最大最全的商业服务、生活实用咨询搜索系统，奥克兰、惠灵顿、基督城商家搜索 - 点击进入天维橙页搜索系统">橙页</a>
                         </li>
+                        <li>
+                            <a href="http://d.skykiwi.com/" target="_blank" title="新西兰最大最全的生活服务、生活实用咨询搜索系统，奥克兰、惠灵顿、基督城生活搜索 - 点击进入导航搜索系统">导航</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -177,7 +182,7 @@
                     </div>
                 </div>
                 <div class="sky-video">
-                    <div class="sky-video-tit">正在直播...</div>
+                    <div class="sky-video-tit">往期直播...</div>
                     <div class="sky-video-content">
                         <iframe id='ab70b4aa' name='ab70b4aa' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=99&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='165' height='105'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a5e4a1cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=99&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5e4a1cc&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
                     </div>
@@ -255,13 +260,13 @@
                 <div class="rightdivchid1">
                     <div id="flash"></div>
                     <script type="text/javascript">
-                            FocusPic.FocusObj = 'flash';
-                            FocusPic.Width = 625;
-                            FocusPic.Height = 300;
-                            FocusPic.Pics = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[titlepic]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
-                            FocusPic.Titles = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[ftitle]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
-                            FocusPic.Links = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqsr[titleurl]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
-                            FocusPic.init();
+                        FocusPic.FocusObj = 'flash';
+                        FocusPic.Width = 625;
+                        FocusPic.Height = 300;
+                        FocusPic.Pics = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[titlepic]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Titles = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[ftitle]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Links = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqsr[titleurl]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.init();
                     </script>
 
                     <div class="sky-hot-news">
@@ -557,8 +562,9 @@
                 <!--房产 begin-->
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="caijin-span-tit active-tit-a" style="color:#034d82">在售房源</span>
+                        <span controlindex="1" class="caijin-span-tit active-tit-a" style="color:#034d82;cursor:default !important">在售房源</span>
                         <!--<span class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#034d82',2)">拍卖结果</span>-->
+                        <a controlindex="1" target="_blank" href="http://home.skykiwi.com/index.html" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop10">
                         <div controlindex="1">
@@ -688,7 +694,7 @@
                 <!--特价 时尚 美食 begin-->
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-spanexpend">
-                        <span class="active-tit-single active-tit-a active-tit-ashenghuo" style="color:#ef537a">特价</span>
+                        <span class="active-tit-single active-tit-a active-tit-ashenghuo" style="color:#ef537a;cursor:default !important">特价</span>
                         <a target="_blank" href="http://mobile.skykiwichina.com/index?source=index_navigation" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop-daogou">
@@ -765,7 +771,7 @@
                 </div>
                 <div class="tab-left-double-div2">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanti" style="color:#f5842b">天维专题</span>
+                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanti" style="color:#f5842b;cursor:default !important">天维专题</span>
                     </div>
                     <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
@@ -788,7 +794,7 @@
                 <!--留学移民 专栏 begin-->
                 <div class="tab-left-double-div1">
                     <div class="caijin-title-spanexpend">
-                        <span class="active-tit-single active-tit-a active-tit-ayimin" style="color:#448e4f">留学移民</span>
+                        <span class="active-tit-single active-tit-a active-tit-ayimin" style="color:#448e4f;cursor:default !important">留学移民</span>
                         <a href="http://imedu.skykiwi.com" target="_blank" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击查看更多留学移民新闻" class="sky-more-style">更多>></a>
                     </div>
                     <div class="sky-margintop-daogou">
@@ -818,7 +824,7 @@
                 </div>
                 <div class="tab-left-double-div2">
                     <div class="caijin-title-spanexpend">
-                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanlan" style="color:#653780">专栏</span>
+                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanlan" style="color:#653780;cursor:default !important">专栏</span>
                     </div>
                     <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
@@ -1090,7 +1096,5 @@
         } catch (err) { }
     </script>
     <!-- END: Google Analyse -->
-
-   
 </body>
 </html>
