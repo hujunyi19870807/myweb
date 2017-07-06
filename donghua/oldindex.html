@@ -29,7 +29,7 @@ if ((resolution < 700) && (url.indexOf("index.shtml") == -1))
     <script src="js/slideshow.js"></script>
     <!-- JS FOR ZHIBO END-->
     <script type="text/javascript">
-        window.onload = function () {
+        $(function () {
             var demo = document.getElementById('demo');
             var sx = sy = 10;
             var x = y = 0;
@@ -59,14 +59,20 @@ if ((resolution < 700) && (url.indexOf("index.shtml") == -1))
             demo.onmouseout = function () {
                 timer = setInterval(move, 100);
             }
-        }  
+
+            document.getElementById("div-flow-close").onclick = function () {
+                demo.style.display = "none";
+            }
+        })
+       
     </script>
     <style type="text/css">
         #demo {
-            width: 100px;
+            width: 200px;
             height: 100px;
             position: absolute;
-            border-radius: 50px;
+            border-radius: 10px;
+            z-index:10000;
         }  
     </style>
 </head>
@@ -90,7 +96,14 @@ if ((resolution < 700) && (url.indexOf("index.shtml") == -1))
 </script>
 -->
 <body>
-    <img id="demo" style="z-index:99999" src="/image/skykiwi.png" />  
+    <div id="demo">
+        <a href="http://beta.skykiwi.com/index.html" title="你好，天维菌整容了，点击浏览！">
+            <img style="width:200px;height:100px" src="/image/skykiwi-nav.png" />
+        </a>
+        <div id="div-flow-close" style="width:19px;height:19px;right:-5px;top:-5px;background-image:url(/image/f_close.gif);cursor:pointer;position:absolute"></div>
+    </div>
+    
+    
     <!-- Full Size BD: START-->
     <div style="position:relative;width:950px;margin:0 auto;">
         <!--/* OpenX Javascript Tag v2.8.7 */-->

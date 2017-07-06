@@ -1,0 +1,1637 @@
+﻿
+<!DOCTYPE html>
+<html lang='zh-CN' xml:lang='zh-CN' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <title>新西兰天维网_新西兰最大的中文网络门户</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <meta name="Keywords" content="新西兰中文门户网站,新西兰中文新闻,新西兰留学移民,新西兰财经,新西兰旅游,新西兰南岛" />
+    <meta name="Description" content="天维网是新西兰最大的中文门户网站,我们为您提供每天最新的新西兰及国际新闻;社区论坛有25万注册会员与您一起讨论、分享、排忧解难;新西兰导航频道为您找出提供优质服务的商家,了解新西兰百科知识;社交网络让您在网上结交新的朋友,让新西兰的生活丰富多彩;健康体验频道让您足不出户享受最纯净的新西兰健康产品." />
+    <meta name="robots" content="all,follow" />
+    <meta name="alexaVerifyID" content="BZC0AGDE296idAdhhKLi5Q19i24" />
+    <meta name="google-site-verification" content="s4kD2-70IFXkxDXROz3MwuA_MGHpQZzssTXTAgq6LSs" />
+    <meta name="baidu-site-verification" content="RvpTAeznEp" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta name="alexaVerifyID" content="t1fAOANfV1Q4Jiy3uIFAFfTaOGY" />
+
+    <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
+
+    <link href="index-20170701.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
+    <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170703"></script>
+    <script src="http://www.skykiwi.com/js/FocusPic-v1.0.js"></script>
+    <script src="http://www.skykiwi.com/js/scroll-v1.0.js"></script>
+    <script src="http://www.skykiwi.com/js/Top-FocusPic.js"></script>
+
+    <script type="text/javascript">
+        resolution = screen.width;
+        url = window.location.href;
+        if ((resolution < 700) && (url.indexOf("index.shtml") == -1)) {
+            window.location.href = "http://www.skykiwi.com/3g.html";
+        }
+    </script>
+    <style type="text/css">
+        /* Flash Slider Show CSS */
+        #flash {
+            width: 625px;
+            height: 300px;
+        }
+
+            #flash a {
+                text-decoration: none;
+            }
+
+        #ad_text_zone li {
+            width: 185px;
+            padding: 0px 5px;
+            height: 18px;
+            line-height: 18px;
+            font-size: 12px;
+            float: left;
+            display: inline;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #s_pic_news {
+            width: 378px;
+            height: 88px;
+            border: solid 1px #AAA;
+            margin: 6px 0 0 0;
+        }
+
+            #s_pic_news:hover {
+                border: solid 1px #F60;
+                cursor: pointer;
+            }
+
+            #s_pic_news dt {
+                width: 625px;
+                font-size: 14px;
+                height: 18px;
+                line-height: 18px;
+                overflow: hidden;
+                float: left;
+                display: inline;
+                margin-top: 5px;
+                font-weight: bold;
+            }
+
+            #s_pic_news dd {
+                width: 625px;
+                font-size: 12px;
+                height: 56px;
+                line-height: 18px;
+                overflow: hidden;
+                float: left;
+                display: inline;
+                margin-top: 6px;
+                color: #666;
+            }
+    </style>
+    <script type="text/javascript">
+        (function () { $(window).scroll(function () { var d = $("#div-sky-leftnav"); var c = d.height(); var a = $(window).height(); var b = $(window).scrollTop(); if (c > a) { var e = c - a; if (b < e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-b + 30) + "px" } if (b >= e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-e) + "px" } } else { document.getElementById("div-sky-leftnav").style.position = "fixed" } }) })(jQuery); $(document).ready(function () { $("#flash1").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 400 }); $("#flash2").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 270 }); $(".tab-left-double").find("div .caijin-title-span").each(function (i) { $(this).find("span").eq(0).click() }); addhotserach(); $("#li-weather-control").mouseover(function () { $(".sky-weather").show() }); $("#li-weather-control").mouseout(function () { $(".sky-weather").hide() }); $("#div-weather-content").mouseout(function () { $(".sky-weather").hide() }); var c = true; $("#sky-tuangou-prev").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").prev("div.tianwei-tuangou-item").attr("data-index"); if (i >= 0 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().prev("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).show().siblings("div.tianwei-tuangou-item").hide() } }); $("#sky-tuangou-next").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next("div.tianwei-tuangou-item").attr("data-index"); if (i < 4 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().next("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).hide(); $(".tianwei-tuangou-item").eq(0).show() } }); var h = null; $("#sky-tuangou-tab").hover(function () { c = false; clearInterval(h) }, function () { c = true; h = setInterval(e, 3000) }); function g(i) { if (i) { h = setInterval(e, 3000) } } g(c); function e() { var i = parseInt($(".tianwei-right-tab .tianwei-tuangou-item:visible").attr("data-index")); i = i + 1; if (i >= 4) { i = 0 } $(".tianwei-right-tab .tianwei-tuangou-item").eq(i).show().siblings("div.tianwei-tuangou-item").hide() } var d = Math.floor(Math.random() * 10); var b = document.documentElement.clientWidth; var a = document.documentElement.clientHeight; var f = Math.floor((b - $(".wrapper").width()) / 2); $("#weatherCities li").click(function () { $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon")); $("#span-mix-temp").html($(this).attr("data-max-temp") + "°"); $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en")) }); $("#weatherCities li:eq(0)").click() }); var imgIndex = 0; var tabChangeList = ["美食", "旅游", "生活", "时尚"]; function initTabClass(d, a, b) { var c = $(d).attr("controlindex"); $(d).css("color", a); $(d).addClass("active-tit-a"); $(d).siblings("a").each(function (e) { if ($(this).attr("controlindex") == c) { $(this).show() } else { $(this).hide() } }); if (!Array.prototype.indexOf) { Array.prototype.indexOf = function (f) { var e = this.length >>> 0; var g = Number(arguments[1]) || 0; g = (g < 0) ? Math.ceil(g) : Math.floor(g); if (g < 0) { g += e } for (; g < e; g++) { if (g in this && this[g] === f) { return g } } return -1 } } if (tabChangeList.indexOf($(d).html()) > -1) { $(d).addClass("active-tit-ashenghuo") } $(d).siblings().each(function () { $(this).css("color", "#5c5c5c"); $(this).removeClass("active-tit-a").removeClass("active-tit-ashenghuo") }); $(d).parent().siblings().each(function () { $(this).children().each(function (e) { if ($(this).attr("controlIndex") == c) { $(this).show() } else { $(this).hide() } }) }) } function addhotserach() { $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst"); $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>') } function show(b, c) { var a = $("#" + c + ""); $(a).css("display", "block"); $(a).css("left", event.clientX - 232); $(a).css("top", event.clientY - 12) } function hide(b, c) { var a = $("#" + c + ""); $(a).css("display", "none") } function nextproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a < 4) { $(".indexhomes:visible").hide().next().show() } } function prevproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a > 0) { $(".indexhomes:visible").hide().prev().show() } };
+    </script>
+</head>
+
+<body style="background:url(http://www.skykiwi.com/e/images/ad/index_bg_niuaokangyuan.jpg) center top no-repeat;">
+    <div id="divleftbanner" style="display:block; height:930px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;">
+        <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:100%;height:930px;cursor:pointer"></a>
+    </div>
+    <div id="divrightbanner" style="display:block;height:930px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;">
+        <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:100%;height:930px;cursor:pointer"></a>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            var widthcontent = document.documentElement.clientWidth;
+            var divleft = (widthcontent - 1180) / 2;
+            $("#divleftbanner").css("right", (divleft + 1180 + 12) + "px");
+            $("#divrightbanner").css("left", (divleft + 1180 + 12) + "px");
+            $("#divrightbanner").css("width", (divleft - 12) + "px");
+            $("#divleftbanner").css("width", (divleft - 12) + "px");
+        });
+    </script>
+    <header class="head">
+        <div style="margin:0 auto;width:1180px;">
+            <a href="http://www.skykiwi.com/index.shtml" target="_blank" title="回天维旧版">回天维旧版</a>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <div class="sky-left-nav" id="div-sky-leftnav">
+            <div class="sky-left-logo">
+                <img src="image/skykiwi.png">
+            </div>
+            <div class="sky-left-box">
+                <ul class="sky-left-ul clearfix">
+                    <li style="margin-top:18px">
+                        <span><a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook">English</a></span> |
+                        <span class="active-text">中文</span>
+                    </li>
+                    <script src="http://www.skykiwi.com/js/lunar-v1.0.js"></script>
+                    <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
+                        <div id="div-weather-change" class="clearfix">
+                            <span id="img-weather" style="margin-top:-1px" src="image/sky-weather.png" class=""></span>
+                            <span style="color:#ec7f16;float:left;width:25px;" id="span-mix-temp"></span>
+                            <span id="span-min-city" style="float:left;width:107px;overflow:hidden"></span>
+                            <span style="color:#ec7f16; float:right">▼</span>
+                        </div>
+                        <div id="div-weather-content" class="sky-weather" style="display:none">
+                            <!-- 天气预报 -->
+                            <ul id="weatherCities" style="line-height:1.6">
+                                <li data-min-temp="11" data-max-temp="16" data-icon="rain-day" data-desc="light rain" data-title-ch="奥克兰" data-title-en="Auckland">奥克兰(Auckland)</li>
+                                <li data-min-temp="5" data-max-temp="12" data-icon="rain-day" data-desc="light rain" data-title-ch="哈密尔顿" data-title-en="Hamilton">哈密尔顿(Hamilton)</li>
+                                <li data-min-temp="8" data-max-temp="10" data-icon="rain-day" data-desc="light rain" data-title-ch="惠灵顿" data-title-en="Wellington">惠灵顿(Wellington)</li>
+                                <li data-min-temp="4" data-max-temp="7" data-icon="rain-day" data-desc="light rain" data-title-ch="基督城" data-title-en="Christchurch">基督城(Christchurch)</li>
+                                <li data-min-temp="0" data-max-temp="0" data-icon="clear-sky-day" data-desc="clear sky" data-title-ch="皇后镇" data-title-en="Queenstown">皇后镇(Queenstown)</li>
+                                <li data-min-temp="0" data-max-temp="4" data-icon="clear-sky-day" data-desc="clear sky" data-title-ch="达尼丁" data-title-en="Dunedin">达尼丁(Dunedin)</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="sky-nav-index">
+                    <span class="sky-nav-tit">天维首页</span>
+                    <ul class="sky-nav-ul clearfix">
+                        <li>
+                            <a href="http://news.skykiwi.com/index.shtml" target="_blank" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.skykiwi.com" target="_blank" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a>
+                        </li>
+                        <li>
+                            <a href="http://mobile.skykiwi.com/" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">生活</a>
+                        </li>
+                        <li>
+                            <a href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">房产</a>
+                        </li>
+                        <li>
+                            <a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a>
+                        </li>
+                        <li>
+                            <a href="http://shop.skykiwi.com" target="_blank" title="新西兰比价购物频道 - 为您节省每一分钱，方便的网上比价购物体验 - 点击进入天维价格比较频道 / 合作网站 PriceMe">比价</a>
+                        </li>
+                        <li>
+                            <a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a>
+                        </li>
+                        <li>
+                            <a href="http://opage.skykiwi.com" target="_self" title="新西兰最大最全的商业服务、生活实用咨询搜索系统，奥克兰、惠灵顿、基督城商家搜索 - 点击进入天维橙页搜索系统">橙页</a>
+                        </li>
+                        <li>
+                            <a href="http://d.skykiwi.com/" target="_blank" title="新西兰最大最全的生活服务、生活实用咨询搜索系统，奥克兰、惠灵顿、基督城生活搜索 - 点击进入导航搜索系统">导航</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="sky-phone">
+                    <div class="sky-phone-left">
+                        <img style="display:block" src="image/tianweiphone_03_02.png" />
+                    </div>
+                    <div class="sky-phone-right">
+                        <img style="display:block" src="image/erweima.jpg" />
+                    </div>
+                </div>
+                <div class="sky-video">
+                    <div class="sky-video-tit">往期直播...</div>
+                    <div class="sky-video-content">
+                        <iframe id='ab70b4aa' name='ab70b4aa' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=99&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='165' height='105'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a5e4a1cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=99&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5e4a1cc&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                    </div>
+                </div>
+                <div class="sky-nav-banner">
+                    <iframe id='a241d2ab' name='a241d2ab' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=88&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='175' height='160'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=ae5b43ea&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=88&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ae5b43ea&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="maincontent">
+            <script type="text/javascript">
+                var timer1 = "";
+                var timer2 = "";
+                var x = 3; //利用了全局变量来执行
+                onload = function () {
+                    var divheight = $("#div-first-banner").height();
+                    if (divheight != 0) {
+                        var winheight = $(window).height() - 45;
+                        $("#div-first-banner").css("height", winheight + "px");
+                        $(".absolute").click(function () {
+                            hideBanner();
+                        });
+                        $("#div-banner-replay").click(function () {
+                            $("#div-secend-banner").fadeOut("fast");
+                            $("#div-banner-replay").hide();
+                            $("#div-first-banner").fadeIn("fast");
+                            beginCount();
+                        });
+                        beginCount();
+                    }
+                    else {
+                        $("#div-banner-count").hide();
+                        $(".absolute").hide();
+                    }
+                }
+
+               function showTime() {
+                   x--;
+                   $("#div-banner-count").html(x + "秒");
+               }
+
+               function hideBanner() {
+                   $("#div-secend-banner").fadeIn("fast");
+                   $("#div-banner-replay").show();
+                   $("#div-first-banner").fadeOut("fast");
+                   clearInterval(timer1);
+                   clearTimeout(timer2);
+               }
+
+                function beginCount() {
+                    $("#div-banner-count").html("3秒");
+                    x = 3;
+                    timer1 = setInterval("showTime()", 1000);
+                    timer2 = setTimeout("hideBanner()", 3000);
+                }
+
+            </script>
+
+            <div id="div-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;display:none;position:absolute;right:7px;top:12px;background-color:white;"></div>
+            <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
+                <script type='text/javascript'>
+                        <!--//<![CDATA[
+                           document.MAX_ct0 ='INSERT_CLICKURL_HERE';
+
+                           var m3_u = (location.protocol=='https:'?'https://ads.skykiwi.com/www/delivery/ajs.php':'http://ads.skykiwi.com/www/delivery/ajs.php');
+                           var m3_r = Math.floor(Math.random()*99999999999);
+                           if (!document.MAX_used) document.MAX_used = ',';
+                           document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+                           document.write ("?zoneid=98");
+                           document.write ('&amp;cb=' + m3_r);
+                           if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+                           document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+                           document.write ("&amp;loc=" + escape(window.location));
+                           if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+                           if (document.context) document.write ("&context=" + escape(document.context));
+                           if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+                               document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+                           }
+                           if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+                           document.write ("'></scr"+"ipt>");
+                        //]]>-->
+                </script>
+                <noscript>
+                    <a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aeba40a6&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aeba40a6&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a>
+                </noscript>
+            </div>
+            <div class="topbannermiddle" id="div-first-banner">
+                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red;"></div>
+                <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
+                <script type='text/javascript'>
+                        <!--//<![CDATA[
+                        document.MAX_ct0 = 'INSERT_CLICKURL_HERE';
+                        var m3_u = (location.protocol == 'https:' ? 'https://ads.skykiwi.com/www/delivery/ajs.php' : 'http://ads.skykiwi.com/www/delivery/ajs.php');
+                        var m3_r = Math.floor(Math.random() * 99999999999);
+                        if (!document.MAX_used) document.MAX_used = ',';
+                        document.write("<scr" + "ipt type='text/javascript' src='" + m3_u);
+                        document.write("?zoneid=97");
+                        document.write('&amp;cb=' + m3_r);
+                        if (document.MAX_used != ',') document.write("&amp;exclude=" + document.MAX_used);
+                        document.write(document.charset ? '&amp;charset=' + document.charset : (document.characterSet ? '&amp;charset=' + document.characterSet : ''));
+                        document.write("&amp;loc=" + escape(window.location));
+                        if (document.referrer) document.write("&amp;referer=" + escape(document.referrer));
+                        if (document.context) document.write("&context=" + escape(document.context));
+                        if ((typeof (document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0, 4) == 'http')) {
+                            document.write("&amp;ct0=" + escape(document.MAX_ct0));
+                        }
+                        if (document.mmm_fo) document.write("&amp;mmm_fo=1");
+                        document.write("'></scr" + "ipt>");
+                 //]]>--></script>
+                <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=afef712d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=afef712d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
+            </div>
+            <div class="topbanner">
+                <iframe id='a44f295f' name='a44f295f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=85&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='950' height='55'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa6726d1&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=85&amp;cb=&amp;n=aa6726d1&amp;ct0=' border='0' alt='' /></a></iframe>
+            </div>
+            <div>
+                <div class="rightdivchid1">
+                    <div id="flash"></div>
+                    <script type="text/javascript">
+                        FocusPic.FocusObj = 'flash';
+                        FocusPic.Width = 625;
+                        FocusPic.Height = 300;
+                        FocusPic.Pics = 'http://www.skykiwi.com/d/file/fillblank/home_slider/2017-07-06/70e958f0e2b518fc3a5bf3f006b58c4c.jpg|http://www.skykiwi.com/d/file/fillblank/home_slider/2017-07-05/e831e9ca802e4217bdf5249c710b8cf1.jpg|http://www.skykiwi.com/d/file/fillblank/home_slider/2017-07-06/03ec21dac31bfcfefab1004e5cc32450.jpg|http://www.skykiwi.com/d/file/fillblank/home_slider/2017-07-06/e3ad486a6a0a579758676ccbd99717c3.jpg|http://www.skykiwi.com/d/file/fillblank/home_slider/2017-07-06/866bf6b8e69654c5f5c2e69b188c7f0f.jpg|http://www.skykiwi.com/d/file/fillblank/home_slider/2017-07-06/376d5d1967524855b072aefc538d6113.jpg';
+                        FocusPic.Titles = '澳洲男同在NZ打广告：谁能给我们俩毛利卵子？|最火网红大赛完美收官！霸屏朋友圈的竟然是TA！|歪果仁眼中的欢乐颂五美，谁！最！美！？|浪漫到爆炸的最大水底餐厅，竟是新西兰制造|强力剧透海量多图！iPhone 8 真机惊艳曝光！|10位日本颜值最高的姑娘 最美制服诱惑';
+                        FocusPic.Links = 'http://news.skykiwi.com/na/zh/2017-07-04/243654.shtml|http://radio.skykiwi.com/tuijian/2017-07-04/243579.shtml|http://ent.skykiwi.com/video_ent/2017-06-16/242744.shtml|http://news.skykiwi.com/na/weidu/2017-07-05/243698.html|http://go.skykiwi.com/skyselected/life/149929710711585.shtml|http://news.skykiwi.com/world/gj/yl/2017-07-06/243749.shtml';
+                        FocusPic.init();
+                    </script>
+
+                    <div class="sky-hot-news">
+                        <span class="sky-hot-news-title">HOT 即时新闻</span>
+                        <div class="sky-hot-news-context">
+                            <dl id="opage_hot_list">
+                                <dd><a href="http://news.skykiwi.com/na/zh/2017-07-06/243756.shtml" target="_blank" title="【多图】AKL上演美洲杯夺冠巡游 人潮汹涌气氛热烈">【多图】AKL上演美洲杯夺冠巡游 人潮汹涌气氛热</a></dd>
+                                <dd><a href="http://news.skykiwi.com/na/sh/2017-07-06/243782.shtml" target="_blank" title="小心引狼入室：送货的不一定是快递小哥，也可能是盗贼">小心引狼入室：送货的不一定是快递小哥，也可能</a></dd>
+                                <dd><a href="http://news.skykiwi.com/world/dl/zh/2017-07-06/243780.shtml" target="_blank" title="金钱豹关门乱局:高管集体失踪 收银员连买几个LV">金钱豹关门乱局:高管集体失踪 收银员连买几个LV</a></dd>
+                                <dd><a href="http://news.skykiwi.com/world/dl/sh/2017-07-06/243777.shtml" target="_blank" title="11楼掉下90厘米长刀！20岁女孩当即倒地不省人事">11楼掉下90厘米长刀！20岁女孩当即倒地不省人事</a></dd>
+                            </dl>
+                            <span>
+                                <a class="sky-hot-news-context-pre" id="pre_opage">▲</a>
+                                <a class="sky-hot-news-context-next" id="next_opage">▼</a>
+                            </span>
+                            <script language="javascript" type="text/javascript">
+                                var scroll_opage = new ScrollText("opage_hot_list", "pre_opage", "next_opage", true, 80, true);
+                                scroll_opage.LineHeight = 25;
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="sky-news">
+                        <span style=""><label class="sky-news-a">天维</label><label class="sky-news-color">新闻</label></span>
+                        <a class="sky-more-style sky-news-color" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">更多>></a>
+                    </div>
+
+                    <ul id="ul-new-list">
+                        <li class="list-news-item clearfix">
+                            <a href="http://news.skykiwi.com/na/weidu/2017-07-06/243730.html" target="_blank" title="奥克兰学校最新排行出炉 你买对学区房了吗？">
+                                <img width="150" height="200" src="http://www.skykiwi.com/d/file/news/na/weidu/2017-07-06/e24cd7e0ea93e0c04cde7d233544c04c.jpg" />
+                            </a>
+                            <dl>
+                                <dt><a href="http://news.skykiwi.com/na/weidu/2017-07-06/243730.html" target="_blank" title="奥克兰学校最新排行出炉 你买对学区房了吗？" style="font-weight:bold;font-size:17px">奥克兰学校最新排行出炉 你买对学区房了吗？</a></dt>
+                                <dd>
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
+                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:11pm
+                                </dd>
+
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/na/weidu/2017-07-05/243698.html" target="_blank" title="浪漫到爆炸的世界最大水底餐厅，竟是新西兰制造">浪漫到爆炸的世界最大水底餐厅，竟是新西兰制造</a></dt>
+                                <dd>
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
+                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:11pm
+                                </dd>
+
+
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/na/zh/2017-07-06/243756.shtml" target="_blank" title="【多图】AKL上演美洲杯夺冠巡游 人潮汹涌气氛热烈">【多图】AKL上演美洲杯夺冠巡游 人潮汹涌气氛热烈</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 15:58pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/na/sh/2017-07-06/243782.shtml" target="_blank" title="小心引狼入室：送货的不一定是快递小哥，也可能是盗贼">小心引狼入室：送货的不一定是快递小哥，也可能是盗贼</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 15:41pm
+                                </dd>
+                            </dl>
+                        </li>
+
+
+                        <li class="list-news-item clearfix">
+                            <a href="http://news.skykiwi.com/na/weidu/2017-07-05/243729.html" target="_blank" title="新西兰橄榄球名帅独生子哮喘病发作 在上海离世">
+                                <img width="150" height="200" src="http://www.skykiwi.com/d/file/news/na/weidu/2017-07-06/71a078fac3d54f5ed405b7f6e3b858d6.jpg" />
+                            </a>
+                            <dl>
+                                <dt><a href="http://news.skykiwi.com/na/weidu/2017-07-05/243729.html" target="_blank" title="新西兰橄榄球名帅独生子哮喘病发作 在上海离世" style="font-weight:bold;font-size:17px">新西兰橄榄球名帅独生子哮喘病发作 在上海离世</a></dt>
+                                <dd>
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
+                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:11pm
+                                </dd>
+
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/dl/zh/2017-07-06/243780.shtml" target="_blank" title="金钱豹关门乱局:高管集体失踪 收银员连买几个LV">金钱豹关门乱局:高管集体失踪 收银员连买几个LV</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 15:37pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/gj/zh/2017-07-06/243778.shtml" target="_blank" title="澳洲海外留学生就业普遍高薪 中国学生更愿" 留"">澳洲海外留学生就业普遍高薪 中国学生更愿"留"</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 15:29pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/dl/sh/2017-07-06/243777.shtml" target="_blank" title="11楼掉下90厘米长刀！20岁女孩当即倒地不省人事">11楼掉下90厘米长刀！20岁女孩当即倒地不省人事</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 15:17pm
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="list-news-item clearfix">
+                            <a href="http://news.skykiwi.com/na/weidu/2017-07-05/243728.html" target="_blank" title="奥克兰发布最严禁烟令：连露天餐厅也不许吸烟">
+                                <img width="150" height="200" src="http://www.skykiwi.com/d/file/news/na/weidu/2017-07-06/be3636587173a328838b8bd1844ad754.jpg" />
+                            </a>
+                            <dl>
+                                <dt><a href="http://news.skykiwi.com/na/weidu/2017-07-05/243728.html" target="_blank" title="奥克兰发布最严禁烟令：连露天餐厅也不许吸烟" style="font-weight:bold;font-size:17px">奥克兰发布最严禁烟令：连露天餐厅也不许吸烟</a></dt>
+                                <dd>
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
+                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:10pm
+                                </dd>
+
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/dl/sh/2017-07-06/243774.shtml" target="_blank" title="20万元藏床底3年恶臭熏人 银行人员忍住反胃抢救19万">20万元藏床底3年恶臭熏人 银行人员忍住反胃抢救19万</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 15:13pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://money.skykiwi.com/na/2017-07-06/243773.shtml" target="_blank" title="CMC Markets：美元或无翻身之力，6月非农无足轻重">CMC Markets：美元或无翻身之力，6月非农无足轻重</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 15:07pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/gj/yl/2017-07-06/243772.shtml" target="_blank" title="双宋联姻总资产超3亿 宋仲基疑掷8000万买新房">双宋联姻总资产超3亿 宋仲基疑掷8000万买新房</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 15:05pm
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="list-news-item clearfix">
+                            <a href="http://news.skykiwi.com/na/weidu/2017-07-05/243711.html" target="_blank" title="新草案：租客损坏房屋 即便不是故意也要赔偿">
+                                <img width="150" height="200" src="http://www.skykiwi.com/d/file/news/na/weidu/2017-07-06/140a7137f61428cddfea4935a2616328.jpg" />
+                            </a>
+                            <dl>
+                                <dt><a href="http://news.skykiwi.com/na/weidu/2017-07-05/243711.html" target="_blank" title="新草案：租客损坏房屋 即便不是故意也要赔偿" style="font-weight:bold;font-size:17px">新草案：租客损坏房屋 即便不是故意也要赔偿</a></dt>
+                                <dd>
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
+                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 8:10am
+                                </dd>
+
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/gj/zh/2017-07-06/243770.shtml" target="_blank" title="德国出台新卖淫法 要求性工作者“持证上岗”">德国出台新卖淫法 要求性工作者“持证上岗”</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 14:59pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/gat/yl/2017-07-06/243768.shtml" target="_blank" title="香港女星当街被摸臀 报警后男子反控:她自己撞来">香港女星当街被摸臀 报警后男子反控:她自己撞来</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 14:55pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/na/zh/2017-07-04/243654.shtml" target="_blank" title="澳洲男同在新西兰打广告：我们需要两枚毛利卵子">澳洲男同在新西兰打广告：我们需要两枚毛利卵子</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:57pm
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="list-news-item clearfix">
+                            <a href="http://go.skykiwi.com/skyselected/food/149922551311580.shtml" target="_blank" title="吃货必收！2017年新西兰Top100餐厅评选出炉！">
+                                <img width="150" height="200" src="http://www.skykiwi.com/d/file/news/na/weidu/2017-07-06/462a344fd48418b368bbd3e03b87862c.jpg" />
+                            </a>
+                            <dl>
+                                <dt><a href="http://go.skykiwi.com/skyselected/food/149922551311580.shtml" target="_blank" title="吃货必收！2017年新西兰Top100餐厅评选出炉！" style="font-weight:bold;font-size:17px">吃货必收！2017年新西兰Top100餐厅评选出炉！</a></dt>
+                                <dd>
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
+                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 7:50am
+                                </dd>
+
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/na/zh/2017-07-04/243636.shtml" target="_blank" title="姐妹城市员工互换 中国姑娘与Invercargill亲密接触">姐妹城市员工互换 中国姑娘与Invercargill亲密接触</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:52pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/dl/zh/2017-07-06/243757.shtml" target="_blank" title="福建人亲身讲述：让人所迷茫的“偷渡生活”">福建人亲身讲述：让人所迷茫的“偷渡生活”</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:26pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://imedu.skykiwi.com/news/2017-07-05/243694.html" target="_blank" title="工签被拒？投资移民也不好过：美国家庭被迫回国">工签被拒？投资移民也不好过：美国家庭被迫回国</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">留学移民</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:20pm
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="list-news-item clearfix">
+                            <a href="http://news.skykiwi.com/na/weidu/2017-07-05/243687.html" target="_blank" title="新西兰海滩连续出现死亡海龟 解剖后让人大吃一惊">
+                                <img width="150" height="200" src="http://www.skykiwi.com/d/file/news/na/weidu/2017-07-05/07f60f00fc1f90ceba6956879e49bbb8.jpg" />
+                            </a>
+                            <dl>
+                                <dt><a href="http://news.skykiwi.com/na/weidu/2017-07-05/243687.html" target="_blank" title="新西兰海滩连续出现死亡海龟 解剖后让人大吃一惊" style="font-weight:bold;font-size:17px">新西兰海滩连续出现死亡海龟 解剖后让人大吃一惊</a></dt>
+                                <dd>
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
+                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 7:22am
+                                </dd>
+
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/world/dl/zh/2017-07-06/243755.shtml" target="_blank" title="这个拿中国绿卡的老外不简单!众多名人给他捧场">这个拿中国绿卡的老外不简单!众多名人给他捧场</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:17pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://money.skykiwi.com/realestate/2017-07-05/243660.shtml" target="_blank" title="挂牌数量剧增+刷新记录 AKL公寓时代已经来临？">挂牌数量剧增+刷新记录 AKL公寓时代已经来临？</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:15pm
+                                </dd>
+                                <dt class="newlist-tit"><a href="http://news.skykiwi.com/na/sh/2017-07-04/243638.shtml" target="_blank" title="遭职场欺凌+无理解雇 幼儿园女教师获赔10万刀">遭职场欺凌+无理解雇 幼儿园女教师获赔10万刀</a></dt>
+                                <dd>
+
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>                                    &nbsp;&nbsp;&nbsp;时间：2017年07月06日 12:15pm
+                                </dd>
+                            </dl>
+                        </li>
+
+                        <li class="rightdivchid1-bannerlist4">
+                            <ul>
+                                <li>
+                                    <a href="http://www.msloan.co.nz/" target="_blank" title="十年品质 享誉全纽"><img width="140" height="75" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newbanner4/2017-06-30/ba64caa599b4dd24cf17bf655498293f.jpg" /></a>
+                                    <span><a href="http://www.msloan.co.nz/" target="_blank" title="十年品质 享誉全纽">十年品质 享誉全纽</a></span>
+                                </li>
+                                <li>
+                                    <a href="https://www.itiger.com/" target="_blank" title="分享世界科技红利"><img width="140" height="75" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newbanner4/2017-06-29/b57f7d0a1b9fd038ba2039b48306fd20.jpg" /></a>
+                                    <span><a href="https://www.itiger.com/" target="_blank" title="分享世界科技红利">分享世界科技红利</a></span>
+                                </li>
+                                <li>
+                                    <a href="http://nzbusinesssale.co.nz/" target="_blank" title="生意买卖找阿勇"><img width="140" height="75" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newbanner4/2017-06-30/f4b7b8d327ea97e77892b646761159a2.jpg" /></a>
+                                    <span><a href="http://nzbusinesssale.co.nz/" target="_blank" title="生意买卖找阿勇">生意买卖找阿勇</a></span>
+                                </li>
+                                <li>
+                                    <a href="http://d.skykiwi.com/business/view/121551" target="_blank" title="Alfred 钟律师"><img width="140" height="75" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newbanner4/2017-06-30/b00ce0ab2eace1e31ccc832e34fa07cd.jpg" /></a>
+                                    <span><a href="http://d.skykiwi.com/business/view/121551" target="_blank" title="Alfred 钟律师">Alfred 钟律师</a></span>
+                                </li>
+                            </ul>
+                            <div style="clear:both"></div>
+                        </li>
+                    </ul>
+
+                    <script type="text/javascript">
+                                $(function () {
+                                    $("#ul-new-list li:eq(1)").after("<li class='list-news-item' style='height:110px'><iframe style='margin:15px 0;' id='aef8c790' name='aef8c790' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=87&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='625' height='80'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a2441570&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=87&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a2441570&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe></li>");
+                                    $("#ul-new-list li:eq(4)").after($(".rightdivchid1-bannerlist4"));
+                                    $("#ul-new-list li:last-child").css("border", "0px");
+                                })
+                    </script>
+
+                    <div class="rightdivchid1-newsmore"><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">+加载更多</a></div>
+                </div>
+                <div class="rightdivchid2">
+                    <div class="bannerlist">
+                        <dl>
+                            <dt>
+                                <a href="http://www.healthelement.co.nz/" target="_blank" title="纽澳康源 代购的风向标 引领购物新风尚">
+                                    <img width="140" height="90" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newimageword/2017-06-29/5b42e5856c9c46d712a736baf13990f2.jpg" />
+                                </a>
+                            </dt>
+                            <dd>
+                                <a href="http://www.healthelement.co.nz/" target="_blank" title="纽澳康源 代购的风向标 引领购物新风尚">纽澳康源 代购的风向标 引领购物新风尚</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <a href="http://radio.skykiwi.com/tuijian/2017-05-22/241401.shtml" target="_blank" title="跟着韦立晓瓯一起游欧洲！千载难逢">
+                                    <img width="140" height="90" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newimageword/2017-06-30/1244db01f16eea4fda0bc9b4effde445.jpg" />
+                                </a>
+                            </dt>
+                            <dd>
+                                <a href="http://radio.skykiwi.com/tuijian/2017-05-22/241401.shtml" target="_blank" title="跟着韦立晓瓯一起游欧洲！千载难逢">跟着韦立晓瓯一起游欧洲！千载难逢</a>
+                            </dd>
+                        </dl>
+
+                    </div>
+                    <div style="clear:both">
+                    </div>
+                    <div class="sky-banner" style="margin-top:18px">
+                        <iframe id='aa8d0411' name='aa8d0411' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=86&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='300' height='250'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=abcb81c4&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=86&amp;cb=&amp;n=abcb81c4&amp;ct0=' border='0' alt='' /></a></iframe>
+
+                    </div>
+                    <div class="hot-search-title">
+                        <span><label class="hot-search-title-label1">HOT</label><label class="hot-search-title-label2">热搜榜</label></span>
+                        <a href="http://news.skykiwi.com" class="sky-more-style" style="color:#7f7f7f" target="_blank">更多>></a>
+                    </div>
+                    <div class="news-general-list" style="border-top:0px !important;margin-bottom:20px">
+                        <ul id="ul-hotsearch-news">
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/weidu/2017-07-03/243544.html" target="_blank" title="罚！全国新增48个测速摄像头！最新最全地图曝光！">罚！全国新增48个测速摄像头！最新最全地图曝光！</a></li>
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/sh/2017-07-04/243565.shtml" target="_blank" title="奥克兰一住宅今早突发爆炸 10米内连墙都炸飞了">奥克兰一住宅今早突发爆炸 10米内连墙都炸飞了</a></li>
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/weidu/2017-07-04/243568.html" target="_blank" title="女华人中介晒了一张照片 没想到被新西兰网友狂怼">女华人中介晒了一张照片 没想到被新西兰网友狂怼</a></li>
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/zh/2017-07-04/243598.shtml" target="_blank" title="工签被拒一家5口陷困境 他怒斥移民局“服务富人”">工签被拒一家5口陷困境 他怒斥移民局“服务富人”</a></li>
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/weidu/2017-07-03/243514.html" target="_blank" title="十六年忍无可忍：酒吧华人老板娘红颜一怒怼警察">十六年忍无可忍：酒吧华人老板娘红颜一怒怼警察</a></li>
+                            <li class="list-group-item"><a href="http://money.skykiwi.com/realestate/2017-06-30/243470.shtml" target="_blank" title="房子便宜却卖不出去 开发商威胁退出可负担计划">房子便宜却卖不出去 开发商威胁退出可负担计划</a></li>
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/zh/2017-07-05/243685.shtml" target="_blank" title="凛冬将至！每年就数这2周最冷 而今年比往年更…">凛冬将至！每年就数这2周最冷 而今年比往年更…</a></li>
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/weidu/2017-06-30/243462.html" target="_blank" title="新西兰车祸死亡率全球最高！都是中国司机惹的祸？">新西兰车祸死亡率全球最高！都是中国司机惹的祸？</a></li>
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/weidu/2017-07-06/243730.html" target="_blank" title="奥克兰学校最新排行出炉 你买对学区房了吗？">奥克兰学校最新排行出炉 你买对学区房了吗？</a></li>
+                            <li class="list-group-item"><a href="http://news.skykiwi.com/na/zh/2017-07-03/243540.shtml" target="_blank" title="馋死吃货的视频：惠灵顿附近水域拍到巨量龙虾">馋死吃货的视频：惠灵顿附近水域拍到巨量龙虾</a></li>
+                        </ul>
+                    </div>
+                   <script type="text/javascript">
+                                $(function () {
+                                    $("#ul-hotsearch-news").find("li:first-child a").css("color", "#d91703");
+                                });
+                   </script>
+
+                    <div data-index="1" class="sky-video-slideshow">
+                        <div class="sky-video-right">
+                            <span class="sky-video-right-title">新西兰加点糖</span>
+                        </div>
+                        <div class="sky-video-right-top1">
+                            <a href="http://ent.skykiwi.com/focus/2016-12-07/231826.html" target="_blank" title="新西兰加点糖：猫咪咖啡超治愈 高冷喵星人等你来撩">
+                                <img width="300" height="190" alt="" src="http://www.skykiwi.com/d/file/fillblank/videoslideshow/2017-06-09/68218bfbb06169a4b706c922b093bb26.jpg" />
+                            </a>
+                        </div>
+                        <div class="sky-video-right-small-title">
+                            <a href="http://ent.skykiwi.com/focus/2016-12-07/231826.html" target="_blank" title="新西兰加点糖：猫咪咖啡超治愈 高冷喵星人等你来撩">新西兰加点糖：猫咪咖啡超治愈 高冷喵星人等你来撩</a>
+                        </div>
+                    </div>
+                    <div data-index="2" class="sky-video-slideshow">
+                        <div class="sky-video-right">
+                            <span class="sky-video-right-title">十万个歪果仁</span>
+                        </div>
+                        <div class="sky-video-right-top1">
+                            <a href="http://ent.skykiwi.com/video_ent/2017-05-10/240668.shtml" target="_blank" title="十万个歪果仁|新西兰大学生做过最疯狂的事是">
+                                <img width="300" height="190" alt="" src="http://www.skykiwi.com/d/file/fillblank/videoslideshow/2017-06-09/517304a25e758d7ee4374d23f14a9253.jpg" />
+                            </a>
+                        </div>
+                        <div class="sky-video-right-small-title">
+                            <a href="http://ent.skykiwi.com/video_ent/2017-05-10/240668.shtml" target="_blank" title="十万个歪果仁|新西兰大学生做过最疯狂的事是">十万个歪果仁|新西兰大学生做过最疯狂的事是</a>
+                        </div>
+                    </div>
+                    <div data-index="3" class="sky-video-slideshow">
+                        <div class="sky-video-right">
+                            <span class="sky-video-right-title">天维人物</span>
+                        </div>
+                        <div class="sky-video-right-top1">
+                            <a href="http://ent.skykiwi.com/video_news/2017-04-18/239461.shtml" target="_blank" title="Malcolm Rands：我是ecoman，新西兰洗护传奇创始人">
+                                <img width="300" height="190" alt="" src="http://www.skykiwi.com/d/file/fillblank/videoslideshow/2017-06-09/6494e19a792bffda587d48f41673ce89.jpg" />
+                            </a>
+                        </div>
+                        <div class="sky-video-right-small-title">
+                            <a href="http://ent.skykiwi.com/video_news/2017-04-18/239461.shtml" target="_blank" title="Malcolm Rands：我是ecoman，新西兰洗护传奇创始人">Malcolm Rands：我是ecoman，新西兰洗护传奇创始人</a>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+                                $(function () {
+                                    $(".sky-video-slideshow[data-index='2']").css("display", "none");
+                                    $(".sky-video-slideshow[data-index='3']").css("display", "none");
+
+                                    setInterval(go, 3000);
+
+                                    function go() {
+                                        var dataindex = parseInt($(".sky-video-slideshow:visible").attr("data-index"));
+                                        dataindex = dataindex + 1;
+                                        if (dataindex > 3) {
+                                            dataindex = 1;
+                                        }
+
+                                        $(".sky-video-slideshow[data-index='" + dataindex + "']").show().siblings(".sky-video-slideshow").hide();
+                                    }
+                                })
+                    </script>
+
+                    <div class="bannerlist" style="margin-bottom:15px;margin-top:10px">
+                        <dl>
+                            <dt>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/ghV_Bo4Zt9g" frameborder="0" allowfullscreen></iframe>
+                            </dt>
+                            <dd><a href="https://www.youtube.com/watch?v=ghV_Bo4Zt9g&feature=youtu.be" target="_blank" title="IRD信息共享">IRD信息共享...</a></dd>
+                        </dl>
+                        <dl style="margin-left:19px">
+                            <dt>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/MAPSEIwDKmc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            </dt>
+                            <dd><a href="http://ent.skykiwi.com/video_news/2017-06-12/242495.shtml" target="_blank" title="悍匪持霰弹枪抢劫华人店铺 满墙弹孔钢锁被打穿！">悍匪持霰弹枪抢劫华人...</a></dd>
+                        </dl>
+                    </div>
+
+                    <div class="clearfix banner-table">
+                        <ul class="clearfix">
+                            <li>
+                                <a href="http://mobile.skykiwi.com/" target="_blank" title="手机天维">
+                                    <img src="http://www.skykiwi.com/d/file/newfillblank/souyezhuanlan/2017-07-03/f5a8d46bfc739748d277cca6c53410e7.jpg" width="130" height="78" />
+                                </a>
+
+                                <span class="banner-table-right">
+                                    <span class="banner-table-right-tit">
+                                        <a href="http://mobile.skykiwi.com/" target="_blank" title="手机天维">
+                                            手机天维
+                                        </a>
+                                    </span>
+                                    <span class="banner-table-right-text">您身边的移动宝典  上手机天维APP 看新闻还能享福...</span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="http://www.post2u.co.nz/" target="_blank" title="邮购宝新人现金福利免费领">
+                                    <img src="http://www.skykiwi.com/d/file/newfillblank/souyezhuanlan/2017-06-29/2d607de078807acf11226139d7503be3.jpg" width="130" height="78" />
+                                </a>
+
+                                <span class="banner-table-right">
+                                    <span class="banner-table-right-tit">
+                                        <a href="http://www.post2u.co.nz/" target="_blank" title="邮购宝新人现金福利免费领">
+                                            邮购宝新人现金福利免费领
+                                        </a>
+                                    </span>
+                                    <span class="banner-table-right-text">来邮购宝做最懒还最赚钱的代购，价格最良心，代发...</span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="http://go.skykiwi.com/recommend/149697883311374.shtml" target="_blank" title="【海滨静街，学区新房】">
+                                    <img src="http://www.skykiwi.com/d/file/fillblank/souyezhuanlan/2017-06-16/97878b0048c793b4a2a145221ebf9e6c.jpg" width="130" height="78" />
+                                </a>
+
+                                <span class="banner-table-right">
+                                    <span class="banner-table-right-tit">
+                                        <a href="http://go.skykiwi.com/recommend/149697883311374.shtml" target="_blank" title="【海滨静街，学区新房】">
+                                            【海滨静街，学区新房】
+                                        </a>
+                                    </span>
+                                    <span class="banner-table-right-text">地址：Bayside Dr, Browns Bay...</span>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="http://radio.skykiwi.com/tuijian/2017-06-15/242678.shtml" target="_blank" title="近Westgate大商圈优质建地 附带图纸 低价易建">
+                                    <img src="http://www.skykiwi.com/d/file/fillblank/souyezhuanlan/2017-06-16/8b8793e7b6dffb7a2950cb27e29ce0b6.jpg" width="130" height="78" />
+                                </a>
+
+                                <span class="banner-table-right">
+                                    <span class="banner-table-right-tit">
+                                        <a href="http://radio.skykiwi.com/tuijian/2017-06-15/242678.shtml" target="_blank" title="近Westgate大商圈优质建地 附带图纸 低价易建">
+                                            Westgate建地 大商圈四通八达
+                                        </a>
+                                    </span>
+                                    <span class="banner-table-right-text">附带图纸户型独栋别墅建地 低价易建...</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="news-general-list clearfix" style="border-top:0px !important;">
+                        <ul class="news-general-list-ul clearfix">
+                            <li><a href='http://radio.skykiwi.com/tuijian/2013-07-09/162744.shtml' target=_blank title='Helen金牌洋人贷款'><strong><font color='#3366cc'>Helen金牌洋人贷款</font></strong></a></li>
+                            <li><a href='http://www.successtranslation.co.nz/' target=_blank title='屹丰翻译 专业移民'><strong><font color='#3366cc'>屹丰翻译 专业移民</font></strong></a></li>
+                            <li><a href='http://shop.skykiwi.com/' target=_blank title='比价网：精明消费'><strong><font color='#FF6600'>比价网：精明消费</font></strong></a></li>
+                            <li><a href='http://d.skykiwi.com/zhongyi' target=_blank title='中医治疗 针灸推拿 ACC认证'><strong><font color='#FF6600'>中医治疗 针灸推拿 ACC认证</font></strong></a></li>
+                            <li><a href='http://radio.skykiwi.com/tuijian/2017-06-08/242303.shtml' target=_blank title='A.R.M.S.帮您在奥克兰安居就业'><strong><font color='#3366cc'>A.R.M.S.帮您在奥克兰安居就业</font></strong></a></li>
+                            <li><a href='http://www.skykiwi.com/licenseagent/index.html' target=_blank title='NZ持牌签证顾问'><strong><font color='#3366cc'>NZ持牌签证顾问</font></strong></a></li>
+                            <li><a href='http://d.skykiwi.com/services/' target=_blank title='花园搬家清洁装修屋顶水电木工'><strong><font color='#34AA7A'>花园搬家清洁装修屋顶水电木工</font></strong></a></li>
+                            <li><a href='http://cnsst.org.nz/staticpage_content.aspx?id=62&name=MYOB%E4%BC%9A%E8%AE%A1%E5%9F%B9%E8%AE%AD' target=_blank title='华社服七月MYOB课程热招中'><strong><font color='#FF6600'>华社服七月MYOB课程热招中</font></strong></a></li>
+                            <li class="lvyou-list-ul-line" style="width:100%;height:2px"></li>
+                            <li style="height:75px">
+                                <a href="http://www.nzgoldengroup.co.nz/" target="_blank" title="NZ一站式服务平台"><img width="140" height="75" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newbanner4/2017-06-30/987d8d5640ebe263f1c4208173f44d7f.jpg" /></a>
+                                <span><a href="http://www.nzgoldengroup.co.nz/" target="_blank" title="NZ一站式服务平台">NZ一站式服务平台</a></span>
+                            </li>
+                            <li style="height:75px">
+                                <a href="http://radio.skykiwi.com/tuijian/2017-02-23/236284.shtml" target="_blank" title="30年纽澳炉具经典"><img width="140" height="75" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newbanner4/2017-06-30/b0601f6947d16321d4fb6d1a74c655f0.jpg" /></a>
+                                <span><a href="http://radio.skykiwi.com/tuijian/2017-02-23/236284.shtml" target="_blank" title="30年纽澳炉具经典">30年纽澳炉具经典</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sky-jinyuanjinrong clearfix" style="">
+                        <iframe src="http://ads.mcmnz.com/JINYUAN-RATE/" width="298" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div style="width:950px;height:100px;margin:15px 0">
+                <iframe id='a0bc447f' name='a0bc447f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=89&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='950' height='100'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a61e89b4&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=89&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a61e89b4&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+            </div>
+            <div class="tab-left-double">
+
+                <!--房产 begin-->
+                <div class="tab-left-double-div1">
+                    <div class="caijin-title-spanexpend">
+                        <span controlindex="1" class="caijin-span-tit active-tit-a" style="color:#034d82;cursor:default !important">在售房源</span>
+                        <!--<span class="caijin-span-tit active-tit-a" onclick="initTabClass(this,'#034d82',2)">拍卖结果</span>-->
+                        <a controlindex="1" target="_blank" href="http://home.skykiwi.com/index.html" class="sky-more-style">更多>></a>
+                    </div>
+                    <div class="sky-margintop10">
+                        <div controlindex="1">
+
+                            <div class="indexhomes" data-index="0">
+                                <a target="_selft" href="http://home.skykiwi.com/259217.html">
+                                    <span class="hsPhoto">
+                                        <img class="loading" src="http://img.skykiwi.com/home_201401/images/loading.gif" style="display:none" />
+                                        <em class="mask" style="display:none"></em>
+                                        <img style="border:1px solid #898989" class="photo" src="http://img01.skykiwi.com/58/29/20170704150609_3338221945.jpg" width="298" height="198" data-src='[{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"58\/29\/","fileName":"20170704150609_3338221945.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"114\/150\/","fileName":"20170704150609_4903772945.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"465\/269\/","fileName":"20170704150609_182258993.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"226\/149\/","fileName":"20170704150609_7646536205.jpg"}]' />
+                                    </span>
+                                </a>
+                                <div class="indexhomes-imagecount">
+                                    <img style="margin-left:10px;margin-top: 3px;" src="http://img01.skykiwi.com/69/418/20140311111823_1213845623.jpg" alt="" width="90" />
+                                    <span style="float:right;margin-right:10px;display:inline-flex"><i style="width:15px;height:16px;background-image:url(/image/skykiwi-left.png);display:block;margin:6px 0;cursor:pointer" class="fa fa-chevron-left"></i><i style="margin-right:5px"><em>1</em>/<em>4</em></i><i style="cursor:pointer;width:15px;height:16px;background-image:url(/image/skykiwi-right.png);display:block;margin:6px 0" class="fa fa-chevron-right"></i></span>
+                                </div>
+                                <div style="border:1px solid #898989">
+                                    <p class="indexhomes-info">
+                                        <strong>
+                                            <a target="_selft" href="http://home.skykiwi.com/259217.html">2/24 Sovereign Place, Glenfield</a>
+                                            Auction
+                                        </strong>
+                                        <span>Glenfield, North Shore City</span>
+                                    </p>
+
+                                    <div class="indexhomes-roomcount"><span class="icon-ws">2 卧室</span>|<span class="icon-wy">1 卫浴</span></div>
+                                    <div class="indexhomes-roomchange"><span style="margin-left:10px;cursor:pointer;" onclick="prevproperty()">上一个</span><span style="float:right;margin-right:10px;cursor:pointer;" onclick="nextproperty()">下一个</span></div>
+                                </div>
+                            </div>
+
+
+                            <div class="indexhomes" data-index="1" style="display:none;">
+                                <a target="_selft" href="http://home.skykiwi.com/259216.html">
+                                    <span class="hsPhoto">
+                                        <img class="loading" src="http://img.skykiwi.com/home_201401/images/loading.gif" style="display:none" />
+                                        <em class="mask" style="display:none"></em>
+                                        <img style="border:1px solid #898989" class="photo" src="http://img01.skykiwi.com/371/268/20170704145435_8611319581.jpg" width="298" height="198" data-src='[{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"371\/268\/","fileName":"20170704145435_8611319581.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"278\/329\/","fileName":"20170704145435_9987766767.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"219\/100\/","fileName":"20170704145435_8420188557.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"406\/198\/","fileName":"20170704145435_1938758446.jpg"}]' />
+                                    </span>
+                                </a>
+                                <div class="indexhomes-imagecount">
+                                    <img style="margin-left:10px;margin-top: 3px;" src="http://img01.skykiwi.com/69/418/20140311111823_1213845623.jpg" alt="" width="90" />
+                                    <span style="float:right;margin-right:10px;display:inline-flex"><i style="width:15px;height:16px;background-image:url(/image/skykiwi-left.png);display:block;margin:6px 0;cursor:pointer" class="fa fa-chevron-left"></i><i style="margin-right:5px"><em>1</em>/<em>4</em></i><i style="cursor:pointer;width:15px;height:16px;background-image:url(/image/skykiwi-right.png);display:block;margin:6px 0" class="fa fa-chevron-right"></i></span>
+                                </div>
+                                <div style="border:1px solid #898989">
+                                    <p class="indexhomes-info">
+                                        <strong>
+                                            <a target="_selft" href="http://home.skykiwi.com/259216.html">213 Hobsonville Road, Hobsonville</a>
+                                            Auction
+                                        </strong>
+                                        <span>Hobsonville, Waitakere City</span>
+                                    </p>
+
+                                    <div class="indexhomes-roomcount"><span class="icon-ws">5 卧室</span>|<span class="icon-wy">2 卫浴</span></div>
+                                    <div class="indexhomes-roomchange"><span style="margin-left:10px;cursor:pointer;" onclick="prevproperty()">上一个</span><span style="float:right;margin-right:10px;cursor:pointer;" onclick="nextproperty()">下一个</span></div>
+                                </div>
+                            </div>
+
+
+                            <div class="indexhomes" data-index="2" style="display:none;">
+                                <a target="_selft" href="http://home.skykiwi.com/259143.html">
+                                    <span class="hsPhoto">
+                                        <img class="loading" src="http://img.skykiwi.com/home_201401/images/loading.gif" style="display:none" />
+                                        <em class="mask" style="display:none"></em>
+                                        <img style="border:1px solid #898989" class="photo" src="http://img01.skykiwi.com/100/85/20170628155407_7864370615.jpg" width="298" height="198" data-src='[{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"105\/477\/","fileName":"20170628155407_6974707338.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"153\/410\/","fileName":"20170628155407_3423497286.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"100\/85\/","fileName":"20170628155407_7864370615.jpg"}]' />
+                                    </span>
+                                </a>
+                                <div class="indexhomes-imagecount">
+                                    <img style="margin-left:10px;margin-top: 3px;" src="http://img01.skykiwi.com/69/418/20140311111823_1213845623.jpg" alt="" width="90" />
+                                    <span style="float:right;margin-right:10px;display:inline-flex"><i style="width:15px;height:16px;background-image:url(/image/skykiwi-left.png);display:block;margin:6px 0;cursor:pointer" class="fa fa-chevron-left"></i><i style="margin-right:5px"><em>1</em>/<em>3</em></i><i style="cursor:pointer;width:15px;height:16px;background-image:url(/image/skykiwi-right.png);display:block;margin:6px 0" class="fa fa-chevron-right"></i></span>
+                                </div>
+                                <div style="border:1px solid #898989">
+                                    <p class="indexhomes-info">
+                                        <strong>
+                                            <a target="_selft" href="http://home.skykiwi.com/259143.html">1/22 Stanaway Street, Hillcrest</a>
+                                            Auction
+                                        </strong>
+                                        <span>Hillcrest, North Shore City</span>
+                                    </p>
+
+                                    <div class="indexhomes-roomcount"><span class="icon-ws">2 卧室</span>|<span class="icon-wy">1 卫浴</span></div>
+                                    <div class="indexhomes-roomchange"><span style="margin-left:10px;cursor:pointer;" onclick="prevproperty()">上一个</span><span style="float:right;margin-right:10px;cursor:pointer;" onclick="nextproperty()">下一个</span></div>
+                                </div>
+                            </div>
+
+
+                            <div class="indexhomes" data-index="3" style="display:none;">
+                                <a target="_selft" href="http://home.skykiwi.com/259127.html">
+                                    <span class="hsPhoto">
+                                        <img class="loading" src="http://img.skykiwi.com/home_201401/images/loading.gif" style="display:none" />
+                                        <em class="mask" style="display:none"></em>
+                                        <img style="border:1px solid #898989" class="photo" src="http://img01.skykiwi.com/169/346/20170627155447_3874748472.jpg" width="298" height="198" data-src='[{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"169\/346\/","fileName":"20170627155447_3874748472.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"104\/289\/","fileName":"20170627155448_3044349063.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"113\/114\/","fileName":"20170627155448_7739547530.jpg"}]' />
+                                    </span>
+                                </a>
+                                <div class="indexhomes-imagecount">
+                                    <img style="margin-left:10px;margin-top: 3px;" src="http://img01.skykiwi.com/69/418/20140311111823_1213845623.jpg" alt="" width="90" />
+                                    <span style="float:right;margin-right:10px;display:inline-flex"><i style="width:15px;height:16px;background-image:url(/image/skykiwi-left.png);display:block;margin:6px 0;cursor:pointer" class="fa fa-chevron-left"></i><i style="margin-right:5px"><em>1</em>/<em>3</em></i><i style="cursor:pointer;width:15px;height:16px;background-image:url(/image/skykiwi-right.png);display:block;margin:6px 0" class="fa fa-chevron-right"></i></span>
+                                </div>
+                                <div style="border:1px solid #898989">
+                                    <p class="indexhomes-info">
+                                        <strong>
+                                            <a target="_selft" href="http://home.skykiwi.com/259127.html">33 Copperfield Terrace, Mellons Bay</a>
+                                            Price by Negotiation
+                                        </strong>
+                                        <span>Mellons Bay, Manukau City</span>
+                                    </p>
+
+                                    <div class="indexhomes-roomcount"><span class="icon-ws">5 卧室</span>|<span class="icon-wy">3 卫浴</span></div>
+                                    <div class="indexhomes-roomchange"><span style="margin-left:10px;cursor:pointer;" onclick="prevproperty()">上一个</span><span style="float:right;margin-right:10px;cursor:pointer;" onclick="nextproperty()">下一个</span></div>
+                                </div>
+                            </div>
+
+
+                            <div class="indexhomes" data-index="4" style="display:none;">
+                                <a target="_selft" href="http://home.skykiwi.com/259167.html">
+                                    <span class="hsPhoto">
+                                        <img class="loading" src="http://img.skykiwi.com/home_201401/images/loading.gif" style="display:none" />
+                                        <em class="mask" style="display:none"></em>
+                                        <img style="border:1px solid #898989" class="photo" src="http://img01.skykiwi.com/82/341/20170630144338_452174809.jpg" width="298" height="198" data-src='[{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"372\/11\/","fileName":"20170630144338_7402935650.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"82\/341\/","fileName":"20170630144338_452174809.jpg"},{"urlPrefix":"http:\/\/img01.skykiwi.com\/","filePath":"393\/293\/","fileName":"20170630144338_4139897971.jpg"}]' />
+                                    </span>
+                                </a>
+                                <div class="indexhomes-imagecount">
+                                    <img style="margin-left:10px;margin-top: 3px;" src="http://img01.skykiwi.com/69/418/20140311111823_1213845623.jpg" alt="" width="90" />
+                                    <span style="float:right;margin-right:10px;display:inline-flex"><i style="width:15px;height:16px;background-image:url(/image/skykiwi-left.png);display:block;margin:6px 0;cursor:pointer" class="fa fa-chevron-left"></i><i style="margin-right:5px"><em>1</em>/<em>3</em></i><i style="cursor:pointer;width:15px;height:16px;background-image:url(/image/skykiwi-right.png);display:block;margin:6px 0" class="fa fa-chevron-right"></i></span>
+                                </div>
+                                <div style="border:1px solid #898989">
+                                    <p class="indexhomes-info">
+                                        <strong>
+                                            <a target="_selft" href="http://home.skykiwi.com/259167.html">18 Huruhuru Road, Massey</a>
+                                            Auction
+                                        </strong>
+                                        <span>Massey, Waitakere City</span>
+                                    </p>
+
+                                    <div class="indexhomes-roomcount"><span class="icon-ws">3 卧室</span>|<span class="icon-wy">1 卫浴</span></div>
+                                    <div class="indexhomes-roomchange"><span style="margin-left:10px;cursor:pointer;" onclick="prevproperty()">上一个</span><span style="float:right;margin-right:10px;cursor:pointer;" onclick="nextproperty()">下一个</span></div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <script src="http://www.skykiwi.com/js/pglist-v1.0.js" type="text/javascript"></script>
+                </div>
+
+                <!--<div controlindex="2" style="display:none"></div>-->
+                <!--<iframe src="http://www.skykiwi.com/ssi/indexhome201706.html"></iframe>-->
+                <!--房产  end-->
+                <!--纽澳财经 begin-->
+                <div class="tab-left-double-div2">
+                    <div class="caijin-title-span">
+                        <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#034d82',1)">纽澳财经</span>
+                        <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#034d82',2)">投资热门</span>
+                    </div>
+                    <div class="sky-margintop10">
+                        <div class="caijin-span" controlindex="1">
+                            <div style="height:165px">
+                                <div class="sky-floatL"><a href="http://money.skykiwi.com/na/2017-07-03/243538.shtml" target="_blank"><img style="border:1px solid #898989" width="125" height="155" src="http://www.skykiwi.com/d/file/money/na/2017-07-03/2aed6f749282c06c551002ced50bf4d7.jpg" /></a></div>
+                                <div class="sky-caijing-info">
+                                    <dl>
+                                        <dt class="sky-caijing-info-title"><a href="http://money.skykiwi.com/na/2017-07-03/243538.shtml" target="_blank">新西兰中小微企业如何开拓中国市场</a></dt>
+                                        <dd class="sky-caijing-info-detail"><a href="http://money.skykiwi.com/na/2017-07-03/243538.shtml" target="_blank" title="新西兰中小微企业如何开拓中国市场？专家支招">【天维网7月5日报道 援引stuff消息】  随着中新两国经贸关系越来越紧密，新西兰出口商正在抓住...[详细]</a></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="lvyou-list-ul-line"></div>
+                            <div class="sky-caijing">
+                                <ul class="list-group-generalitem">
+                                    <li><a href="http://money.skykiwi.com/na/2017-07-06/243773.shtml" target="_blank" title="CMC Markets：美元或无翻身之力，6月非农无足轻重">CMC Markets：美元或无翻身之力，6月非农无足轻重</a></li>
+                                    <li><a href="http://money.skykiwi.com/na/2017-07-04/243655.shtml" target="_blank" title="马斯克宣布特斯拉Model 3提前投产 或将在NZ大卖">马斯克宣布特斯拉Model 3提前投产 或将在NZ大卖</a></li>
+                                    <li><a href="http://money.skykiwi.com/na/2017-07-05/243689.shtml" target="_blank" title="CMC Markets：昨日重要行情：澳元落水、纽币坚挺、亚股普跌">CMC Markets：昨日重要行情：澳元落水、纽币坚挺、亚股普跌</a></li>
+                                    <li><a href="http://money.skykiwi.com/na/2017-07-03/243538.shtml" target="_blank" title="新西兰中小微企业如何开拓中国市场？专家支招">新西兰中小微企业如何开拓中国市场？专家支招</a></li>
+                                    <li><a href="http://money.skykiwi.com/na/2017-07-04/243591.shtml" target="_blank" title="CMC Markets：本周重要金融产品技术走势-道指、黄金、原油、美日">CMC Markets：本周重要金融产品技术走势-道指、黄金、原油、美日</a></li>
+                                    <li><a href="http://money.skykiwi.com/na/2017-06-30/243467.shtml" target="_blank" title="新品种奇异果将成“盈利炸弹”让新西兰“金身不败”">新品种奇异果将成“盈利炸弹”让新西兰“金身不败”</a></li>
+                                    <li><a href="http://money.skykiwi.com/na/2017-06-30/243406.shtml" target="_blank" title="中-新自贸协定升级中，新西兰商务领事分析掘金机遇">中-新自贸协定升级中，新西兰商务领事分析掘金机遇</a></li>
+                                    <li><a href="http://money.skykiwi.com/na/2017-07-03/243497.shtml" target="_blank" title="外汇局辟谣！7月1日没有涉及个人外汇业务的新规">外汇局辟谣！7月1日没有涉及个人外汇业务的新规</a></li>
+                                    <li><a href="http://money.skykiwi.com/na/2017-07-01/243471.shtml" target="_blank" title="新西兰对华出口首批冰鲜肉 中新贸易迎来新亮点">新西兰对华出口首批冰鲜肉 中新贸易迎来新亮点</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="caijin-span" style="display:none" controlindex="2">
+                            <div style="height:165px">
+                                <div class="sky-floatL"><a href="http://money.skykiwi.com/realestate/2017-07-05/243723.shtml" target="_blank"><img style="border:1px solid #898989" width="125" height="155" src="http://www.skykiwi.com/d/file/money/realestate/2017-07-05/2afee10ca9645b3aaa523d006b7d4737.jpg" /></a></div>
+                                <div class="sky-caijing-info">
+                                    <dl>
+                                        <dt class="sky-caijing-info-title"><a href="http://money.skykiwi.com/realestate/2017-07-05/243723.shtml" target="_blank">奥克兰房价跌势已现！</a></dt>
+                                        <dd class="sky-caijing-info-detail"><a href="http://money.skykiwi.com/realestate/2017-07-05/243723.shtml" target="_blank" title="两大权威数据最新发布：奥克兰房价跌势已现(图表)">【天维网7月5日报道】持续低迷的房屋成交量对奥克兰房市的打击终于产生了“腰斩哥”期盼已久的结果：房价跌...[详细]</a></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="lvyou-list-ul-line"></div>
+                            <div class="sky-caijing">
+                                <ul class="list-group-generalitem">
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-07-05/243660.shtml" target="_blank" title="挂牌数量剧增+刷新记录 AKL公寓时代已经来临？">挂牌数量剧增+刷新记录 AKL公寓时代已经来临？</a></li>
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-07-04/243646.shtml" target="_blank" title="AKL租房市场再现怪象 租户宁可住毒屋也不愿搬">AKL租房市场再现怪象 租户宁可住毒屋也不愿搬</a></li>
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-07-05/243723.shtml" target="_blank" title="两大权威数据最新发布：奥克兰房价跌势已现(图表)">两大权威数据最新发布：奥克兰房价跌势已现(图表)</a></li>
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-07-03/243553.shtml" target="_blank" title="最新研究：原来阳光被挡了 会让你损失这么多钱！">最新研究：原来阳光被挡了 会让你损失这么多钱！</a></li>
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-06-30/243470.shtml" target="_blank" title="房子便宜却卖不出去 开发商威胁退出可负担计划">房子便宜却卖不出去 开发商威胁退出可负担计划</a></li>
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-06-30/243434.shtml" target="_blank" title="这北岸海景房的设计要给满分，保暖观景两不误！">这北岸海景房的设计要给满分，保暖观景两不误！</a></li>
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-06-29/243394.shtml" target="_blank" title="南岛历史豪宅出售 任何价格都可商量没准能捡漏">南岛历史豪宅出售 任何价格都可商量没准能捡漏</a></li>
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-06-29/243387.shtml" target="_blank" title="不做第2个奥克兰 惠灵顿这几项住房改革也是拼了">不做第2个奥克兰 惠灵顿这几项住房改革也是拼了</a></li>
+                                    <li><a href="http://money.skykiwi.com/realestate/2017-06-28/243340.shtml" target="_blank" title="出售存在“严重缺陷”的公寓 Napier一中介被罚">出售存在“严重缺陷”的公寓 Napier一中介被罚</a></li>
+                                </ul>
+                                <!--<li><a href="http://money.skykiwi.com/realestate/2017-07-05/243660.shtml" target="_blank" title="挂牌数量剧增+刷新记录 AKL公寓时代已经来临？">挂牌数量剧增+刷新记录 AKL公寓时代已经来</a></li><li><a href="http://money.skykiwi.com/realestate/2017-07-04/243646.shtml" target="_blank" title="AKL租房市场再现怪象 租户宁可住毒屋也不愿搬">AKL租房市场再现怪象 租户宁可住毒屋也不</a></li><li><a href="http://money.skykiwi.com/realestate/2017-07-05/243723.shtml" target="_blank" title="两大权威数据最新发布：奥克兰房价跌势已现(图表)">两大权威数据最新发布：奥克兰房价跌势已</a></li><li><a href="http://money.skykiwi.com/realestate/2017-07-03/243553.shtml" target="_blank" title="最新研究：原来阳光被挡了 会让你损失这么多钱！">最新研究：原来阳光被挡了 会让你损失这么</a></li><li><a href="http://money.skykiwi.com/realestate/2017-06-30/243470.shtml" target="_blank" title="房子便宜却卖不出去 开发商威胁退出可负担计划">房子便宜却卖不出去 开发商威胁退出可负担</a></li><li><a href="http://money.skykiwi.com/realestate/2017-06-30/243434.shtml" target="_blank" title="这北岸海景房的设计要给满分，保暖观景两不误！">这北岸海景房的设计要给满分，保暖观景两</a></li><li><a href="http://money.skykiwi.com/realestate/2017-06-29/243394.shtml" target="_blank" title="南岛历史豪宅出售 任何价格都可商量没准能捡漏">南岛历史豪宅出售 任何价格都可商量没准能</a></li><li><a href="http://money.skykiwi.com/realestate/2017-06-29/243387.shtml" target="_blank" title="不做第2个奥克兰 惠灵顿这几项住房改革也是拼了">不做第2个奥克兰 惠灵顿这几项住房改革也</a></li><li><a href="http://money.skykiwi.com/realestate/2017-06-28/243340.shtml" target="_blank" title="出售存在“严重缺陷”的公寓 Napier一中介被罚">出售存在“严重缺陷”的公寓 Napier一中介</a></li>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--纽澳财经  end-->
+                <div style="clear:both;"></div>
+                <div style="height:80px;width:625px;overflow:hidden;margin-bottom:10px; margin-top:5px">
+                    <iframe id='a58e3db6' name='a58e3db6' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=96&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='625' height='80'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a59c122c&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=96&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a59c122c&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <!--生活 旅游 begin-->
+                <div id="flash1" class="slideBox sky-floatL" style="margin: 10px 0;">
+                    <ul class="items">
+                        <li>
+                            <a href="http://go.skykiwi.com/skyselected/travel/149689634411362.shtml" target="_blank" title="90后美女留学生爆红网络">
+                                <img width='300' height='400' src='http://www.skykiwi.com/d/file/newfillblank/new_huandengpian/2017-07-04/667d6438059d70c9775995b005edc84a.jpg' />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://go.skykiwi.com/skyselected/food/149697618511373.shtml" target="_blank" title="高端中餐厅进驻SkyCity美食街！">
+                                <img width='300' height='400' src='http://www.skykiwi.com/d/file/newfillblank/new_huandengpian/2017-07-04/fbf1947dfd20db7655eee0edae5ea185.jpg' />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://go.skykiwi.com/skyselected/entertainment/149695999811365.shtml" target="_blank" title="音乐才女Lorde新西兰演唱会！">
+                                <img width='300' height='400' src='http://www.skykiwi.com/d/file/newfillblank/new_huandengpian/2017-07-04/b5a5acf27c27c480e05b41a8fc2291ff.jpg' />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-left-double-div2">
+                    <div class="caijin-title-span">
+                        <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#ef537a',1)">生活</span>
+                        <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#ef537a',2)">旅游</span>
+                        <a controlindex="1" target="_blank" href="http://mobile.skykiwichina.com/news/list?category_id=214&source=index_navigation" class="sky-more-style">更多>></a>
+                        <a controlindex="2" target="_blank" href="http://mobile.skykiwichina.com/news/list?category_id=211&source=index_navigation" class="sky-more-style">更多>></a>
+                    </div>
+                    <div class="sky-margintop-daogou">
+                        <div class="caijin-span" controlindex="1">
+                            <div style="display: inline-block;" id="div-life-control">
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/life/149731541311404.shtml" title="NZ准妈妈注意事项">
+                                            <img alt="NZ准妈妈注意事项" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_shenghuoimage/2017-07-04/fce74cdadf2afe075e34456c171868dd.jpg">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/life/149731541311404.shtml" title="NZ准妈妈注意事项">NZ准妈妈注意事项</a></dd>
+                                </dl>
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/life/149731232211403.shtml" title="幼教老师亲身分享">
+                                            <img alt="幼教老师亲身分享" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_shenghuoimage/2017-07-04/e457575e346def6a50dfdf10f825029d.jpg">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/life/149731232211403.shtml" title="幼教老师亲身分享">幼教老师亲身分享</a></dd>
+                                </dl>
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/life/149722651911390.shtml" title="新西兰商品很low？！">
+                                            <img alt="新西兰商品很low？！" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_shenghuoimage/2017-07-04/0baccf761947f694aa5f02747db0bab1.jpg">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/life/149722651911390.shtml" title="新西兰商品很low？！">新西兰商品很low？！</a></dd>
+                                </dl>
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/life/149696917511370.shtml" title="奥克兰美发店排名！">
+                                            <img alt="奥克兰美发店排名！" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_shenghuoimage/2017-07-04/d0b8e1d3d75fc56e619c26767492ba77.jpg">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/life/149696917511370.shtml" title="奥克兰美发店排名！">奥克兰美发店排名！</a></dd>
+                                </dl>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $("#div-life-control dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
+                                        $("#div-life-control dl:eq(3)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
+                                    })
+                                </script>
+                            </div>
+                            <div class="sky-life-list">
+                                <ul>
+                                    <li><a href="http://go.skykiwi.com/skyselected/life/149913762411572.shtml" title="出门没网好焦虑？Facebook推出寻找免费wifi功能" target="_blank">出门没网好焦虑？Facebook推出寻找免费wifi功能</a></li>
+                                    <li><a href="http://go.skykiwi.com/skyselected/life/149741058611433.shtml" title="省钱购物好消息！Kmart 卖场商品即将迎来大降价" target="_blank">省钱购物好消息！Kmart 卖场商品即将迎来大降价</a></li>
+                                    <li><a href="http://go.skykiwi.com/skyselected/life/149696917511370.shtml" title="奥克兰美发店排名！时尚精们最爱去的这14家美发店！" target="_blank">奥克兰美发店排名！时尚精们最爱去的这14家美发店！</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="caijin-span" controlindex="2">
+                            <div style="display: inline-block;" id="div-tourism-control">
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/travel/149335465611047.shtml" title="新西兰的隐世之珍">
+                                            <img alt="新西兰的隐世之珍" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_lvyouimage/2017-07-04/7b775d92667db7185ae3d012006753a1.jpg">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/travel/149335465611047.shtml" title="新西兰的隐世之珍">新西兰的隐世之珍</a></dd>
+                                </dl>
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/travel/149559379211247.shtml" title="漫步新西兰小法国">
+                                            <img alt="漫步新西兰小法国" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_lvyouimage/2017-07-04/3f945822ff6cb3bb2c7af2b24362a86c.jpg">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/travel/149559379211247.shtml" title="漫步新西兰小法国">漫步新西兰小法国</a></dd>
+                                </dl>
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/travel/149852590811522.shtml" title="奥克兰人必做50事">
+                                            <img alt="奥克兰人必做50事" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_lvyouimage/2017-07-04/1753e58b23eaadebbaac22b2bb925ffb.jpg">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/travel/149852590811522.shtml" title="奥克兰人必做50事">奥克兰人必做50事</a></dd>
+                                </dl>
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/travel/149846222211517.shtml" title="美极了的户外温泉">
+                                            <img alt="美极了的户外温泉" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_lvyouimage/2017-07-04/8f289282aeaccf22e1ab9891bd01de8c.jpg">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/travel/149846222211517.shtml" title="美极了的户外温泉">美极了的户外温泉</a></dd>
+                                </dl>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $("#div-tourism-control dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
+                                        $("#div-tourism-control dl:eq(3)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
+                                    })
+                                </script>
+                            </div>
+                            <div class="sky-life-list">
+                                <ul>
+                                    <li><a href="http://go.skykiwi.com/skyselected/travel/149820008311503.shtml" title="惊叹！来新西兰旅游 Airbnb这些房子比酒店还美！" target="_blank">惊叹！来新西兰旅游 Airbnb这些房子比酒店还美！</a></li>
+                                    <li><a href="http://go.skykiwi.com/skyselected/travel/149809921811492.shtml" title="周末约起！奥克兰乘公交一日游好去处！" target="_blank">周末约起！奥克兰乘公交一日游好去处！</a></li>
+                                    <li><a href="http://go.skykiwi.com/skyselected/travel/149914065711574.shtml" title="带宝宝坐飞机的“神器”被禁用了 妈妈们很头疼" target="_blank">带宝宝坐飞机的“神器”被禁用了 妈妈们很头疼</a></li>
+                                </ul>
+                            </div>
+                            <script type="text/javascript">
+                                    $(function () {
+                                        $(".sky-life-list ul li:eq(0) a").css("color", "#0958fa");
+                                        $(".sky-life-list ul li:eq(1) a").css("color", "#fa5882");
+                                        $(".sky-life-list ul li:eq(3) a").css("color", "#0958fa");
+                                        $(".sky-life-list ul li:eq(4) a").css("color", "#fa5882");
+                                    });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <!--生活 旅游  end-->
+                <div style="clear:both;"></div>
+                <!--特价 时尚 美食 begin-->
+                <div class="tab-left-double-div1">
+                    <div class="caijin-title-spanexpend">
+                        <span class="active-tit-single active-tit-a active-tit-ashenghuo" style="color:#ef537a;cursor:default !important">特价</span>
+                        <a target="_blank" href="http://mobile.skykiwichina.com/index?source=index_navigation" class="sky-more-style">更多>></a>
+                    </div>
+                    <div class="sky-margintop-daogou">
+                        <div class="caijin-span">
+                            <ul class="caijin-span-tejia">
+                                <li><a href="https://www.eventcinemas.co.nz/Promotions" target='_blank' title='优惠购门票'><img alt="优惠购门票" width='140' height='150' src='http://www.skykiwi.com/d/file/newfillblank/new_tejia/2017-07-04/ffedc55d9b032e3b94cec2393cb6dc28.jpg'></a></li>
+                                <li><a href="http://go.skykiwi.com/supermarket/149906086911556.shtml" target='_blank' title='超市抢特价'><img alt="超市抢特价" width='140' height='150' src='http://www.skykiwi.com/d/file/newfillblank/new_tejia/2017-07-04/ef96f7852161b91d2d664503987253ee.jpg'></a></li>
+                                <li><a href="http://go.skykiwi.com/supermarket/149906055211554.shtml" target='_blank' title='省钱吃美食'><img alt="省钱吃美食" width='140' height='150' src='http://www.skykiwi.com/d/file/newfillblank/new_tejia/2017-07-04/8656f46450e0972c6e5252ea17fdd49d.jpg'></a></li>
+                                <li><a href="http://go.skykiwi.com/supermarket/149906067211555.shtml" target='_blank' title='卖场淘便宜'><img alt="卖场淘便宜" width='140' height='150' src='http://www.skykiwi.com/d/file/newfillblank/new_tejia/2017-07-04/25af7474049b642f69def91154e9e3c1.jpg'></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-left-double-div2">
+                    <div class="caijin-title-span">
+                        <span controlindex="1" class="caijin-span-tit" onclick="initTabClass(this,'#ef537a',1)">时尚</span>
+                        <span controlindex="2" class="caijin-span-tit" onclick="initTabClass(this,'#ef537a',2)">美食</span>
+                        <a controlindex="1" target="_blank" href="http://mobile.skykiwichina.com/news/list?category_id=213&source=index_news_more" class="sky-more-style">更多>></a>
+                        <a controlindex="2" target="_blank" href="http://mobile.skykiwichina.com/news/list?category_id=210&source=index_navigation" class="sky-more-style">更多>></a>
+                    </div>
+                    <div class="sky-margintop-daogou">
+                        <div class="caijin-span" controlindex="1">
+                            <div class="sky-shishang">
+                                <dl class='lvyou-list-ul' style='width:300px'>
+                                    <dt>
+                                        <a href='http://go.skykiwi.com/skyselected/fashion/149698826111382.shtml' target='_blank' title='扒一扒口碑最好的贵妇面膜！女人就要对自己好一点！'>
+                                            <img style='width:300px;height:180px;display:block' alt='扒一扒口碑最好的贵妇面膜！女人就要对自己好一点！' src='http://www.skykiwi.com/d/file/newfillblank/new_shishangbig/2017-07-04/f7aec759eab505c2bf8b79c5b6d24e32.jpg' />
+                                        </a>
+                                    </dt>
+                                    <dd class='shishang-list-dl'><a href='http://go.skykiwi.com/skyselected/fashion/149698826111382.shtml' target='_blank' title='扒一扒口碑最好的贵妇面膜！女人就要对自己好一点！'>扒一扒口碑最好的贵妇面膜！女人就要对自己好一点！</a></dd>
+                                </dl>
+                            </div>
+                            <div class="sky-shishang clearfix" id="div-fashion-controllist">
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/fashion/149723508811391.shtml" title="全球最时髦球鞋">
+                                            <img alt="全球最时髦球鞋" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_shishangimage/2017-07-04/05861ac52b77019870ea1e90a544a070.jpg" />
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/fashion/149723508811391.shtml" title="全球最时髦球鞋">全球最时髦球鞋</a></dd>
+                                </dl>
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/fashion/149698801111381.shtml" title="NZ海淘英国货攻略">
+                                            <img alt="NZ海淘英国货攻略" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_shishangimage/2017-07-04/e8e0948aa8e3d1ae58307ffed5bd31f7.jpg" />
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/fashion/149698801111381.shtml" title="NZ海淘英国货攻略">NZ海淘英国货攻略</a></dd>
+                                </dl>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $("#div-fashion-controllist dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div>');
+                                    })
+                                </script>
+                            </div>
+                        </div>
+                        <div class="caijin-span" controlindex="2">
+                            <div class="sky-shishang">
+                                <dl class='lvyou-list-ul' style='width:300px'>
+                                    <dt>
+                                        <a href='http://go.skykiwi.com/skyselected/food/149679645911344.shtml' target='_blank' title='吃遍Ponsonby美食！这些餐厅是吃货们的好去处'>
+                                            <img style='width:300px;height:180px;display:block' alt='吃遍Ponsonby美食！这些餐厅是吃货们的好去处' src='http://www.skykiwi.com/d/file/newfillblank/new_meishibig/2017-07-04/a70d697b8185071be8818ebe449d8709.jpg' />
+                                        </a>
+                                    </dt>
+                                    <dd class='shishang-list-dl'><a href='http://go.skykiwi.com/skyselected/food/149679645911344.shtml' target='_blank' title='吃遍Ponsonby美食！这些餐厅是吃货们的好去处'>吃遍Ponsonby美食！这些餐厅是吃货们的好去处</a></dd>
+                                </dl>
+                            </div>
+                            <div class="sky-shishang" id="div-food-controllist">
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/food/149698497111377.shtml" title="奥克兰最好吃烤肉">
+                                            <img alt="奥克兰最好吃烤肉" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_meishiimage/2017-07-04/70b71a7ab3d68f8decd5ddbf19880b45.jpg" />
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/food/149698497111377.shtml" title="奥克兰最好吃烤肉">奥克兰最好吃烤肉</a></dd>
+                                </dl>
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="http://go.skykiwi.com/skyselected/food/149601326411279.shtml" title="奥克兰最赞冰淇淋">
+                                            <img alt="奥克兰最赞冰淇淋" style="border:1px solid #898989;display:block" width="138" height="78" src="http://www.skykiwi.com/d/file/newfillblank/new_meishiimage/2017-07-04/e85a9ba0a7b04eb9ec58ba58049fbd9f.jpg" />
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="http://go.skykiwi.com/skyselected/food/149601326411279.shtml" title="奥克兰最赞冰淇淋">奥克兰最赞冰淇淋</a></dd>
+                                </dl>
+                                <script type="text/javascript" id="div-food-controllist">
+                                    $(function () {
+                                        $("#div-food-controllist dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div>');
+                                    })
+                                </script>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <!--特价时尚美食 end-->
+                <div style="clear:both;"></div>
+                <!--广告 begin-->
+                <div style="float:left;width:300px;height:100px;overflow:hidden;margin:10px 0">
+                    <iframe id='a23891cf' name='a23891cf' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=93&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='100'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a8662205&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=93&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a8662205&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <div style="float:right;width:300px;height:100px;overflow:hidden;margin:10px 0">
+                    <iframe id='ac4a081a' name='ac4a081a' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=94&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='100'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=ab638ae5&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=94&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ab638ae5&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <!--广告 end-->
+                <div style="clear:both;"></div>
+                <!--天维专题  begin-->
+                <div id="flash2" class="slideBox" style="float:left;margin:10px 0">
+                    <ul class="items">
+                        <li>
+                            <a target="_blank" href="http://www.skykiwi.com/zt/kkldz/" title="凯库拉大的地震">
+                                <img width="300" height="270" src="http://www.skykiwi.com/d/file/fillblank/ztslide/2017-06-13/1b2970f6e36819a3469a3658b8b06940.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.skykiwi.com/zt/zl/" title="李克强访问新西兰">
+                                <img width="300" height="270" src="http://www.skykiwi.com/d/file/fillblank/ztslide/2017-06-13/eb191e413d74dcf72d4871e23d176f34.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.skykiwi.com/zt/ymxz/" title="移民新政">
+                                <img width="300" height="270" src="http://www.skykiwi.com/d/file/fillblank/ztslide/2017-06-13/7b311e6a112e898c39c3b2d142608b36.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-left-double-div2">
+                    <div class="caijin-title-spanexpend">
+                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanti" style="color:#f5842b;cursor:default !important">天维专题</span>
+                    </div>
+                    <div class="sky-margintop-daogou">
+                        <div class="caijin-span" controlindex="1">
+                            <div class="sky-zhuanti-title"><a href="http://news.skykiwi.com/na/zh/2017-05-25/241608.shtml" target="_blank">【2017年财预案】政府推20亿大礼包 打工者人人有份 </a></div>
+                            <div class="sky-zhuanti-content">
+                                除了隆重推出面向家庭的“20亿大礼包”，政府对新西兰未来5年的经济预期也十分乐观，认为GDP涨幅预计平均达3.1%；过去3年新创造就业岗位20万个，预计到2021年，新增就业岗位...
+                            </div>
+                            <ul class="sky-zhuanti-list">
+                                <li class="sky-ul-list1"><a href="http://news.skykiwi.com/na/zh/2017-05-25/241619.shtml" target="_blank" title="2017年度财政预算：NZ经济一片向好 财政盈余丰沛">2017年度财政预算：NZ经济一片向好 财政盈余丰沛</a></li>
+                                <li class="sky-ul-list1"><a href="http://news.skykiwi.com/na/zh/2017-05-26/241668.shtml" target="_blank" title="工党党魁手握1纽币怒怼财算案：为大选铺路的贿赂">工党党魁手握1纽币怒怼财算案：为大选铺路的贿赂</a></li>
+                                <li class="sky-ul-list1"><a href="http://money.skykiwi.com/realestate/2017-05-22/241420.shtml" target="_blank" title="AKL公屋计划细节出炉：Avondale将新建368栋公屋">AKL公屋计划细节出炉：Avondale将新建368栋公屋</a></li>
+                                <li class="sky-ul-list1"><a href="http://money.skykiwi.com/na/2017-05-12/240863.shtml" target="_blank" title="一张图告诉你：对比澳英中，新西兰个税高不高？">一张图告诉你：对比澳英中，新西兰个税高不高？</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--天维专题 end-->
+                <div style="clear:both;"></div>
+                <!--留学移民 专栏 begin-->
+                <div class="tab-left-double-div1">
+                    <div class="caijin-title-spanexpend">
+                        <span class="active-tit-single active-tit-a active-tit-ayimin" style="color:#448e4f;cursor:default !important">留学移民</span>
+                        <a href="http://imedu.skykiwi.com" target="_blank" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击查看更多留学移民新闻" class="sky-more-style">更多>></a>
+                    </div>
+                    <div class="sky-margintop-daogou">
+                        <div class="caijin-span" controlindex="1">
+                            <div>
+                                <div class="sky-floatL">
+                                    <a href="http://imedu.skykiwi.com/news/2017-07-05/243694.html" target="_blank" title="工签被拒？投资移民也不好过：美国家庭被迫回国"><img style="border:1px solid #898989" width="140" height="80" src="http://www.skykiwi.com/d/file/info/news/2017-07-05/86c379bb1c9850fab99f129c38b947e7.jpg" /></a>
+                                </div>
+                                <div class="sky-liuxueyimin">
+                                    <dl>
+                                        <dd><a href="http://imedu.skykiwi.com/news/2017-07-05/243694.html" target="_blank" title="工签被拒？投资移民也不好过：美国家庭被迫回国">美国家庭被迫回国</a></dd>
+                                        <dt style="height:55px;overflow:hidden;text-align:justify">【天维网 7月6日 据radionz】变卖一切，从美国来到新西兰，经...</dt>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="sky-floatL">
+                                <ul>
+                                    <li class="sky-ul-list1"><a href="http://imedu.skykiwi.com/news/2017-07-05/243694.html" target="_blank" title="工签被拒？投资移民也不好过：美国家庭被迫回国">工签被拒？投资移民也不好过：美国家庭被迫回国</a></li>
+                                    <li class="sky-ul-list1"><a href="http://imedu.skykiwi.com/zhengce/2017-07-04/243607.html" target="_blank" title="超市加入怒怼工党移民新政行列：“我们将极为挣扎”">超市加入怒怼工党移民新政行列：“我们将极为挣扎”</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-left-double-div2">
+                    <div class="caijin-title-spanexpend">
+                        <span controlindex="1" class="active-tit-single active-tit-a active-tit-azhuanlan" style="color:#653780;cursor:default !important">专栏</span>
+                    </div>
+                    <div class="sky-margintop-daogou">
+                        <div class="caijin-span" controlindex="1">
+                            <div class="sky-floatL"><img style="width:100px;height:130px;border:1px solid #898989;display:block" src="http://www.skykiwi.com/d/file/p/2017-05-23/bdab3ca009a324f42d56bfaef186b79d.jpg" /></div>
+                            <div class="sky-floatR">
+                                <dl>
+                                    <dd class="sky-zhuanlan-author">专栏作者：Bill English</dd>
+                                    <dt class="sky-zhuanlan-title"><a href="http://politics.skykiwi.com/special-column/johnkey/2017-07-04/243595.shtml" style="text-decoration:none;font-weight:bold;color:#653780" target="_blank" title="引领新西兰迈入21世纪20年代">引领新西兰迈入21世纪20年代</a></dt>
+                                    <content class="sky-zhuanlan-content">在离今年大选不足三个月之际，我很荣幸地在近期于首都惠灵顿举办的国家党年会中致辞。...</content>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--留学移民 专栏end-->
+                <div style="clear:both;"></div>
+            </div>
+            <div class="activity-right">
+                <div class="sky-activity-title">
+                    <span>近期活动</span>
+                </div>
+                <div class="sky-activity-info">
+                    <div style="float:left">
+                        <a href="https://www.nziff.co.nz/2017/auckland/" target="_blank" title="新西兰国际电影节">
+                            <img width="138" height="110" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newactivity/2017-06-30/e42e3737388ae2d76e32884a8eda4c29.jpg" />
+                        </a>
+                    </div>
+                    <div class="sky-activity-info-div2">
+                        <a href="https://www.nziff.co.nz/2017/auckland/" target="_blank" title="新西兰国际电影节">新西兰国际电影节</a>
+                        <p>
+                            新西兰国际电影节（简称NZIFF）是新西兰最高质量的电影活动，文艺青年必看！
+                        </p>
+                    </div>
+                </div>
+                <div class="sky-activity-info">
+                    <div style="float:left">
+                        <a href="http://www.hawkesbaynz.com/index.php/events/arts/hawkes-bay-toyota-winter-deco-weekend" target="_blank" title="纳皮尔装饰艺术节">
+                            <img width="138" height="110" alt="" src="http://www.skykiwi.com/d/file/newfillblank/newactivity/2017-06-30/fd40f203bc68f6807772c9c9438fcdf8.jpg" />
+                        </a>
+                    </div>
+                    <div class="sky-activity-info-div2">
+                        <a href="http://www.hawkesbaynz.com/index.php/events/arts/hawkes-bay-toyota-winter-deco-weekend" target="_blank" title="纳皮尔装饰艺术节">纳皮尔装饰艺术节</a>
+                        <p>
+                            内皮尔（Napier）一直享有装饰艺术之都的美誉。艺术节将云集经典轿车和穿着装饰艺术风格服装的游客等...
+                        </p>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                                    $(function () {
+                                        $(".sky-activity-info").eq(1).css("margin-top", "20px");
+                                    })
+                </script>
+                <div class="sky-banner">
+                    <iframe id='af43c413' name='af43c413' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=90&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a121caff&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=90&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a121caff&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <div class="sky-banner">
+                    <iframe id='a8365ace' name='a8365ace' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=91&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a08d8f37&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=91&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a08d8f37&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <div class="tianwei-right-tab" id="sky-tuangou-tab">
+                    <span class="tianwei-right-title">天维福利.团购</span>
+                    <div class="sky-vip">
+                        <a id="sky-tuangou-prev">▲</a>
+                        <a id="sky-tuangou-next">▼</a>
+                    </div>
+                    <!-- 团购券 -->
+                    <div data-index="0" class="tianwei-tuangou-item">
+                        <a target="_selft" href="http://mobile.skykiwichina.com/bonus/getBonusDetil?categoryId=14&id=199"><img style="height:282px;width:282px;border:1px solid #898989" src="http://47.91.46.187/group1/M00/00/6F/rBtnUFlLCwWAW55mAAAymvFt3ls285.jpg"></a>
+                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
+                            <li>美甲睫优惠套餐！这个冬天美起来！</li>
+                            <li style="color:red">已售0</li>
+                        </ol>
+                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价80&nbsp;&nbsp;</del></p>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$49</h1>
+                    </div>
+
+                    <div data-index="1" class="tianwei-tuangou-item" style="display:none">
+                        <a target="_selft" href="http://mobile.skykiwichina.com/bonus/getBonusDetil?categoryId=11&id=203"><img style="height:282px;width:282px;border:1px solid #898989" src="http://47.91.46.187/group1/M00/00/7C/rBtnUFlS2GWADPyzAABfGmGiE20038.jpg"></a>
+                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
+                            <li>金樽KTV四小时欢唱团购再开！还不约一波~</li>
+                            <li style="color:red">已售85</li>
+                        </ol>
+                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价25&nbsp;&nbsp;</del></p>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$18.9</h1>
+                    </div>
+
+                    <div data-index="2" class="tianwei-tuangou-item" style="display:none">
+                        <a target="_selft" href="http://mobile.skykiwichina.com/bonus/getBonusDetil?categoryId=23&id=200"><img style="height:282px;width:282px;border:1px solid #898989" src="http://47.91.46.187/group1/M00/00/65/rBtnUFlHO3WABep8AACaAuZmipg365.jpg"></a>
+                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
+                            <li>毕业季！全纽最低价！学生福利来袭！</li>
+                            <li style="color:red">已售0</li>
+                        </ol>
+                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价70&nbsp;&nbsp;</del></p>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$65</h1>
+                    </div>
+
+                    <div data-index="3" class="tianwei-tuangou-item" style="display:none">
+                        <a target="_selft" href="http://mobile.skykiwichina.com/bonus/getBonusDetil?categoryId=19&id=204"><img style="height:282px;width:282px;border:1px solid #898989" src="http://47.91.46.187/group1/M00/00/7D/rBtnUFlS_peAJttPAADIgaCw9-s230.jpg"></a>
+                        <ol style="font-size:16px; margin:0px 0;line-height:30px">
+                            <li>玛莎拉蒂！奔驰！儿童可坐遥控车再次开团！</li>
+                            <li style="color:red">已售0</li>
+                        </ol>
+                        <p style="line-height:15px;text-align:right"><del style="font-size:14px;margin-right:10px">&nbsp;&nbsp;门市价399&nbsp;&nbsp;</del></p>
+                        <h1 style="font-size:30px;color:red;margin-right:25px;text-align:right ">$339</h1>
+                    </div>
+
+
+                </div>
+                <div class="sky-banner">
+                    <iframe id='a3c878d0' name='a3c878d0' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=92&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a9419230&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=92&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a9419230&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <div class="tianwei-right-tab">
+                    <span class="tianwei-right-title">天维橙页VIP商家</span>
+                    <div class="sky-vip">
+                        <a id="pre_vipopage">▲</a>
+                        <a id="next_vipopage">▼</a>
+                    </div>
+                    <div class="tianwei-VIP-item" style="height:335px; padding-top:15px; padding-bottom:15px">
+                        <dl class="sky-vip-list" id="opage_vip_list">
+                            <script type="text/javascript" src="http://opage.skykiwi.com/js.php?callid=58"></script>
+                        </dl>
+                        <script language="javascript" type="text/javascript">
+                                    var scroll_opage = new ScrollText("opage_vip_list", "pre_vipopage", "next_vipopage", true, 80, true);
+                                    scroll_opage.LineHeight = 24;
+                                    $(".sky-vip-list dd").addClass("list-group-item");
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div style="height:100px;width:950px;overflow:hidden; margin-bottom:25px;margin-top:10px">
+                <iframe id='a9516ee3' name='a9516ee3' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=95&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='950' height='100'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa8e0f2b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=95&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa8e0f2b&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+            </div>
+            <div class="sky-info">
+                <div class="sky-left-logo sky-floatL"><img src="image/skykiwi.png"></div>
+                <div class="sky-floatL"><img src="image/skykiwi-contract.png"></div>
+                <div class="foot-banner-nav sky-floatL">
+                    <ul>
+                        <li>
+                            <a href="http://em.skykiwi.com/index.html" target="_blank">广告首页</a>
+                        </li>
+                        <li>
+                            <a href="http://em.skykiwi.com/advertising.html" target="_blank">宣传方案</a>
+                        </li>
+                        <li>
+                            <a href="http://em.skykiwi.com/adshow_index.html" target="_blank">广告图示</a>
+                        </li>
+                        <li>
+                            <a href="http://em.skykiwi.com/download-ratecard.html" target="_blank">报价下载</a>
+                        </li>
+                        <li>
+                            <a href="http://em.skykiwi.com/successcase_index.html" target="_blank">成功案例</a>
+                        </li>
+                        <li>
+                            <a href="http://em.skykiwi.com/knowledge.html" target="_blank">常识须知</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot-banner-nav-s">
+                    <ul>
+                        <li>
+                            <a href="http://em.skykiwi.com/aboutus.html" target="_blank">关于天维</a>
+                        </li>
+                        <li>
+                            <a href="http://em.skykiwi.com/contactus.html" target="_blank">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div id="skyapp">
+                <ul style="width:950px">
+                    <li>
+                        <img alt="" src="/image/tianweiapplogo.png" />
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -2px 3px  no-repeat;" target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
+                        </a>
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -62px 3px  no-repeat;" href="javascript:wechathome()" title="关注我们的微信">
+                        </a>
+                        <span id="wechat_home" style="display: none;"></span>
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -122px 3px  no-repeat;" target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书">
+                        </a>
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -182px 3px  no-repeat;" target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特">
+                        </a>
+                    </li>
+                    <li class="sky-app-content">
+                        <img alt="" src="/image/tianweigo.png" />
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -2px 3px  no-repeat;" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
+
+                        </a>
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -62px 3px  no-repeat;" href="javascript:wechatgo()">
+
+                        </a>
+                        <span id="wechat_go" style="display: none;"></span>
+                    </li>
+                    <li class="sky-app-content">
+                        <img alt="" src="/image/tianweilife.png" />
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -62px 3px  no-repeat;" title="关注我们的天维生活" href="javascript:wechattuangou()">
+
+                        </a>
+                        <span id="wechat_soku" style="display: none;"></span>
+                    </li>
+                    <li class="sky-app-content">
+                        <img alt="" src="/image/tianweiproperty.png" />
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -62px 3px  no-repeat;" title="关注我们的微房产" href="javascript:wechatproperty()">
+
+                        </a>
+                        <span id="wechat_property" style="display: none;"></span>
+                    </li>
+                    <li class="sky-app-content">
+                        <img alt="" src="/image/tianwei8.png" />
+                        <a class="icon-nav" style="background:url(/image/socialmedia.jpg) -62px 3px  no-repeat;" title="关注我们的导购微信" href="javascript:wechatmoney()">
+
+                        </a>
+                        <span id="wechat_money" style="display: none;"></span>
+                    </li>
+                    <div style="clear:both">
+                    </div>
+                </ul>
+                <script type="text/javascript">
+                                    function wechathome() { wechat_home.style.display = "block"; }
+                                    function wechatgo() { wechat_go.style.display = "block"; }
+                                    function wechatproperty() { wechat_property.style.display = "block"; }
+                                    function wechattuangou() { wechat_soku.style.display = "block"; }
+                                    function wechatmoney() { wechat_money.style.display = "block"; }
+                                    function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
+                                    document.onclick = hidden;
+                </script>
+            </div>
+            <div style="border-bottom:1px dashed #b7b7b7">
+                <div id="part3">
+                    <img src="http://www.skykiwi.com/home2011/images/icon_links.jpg" width="75" height="20" title="新西兰常用网站链接，天维网为您搜集最全的新西兰实用网址导航" class="mg15">
+                    <select size="1" name="jumpMenu1" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                        <option selected="selected">------主要政府网站------</option>
+                        <option value="http://www.police.govt.nz/">警察局</option>
+                        <option value="http://www.immigration.govt.nz">移民局</option>
+                        <option value="http://www.ird.govt.nz">政府税务</option>
+                        <option value="http://www.govt.nz">新西兰政府</option>
+                        <option value="http://www.nzpost.co.nz/">邮政局</option>
+                        <option value="http://www.studylink.govt.nz/financing-study/student-allowance/index.html">学生津贴</option>
+                        <option value="http://www.customs.govt.nz/default.htm">新西兰海关</option>
+                        <option value="http://www.studylink.govt.nz/financing-study/student-loan/index.html">学生贷款</option>
+                        <option value="http://www.companies.govt.nz/pls/web/dbssiten.main">公司注册</option>
+                        <option value="http://www.newzealand.com/travel/">旅游局</option>
+                        <option value="http://www.chinaembassy.org.nz/eng/">中国大使馆</option>
+                        <option value="http://www.chinaconsulate.org.nz/chn/default.htm">中驻奥克兰领事馆</option>
+                    </select>
+                    <select size="1" name="jumpMenu2" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                        <option selected="selected">------文化教育链接------</option>
+                        <option value="http://www.auckland.ac.nz">奥克兰大学</option>
+                        <option value="http://www.aut.ac.nz">奥克兰理工大学</option>
+                        <option value="http://www.massey.ac.nz">梅西大学</option>
+                        <option value="http://www.victoria.ac.nz">维多利亚大学</option>
+                        <option value="http://www.otago.ac.nz">奥塔哥大学</option>
+                        <option value="http://www.canterbury.ac.nz">坎特伯雷大学</option>
+                        <option value="http://www.waikato.ac.nz">怀卡托大学</option>
+                        <option value="http://www.lincoln.ac.nz">林肯大学</option>
+                        <option value="http://www.nzqa.govt.nz">学历认证</option>
+                        <option value="http://www.internationaleducationmedia.com/newzealand/schools.htm">新西兰学校介绍</option>
+                        <option value="http://www.englishnewzealand.co.nz">英语教学机构</option>
+                        <option value="http://www.educationnz.org.nz">新西兰教育网</option>
+                        <option value="http://www.onlynz.net">学在新西兰</option>
+                    </select>
+                    <select size="1" name="jumpMenu3" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                        <option selected="selected">------医疗健康链接------</option>
+                        <option value="http://www.moh.govt.nz/healthsystem">新西兰医疗制度</option>
+                        <option value="http://www.moh.govt.nz/childhealth">幼儿保健</option>
+                        <option value="http://www.healthinsurance.co.nz/health_International_Students.cfm">留学生医疗保险</option>
+                        <option value="http://www.moh.govt.nz/olderpeople">老年人医疗</option>
+                        <option value="http://www.emigratenz.org/healthcare-migrants-newzealand.html">在新西兰看病</option>
+                    </select>
+                    <select size="1" name="jumpMenu4" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+                        <option selected="selected">------其他实用链接------</option>
+                        <option value="http://www.village.co.nz/vistait/village/Default.aspx?Control=NowShowing">电影院</option>
+                        <option value="http://www.tapeka.com/publicholidays.htm">公定假期</option>
+                        <option value="http://www.timeanddate.com/worldclock/">世界时间</option>
+                        <option value="http://www.railnewzealand.com/">铁路交通</option>
+                        <option value="http://www.police.govt.nz/service/111/index.html">紧急事故</option>
+                        <option value="http://www.yellowpages.co.nz/">电话黄页</option>
+                        <option value="http://www.ltsa.govt.nz">驾照执照</option>
+                        <option value="http://www.aa.co.nz">AA汽车协会</option>
+                        <option value="http://b2b.ratestogo.com">酒店预定</option>
+                        <option value="http://www.carjam.co.nz">汽车信息查询</option>
+                        <option value="http://www.turners.co.nz">汽车拍卖</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="links">
+                <h3>友情链接</h3>
+                <a href="http://www.nzherald.co.nz" target="_blank" title="New Zealand Herald" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-nzherald.jpg"></a>
+                <a href="http://www.tv3.co.nz" target="_blank" title="New Zealand TV3" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-tv3.jpg"></a>
+                <a href="http://huaren.haiwainet.cn" target="_blank" title="海外网" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-haiwainet.jpg"></a>
+                <a href="http://chinese.people.com.cn" target="_blank" title="人民网" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-people.jpg"></a>
+                <a href="https://www.feijipiao.co.nz/" target="_blank" title="途翼旅行"><img src="http://www.skykiwi.com/home2011/images/link/logo-tourism.jpg" /></a>
+                <a href="http://www.chinaqw.com/" target="_blank" title="中国侨网"><img src="http://www.skykiwi.com/home2011/images/link/logo_chinaqw.jpg"></a>
+                <!-- <a href="http://www.ucpnz.com" target="_blank" title="新西兰联合报" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-ucpnz.jpg" /></a> -->
+                <a href="http://www.globaltimes.com.cn" target="_blank" title="环球时报" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-global-times.jpg"></a>
+                <a href="http://g.58.com/j-glauckland/" target="_blank" title="58同城奥克兰站"><img alt="58同城奥克兰站" src="http://www.skykiwi.com/home2011/images/link/logo-58.jpg"></a>
+                <!-- <a href="http://www.wanguo.co.nz" target="_blank" title="新西兰万国旅行社" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-wanguo.jpg" title="Link to wanguo.co.nz" /></a> -->
+
+                <a href="https://www.priceme.co.nz" target="_blank" title="PriceMe" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo_priceme.png" title="Link to Priceme.co.nz"></a>
+            </div>
+            <div id="footer">
+                <p><a href="http://em.skykiwi.com/aboutus.html" target="_blank" class="ico"> 关于天维</a> | <a href="http://em.skykiwi.com/english.html" target="_blank">About Us</a> | <a href="http://em.skykiwi.com/termsofuse.html" target="_blank">使用条款</a> | <a href="http://em.skykiwi.com/privacy.html" target="_blank">隐私声明</a> | <a href="http://em.skykiwi.com" target="_blank">广告服务</a> | <a href="http://em.skykiwi.com/contactus.html" target="_blank">联系我们</a> | <a href="http://em.skykiwi.com/aboutus_join.html" target="_blank">招贤纳士</a> | <a href="http://bbs.skykiwi.com/member.php?mod=regsky.php" target="_blank">会员注册</a></p>
+                <p><span>&copy;&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <!-- START: Google Analyse -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-4716393-5");
+            pageTracker._setDomainName("skykiwi.com");
+            pageTracker._trackPageview();
+        } catch (err) { }
+    </script>
+    <!-- END: Google Analyse -->
+</body>
+</html>

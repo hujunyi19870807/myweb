@@ -27,7 +27,7 @@ body {
 .sky-left-nav {
     width: 208px;
     float: left;
-    z-index: -1;
+    z-index: 0;
     position: absolute;
     top: 30px;
     min-height: 100vh;
@@ -271,6 +271,8 @@ body {
     width: 950px;
     margin-top: 30px;
     background-color: white;
+    z-index: 1;
+    position: relative;
 }
 /* css注释：为了观察效果设置宽度 边框 高度等样式 */
 
@@ -401,10 +403,9 @@ body {
     .list-news-item dl {
         float: left;
         overflow: hidden;
-        margin-top: 15px;
+        margin-top: 12px;
         margin-bottom: 15px;
         margin-left: 20px;
-        height: 202px;
     }
 
     .list-news-item dt {
@@ -432,10 +433,10 @@ body {
     }
 
     .list-news-item dl dt.newlist-tit {
-        margin-top: 6px;
         overflow: hidden;
         width: 430px;
         height: 21px;
+        margin:8px 0;
     }
 
     .list-news-item dl dd a.list-news-item-category {
@@ -1019,17 +1020,19 @@ body {
 }
 
     .caijin-span-tejia li {
-        float: left;
         height: 150px;
     }
 
-    .caijin-span-tejia > li:nth-child(3),
-    .caijin-span-tejia > li:nth-child(5) {
-        float: right;
-    }
+        .caijin-span-tejia li:nth-of-type(odd) {
+            float: left;
+        }
 
-    .caijin-span-tejia > li:nth-child(4),
-    .caijin-span-tejia > li:nth-child(5) {
+        .caijin-span-tejia li:nth-of-type(even) {
+            float: right;
+        }
+
+    .caijin-span-tejia > li:nth-child(3),
+    .caijin-span-tejia > li:nth-child(4) {
         margin-top: 25px;
     }
 

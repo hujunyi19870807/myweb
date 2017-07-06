@@ -1,15 +1,18 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang='zh-CN' xml:lang='zh-CN' xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <title>新西兰新闻,新西兰社会新闻,新西兰留学,新西兰移民,新西兰财经,新西兰旅游_天维网新闻频道 - Skykiwi.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="Keywords" content="新西兰留学,新西兰移民,新西兰,新西兰最大门户网站,新西兰最大网络社区,新西兰新闻,新西兰旅游,新西兰搜索,新西兰朋友" />
+    <meta name="Description" content="Skykiwi天维网是新西兰最大的华人门户网站,我们为您提供每天最新的新西兰及国内、国际新闻,我们的社区论坛有30万活跃会员与您一起讨论、分享,橙页搜索为您找出提供优质服务的商家,让新西兰的生活丰富多彩" />
+    <meta name="robots" content="all,follow" />
+    <meta http-equiv="content-language" content="zh-CN" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-    <title>新西兰天维网_新西兰最大的中文网络门户</title>
+    <meta name="google-site-verification" content="s4kD2-70IFXkxDXROz3MwuA_MGHpQZzssTXTAgq6LSs" />
+    <meta name="baidu-site-verification" content="Vaq54F1pwruvJsiJ" />
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
-    <link href="http://www.skykiwi.com/css/newsindex.css" rel="stylesheet" />
-    <link href="http://www.skykiwi.com/css/FocusPicNew-v1.0.css" rel="stylesheet" />
+    <link href="newsindex.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
-    <script src="http://www.skykiwi.com/js/FocusPicNew-v1.0.js"></script>
-    <script src="http://www.skykiwi.com/js/slideshow.js"></script>
     <script src="http://www.skykiwi.com/js/Top-FocusPic-new.js"></script>
     <script type="text/javascript">
         (function () {
@@ -29,20 +32,15 @@
                     document.getElementById("left-main").style.position = "fixed";
                     document.getElementById("left-main").style.top = (-dvalue) + "px";
                 }
+                alert(22)
+                if (scrollheight >= 227) {
+                    alert(1);
+                    $("#navfirst").css({ "position": "fixed", "top": "0", "z-index": "999"});
+                }
             });
         })(jQuery);
 
         $(document).ready(function () {
-            $('#newsSlide').slideBox({
-                duration: 0.3,
-                easing: 'swing',
-                delay: 5,
-                hideClickBar: false,
-                clickBarRadius: 10,
-                width: 600,
-                height: 318
-            });
-
             /*加载更多 begin*/
             var pageSize = 10;
 
@@ -50,7 +48,7 @@
             getData(20, 1, 0, $("#ul-news-list"));
             $(document).on('click', "#sky-loading-more", function () {
                 pageIndex++;
-                getData(pageSize, pageIndex,0, $("#ul-news-list"));
+                getData(pageSize, pageIndex, 0, $("#ul-news-list"));
             });
 
             var pagenaIndex = 2;
@@ -77,7 +75,7 @@
                 }
             });
         });
-        
+
         function getData(pageSize, pageIndex, cid, ulid) {
             var taken = '';
             var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&aliasCid=' + cid;
@@ -100,7 +98,7 @@
                 var dl = "";
                 $.each(responses.data.items, function (index, item) {
                     li = $('<li class="list-news-item"></li>').appendTo(ul);
-                    $('<a href="' + item["href"]+'" target="_blank" title="' + item["title"] + '"><img width= "140" height= "70" src= "' + item["poster"] + '" /></a >').appendTo(li);
+                    $('<a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '"><img width= "140" height= "70" src= "' + item["poster"] + '" /></a >').appendTo(li);
                     dl = $("<dl></dl>").appendTo(li);
                     $('<dt><a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '">' + item["title"] + '</a></dt>').appendTo(dl);
 
@@ -113,9 +111,9 @@
                         newstype = '< a class="list-news-item-category" href= "http://imedu.skykiwi.com" target= "_self" title= "新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道" > 留学移民</a > ';
                     }
                     else {
-                        newstype = '<span class="list-news-item-category">' + newstype+'</span>';
+                        newstype = '<span class="list-news-item-category">' + newstype + '</span>';
                     }
-                    $('<dd>' + newstype+'</dd>').appendTo(dl);
+                    $('<dd>' + newstype + '</dd>').appendTo(dl);
                 });
                 if (cid == 0) {
                     getAdvert(pageIndex);
@@ -159,72 +157,35 @@
                 transform: none;
             }
         }
-
-        /* Flash Slider Show CSS */
-        #flash {
-            width: 600px;
-            height: 288px;
-            margin-top:5px;
+        .fixnav {
+            position: fixed;
+            top: 0;
+            z-index: 500;
         }
-
-            #flash a {
-                font-family: "黑体","Hei";
-                text-decoration: none;
-            }
-
-        #ad_text_zone li {
-            width: 185px;
-            padding: 0px 5px;
-            height: 18px;
-            line-height: 18px;
-            font-size: 12px;
-            float: left;
-            display: inline;
-            margin: 0px;
-            overflow: hidden;
-        }
-
-        #s_pic_news {
-            width: 378px;
-            height: 88px;
-            border: solid 1px #AAA;
-            margin: 6px 0 0 0;
-        }
-
-            #s_pic_news:hover {
-                border: solid 1px #F60;
-                cursor: pointer;
-            }
-
-            #s_pic_news dt {
-                width: 625px;
-                font-size: 14px;
-                height: 18px;
-                line-height: 18px;
-                overflow: hidden;
-                float: left;
-                display: inline;
-                margin-top: 5px;
-                font-weight: bold;
-            }
-
-            #s_pic_news dd {
-                width: 625px;
-                font-size: 12px;
-                height: 56px;
-                line-height: 18px;
-                overflow: hidden;
-                float: left;
-                display: inline;
-                margin-top: 6px;
-                color: #666;
-            }
-
     </style>
 </head>
 <body>
     [!--temp.header2017_newsindex--]
-    [!--temp.nav2017_newsindex--]
+    <div style="width:1200px;height:125px;overflow:hidden;border:1px solid gray;margin:25px auto;">
+        <iframe id='af8b875e' name='af8b875e' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=204&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='1200' height='125'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a7d01c7c&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=204&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7d01c7c&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+    </div>
+    <div id="navfirst">
+        <div id="navsecond">
+            <img src="http://www.skykiwi.com/newImage/sky-new.png" />
+            <ul>
+                <li><a style="color:#ec7f16;text-decoration:none" href="http://www.skykiwi.com/index.html" target="_self" title="返回天维网首页 - 天维网，新西兰最大的华人门户网站">天维首页</a></li>
+                <li><a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a></li>
+                <li><a style="color:#f20626;text-decoration:none" href="http://www.skykiwi.com/newsindex.html" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
+                <li><a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
+                <li><a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a></li>
+                <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
+                <li><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
+                <li><a href="http://d.skykiwi.com" target="_self" title="新西兰网址导航，新西兰百科知识，新西兰商家查询 - 点击进入新西兰网址导航频道">导航</a></li>
+                <li><a href="http://shop.skykiwi.com" target="_blank" title="新西兰比价购物频道 - 为您节省每一分钱，方便的网上比价购物体验 - 点击进入天维价格比较频道 / 合作网站 PriceMe">比价</a></li>
+                <li style="border:none;"><a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a></li>
+            </ul>
+        </div>
+    </div>
     <div id="maincontent">
         [!--temp.leftmain2017_newsindex--]
         <div style="width:1000px;float:right" class="clearfix">
@@ -262,7 +223,7 @@
                 <ul class="ul-news-list" id="ul-news-list" groupid="0"></ul>
                 <ul class="ul-news-list" id="ul-news-nalist" style="display:none" groupid="1"></ul>
                 <ul class="ul-news-list" id="ul-news-hqlist" style="display:none" groupid="2"></ul>
-                
+
                 <a id="sky-loading-more" class="sky-load-more" style="display: block;" groupid="0">
                     <div class="newsmore" style="display: block;">
                         <i>+</i>
@@ -312,9 +273,9 @@
                     [/e:loop]
                 </ul>
                 <script type="text/javascript">
-                    $(function () {
-                        $(".newlist:eq(0)").css("color", "f20626");
-                    })
+                        $(function () {
+                            $(".newlist:eq(0)").css("color", "f20626");
+                        })
                 </script>
                 <div style="margin:20px 0;height:250px">
                     <iframe id='a895aba1' name='a895aba1' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=205&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa6b23bd&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=205&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa6b23bd&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
@@ -350,7 +311,7 @@
                             [/e:loop]
                         </ul>
                     </li>
-                  
+
                     <li>
                         <div>工党国会议员霍建强专栏</div>
                         <img width="120" height="225" src="http://www.skykiwi.com/newImage/4.jpg" />
@@ -371,8 +332,9 @@
                     </li>
 
                     <li>
-                        <div style="height:66px;margin-top:30px">中华人民共和国驻新西兰大使馆
-                        <p>THE EMBASSY OF THE PEOPLE'S REPUBLIC OF CHINA IN NEW ZEALAND</p>
+                        <div style="height:66px;margin-top:30px">
+                            中华人民共和国驻新西兰大使馆
+                            <p>THE EMBASSY OF THE PEOPLE'S REPUBLIC OF CHINA IN NEW ZEALAND</p>
                         </div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'124',5,0,0}]
@@ -381,8 +343,10 @@
                         </ul>
                     </li>
                     <li>
-                        <div style="height:66px">中华人民共和国驻奥克兰总领事馆
-                        <p>CONSULATE-GENERAL OF THE PEOPLE'S REPUBLIC OF CHINA IN AUCKLAND</p></div>
+                        <div style="height:66px">
+                            中华人民共和国驻奥克兰总领事馆
+                            <p>CONSULATE-GENERAL OF THE PEOPLE'S REPUBLIC OF CHINA IN AUCKLAND</p>
+                        </div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'125',5,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
@@ -390,8 +354,10 @@
                         </ul>
                     </li>
                     <li>
-                        <div style="height:66px">中华人民共和国驻克赖斯特彻奇总领馆
-                        <p>CONSULATE-GENERAL OF THE PEOPLE'S REPUBLIC OF CHINA IN CHRISTCHURCH</p></div>
+                        <div style="height:66px">
+                            中华人民共和国驻克赖斯特彻奇总领馆
+                            <p>CONSULATE-GENERAL OF THE PEOPLE'S REPUBLIC OF CHINA IN CHRISTCHURCH</p>
+                        </div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'64',5,0,0}]
                             <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
@@ -410,19 +376,19 @@
     </div>
     <ul style="display:none" id="ul-newfillbank">
         [e:loop={'232',3,0,1}]
-            <li class="list-news-specialitem"  data-type="newfillbank">
-                <dl>
-                    <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
-                    <dd style="height:120px;display:inline-block;margin:15px 0">
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[titlepic]?>" /></a>
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic1]?>" /></a>
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic2]?>" /></a>
-                    </dd>
-                    <dd>
-                        <span class="list-news-item-category"><?=$bqsr[new_type]?></span>
-                    </dd>
-                </dl>
-            </li>
+        <li class="list-news-specialitem" data-type="newfillbank">
+            <dl>
+                <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
+                <dd style="height:120px;display:inline-block;margin:15px 0">
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[titlepic]?>" /></a>
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic1]?>" /></a>
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic2]?>" /></a>
+                </dd>
+                <dd>
+                    <span class="list-news-item-category"><?=$bqsr[new_type]?></span>
+                </dd>
+            </dl>
+        </li>
         [/e:loop]
     </ul>
     <ul style="display:none" id="ul-newadvert">
@@ -433,5 +399,19 @@
             <iframe id='a363eefe' name='a363eefe' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='200'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a8308398&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a8308398&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
         </li>
     </ul>
+    <!-- START: Google Analyse -->
+    <script type="text/javascript">
+                        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+                        try {
+                            var pageTracker = _gat._getTracker("UA-4716393-5");
+                            pageTracker._setDomainName("skykiwi.com");
+                            pageTracker._trackPageview();
+                        } catch (err) { }
+    </script>
+    <!-- END: Google Analyse -->
+
 </body>
 </html>

@@ -14,9 +14,8 @@
     <meta name="alexaVerifyID" content="t1fAOANfV1Q4Jiy3uIFAFfTaOGY" />
 
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
-    <link href="http://www.skykiwi.com/css/index-20170701.css?2017070303" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/index-20170701.css?20170706" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
-    <link href="http://www.skykiwi.com/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170703"></script>
     <script src="http://www.skykiwi.com/js/FocusPic-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/scroll-v1.0.js"></script>
@@ -194,65 +193,9 @@
         </div>
 
         <div class="maincontent">
-            <!--<div id="div-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;background-color:black;float:right;display:none"></div>
-            <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
-                <iframe id='a77882a6' name='a77882a6' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='950' height='40'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a7e44dd7&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7e44dd7&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
-            </div>
-            <div class="topbannermiddle" id="div-first-banner">
-                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red"></div>
-                <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
-                <iframe id='abac80f0' name='abac80f0' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=97&amp;cb=09309228820170628&amp;ct0=' frameborder='0' scrolling='no' width='950' height='900'>
-                    <a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a12b9973&amp;cb=09309228820170628' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=09309228820170628&amp;n=a12b9973&amp;ct0=' border='0' alt='' /></a>
-                </iframe>
-            </div>
+            <!--天幕广告 begin-->
 
-            <script type="text/javascript">
-                var timer1 = "";
-                var timer2 = "";
-                onload = function () {
-                    beginCount();
-                }
-                $(function () {
-                    var winheight = $(window).height() - 45;
-                    $("#div-first-banner").css("height", winheight + "px");
-                    $("#div-first-banner embed").css("height", winheight + "px");
-                    $("#div-first-banner embed").css("width", "100%");
-                    $(".absolute").click(function () {
-                        $("#div-first-banner").fadeOut("fast");
-                        $("#div-secend-banner").fadeIn("fast");
-                    });
-                    $("#div-banner-replay").click(function () {
-                        $("#div-secend-banner").fadeOut("fast");
-                        $("#div-banner-replay").hide();
-                        $("#div-first-banner").fadeIn("fast");
-                        beginCount();
-                    });
-                });
-
-                var x = 3; //利用了全局变量来执行
-                function showTime() {
-                    x--;
-                    $("#div-banner-count").html(x + "秒");
-                }
-
-                function hideBanner() {
-                    $("#div-secend-banner").fadeIn("fast");
-                    $("#div-banner-replay").show();
-                    $("#div-first-banner").fadeOut("fast");
-                    clearInterval(timer1);
-                    clearTimeout(timer2);
-
-                }
-
-                function beginCount() {
-                    $("#div-banner-count").html("3秒");
-                    x = 3;
-                    timer1 = setInterval("showTime()", 1000);
-                    timer2 = setTimeout("hideBanner()", 3000);
-                }
-
-            </script>-->
-
+            <!--天幕广告 end-->
             <div class="topbanner">
                 <iframe id='a44f295f' name='a44f295f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=85&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='950' height='55'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa6726d1&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=85&amp;cb=&amp;n=aa6726d1&amp;ct0=' border='0' alt='' /></a></iframe>
             </div>
@@ -303,7 +246,7 @@
                                 <img width="150" height="200" src="<?=$bqr[apic]?>" />
                             </a>
                             <dl>
-                                <dt style="margin-top:-3px"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a></dt>
+                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a></dt>
                                 <dd>
                                     <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
                                     &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
@@ -362,7 +305,7 @@
                                 <img width="150" height="200" src="<?=$bqr[apic]?>" />
                             </a>
                             <dl>
-                                <dt style="margin-top:-3px"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a></dt>
+                                <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a></dt>
                                 <dd>
                                     <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
                                     &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
@@ -458,7 +401,11 @@
                             [/e:loop]
                         </ul>
                     </div>
-
+                    <script type="text/javascript">
+                                $(function () {
+                                    $("#ul-hotsearch-news").find("li:first-child a").css("color", "#d91703");
+                                });
+                    </script>
                     [e:loop={'225', 3, 0, 1}]
                     <div data-index="<?=$bqno?>" class="sky-video-slideshow">
                         <div class="sky-video-right">
@@ -636,7 +583,15 @@
                 </div>
                 <!--生活 旅游 begin-->
                 <div id="flash1" class="slideBox sky-floatL" style="margin: 10px 0;">
-                    <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_slidelist.js" charset="utf-8"></script>
+                    <ul class="items">
+                        [e:loop={'234',3,0,0}]
+                        <li>
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                <img width='300' height='400' src='<?=$bqsr[titlepic]?>' />
+                            </a>
+                        </li>
+                        [/e:loop]
+                    </ul>
                 </div>
 
                 <div class="tab-left-double-div2">
@@ -649,7 +604,16 @@
                     <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
                             <div style="display: inline-block;" id="div-life-control">
-                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_life.js" charset="utf-8"></script>
+                                [e:loop={'238',4,0,0}]
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>">
+                                            <img alt="<?=$bqr[title]?>" style="border:1px solid #898989;display:block" width="138" height="78" src="<?=$bqsr[titlepic]?>">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dd>
+                                </dl>
+                                [/e:loop]
                                 <script type="text/javascript">
                                     $(function () {
                                         $("#div-life-control dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
@@ -659,13 +623,24 @@
                             </div>
                             <div class="sky-life-list">
                                 <ul>
-                                    <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_lifelist.js" charset="utf-8"></script>
+                                    [e:loop={'242',3,0,0}]
+                                    <li><a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>" target="_blank"><?=$bqr[title]?></a></li>
+                                    [/e:loop]
                                 </ul>
                             </div>
                         </div>
                         <div class="caijin-span" controlindex="2">
                             <div style="display: inline-block;" id="div-tourism-control">
-                                <script type="text/javascript" src="http://go.skykiwi.com/homepage_tourism.js" charset="utf-8"></script>
+                                [e:loop={'239',4,0,0}]
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>">
+                                            <img alt="<?=$bqr[title]?>" style="border:1px solid #898989;display:block" width="138" height="78" src="<?=$bqsr[titlepic]?>">
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dd>
+                                </dl>
+                                [/e:loop]
                                 <script type="text/javascript">
                                     $(function () {
                                         $("#div-tourism-control dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div><div class="lvyou-list-ul-line"></div>');
@@ -675,7 +650,9 @@
                             </div>
                             <div class="sky-life-list">
                                 <ul>
-                                    <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_tourismlist.js" charset="utf-8"></script>
+                                    [e:loop={'243',3,0,0}]
+                                    <li><a href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>" target="_blank"><?=$bqr[title]?></a></li>
+                                    [/e:loop]
                                 </ul>
                             </div>
                             <script type="text/javascript">
@@ -700,7 +677,9 @@
                     <div class="sky-margintop-daogou">
                         <div class="caijin-span">
                             <ul class="caijin-span-tejia">
-                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_specialoffer.js" charset="utf-8"></script>
+                                [e:loop={'235',4,0,0}]
+                                <li><a href="<?=$bqsr[titleurl]?>" target='_blank' title='<?=$bqr[title]?>'><img alt="<?=$bqr[title]?>" width='140' height='150' src='<?=$bqsr[titlepic]?>'></a></li>
+                                [/e:loop]
                             </ul>
                         </div>
                     </div>
@@ -715,31 +694,64 @@
                     <div class="sky-margintop-daogou">
                         <div class="caijin-span" controlindex="1">
                             <div class="sky-shishang">
-                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_fashion.js" charset="utf-8"></script>
+                                [e:loop={'236',1,0,0}]
+                                <dl class='lvyou-list-ul' style='width:300px'>
+                                    <dt>
+                                        <a href='<?=$bqsr[titleurl]?>' target='_blank' title='<?=$bqr[title]?>'>
+                                            <img style='width:300px;height:180px;display:block' alt='<?=$bqr[title]?>' src='<?=$bqsr[titlepic]?>' />
+                                        </a>
+                                    </dt>
+                                    <dd class='shishang-list-dl'><a href='<?=$bqsr[titleurl]?>' target='_blank' title='<?=$bqr[title]?>' style="color:#ef537a"><?=$bqr[title]?></a></dd>
+                                </dl>
+                                [/e:loop]
                             </div>
-                            <div class="sky-shishang" id="div-fashion-controllist">
-                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_fashionlist.js" charset="utf-8"></script>
+                            <div class="sky-shishang clearfix" id="div-fashion-controllist">
+                                [e:loop={'240',2,0,0}]
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>">
+                                            <img alt="<?=$bqr[title]?>" style="border:1px solid #898989;display:block" width="138" height="78" src="<?=$bqsr[titlepic]?>" />
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>" style="color:#ef537a"><?=$bqr[title]?></a></dd>
+                                </dl>
+                                [/e:loop]
                                 <script type="text/javascript">
                                     $(function () {
                                         $("#div-fashion-controllist dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div>');
                                     })
                                 </script>
-                                <div style="clear:both;"></div>
                             </div>
-                            <div style="clear:both;"></div>
                         </div>
                         <div class="caijin-span" controlindex="2">
                             <div class="sky-shishang">
-                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_food.js" charset="utf-8"></script>
+                                [e:loop={'237',1,0,0}]
+                                <dl class='lvyou-list-ul' style='width:300px'>
+                                    <dt>
+                                        <a href='<?=$bqsr[titleurl]?>' target='_blank' title='<?=$bqr[title]?>'>
+                                            <img style='width:300px;height:180px;display:block' alt='<?=$bqr[title]?>' src='<?=$bqsr[titlepic]?>' />
+                                        </a>
+                                    </dt>
+                                    <dd class='shishang-list-dl'><a href='<?=$bqsr[titleurl]?>' target='_blank' title='<?=$bqr[title]?>' style="color:#ef537a"><?=$bqr[title]?></a></dd>
+                                </dl>
+                                [/e:loop]
                             </div>
                             <div class="sky-shishang" id="div-food-controllist">
-                                <script type="text/javascript" language="javascript" src="http://go.skykiwi.com/homepage_foodlist.js" charset="utf-8"></script>
+                                [e:loop={'241',2,0,0}]
+                                <dl class="lvyou-list-ul">
+                                    <dt>
+                                        <a target="_blank" href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>">
+                                            <img alt="<?=$bqr[title]?>" style="border:1px solid #898989;display:block" width="138" height="78" src="<?=$bqsr[titlepic]?>" />
+                                        </a>
+                                    </dt>
+                                    <dd><a target="_blank" href="<?=$bqsr[titleurl]?>" title="<?=$bqr[title]?>" style="color:#ef537a"><?=$bqr[title]?></a></dd>
+                                </dl>
+                                [/e:loop]
                                 <script type="text/javascript" id="div-food-controllist">
                                     $(function () {
                                         $("#div-food-controllist dl:eq(1)").css("margin-left", "15px").after('<div style="clear:both;"></div>');
                                     })
                                 </script>
-                                <div style="clear:both;"></div>
                             </div>
                             <div style="clear:both;"></div>
                         </div>

@@ -1,0 +1,680 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>新西兰新闻,新西兰社会新闻,新西兰留学,新西兰移民,新西兰财经,新西兰旅游_天维网新闻频道 - Skykiwi.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="Keywords" content="新西兰留学,新西兰移民,新西兰,新西兰最大门户网站,新西兰最大网络社区,新西兰新闻,新西兰旅游,新西兰搜索,新西兰朋友" />
+    <meta name="Description" content="Skykiwi天维网是新西兰最大的华人门户网站,我们为您提供每天最新的新西兰及国内、国际新闻,我们的社区论坛有30万活跃会员与您一起讨论、分享,橙页搜索为您找出提供优质服务的商家,让新西兰的生活丰富多彩" />
+    <meta name="robots" content="all,follow" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta name="google-site-verification" content="s4kD2-70IFXkxDXROz3MwuA_MGHpQZzssTXTAgq6LSs" />
+    <meta name="baidu-site-verification" content="Vaq54F1pwruvJsiJ" />
+    <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
+    <link href="newsindex.css" rel="stylesheet" />
+    <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
+    <script src="http://www.skykiwi.com/js/Top-FocusPic-new.js"></script>
+    <script type="text/javascript">
+        (function () {
+            $(window).scroll(function () {
+                var leftnav = $("#left-main");
+                var divheight = leftnav.height();
+                var winheight = $(window).height();
+                var scrollheight = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+
+                var dvalue = divheight - winheight;
+
+                if (scrollheight <= dvalue) {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = (-scrollheight+312) + "px";
+                }
+
+                if (scrollheight >= dvalue) {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = (-dvalue ) + "px";
+                }
+            });
+        })(jQuery);
+
+        $(document).ready(function () {
+            var initial_top = $("#navfirst").offset().top;
+            window.onscroll = function () {
+                scroll_top = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+                screen_top = initial_top - scroll_top;
+                //$bar.html(initial_top + " " + scroll_top + " " + screen_top);
+                if (screen_top <= 0) {
+                    $("#navfirst").css({ "top": "0px", "position": "fixed", "z-index": "999", "width": "100%" });
+                } else if (scroll_top <= initial_top) {
+                    $("#navfirst").css({ "position": "static" });
+                }
+            }
+
+            /*加载更多 begin*/
+            var pageSize = 10;
+
+            var pageIndex = 2;
+            getData(20, 1, 0, $("#ul-news-list"));
+            $(document).on('click', "#sky-loading-more", function () {
+                pageIndex++;
+                getData(pageSize, pageIndex, 0, $("#ul-news-list"));
+            });
+
+            var pagenaIndex = 2;
+            getData(20, 1, 1, $("#ul-news-nalist"));
+            $(document).on('click', "#sky-naloading-more", function () {
+                pagenaIndex++;
+                getData(pageSize, pagenaIndex, 1, $("#ul-news-nalist"));
+            });
+
+            var pagehqIndex = 2;
+            getData(20, 1, 2, $("#ul-news-hqlist"));
+            $(document).on('click', "#sky-hqloading-more", function () {
+                pagehqIndex++;
+                getData(pageSize, pagehqIndex, 2, $("#ul-news-hqlist"));
+            });
+            /*加载更多 end*/
+
+            $("#tab-newsclass span").on("click", function () {
+                if (!$(this).hasClass("currenTab")) {
+                    $(this).addClass("currenTab").siblings().removeClass("currenTab");
+                    var groupid = $(this).attr("groupid");
+                    $('.sky-load-more[groupid=' + groupid + ']').fadeIn().css("display", "block").siblings(".sky-load-more").fadeOut();
+                    $(".ul-news-list[groupid=" + groupid + "]").show().siblings(".ul-news-list").hide();
+                }
+            });
+        });
+
+        function getData(pageSize, pageIndex, cid, ulid) {
+            var taken = '';
+            var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&aliasCid=' + cid;
+            $(".newsmore").hide();
+            $(".newsloading").show();
+            $.getJSON(apiUrl + '&callback=?', function (responses) {
+                if (typeof responses.code == 'undefined') {
+                    alert('系统遇到了错误。');
+                    return false;
+                }
+                if (responses.code != 1) {
+                    var msg = responses.msg == '' ? '系统遇到了错误。' : responses.msg;
+                    alert(msg);
+                    return false;
+                }
+                $(".newsmore").show();
+                $(".newsloading").hide();
+                var li = "";
+                var ul = ulid;
+                var dl = "";
+                $.each(responses.data.items, function (index, item) {
+                    li = $('<li class="list-news-item"></li>').appendTo(ul);
+                    $('<a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '"><img width= "140" height= "70" src= "' + item["poster"] + '" /></a >').appendTo(li);
+                    dl = $("<dl></dl>").appendTo(li);
+                    $('<dt><a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '">' + item["title"] + '</a></dt>').appendTo(dl);
+
+                    $('<dd>时间：' + item["datetime"] + '</dd>').appendTo(dl);
+                    var newstype = item["cname"];
+                    if (newstype == "投资频道") {
+                        newstype = '<a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>'
+                    }
+                    else if (newstype == "投资频道") {
+                        newstype = '< a class="list-news-item-category" href= "http://imedu.skykiwi.com" target= "_self" title= "新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道" > 留学移民</a > ';
+                    }
+                    else {
+                        newstype = '<span class="list-news-item-category">' + newstype + '</span>';
+                    }
+                    $('<dd>' + newstype + '</dd>').appendTo(dl);
+                });
+                if (cid == 0) {
+                    getAdvert(pageIndex);
+                }
+            });
+        }
+
+        function getAdvert(pageIndex) {
+            if (pageIndex == 1) {
+                $("#ul-news-list li").eq(3).after($("#ul-newadvert li").eq(0));
+                $("#ul-news-list li").eq(3).after($("#ul-newfillbank li").eq(0));
+            }
+            appendNewsAdvert(pageIndex);
+        }
+        function appendNewsAdvert(pageIndex) {
+            var ulNewsCount = $("#ul-news-list li").length;
+            if ($("#ul-newadvert li").length > 0) {
+                $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newadvert li").eq(0));
+            }
+            else {
+                $("#ul-news-list li[data-type='newsadvert']:last").clone(true).appendTo($("#ul-news-list"));
+            }
+            $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newfillbank li").eq(0));
+        }
+    </script>
+    <style type="text/css">
+        @keyframes rotateIn {
+            0% {
+                -webkit-transform: rotate(-360deg);
+                -moz-transform: rotate(-360deg);
+                -ms-transform: rotate(-360deg);
+                -o-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+
+            100% {
+                -webkit-transform: none;
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="header-content clearfix">
+            <ul>
+                <li>
+                    <span><a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook" style="color:#dbd9d9;text-decoration:none">English</a></span> |
+                    <span style="color:#ec7f16">中文</span>
+                </li>
+                <li class="header-content-app">
+                    <span>天维网</span>
+                    <a style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -1px 0px  no-repeat;" target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
+                    </a>
+                    <a style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" href="javascript:wechathome()" title="关注我们的微信">
+                    </a>
+                    <span id="wechat_home" style="display: none;"></span>
+                    <a style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -71px 0px  no-repeat;" target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书">
+                    </a>
+                    <a style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -106px 0px  no-repeat;" target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特">
+                    </a>
+                </li>
+                <li class="header-content-app">
+                    <span>导购</span>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -1px 0px  no-repeat;" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
+
+                    </a>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" href="javascript:wechatgo()">
+
+                    </a>
+                    <span id="wechat_go" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>生活</span>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的天维生活" href="javascript:wechattuangou()">
+
+                    </a>
+                    <span id="wechat_soku" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>微房产</span>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的微房产" href="javascript:wechatproperty()">
+                    </a>
+                    <span id="wechat_property" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>微财经</span>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的导购微信" href="javascript:wechatmoney()">
+                    </a>
+                    <span id="wechat_money" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <img id="sky-phone-logo" src="http://www.skykiwi.com/newImage/sky-phone.png" style="margin-top:6px; cursor:pointer" />
+                    <span id="wechat_skyphone" style="display: none;"></span>
+                </li>
+            </ul>
+            <script type="text/javascript">
+                function wechathome() { wechat_home.style.display = "block"; }
+                function wechatgo() { wechat_go.style.display = "block"; }
+                function wechatproperty() { wechat_property.style.display = "block"; }
+                function wechattuangou() { wechat_soku.style.display = "block"; }
+                function wechatmoney() { wechat_money.style.display = "block"; }
+                function hidden() { wechat_home.style.display = "none"; wechat_go.style.display = "none"; wechat_property.style.display = "none"; wechat_soku.style.display = "none"; wechat_money.style.display = "none"; }
+                document.onclick = hidden;
+                $(function () {
+                    $("#sky-phone-logo").hover(function () {
+                        $("#wechat_skyphone").show();
+                    },
+                        function () {
+                            $("#wechat_skyphone").hide();
+                        }
+                    );
+                });
+            </script>
+        </div>
+    </div>
+    <div style="width:1200px;height:125px;overflow:hidden;border:1px solid gray;margin:25px auto;">
+        <iframe id='af8b875e' name='af8b875e' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=204&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='1200' height='125'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a7d01c7c&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=204&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7d01c7c&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+    </div>
+    <div id="navfirst">
+        <div id="navsecond">
+            <img src="http://www.skykiwi.com/newImage/sky-new.png" />
+            <ul>
+                <li><a style="color:#ec7f16;text-decoration:none" href="http://www.skykiwi.com/index.html" target="_self" title="返回天维网首页 - 天维网，新西兰最大的华人门户网站">天维首页</a></li>
+                <li><a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a></li>
+                <li><a style="color:#f20626;text-decoration:none" href="http://www.skykiwi.com/newsindex.html" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
+                <li><a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
+                <li><a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a></li>
+                <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
+                <li><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
+                <li><a href="http://d.skykiwi.com" target="_self" title="新西兰网址导航，新西兰百科知识，新西兰商家查询 - 点击进入新西兰网址导航频道">导航</a></li>
+                <li><a href="http://shop.skykiwi.com" target="_blank" title="新西兰比价购物频道 - 为您节省每一分钱，方便的网上比价购物体验 - 点击进入天维价格比较频道 / 合作网站 PriceMe">比价</a></li>
+                <li style="border:none;"><a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="maincontent" class="clearfix">
+        <div id="left-main" class="clearfix">
+            <div class="left-main-personalstory">
+                <a href="http://news.skykiwi.com/na/yl/2017-06-20/242918.shtml" target="_blank" title="我是2017 Miss NZ：我妈妈是中国人，我喜欢周杰伦！">
+                    <img src="http://www.skykiwi.com/d/file/newfillblank/twrw/2017-06-20/92c2f982dfc9f18ce4dc331a1daac506.jpg" width="200" height="300" />
+                </a>
+                <span>
+                    <a href="http://news.skykiwi.com/na/yl/2017-06-20/242918.shtml" target="_blank" title="我是2017 Miss NZ：我妈妈是中国人，我喜欢周杰伦！">
+                        我是2017 Miss NZ：我妈妈是中国人，我喜欢周杰伦！
+                    </a>
+                </span>
+                <p>
+                    2017新西兰小姐选美落下帷幕，来自奥克兰的姑娘Annie Evans战胜众多佳丽勇夺冠军，将于今年11月前往中国深圳参加世界小姐总决赛。
+                </p>
+            </div>
+            <div class="left-main-personalstory">
+                <img src="http://www.skykiwi.com/newImage/sky-pinpai-logo.jpg" style="margin:20px 0;display:block;" />
+                <a href="http://news.skykiwi.com/na/zh/2015-01-19/192128.shtml" target="_blank" title="新西兰航空75年流金岁月：领航“中土世界”">
+                    <img src="http://www.skykiwi.com/d/file/newfillblank/pinpaistory/2017-06-28/63cf38be290ad19db0816c0ff29e4953.jpg" width="200" height="120" />
+                </a>
+                <span>
+                    <a href="http://news.skykiwi.com/na/zh/2015-01-19/192128.shtml" target="_blank" title="新西兰航空75年流金岁月：领航“中土世界”">
+                        新西兰航空75年流金岁月：领航“中土世界”
+                    </a>
+                </span>
+                <p>
+                    如今，作为新西兰国家航空公司的纽航已经走过了超过75个年头，成为了新西兰居民生活中不可缺少的一部分。
+                </p>
+            </div>
+            <div>
+                <div class="left-main-zhuanti">
+                    <div class="left-main-zhuanti-head clearfix">
+                        <span>天维专题</span>
+                        <img src="http://www.skykiwi.com/newImage/zhuanti_news_hot.jpg" style="float:right" />
+                    </div>
+                    <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:8px;margin-right:8px" />
+                    <div class="left-main-zhuanti-body">
+                        <ul data-index="1">
+                            <li>
+                                <a href="http://www.skykiwi.com/zt/czysa/" target="_blank" title="">
+                                    <img width="185" height="185" src="http://www.skykiwi.com/d/file/zhuanti/NewHotzhuanti/2017-06-15/6f8fcd46c127c79aa928528b2b97fcbe.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <h2 style="font-size:16px;color:black;margin:15px 0;letter-spacing:1px">
+                                    <a href="http://www.skykiwi.com/zt/czysa/" target="_blank" title="">
+                                        2017财政预算案深度解读
+                                    </a>
+                                </h2>
+                                <p>
+                                    2017年5月25日，新西兰2017年度财政预算案正式揭开面纱。政府大范围派糖，不仅推出20亿大礼包补贴中低收入人群，还承诺未来几年将在奥克兰建造3.4万栋保障性住房。
+                                </p>
+                            </li>
+                        </ul>
+                        <ul data-index="2">
+                            <li>
+                                <a href="http://www.skykiwi.com/zt/zl/" target="_blank" title="">
+                                    <img width="185" height="185" src="http://www.skykiwi.com/d/file/zhuanti/NewHotzhuanti/2017-06-15/28bf9ddd8627bd3d0b99d11900c519e4.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <h2 style="font-size:16px;color:black;margin:15px 0;letter-spacing:1px">
+                                    <a href="http://www.skykiwi.com/zt/zl/" target="_blank" title="">
+                                        聚焦李克强总理访问澳新
+                                    </a>
+                                </h2>
+                                <p>
+                                    国务院总理李克强于3月22日至29日期间出访澳大利亚和新西兰两国，此次总理的澳新访问行程吸引了众多关注。欢迎关注天维网“李克强总理澳新访问”专题。
+                                </p>
+                            </li>
+                        </ul>
+
+                        <div class="left-main-zhuanti-body-tips" style="height:30px;">
+                            <a data-index="1" href="http://www.skykiwi.com/zt/czysa/" target="_blank">1</a>
+                            <a data-index="2" href="http://www.skykiwi.com/zt/zl/" target="_blank">2</a>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $(".left-main-zhuanti-body ul[data-index='1']").siblings("ul").css("display", "none");
+                            $(".left-main-zhuanti-body-tips a[data-index='1']").addClass('active');
+                            var timer = setInterval(go, 3000);
+                            function go() {
+                                var dataindex = parseInt($(".left-main-zhuanti-body ul:visible").attr("data-index"));
+                                dataindex = dataindex + 1;
+                                if (dataindex > 2) {
+                                    dataindex = 1;
+                                }
+                                $(".left-main-zhuanti-body-tips a[data-index='" + dataindex + "']").addClass('active').siblings().removeClass('active');
+                                $(".left-main-zhuanti-body ul[data-index='" + dataindex + "']").show().siblings("ul").hide();
+                            }
+
+                            $(".left-main-zhuanti-body ul").each(function () {
+                                var objinfo = $(this).find("li:first-child");
+                                objinfo.on("mouseover", function () {
+                                    clearInterval(timer);
+                                });
+                                objinfo.on("mouseout", function () {
+                                    timer = setInterval(go, 3000);
+                                });
+                            });
+                            $(".left-main-zhuanti-body-tips a").each(function () {
+                                $(this).hover(function () {
+                                    var dataindex = $(this).attr("data-index");
+                                    $(this).addClass('active').siblings().removeClass('active')
+                                    $(".left-main-zhuanti-body ul[data-index='" + dataindex + "']").show().siblings("ul").hide();
+                                    clearInterval(timer);
+                                }, function () {
+                                    timer = setInterval(go, 3000);
+                                });
+                            });
+                        });
+                    </script>
+                    <div class="left-main-zhuanti-head clearfix">
+                        <span style="margin-bottom:6px">往期专题</span>
+                    </div>
+                    <hr style="height:1px;border:none;border-top:1px solid #999999;margin-left:11px;margin-right:8px" />
+                    <div class="left-main-zhuanti-past">
+                        <ul style="margin: 10px 10px 20px 10px ">
+                            <li><a href="http://www.skykiwi.com/zt/kkldz/" target="_blank" title="关注凯库拉大地震">关注凯库拉大地震</a></li>
+                            <li><a href="http://www.skykiwi.com/zt/ymxz/" target="_blank" title="深扒新西兰移民新政">深扒新西兰移民新政</a></li>
+                            <li><a href="http://www.skykiwi.com/zt/safety/" target="_blank" title="构建安全的奥克兰">构建安全的奥克兰</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="left-main-shudu">
+                <img src="http://www.skykiwi.com/newImage/sky-shudu.jpg" style="margin:20px 0;display:block;" />
+                <ul style="margin-bottom:25px;">
+                    <li><a href='http://money.skykiwi.com/na/2017-05-12/240863.shtml' target=_blank title='关注2017财算案！一张图告诉你：对比澳英中，新西兰个税高不高？'>关注2017财算案！一张图告诉你：对比澳英中，新西兰个税高不高？</a></li>
+                </ul>
+            </div>
+            <div class="left-main-nianjie">
+                <img src="http://www.skykiwi.com/newImage/sky-nianjie.jpg" style="margin:20px 0;display:block;" />
+                <ul style="margin-bottom:26px;">
+                    <li>2016</li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2015-03-31/195748.shtml" target="_blank" title="2013新西兰年鉴">2013</a></li>
+                    <li style="border:none"><a href="http://news.skykiwi.com/na/zh/2013-02-25/155608.shtml" target="_blank" title="2012新西兰年鉴">2012</a></li>
+                    <div style="clear:both"></div>
+                </ul>
+            </div>
+            <div class="left-main-niandu clearfix">
+                <img src="http://www.skykiwi.com/newImage/sky-niandu.jpg" style="margin:15px 0;display:block;" />
+                <ul style="margin-bottom:26px;">
+                    <li><a href="http://news.skykiwi.com/na/zh/2016-12-21/232740.shtml" target="_blank" title="2016年度新闻年终总结">2016</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2015-11-12/208058.shtml" target="_blank" title="2015年度新闻年终总结">2015</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2014-12-20/191000.shtml" target="_blank" title="2014年度新闻年终总结">2014</a></li>
+                    <li><a href="http://www.skykiwi.com/2013news/" target="_blank" title="2013年度新闻年终总结">2013</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2012-12-21/152579.shtml" target="_blank" title="2012年度新闻年终总结">2012</a></li>
+                    <li><a href="http://news.skykiwi.com/na/zh/2011-12-22/132536.shtml" target="_blank" title="2011年度新闻年终总结">2011</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div style="width:1000px;float:right" class="clearfix">
+            <div id="center-main" style="margin-left:48px;">
+                <div id="newsSlide" class="border slideBox">
+                    <div class="toptittle">天维热点</div>
+                    <div id="flash"></div>
+                    <script type="text/javascript">
+                        FocusPic.FocusObj = 'flash';
+                        FocusPic.Width = 600;
+                        FocusPic.Height = 288;
+                        FocusPic.Pics = 'http://www.skykiwi.com/d/file/news/world/dl/zh/2017-07-06/740c819b29676864635e76d289a8f7e1.jpg|http://www.skykiwi.com/d/file/news/world/gj/zh/2017-07-06/8f895c987a942ae303fb9296c2bd1f36.jpg|http://www.skykiwi.com/d/file/news/world/gj/zh/2017-07-06/7f8a39719a425dccbeeb6412649c05dd.jpg|http://www.skykiwi.com/d/file/news/world/dl/zh/2017-07-06/c9f7d831709b3c13a4d5f0dfe62ee88d.jpg';
+                        FocusPic.Titles = '福建人动人讲述父辈的异国打拼 生不易活也不易|23岁赚足10亿美金 白手起家年轻富豪:中国占18人|看世界各国人民吐槽美国人 相当毒舌|中国新晋“大魔王”独揽4冠 日本盛赞称其是怪物';
+                        FocusPic.Links = 'http://news.skykiwi.com/world/dl/zh/2017-07-06/243757.shtml|http://news.skykiwi.com/world/gj/zh/2017-07-06/243752.shtml|http://news.skykiwi.com/world/gj/zh/2017-07-06/243747.shtml|http://news.skykiwi.com/world/dl/zh/2017-07-06/243732.shtml';
+                        FocusPic.init();
+                    </script>
+                </div>
+                <div id="top-newlist">
+                    <ul style="margin-top:10px">
+                        <li><a href="http://news.skykiwi.com/na/weidu/2017-07-06/243730.html" target="_blank">AKL学校最新排行 你买对学区房了</a></li>
+                        <li><a href="http://news.skykiwi.com/na/weidu/2017-07-04/243648.html" target="_blank">留学生吸笑气致瘫 NZ竟也流行！</a></li>
+                        <li><a href="http://news.skykiwi.com/na/weidu/2017-07-03/243544.html" target="_blank">全国测速摄像头最新最全地图曝光</a></li>
+                        <li><a href="http://news.skykiwi.com/na/weidu/2017-06-30/243411.html" target="_blank">亚洲投资者用不到一成钱震撼NZ</a></li>
+                        <li><a href="http://news.skykiwi.com/na/weidu/2017-06-30/243409.html" target="_blank">比例严重失衡！新西兰竟这么缺男</a></li>
+                        <li><a href="http://news.skykiwi.com/na/weidu/2017-06-29/243397.html" target="_blank">团聚移民关闭后 你支持10年签证吗</a></li>
+                        <div style="clear:both"></div>
+                    </ul>
+                </div>
+
+                <div style="height:50px; width:600px;margin:20px 0">
+                    <iframe id='aceb5368' name='aceb5368' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=208&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='50'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a74d423d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=208&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a74d423d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <div id="tab-newsclass">
+                    <span class="currenTab" groupid="0">天维新闻</span>
+                    <span groupid="1">纽澳新闻</span>
+                    <span groupid="2">环球报道</span>
+                </div>
+                <ul class="ul-news-list" id="ul-news-list" groupid="0"></ul>
+                <ul class="ul-news-list" id="ul-news-nalist" style="display:none" groupid="1"></ul>
+                <ul class="ul-news-list" id="ul-news-hqlist" style="display:none" groupid="2"></ul>
+
+                <a id="sky-loading-more" class="sky-load-more" style="display: block;" groupid="0">
+                    <div class="newsmore" style="display: block;">
+                        <i>+</i>
+                        <span>加载更多</span>
+                    </div>
+                    <div class="newsloading" style="display: none;">
+                        <i>+</i>
+                        <span>加载中...</span>
+                    </div>
+                </a>
+                <a id="sky-naloading-more" class="sky-load-more" style="display: none;" groupid="1">
+                    <div class="newsmore" style="display: block;">
+                        <i>+</i>
+                        <span>加载更多</span>
+                    </div>
+                    <div class="newsloading" style="display: none;">
+                        <i>+</i>
+                        <span>加载中...</span>
+                    </div>
+                </a>
+                <a id="sky-hqloading-more" class="sky-load-more" style="display: none;" groupid="2">
+                    <div class="newsmore" style="display: block;">
+                        <i>+</i>
+                        <span>加载更多</span>
+                    </div>
+                    <div class="newsloading" style="display: none;">
+                        <i>+</i>
+                        <span>加载中...</span>
+                    </div>
+                </a>
+
+            </div>
+            <div id="right-main">
+                <div class="news-title">
+                    新闻视频
+                </div>
+                <div class="news-content" style="width:300px;height:195px">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZqztjMVn_yM" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <ul class="newlist">
+                    <li>
+                        <a href="http://ent.skykiwi.com/video_news/2017-06-22/243037.shtml" target="_blank" title="笑喷！快来围观新西兰奶爸换尿布 妻子在笑他在呕">笑喷！快来围观新西兰奶爸换尿布 妻子在笑他在呕</a>
+                    </li>
+                    <li>
+                        <a href="http://ent.skykiwi.com/video_news/2017-06-22/243056.shtml" target="_blank" title="新西兰牛血液制品获准入华 每年将创收5000万纽币">新西兰牛血液制品获准入华 每年将创收5000万纽币</a>
+                    </li>
+                    <li>
+                        <a href="http://ent.skykiwi.com/video_news/2017-06-22/243054.shtml" target="_blank" title="北地迎超强降雨 部分地区断电牛被困学校停课">北地迎超强降雨 部分地区断电牛被困学校停课</a>
+                    </li>
+                </ul>
+                <script type="text/javascript">
+                        $(function () {
+                            $(".newlist:eq(0)").css("color", "f20626");
+                        })
+                </script>
+                <div style="margin:20px 0;height:250px">
+                    <iframe id='a895aba1' name='a895aba1' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=205&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa6b23bd&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=205&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa6b23bd&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <div style="margin:30px 0;height:250px">
+                    <iframe id='afc0b588' name='afc0b588' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=206&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a7047feb&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=206&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7047feb&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <ul class="column-list clearfix">
+                    <li>
+                        <div>新西兰总理比尔英格利希专栏</div>
+                        <img width="120" height="225" src="http://www.skykiwi.com/newImage/0.png" />
+                        <ul class="column-itemlist">
+                            <li><a href="http://politics.skykiwi.com/special-column/johnkey/2017-07-04/243595.shtml" target="_blank" title="引领新西兰迈入21世纪20年代">引领新西兰迈入21世纪20年代</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/johnkey/2017-06-27/243256.shtml" target="_blank" title="新西兰政府专注于改善民众生活">新西兰政府专注于改善民众生活</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/johnkey/2017-06-20/242909.shtml" target="_blank" title="总理：确保NZ每一个孩子都能拥有最好的人生开端">总理：确保NZ每一个孩子都能拥有最好的人生</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/johnkey/2017-06-06/242178.shtml" target="_blank" title="总理：要为民众带来一个更加繁荣富强的新西兰！">总理：要为民众带来一个更加繁荣富强的新西</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>国家党国会议员杨健专栏</div>
+                        <img width="120" height="225" src="http://www.skykiwi.com/newImage/1.png" />
+                        <ul class="column-itemlist">
+                            <li><a href="http://politics.skykiwi.com/special-column/yangjian/2017-07-06/243764.shtml" target="_blank" title="《新西兰教育手册》（8）早期幼儿教育">《新西兰教育手册》（8）早期幼儿教育</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/yangjian/2017-06-23/243116.shtml" target="_blank" title="《新西兰教育手册》（7）早期幼儿教育">《新西兰教育手册》（7）早期幼儿教育</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/yangjian/2017-06-16/242763.shtml" target="_blank" title="杨健议员：国家党正投入大量资源打击暴力犯罪">杨健议员：国家党正投入大量资源打击暴力犯</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/yangjian/2017-06-15/242700.shtml" target="_blank" title="新西兰教育手册（6）：新西兰教育体系概览 ">新西兰教育手册（6）：新西兰教育体系概览 </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>工党领袖安德鲁利特尔专栏</div>
+                        <img width="120" height="225" src="http://www.skykiwi.com/newImage/2.png" />
+                        <ul class="column-itemlist">
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2016-07-04/222091.shtml" target="_blank" title="工党：警察濒临崩溃界点">工党：警察濒临崩溃界点</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2015-07-20/201650.shtml" target="_blank" title="工党：应将新西兰居民利益放在海外投资者之上">工党：应将新西兰居民利益放在海外投资者之</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2015-04-13/196318.shtml" target="_blank" title="工党办公室专栏：奥克兰盗窃频发但犯罪解决率低靡">工党办公室专栏：奥克兰盗窃频发但犯罪解决</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2015-03-04/194352.shtml" target="_blank" title="工党办公室专栏：错误的原因导致错误的决策(图)">工党办公室专栏：错误的原因导致错误的决策</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <div>工党国会议员霍建强专栏</div>
+                        <img width="120" height="225" src="http://www.skykiwi.com/newImage/4.jpg" />
+                        <ul class="column-itemlist">
+                            <li><a href="http://www.skykiwi.com/article/grzl/hjq/2012-02-23/2096.shtml" target="_blank" title="工党发言人：外交部裁员势必影响到所有新西兰人">工党发言人：外交部裁员势必影响到所有新西</a></li>
+                            <li><a href="http://www.skykiwi.com/article/grzl/hjq/2011-11-22/2094.shtml" target="_blank" title="工党发言人：约翰基卖国有资产是新西兰的巨大失败">工党发言人：约翰基卖国有资产是新西兰的巨</a></li>
+                            <li><a href="http://www.skykiwi.com/article/grzl/hjq/2011-11-10/2093.shtml" target="_blank" title="工党领袖Phil Goff：现任政府的未来一点也不光明 ">工党领袖Phil Goff：现任政府的未来一点也不</a></li>
+                            <li><a href="http://www.skykiwi.com/article/grzl/hjq/2011-11-07/2092.shtml" target="_blank" title="工党：十五万七千人失业，国家党却什么也没做">工党：十五万七千人失业，国家党却什么也没</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>行动党党魁大卫西蒙专栏</div>
+                        <img width="120" height="225" src="http://www.skykiwi.com/newImage/3.png" />
+                        <ul class="column-itemlist">
+                            <li><a href="http://politics.skykiwi.com/special-column/xdd/2017-05-25/241601.shtml" target="_blank" title="行动党：烟草税太高导致便利店暴力抢劫">行动党：烟草税太高导致便利店暴力抢劫</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/xdd/2017-05-18/241178.shtml" target="_blank" title="行动党推出减税政策">行动党推出减税政策</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/xdd/2017-04-27/239962.shtml" target="_blank" title="新的移民政策应该更好地保护纳税人">新的移民政策应该更好地保护纳税人</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/xdd/2017-03-03/236793.shtml" target="_blank" title="监狱人口问题">监狱人口问题</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <div style="height:66px;margin-top:30px">
+                            中华人民共和国驻新西兰大使馆
+                            <p>THE EMBASSY OF THE PEOPLE'S REPUBLIC OF CHINA IN NEW ZEALAND</p>
+                        </div>
+                        <ul class="column-itemdasiguanlist">
+                            <li><a href="http://politics.skykiwi.com/embassy/2017-07-01/243488.shtml" target="_blank" title="中国驻新西兰大使馆举办庆祝香港回归20周年招待会">中国驻新西兰大使馆举办庆祝香港回归20周年招待会</a></li>
+                            <li><a href="http://politics.skykiwi.com/embassy/2017-05-25/241627.shtml" target="_blank" title="王鲁彤NZ主流媒体撰文 介绍“一带一路”峰会成果">王鲁彤NZ主流媒体撰文 介绍“一带一路”峰会成果</a></li>
+                            <li><a href="http://politics.skykiwi.com/embassy/2017-05-22/241378.shtml" target="_blank" title="杨洁篪就“一带一路”国际合作高峰论坛接受媒体采访">杨洁篪就“一带一路”国际合作高峰论坛接受媒体采访</a></li>
+                            <li><a href="http://politics.skykiwi.com/embassy/2017-04-03/238622.shtml" target="_blank" title="中国驻新西兰大使王鲁彤：中新关系再攀高峰">中国驻新西兰大使王鲁彤：中新关系再攀高峰</a></li>
+                            <li><a href="http://politics.skykiwi.com/embassy/2017-03-22/237878.shtml" target="_blank" title="中国驻新西兰大使王鲁彤：巩固中新经贸合作“基本盘”">中国驻新西兰大使王鲁彤：巩固中新经贸合作“基本盘”</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div style="height:66px">
+                            中华人民共和国驻奥克兰总领事馆
+                            <p>CONSULATE-GENERAL OF THE PEOPLE'S REPUBLIC OF CHINA IN AUCKLAND</p>
+                        </div>
+                        <ul class="column-itemdasiguanlist">
+                            <li><a href="http://politics.skykiwi.com/consulate/2017-06-19/242841.shtml" target="_blank" title="通知：中国驻奥克兰总领馆将赴汉密尔顿现场办公">通知：中国驻奥克兰总领馆将赴汉密尔顿现场办公</a></li>
+                            <li><a href="http://politics.skykiwi.com/consulate/2017-05-12/240797.shtml" target="_blank" title="中新携手“一带一路”为奥克兰领区对华务实合作插上腾飞的翅膀">中新携手“一带一路”为奥克兰领区对华务实合作插上腾飞的翅膀</a></li>
+                            <li><a href="http://politics.skykiwi.com/consulate/2016-12-21/232695.shtml" target="_blank" title="通知：中国驻奥克兰总领馆将赴汉密尔顿现场办公">通知：中国驻奥克兰总领馆将赴汉密尔顿现场办公</a></li>
+                            <li><a href="http://politics.skykiwi.com/consulate/2016-12-14/232261.shtml" target="_blank" title="华人注意！中国驻奥克兰总领馆招人啦 内附申请表">华人注意！中国驻奥克兰总领馆招人啦 内附申请表</a></li>
+                            <li><a href="http://politics.skykiwi.com/consulate/2016-12-05/231699.shtml" target="_blank" title="关于启用《中国签证申请相片规格要求》的通知">关于启用《中国签证申请相片规格要求》的通知</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div style="height:66px">
+                            中华人民共和国驻克赖斯特彻奇总领馆
+                            <p>CONSULATE-GENERAL OF THE PEOPLE'S REPUBLIC OF CHINA IN CHRISTCHURCH</p>
+                        </div>
+                        <ul class="column-itemdasiguanlist">
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2016-07-04/222091.shtml" target="_blank" title="工党：警察濒临崩溃界点">工党：警察濒临崩溃界点</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2015-07-20/201650.shtml" target="_blank" title="工党：应将新西兰居民利益放在海外投资者之上">工党：应将新西兰居民利益放在海外投资者之上</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2015-04-13/196318.shtml" target="_blank" title="工党办公室专栏：奥克兰盗窃频发但犯罪解决率低靡">工党办公室专栏：奥克兰盗窃频发但犯罪解决率低靡</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2015-03-04/194352.shtml" target="_blank" title="工党办公室专栏：错误的原因导致错误的决策(图)">工党办公室专栏：错误的原因导致错误的决策(图)</a></li>
+                            <li><a href="http://politics.skykiwi.com/special-column/huojianqiang/2015-01-26/192459.shtml" target="_blank" title="工党办公室专栏：奥克兰需要轻轨减缓地区交通阻塞">工党办公室专栏：奥克兰需要轻轨减缓地区交通阻塞</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div style="height:250px;width:300px">
+                    <iframe id='a9906274' name='a9906274' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=207&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa2e929b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=207&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa2e929b&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+            </div>
+            <div class="links clearfix">
+                <h3>友情媒体</h3>
+                <a href="http://www.people.com.cn" target="_blank" title="人民网"><img src="http://www.skykiwi.com/home2011/images/link/logo-people.jpg"></a>
+                <a href="http://huaren.haiwainet.cn/" target="_blank" title="海外网"><img src="http://www.skykiwi.com/home2011/images/link/logo-haiwainet.jpg"></a>
+                <a href="http://www.aptimes.nz" target="_blank" title="中新时报"><img src="http://www.skykiwi.com/home2011/images/link/logo-asia-pacific-time.jpg"></a>
+            </div>
+            <div id="footer" class="clearfix">
+                <p><a href="http://em.skykiwi.com/aboutus.html" target="_blank" class="ico"> 关于天维</a> | <a href="http://em.skykiwi.com/english.html" target="_blank">About Us</a> | <a href="http://em.skykiwi.com/termsofuse.html" target="_blank">使用条款</a> | <a href="http://em.skykiwi.com/privacy.html" target="_blank">隐私声明</a> | <a href="http://em.skykiwi.com" target="_blank">广告服务</a> | <a href="http://em.skykiwi.com/contactus.html" target="_blank">联系我们</a> | <a href="http://em.skykiwi.com/aboutus_join.html" target="_blank">招贤纳士</a> | <a href="http://bbs.skykiwi.com/member.php?mod=regsky.php" target="_blank">会员注册</a></p>
+                <p><span>&copy;&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
+            </div>
+        </div>
+    </div>
+    <ul style="display:none" id="ul-newfillbank">
+        <li class="list-news-specialitem" data-type="newfillbank">
+            <dl>
+                <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/na/zh/2017-06-28/243283.shtml" target="_blank" title="新西兰牛奶行业心照不宣的一个秘密被彻底揭开！">新西兰牛奶行业心照不宣的一个秘密被彻底揭开！</a></dt>
+                <dd style="height:120px;display:inline-block;margin:15px 0">
+                    <a href="http://news.skykiwi.com/na/zh/2017-06-28/243283.shtml" target="_blank" title="新西兰牛奶行业心照不宣的一个秘密被彻底揭开！"><img style="border: 1px solid #898989;" width="190" height="120" src="http://www.skykiwi.com/d/file/newfillblank/newlistsperate/2017-06-29/2f87851aec853fece0746ce52f023249.jpg" /></a>
+                    <a href="http://news.skykiwi.com/na/zh/2017-06-28/243283.shtml" target="_blank" title="新西兰牛奶行业心照不宣的一个秘密被彻底揭开！"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="http://www.skykiwi.com/d/file/newfillblank/newlistsperate/2017-06-29/eddb666c2d7f777051f03f4313edf2b2.jpg" /></a>
+                    <a href="http://news.skykiwi.com/na/zh/2017-06-28/243283.shtml" target="_blank" title="新西兰牛奶行业心照不宣的一个秘密被彻底揭开！"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="http://www.skykiwi.com/d/file/newfillblank/newlistsperate/2017-06-29/0756c9131e79d36b497ec39185496426.jpg" /></a>
+                </dd>
+                <dd>
+                    <span class="list-news-item-category">纽澳新闻</span>
+                </dd>
+            </dl>
+        </li>
+        <li class="list-news-specialitem" data-type="newfillbank">
+            <dl>
+                <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="http://news.skykiwi.com/world/gj/cj/2017-06-29/243366.shtml" target="_blank" title="全球联手围剿 " 避税天堂"不复存在隐形富豪难遁藏">全球联手围剿 "避税天堂"不复存在隐形富豪难遁藏</a></dt>
+                <dd style="height:120px;display:inline-block;margin:15px 0">
+                    <a href="http://news.skykiwi.com/world/gj/cj/2017-06-29/243366.shtml" target="_blank" title="全球联手围剿 " 避税天堂"不复存在隐形富豪难遁藏"><img style="border: 1px solid #898989;" width="190" height="120" src="http://www.skykiwi.com/d/file/newfillblank/newlistsperate/2017-06-29/ea6ef948cda377f2b60b30b7f45bca7b.jpg" /></a>
+                    <a href="http://news.skykiwi.com/world/gj/cj/2017-06-29/243366.shtml" target="_blank" title="全球联手围剿 " 避税天堂"不复存在隐形富豪难遁藏"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="http://www.skykiwi.com/d/file/newfillblank/newlistsperate/2017-06-29/fa513c17de472141a7d68a4bbf4b4a64.jpg" /></a>
+                    <a href="http://news.skykiwi.com/world/gj/cj/2017-06-29/243366.shtml" target="_blank" title="全球联手围剿 " 避税天堂"不复存在隐形富豪难遁藏"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="http://www.skykiwi.com/d/file/newfillblank/newlistsperate/2017-06-29/dd647ce676d0fa68d517509ce1806f37.jpg" /></a>
+                </dd>
+                <dd>
+                    <span class="list-news-item-category">环球报道</span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <ul style="display:none" id="ul-newadvert">
+        <li class="list-news-item" style="height:200px; padding:20px 0" data-type="newsadvert">
+            <iframe id='a701fb76' name='a701fb76' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=209&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='200'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a49f4980&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=209&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a49f4980&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+        </li>
+        <li class="list-news-item" style="height:200px; padding:20px 0" data-type="newsadvert">
+            <iframe id='a363eefe' name='a363eefe' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='200'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a8308398&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a8308398&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+        </li>
+    </ul>
+    <!-- START: Google Analyse -->
+    <script type="text/javascript">
+                        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+                        try {
+                            var pageTracker = _gat._getTracker("UA-4716393-5");
+                            pageTracker._setDomainName("skykiwi.com");
+                            pageTracker._trackPageview();
+                        } catch (err) { }
+    </script>
+    <!-- END: Google Analyse -->
+
+</body>
+</html>

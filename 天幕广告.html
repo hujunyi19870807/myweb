@@ -174,55 +174,44 @@
         </div>
 
         <div class="maincontent">
-            <div id="div-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;background-color:black;float:right;display:none"></div>
-            <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
-                <iframe id='a77882a6' name='a77882a6' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='950' height='40'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a7e44dd7&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7e44dd7&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
-            </div>
-            <div class="topbannermiddle" id="div-first-banner">
-                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red"></div>
-                <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
-                <iframe id='abac80f0' name='abac80f0' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=97&amp;cb=09309228820170628&amp;ct0=' frameborder='0' scrolling='no' width='950' height='900'>
-                    <a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a12b9973&amp;cb=09309228820170628' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=09309228820170628&amp;n=a12b9973&amp;ct0=' border='0' alt='' /></a>
-                </iframe>
-            </div>
-
             <script type="text/javascript">
                 var timer1 = "";
                 var timer2 = "";
-                onload = function () {
-                    beginCount();
-                }
-                $(function () {
-                    var winheight = $(window).height() - 45;
-                    $("#div-first-banner").css("height", winheight + "px");
-                    $("#div-first-banner embed").css("height", winheight + "px");
-                    $("#div-first-banner embed").css("width", "100%");
-                    $(".absolute").click(function () {
-                        $("#div-first-banner").fadeOut("fast");
-                        $("#div-secend-banner").fadeIn("fast");
-                    });
-                    $("#div-banner-replay").click(function () {
-                        $("#div-secend-banner").fadeOut("fast");
-                        $("#div-banner-replay").hide();
-                        $("#div-first-banner").fadeIn("fast");
-                        beginCount();
-                    });
-                });
-
                 var x = 3; //利用了全局变量来执行
-                function showTime() {
-                    x--;
-                    $("#div-banner-count").html(x + "秒");
+                onload = function () {
+                    var divheight = $("#div-first-banner").height();
+                    if (divheight != 0) {
+                        var winheight = $(window).height() - 45;
+                        $("#div-first-banner").css("height", winheight + "px");
+                        $(".absolute").click(function () {
+                            hideBanner();
+                        });
+                        $("#div-banner-replay").click(function () {
+                            $("#div-secend-banner").fadeOut("fast");
+                            $("#div-banner-replay").hide();
+                            $("#div-first-banner").fadeIn("fast");
+                            beginCount();
+                        });
+                        beginCount();
+                    }
+                    else {
+                        $("#div-banner-count").hide();
+                        $(".absolute").hide();
+                    }
                 }
+               
+               function showTime() {
+                   x--;
+                   $("#div-banner-count").html(x + "秒");
+               }
 
-                function hideBanner() {
-                    $("#div-secend-banner").fadeIn("fast");
-                    $("#div-banner-replay").show();
-                    $("#div-first-banner").fadeOut("fast");
-                    clearInterval(timer1);
-                    clearTimeout(timer2);
-
-                }
+               function hideBanner() {
+                   $("#div-secend-banner").fadeIn("fast");
+                   $("#div-banner-replay").show();
+                   $("#div-first-banner").fadeOut("fast");
+                   clearInterval(timer1);
+                   clearTimeout(timer2);
+               }
 
                 function beginCount() {
                     $("#div-banner-count").html("3秒");
@@ -232,6 +221,60 @@
                 }
 
             </script>
+
+            <div id="div-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;display:none;position:absolute;right:7px;top:12px;background-color:white;"></div>
+            <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
+                <script type='text/javascript'>
+                        <!--//<![CDATA[
+                           document.MAX_ct0 ='INSERT_CLICKURL_HERE';
+
+                           var m3_u = (location.protocol=='https:'?'https://ads.skykiwi.com/www/delivery/ajs.php':'http://ads.skykiwi.com/www/delivery/ajs.php');
+                           var m3_r = Math.floor(Math.random()*99999999999);
+                           if (!document.MAX_used) document.MAX_used = ',';
+                           document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+                           document.write ("?zoneid=98");
+                           document.write ('&amp;cb=' + m3_r);
+                           if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+                           document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+                           document.write ("&amp;loc=" + escape(window.location));
+                           if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+                           if (document.context) document.write ("&context=" + escape(document.context));
+                           if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+                               document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+                           }
+                           if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+                           document.write ("'><\/scr"+"ipt>");
+                        //]]>-->
+                </script>
+                <noscript>
+                    <a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aeba40a6&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aeba40a6&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a>
+                </noscript>
+            </div>
+            <div class="topbannermiddle" id="div-first-banner">
+                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red;"></div>
+                <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
+                <script type='text/javascript'>
+                        <!--//<![CDATA[
+                        document.MAX_ct0 = 'INSERT_CLICKURL_HERE';
+                        var m3_u = (location.protocol == 'https:' ? 'https://ads.skykiwi.com/www/delivery/ajs.php' : 'http://ads.skykiwi.com/www/delivery/ajs.php');
+                        var m3_r = Math.floor(Math.random() * 99999999999);
+                        if (!document.MAX_used) document.MAX_used = ',';
+                        document.write("<scr" + "ipt type='text/javascript' src='" + m3_u);
+                        document.write("?zoneid=97");
+                        document.write('&amp;cb=' + m3_r);
+                        if (document.MAX_used != ',') document.write("&amp;exclude=" + document.MAX_used);
+                        document.write(document.charset ? '&amp;charset=' + document.charset : (document.characterSet ? '&amp;charset=' + document.characterSet : ''));
+                        document.write("&amp;loc=" + escape(window.location));
+                        if (document.referrer) document.write("&amp;referer=" + escape(document.referrer));
+                        if (document.context) document.write("&context=" + escape(document.context));
+                        if ((typeof (document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0, 4) == 'http')) {
+                            document.write("&amp;ct0=" + escape(document.MAX_ct0));
+                        }
+                        if (document.mmm_fo) document.write("&amp;mmm_fo=1");
+                        document.write("'><\/scr" + "ipt>");
+                 //]]>--></script>
+                <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=afef712d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=afef712d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
+            </div>
 
             <div class="topbanner">
                 <iframe id='a44f295f' name='a44f295f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=85&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='950' height='55'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa6726d1&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=85&amp;cb=&amp;n=aa6726d1&amp;ct0=' border='0' alt='' /></a></iframe>

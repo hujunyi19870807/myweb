@@ -5,8 +5,8 @@
 }
 
 div#navfirst {
-    height: 215px;
     border-bottom: 2px solid red;
+    background-color:white;
 }
 
 div#maincontent {
@@ -19,7 +19,6 @@ div#navsecond {
     width: 1200px;
     height: 60px;
     margin: 0 auto;
-    margin-top: 20px;
 }
 
     div#navsecond ul {
@@ -580,7 +579,8 @@ div#left-main .left-main-personalstory {
         margin: 7px 0;
         padding-left: 3px;
         display: inline-block;
-        font-weight: 600
+        font-weight: 600;
+        text-align:justify;
     }
 
         div#left-main .left-main-personalstory span a {
@@ -599,7 +599,8 @@ div#left-main .left-main-personalstory {
         padding-left: 3px;
         margin-bottom: 20px;
         height: 75px;
-        overflow: hidden
+        overflow: hidden;
+        text-align:justify;
     }
 
 div#left-main .left-main-shudu {
@@ -610,6 +611,7 @@ div#left-main .left-main-shudu {
         font-size: 16px;
         color: #020202;
         margin: 8px 0;
+        text-align:justify;
     }
     div#left-main .left-main-shudu ul li a {
         color: #020202;
@@ -707,11 +709,21 @@ div#left-main .left-main-zhuanti .left-main-zhuanti-body {
             text-indent: -99999px;
             margin: 10px 4px;
             border-radius: 10px;
+            cursor:pointer;
         }
 
             div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a.active {
                 background-color: #f20626;
             }
+    div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li p {
+        color: #676767;
+        font-size: 14px;
+        line-height: 23px;
+        letter-spacing: 1px;
+        height: 160px;
+        overflow: hidden;
+        text-align:justify;
+    }
 
 div#left-main .left-main-zhuanti .left-main-zhuanti-past {
     border-bottom: 1px solid #acacac;
@@ -997,3 +1009,62 @@ div#tab-newsclass {
             background-color: #f20626;
             color: white;
         }
+/* Flash Slider Show CSS */
+#flash {
+    width: 600px;
+    height: 288px;
+    margin-top: 5px;
+}
+
+    #flash a {
+        font-family: "黑体","Hei";
+        text-decoration: none;
+    }
+
+#ad_text_zone li {
+    width: 185px;
+    padding: 0px 5px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    float: left;
+    display: inline;
+    margin: 0px;
+    overflow: hidden;
+}
+
+#s_pic_news {
+    width: 378px;
+    height: 88px;
+    border: solid 1px #AAA;
+    margin: 6px 0 0 0;
+}
+
+    #s_pic_news:hover {
+        border: solid 1px #F60;
+        cursor: pointer;
+    }
+
+    #s_pic_news dt {
+        width: 625px;
+        font-size: 14px;
+        height: 18px;
+        line-height: 18px;
+        overflow: hidden;
+        float: left;
+        display: inline;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    #s_pic_news dd {
+        width: 625px;
+        font-size: 12px;
+        height: 56px;
+        line-height: 18px;
+        overflow: hidden;
+        float: left;
+        display: inline;
+        margin-top: 6px;
+        color: #666;
+    }
