@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <meta name="Keywords" content="新西兰,新西兰新闻,新西兰留学移民,新西兰旅游,新西兰搜索,新西兰朋友,新西兰最大门户网站,新西兰最大网络社区" />
     <meta name="Description" content="Skykiwi天维网是新西兰最大的华人门户网站,我们为您提供每天最新的新西兰及国内、国际新闻,我们的社区论坛有10万活跃会员与您一起讨论、分享,橙页搜索为您找出提供优质服务的商家,iHome让您在网上结交新的朋友,让新西兰的生活丰富多彩" />
     <meta name="Author" content="skyIT" />
@@ -9,15 +9,93 @@
     <meta name="robots" content="all,follow" />
     <meta http-equiv="content-language" content="zh-CN" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-    <title>新西兰天维网_新西兰最大的中文网络门户</title>
+    <title>[!--pagetitle--]_天维新闻频道 - Skykiwi.com</title>
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/newscontent.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script type="text/javascript" src="http://www.skykiwi.com/images/tabs.js"></script>
+    <script type="text/javascript">
+        (function () {
+            $(window).scroll(function () {
+                var leftnav = $("#left-main");
+                var divheight = leftnav.height();
+                var winheight = $(window).height();
+                var scrollheight = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+
+                var dvalue = divheight - winheight;
+
+                if (scrollheight <= dvalue) {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = (-scrollheight + 312) + "px";
+                }
+
+                if (scrollheight >= dvalue) {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = (-dvalue) + "px";
+                }
+            });
+        })(jQuery);
+
+        $(document).ready(function () {
+            /*滚动条效果 begin*/
+            var initial_top = $("#navfirst").offset().top;
+            //$('.side-bar').fadeOut();
+            window.onscroll = function () {
+                /*固定nav begin*/
+                scroll_top = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+                screen_top = initial_top - scroll_top;
+                if (screen_top <= 0) {
+                    $("#navfirst").css({ "top": "0px", "position": "fixed", "z-index": "999", "width": "100%" });
+                } else if (scroll_top <= initial_top) {
+                    $("#navfirst").removeAttr("style");
+                }
+                /*固定nav end*/
+                /*回到顶部显示和隐藏控制 begin*/
+                var screen_height = $(window).height();
+                if ($(this).scrollTop() > screen_height / 2) {
+                    $('.side-bar').fadeIn();
+                } else {
+                    $('.side-bar').fadeOut();
+                }
+                /*回到顶部显示和隐藏控制 end*/
+            }
+            /*滚动条效果 end*/
+            /*回到顶部 begin*/
+            $('.icon-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 'fast');
+            });
+            /*回到顶部 end*/
+            var screen_width = $(window).width();
+            var eachblack_width = (screen_width - 1200) / 2;
+            $(".side-bar").css("left", (1200 + eachblack_width + 25) + "px");
+          
+        });
+    </script>
 </head>
 <body>
     [!--temp.header2017_newsindex--]
-    [!--temp.nav2017_newsindex--]
+    <div style="width:1200px;height:125px;overflow:hidden;border:1px solid gray;margin:25px auto;">
+        <iframe id='af8b875e' name='af8b875e' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=204&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='1200' height='125'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a7d01c7c&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=204&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7d01c7c&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+    </div>
+    <div id="navfirst">
+        <div id="navsecond">
+            <img src="http://www.skykiwi.com/newImage/sky-new.png" />
+            <ul>
+                <li><a style="color:#ec7f16;text-decoration:none" href="http://www.skykiwi.com/index.html" target="_self" title="返回天维网首页 - 天维网，新西兰最大的华人门户网站">天维首页</a></li>
+                <li><a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a></li>
+                <li><a style="color:#f20626;text-decoration:none" href="http://www.skykiwi.com/newsindex.html" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
+                <li><a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
+                <li><a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a></li>
+                <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
+                <li><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
+                <li><a href="http://d.skykiwi.com" target="_self" title="新西兰网址导航，新西兰百科知识，新西兰商家查询 - 点击进入新西兰网址导航频道">导航</a></li>
+                <li><a href="http://shop.skykiwi.com" target="_blank" title="新西兰比价购物频道 - 为您节省每一分钱，方便的网上比价购物体验 - 点击进入天维价格比较频道 / 合作网站 PriceMe">比价</a></li>
+                <li style="border:none;"><a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a></li>
+            </ul>
+        </div>
+    </div>
     <div id="maincontent">
         [!--temp.leftmain2017_newsindex--]
         <div style="width:1000px;float:right" class="clearfix">
@@ -229,5 +307,29 @@
             [!--temp.footer2017_newsindex--]
         </div>
     </div>
+    <div class="side-bar" style="display:none">
+        <!--<a class="icon-qq">QQ在线咨询</a>
+        <a class="icon-chat" title="微信公众号">
+            微信<div class="hovertree-chat-tips">
+                <i></i>
+                <img style="width:138px;height:138px;" src="http://hovertree.com/themes/hvtimages/hwqwx.png" alt="微信订阅号" />
+            </div>
+        </a>
+        <a target="_blank" href="http://hovertree.com/h/bjaf/0yebjsng.htm" class="icon-blog">微博</a>-->
+        <a href="javascript:void(0)" class="icon-top">mail</a>
+    </div>
+    <!-- START: Google Analyse -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-4716393-5");
+            pageTracker._setDomainName("skykiwi.com");
+            pageTracker._trackPageview();
+        } catch (err) { }
+    </script>
+    <!-- END: Google Analyse -->
 </body>
 </html>

@@ -11,7 +11,7 @@
     <meta name="google-site-verification" content="s4kD2-70IFXkxDXROz3MwuA_MGHpQZzssTXTAgq6LSs" />
     <meta name="baidu-site-verification" content="Vaq54F1pwruvJsiJ" />
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
-    <link href="newsindex.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/newsindex.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script src="http://www.skykiwi.com/js/Top-FocusPic-new.js"></script>
     <script type="text/javascript">
@@ -20,27 +20,57 @@
                 var leftnav = $("#left-main");
                 var divheight = leftnav.height();
                 var winheight = $(window).height();
-                var scrollheight = $(window).scrollTop();
+                var scrollheight = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
 
                 var dvalue = divheight - winheight;
 
-                if (scrollheight < dvalue) {
+                if (scrollheight <= dvalue) {
                     document.getElementById("left-main").style.position = "fixed";
                     document.getElementById("left-main").style.top = (-scrollheight + 312) + "px";
                 }
+
                 if (scrollheight >= dvalue) {
                     document.getElementById("left-main").style.position = "fixed";
                     document.getElementById("left-main").style.top = (-dvalue) + "px";
                 }
-                alert(22)
-                if (scrollheight >= 227) {
-                    alert(1);
-                    $("#navfirst").css({ "position": "fixed", "top": "0", "z-index": "999"});
-                }
             });
         })(jQuery);
-
         $(document).ready(function () {
+            /*滚动条效果 begin*/
+            var initial_top = $("#navfirst").offset().top;
+            //$('.side-bar').fadeOut();
+            window.onscroll = function () {
+                /*固定nav begin*/
+                scroll_top = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+                screen_top = initial_top - scroll_top;
+                if (screen_top <= 0) {
+                    $("#navfirst").css({ "top": "0px", "position": "fixed", "z-index": "999", "width": "100%" });
+                } else if (scroll_top <= initial_top) {
+                    $("#navfirst").removeAttr("style");
+                }
+                /*固定nav end*/
+                /*回到顶部显示和隐藏控制 begin*/
+                var screen_height = $(window).height();
+                if ($(this).scrollTop() > screen_height / 2) {
+                    $('.side-bar').fadeIn();
+                } else {
+                    $('.side-bar').fadeOut();
+                }
+                /*回到顶部显示和隐藏控制 end*/
+            }
+            /*滚动条效果 end*/
+            /*回到顶部 begin*/
+            $('.icon-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 'fast');
+            });
+            /*回到顶部 end*/
+            var screen_width = $(window).width();
+            var eachblack_width = (screen_width - 1200) / 2;
+            $(".side-bar").css("left", (1200 + eachblack_width + 25) + "px");
+
+
             /*加载更多 begin*/
             var pageSize = 10;
 
@@ -373,6 +403,17 @@
             [!--temp.links2017_newsindex--]
             [!--temp.footer2017_newsindex--]
         </div>
+    </div>
+    <div class="side-bar" style="display:none">
+        <!--<a class="icon-qq">QQ在线咨询</a>
+        <a class="icon-chat" title="微信公众号">
+            微信<div class="hovertree-chat-tips">
+                <i></i>
+                <img style="width:138px;height:138px;" src="http://hovertree.com/themes/hvtimages/hwqwx.png" alt="微信订阅号" />
+            </div>
+        </a>
+        <a target="_blank" href="http://hovertree.com/h/bjaf/0yebjsng.htm" class="icon-blog">微博</a>-->
+        <a href="javascript:void(0)" class="icon-top">mail</a>
     </div>
     <ul style="display:none" id="ul-newfillbank">
         [e:loop={'232',3,0,1}]

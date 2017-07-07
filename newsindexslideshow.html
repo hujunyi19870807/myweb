@@ -37,17 +37,40 @@
         })(jQuery);
 
         $(document).ready(function () {
+            /*滚动条效果 begin*/
             var initial_top = $("#navfirst").offset().top;
+            //$('.side-bar').fadeOut();
             window.onscroll = function () {
+                /*固定nav begin*/
                 scroll_top = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
                 screen_top = initial_top - scroll_top;
-                //$bar.html(initial_top + " " + scroll_top + " " + screen_top);
                 if (screen_top <= 0) {
                     $("#navfirst").css({ "top": "0px", "position": "fixed", "z-index": "999", "width": "100%" });
                 } else if (scroll_top <= initial_top) {
-                    $("#navfirst").css({ "position": "static" });
+                    $("#navfirst").removeAttr("style");
                 }
+                 /*固定nav end*/
+                 /*回到顶部显示和隐藏控制 begin*/
+                var screen_height = $(window).height();
+                if ($(this).scrollTop() > screen_height / 2) {
+                    $('.side-bar').fadeIn();
+                } else {
+                    $('.side-bar').fadeOut();
+                }  
+                  /*回到顶部显示和隐藏控制 end*/
             }
+            /*滚动条效果 end*/
+            /*回到顶部 begin*/
+            $('.icon-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 'fast');
+            });  
+            /*回到顶部 end*/
+            var screen_width = $(window).width();
+            var eachblack_width = (screen_width - 1200) / 2;
+            $(".side-bar").css("left", (1200 + eachblack_width + 25) + "px");
+           
 
             /*加载更多 begin*/
             var pageSize = 10;
@@ -625,6 +648,17 @@
                 <p><span>&copy;&nbsp;</span> Sky Media Ltd. 2017. All rights reserved. </p>
             </div>
         </div>
+    </div>
+    <div class="side-bar" style="display:none">
+        <!--<a class="icon-qq">QQ在线咨询</a>
+        <a class="icon-chat" title="微信公众号">
+            微信<div class="hovertree-chat-tips">
+                <i></i>
+                <img style="width:138px;height:138px;" src="http://hovertree.com/themes/hvtimages/hwqwx.png" alt="微信订阅号" />
+            </div>
+        </a>
+        <a target="_blank" href="http://hovertree.com/h/bjaf/0yebjsng.htm" class="icon-blog">微博</a>-->
+        <a href="javascript:void(0)" class="icon-top">mail</a>
     </div>
     <ul style="display:none" id="ul-newfillbank">
         <li class="list-news-specialitem" data-type="newfillbank">

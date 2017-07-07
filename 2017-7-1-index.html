@@ -193,9 +193,6 @@
         </div>
 
         <div class="maincontent">
-            <!--天幕广告 begin-->
-
-            <!--天幕广告 end-->
             <div class="topbanner">
                 <iframe id='a44f295f' name='a44f295f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=85&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='950' height='55'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa6726d1&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=85&amp;cb=&amp;n=aa6726d1&amp;ct0=' border='0' alt='' /></a></iframe>
             </div>
@@ -238,12 +235,12 @@
 
                     <ul id="ul-new-list">
                         <li class="list-news-item clearfix">
-                            [e:loop={'select * from phome_ecms_news where classid =233 and checked=1 order by newstime desc limit 2', 1, 24, 1}]
+                            [e:loop={'select * from phome_ecms_news where classid =244 and checked=1 and istop!=0 order by istop limit 2', 1, 24, 1}]
                             <?php
                             if($bqno==1){
                             ?>
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="150" height="200" src="<?=$bqr[apic]?>" />
+                                <img width="150" height="200" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a></dt>
@@ -300,9 +297,9 @@
                         for ($x=1; $x<=5; $x++) {
                         ?>
                         <li class="list-news-item clearfix">
-                            [e:loop={'select * from phome_ecms_news where classid =233 and checked=1 order by newstime desc limit '.($x+1).',1', 1, 24, 1}]
+                            [e:loop={'select * from phome_ecms_news where classid =244 and checked=1 and istop!=0 order by istop limit '.($x+1).',1', 1, 24, 1}]
                             <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                <img width="150" height="200" src="<?=$bqr[apic]?>" />
+                                <img width="150" height="200" src="<?=$bqr[titlepic]?>" />
                             </a>
                             <dl>
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a></dt>
