@@ -15,31 +15,28 @@
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script src="http://www.skykiwi.com/js/Top-FocusPic-new.js"></script>
     <script type="text/javascript">
-        (function () {
-            $(window).scroll(function () {
-                var leftnav = $("#left-main");
-                var divheight = leftnav.height();
-                var winheight = $(window).height();
-                var scrollheight = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
 
-                var dvalue = divheight - winheight;
-
-                if (scrollheight <= dvalue) {
-                    document.getElementById("left-main").style.position = "fixed";
-                    document.getElementById("left-main").style.top = (-scrollheight + 312) + "px";
-                }
-
-                if (scrollheight >= dvalue) {
-                    document.getElementById("left-main").style.position = "fixed";
-                    document.getElementById("left-main").style.top = (-dvalue) + "px";
-                }
-            });
-        })(jQuery);
         $(document).ready(function () {
             /*滚动条效果 begin*/
             var initial_top = $("#navfirst").offset().top;
             //$('.side-bar').fadeOut();
             window.onscroll = function () {
+                var winheight = $(window).height();
+                var leftnav = $("#left-main");
+                var divheight = leftnav.height();
+                var fullHeight = 312 + divheight;
+                var scrollheight = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+
+                if (scrollheight + winheight <= fullHeight) {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = (312 - scrollheight) + "px";
+                }
+                else {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = -(fullHeight - winheight - 312) + "px";
+                }
+
+
                 /*固定nav begin*/
                 scroll_top = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
                 screen_top = initial_top - scroll_top;
@@ -187,6 +184,7 @@
                 transform: none;
             }
         }
+
         .fixnav {
             position: fixed;
             top: 0;
