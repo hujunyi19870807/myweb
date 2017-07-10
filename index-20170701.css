@@ -630,6 +630,7 @@ body {
     color: #ef537a;
     text-align: left;
     margin: 7px 0px;
+    width:300px !important;
 }
 
     .shishang-list-dl a {
@@ -1242,6 +1243,9 @@ body {
 
 .lvyou-list-ul dd {
     margin-top: 10px;
+    overflow: hidden;
+    height: 19px;
+    width:142px;
 }
 
 .sky-zhuanti-title {
@@ -1572,7 +1576,7 @@ body {
         }
 
 .indexhomes-info {
-    height: 92px;
+    height: 98px;
     text-align: center;
     border-bottom: 1px solid #898989;
     text-overflow: ellipsis;
@@ -1583,8 +1587,7 @@ body {
         font-weight: bold;
         color: #000000;
         display: block;
-        margin-bottom: 10px;
-        margin-top: 13px;
+        margin:7px 0;
     }
 
         .indexhomes-info strong a {

@@ -91,14 +91,16 @@
         (function () { $(window).scroll(function () { var d = $("#div-sky-leftnav"); var c = d.height(); var a = $(window).height(); var b = $(window).scrollTop(); if (c > a) { var e = c - a; if (b < e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-b + 30) + "px" } if (b >= e) { document.getElementById("div-sky-leftnav").style.position = "fixed"; document.getElementById("div-sky-leftnav").style.top = (-e) + "px" } } else { document.getElementById("div-sky-leftnav").style.position = "fixed" } }) })(jQuery); $(document).ready(function () { $("#flash1").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 400 }); $("#flash2").slideBox({ duration: 0.3, easing: "swing", delay: 5, hideClickBar: false, clickBarRadius: 10, width: 300, height: 270 }); $(".tab-left-double").find("div .caijin-title-span").each(function (i) { $(this).find("span").eq(0).click() }); addhotserach(); $("#li-weather-control").mouseover(function () { $(".sky-weather").show() }); $("#li-weather-control").mouseout(function () { $(".sky-weather").hide() }); $("#div-weather-content").mouseout(function () { $(".sky-weather").hide() }); var c = true; $("#sky-tuangou-prev").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").prev("div.tianwei-tuangou-item").attr("data-index"); if (i >= 0 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().prev("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).show().siblings("div.tianwei-tuangou-item").hide() } }); $("#sky-tuangou-next").on("click", function () { var i = $(".tianwei-right-tab .tianwei-tuangou-item:visible").next("div.tianwei-tuangou-item").attr("data-index"); if (i < 4 && i != undefined) { $(".tianwei-tuangou-item:visible").hide().next("div.tianwei-tuangou-item").show() } else { $(".tianwei-tuangou-item").eq(3).hide(); $(".tianwei-tuangou-item").eq(0).show() } }); var h = null; $("#sky-tuangou-tab").hover(function () { c = false; clearInterval(h) }, function () { c = true; h = setInterval(e, 3000) }); function g(i) { if (i) { h = setInterval(e, 3000) } } g(c); function e() { var i = parseInt($(".tianwei-right-tab .tianwei-tuangou-item:visible").attr("data-index")); i = i + 1; if (i >= 4) { i = 0 } $(".tianwei-right-tab .tianwei-tuangou-item").eq(i).show().siblings("div.tianwei-tuangou-item").hide() } var d = Math.floor(Math.random() * 10); var b = document.documentElement.clientWidth; var a = document.documentElement.clientHeight; var f = Math.floor((b - $(".wrapper").width()) / 2); $("#weatherCities li").click(function () { $("#img-weather").attr("class", "").attr("class", $(this).attr("data-icon")); $("#span-mix-temp").html($(this).attr("data-max-temp") + "°"); $("#span-min-city").html("/" + $(this).attr("data-min-temp") + "°" + $(this).attr("data-title-en")) }); $("#weatherCities li:eq(0)").click() }); var imgIndex = 0; var tabChangeList = ["美食", "旅游", "生活", "时尚"]; function initTabClass(d, a, b) { var c = $(d).attr("controlindex"); $(d).css("color", a); $(d).addClass("active-tit-a"); $(d).siblings("a").each(function (e) { if ($(this).attr("controlindex") == c) { $(this).show() } else { $(this).hide() } }); if (!Array.prototype.indexOf) { Array.prototype.indexOf = function (f) { var e = this.length >>> 0; var g = Number(arguments[1]) || 0; g = (g < 0) ? Math.ceil(g) : Math.floor(g); if (g < 0) { g += e } for (; g < e; g++) { if (g in this && this[g] === f) { return g } } return -1 } } if (tabChangeList.indexOf($(d).html()) > -1) { $(d).addClass("active-tit-ashenghuo") } $(d).siblings().each(function () { $(this).css("color", "#5c5c5c"); $(this).removeClass("active-tit-a").removeClass("active-tit-ashenghuo") }); $(d).parent().siblings().each(function () { $(this).children().each(function (e) { if ($(this).attr("controlIndex") == c) { $(this).show() } else { $(this).hide() } }) }) } function addhotserach() { $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst"); $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend"); $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>') } function show(b, c) { var a = $("#" + c + ""); $(a).css("display", "block"); $(a).css("left", event.clientX - 232); $(a).css("top", event.clientY - 12) } function hide(b, c) { var a = $("#" + c + ""); $(a).css("display", "none") } function nextproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a < 4) { $(".indexhomes:visible").hide().next().show() } } function prevproperty() { var a = $(".indexhomes:visible").attr("data-index"); if (a > 0) { $(".indexhomes:visible").hide().prev().show() } };
     </script>
 </head>
-
-<body style="background:url(http://www.skykiwi.com/e/images/ad/index_bg_niuaokangyuan.jpg) center top no-repeat;">
+<!--
+<body style="background:url(http://www.skykiwi.com/e/images/ad/index_bg_healthway.jpg) center top no-repeat;">
     <div id="divleftbanner" style="display:block; height:930px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;">
         <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:100%;height:930px;cursor:pointer"></a>
     </div>
     <div id="divrightbanner" style="display:block;height:930px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;">
         <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:100%;height:930px;cursor:pointer"></a>
     </div>
+-->
+<body>
     <script type="text/javascript">
         $(function () {
             var widthcontent = document.documentElement.clientWidth;
@@ -143,7 +145,7 @@
                     <span class="sky-nav-tit">天维首页</span>
                     <ul class="sky-nav-ul clearfix">
                         <li>
-                            <a href="http://news.skykiwi.com/index.shtml" target="_blank" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
+                            <a href="http://news.skykiwi.com" target="_blank" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
                         </li>
                         <li>
                             <a href="http://bbs.skykiwi.com" target="_blank" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a>
@@ -193,6 +195,108 @@
         </div>
 
         <div class="maincontent">
+            <script type="text/javascript">
+                var timer1 = "";
+                var timer2 = "";
+                var x = 4; //利用了全局变量来执行
+                $(function () {
+                    var divheight = $("#div-first-banner").height();
+                    if (divheight != 0) {
+                        beginCount();
+                        var winheight = $(window).height() - 45;
+                        $("#div-first-banner").css("height", winheight + "px");
+                        $(".absolute").click(function () {
+                            hideBanner();
+                        });
+                        $("#div-banner-replay").click(function () {
+                            $("#div-secend-banner").fadeOut("fast");
+                            $("#div-banner-replay").hide();
+                            $("#div-first-banner").fadeIn("fast");
+                            $("#div-banner-count").show();
+                            $("#div-banner-count").html("4秒");
+                            beginCount();
+                        });
+                    }
+                    else {
+                        $("#div-banner-count").hide();
+                        $(".absolute").hide();
+                    }
+                });
+                function showTime() {
+                    x--;
+                    $("#div-banner-count").html(x + "秒");
+                }
+
+                function hideBanner() {
+                    $("#div-secend-banner").fadeIn("fast");
+                    $("#div-banner-replay").show();
+                    $("#div-first-banner").fadeOut("fast");
+                    $("#div-banner-count").hide();
+                    clearInterval(timer1);
+                    clearTimeout(timer2);
+                }
+
+                function beginCount() {
+                    x = 4;
+                    timer1 = setInterval("showTime()", 1000);
+                    timer2 = setTimeout("hideBanner()", 4000);
+                }
+
+            </script>
+
+            <div id="div-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;display:none;position:absolute;right:7px;top:12px;"></div>
+            <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
+                <script type='text/javascript'>
+                        <!--//<![CDATA[
+                           document.MAX_ct0 ='INSERT_CLICKURL_HERE';
+
+                           var m3_u = (location.protocol=='https:'?'https://ads.skykiwi.com/www/delivery/ajs.php':'http://ads.skykiwi.com/www/delivery/ajs.php');
+                           var m3_r = Math.floor(Math.random()*99999999999);
+                           if (!document.MAX_used) document.MAX_used = ',';
+                           document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+                           document.write ("?zoneid=98");
+                           document.write ('&amp;cb=' + m3_r);
+                           if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+                           document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+                           document.write ("&amp;loc=" + escape(window.location));
+                           if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+                           if (document.context) document.write ("&context=" + escape(document.context));
+                           if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+                               document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+                           }
+                           if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+                           document.write ("'></scr"+"ipt>");
+                        //]]>-->
+                </script>
+                <noscript>
+                    <a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aeba40a6&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aeba40a6&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a>
+                </noscript>
+            </div>
+            <div class="topbannermiddle" id="div-first-banner">
+                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red;">4秒</div>
+                <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
+                <script type='text/javascript'>
+                        <!--//<![CDATA[
+                        document.MAX_ct0 = 'INSERT_CLICKURL_HERE';
+                        var m3_u = (location.protocol == 'https:' ? 'https://ads.skykiwi.com/www/delivery/ajs.php' : 'http://ads.skykiwi.com/www/delivery/ajs.php');
+                        var m3_r = Math.floor(Math.random() * 99999999999);
+                        if (!document.MAX_used) document.MAX_used = ',';
+                        document.write("<scr" + "ipt type='text/javascript' src='" + m3_u);
+                        document.write("?zoneid=97");
+                        document.write('&amp;cb=' + m3_r);
+                        if (document.MAX_used != ',') document.write("&amp;exclude=" + document.MAX_used);
+                        document.write(document.charset ? '&amp;charset=' + document.charset : (document.characterSet ? '&amp;charset=' + document.characterSet : ''));
+                        document.write("&amp;loc=" + escape(window.location));
+                        if (document.referrer) document.write("&amp;referer=" + escape(document.referrer));
+                        if (document.context) document.write("&context=" + escape(document.context));
+                        if ((typeof (document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0, 4) == 'http')) {
+                            document.write("&amp;ct0=" + escape(document.MAX_ct0));
+                        }
+                        if (document.mmm_fo) document.write("&amp;mmm_fo=1");
+                        document.write("'></scr" + "ipt>");
+                 //]]>--></script>
+                <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=afef712d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=afef712d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
+            </div>
             <div class="topbanner">
                 <iframe id='a44f295f' name='a44f295f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=85&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='950' height='55'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa6726d1&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=85&amp;cb=&amp;n=aa6726d1&amp;ct0=' border='0' alt='' /></a></iframe>
             </div>
@@ -246,7 +350,7 @@
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a></dt>
                                 <dd>
                                     <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
-                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?>
                                 </dd>
                                 <?php
                                 } else {
@@ -254,7 +358,7 @@
                                 <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
                                 <dd>
                                     <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
-                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?>
                                 </dd>
                                 <?php
                                 }
@@ -286,7 +390,7 @@
                                     <a class="list-news-item-category" href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">留学移民</a>');
                                     }
                                     ?>
-                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?>
                                 </dd>
                                 [/e:loop]
                             </dl>
@@ -305,7 +409,7 @@
                                 <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a></dt>
                                 <dd>
                                     <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
-                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?>
                                 </dd>
                                 [/e:loop]
 
@@ -333,7 +437,7 @@
                                     <a class="list-news-item-category" href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">留学移民</a>');
                                     }
                                     ?>
-                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日 G:ia')?>
+                                    &nbsp;&nbsp;&nbsp;时间：<?=format_datetime($bqr[newstime],'Y年m月d日')?>
                                 </dd>
                                 [/e:loop]
                             </dl>

@@ -15,7 +15,6 @@
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script src="http://www.skykiwi.com/js/Top-FocusPic-new.js"></script>
     <script type="text/javascript">
-
         $(document).ready(function () {
             /*滚动条效果 begin*/
             var initial_top = $("#navfirst").offset().top;
@@ -201,10 +200,10 @@
         <div id="navsecond">
             <img src="http://www.skykiwi.com/newImage/sky-new.png" />
             <ul>
-                <li><a style="color:#ec7f16;text-decoration:none" href="http://www.skykiwi.com/index.html" target="_self" title="返回天维网首页 - 天维网，新西兰最大的华人门户网站">天维首页</a></li>
+                <li><a style="color:#ec7f16;text-decoration:none" href="http://www.skykiwi.com" target="_self" title="返回天维网首页 - 天维网，新西兰最大的华人门户网站">天维首页</a></li>
                 <li><a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a></li>
-                <li><a style="color:#f20626;text-decoration:none" href="http://www.skykiwi.com/newsindex.html" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
-                <li><a href="http://go.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
+                <li><a style="color:#f20626;text-decoration:none" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
+                <li><a href="http://mobile.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
                 <li><a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a></li>
                 <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
                 <li><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
@@ -294,7 +293,7 @@
                     [/e:loop]
                 </div>
                 <ul class="newlist">
-                    [e:loop={'173,174',3,2,1}]
+                    [e:loop={"select * from phome_ecms_news where classid in(4,5,6,7,8,9,223,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,115,114,116) and checked=1 and newstypeid=1 order by newstime DESC limit 3",3,24,0}]
                     <li>
                         <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a>
                     </li>
@@ -407,10 +406,10 @@
         <a class="icon-chat" title="微信公众号">
             微信<div class="hovertree-chat-tips">
                 <i></i>
-                <img style="width:138px;height:138px;" src="http://hovertree.com/themes/hvtimages/hwqwx.png" alt="微信订阅号" />
+                <img style="width:138px;height:138px;" src="" alt="微信订阅号" />
             </div>
         </a>
-        <a target="_blank" href="http://hovertree.com/h/bjaf/0yebjsng.htm" class="icon-blog">微博</a>-->
+        <a target="_blank" href="" class="icon-blog">微博</a>-->
         <a href="javascript:void(0)" class="icon-top">mail</a>
     </div>
     <ul style="display:none" id="ul-newfillbank">

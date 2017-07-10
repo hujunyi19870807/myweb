@@ -196,10 +196,11 @@
             <script type="text/javascript">
                 var timer1 = "";
                 var timer2 = "";
-                var x = 3; //利用了全局变量来执行
-                onload = function () {
+                var x = 4; //利用了全局变量来执行
+                $(function () {
                     var divheight = $("#div-first-banner").height();
                     if (divheight != 0) {
+                        beginCount();
                         var winheight = $(window).height() - 45;
                         $("#div-first-banner").css("height", winheight + "px");
                         $(".absolute").click(function () {
@@ -209,16 +210,16 @@
                             $("#div-secend-banner").fadeOut("fast");
                             $("#div-banner-replay").hide();
                             $("#div-first-banner").fadeIn("fast");
+                            $("#div-banner-count").show();
+                            $("#div-banner-count").html("4秒");
                             beginCount();
                         });
-                        beginCount();
                     }
                     else {
                         $("#div-banner-count").hide();
                         $(".absolute").hide();
                     }
-                }
-
+                });
                 function showTime() {
                     x--;
                     $("#div-banner-count").html(x + "秒");
@@ -228,20 +229,20 @@
                     $("#div-secend-banner").fadeIn("fast");
                     $("#div-banner-replay").show();
                     $("#div-first-banner").fadeOut("fast");
+                    $("#div-banner-count").hide();
                     clearInterval(timer1);
                     clearTimeout(timer2);
                 }
 
                 function beginCount() {
-                    $("#div-banner-count").html("3秒");
-                    x = 3;
+                    x = 4;
                     timer1 = setInterval("showTime()", 1000);
-                    timer2 = setTimeout("hideBanner()", 3000);
+                    timer2 = setTimeout("hideBanner()", 4000);
                 }
 
             </script>
 
-            <div id="div-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;display:none;position:absolute;right:7px;top:12px;background-color:white;"></div>
+            <div id="div-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;display:none;position:absolute;right:7px;top:12px;"></div>
             <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
                 <script type='text/javascript'>
                         <!--//<![CDATA[
@@ -270,7 +271,7 @@
                 </noscript>
             </div>
             <div class="topbannermiddle" id="div-first-banner">
-                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red;"></div>
+                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red;">4秒</div>
                 <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
                 <script type='text/javascript'>
                         <!--//<![CDATA[
