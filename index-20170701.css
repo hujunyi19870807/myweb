@@ -337,11 +337,9 @@ body {
 .topbannermiddle {
     width: 950px;
     overflow: hidden;
-    margin-top: 8px;
+    margin-top: -45px;
     position: fixed;
     z-index: 9999;
-    /*background:#000;
-    opacity:0.5;*/
 }
 
 .rightdivchid1 {
@@ -436,7 +434,7 @@ body {
         overflow: hidden;
         width: 430px;
         height: 21px;
-        margin:8px 0;
+        margin: 8px 0;
     }
 
     .list-news-item dl dd a.list-news-item-category {
@@ -630,7 +628,7 @@ body {
     color: #ef537a;
     text-align: left;
     margin: 7px 0px;
-    width:300px !important;
+    width: 300px !important;
 }
 
     .shishang-list-dl a {
@@ -1245,7 +1243,7 @@ body {
     margin-top: 10px;
     overflow: hidden;
     height: 19px;
-    width:142px;
+    width: 142px;
 }
 
 .sky-zhuanti-title {
@@ -1392,9 +1390,9 @@ body {
 .sky-caijing-info-title {
     font-size: 16px;
     color: #256091;
-    margin-bottom: 10px;
-    height: 40px;
+    margin-bottom: 8px;
     overflow: hidden;
+    line-height: 21px;
 }
 
 #wechat_home {
@@ -1587,7 +1585,7 @@ body {
         font-weight: bold;
         color: #000000;
         display: block;
-        margin:7px 0;
+        margin: 7px 0;
     }
 
         .indexhomes-info strong a {
@@ -2125,7 +2123,6 @@ body {
 
 
     .ky-share-icon > .icon-nav:hover i {
-        /*color: #676566;*/
         color: #ec7f16;
     }
 

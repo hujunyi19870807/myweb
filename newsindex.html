@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang='zh-CN' xml:lang='zh-CN' xmlns='http://www.w3.org/1999/xhtml'>
+
 <head>
     <title>新西兰新闻,新西兰社会新闻,新西兰留学,新西兰移民,新西兰财经,新西兰旅游_天维网新闻频道 - Skykiwi.com</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
@@ -29,8 +30,7 @@
                 if (scrollheight + winheight <= fullHeight) {
                     document.getElementById("left-main").style.position = "fixed";
                     document.getElementById("left-main").style.top = (312 - scrollheight) + "px";
-                }
-                else {
+                } else {
                     document.getElementById("left-main").style.position = "fixed";
                     document.getElementById("left-main").style.top = -(fullHeight - winheight - 312) + "px";
                 }
@@ -40,7 +40,12 @@
                 scroll_top = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
                 screen_top = initial_top - scroll_top;
                 if (screen_top <= 0) {
-                    $("#navfirst").css({ "top": "0px", "position": "fixed", "z-index": "999", "width": "100%" });
+                    $("#navfirst").css({
+                        "top": "0px",
+                        "position": "fixed",
+                        "z-index": "999",
+                        "width": "100%"
+                    });
                 } else if (scroll_top <= initial_top) {
                     $("#navfirst").removeAttr("style");
                 }
@@ -132,11 +137,9 @@
                     var newstype = item["cname"];
                     if (newstype == "投资频道") {
                         newstype = '<a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>'
-                    }
-                    else if (newstype == "投资频道") {
+                    } else if (newstype == "投资频道") {
                         newstype = '< a class="list-news-item-category" href= "http://imedu.skykiwi.com" target= "_self" title= "新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道" > 留学移民</a > ';
-                    }
-                    else {
+                    } else {
                         newstype = '<span class="list-news-item-category">' + newstype + '</span>';
                     }
                     $('<dd>' + newstype + '</dd>').appendTo(dl);
@@ -154,12 +157,12 @@
             }
             appendNewsAdvert(pageIndex);
         }
+
         function appendNewsAdvert(pageIndex) {
             var ulNewsCount = $("#ul-news-list li").length;
             if ($("#ul-newadvert li").length > 0) {
                 $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newadvert li").eq(0));
-            }
-            else {
+            } else {
                 $("#ul-news-list li[data-type='newsadvert']:last").clone(true).appendTo($("#ul-news-list"));
             }
             $("#ul-news-list li").eq(ulNewsCount - 1).after($("#ul-newfillbank li").eq(0));
@@ -191,6 +194,7 @@
         }
     </style>
 </head>
+
 <body>
     [!--temp.header2017_newsindex--]
     <div style="width:1200px;height:125px;overflow:hidden;border:1px solid gray;margin:25px auto;">
@@ -204,7 +208,7 @@
                 <li><a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a></li>
                 <li><a style="color:#f20626;text-decoration:none" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
                 <li><a href="http://mobile.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
-                <li><a href="http://home.skykiwi.com" target="_self" title="新西兰房源 - 点击进入天维网房源中心频道">房源</a></li>
+                <li><a href="http://money.skykiwi.com" target="_self" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">房产</a></li>
                 <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
                 <li><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
                 <li><a href="http://d.skykiwi.com" target="_self" title="新西兰网址导航，新西兰百科知识，新西兰商家查询 - 点击进入新西兰网址导航频道">导航</a></li>
@@ -224,16 +228,23 @@
                         FocusPic.FocusObj = 'flash';
                         FocusPic.Width = 600;
                         FocusPic.Height = 288;
-                        FocusPic.Pics = '[e:loop={'3, 10',4,2,1}]<?=$bqr[titlepic]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
-                        FocusPic.Titles = '[e:loop={'3, 10',4,2,1}]<?=$bqr[ftitle]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
-                        FocusPic.Links = '[e:loop={'3, 10',4,2,1}]<?=$bqsr[titleurl]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Pics = '[e:loop={'
+                        3, 10 ',4,2,1}]<?=$bqr[titlepic]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Titles = '[e:loop={'
+                        3, 10 ',4,2,1}]<?=$bqr[ftitle]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Links = '[e:loop={'
+                        3, 10 ',4,2,1}]<?=$bqsr[titleurl]?><? if ($bqno<4) { ?>|<? } ?>[/e:loop]';
                         FocusPic.init();
                     </script>
                 </div>
                 <div id="top-newlist">
                     <ul style="margin-top:10px">
                         [e:loop={'3,10',6,12,0}]
-                        <li><a href="<?=$bqsr[titleurl]?>" target="_blank"><?=esub($bqr[ftitle],30)?></a></li>
+                        <li>
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank">
+                                <?=esub($bqr[ftitle],30)?>
+                            </a>
+                        </li>
                         [/e:loop]
                         <div style="clear:both"></div>
                     </ul>
@@ -295,7 +306,9 @@
                 <ul class="newlist">
                     [e:loop={"select * from phome_ecms_news where classid in(4,5,6,7,8,9,223,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,115,114,116) and checked=1 and newstypeid=1 order by newstime DESC limit 3",3,24,0}]
                     <li>
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a>
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                            <?=$bqr[title]?>
+                        </a>
                     </li>
                     [/e:loop]
                 </ul>
@@ -316,7 +329,11 @@
                         <img width="120" height="225" src="http://www.skykiwi.com/newImage/0.png" />
                         <ul class="column-itemlist">
                             [e:loop={'62',4,0,0}]
-                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <?=esub($bqr[title],40)?>
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </li>
@@ -325,7 +342,11 @@
                         <img width="120" height="225" src="http://www.skykiwi.com/newImage/1.png" />
                         <ul class="column-itemlist">
                             [e:loop={'63',4,0,0}]
-                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <?=esub($bqr[title],40)?>
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </li>
@@ -334,7 +355,11 @@
                         <img width="120" height="225" src="http://www.skykiwi.com/newImage/2.png" />
                         <ul class="column-itemlist">
                             [e:loop={'64',4,0,0}]
-                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <?=esub($bqr[title],40)?>
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </li>
@@ -344,7 +369,11 @@
                         <img width="120" height="225" src="http://www.skykiwi.com/newImage/4.jpg" />
                         <ul class="column-itemlist">
                             [e:loop={'34',4,0,0}]
-                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <?=esub($bqr[title],40)?>
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </li>
@@ -353,7 +382,11 @@
                         <img width="120" height="225" src="http://www.skykiwi.com/newImage/3.png" />
                         <ul class="column-itemlist">
                             [e:loop={'61',4,0,0}]
-                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],40)?></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <?=esub($bqr[title],40)?>
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </li>
@@ -365,7 +398,11 @@
                         </div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'124',5,0,0}]
-                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <?=$bqr[title]?>
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </li>
@@ -376,7 +413,11 @@
                         </div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'125',5,0,0}]
-                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <?=$bqr[title]?>
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </li>
@@ -387,7 +428,11 @@
                         </div>
                         <ul class="column-itemdasiguanlist">
                             [e:loop={'64',5,0,0}]
-                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
+                            <li>
+                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                    <?=$bqr[title]?>
+                                </a>
+                            </li>
                             [/e:loop]
                         </ul>
                     </li>
@@ -397,8 +442,7 @@
                     <iframe id='a9906274' name='a9906274' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=207&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa2e929b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=207&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa2e929b&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
                 </div>
             </div>
-            [!--temp.links2017_newsindex--]
-            [!--temp.footer2017_newsindex--]
+            [!--temp.links2017_newsindex--] [!--temp.footer2017_newsindex--]
         </div>
     </div>
     <div class="side-bar" style="display:none">
@@ -452,4 +496,5 @@
     <!-- END: Google Analyse -->
 
 </body>
+
 </html>
