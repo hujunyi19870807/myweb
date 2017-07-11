@@ -337,7 +337,7 @@ body {
 .topbannermiddle {
     width: 950px;
     overflow: hidden;
-    margin-top: -45px;
+    margin-top: 8px;
     position: fixed;
     z-index: 9999;
 }

@@ -199,7 +199,9 @@
                 var img = new SImage(callback1);
                 img.get($("#div-first-banner>a>img").attr("src"));
                 $(".absolute").click(function () {
-                    hideBanner();
+                    clearInterval(timer1);
+                    clearTimeout(timer2);
+                    $("#div-first-banner").hide();
                 });
                 $("#btn-banner-replay").click(function () {
                     $("#div-banner-count").html("3秒");
@@ -421,6 +423,31 @@
         </div>
 
         <div class="maincontent">
+            <div id="div-first-banner" class="topbannermiddle" style="display:none">
+                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red;">3秒</div>
+                <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
+                <script type='text/javascript'>
+                        <!--//<![CDATA[
+                        document.MAX_ct0 = 'INSERT_CLICKURL_HERE';
+                        var m3_u = (location.protocol == 'https:' ? 'https://ads.skykiwi.com/www/delivery/ajs.php' : 'http://ads.skykiwi.com/www/delivery/ajs.php');
+                        var m3_r = Math.floor(Math.random() * 99999999999);
+                        if (!document.MAX_used) document.MAX_used = ',';
+                        document.write("<scr" + "ipt type='text/javascript' src='" + m3_u);
+                        document.write("?zoneid=97");
+                        document.write('&amp;cb=' + m3_r);
+                        if (document.MAX_used != ',') document.write("&amp;exclude=" + document.MAX_used);
+                        document.write(document.charset ? '&amp;charset=' + document.charset : (document.characterSet ? '&amp;charset=' + document.characterSet : ''));
+                        document.write("&amp;loc=" + escape(window.location));
+                        if (document.referrer) document.write("&amp;referer=" + escape(document.referrer));
+                        if (document.context) document.write("&context=" + escape(document.context));
+                        if ((typeof (document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0, 4) == 'http')) {
+                            document.write("&amp;ct0=" + escape(document.MAX_ct0));
+                        }
+                        if (document.mmm_fo) document.write("&amp;mmm_fo=1");
+                        document.write("'></scr" + "ipt>");
+                 //]]>--></script>
+                <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=afef712d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=afef712d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
+            </div>
             <div id="btn-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;position:absolute;right:7px;top:12px;display:none;"></div>
             <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
                 <script type='text/javascript'>
@@ -449,31 +476,6 @@
                     <a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aeba40a6&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=98&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aeba40a6&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a>
                 </noscript>
             </div>
-            <div id="div-first-banner" class="topbannermiddle" style="display:none">
-                <div id="div-banner-count" style="position:absolute;width:50px;height:19px;right:10px;top:7px;background-color:white; letter-spacing:2px;padding-left:10px;color:red;">3秒</div>
-                <div class="absolute" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
-                <script type='text/javascript'>
-                        <!--//<![CDATA[
-                        document.MAX_ct0 = 'INSERT_CLICKURL_HERE';
-                        var m3_u = (location.protocol == 'https:' ? 'https://ads.skykiwi.com/www/delivery/ajs.php' : 'http://ads.skykiwi.com/www/delivery/ajs.php');
-                        var m3_r = Math.floor(Math.random() * 99999999999);
-                        if (!document.MAX_used) document.MAX_used = ',';
-                        document.write("<scr" + "ipt type='text/javascript' src='" + m3_u);
-                        document.write("?zoneid=97");
-                        document.write('&amp;cb=' + m3_r);
-                        if (document.MAX_used != ',') document.write("&amp;exclude=" + document.MAX_used);
-                        document.write(document.charset ? '&amp;charset=' + document.charset : (document.characterSet ? '&amp;charset=' + document.characterSet : ''));
-                        document.write("&amp;loc=" + escape(window.location));
-                        if (document.referrer) document.write("&amp;referer=" + escape(document.referrer));
-                        if (document.context) document.write("&context=" + escape(document.context));
-                        if ((typeof (document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0, 4) == 'http')) {
-                            document.write("&amp;ct0=" + escape(document.MAX_ct0));
-                        }
-                        if (document.mmm_fo) document.write("&amp;mmm_fo=1");
-                        document.write("'></scr" + "ipt>");
-                 //]]>--></script>
-                <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=afef712d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=afef712d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
-            </div>
 
             <div class="topbanner">
                 <iframe id='a44f295f' name='a44f295f' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=85&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='950' height='55'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=aa6726d1&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=85&amp;cb=&amp;n=aa6726d1&amp;ct0=' border='0' alt='' /></a></iframe>
@@ -482,20 +484,20 @@
                 <div class="rightdivchid1">
                     <div id="flash"></div>
                     <script type="text/javascript">
-                        FocusPic.FocusObj = 'flash';
-                        FocusPic.Width = 625;
-                        FocusPic.Height = 300;
-                        FocusPic.Pics = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[titlepic]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
-                        FocusPic.Titles = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[ftitle]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
-                        FocusPic.Links = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqsr[titleurl]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
-                        FocusPic.init();
+                           FocusPic.FocusObj = 'flash';
+                           FocusPic.Width = 625;
+                           FocusPic.Height = 300;
+                           FocusPic.Pics = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[titlepic]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                           FocusPic.Titles = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqr[ftitle]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                           FocusPic.Links = '[e:loop={"select * from phome_ecms_news where classid=197 and checked=1 order by istop asc limit 6",6,24,1}]<?=$bqsr[titleurl]?><? if ($bqno<6) { ?>|<? } ?>[/e:loop]';
+                           FocusPic.init();
                     </script>
 
                     <div class="sky-hot-news">
                         <span class="sky-hot-news-title">HOT 即时新闻</span>
                         <div class="sky-hot-news-context">
                             <dl id="opage_hot_list">
-                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 and ((issudden=1 and date_sub(curdate(),interval 2 day)<=date(newstime)) or (firsttitle=1 and date_sub(curdate(),interval 3 day)<=date(newstime)) or (isgood=1 and date_sub(curdate(),interval 7 day)<=date(newstime)) or (issudden=0 and firsttitle=0 and isgood=0)) order by issudden,firsttitle,isgood,newstime desc limit 4', 4, 24, 1}]
+                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116,233) and checked=1 and ((issudden=1 and date_sub(curdate(),interval 2 day)<=date(newstime)) or (firsttitle=1 and date_sub(curdate(),interval 3 day)<=date(newstime)) or (isgood=1 and date_sub(curdate(),interval 7 day)<=date(newstime)) or (issudden=0 and firsttitle=0 and isgood=0)) order by issudden desc,firsttitle desc,isgood desc,newstime desc limit 4', 4, 24, 1}]
                                 <dd><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],44)?></a></dd>
                                 [/e:loop]
                             </dl>
@@ -1373,24 +1375,35 @@
             </div>
         </div>
     </div>
-    <div id="div-big-bottombanner" style="width:100%;height:150px;background-color:red;position:fixed;bottom:0px;z-index:99999">
-        <div onclick="closeBigBannner()" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
+    <div id="div-big-bottombanner" style="width:100%;height:150px;background-color:red;position:fixed;bottom:0px;z-index:99999;right:0px;display:none">
+        <div onclick="closeBigBannner()" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;display:none"></div>
     </div>
 
-    <div id="div-small-bottombanner" style="width:150px;height:150px;background-color:red;position:fixed;bottom:0px;right:0px"></div>
+    <div id="div-small-bottombanner" style="width:150px;height:150px;background-color:red;position:fixed;bottom:0px;right:0px;display:none"></div>
     <script type="text/javascript">
         var timer = null;
-        onload = function () {
-            timer = setInterval("changeBanner()", 4000);
+        $(function () {
+            /*通栏广告 begin*/
+            if ($("#div-big-bottombanner>a>img").length > 0) {
+                var imgbig = new SImage(callbacksmall);
+                imgbig.get($("#div-big-bottombanner>a>img").attr("src"));
+            }
+            /*通栏广告 end*/
+        })
+        function callbacksmall() {
+            var imgsmall = new SImage(callbackcomplete);
+            imgsmall.get($("#div-small-bottombanner>a>img").attr("src"));
         }
-
-        function changeBanner() {
-            $("#div-big-bottombanner").fadeOut(1000);
-            $("#div-small-bottombanner").fadeIn(1000);
+        function callbackcomplete() {
+            $("#div-big-bottombanner").show();
+            timer = setTimeout("changeBanner()", 3000);
+        }
+        function changebanner() {
             clearTimeout(timer);
-        }
-        function closeBigBannner() {
-            changeBanner();
+            $("#div-big-bottombanner").animate({ width: "150px" }, 1000, "linear", function () {
+                $(this).hide();
+                $("#div-small-bottombanner").show();
+            });
         }
     </script>
 
