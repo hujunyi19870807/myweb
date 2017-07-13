@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        function bannerview(obj1, ibj2) {
+            this.obj1 = obj1;
+            this.obj2 = obj2;
+            this.checkFlag = false;
+        }
+        (function ($) {
+            $.fn.hilight = function (options) {
+                var defaults = {
+                    foreground: 'red',
+                    background: 'yellow'
+                };
+                var opts = $.extend(defaults, options);
+                //dosomethings
+            };
+        })(jQuery);
+
+
+        (function ($) {
+            $.fn.skybanner = function (options) {
+                var obj = this,
+                    timer1 = null,
+                    timer2 = null;
+
+                var defaults = {
+                    obj2: $("#div-secend-banner"),
+                    close: $(".absolute")
+                };
+                var settings = $.extend({}, defaults, options);
+
+                obj.init = function () {
+
+                }
+                
+            };
+        })(jQuery);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -39,7 +39,7 @@
 		CreateStyle : function(){
 			var styleStr = "";
 			styleStr += ".gee_foucspic_box { height:"+this.Height+"px; width:"+this.Width+"px; position:relative; }";
-			styleStr += ".gee_foucstit { position:absolute; overflow:hidden; bottom:0;_bottom:-1px; width:100%; left:0; padding:0px 0 0px; margin-bottom:30px; z-index:998; background: rgba(243, 92, 37, 0.65);}";
+            styleStr += ".gee_foucstit { position:absolute; overflow:hidden; bottom:0;_bottom:-1px; width:100%; left:0; padding:0px 0 0px; margin-bottom:30px; z-index:998; background: rgba(236, 74, 15, 0.86);}";
 			styleStr += ".gee_foucstit:after {content:\".\";display:block;height:0;clear:both;visibility:hidden;}";
 			
 			styleStr += ".gee_foucstit_mask { height:"+this.Height+"px; position:absolute;left:0;top:0;width:100%;z-index:999;text-indent:-999em; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50); -moz-opacity:.5; opacity:0.5;}";

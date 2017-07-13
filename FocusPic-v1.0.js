@@ -38,7 +38,7 @@
 
             if (!settings.hideBottomBar) {//ADD.JENA.201208090859
                 var tips = $('<div class="tips"></div>').appendTo(wrapper);
-                var title = $('<div class="title" style="background: rgba(243, 92, 37, 0.65);"></div>').html(function () {
+                var title = $('<div class="title" style="background: rgba(236, 74, 15, 0.86);"></div>').html(function () {
                     var active = ul.find('li.active').find('a'), text = active.attr('title'), href = active.attr('href');
                     return $('<a>').attr('href', href).text(text);
                 }).appendTo(tips);
