@@ -46,8 +46,12 @@
                     $bar.css({ "position": "static" });
                 }
             }
-           
+            var timer1 = setInterval("refresh()", 1000);
         });
+        
+        function refresh() {
+            window.location.reload();
+        }
     </script>
 </head>
 
@@ -56,6 +60,9 @@
     <div id="body">
         <div id="top"></div>
         <div id="bar"></div>
+        <iframe src="http://news.skykiwi.com/na/weidu/2017-07-12/244067.html" id="iframe-page" name="iframe-page">
+
+        </iframe>
     </div>
 </body>
 </html>

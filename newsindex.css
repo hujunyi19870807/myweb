@@ -1,12 +1,13 @@
 ﻿div#header {
     height: 50px;
     background-color: #363636;
-    width: 100%;
+    min-width:1200px;
 }
 
 div#navfirst {
     border-bottom: 2px solid red;
     background-color:white;
+    min-width:1200px;
 }
 
 div#maincontent {
@@ -15,37 +16,31 @@ div#maincontent {
     height: auto;
 }
 
-div#navsecond {
+div#navbar {
     width: 1200px;
     height: 60px;
     margin: 0 auto;
 }
-
-    div#navsecond ul {
+    div#navbar nav {
         float: right;
+        font-size: 16px;
+        padding: 20px 0px;
     }
 
-        div#navsecond ul li {
-            margin: 20px 8px;
-            float: left;
-            font-size: 16px;
-            border-right: 1px solid #020202;
-            padding-right: 16px;
+        div#navbar nav a {
+            margin: 0 15px;
+            color: black;
+            text-decoration: none;
             letter-spacing: 2px;
         }
 
-            div#navsecond ul li a {
-                text-decoration: none;
-                color: #020202;
+            div#navbar nav a:hover {
+                color: #f20626;
             }
-
-                div#navsecond ul li a:hover {
-                    color: #f20626;
-                }
-
 div#left-main {
     width: 200px;
     float: left;
+    z-index:0;
 }
 
 div#center-main .mid_topslider-title {
@@ -1086,8 +1081,9 @@ div#tab-newsclass {
         width: 66px;
         height: 66px;
         display: inline-block;
-        background-color: #dddddd;
+        background-color: #363636;
         margin-bottom: 2px;
+        border-radius:5px;
     }
 
         .side-bar a:hover {

@@ -232,6 +232,11 @@
                 timer1 = setInterval("showTime()", 1000);
                 timer2 = setTimeout("endReplay()", 3000);
             });
+            $("#btn-tonglan-replay").click(function () {
+                $("#div-big-bottombanner").css({ "padding-left": "0px", "width": "1180px" });
+                $(this).hide();
+                callbackcomplete();
+            });
         });
         function endReplay() {
             clearInterval(timer1);
@@ -281,14 +286,16 @@
         }
         function changebanner() {
             clearTimeout(timer3);
-            $("#div-big-bottombanner").animate({ width: "0px", right: "150px" }, 900, "linear", function () {
+            $("#div-big-bottombanner").animate({ width: "0px", paddingLeft : "1180px" }, 900, "linear", function () {
                 $(this).hide();
                 $("#div-small-bottombanner").show();
+                $("#btn-tonglan-replay").show();
             });
         }
         function closeBigBannner() {
             $("#div-big-bottombanner").hide();
             $("#div-small-bottombanner").show();
+            $("#btn-tonglan-replay").show();
             clearTimeout(timer3);
         }
 
@@ -507,7 +514,7 @@
                  //]]>--></script>
                 <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=afef712d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=97&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=afef712d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
             </div>
-            <div id="btn-banner-replay" style="width:48px;height:19px;background-image:url(/image/f_replay.gif);cursor:pointer;position:absolute;right:7px;top:12px;display:none;"></div>
+            <div id="btn-banner-replay" style="width:41px;height:19px;background-image:url(/image/sky-replay.png);cursor:pointer;position:absolute;right:7px;top:12px;display:none;"></div>
             <div id="div-secend-banner" style="width:950px;margin-top: 8px;display:none">
                 <script type='text/javascript'>
                         <!--//<![CDATA[
@@ -694,7 +701,6 @@
                                 </li>
                                 [/e:loop]
                             </ul>
-                            <div style="clear:both"></div>
                         </li>
                     </ul>
 
@@ -724,11 +730,8 @@
                         [/e:loop]
 
                     </div>
-                    <div style="clear:both">
-                    </div>
                     <div class="sky-banner" style="margin-top:18px">
                         <iframe id='aa8d0411' name='aa8d0411' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=86&amp;cb=&amp;ct0=' frameborder='0' scrolling='no' width='300' height='250'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=abcb81c4&amp;cb=' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=86&amp;cb=&amp;n=abcb81c4&amp;ct0=' border='0' alt='' /></a></iframe>
-
                     </div>
                     <div class="hot-search-title">
                         <span><label class="hot-search-title-label1">HOT</label><label class="hot-search-title-label2">热搜榜</label></span>
@@ -1314,8 +1317,6 @@
                         </a>
                         <span id="wechat_money" style="display: none;"></span>
                     </li>
-                    <div style="clear:both">
-                    </div>
                 </ul>
                 <script type="text/javascript">
                                     function wechathome() { wechat_home.style.display = "block"; }
@@ -1407,7 +1408,7 @@
             </div>
         </div>
 
-        <div id="div-big-bottombanner" style="width:1180px;height:240px;background-color:red;bottom:0px;z-index:99999;position:fixed;display:none">
+        <div id="div-big-bottombanner" style="width:1180px;height:240px;bottom:0px;z-index:99999;position:fixed;display:none">
             <div onclick="closeBigBannner()" style="position:absolute;width:19px;height:19px;right:7px;top:7px;background-image:url(/image/f_close.gif);cursor:pointer;"></div>
             <script type='text/javascript'>
                 <!--//<![CDATA[
@@ -1431,8 +1432,10 @@
                    document.write ("'><\/scr"+"ipt>");
                 //]]>--></script><noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=abb17586&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=100&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=abb17586&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
         </div>
-        <div id="div-small-bottombanner" style="width:150px;height:150px;background-color:red;position:fixed;bottom:0px;right:0px;z-index:99999;display:none">
-
+        <div id="div-small-bottombanner" style="width:150px;position:fixed;bottom:0px;right:0px;z-index:99999;display:none">
+            <div style="background-color:#efefef;height:25px">
+                <span id="btn-tonglan-replay" style="background-image:url(/image/sky-replay.png);background-repeat:no-repeat;height:19px;width:41px;display:block;cursor:pointer;position:relative;top:3px;left:5px"></span>
+            </div>
             <script type='text/javascript'>
                     <!--//<![CDATA[
                        document.MAX_ct0 ='INSERT_CLICKURL_HERE';
