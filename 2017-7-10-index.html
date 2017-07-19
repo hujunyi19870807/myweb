@@ -21,6 +21,40 @@
     <script src="http://www.skykiwi.com/js/scroll-v1.0.js"></script>
     <script src="http://www.skykiwi.com/js/Top-FocusPic.js"></script>
     <script src="http://www.skykiwi.com/js/sky-imgcomplete.js"></script>
+    <script src="sky-banner.js"></script>
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+        (function (e, a) {
+            if (!a.__SV) {
+                var b = window;
+                try {
+                    var c, l, i, j = b.location, g = j.hash;
+                    c = function (a, b) { return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null };
+                    g && c(g, "state") && (i = JSON.parse(decodeURIComponent(c(g, "state"))), "mpeditor" === i.action && (b.sessionStorage.setItem("_mpcehash", g), history.replaceState(i.desiredHash || "", e.title, j.pathname + j.search)))
+                } catch (m) { } var k, h; window.mixpanel = a; a._i = [];
+                a.init = function (b, c, f) {
+                    function e(b, a) {
+                        var c = a.split("."); 2 == c.length && (b = b[c[0]], a = c[1]); b[a] = function () {
+                            b.push([a].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    } var d = a; "undefined" !== typeof f ? d = a[f] = [] : f = "mixpanel"; d.people = d.people || []; d.toString = function (b) { var a = "mixpanel"; "mixpanel" !== f && (a += "." + f); b || (a += " (stub)"); return a }; d.people.toString = function () { return d.toString(1) + ".people (stub)" }; k = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                    for (h = 0; h < k.length; h++)e(d, k[h]); a._i.push([b, c, f])
+                };
+                a.__SV = 1.2; b = e.createElement("script");
+                b.type = "text/javascript";
+                b.async = !0;
+
+                var regexp = /^\/\//;
+                var str = "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+                b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === e.location.protocol && str.match(regexp) ? 'https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js' : '//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js';
+                c = e.getElementsByTagName("script")[0];
+                c.parentNode.insertBefore(b, c);
+            }
+        })(document, window.mixpanel || []);
+        mixpanel.init("e3ca0dd93b10dadf226c776384caf075");
+    </script><!-- end Mixpanel -->
+
     <script type="text/javascript">
         resolution = screen.width;
         url = window.location.href;
@@ -109,7 +143,7 @@
                 }
             })
         })(jQuery);
-        var firstLoad = true;
+
         $(document).ready(function () {
             $("#flash1").slideBox({
                 duration: 0.3,
@@ -195,111 +229,7 @@
             });
             $("#weatherCities li:eq(0)").click();
 
-            /*天幕广告 begin*/
-            if ($("#div-first-banner>a>img").length > 0) {
-                var img = new SImage(callback1);
-                img.get($("#div-first-banner>a>img").attr("src"));
-            }
-            /*天幕广告 end*/
-            else {
-                /*通栏广告 begin*/
-                if ($("#div-big-bottombanner>a>img").length > 0) {
-                    var imgbig = new SImage(callbacksmall);
-                    imgbig.get($("#div-big-bottombanner>a>img").attr("src"));
-                }
-                /*通栏广告 end*/
-            }
-
-            $(".absolute").click(function () {
-                clearInterval(timer1);
-                clearTimeout(timer2);
-                $("#div-first-banner").hide();
-                /*通栏广告 begin  关闭天幕广告开始通栏广告*/
-                if ($("#div-secend-banner :visible").length == 0) {
-                    if ($("#div-big-bottombanner>a>img").length > 0) {
-                        var imgbig = new SImage(callbacksmall);
-                        imgbig.get($("#div-big-bottombanner>a>img").attr("src"));
-                    }
-                    $("#div-secend-banner").show();
-                    $("#btn-banner-replay").show();
-                }
-                /*通栏广告 end*/
-            });
-            $("#btn-banner-replay").click(function () {
-                x = 3;
-                $("#div-banner-count").html("3秒");
-                $("#div-first-banner").show();
-                timer1 = setInterval("showTime()", 1000);
-                timer2 = setTimeout("endReplay()", 3000);
-            });
-            $("#btn-tonglan-replay").click(function () {
-                $("#div-big-bottombanner").css({ "padding-left": "0px", "width": "1180px" });
-                $(this).hide();
-                callbackcomplete();
-            });
         });
-        function endReplay() {
-            clearInterval(timer1);
-            clearTimeout(timer2);
-            $("#div-first-banner").slideUp(900);
-        }
-        /*天幕广告 begin*/
-        var timer1 = "";
-        var timer2 = "";
-        var timer3 = "";
-        var x = 3; //利用了全局变量来执行
-        function callback1() {
-            var img1 = new SImage(callback2);
-            img1.get($("#div-secend-banner>a>img").attr("src"));
-        }
-        function callback2() {
-            $("#div-first-banner").show();
-            timer1 = setInterval("showTime()", 1000);
-            timer2 = setTimeout("hideBanner()", 3000);
-        }
-        function showTime() {
-            x--;
-            $("#div-banner-count").html(x + "秒");
-        }
-        function hideBanner() {
-            clearInterval(timer1);
-            clearTimeout(timer2);
-            $("#div-first-banner").slideUp(900, function () {
-                $("#div-secend-banner").show();
-                $("#btn-banner-replay").show();
-                //判断通栏广告
-                if ($("#div-big-bottombanner>a>img").length > 0) {
-                    var imgbig = new SImage(callbacksmall);
-                    imgbig.get($("#div-big-bottombanner>a>img").attr("src"));
-                }
-            });
-        }
-        /*天幕广告 end*/
-        /*通栏 begin*/
-        function callbacksmall() {
-            var imgsmall = new SImage(callbackcomplete);
-            imgsmall.get($("#div-small-bottombanner>a>img").attr("src"));
-        }
-        function callbackcomplete() {
-            $("#div-big-bottombanner").slideDown(900);
-            timer3 = setTimeout("changebanner()", 3000);
-        }
-        function changebanner() {
-            clearTimeout(timer3);
-            $("#div-big-bottombanner").animate({ width: "0px", paddingLeft : "1180px" }, 900, "linear", function () {
-                $(this).hide();
-                $("#div-small-bottombanner").show();
-                $("#btn-tonglan-replay").show();
-            });
-        }
-        function closeBigBannner() {
-            $("#div-big-bottombanner").hide();
-            $("#div-small-bottombanner").show();
-            $("#btn-tonglan-replay").show();
-            clearTimeout(timer3);
-        }
-
-        /*通栏 end*/
 
         var imgIndex = 0;
         var tabChangeList = ["美食", "旅游", "生活", "时尚"];
@@ -380,31 +310,63 @@
             if (a > 0) {
                 $(".indexhomes:visible").hide().prev().show()
             }
-        };
-
+        }
 
     </script>
 </head>
-<!--
-<body style="background:url(http://www.skykiwi.com/e/images/ad/index_bg_healthway.jpg) center top no-repeat;">
-    <div id="divleftbanner" style="display:block; height:930px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;">
-        <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:100%;height:930px;cursor:pointer"></a>
-    </div>
-    <div id="divrightbanner" style="display:block;height:930px;filter:alpha(opacity=0);-moz-opacity:0.0;-khtml-opacity: 0.0;opacity: 0.0;position:absolute;">
-        <a href="http://www.healthelement.co.nz" target="_blank" style="display:block;width:100%;height:930px;cursor:pointer"></a>
-    </div>
--->
 <body>
-    <!--<script type="text/javascript">
-        $(function () {
-            var widthcontent = document.documentElement.clientWidth;
-            var divleft = (widthcontent - 1180) / 2;
-            $("#divleftbanner").css("right", (divleft + 1180 + 12) + "px");
-            $("#divrightbanner").css("left", (divleft + 1180 + 12) + "px");
-            $("#divrightbanner").css("width", (divleft - 12) + "px");
-            $("#divleftbanner").css("width", (divleft - 12) + "px");
-        });
-    </script>-->
+    <div style="position:relative;width:1180px;margin:0 auto;">
+        <div style="position:absolute;top:30px;left:-355px;">
+            <script type='text/javascript'>
+                <!--//<![CDATA[
+                   document.MAX_ct0 ='INSERT_CLICKURL_HERE';
+
+                   var m3_u = (location.protocol=='https:'?'https://ads.skykiwi.com/www/delivery/ajs.php':'http://ads.skykiwi.com/www/delivery/ajs.php');
+                   var m3_r = Math.floor(Math.random()*99999999999);
+                   if (!document.MAX_used) document.MAX_used = ',';
+                   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+                   document.write ("?zoneid=103");
+                   document.write ('&amp;cb=' + m3_r);
+                   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+                   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+                   document.write ("&amp;loc=" + escape(window.location));
+                   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+                   if (document.context) document.write ("&context=" + escape(document.context));
+                   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+                       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+                   }
+                   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+                   document.write ("'><\/scr"+"ipt>");
+                //]]>-->
+            </script>
+            <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a1f2f371&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=103&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a1f2f371&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
+        </div>
+        <div style="position:absolute;top:30px;right:-355px;">
+            <script type='text/javascript'>
+                <!--//<![CDATA[
+                   document.MAX_ct0 ='INSERT_CLICKURL_HERE';
+
+                   var m3_u = (location.protocol=='https:'?'https://ads.skykiwi.com/www/delivery/ajs.php':'http://ads.skykiwi.com/www/delivery/ajs.php');
+                   var m3_r = Math.floor(Math.random()*99999999999);
+                   if (!document.MAX_used) document.MAX_used = ',';
+                   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+                   document.write ("?zoneid=104");
+                   document.write ('&amp;cb=' + m3_r);
+                   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+                   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+                   document.write ("&amp;loc=" + escape(window.location));
+                   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+                   if (document.context) document.write ("&context=" + escape(document.context));
+                   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+                       document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+                   }
+                   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+                   document.write ("'><\/scr"+"ipt>");
+                //]]>-->
+            </script>
+            <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=af865bf6&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=104&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=af865bf6&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
+        </div>
+    </div>
     <header class="head">
         <div style="margin:0 auto;width:1180px;">
             <a href="http://www.skykiwi.com/index.shtml" target="_blank" title="回天维旧版">回天维旧版</a>
@@ -749,7 +711,7 @@
                                     $("#ul-hotsearch-news").find("li:first-child a").css("color", "#d91703");
                                 });
                     </script>
-                    
+
                     <div class="sky-video-slideshow">
                         <iframe id='aec92f44' name='aec92f44' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=102&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'>
                             <a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a9f39030&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'>
@@ -757,7 +719,7 @@
                             </a>
                         </iframe>
                     </div>
-            
+
                     <div class="bannerlist" style="margin-bottom:15px;margin-top:15px">
                         [e:loop={'206',1,2,0}]
                         <dl>
@@ -1433,7 +1395,7 @@
                 //]]>--></script><noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=abb17586&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=100&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=abb17586&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
         </div>
         <div id="div-small-bottombanner" style="width:150px;position:fixed;bottom:0px;right:0px;z-index:99999;display:none">
-            <div style="background-color:#efefef;height:25px">
+            <div id="div-tonglan-replay" style="background-color:#efefef;height:25px;display:none">
                 <span id="btn-tonglan-replay" style="background-image:url(/image/sky-replay.png);background-repeat:no-repeat;height:19px;width:41px;display:block;cursor:pointer;position:relative;top:3px;left:5px"></span>
             </div>
             <script type='text/javascript'>
@@ -1462,15 +1424,15 @@
 
     <!-- START: Google Analyse -->
     <script type="text/javascript">
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+                       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
     </script>
     <script type="text/javascript">
-        try {
-            var pageTracker = _gat._getTracker("UA-4716393-5");
-            pageTracker._setDomainName("skykiwi.com");
-            pageTracker._trackPageview();
-        } catch (err) { }
+                       try {
+                           var pageTracker = _gat._getTracker("UA-4716393-5");
+                           pageTracker._setDomainName("skykiwi.com");
+                           pageTracker._trackPageview();
+                       } catch (err) { }
     </script>
     <!-- END: Google Analyse -->
 </body>
