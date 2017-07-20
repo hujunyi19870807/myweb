@@ -131,21 +131,6 @@ body {
     margin: 10px 0;
 }
 
-    .sky-left-nav > .sky-left-box > .sky-phone > .sky-phone-left {
-        width: 107px;
-        overflow: hidden;
-        float: left;
-        margin-top: 5px;
-    }
-
-    .sky-left-nav > .sky-left-box > .sky-phone > .sky-phone-right {
-        float: right;
-    }
-
-        .sky-left-nav > .sky-left-box > .sky-phone > .sky-phone-right > img {
-            width: 66px;
-        }
-
 .sky-left-nav > .sky-left-box > .sky-video {
     width: 175px;
     height: 140px;
