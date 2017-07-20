@@ -57,8 +57,8 @@
 			styleStr += ".gee_foucspicnum { line-height:16px; right:0; top:-30px;_bottom:-1px; z-index:1001; }";
 			styleStr += ".gee_foucspicnum li { float:left; font-size:12px; font-family:Verdana; margin:8px 6px; display:inline;}";
 			styleStr += ".gee_foucspicnum li a { width:10px; height:10px; border-radius: 10px; color:#d7d7d7 !important; text-decoration:none; font-size:10px; background:#d7d7d7; display:block;}";
-			styleStr += ".gee_foucspicnum li a:hover { text-decoration:none; background:#a50001;}";
-			styleStr += ".gee_foucspicnum li.at a { background:#a50001;}";
+			//styleStr += ".gee_foucspicnum li a:hover { text-decoration:none; background:#a50001;}";
+			//styleStr += ".gee_foucspicnum li.at a { background:#a50001;}";
 
 			
 			var styleId = "FocusPicSheet";

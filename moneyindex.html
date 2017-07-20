@@ -1,10 +1,915 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang='zh-CN' xml:lang='zh-CN' xmlns='http://www.w3.org/1999/xhtml'>
+
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <title>新西兰新闻,新西兰社会新闻,新西兰留学,新西兰移民,新西兰财经,新西兰旅游_天维网新闻频道 - Skykiwi.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <meta name="Keywords" content="新西兰留学,新西兰移民,新西兰,新西兰最大门户网站,新西兰最大网络社区,新西兰新闻,新西兰旅游,新西兰搜索,新西兰朋友" />
+    <meta name="Description" content="Skykiwi天维网是新西兰最大的华人门户网站,我们为您提供每天最新的新西兰及国内、国际新闻,我们的社区论坛有30万活跃会员与您一起讨论、分享,橙页搜索为您找出提供优质服务的商家,让新西兰的生活丰富多彩" />
+    <meta name="robots" content="all,follow" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta name="google-site-verification" content="s4kD2-70IFXkxDXROz3MwuA_MGHpQZzssTXTAgq6LSs" />
+    <meta name="baidu-site-verification" content="Vaq54F1pwruvJsiJ" />
+    <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
+    <link href="moneyindex.css" rel="stylesheet" />
+    <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
+    <script src="http://www.skykiwi.com/js/Top-FocusPic-new.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*滚动条效果 begin*/
+            var initial_top = $("#navfirst").offset().top;
+            //$('.side-bar').fadeOut();
+            window.onscroll = function() {
+                /*var winheight = $(window).height();
+                var leftnav = $("#left-main");
+                var divheight = leftnav.height();
+                var fullHeight = 312 + divheight;
+                var scrollheight = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+
+                if (scrollheight + winheight <= fullHeight) {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = (312 - scrollheight) + "px";
+                } else {
+                    document.getElementById("left-main").style.position = "fixed";
+                    document.getElementById("left-main").style.top = -(fullHeight - winheight - 312) + "px";
+                }*/
+
+
+                /*固定nav begin*/
+                scroll_top = $(window).scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+                screen_top = initial_top - scroll_top;
+                if (screen_top <= 0) {
+                    $("#navfirst").css({
+                        "top": "0px",
+                        "position": "fixed",
+                        "z-index": "999",
+                        "width": "100%"
+                    });
+                } else if (scroll_top <= initial_top) {
+                    $("#navfirst").removeAttr("style");
+                }
+                /*固定nav end*/
+                /*回到顶部显示和隐藏控制 begin*/
+                var screen_height = $(window).height();
+                if ($(this).scrollTop() > screen_height / 2) {
+                    $('.side-bar').fadeIn();
+                } else {
+                    $('.side-bar').fadeOut();
+                }
+                /*回到顶部显示和隐藏控制 end*/
+            }
+            /*滚动条效果 end*/
+            /*回到顶部 begin*/
+            $('.icon-top').click(function() {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 'fast');
+            });
+            /*回到顶部 end*/
+            var screen_width = $(window).width();
+            var eachblack_width = (screen_width - 1200) / 2;
+            $(".side-bar").css("left", (1200 + eachblack_width + 25) + "px");
+
+
+            /*加载更多 begin*/
+            var pageSize = 10;
+
+            var pageIndex = 2;
+            getData(20, 1, 3, $("#ul-news-list"));
+            $(document).on('click', "#sky-loading-more", function() {
+                pageIndex++;
+                getData(pageSize, pageIndex, 3, $("#ul-news-list"));
+            });
+            /*加载更多 end*/
+
+
+        });
+
+        function getData(pageSize, pageIndex, cid, ulid) {
+            var taken = '';
+            var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&aliasCid=' + cid;
+            $(".newsmore").hide();
+            $(".newsloading").show();
+            $.getJSON(apiUrl + '&callback=?', function(responses) {
+                if (typeof responses.code == 'undefined') {
+                    alert('系统遇到了错误。');
+                    return false;
+                }
+                if (responses.code != 1) {
+                    var msg = responses.msg == '' ? '系统遇到了错误。' : responses.msg;
+                    alert(msg);
+                    return false;
+                }
+                $(".newsmore").show();
+                $(".newsloading").hide();
+                var li = "";
+                var ul = ulid;
+                var dl = "";
+                $.each(responses.data.items, function(index, item) {
+                    li = $('<li class="list-news-item"></li>').appendTo(ul);
+                    $('<a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '"><img width= "140" height= "70" src= "' + item["poster"] + '" /></a >').appendTo(li);
+                    dl = $("<dl></dl>").appendTo(li);
+                    $('<dt><a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '">' + item["title"] + '</a></dt>').appendTo(dl);
+
+                    $('<dd>时间：' + item["datetime"] + '</dd>').appendTo(dl);
+                    var newstype = item["cname"];
+                    if (newstype == "投资频道") {
+                        newstype = '<a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>'
+                    } else if (newstype == "投资频道") {
+                        newstype = '< a class="list-news-item-category" href= "http://imedu.skykiwi.com" target= "_self" title= "新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道" > 留学移民</a > ';
+                    } else {
+                        newstype = '<span class="list-news-item-category">' + newstype + '</span>';
+                    }
+                    $('<dd>' + newstype + '</dd>').appendTo(dl);
+                });
+
+                getAdvert(pageIndex);
+            });
+        }
+
+        function getAdvert(pageIndex) {
+            if (pageIndex == 1) {
+                $("#ul-news-list li").eq(3).after($("#ul-newadvert li").eq(0));
+                $("#ul-news-list li").eq(3).after($("#ul-newfillbank li").eq(0));
+            }
+            appendNewsAdvert();
+        }
+
+        function appendNewsAdvert() {
+            if ($("#ul-newfillbank li").length > 0) {
+                $("#ul-newfillbank li").eq(0).appendTo($("#ul-news-list"));
+            }
+            if ($("#ul-newadvert li").length > 0) {
+                $("#ul-newadvert li").eq(0).appendTo($("#ul-news-list"));
+            } else {
+                $("#ul-news-list li[data-type='newsadvert']:last").clone(true).appendTo($("#ul-news-list"));
+            }
+        }
+    </script>
+    <style type="text/css">
+        @keyframes rotateIn {
+            0% {
+                -webkit-transform: rotate(-360deg);
+                -moz-transform: rotate(-360deg);
+                -ms-transform: rotate(-360deg);
+                -o-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+            100% {
+                -webkit-transform: none;
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                transform: none;
+            }
+        }
+        
+        .fixnav {
+            position: fixed;
+            top: 0;
+            z-index: 500;
+        }
+        .gee_foucspicnum li a:hover {
+            text-decoration: none;
+            background: #323f7f;
+        }
+        .gee_foucspicnum li.at a {
+            background: #323f7f;
+        }
+    </style>
 </head>
+
 <body>
+    <div id="header">
+        <div class="header-content clearfix">
+            <ul>
+                <li>
+                    <span><a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook" style="color:#dbd9d9;text-decoration:none">English</a></span> |
+                    <span style="color:#ec7f16">中文</span>
+                </li>
+                <li class="header-content-app">
+                    <span>天维网</span>
+                    <a style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -1px 0px  no-repeat;" target="_blank" href="http://www.weibo.com/skykiwidotcom" title="关注我们的微博">
+                    </a>
+                    <a style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" href="javascript:wechathome()" title="关注我们的微信">
+                    </a>
+                    <span id="wechat_home" style="display: none;"></span>
+                    <a style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -71px 0px  no-repeat;" target="_blank" href="https://www.facebook.com/skykiwi" title="关注我们的脸书">
+                    </a>
+                    <a style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -106px 0px  no-repeat;" target="_blank" href="https://twitter.com/skykiwidotcom" title="关注我们的推特">
+                    </a>
+                </li>
+                <li class="header-content-app">
+                    <span>导购</span>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -1px 0px  no-repeat;" target="_blank" href="http://www.weibo.com/skykiwibuy" title="关注我们的导购微博">
+
+                    </a>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" href="javascript:wechatgo()">
+
+                    </a>
+                    <span id="wechat_go" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>生活</span>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的天维生活" href="javascript:wechattuangou()">
+
+                    </a>
+                    <span id="wechat_soku" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>微房产</span>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的微房产" href="javascript:wechatproperty()">
+                    </a>
+                    <span id="wechat_property" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <span>微财经</span>
+                    <a class="icon-nav" style="background:url(http://www.skykiwi.com/newImage/sky-app-logo.png) -36px 0px  no-repeat;" title="关注我们的导购微信" href="javascript:wechatmoney()">
+                    </a>
+                    <span id="wechat_money" style="display: none;"></span>
+                </li>
+                <li class="header-content-app">
+                    <img id="sky-phone-logo" src="http://www.skykiwi.com/newImage/sky-phone.png" style="margin-top:6px; cursor:pointer" />
+                    <span id="wechat_skyphone" style="display: none;"></span>
+                </li>
+            </ul>
+            <script type="text/javascript">
+                function wechathome() {
+                    wechat_home.style.display = "block";
+                }
+
+                function wechatgo() {
+                    wechat_go.style.display = "block";
+                }
+
+                function wechatproperty() {
+                    wechat_property.style.display = "block";
+                }
+
+                function wechattuangou() {
+                    wechat_soku.style.display = "block";
+                }
+
+                function wechatmoney() {
+                    wechat_money.style.display = "block";
+                }
+
+                function hidden() {
+                    wechat_home.style.display = "none";
+                    wechat_go.style.display = "none";
+                    wechat_property.style.display = "none";
+                    wechat_soku.style.display = "none";
+                    wechat_money.style.display = "none";
+                }
+                document.onclick = hidden;
+                $(function() {
+                    $("#sky-phone-logo").hover(function() {
+                            $("#wechat_skyphone").show();
+                        },
+                        function() {
+                            $("#wechat_skyphone").hide();
+                        }
+                    );
+                });
+            </script>
+        </div>
+    </div>
+    <div style="width:1200px;height:125px;overflow:hidden;margin:25px auto;">
+        <iframe id='af8b875e' name='af8b875e' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=204&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='1200' height='125'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a7d01c7c&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=204&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7d01c7c&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+    </div>
+    <div id="navfirst">
+        <div id="navsecond">
+            <img src="newImage/moneylogo.png" />
+            <ul>
+                <li><a style="color:#ec7f16;text-decoration:none" href="http://www.skykiwi.com" target="_self" title="返回天维网首页 - 天维网，新西兰最大的华人门户网站">天维首页</a></li>
+                <li><a href="http://bbs.skykiwi.com" target="_self" title="新西兰最大的华人网络论坛社区，在这里您可以交朋友，发话题，交易新货或二手物品，车辆交易，房屋买卖，求职招聘，房屋租赁，寻找美食，查找信息，寻求帮助，信息共享 - 点击进入新西兰最大的华人论坛，天维网社区论坛" id="linkBBS">论坛</a></li>
+                <li><a href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a></li>
+                <li><a href="http://mobile.skykiwi.com" target="_blank" title="全新的新西兰导购频道，带您在新西兰选时尚、淘实惠！">导购</a></li>
+                <li><a style="color:#323f7f;text-decoration:none" href="http://money.skykiwi.com" target="_self" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">房产</a></li>
+                <li><a href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">移民</a></li>
+                <li><a href="http://d.skykiwi.com/wiki/" target="_blank" title="百科">百科</a></li>
+                <li><a href="http://d.skykiwi.com" target="_self" title="新西兰网址导航，新西兰百科知识，新西兰商家查询 - 点击进入新西兰网址导航频道">导航</a></li>
+                <li><a href="http://shop.skykiwi.com" target="_blank" title="新西兰比价购物频道 - 为您节省每一分钱，方便的网上比价购物体验 - 点击进入天维价格比较频道 / 合作网站 PriceMe">比价</a></li>
+                <li style="border:none;"><a href="http://www.wellcome.co.nz" target="_self" title="源于新西兰的健康体验，天维旗下健康购物平台 - 点击进入纽惠康网站">商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="maincontent" class="clearfix">
+        <div id="left-main" class="clearfix">
+            <div class="left-main-search">
+                <div class="left-main-title">搜索房源</div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="left-main-hot">
+                <div class="left-main-title">热门房源<span style="color:#ec7f16">HOT</span></div>
+                <script src="http://d.skykiwi.com/hotproperty/v2" charset="utf-8"></script>
+                <!--<ul>
+                    <li>
+                        <img src="newImage/house.png" />
+                        <h6 class="left-main-title" style="text-align: left;border-bottom:0px;margin: 10px 0;padding-bottom: 0px"><span style="color:#323f7f">中介：</span><span style="color: black">JimLiu</span></h6>
+                        <p style="color: #707070;font-size: 13px;letter-spacing: 1px;">
+                            官网编号:597863<br />坚固砖加Weatherboard家庭房，三卧房，两套卫浴，开放式客厅/饭厅，大Rumpus，平整约700平米全幅地。
+                        </p>
+                    </li>
+                    <li>
+                        <img src="newImage/house.png" />
+                        <h6 class="left-main-title" style="text-align: left;border-bottom:0px;margin: 10px 0;padding-bottom: 0px"><span style="color:#323f7f">中介：</span><span style="color: black">JimLiu</span></h6>
+                        <p style="color: #707070;font-size: 13px;letter-spacing: 1px;">
+                            官网编号:597863<br />坚固砖加Weatherboard家庭房，三卧房，两套卫浴，开放式客厅/饭厅，大Rumpus，平整约700平米全幅地。
+                        </p>
+                    </li>
+                </ul>-->
+            </div>
+
+            <div class="left-main-introduce">
+
+            </div>
+
+
+            <div class="left-main-school">
+
+            </div>
+
+            <div id="left-main-seller">
+                <h2>房产服务商家</h2>
+                <nav>
+                    <a href="http://d.skykiwi.com/classify/fastlist/realestateagent" target="_blank" title="点击这里查看新西兰中介商家分类">中介</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/satellite" target="_blank" title="点击这里查看新西兰大锅商家分类">大锅</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/plumber" target="_blank" title="点击这里查看新西兰水工商家分类">水工</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/electrician" target="_blank" title="点击这里查看新西兰电工商家分类">电工</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/woodworking" target="_blank" title="点击这里查看新西兰木工商家分类">木工</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/garden" target="_blank" title="点击这里查看新西兰花园商家分类">花园</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/move" target="_blank" title="点击这里查看新西兰搬家商家分类">搬家</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/logistic" target="_blank" title="点击这里查看新西兰物流商家分类">物流</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/telco" target="_blank" title="点击这里查看新西兰电信商家分类">电信</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/glass" target="_blank" title="点击这里查看新西兰玻璃商家分类">玻璃</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/curtain" target="_blank" title="点击这里查看新西兰窗帘商家分类">窗帘</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/furniture" target="_blank" title="点击这里查看新西兰家俱商家分类">家俱</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/tiler" target="_blank" title="点击这里查看新西兰瓷砖商家分类">瓷砖</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/painter" target="_blank" title="点击这里查看新西兰油漆商家分类">油漆</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/roofer" target="_blank" title="点击这里查看新西兰屋顶商家分类">屋顶</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/lamp" target="_blank" title="点击这里查看新西兰灯具商家分类">灯具</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/cleaning" target="_blank" title="点击这里查看新西兰清洁商家分类">清洁</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/alarm" target="_blank" title="点击这里查看新西兰报警器商家分类">报警器</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/kitchentoilet" target="_blank" title="点击这里查看新西兰厨卫商家分类">厨卫</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/builder" target="_blank" title="点击这里查看新西兰建筑商家分类">建筑</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/examination" target="_blank" title="点击这里查看新西兰屋检商家分类">屋检</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/carpet" target="_blank" title="点击这里查看新西兰地毯商家分类">地毯</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/flooring" target="_blank" title="点击这里查看新西兰地板商家分类">地板</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/lawyer" target="_blank" title="点击这里查看新西兰律师商家分类">律师</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/insurance" target="_blank" title="点击这里查看新西兰保险商家分类">保险</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/loan" target="_blank" title="点击这里查看新西兰贷款商家分类">贷款</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/renovation" target="_blank" title="点击这里查看新西兰装修商家分类">装修</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/recycle" target="_blank" title="点击这里查看新西兰回收商家分类">回收</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/locksmith" target="_blank" title="点击这里查看新西兰锁匠商家分类">锁匠</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/examination" target="_blank" title="点击这里查看新西兰房屋检测商家分类">房检</a>
+                    <a href="http://d.skykiwi.com/classify/fastlist/ventilation" target="_blank" title="点击这里查看新西兰通风换气商家分类">换气</a><br/>
+                    <a href="http://d.skykiwi.com/" target="_blank" title="点击这里查看新西兰天维导航商家推荐">点击查看更多服务 >>  </a>
+                </nav>
+                <ul>
+                    <li>
+                        <a href="http://d.skykiwi.com/business/view/112075" target="_blank">
+                                <img src="http://img.skykiwi.com/home_201401/images/alicelawyer.png"/>
+                                <dl>
+                                    <dt style="color: #323f7f">聂钰律师事务所</dt>
+                                    <dd >地区: Auckland</dd>
+                                    <dd>电话: 09-8158699</dd>
+                                </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://bbs.skykiwi.com/forum.php?mod=viewthread&tid=2134383&extra=page%3D1" target="_blank">
+                                <img src="http://u.skykiwi.com/data/avatar/000/34/68/27_avatar_middle.jpg" />
+                                <dl>
+                                    <dt style="color: #323f7f">房屋检测</dt>
+                                    <dd >地区: Auckland</dd>
+                                    <dd>电话: 09-2818960</dd>
+                                </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://cn.livingedge.co.nz/" target="_blank">
+                                <img src="http://img.skykiwi.com/home_201401/images/le.jpg" />
+                                <dl>
+                                    <dt style="color: #323f7f">专业卖房家居装饰</dt>
+                                    <dd >地区: Auckland</dd>
+                                    <dd>电话: 08006300066</dd>
+                                </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.millen.co.nz/contact.asp" target="_blank">
+                                <img src="http://img.skykiwi.com/home_201401/images/millen.png" />
+                                <dl>
+                                    <dt style="color: #323f7f">MILLEN厨卫专家</dt>
+                                    <dd >地区: Auckland</dd>
+                                    <dd>电话: 09-6347659</dd>
+                                </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://d.skykiwi.com/business/view/111960" target="_blank">
+                                <img src="http://img.skykiwi.com/home_201401/images/furui.jpg" />
+                                <dl>
+                                    <dt style="color: #323f7f">福瑞信贷</dt>
+                                    <dd >地区: Auckland</dd>
+                                    <dd>电话: 09-3919870</dd>
+                                </dl>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="http://d.skykiwi.com/business/view/111959" target="_blank">
+                                <img src="http://img.skykiwi.com/home_201401/images/pinggu.png" />
+                                <dl>
+                                    <dt style="color: #323f7f">房屋买卖咨询</dt>
+                                    <dd >地区: Auckland</dd>
+                                    <dd>电话: 021-801588</dd>
+                                </dl>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="width:1000px;float:right" class="clearfix">
+            <div id="center-main" style="margin-left:48px;">
+                <div id="newsSlide" class="border slideBox">
+                    <div class="toptittle">投资热点</div>
+                    <div id="flash"></div>
+                    <script>
+                        FocusPic.FocusObj = 'flash';
+                        FocusPic.Width = 600;
+                        FocusPic.Height = 288;
+                        FocusPic.Pics = '[e:loop={'49, 161',5,2,1}]<?=$bqr[titlepic]?><? if ($bqno<5) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Titles = '[e:loop={'49, 161',5,2,1}]<?=$bqr[ftitle]?><? if ($bqno<5) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.Links = '[e:loop={'49, 161',5,2,1}]<?=$bqsr[titleurl]?><? if ($bqno<5) { ?>|<? } ?>[/e:loop]';
+                        FocusPic.init();
+                    </script>
+                </div>
+
+                <div style="height:50px; width:600px;margin:20px 0">
+                    <iframe id='aceb5368' name='aceb5368' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=208&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='50'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a74d423d&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=208&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a74d423d&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <ul class="ul-news-list" id="ul-news-list" groupid="0"></ul>
+
+                <a id="sky-loading-more" class="sky-load-more" style="display: block;" groupid="0">
+                    <div class="newsmore" style="display: block;">
+                        <i>+</i>
+                        <span>加载更多</span>
+                    </div>
+                    <div class="newsloading" style="display: none;">
+                        <i>+</i>
+                        <span>加载中...</span>
+                    </div>
+                </a>
+
+            </div>
+            <div id="right-main">
+                <div class="news-title">
+                    房产投资话题直播中...
+                </div>
+                <div class="news-content" style="width:300px;height:195px">
+                    [e:loop={'214',1,12,0}]
+                    <?=$bqsr[smalltext]?>
+                        [/e:loop]
+                </div>
+                <ul class="newlist">
+                    [e:loop={"select * from phome_ecms_news where classid in(49,161) and checked=1 and newstypeid=1 order by newstime DESC limit 3",3,24,0}]
+                    <li>
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                            <?=$bqr[title]?>
+                        </a>
+                    </li>
+                    [/e:loop]
+                </ul>
+                <script type="text/javascript">
+                    $(function() {
+                        $(".newlist:eq(0)").css("color", "f20626");
+                    })
+                </script>
+                <div style="margin:20px 0;height:250px">
+                    <iframe id='a895aba1' name='a895aba1' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=205&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa6b23bd&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=205&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa6b23bd&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <section id="sky-propertyinfolist">
+                    <ul>
+                        [e:loop={'51',4,0,1}]
+                        <li>
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                <img src="<?=$bqr[titlepic]?>" alt="" />
+                                <dl>
+                                    <dt><?=$bqr[title]?></dt>
+                                    <dd><?=$bqr[smalltext]?>...</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <!--<li>
+                            <a href="www.baidu.com" target="_blank">
+                                <img src="newImage/propertylist.png" alt="" />
+                                <dl>
+                                    <dt>新西兰为房产微博</dt>
+                                    <dd>新西兰微房产微博给你最新的房产财经资讯，为你分析房市最新政策，给你推介新西兰...</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="www.baidu.com" target="_blank">
+                                <img src="newImage/propertylist.png" />
+                                <dl>
+                                    <dt>新西兰购房：（15获取专业的意见</dt>
+                                    <dd>把你需要的非官方和想要的分清楚。搞清楚什么事真正么...</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="www.baidu.com" target="_blank">
+                                <img src="newImage/propertylist.png" />
+                                <dl>
+                                    <dt>新西兰为房产微博</dt>
+                                    <dd>新西兰微房产微博给你最新的房产财经资讯，为你分析房市最新政策，给你推介新西兰...</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="www.baidu.com" target="_blank">
+                                <img src="newImage/propertylist.png" />
+                                <dl>
+                                    <dt>新西兰购房：（15获取专业的意见</dt>
+                                    <dd>把你需要的非官方和想要的分清楚。搞清楚什么事真正么...</dd>
+                                </dl>
+                            </a>
+                        </li>-->
+                        [/e:loop]
+                    </ul>
+                </section>
+                <div style="margin:30px 0;height:250px">
+                    <iframe id='afc0b588' name='afc0b588' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=206&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a7047feb&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=206&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a7047feb&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <section id="sky-bankinterest">
+                    <h2>
+                        银行利率
+                    </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px">
+                                    银行
+                                </th>
+                                <th>
+                                    1年
+                                </th>
+                                <th>
+                                    1年半
+                                </th>
+                                <th>
+                                    2年
+                                </th>
+                                <th>
+                                    3年
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align:center;">
+                            <tr>
+                                <td class="sky-bankinteresttd">
+                                    <a href="http://www.anz.co.nz" target="_blank" href="nofollow">ANZ</a>
+                                </td>
+                                <td>
+                                    5.05
+                                </td>
+                                <td>
+                                    5.15
+                                </td>
+                                <td>
+                                    5.35
+                                </td>
+                                <td>
+                                    5.59
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sky-bankinteresttd">
+                                    <a href="http://www.asb.co.nz" target="_blank" href="nofollow">ASB</a>
+                                </td>
+                                <td>
+                                    4.85
+                                </td>
+                                <td>
+                                    5.10
+                                </td>
+                                <td>
+                                    5.24
+                                </td>
+                                <td>
+                                    5.49
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sky-bankinteresttd">
+                                    <a href="http://www.bnz.co.nz" target="_blank" href="nofollow">BNZ</a>
+                                </td>
+                                <td>
+                                    4.59
+                                </td>
+                                <td>
+                                    5.05
+                                </td>
+                                <td>
+                                    4.79
+                                </td>
+                                <td>
+                                    5.09
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sky-bankinteresttd">
+                                    <a href="http://www.kiwibank.co.nz" target="_blank" href="nofollow">KIWIBANK</a>
+                                </td>
+                                <td>
+                                    4.95
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    5.29
+                                </td>
+                                <td>
+                                    5.75
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sky-bankinteresttd">
+                                    <a href="http://www.westpac.co.nz" target="_blank" href="nofollow">WESTPAC</a>
+                                </td>
+                                <td>
+                                    4.99
+                                </td>
+                                <td>
+                                    5.15
+                                </td>
+                                <td>
+                                    5.29
+                                </td>
+                                <td>
+                                    5.59
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sky-bankinteresttd">
+                                    <a href="http://www.hsbc.co.nz" target="_blank" href="nofollow">HSBC</a>
+                                </td>
+                                <td>
+                                    4.09
+                                </td>
+                                <td>
+                                    4.09
+                                </td>
+                                <td>
+                                    4.29
+                                </td>
+                                <td>
+                                    4.89
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sky-bankinteresttd">
+                                    <a href="http://www.tsbbank.co.nz" target="_blank" href="nofollow">TSB</a>
+                                </td>
+                                <td>
+                                    4.80
+                                </td>
+                                <td>
+                                    4.99
+                                </td>
+                                <td>
+                                    5.15
+                                </td>
+                                <td>
+                                    5.45
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sky-bankinteresttd">
+                                    <a href="http://www.co-operativebank.co.nz/" target="_blank" href="nofollow">Co-opBank</a>
+                                </td>
+                                <td>
+                                    4.59
+                                </td>
+                                <td>
+                                    4.75
+                                </td>
+                                <td>
+                                    4.85
+                                </td>
+                                <td>
+                                    5.25
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <div style="height:250px;width:300px;margin-top: 25px">
+                    <iframe id='a9906274' name='a9906274' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=207&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa2e929b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=207&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aa2e929b&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <section id="sky-agentlist">
+                    <h2>
+                        新西兰房产经纪
+                    </h2>
+                    <ul>
+                        <li>
+                            <a href="https://www.barfoot.co.nz/j.liu2/properties" target="_blank">
+                                <img alt="" src="http://photolib.barfoot.co.nz/StaffImages/WebMedium/LJZ_A.jpg" />
+                                <dl>
+                                    <dt>Jim Liu</dt>
+                                    <dt>Residential Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：021 222 0918</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.barfoot.co.nz/w.guo" target="_blank">
+                                <img alt="" src="https://media.barfoot.co.nz/staffimages/high/GUOW_A.jpg?width=261&height=348&mode=Crop&quality=80&anchor=TopCenter" />
+                                <dl>
+                                    <dt>Wayne Guo</dt>
+                                    <dt>Residential Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：021 680 263</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.barfoot.co.nz/y.wang2" target="_blank">
+                                <img alt="" src="https://media.barfoot.co.nz/staffimages/high/WYY_A.jpg?width=261&height=348&mode=Crop&quality=80&anchor=TopCenter" />
+                                <dl>
+                                    <dt>Yvonne Wang</dt>
+                                    <dt>Residential/Rural Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：021 658 616</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.barfoot.co.nz/r.liu" target="_blank">
+                                <img alt="" src="https://media.barfoot.co.nz/staffimages/high/LRUI_C.jpg?width=261&height=348&mode=Crop&quality=80&anchor=TopCenter" />
+                                <dl>
+                                    <dt>Robin Liu</dt>
+                                    <dt>Residential Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：022 061 3772</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.barfoot.co.nz/g.han" target="_blank">
+                                <img alt="" src="https://media.barfoot.co.nz/staffimages/high/HGAV_B.jpg?width=261&height=348&mode=Crop&quality=80&anchor=TopCenter" />
+                                <dl>
+                                    <dt>Gavin Han</dt>
+                                    <dt>Residential Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：021 993 773</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://harcourts.co.nz/People/27890/Doris-Yuan" target="_blank">
+                                <img alt="" src="http://download.skykiwi.com/images/home/dorisyuan.jpg" />
+                                <dl>
+                                    <dt>Doris Yuan</dt>
+                                    <dt>SALES ASSISTANT</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：021 168 3666</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.barfoot.co.nz/r.li" target="_blank">
+                                <img alt="" src="https://media.barfoot.co.nz/staffimages/high/LRY_C.jpg?width=261&height=348&mode=Crop&quality=80&anchor=TopCenter" />
+                                <dl>
+                                    <dt>Raymond Li</dt>
+                                    <dt>Residential/Rural Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：021 801 588</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://media.barfoot.co.nz/staffimages/high/XJS_C.jpg?width=261&height=348&mode=Crop&quality=80&anchor=TopCenter" target="_blank">
+                                <img alt="" src="https://media.barfoot.co.nz/staffimages/high/XJS_C.jpg?width=261&height=348&mode=Crop&quality=80&anchor=TopCenter" />
+                                <dl>
+                                    <dt>Steven Xu</dt>
+                                    <dt>Residential Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：021 044 1564</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.barfoot.co.nz/s.zhang4" target="_blank">
+                                <img alt="" src="http://download.skykiwi.com/images/home/susan.jpg" />
+                                <dl>
+                                    <dt>Susan Zhang</dt>
+                                    <dt>Residential Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：0210467218</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://harcourts.co.nz/People/25960/Rachel-Zhang" target="_blank">
+                                <img alt="" src="http://photos.harcourts.co.nz/V2/000/011/898/270-Rachel-Zhang.jpg" />
+                                <dl>
+                                    <dt>Rachel Zhang</dt>
+                                    <dt>SALES & MARKETING</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：021 236 4841</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://manukau.harcourts.co.nz/Profile/Barry-Liu" target="_blank">
+                                <img alt="" src="http://photos.harcourts.co.nz/V2/000/019/095/335-Barry-Liu.jpg" />
+                                <dl>
+                                    <dt>Barry Liu</dt>
+                                    <dt>Sales Consultant</dt>
+                                    <dd style="margin-top: 5px">地区：奥克兰南区</dd>
+                                    <dd>电话：022 018 1276</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.barfoot.co.nz/j.yu" target="_blank">
+                                <img alt="" src="https://media.barfoot.co.nz/staffimages/high/YJQ_A.jpg?width=261&height=348&mode=Crop&quality=80&anchor=TopCenter" />
+                                <dl>
+                                    <dt>Joanne Yu</dt>
+                                    <dt>Residential Sales</dt>
+                                    <dd style="margin-top: 5px">地区：Auckland</dd>
+                                    <dd>电话：027 568 2772</dd>
+                                </dl>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            [!--temp.links2017_newsindex--] [!--temp.footer2017_newsindex--]
+        </div>
+    </div>
+    <div class="side-bar" style="display:none">
+        <!--<a class="icon-qq">QQ在线咨询</a>
+        <a class="icon-chat" title="微信公众号">
+            微信<div class="hovertree-chat-tips">
+                <i></i>
+                <img style="width:138px;height:138px;" src="" alt="微信订阅号" />
+            </div>
+        </a>
+        <a target="_blank" href="" class="icon-blog">微博</a>-->
+        <a href="javascript:void(0)" class="icon-top">mail</a>
+    </div>
+    <ul style="display:none" id="ul-newfillbank">
+        [e:loop={'232',3,0,1}]
+        <li class="list-news-specialitem" data-type="newfillbank">
+            <dl>
+                <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
+                <dd style="height:120px;display:inline-block;margin:15px 0">
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[titlepic]?>" /></a>
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic1]?>" /></a>
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic2]?>" /></a>
+                </dd>
+                <dd>
+                    <span class="list-news-item-category"><?=$bqsr[new_type]?></span>
+                </dd>
+            </dl>
+        </li>
+        [/e:loop]
+    </ul>
+    <ul style="display:none" id="ul-newadvert">
+        <li class="list-news-item" style="height:200px; padding:20px 0" data-type="newsadvert">
+            <iframe id='a701fb76' name='a701fb76' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=209&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='200'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a49f4980&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=209&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a49f4980&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+        </li>
+        <li class="list-news-item" style="height:200px; padding:20px 0" data-type="newsadvert">
+            <iframe id='a363eefe' name='a363eefe' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='200'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a8308398&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a8308398&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+        </li>
+    </ul>
+    <!-- START: Google Analyse -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-4716393-5");
+            pageTracker._setDomainName("skykiwi.com");
+            pageTracker._trackPageview();
+        } catch (err) {}
+    </script>
+    <!-- END: Google Analyse -->
 
 </body>
+
 </html>

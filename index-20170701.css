@@ -68,7 +68,7 @@ body {
                 }
 
 .active-text {
-    color: #ec7f16;
+    color: #f5842b;
 }
 
 .sky-left-ul > li > span > a {
@@ -77,7 +77,7 @@ body {
 }
 
     .sky-left-ul > li > span > a:hover {
-        color: #ec7f16;
+        color: #f5842b;
     }
 
 
@@ -86,7 +86,7 @@ body {
 }
 
     .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-tit {
-        color: #ec7f16;
+        color: #f5842b;
         display: block;
         margin-top: 17px;
         margin-bottom: 10px;
@@ -116,7 +116,7 @@ body {
             }
 
             .sky-left-nav > .sky-left-box > .sky-nav-index > .sky-nav-ul > li:hover > a {
-                color: #ec7f16;
+                color: #f5842b;
             }
 
 .text-col {
@@ -301,7 +301,7 @@ body {
         }
 
             .bannerlist dt a:hover {
-                color: #ec7f16;
+                color: #f5842b;
             }
 
         .bannerlist dt iframe {
@@ -319,7 +319,7 @@ body {
         }
 
             .bannerlist dd a:hover {
-                color: #ec7f16;
+                color: #f5842b;
             }
 
     .bannerlist iframe #player .html5-video-player unstarted-mode ytp-hide-controls ytp-small-mode .ytp-chrome-top ytp-watch-later-button-visible {
@@ -375,7 +375,7 @@ body {
     }
 
         .list-group-item a:hover {
-            color: #ec7f16;
+            color: #f5842b;
         }
 
 .hotnewfirst {
@@ -727,7 +727,7 @@ body {
     }
 
         #footer > p > a:hover {
-            color: #ec7f16;
+            color: #f5842b;
         }
 
     #footer .ico {
@@ -872,7 +872,7 @@ body {
     }
 
         .news-general-list-ul span a:hover {
-            color: #ec7f16;
+            color: #f5842b;
         }
 
 .list-group-item-line {
@@ -901,7 +901,7 @@ body {
 .sky-video-right-title {
     width: 100px;
     padding-left: 10px;
-    color: #ec7f16;
+    color: #f5842b;
     font-weight: bold;
 }
 
@@ -911,7 +911,7 @@ body {
     vertical-align: middle;
     line-height: 35px;
     font-weight: bold;
-    color: #ec7f16;
+    color: #f5842b;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -919,14 +919,14 @@ body {
 }
 
     .sky-video-right-small-title a {
-        color: #ec7f16;
+        color: #f5842b;
         text-decoration: none;
     }
 
 .hot-search-title {
     height: 28px;
     line-height: 28px;
-    border-top: 2px solid #ec7f16;
+    border-top: 2px solid #f5842b;
     border-bottom: 1px solid #ccc;
 }
 
@@ -940,7 +940,7 @@ body {
 }
 
 .hot-search-title-label2 {
-    color: #ec7f16;
+    color: #f5842b;
 }
 /* 表格样式 */
 .banner-table {
@@ -997,7 +997,7 @@ body {
 }
 
     .banner-table-right-tit a:hover {
-        color: #ec7f16;
+        color: #f5842b;
     }
 
 .tab-left-double-div1 {
@@ -1042,7 +1042,7 @@ body {
 }
 
     .caijin-title-span > a:hover {
-        color: #ec7f16;
+        color: #f5842b;
     }
 
 .sky-news {
@@ -1050,7 +1050,7 @@ body {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 0px;
-    border-left: 2px solid #ec7f16;
+    border-left: 3px solid #f5842b;
     border-bottom: 1px solid #ccc;
 }
 
@@ -1064,7 +1064,7 @@ body {
 }
 
 .sky-news-color {
-    color: #ec7f16;
+    color: #f5842b;
 }
 
 .sky-hot-news {
@@ -1107,7 +1107,7 @@ body {
     }
 
         .sky-hot-news-context a:hover {
-            color: #ec7f16;
+            color: #f5842b;
         }
 
 .sky-hot-news-context-pre {
@@ -1292,7 +1292,7 @@ body {
     /*letter-spacing: 1px;*/
     height: 30px;
     border-bottom: 1px solid #b7b7b7;
-    border-top: 2px solid #ec7f16;
+    border-top: 2px solid #f5842b;
     padding-left: 10px;
     color: #f5842b;
 }
@@ -1309,7 +1309,7 @@ body {
 }
 
 .tianwei-right-tab {
-    border-top: 2px solid #ec7f16;
+    border-top: 2px solid #f5842b;
     background-color: #ebebeb;
     width: 300px;
     position: relative;
@@ -1360,7 +1360,7 @@ body {
         width: 14px;
         cursor: pointer;
         display: inline-block;
-        color: #ec7f16;
+        color: #f5842b;
     }
 
 
@@ -1369,7 +1369,7 @@ body {
     height: 80px;
     display: block;
     padding-top: 24px;
-    border-top: 5px solid #ec7f16;
+    border-top: 5px solid #f5842b;
 }
 
 .sky-banner {
@@ -1454,7 +1454,7 @@ body {
 }
 
     .sky-ul-list1 a:hover {
-        color: #ec7f16;
+        color: #f5842b;
     }
 
 .sky-zhuanti-title a {
@@ -1474,7 +1474,7 @@ body {
 }
 
     .list-group-generalitem a:hover {
-        color: #ec7f16;
+        color: #f5842b;
     }
 
 .sky-caijing-info-detail {
@@ -1490,7 +1490,7 @@ body {
     }
 
         .sky-caijing-info-detail a:hover {
-            color: #ec7f16;
+            color: #f5842b;
         }
 
 .sky-video-right-top1 {
@@ -1519,7 +1519,7 @@ body {
     }
 
         .sky-vip-list dd a:hover {
-            color: #ec7f16;
+            color: #f5842b;
         }
 
 .ky-share-icon {
@@ -1544,7 +1544,7 @@ body {
 
             .ky-share-icon > .icon-nav:hover i {
                 /*color: #676566;*/
-                color: #ec7f16;
+                color: #f5842b;
             }
 
         .ky-share-icon > .icon-nav i {
@@ -1556,7 +1556,7 @@ body {
         }
 
 .rightdivchid1-newsmore {
-    border: 1px solid #ec7f16;
+    border: 1px solid #f5842b;
     height: 38px;
     text-align: center;
     line-height: 38px;
@@ -1566,7 +1566,7 @@ body {
 }
 
     .rightdivchid1-newsmore a {
-        color: #ec7f16;
+        color: #f5842b;
         text-decoration: none;
     }
 
@@ -1709,7 +1709,7 @@ body {
 }
 
     #weatherCities li:hover {
-        color: #ec7f16;
+        color: #f5842b;
     }
 
 #div-weather-change {
@@ -1921,7 +1921,7 @@ body {
         }
 
             .rightdivchid1-bannerlist4 span a:hover {
-                color: #ec7f16;
+                color: #f5842b;
             }
 
 .area-btn-imgCng {
@@ -1974,7 +1974,7 @@ body {
                 }
 
 .active-text {
-    color: #ec7f16;
+    color: #f5842b;
 }
 
 .sky-left-nav-small > .sky-left-box > .sky-nav-index {
@@ -1982,7 +1982,7 @@ body {
 }
 
     .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-tit {
-        color: #ec7f16;
+        color: #f5842b;
         display: block;
         margin-top: 4px;
     }
@@ -2009,7 +2009,7 @@ body {
             }
 
             .sky-left-nav-small > .sky-left-box > .sky-nav-index > .sky-nav-ul > li:hover > a {
-                color: #ec7f16;
+                color: #f5842b;
             }
 
 .text-col {
@@ -2124,7 +2124,7 @@ body {
 
 
     .ky-share-icon > .icon-nav:hover i {
-        color: #ec7f16;
+        color: #f5842b;
     }
 
 .ky-share-icon > .icon-nav i {
@@ -2160,5 +2160,5 @@ body {
     }
 
         .head a:hover {
-            color: #ec7f16;
+            color: #f5842b;
         }

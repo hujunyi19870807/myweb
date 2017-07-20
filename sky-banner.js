@@ -13,7 +13,7 @@ function getCookie(cname) {
 //设置Cookie
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
-    d.setTime(d.getTime() + (1 * 60 * 1000));
+    d.setTime(d.getTime() + (2 * 60 * 60 * 1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
 }
@@ -107,8 +107,10 @@ $(function () {
         }
         else {
             $("#div-secend-banner").show();
+            $("#btn-banner-replay").show();
             if ($("#div-big-bottombanner>a>img").length > 0) {
-                    $("#div-small-bottombanner").show();
+                $("#div-small-bottombanner").show();
+                $("#div-tonglan-replay").show();
             }
         }
     }
@@ -156,6 +158,7 @@ function showTonglan() {
         }
         else {
             $("#div-small-bottombanner").show();
+            $("#div-tonglan-replay").show();
         }
     }
 }
