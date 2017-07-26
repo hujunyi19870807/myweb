@@ -130,13 +130,25 @@ body {
     padding: 10px 0;
     margin: 10px 0;
 }
-
-.sky-left-nav > .sky-left-box > .sky-video {
-    width: 175px;
-    height: 140px;
-    background: #ffffff;
-    margin-top: 25px;
-}
+    .sky-left-nav > .sky-left-box > .sky-phone .sky-phone-app {
+        width: 175px;
+        height: 50px;
+        float: left;
+        background: url(/image/sky-phonewhite.png);
+    }
+        .sky-left-nav > .sky-left-box > .sky-phone .sky-phone-app:hover {
+            width: 175px;
+            height: 50px;
+            float: left;
+            background: url(/image/sky-phoneorange.png);
+        }
+        
+        .sky-left-nav > .sky-left-box > .sky-video {
+            width: 175px;
+            height: 140px;
+            background: #ffffff;
+            margin-top: 25px;
+        }
 
     .sky-left-nav > .sky-left-box > .sky-video > .sky-video-tit {
         color: #f07f14;
