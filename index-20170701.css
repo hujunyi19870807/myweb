@@ -757,58 +757,7 @@ body {
     vertical-align: bottom; /*地步对其*/
 }
 
-/* 底部广告导航 */
-.foot-banner-nav {
-    float: left;
-    width: 300px;
-    height: 60px;
-    overflow: hidden;
-    margin-left: 20px;
-}
 
-    .foot-banner-nav ul {
-        overflow: hidden;
-        display: block;
-    }
-
-    .foot-banner-nav > ul {
-        border-left: 1px dashed #959595;
-        padding-left: 10px;
-    }
-
-        .foot-banner-nav > ul > li {
-            float: left;
-            margin: 0 14px 17px;
-        }
-
-            .foot-banner-nav > ul > li > a {
-                text-decoration: none;
-                font-size: 16px;
-                color: #444545;
-            }
-
-.foot-banner-nav-s {
-    float: left;
-    width: 110px;
-    height: 60px;
-    overflow: hidden;
-}
-
-    .foot-banner-nav-s > ul {
-        border-left: 1px dashed #959595;
-        padding-left: 13px;
-    }
-
-        .foot-banner-nav-s > ul > li {
-            /*margin: left;*/
-            margin: 0 14px 15px;
-        }
-
-            .foot-banner-nav-s > ul > li > a {
-                text-decoration: none;
-                font-size: 16px;
-                color: #f5842b;
-            }
 
 .news-general-list {
     width: 300px;
@@ -1359,90 +1308,6 @@ body {
         display: inline-block;
         color: #f5842b;
     }
-
-
-
-.sky-info {
-    height: 80px;
-    display: block;
-    padding-top: 24px;
-    border-top: 5px solid #f5842b;
-}
-
-.sky-banner {
-    margin: 22px 0;
-    width: 300px;
-    height: 250px;
-}
-
-.sky-caijing {
-    float: left;
-}
-
-.sky-caijing-info {
-    float: left;
-    margin-left: 8px;
-    width: 160px;
-}
-
-.sky-caijing-info-title {
-    font-size: 16px;
-    color: #256091;
-    margin-bottom: 8px;
-    overflow: hidden;
-    line-height: 21px;
-}
-
-#wechat_home {
-    width: 90px;
-    height: 90px;
-    background: url(/image/tianweiwang.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -5px;
-}
-
-#wechat_go {
-    width: 90px;
-    height: 90px;
-    background: url(/image/daogou.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -5px;
-}
-
-#wechat_soku {
-    width: 90px;
-    height: 90px;
-    background: url(/image/shenghuo.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -5px;
-}
-
-#wechat_property {
-    width: 90px;
-    height: 90px;
-    background: url(/image/weifangcan.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -5px;
-}
-
-#wechat_money {
-    width: 90px;
-    height: 90px;
-    background: url(/image/weicaijing.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -5px;
-}
-
 
 
 .sky-ul-list1 a {
@@ -2080,40 +1945,6 @@ body {
     height: 90px;
     width: 175px;
 }
-
-#skyapp {
-    height: 85px;
-    border-bottom: 1px dashed #b7b7b7;
-    border-top: 1px dashed #b7b7b7;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-    #skyapp ul {
-        display: block;
-        width: 950px;
-        margin: 0 auto;
-        /*position: relative;*/
-    }
-
-        #skyapp ul li {
-            float: left;
-        }
-
-        #skyapp ul > .sky-app-content {
-            margin-left: 14px;
-        }
-
-        #skyapp ul li a {
-            display: inline-block;
-            width: 52px;
-            height: 52px;
-            cursor: pointer;
-        }
-
-        #skyapp ul li img {
-            margin-right: 15px;
-        }
 
 .ky-share-icon > .icon-nav:hover {
     background: #ccc;

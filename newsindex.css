@@ -1,7 +1,7 @@
 ﻿div#header {
     height: 50px;
     background-color: #363636;
-    min-width:1200px;
+    min-width: 1200px;
 }
 
 div#navfirst {
@@ -21,6 +21,7 @@ div#navbar {
     height: 60px;
     margin: 0 auto;
 }
+
     div#navbar nav {
         float: right;
         font-size: 16px;
@@ -37,10 +38,11 @@ div#navbar {
             div#navbar nav a:hover {
                 color: #f20626;
             }
+
 div#left-main {
     width: 200px;
     float: left;
-    z-index:0;
+    z-index: 0;
 }
 
 div#center-main .mid_topslider-title {
@@ -78,9 +80,9 @@ div#top-newlist ul li {
         font-size: 16px;
         color: black;
         text-decoration: none;
-        height:21px;
-        display:list-item;
-        overflow:hidden
+        height: 21px;
+        display: list-item;
+        overflow: hidden
     }
 
         div#top-newlist ul li a:hover {
@@ -92,8 +94,10 @@ div#top-newlist ul li {
         border-left: 1px solid #020202;
         padding-left: 15px;
     }
+
 .ul-news-list {
 }
+
 .list-news-item {
     border-top: 1px solid #ccc;
     text-align: left;
@@ -106,8 +110,8 @@ div#top-newlist ul li {
         height: 72px;
         margin-left: 15px;
         overflow: hidden;
-        margin-top:19px;
-        margin-bottom:20px;
+        margin-top: 19px;
+        margin-bottom: 20px;
     }
 
 
@@ -149,8 +153,8 @@ div#top-newlist ul li {
         border: 1px solid #898989;
         display: inline-block;
         float: left;
-        margin-top:19px;
-        margin-bottom:20px;
+        margin-top: 19px;
+        margin-bottom: 20px;
     }
 
 
@@ -183,6 +187,7 @@ div#top-newlist ul li {
         text-decoration: none;
         font-size: 12px;
     }
+
 span.list-news-item-word {
     margin-left: 20px;
 }
@@ -192,6 +197,7 @@ span.list-news-item-word {
     text-align: left;
     padding: 15px 0
 }
+
     .list-news-specialitem dl dd {
         font-size: 12px;
         height: 20px;
@@ -227,6 +233,7 @@ span.list-news-item-word {
     overflow: hidden;
     background-color: #fff
 }
+
     .newsmore i {
         float: left;
         display: block;
@@ -282,6 +289,7 @@ span.list-news-item-word {
     color: #f20626;
     display: none;
 }
+
 .sky-load-more.current {
     border-color: #f20626;
 }
@@ -341,14 +349,16 @@ div#right-main .column-list {
         letter-spacing: 1px;
         margin-bottom: 10px;
     }
+
     div#right-main .column-list li p {
         font-size: 10px;
         font-weight: normal;
         line-height: normal;
         letter-spacing: normal;
         margin-top: -7px;
-        color:#404040;
+        color: #404040;
     }
+
     div#right-main .column-list li dl {
         width: 120px
     }
@@ -497,7 +507,7 @@ div#right-main .column-itemdasiguanlist {
 
 ul, li {
     list-style: none;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 a:hover {
@@ -575,7 +585,7 @@ div#left-main .left-main-personalstory {
         padding-left: 3px;
         display: inline-block;
         font-weight: 600;
-        text-align:justify;
+        text-align: justify;
     }
 
         div#left-main .left-main-personalstory span a {
@@ -595,7 +605,7 @@ div#left-main .left-main-personalstory {
         margin-bottom: 20px;
         height: 75px;
         overflow: hidden;
-        text-align:justify;
+        text-align: justify;
     }
 
 div#left-main .left-main-shudu {
@@ -606,15 +616,17 @@ div#left-main .left-main-shudu {
         font-size: 16px;
         color: #020202;
         margin: 8px 0;
-        text-align:justify;
+        text-align: justify;
     }
-    div#left-main .left-main-shudu ul li a {
-        color: #020202;
-        text-decoration:none;
-    }
-        div#left-main .left-main-shudu ul li a:hover {
-            color: #f20626;
+
+        div#left-main .left-main-shudu ul li a {
+            color: #020202;
+            text-decoration: none;
         }
+
+            div#left-main .left-main-shudu ul li a:hover {
+                color: #f20626;
+            }
 
 div#left-main .left-main-nianjie {
     border-bottom: 1px solid #acacac;
@@ -629,6 +641,7 @@ div#left-main .left-main-nianjie {
         height: 22px;
         line-height: 22px;
     }
+
         div#left-main .left-main-nianjie ul li a {
             color: #020202;
             text-decoration: none;
@@ -639,31 +652,34 @@ div#left-main .left-main-nianjie {
             }
 
 
-    div#left-main .left-main-niandu ul li {
-        float: left;
-        width: 50px;
-        border-right: 1px solid #020202;
-        height: 22px;
-        line-height: 22px;
-        margin: 8px 8px;
+div#left-main .left-main-niandu ul li {
+    float: left;
+    width: 50px;
+    border-right: 1px solid #020202;
+    height: 22px;
+    line-height: 22px;
+    margin: 8px 8px;
+}
+
+    div#left-main .left-main-niandu ul li:nth-child(3),
+    div#left-main .left-main-niandu ul li:nth-child(6) {
+        border: none;
     }
 
-        div#left-main .left-main-niandu ul li:nth-child(3),
-        div#left-main .left-main-niandu ul li:nth-child(6) {
-            border: none;
-        }
     div#left-main .left-main-niandu ul li a {
         color: #020202;
         text-decoration: none;
     }
 
-    div#left-main .left-main-niandu ul li a:hover {
-        color: #f20626;
-    }
+        div#left-main .left-main-niandu ul li a:hover {
+            color: #f20626;
+        }
+
 div#left-main .left-main-zhuanti {
     border-left: 1px solid #acacac;
     border-right: 1px solid #acacac;
 }
+
     div#left-main .left-main-zhuanti .left-main-zhuanti-head span {
         font-size: 18px;
         color: #e7040b;
@@ -674,70 +690,72 @@ div#left-main .left-main-zhuanti {
         letter-spacing: 2px;
         font-weight: bold;
     }
-div#left-main .left-main-zhuanti .left-main-zhuanti-body {
-    margin: 15px 8px;
-    position: relative;
-}
 
-    div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a {
-        text-decoration: none;
-        color: black;
+    div#left-main .left-main-zhuanti .left-main-zhuanti-body {
+        margin: 15px 8px;
+        position: relative;
     }
 
-        div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a:hover {
-            color: #f20626;
+        div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a {
+            text-decoration: none;
+            color: black;
         }
 
-    div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips {
-        height: 30px;
-        top: 155px;
-        position: absolute;
-        left: 57px;
-    }
-
-        div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a {
-            display: inline-block;
-            float: left;
-            width: 10px;
-            height: 10px;
-            background-color: #d7d7d7;
-            text-indent: -99999px;
-            margin: 10px 4px;
-            border-radius: 10px;
-            cursor:pointer;
-        }
-
-            div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a.active {
-                background-color: #f20626;
+            div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li a:hover {
+                color: #f20626;
             }
-    div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li p {
-        color: #676767;
-        font-size: 14px;
-        line-height: 23px;
-        letter-spacing: 1px;
-        height: 160px;
-        overflow: hidden;
-        text-align:justify;
-    }
 
-div#left-main .left-main-zhuanti .left-main-zhuanti-past {
-    border-bottom: 1px solid #acacac;
-}
-
-    div#left-main .left-main-zhuanti .left-main-zhuanti-past ul li {
-        height: 30px;
-        line-height: 30px;
-    }
-
-    div#left-main .left-main-zhuanti .left-main-zhuanti-past a {
-        color: black;
-        font-size: 16px;
-        text-decoration: none;
-    }
-
-        div#left-main .left-main-zhuanti .left-main-zhuanti-past a:hover {
-            color: #f20626;
+        div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips {
+            height: 30px;
+            top: 155px;
+            position: absolute;
+            left: 57px;
         }
+
+            div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a {
+                display: inline-block;
+                float: left;
+                width: 10px;
+                height: 10px;
+                background-color: #d7d7d7;
+                text-indent: -99999px;
+                margin: 10px 4px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+                div#left-main .left-main-zhuanti .left-main-zhuanti-body .left-main-zhuanti-body-tips a.active {
+                    background-color: #f20626;
+                }
+
+        div#left-main .left-main-zhuanti .left-main-zhuanti-body ul li p {
+            color: #676767;
+            font-size: 14px;
+            line-height: 23px;
+            letter-spacing: 1px;
+            height: 160px;
+            overflow: hidden;
+            text-align: justify;
+        }
+
+    div#left-main .left-main-zhuanti .left-main-zhuanti-past {
+        border-bottom: 1px solid #acacac;
+    }
+
+        div#left-main .left-main-zhuanti .left-main-zhuanti-past ul li {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        div#left-main .left-main-zhuanti .left-main-zhuanti-past a {
+            color: black;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+            div#left-main .left-main-zhuanti .left-main-zhuanti-past a:hover {
+                color: #f20626;
+            }
 
 div#header .header-content {
     width: 1200px;
@@ -770,217 +788,11 @@ div#header .header-content {
         vertical-align: 8px
     }
 
-#wechat_home {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/tianweiwang.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_go {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/daogou.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_soku {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/shenghuo.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_property {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/weifangcan.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_money {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/weicaijing.jpg) no-repeat;
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_skyphone {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/erweima.jpg) no-repeat;
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
 .news-content iframe {
     width: 300px;
     height: 195px;
 }
-/* NEWS Channel Exchange Links */
 
-.links {
-    margin: 15px 0px;
-    width: 948px;
-    padding: 0px 0px 8px 0px;
-    overflow: hidden;
-    float:right;
-}
-
-    .links h3 {
-        font: bold 12px/14px '&Icirc;&cent;&Egrave;í&Ntilde;&Aring;&ordm;&Uacute;', &Euml;
-        &Icirc;
-        &Igrave;
-        &aring;
-        , Hei;
-        padding: 8px 0 1px 12px;
-        color: #D12026;
-        display: block;
-    }
-
-    .links a {
-        float: left;
-        display: inline;
-        width: 96px;
-        margin: 8px 2px 0px 3px;
-        border: 2px solid #FFF;
-        overflow: hidden;
-        text-align: center;
-        cursor: pointer;
-    }
-
-        .links a:hover {
-            border-color: #CCC;
-        }
-
-    .links img {
-        max-width: 96px;
-        max-height: 30px;
-        border: 0px;
-    }
-
-
-
-/* footer CSS */
-
-#footer {
-    line-height: 22px;
-    text-align: center;
-    background: #FFF;
-    width: 950px;
-    text-decoration: none;
-    margin: 50px 0px;
-    float:right;
-}
-
-    #footer > p > a {
-        text-decoration: none;
-        color: #6b6b6b;
-    }
-
-        #footer > p > a:hover {
-            color: #f20626;
-        }
-
-    #footer .ico {
-        background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
-        padding-left: 15px;
-    }
-
-.copyright {
-    font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
-}
-
-#part3 {
-    height: 65px;
-    margin: 15px 0px;
-    background: #DDD;
-    overflow: hidden;
-}
-
-#jumpMenu {
-    height: 20px;
-    margin: 0px 0px 0px 15px;
-    font-size: 12px;
-    width: 180px;
-    vertical-align: bottom;
-}
-
-.mg15 {
-    margin-top: 22px;
-    margin-left: 32px;
-    vertical-align: bottom; /*地步对其*/
-}
-
-/* 底部广告导航 */
-.foot-banner-nav {
-    float: left;
-    width: 300px;
-    height: 60px;
-    overflow: hidden;
-    margin-left: 20px;
-}
-
-    .foot-banner-nav ul {
-        overflow: hidden;
-        display: block;
-    }
-
-    .foot-banner-nav > ul {
-        border-left: 1px dashed #959595;
-        padding-left: 10px;
-    }
-
-        .foot-banner-nav > ul > li {
-            float: left;
-            margin: 0 14px 17px;
-        }
-
-            .foot-banner-nav > ul > li > a {
-                text-decoration: none;
-                font-size: 16px;
-                color: #444545;
-            }
-
-.foot-banner-nav-s {
-    float: left;
-    width: 110px;
-    height: 60px;
-    overflow: hidden;
-}
-
-    .foot-banner-nav-s > ul {
-        border-left: 1px dashed #959595;
-        padding-left: 13px;
-    }
-
-        .foot-banner-nav-s > ul > li {
-            /*margin: left;*/
-            margin: 0 14px 15px;
-        }
-
-            .foot-banner-nav-s > ul > li > a {
-                text-decoration: none;
-                font-size: 16px;
-                color: #f5842b;
-            }
 div#tab-newsclass {
     color: #333;
     height: 39px;
@@ -998,12 +810,13 @@ div#tab-newsclass {
 
         div#tab-newsclass span:hover {
             background-color: #f20626;
-            color:white;
-        }
-        div#tab-newsclass .currenTab {
-            background-color: #f20626;
             color: white;
         }
+
+    div#tab-newsclass .currenTab {
+        background-color: #f20626;
+        color: white;
+    }
 /* Flash Slider Show CSS */
 #flash {
     width: 600px;
@@ -1063,6 +876,7 @@ div#tab-newsclass {
         margin-top: 6px;
         color: #666;
     }
+
 .side-bar a, .hovertree-chat-tips i {
     background-image: url(http://www.skykiwi.com/newImage/gdt-img.png);
     background-repeat: no-repeat;
@@ -1083,7 +897,7 @@ div#tab-newsclass {
         display: inline-block;
         background-color: #363636;
         margin-bottom: 2px;
-        border-radius:5px;
+        border-radius: 5px;
     }
 
         .side-bar a:hover {
@@ -1139,6 +953,7 @@ div#tab-newsclass {
         width: 138px;
         height: 138px;
     }
+
 .toptittle {
     font-size: 16px;
     border-bottom: 2px solid #959595;

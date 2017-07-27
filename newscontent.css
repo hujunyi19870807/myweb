@@ -785,66 +785,6 @@ div#header .header-content {
         vertical-align: 8px
     }
 
-#wechat_home {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/tianweiwang.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_go {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/daogou.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_soku {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/shenghuo.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_property {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/weifangcan.jpg);
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_money {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/weicaijing.jpg) no-repeat;
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
-#wechat_skyphone {
-    width: 90px;
-    height: 90px;
-    background: url(http://www.skykiwi.com/newImage/erweima.jpg) no-repeat;
-    position: absolute;
-    display: none;
-    z-index: 9999;
-    margin-top: -9px;
-}
-
 .news-content iframe {
     width: 300px;
     height: 195px;
