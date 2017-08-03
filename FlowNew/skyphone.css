@@ -1,0 +1,23 @@
+﻿
+
+
+
+
+
+/*手机分辨率控制显示几列*/
+@media screen and (max-width: 800px) {
+    .content {
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .grid figure {
+        width: 50%;
+    }
+}
+
+@media (max-width: 639px) {
+    .grid figure {
+        width: 100%;
+    }
+}
