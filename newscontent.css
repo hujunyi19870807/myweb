@@ -1,12 +1,13 @@
 ﻿div#header {
     height: 50px;
     background-color: #363636;
-    width: 100%;
+    min-width: 1200px;
 }
 
 div#navfirst {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #d11e26;
     background-color: white;
+    min-width: 1200px;
 }
 
 div#maincontent {
@@ -97,6 +98,8 @@ div#center-main {
             max-height: 1000px;
             width: expression(this.width > 595 && this.width/this.height > 0.7 ? 595 : true);
             height: expression(this.height > 1000 && this.width/this.height < 0.7 ? 1000 : true);
+            display: block;
+            margin: 0 auto;
         }
         div#center-main .artText p a {
             text-decoration: none;
@@ -344,13 +347,13 @@ span.list-news-item-word {
             color: #f20626;
         }
 
-#right-main .news-title {
+.news-title {
     height: 30px;
     line-height: 30px;
     background-color: #e1e1e1;
     text-align: left;
     color: #f20626;
-    padding-left: 5px;
+    padding-left:10px;
     font-weight: bold
 }
 
@@ -1051,91 +1054,63 @@ div#tab-newsclass {
     .dig .t {
         background: #EEE;
         border: solid 1px #AAA;
-        width: 298px;
+        width:100%;
         height: 23px;
         overflow: hidden;
         color: #d12026;
         font-size: 13px;
+        padding-left: 10px;
+        letter-spacing: 1px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        line-height:23px;
+        font-weight:bold;
     }
-
-        .dig .t ul {
-            height: 23px;
-            line-height: 23px;
-            width: 150px;
-            float: left;
-            font-family: "微软雅黑","黑体","Hei";
-        }
-
-#dig_title {
-    width: 148px;
-    font-weight: bold;
-    font-size: 13px;
-}
-
-.dig .t li {
-    float: left;
-    width: 50px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: "微软雅黑","黑体","Hei";
-    cursor: pointer;
-}
-
-.dig .curr, .dig .curr a, .dig .curr a:visited {
-    color: #fff;
-    background: #C81F24;
-}
 
 .dg {
-    border: solid 1px #AAA;
+   border-bottom: solid 1px #AAA;
     border-top: 0;
 }
-
-    .dg dl {
-        width: 290px;
-        height: 47px;
-        margin: 0 auto;
-        padding-top: 7px;
-        border-bottom: dotted 1px #CCC;
+    .dg ul {
+        padding: 15px 5px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .dg ul li {
+        height: 25px;
+        line-height: 25px;
+        overflow: hidden;
+        text-align: justify;
+        background: url(http://www.skykiwi.com/image/newstag4_07.png) 2px 7px no-repeat;
+        padding-left: 20px;
+        letter-spacing: 1px;
     }
 
-        .dg dl dt {
-            float: left;
-            background: url(http://www.skykiwi.com/home2011/images/z.gif) no-repeat 0 -140px;
-            width: 36px;
-            height: 47px;
-            text-align: center;
+    .dg ul li a {
+        color:black;
+        text-decoration: none;
+    }
+        .dg ul li a:hover {
+            color: #f5842b;
         }
 
-            .dg dl dt p {
-                height: 20px;
-                line-height: 20px;
-                color: #FFF;
-            }
+.hotnewfirst {
+    background: url(http://www.skykiwi.com/image/newstag1_07.png) 2px 4px no-repeat !important;
+    padding-left: 20px !important;
+}
 
-                .dg dl dt p a, .dg dl dt p a:visited {
-                    color: #CE1D23;
-                }
-
-                    .dg dl dt p a:hover {
-                        text-decoration: underline;
-                    }
-
-        .dg dl dd {
-            width: 240px;
-            line-height: 21px;
-            float: left;
-            font-size: 14px;
-            padding-left: 6px;
-        }
-        .dg dl dd a {
-            color: #020202;
-            text-decoration:none;
-        }
-            .dg dl dd a:hover {
-                color: #f20626;
-            }
+.hotnewsecend {
+    background: url(http://www.skykiwi.com/image/newstag2_07.png) 2px 4px no-repeat !important;
+    padding-left: 20px !important;
+}
+.list-group-item-line {
+    border-bottom: 1px dashed #b7b7b7;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    height: 1px !important;
+}
 /* Cold News CSS */
 .cold {
     margin-bottom: 6px;
@@ -1149,6 +1124,8 @@ div#tab-newsclass {
         overflow: hidden;
         color: #1e3d7d;
         font-size: 13px;
+        padding-left: 10px;
+        letter-spacing: 1px;
     }
 
         .cold .t ul {
@@ -1365,3 +1342,50 @@ div.mobilephone {
         width: 138px;
         height: 138px;
     }
+
+.txt dl {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin-top: 8px;
+    text-align: left;
+}
+
+.txt dt {
+    background: url(http://www.skykiwi.com/home2011/images/n.gif) no-repeat 5px -106px;
+    border-bottom: 1px solid #ccc;
+    height: 21px;
+    line-height: 21px;
+}
+
+    .txt dt span {
+        float: left;
+        padding-left: 25px;
+    }
+
+    .txt dt .r {
+        float: right;
+        width: 15px;
+        height: 21px;
+        text-indent: -9999px;
+        background: url(http://www.skykiwi.com/home2011/images/n.gif) no-repeat 25px -72px;
+    }
+
+.txt dt .r a {
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.txt dd {
+    line-height: 22px;
+}
+
+    .txt dd span {
+        color: #f60;
+    }
+.right_last_fixed {
+    position: fixed;
+    top: 73px
+}
