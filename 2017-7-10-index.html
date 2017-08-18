@@ -14,7 +14,8 @@
     <meta name="alexaVerifyID" content="t1fAOANfV1Q4Jiy3uIFAFfTaOGY" />
 
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
-    <link href="http://www.skykiwi.com/css/index-20170701.css?2017071102" rel="stylesheet" />
+   
+    <link href="http://www.skykiwi.com/css/index-20170801.css" rel="stylesheet" />
     <link href="http://www.skykiwi.com/css/FocusPic-v1.0.css" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170703"></script>
     <script src="http://www.skykiwi.com/js/FocusPic-v1.0.js"></script>
@@ -22,6 +23,10 @@
     <script src="http://www.skykiwi.com/js/Top-FocusPic.js"></script>
     <script src="http://www.skykiwi.com/js/sky-imgcomplete.js"></script>
     <script src="http://www.skykiwi.com/js/sky-banner.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://img.skykiwi.com/common/html5.js"></script>
+    <![endif]-->
     <!-- start Mixpanel -->
     <script type="text/javascript">
         (function (e, a) {
@@ -311,14 +316,10 @@
                 $(".indexhomes:visible").hide().prev().show()
             }
         }
-        function MM_jumpMenu(targ, selObj, restore) { //v3.0
-            eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
-            if (restore) selObj.selectedIndex = 0;
-        }
+
     </script>
 </head>
 <body>
-    <!-- Full Size BD: START-->
     <div style="position:relative;width:1180px;margin:0 auto;">
         <div style="position:absolute;top:30px;left:-355px;">
             <script type='text/javascript'>
@@ -371,39 +372,17 @@
             <noscript><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=af865bf6&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=104&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=af865bf6&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></noscript>
         </div>
     </div>
-    <!-- Full Size BD: END-->
-    <header class="head">
-        <div style="margin:0 auto;width:1180px;">
-            <a href="http://www.skykiwi.com/index.shtml" target="_blank" title="回天维旧版">回天维旧版</a>
-        </div>
-    </header>
 
     <div class="wrapper clearfix">
         <div class="sky-left-nav" id="div-sky-leftnav">
             <div class="sky-left-logo">
-                <img src="image/skykiwi.png">
+                <a href="http://beta.skykiwi.com/index.html"><img src="image/skykiwi.png"></a>
             </div>
             <div class="sky-left-box">
-                <ul class="sky-left-ul clearfix">
-                    <li style="margin-top:18px">
-                        <span><a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook">English</a></span> |
-                        <span class="active-text">中文</span>
-                    </li>
-                    <script src="http://www.skykiwi.com/js/lunar-v1.0.js"></script>
-                    <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
-                        <div id="div-weather-change" class="clearfix">
-                            <span id="img-weather" style="margin-top:-1px" src="image/sky-weather.png" class=""></span>
-                            <span style="color:#ec7f16;float:left;width:25px;" id="span-mix-temp"></span>
-                            <span id="span-min-city" style="float:left;width:107px;overflow:hidden"></span>
-                            <span style="color:#ec7f16; float:right">▼</span>
-                        </div>
-                        <div id="div-weather-content" class="sky-weather" style="display:none">
-                            <!--#include virtual="/ssi/weather201707.html" -->
-                        </div>
-                    </li>
-                </ul>
                 <div class="sky-nav-index">
-                    <a class="sky-nav-tit" style="text-decoration:none" href="http://beta.skykiwi.com/index.html">天维首页</a>
+                    <nav style="margin-top:20px;margin-bottom:10px;color:#fff;text-align:center;font-size:16px;letter-spacing:2px">
+                        <a href="http://beta.skykiwi.com/index.html" style="color: #f5842b;">首页</a>|<a href="http://em.skykiwi.com/english.html" target="_blank" title="Facebook">English</a>|<a href="http://www.skykiwi.com/" title="中文">中文</a>
+                    </nav>
                     <ul class="sky-nav-ul clearfix">
                         <li>
                             <a href="http://news.skykiwi.com" target="_blank" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">新闻</a>
@@ -435,19 +414,33 @@
 
                     </ul>
                 </div>
-                <div class="sky-phone clearfix">
-                    <a  href="http://mobile.skykiwi.com" target="_blank">                        
-                        <div class="sky-phone-app" ></div>
-                    </a>
+                <div class="sky-nav-banner1">
+                    <img style="height:108px;width:175px;display:block" src="image/newbanner.jpg" />
                 </div>
-             
-                <div class="sky-video">
-                    <div class="sky-video-content">
+                <ul class="sky-left-ul clearfix">
+                    <script src="http://www.skykiwi.com/js/lunar-v1.0.js" type="text/javascript"></script>
+                    <li style="display:flex;justify-content: flex-start;" id="li-weather-control">
+                        <div id="div-weather-change" class="clearfix">
+                            <span id="img-weather" style="margin-top:-1px" src="image/sky-weather.png" class=""></span>
+                            <span style="color:#ec7f16;float:left;width:25px;" id="span-mix-temp"></span>
+                            <span id="span-min-city" style="float:left;width:107px;overflow:hidden"></span>
+                            <span style="color:#ec7f16; float:right">▼</span>
+                        </div>
+                        <div id="div-weather-content" class="sky-weather" style="display:none">
+                            <!--#include virtual="/ssi/weather201707.html" -->
+                        </div>
+                    </li>
+                </ul>
+                <div class="sky-video-banner">
                         <iframe id='ab70b4aa' name='ab70b4aa' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=99&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='165' height='105'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=a5e4a1cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=99&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5e4a1cc&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
-                    </div>
                 </div>
                 <div class="sky-nav-banner">
                     <iframe id='a241d2ab' name='a241d2ab' src='http://ads.skykiwi.com/www/delivery/afr.php?zoneid=88&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='175' height='160'><a href='http://ads.skykiwi.com/www/delivery/ck.php?n=ae5b43ea&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.skykiwi.com/www/delivery/avw.php?zoneid=88&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ae5b43ea&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
+                </div>
+                <div class="sky-phone clearfix">
+                    <a href="http://mobile.skykiwi.com" target="_blank">
+                        <div class="sky-phone-app"></div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -613,22 +606,23 @@
                         for ($x=1; $x<=5; $x++) { $bannerflag=false; ?>
                         <li class="list-news-item clearfix">
                             [e:loop={'select * from phome_ecms_news where classid =244 and checked=1 and istop!=0 order by istop limit '.($x+1).',1', 1, 24, 1}]
-                                <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                    <img width="150" height="200" src="<?=$bqr[titlepic]?>" />
-                                </a>
-                                <dl>
-                                    <dt><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a>
-                                    </dt>
+                            <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
+                                <img width="150" height="200" src="<?=$bqr[titlepic]?>" />
+                            </a>
+                            <dl>
+                                <dt>
+                                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>" style="font-weight:bold;font-size:17px"><?=$bqr[title]?></a>
+                                </dt>
                                 <dd>
-                                <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
-                                &nbsp;&nbsp;&nbsp;<? $datehour = format_datetime($bqr[newstime],'H'); if($datehour>=0 && $datehour<=12) { echo (format_datetime($bqr[newstime],'Y年m月d日  上午')); } else { echo (format_datetime($bqr[newstime],'Y年m月d日  下午')); } ?>
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>
+                                    &nbsp;&nbsp;&nbsp;<? $datehour = format_datetime($bqr[newstime],'H'); if($datehour>=0 && $datehour<=12) { echo (format_datetime($bqr[newstime],'Y年m月d日  上午')); } else { echo (format_datetime($bqr[newstime],'Y年m月d日  下午')); } ?>
                                 </dd>
-                            [/e:loop]
+                                [/e:loop]
 
-                            [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit '.$limit.',2', 2, 24, 1}]
+                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit '.$limit.',2', 2, 24, 1}]
                                 <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
                                 <dd>
-                                    <?php 
+                                    <?php
                                     $limit=$limit+1;
                                     $naclassid = array("4","5","6","7","8","9");
                                     $hqclassid = array("14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31");
@@ -653,50 +647,50 @@
                                     ?>
                                     &nbsp;&nbsp;&nbsp;<? $datehour = format_datetime($bqr[newstime],'H'); if($datehour>=0 && $datehour<=12) { echo (format_datetime($bqr[newstime],'Y年m月d日  上午')); } else { echo (format_datetime($bqr[newstime],'Y年m月d日  下午')); } ?>
                                 </dd>
-                            [/e:loop]
+                                [/e:loop]
 
-                            [e:loop={'select * from phome_ecms_news where classid =245 and istop='.$x.' order by newstime desc limit 1', 1, 24, 1}]
-                                    <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
-                                    <dd>
-                                        <a class="list-news-item-category" href="<?=$bqsr[titleurl]?>" target="_blank">广告</a>
-                                    </dd>
+                                [e:loop={'select * from phome_ecms_news where classid =245 and istop='.$x.' order by newstime desc limit 1', 1, 24, 1}]
+                                <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
+                                <dd>
+                                    <a class="list-news-item-category" href="<?=$bqsr[titleurl]?>" target="_blank">广告</a>
+                                </dd>
+                                <?php
+                                $bannerflag=true;
+                                ?>
+                                [/e:loop]
+
+                                <?php
+                                if($bannerflag==false){?>
+                                [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit '.$limit.',1', 1, 24, 1}]
+                                <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
+                                <dd>
                                     <?php
-                                        $bannerflag=true;
+                                    $limit=$limit+1;
+                                    $naclassid = array("4","5","6","7","8","9");
+                                    $hqclassid = array("14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31");
+                                    $tzclassid = array("49","50","51","52","53","160","161");
+                                    $ymclassid = array("110","111","112","113","114","115","116");
+                                    if(in_array($bqr[classid],$naclassid,true)){
+                                    echo ('
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>');
+                                    }
+                                    elseif(in_array($bqr[classid],$hqclassid,true)){
+                                    echo ('
+                                    <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>');
+                                    }
+                                    elseif(in_array($bqr[classid],$tzclassid,true)){
+                                    echo ('
+                                    <a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>');
+                                    }
+                                    elseif(in_array($bqr[classid],$ymclassid,true)){
+                                    echo ('
+                                    <a class="list-news-item-category" href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">留学移民</a>');
+                                    }
                                     ?>
-                            [/e:loop]
-                            
-                            <?php
-                                    if($bannerflag==false){?>
-                                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,114,115,116) and checked=1 order by newstime desc limit '.$limit.',1', 1, 24, 1}]
-                                    <dt class="newlist-tit"><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
-                                    <dd>
-                                        <?php 
-                                        $limit=$limit+1;
-                                        $naclassid = array("4","5","6","7","8","9");
-                                        $hqclassid = array("14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31");
-                                        $tzclassid = array("49","50","51","52","53","160","161");
-                                        $ymclassid = array("110","111","112","113","114","115","116");
-                                        if(in_array($bqr[classid],$naclassid,true)){
-                                        echo ('
-                                        <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">纽澳新闻</a>');
-                                        }
-                                        elseif(in_array($bqr[classid],$hqclassid,true)){
-                                        echo ('
-                                        <a class="list-news-item-category" href="http://news.skykiwi.com" target="_self" title="新西兰新闻，澳洲新闻，大陆新闻，港澳台新闻，国际新闻_尽在天维网新闻频道 - 点击进入天维网新闻频道">环球报道</a>');
-                                        }
-                                        elseif(in_array($bqr[classid],$tzclassid,true)){
-                                        echo ('
-                                        <a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>');
-                                        }
-                                        elseif(in_array($bqr[classid],$ymclassid,true)){
-                                        echo ('
-                                        <a class="list-news-item-category" href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">留学移民</a>');
-                                        }
-                                        ?>
-                                        &nbsp;&nbsp;&nbsp;<? $datehour = format_datetime($bqr[newstime],'H'); if($datehour>=0 && $datehour<=12) { echo (format_datetime($bqr[newstime],'Y年m月d日  上午')); } else { echo (format_datetime($bqr[newstime],'Y年m月d日  下午')); } ?>
-                                    </dd>
-                                    [/e:loop]
-                             <?php } ?>
+                                    &nbsp;&nbsp;&nbsp;<? $datehour = format_datetime($bqr[newstime],'H'); if($datehour>=0 && $datehour<=12) { echo (format_datetime($bqr[newstime],'Y年m月d日  上午')); } else { echo (format_datetime($bqr[newstime],'Y年m月d日  下午')); } ?>
+                                </dd>
+                                [/e:loop]
+                                <?php } ?>
                             </dl>
                         </li>
                         <?php
@@ -1195,7 +1189,7 @@
                         </a>
                     </div>
                     <div class="sky-activity-info-div2">
-                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],20)?></a>
+                        <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=esub($bqr[title],18)?></a>
                         <p>
                             <?=$bqsr[smalltext]?>
                         </p>
@@ -1258,7 +1252,7 @@
                             <a href="http://em.skykiwi.com/advertising.html" target="_blank">宣传方案</a>
                         </li>
                         <li>
-                            <a href="http://em.skykiwi.com/indexbannershow.html" target="_blank">广告图示</a>
+                            <a href="http://em.skykiwi.com/ads/homepage.html" target="_blank">广告图示</a>
                         </li>
                         <li>
                             <a href="http://em.skykiwi.com/download-ratecard.html" target="_blank">报价下载</a>

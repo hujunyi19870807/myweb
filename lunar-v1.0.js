@@ -81,7 +81,7 @@ function e2c() {
 	cHour = Math.floor((TheDate.getHours() + 3) / 2);
 }
 function GetcDateString() {
-	var tmp = "<li>农历";
+    var tmp = "<li style='font-size: 13px;'>农历";
 	tmp += tgString.charAt((cYear - 4) % 10);
 	tmp += dzString.charAt((cYear - 4) % 12);
 	tmp += "年(";
