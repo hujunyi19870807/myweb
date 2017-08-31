@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parties>
+  <party p_no="1">
+    <abbrev>ACT</abbrev>
+    <short_name>ACT New Zealand</short_name>
+    <party_name>ACT New Zealand</party_name>
+    <registered>yes</registered>
+  </party>
+  <party p_no="2">
+    <abbrev>ALL</abbrev>
+    <short_name>Alliance</short_name>
+    <party_name>Alliance</party_name>
+    <registered>yes</registered>
+  </party>
+  <party p_no="4">
+    <abbrev>EG</abbrev>
+    <short_name>Example Party</short_name>
+    <party_name>An Example Party</party_name>
+    <registered>no</registered>
+  </party>
+</parties>

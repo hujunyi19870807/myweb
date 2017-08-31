@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<election updated="2010-11-19T20:05:55">
+  <statistics>
+    <total_voting_places_counted>6306</total_voting_places_counted>
+    <percent_voting_places_counted> 99.8</percent_voting_places_counted>
+    <total_votes_cast>2103859</total_votes_cast>
+    <percent_votes_cast> 70.3</percent_votes_cast>
+    <total_electorates_final>71</total_electorates_final>
+    <percent_electorates_final>100.0</percent_electorates_final>
+    <total_minimal_votes>1261</total_minimal_votes>
+    <total_special_votes>208001</total_special_votes>
+    <total_registered_parties>19</total_registered_parties>
+  </statistics>
+  <partystatus>
+    <party p_no="1">
+      <votes>77842</votes>
+      <percent_votes> 3.7</percent_votes>
+      <party_seats>4</party_seats>
+      <candidate_seats>1</candidate_seats>
+      <total_seats>5</total_seats>
+    </party>
+    <party p_no="2">
+      <votes>1779</votes>
+      <percent_votes> 0.1</percent_votes>
+      <party_seats>0</party_seats>
+      <candidate_seats>0</candidate_seats>
+      <total_seats>0</total_seats>
+    </party>
+    <party p_no="4">
+      <votes>7589</votes>
+      <percent_votes> 0.4</percent_votes>
+      <party_seats>0</party_seats>
+      <candidate_seats>0</candidate_seats>
+      <total_seats>0</total_seats>
+    </party>
+  </partystatus>
+</election>

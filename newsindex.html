@@ -131,7 +131,7 @@
                 var ul = ulid;
                 var dl = "";
                 $.each(responses.data.items, function (index, item) {
-                    li = $('<li class="list-news-item"></li>').appendTo(ul);
+                    li = $('<li id="' + item["aid"]+'" class="list-news-item"></li>').appendTo(ul);
                     $('<a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '"><img width= "140" height= "70" src= "' + item["poster"] + '" /></a >').appendTo(li);
                     dl = $("<dl></dl>").appendTo(li);
                     $('<dt><a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '">' + item["title"] + '</a></dt>').appendTo(dl);

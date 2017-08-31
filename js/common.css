@@ -1,0 +1,453 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+}
+
+body {
+    font-size: 14px;
+    color: #333;
+    font-family: "Microsoft YaHei","\5fae\8f6f\96c5\9ed1";
+}
+
+.clearfix:before, 
+
+.clearfix:after { 
+  display: table; 
+  line-height: 0; 
+  content: ""; 
+} 
+
+.clearfix:after { 
+  clear: both; 
+}
+
+
+.sky-info {
+    height: 80px;
+    display: block;
+    padding-top: 24px;
+    border-top: 5px solid #f5842b;
+    margin-top:15px;
+}
+.sky-info>div {
+   float:left;
+}
+.sky-banner {
+    margin: 22px 0;
+    width: 300px;
+    height: 250px;
+}
+
+.sky-caijing {
+    float: left;
+}
+
+.sky-caijing-info {
+    float: left;
+    margin-left: 8px;
+    width: 160px;
+}
+
+.sky-caijing-info-title {
+    font-size: 16px;
+    color: #256091;
+    margin-bottom: 8px;
+    overflow: hidden;
+    line-height: 21px;
+}
+
+.sky-floatL {
+    float: left;
+}
+
+    .sky-floatL > ul > li > a {
+        float: left;
+    }
+/* NEWS Channel Exchange Links */
+
+.links {
+    margin: 15px 0px;
+    width: 948px;
+    border: 1px solid #AAA;
+    padding: 0px 0px 8px 0px;
+    overflow: hidden;
+}
+
+    .links h3 {
+        font: bold 12px/14px '&Icirc;&cent;&Egrave;¨ª&Ntilde;&Aring;&ordm;&Uacute;', &Euml;
+        &Icirc;
+        &Igrave;
+        &aring;
+        , Hei;
+        padding: 8px 0 1px 12px;
+        color: #D12026;
+        display: block;
+    }
+
+    .links a {
+        float: left;
+        display: inline;
+        width: 96px;
+        margin: 8px 2px 0px 3px;
+        border: 2px solid #FFF;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .links a:hover {
+            border-color: #CCC;
+        }
+
+    .links img {
+        max-width: 96px;
+        max-height: 30px;
+        border: 0px;
+    }
+
+
+
+/* footer CSS */
+
+#footer {
+    line-height: 22px;
+    text-align: center;
+    background: #FFF;
+    width: 950px;
+    text-decoration: none;
+    margin: 50px 0px;
+}
+
+    #footer > p > a {
+        text-decoration: none;
+        color: #6b6b6b;
+    }
+
+        #footer > p > a:hover {
+            color: #f5842b;
+        }
+
+    #footer .ico {
+        background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
+        padding-left: 15px;
+    }
+
+.copyright {
+    font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
+}
+
+#part3 {
+    height: 65px;
+    margin: 15px 0px;
+    background: #DDD;
+    overflow: hidden;
+}
+
+#jumpMenu {
+    height: 20px;
+    margin: 0px 0px 0px 15px;
+    font-size: 12px;
+    width: 180px;
+    vertical-align: bottom;
+}
+
+.mg15 {
+    margin-top: 22px;
+    margin-left: 32px;
+    vertical-align: bottom; /*µØ²½¶ÔÆä*/
+}
+
+/* µ×²¿¹ã¸æµ¼º½ */
+.foot-banner-nav {
+    float: left;
+    width: 300px;
+    height: 60px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+    .foot-banner-nav ul {
+        overflow: hidden;
+        display: block;
+    }
+
+    .foot-banner-nav > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 10px;
+    }
+
+        .foot-banner-nav > ul > li {
+            float: left;
+            margin: 0 14px 17px;
+        }
+
+            .foot-banner-nav > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #444545;
+            }
+
+.foot-banner-nav-s {
+    float: left;
+    width: 110px;
+    height: 60px;
+    overflow: hidden;
+}
+
+    .foot-banner-nav-s > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 13px;
+    }
+
+        .foot-banner-nav-s > ul > li {
+            /*margin: left;*/
+            margin: 0 14px 15px;
+        }
+
+            .foot-banner-nav-s > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #f5842b;
+            }
+
+#skyapp {
+    border-bottom: 1px dashed #b7b7b7;
+    border-top: 1px dashed #b7b7b7;
+    display: table-cell;
+    vertical-align: middle;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+    #skyapp ul {
+        display: block;
+        width: 950px;
+        margin: 0 auto;
+        /*position: relative;*/
+    }
+
+        #skyapp ul li {
+            float: left;
+        }
+
+        #skyapp ul > .sky-app-content {
+            margin-left: 14px;
+        }
+
+        #skyapp ul li a {
+            display: inline-block;
+            width: 52px;
+            height: 52px;
+            cursor: pointer;
+        }
+
+        #skyapp ul li img {
+            margin-right: 15px;
+        }
+
+/* 底部广告导航 */
+.foot-banner-nav {
+    float: left;
+    width: 300px;
+    height: 60px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+    .foot-banner-nav ul {
+        overflow: hidden;
+        display: block;
+    }
+
+    .foot-banner-nav > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 10px;
+    }
+
+        .foot-banner-nav > ul > li {
+            float: left;
+            margin: 0 14px 17px;
+        }
+
+            .foot-banner-nav > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #444545;
+            }
+
+.foot-banner-nav-s {
+    float: left;
+    width: 110px;
+    height: 60px;
+    overflow: hidden;
+}
+
+    .foot-banner-nav-s > ul {
+        border-left: 1px dashed #959595;
+        padding-left: 13px;
+    }
+
+        .foot-banner-nav-s > ul > li {
+            /*margin: left;*/
+            margin: 0 14px 15px;
+        }
+
+            .foot-banner-nav-s > ul > li > a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #f5842b;
+            }
+
+
+/* footer CSS */
+
+#footer {
+    line-height: 22px;
+    text-align: center;
+    background: #FFF;
+    width: 950px;
+    text-decoration: none;
+    margin: 50px 0px;
+    float: right;
+}
+
+    #footer > p > a {
+        text-decoration: none;
+        color: #6b6b6b;
+    }
+
+        #footer > p > a:hover {
+            color: #f20626;
+        }
+
+    #footer .ico {
+        background: url(http://www.skykiwi.com/images/common/n.gif) no-repeat 0 -340px;
+        padding-left: 15px;
+    }
+
+.copyright {
+    font-family: "Microsoft YaHei","5fae8f6f96c59ed1";
+}
+
+#part3 {
+    height: 65px;
+    margin: 15px 0px;
+    background: #DDD;
+    overflow: hidden;
+}
+
+#jumpMenu {
+    height: 20px;
+    margin: 0px 0px 0px 15px;
+    font-size: 12px;
+    width: 180px;
+    vertical-align: bottom;
+}
+
+.mg15 {
+    margin-top: 22px;
+    margin-left: 32px;
+    vertical-align: bottom; /*地步对其*/
+}
+/* NEWS Channel Exchange Links */
+
+.links {
+    margin: 15px 0px;
+    width: 948px;
+    padding: 0px 0px 8px 0px;
+    overflow: hidden;
+    float: right;
+}
+
+    .links h3 {
+        font: bold 12px/14px '&Icirc;&cent;&Egrave;í&Ntilde;&Aring;&ordm;&Uacute;', &Euml;
+        &Icirc;
+        &Igrave;
+        &aring;
+        , Hei;
+        padding: 8px 0 1px 12px;
+        color: #D12026;
+        display: block;
+    }
+
+    .links a {
+        float: left;
+        display: inline;
+        width: 96px;
+        margin: 8px 2px 0px 3px;
+        border: 2px solid #FFF;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .links a:hover {
+            border-color: #CCC;
+        }
+
+    .links img {
+        max-width: 96px;
+        max-height: 30px;
+        border: 0px;
+    }
+#wechat_home {
+    width: 90px;
+    height: 90px;
+    background: url(http://www.skykiwi.com/newImage/tianweiwang.jpg);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    margin-top: -9px;
+}
+
+#wechat_go {
+    width: 90px;
+    height: 90px;
+    background: url(http://www.skykiwi.com/newImage/daogou.jpg);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    margin-top: -9px;
+}
+
+#wechat_soku {
+    width: 90px;
+    height: 90px;
+    background: url(http://www.skykiwi.com/newImage/shenghuo.jpg);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    margin-top: -9px;
+}
+
+#wechat_property {
+    width: 90px;
+    height: 90px;
+    background: url(http://www.skykiwi.com/newImage/weifangcan.jpg);
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    margin-top: -9px;
+}
+
+#wechat_money {
+    width: 90px;
+    height: 90px;
+    background: url(http://www.skykiwi.com/newImage/weicaijing.jpg) no-repeat;
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    margin-top: -9px;
+}
+
+#wechat_skyphone {
+    width: 90px;
+    height: 90px;
+    background: url(http://www.skykiwi.com/newImage/erweima.jpg) no-repeat;
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    margin-top: -9px;
+}

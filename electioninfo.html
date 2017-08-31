@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://img.skykiwi.com/common/jquery-1.12.4.min.js?20170703"></script>
+    <script type="text/javascript">
+        var partyinfo = { p_no: "", abbrev: "", short_name: "", party_name: "", registered: "", votes: "", percent_votes: "", party_seats: "", candidate_seats: "", total_seats: "" };
+
+        var partylist = new Array();
+        $(function () {
+            $.ajax({
+                url: "/election.xml", dataType: 'xml', type: 'GET', timeout: 2000,
+                error: function (xml) {
+                    alert("加载XML 文件出错！");
+                },
+                success: function (xml) {
+                    var partyxml = $.ajax({ url: "/parties.xml", dataType: 'xml', type: 'GET', timeout: 2000, async: false, cache: false }).responseText;
+
+                    $(xml).find("party").each(function (i) {
+                        var party = $(this);
+                        partyinfo.p_no = party.attr("p_no");
+                        partyinfo.votes = party.find("votes").text();
+                        partyinfo.short_name = $(partyxml).find('party[p_no="' + partyinfo.p_no + '"]').find("short_name").text();
+                        partyinfo.abbrev = $(partyxml).find('party[p_no="' + partyinfo.p_no + '"]').find("abbrev").text();
+                        $("<li>" + partyinfo.p_no + "," + partyinfo.short_name + "," + partyinfo.votes + "</li>").appendTo($("#ulparty"));
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul id="ulparty"></ul>
+
+    </div>
+</body>
+</html>
