@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <title>[!--pagetitle--]_天维新闻频道 - Skykiwi.com</title>
     <link href="http://www.skykiwi.com/css/common.css" rel="stylesheet" />
-    <link href="newscontent.css" rel="stylesheet" />
+    <link href="http://www.skykiwi.com/css/newscontent.css?2" rel="stylesheet" />
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script type="text/javascript" src="http://www.skykiwi.com/images/tabs.js"></script>
     <script type="text/javascript">
@@ -70,7 +70,12 @@
             var screen_width = $(window).width();
             var eachblack_width = (screen_width - 1200) / 2;
             $(".side-bar").css("left", (1200 + eachblack_width + 25) + "px");
-          
+
+
+            $("#ul-hotsearch-news li:eq(0)").addClass("hotnewfirst");
+            $("#ul-hotsearch-news li:eq(1)").addClass("hotnewsecend");
+            $("#ul-hotsearch-news li:eq(2)").addClass("hotnewsecend");
+            $("#ul-hotsearch-news li:eq(2)").after('<li class="list-group-item-line"></li>')
         });
     </script>
 </head>
@@ -95,11 +100,11 @@
                 <div class="newstitle">
                     <h1>[!--title--]</h1>
                     <h5>
-                        [!--skywriter--]　日期:[!--newstime--]　阅读:
+                        [!--writer--]　日期:[!--newstime--]　阅读:
                         <script src="[!--news.url--]e/public/ViewClick?classid=[!--classid--]&id=[!--id--]&addclick=1"></script>　来源:[!--befrom--]
                     </h5>
                 </div>
-                
+
                 <!-- START: Article Text -->
                 <div class="artText">
                     <p align="left">[!--smalltext--]</p>
@@ -111,7 +116,7 @@
                 <div style="width:600px;padding:25px 0;border-bottom: 1px solid #ccc;">
                     <img alt="" src="http://www.skykiwi.com/newImage/news_qc.jpg" style="display:block" />
                 </div>
-                
+
                 <div class="declare">
                     <p>
                         <br>版权声明<br>
@@ -126,7 +131,7 @@
                 </div>
                 <!-- END: APP popularize -->
                 <ul class="ul-news-list clearfix" id="ul-news-list">
-                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116,233) and checked=1 and havehtml=1 order by newstime desc limit 4', 4, 24, 1}]
+                    [e:loop={'select * from phome_ecms_news where classid in (4,5,6,7,8,9,14,15,16,17,18,19,49,50,51,52,53,160,161,110,111,112,113,114,115,116,233) and havehtml=1 order by newstime desc limit 4', 4, 24, 1}]
                     <li class="list-news-item">
                         <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
                             <img width="140" height="70" src="<?=$bqr[titlepic]?>">
@@ -189,8 +194,8 @@
                     </div>
                 </div>
                 <div class="post">
-                    <form name="saypl" method="post" action="http://www.skykiwi.com/e/enews/index.php" onsubmit="return CheckPl(document.saypl)">
-                        <input name="nomember" type="hidden" id="nomember" value="checkbox" checked="checked" />
+                    <form name="saypl" method="post" action="http://www.skykiwi.com/e/pl/doaction.php" onsubmit="return CheckPl(document.saypl)">
+                        <input name="nomember" type="hidden" id="nomember" value="1" checked="checked" />
                         <input type="hidden" name="ecmsfrom" value="9">
                         <input name="username" type="hidden" id="username" value="Skykiwi网友" />
                         <input name="id" type="hidden" value="[!--id--]">
@@ -199,28 +204,56 @@
                         <input name="repid" type="hidden" id="repid" value="0">
                         <textarea name="saytext" cols="70" rows="5" id="saytext" style="width:600px;border:1px solid #ccc"></textarea>
                         <div class="news-lines">
-                            验证码<input name="key" type="text" style="width:120px;height:18px;border:1px solid #ccc;margin-left:10px;margin-right:10px;" size="10" maxlength="4" /><img src="http://www.skykiwi.com/newImage/c.png"  name="KeyImg" id="KeyImg" width="100" height="20" align="absmiddle" onclick="KeyImg.src='http://www.skykiwi.com/e/ShowKey?v=gbook&rnd='+Math.random();" alt="看不清楚？点击图片刷新" style="cursor:pointer" />
+                            验证码<input name="key" type="text" style="width:120px;height:18px;border:1px solid #ccc;margin-left:10px;margin-right:10px;" size="10" maxlength="4" />
+                            <img style="cursor:pointer" src="http://www.skykiwi.com/home2011/images/c.jpg" align="absmiddle" name="plKeyImg" id="plKeyImg" onclick="plKeyImg.src='http://www.skykiwi.com/e/ShowKey/?v=pl&t='+Math.random()" title="看不清楚,点击刷新" />
                             <input type="submit" name="Submit" value="发表评论" class="news-lines submit" />
                         </div>
                     </form>
                 </div>
+                <style type="text/css">
+                    p#pltotalinfo {
+                        text-align: right;
+                        margin: 10px 0
+                    }
+
+                        p#pltotalinfo > a {
+                            color: #000000;
+                            text-decoration: none;
+                            font-weight: bold;
+                        }
+
+                            p#pltotalinfo > a:hover {
+                                color: #e7040b;
+                            }
+
+                    .txt .name {
+                        color: #e7040b;
+                    }
+                </style>
+                <p id="pltotalinfo">
+                    <a style="" href="http://www.skykiwi.com/e/pl?classid=[!--classid--]&id=[!--id--]">
+                        查看所有新闻评论，共有 <span class="cPRed">
+                            <script src="http://www.skykiwi.com/e/public/ViewClick?classid=[!--classid--]&id=[!--id--]&down=2"></script>
+                        </span> 条评论
+                    </a>
+                </p>
                 <div class="txt">
                     <script src="http://www.skykiwi.com/e/pl/more/?classid=[!--classid--]&id=[!--id--]&num=5"></script>
                 </div>
-                               
+
             </div>
-            
+
             <div id="right-main">
                 <div class="news-title">
                     新闻视频
                 </div>
                 <div class="news-content" style="width:300px;height:195px">
                     [e:loop={'214',1,12,0}]
-                    <?=$bqsr[smalltext]?>
+                    <?=$bqr[smalltext]?>
                     [/e:loop]
                 </div>
                 <ul class="newlist">
-                    [e:loop={'173,174',3,2,1}]
+                    [e:loop={'173,174',3,2,0}]
                     <li>
                         <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a>
                     </li>
@@ -250,20 +283,23 @@
 
                 <script type="text/javascript" src="http://www.skykiwi.com/e/data/js/ajax.js"></script>
                 <div class="dig">
-                    <div class="t">
-                        <ul id="dig_title">&nbsp;/&nbsp;热新闻&nbsp;HOT NEWS</ul>
-                        <ul><li class="curr" id="tab1_btn_0" onmouseover="tabit(this)">今天</li><li id="tab1_btn_1" onmouseover="tabit(this)">昨天</li><li id="tab1_btn_2" onmouseover="tabit(this)">本周</li></ul>
+                    <div class="news-title">
+                        /HOT热搜榜
                     </div>
-                    <div class="dg" id="tab1_div_0">[ding]1,5,50,2,13[/ding]</div>
-                    <div class="dg" id="tab1_div_1" style="display:none;">[ding]1,5,50,3,13[/ding]</div>
-                    <div class="dg" id="tab1_div_2" style="display:none;">[ding]1,5,50,7,13[/ding]</div>
+                    <div class="dg">
+                        <ul id="ul-hotsearch-news">
+                            [e:loop={'SELECT * FROM phome_ecms_news WHERE DATE_SUB(CURDATE(), INTERVAL 2 DAY) < newstime ORDER BY onclick DESC LIMIT 0,10', 10, 24, 0}]
+                            <li><a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></li>
+                            [/e:loop]
+                        </ul>
+                    </div>
                 </div>
                 <!-- END: DING & COLD NEWS -->
-          
+
                 <div class="banner3">
                     <iframe id='aa30d765' name='aa30d765' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=148&amp;cb=3092288&amp;ct0=' frameborder='0' scrolling='no' width='300' height='250'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=aa57bad9&amp;cb=3092288' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=148&amp;cb=3092288&amp;n=aa57bad9&amp;ct0=' border='0' alt='' /></a></iframe>
                 </div>
-              
+
                 <!-- START: PRICE ME -->
                 <div id="pricemeDIV" style="width:300px; margin-bottom:8px;">
                     <!--<a href="http://www.priceme.co.nz">Prices and Reviews</a>-->
@@ -271,7 +307,7 @@
                 <script type="text/javascript" src="http://widget.priceme.co.nz/Skykiwi.js"></script>
                 <script type="text/javascript">loadSkykiwiProducts('pricemeDIV', 0, '', 5);</script>
                 <!-- END: PRICE ME -->
-       
+
                 <div class="mobilephone">
                     <div class="mobiletit">手机天维</div>
                     <div class="mobilebanner">
@@ -279,7 +315,7 @@
                     </div>
                 </div>
 
-           
+
                 <!-- START: Text AD -->
                 <div id="ad_gce">
                     <dl id="ad_list">
@@ -293,7 +329,7 @@
                 </div>
                 <!-- END: Text AD -->
             </div>
-           
+
             [!--temp.links2017_newsindex--]
             [!--temp.footer2017_newsindex--]
         </div>

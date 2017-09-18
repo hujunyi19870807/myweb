@@ -4,7 +4,7 @@
 <head>
     <title>新西兰新闻,新西兰社会新闻,新西兰留学,新西兰移民,新西兰财经,新西兰旅游_天维网新闻频道 - Skykiwi.com</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <meta name="Keywords" content="新西兰留学,新西兰移民,新西兰,新西兰最大门户网站,新西兰最大网络社区,新西兰新闻,新西兰旅游,新西兰搜索,新西兰朋友" />
+    <meta name="Keywords" content="新西兰留学,新西兰移民,新西兰,新西兰最大门户网站,新西兰最大网络社区,新西兰新闻,新西兰旅游,新西兰搜索,新西兰朋友1" />
     <meta name="Description" content="Skykiwi天维网是新西兰最大的华人门户网站,我们为您提供每天最新的新西兰及国内、国际新闻,我们的社区论坛有30万活跃会员与您一起讨论、分享,橙页搜索为您找出提供优质服务的商家,让新西兰的生活丰富多彩" />
     <meta name="robots" content="all,follow" />
     <meta http-equiv="content-language" content="zh-CN" />
@@ -16,7 +16,7 @@
     <script src="http://img.skykiwi.com/common/jquery-1.12.4.min.js?20170622"></script>
     <script src="http://www.skykiwi.com/js/Top-FocusPic-new.js"></script>
     <!--[if lt IE 9]>
-    <script src="http://img.skykiwi.com/common/html5.js"></script>
+    <script src="https://img.skykiwi.com/common/html5.js"></script>
     <![endif]-->
     <script type="text/javascript">
         $(document).ready(function () {
@@ -112,7 +112,7 @@
 
         function getData(pageSize, pageIndex, cid, ulid) {
             var taken = '';
-            var apiUrl = 'http://api.skykiwi.com/toolbox/news.js?num=' + pageSize + '&p=' + pageIndex + '&aliasCid=' + cid;
+            var apiUrl = 'http://api.skykiwi.com/toolbox/news2.js?num=' + pageSize + '&p=' + pageIndex + '&aliasCid=' + cid;
             $(".newsmore").hide();
             $(".newsloading").show();
             $.getJSON(apiUrl + '&callback=?', function (responses) {
@@ -131,7 +131,7 @@
                 var ul = ulid;
                 var dl = "";
                 $.each(responses.data.items, function (index, item) {
-                    li = $('<li id="' + item["aid"]+'" class="list-news-item"></li>').appendTo(ul);
+                    li = $('<li  id="' + item["aid"] + '" class="list-news-item"></li>').appendTo(ul);
                     $('<a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '"><img width= "140" height= "70" src= "' + item["poster"] + '" /></a >').appendTo(li);
                     dl = $("<dl></dl>").appendTo(li);
                     $('<dt><a href="' + item["href"] + '" target="_blank" title="' + item["title"] + '">' + item["title"] + '</a></dt>').appendTo(dl);
@@ -140,9 +140,13 @@
                     var newstype = item["cname"];
                     if (newstype == "投资频道") {
                         newstype = '<a class="list-news-item-category" href="http://money.skykiwi.com" target="_blank" title="新西兰房产投资，新西兰财经政策，新西兰房屋买卖，商业地产，农场林场，新西兰热房推荐">投资频道</a>'
-                    } else if (newstype == "投资频道") {
-                        newstype = '< a class="list-news-item-category" href= "http://imedu.skykiwi.com" target= "_self" title= "新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道" > 留学移民</a > ';
-                    } else {
+                    } else if (newstype == "留学移民") {
+                        newstype = '<a class="list-news-item-category" href="http://imedu.skykiwi.com" target="_self" title="新西兰留学，新西兰移民，新西兰留学移民政策发布，新闻发布，尽在天维留学移民频道 - 点击进入天维网留学移民频道">留学移民</a>';
+                    }
+                    else if (newstype == "惠灵顿专区") {
+                        newstype = '<a class="list-news-item-category" href="http://welly.skykiwi.com" target="_blank" title="新西兰新闻，澳洲新闻，惠灵顿新闻_尽在天维网惠灵顿频道 - 点击进入天维网惠灵顿新闻频道">惠灵顿新闻</a>';
+                    }
+                    else {
                         newstype = '<span class="list-news-item-category">' + newstype + '</span>';
                     }
                     $('<dd>' + newstype + '</dd>').appendTo(dl);
@@ -340,11 +344,11 @@
                 </div>
                 <div class="news-content" style="width:300px;height:195px">
                     [e:loop={'214',1,12,0}]
-                    <?=$bqsr[smalltext]?>
+                    <?=$bqr[smalltext]?>
                     [/e:loop]
                 </div>
                 <ul class="newlist">
-                    [e:loop={"select * from phome_ecms_news where classid in(4,5,6,7,8,9,223,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,115,114,116) and checked=1 and newstypeid=1 order by newstime DESC limit 3",3,24,0}]
+                    [e:loop={"select * from phome_ecms_news where classid in(4,5,6,7,8,9,223,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,49,50,51,52,53,160,161,110,111,112,113,115,114,116) and newstypeid=1 order by newstime DESC limit 3",3,24,0}]
                     <li>
                         <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
                             <?=$bqr[title]?>
@@ -384,7 +388,7 @@
                             [e:loop={'63',4,0,0}]
                             <li>
                                 <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>">
-                                    <?=esub($bqr[title],40)?>
+                                    <?=esub($bqr[title],38)?>
                                 </a>
                             </li>
                             [/e:loop]
@@ -495,7 +499,7 @@
                             <a href="http://em.skykiwi.com/advertising.html" target="_blank">宣传方案</a>
                         </li>
                         <li>
-                            <a href="http://em.skykiwi.com/newsbannershow.html" target="_blank">广告图示</a>
+                            <a href="http://em.skykiwi.com/ads/news.html" target="_blank">广告图示</a>
                         </li>
                         <li>
                             <a href="http://em.skykiwi.com/download-ratecard.html" target="_blank">报价下载</a>
@@ -522,16 +526,11 @@
 
             <div class="links">
                 <h3>友情链接</h3>
-                <a href="http://www.nzherald.co.nz" target="_blank" title="New Zealand Herald" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-nzherald.jpg"></a>
-                <a href="http://www.tv3.co.nz" target="_blank" title="New Zealand TV3" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-tv3.jpg"></a>
                 <a href="http://huaren.haiwainet.cn" target="_blank" title="海外网" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-haiwainet.jpg"></a>
                 <a href="http://chinese.people.com.cn" target="_blank" title="人民网" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-people.jpg"></a>
-                <a href="https://www.feijipiao.co.nz/" target="_blank" title="途翼旅行"><img src="http://www.skykiwi.com/home2011/images/link/logo-tourism.jpg" /></a>
+                <a href="https://www.feijipiao.co.nz/" target="_blank" title="途翼旅行"><img src="http://www.skykiwi.com/home2011/images/link/logo-tourism.jpg"></a>
                 <a href="http://www.chinaqw.com/" target="_blank" title="中国侨网"><img src="http://www.skykiwi.com/home2011/images/link/logo_chinaqw.jpg"></a>
-                <!-- <a href="http://www.ucpnz.com" target="_blank" title="新西兰联合报" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-ucpnz.jpg" /></a> -->
-                <a href="http://www.globaltimes.com.cn" target="_blank" title="环球时报" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-global-times.jpg"></a>
                 <a href="http://g.58.com/j-glauckland/" target="_blank" title="58同城奥克兰站"><img alt="58同城奥克兰站" src="http://www.skykiwi.com/home2011/images/link/logo-58.jpg"></a>
-                <!-- <a href="http://www.wanguo.co.nz" target="_blank" title="新西兰万国旅行社" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo-wanguo.jpg" title="Link to wanguo.co.nz" /></a> -->
 
                 <a href="https://www.priceme.co.nz" target="_blank" title="PriceMe" rel="nofollow"><img src="http://www.skykiwi.com/home2011/images/link/logo_priceme.png" title="Link to Priceme.co.nz"></a>
             </div>
@@ -558,9 +557,9 @@
             <dl>
                 <dt style="font-size:18px;"><a style="color:#000000;text-decoration:none" href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><?=$bqr[title]?></a></dt>
                 <dd style="height:120px;display:inline-block;margin:15px 0">
-                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[titlepic]?>" /></a>
-                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic1]?>" /></a>
-                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqsr[apic2]?>" /></a>
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="border: 1px solid #898989;" width="190" height="120" src="<?=$bqr[titlepic]?>" /></a>
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqr[apic1]?>" /></a>
+                    <a href="<?=$bqsr[titleurl]?>" target="_blank" title="<?=$bqr[title]?>"><img style="margin-left:6px;border: 1px solid #898989;" width="190" height="120" src="<?=$bqr[apic2]?>" /></a>
                 </dd>
                 <dd>
                     <span class="list-news-item-category"><?=$bqsr[new_type]?></span>
@@ -577,8 +576,6 @@
             <iframe id='a363eefe' name='a363eefe' src='http://www.gcemedia.co.nz/www/delivery/afr.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;ct0=INSERT_CLICKURL_HERE' frameborder='0' scrolling='no' width='600' height='200'><a href='http://www.gcemedia.co.nz/www/delivery/ck.php?n=a8308398&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.gcemedia.co.nz/www/delivery/avw.php?zoneid=210&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a8308398&amp;ct0=INSERT_CLICKURL_HERE' border='0' alt='' /></a></iframe>
         </li>
     </ul>
-
-
     <!-- START: Google Analyse -->
     <script type="text/javascript">
                         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

@@ -1,0 +1,62 @@
+﻿<script>
+    function CheckPl(obj) {
+        if (obj.saytext.value == "") {
+            alert("您没什么话要说吗？");
+            obj.saytext.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<form action="[!--news.url--]e/pl/doaction.php" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" id="plpost">
+
+        <tr>
+            <td>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="title">
+                    <tr>
+                        <td><strong>发表评论</strong></td>
+                        <td align="right"><a href="[!--news.url--]e/pl/?classid=[!--classid--]&amp;id=[!--id--]">共有<span>
+                        <script type="text/javascript" src="[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&down=2"></script></span>条评论</a></td>
+                    </tr>
+                </table>
+                <table width="100%" border="0" cellspacing="10" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="2">
+                                <tr>
+                                    <td width="56%" align="left">
+                                        用户名:
+                                        <input name="username" type="text" class="inputText" id="username" value="" size="16" />
+                                    </td>
+                                    <td width="44%" align="left">
+                                        密码:
+                                        <input name="password" type="password" class="inputText" id="password" value="" size="16" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        验证码:
+                                        <input name="key" type="text" class="inputText" size="10" />
+                                        <img src="[!--news.url--]e/ShowKey/?v=pl" align="absmiddle" name="plKeyImg" id="plKeyImg" onclick="plKeyImg.src='[!--news.url--]e/ShowKey/?v=pl&t='+Math.random()" title="看不清楚,点击刷新" />
+                                    </td>
+                                    <td align="left">
+                                        <input name="nomember" type="checkbox" id="nomember" value="1" checked="checked" />
+                                        匿名发表
+                                    </td>
+                                </tr>
+                            </table>
+<textarea name="saytext" rows="6" id="saytext"></textarea>
+                            <input name="imageField" type="image" src="[!--news.url--]e/data/images/postpl.gif" />
+                            <input name="id" type="hidden" id="id" value="[!--id--]" />
+                            <input name="classid" type="hidden" id="classid" value="[!--classid--]" />
+                            <input name="enews" type="hidden" id="enews" value="AddPl" />
+                            <input name="repid" type="hidden" id="repid" value="0" />
+                            <input type="hidden" name="ecmsfrom" value="[!--titleurl--]">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</form>
